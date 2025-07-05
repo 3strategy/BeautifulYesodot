@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>cr</Title>
+            <Shortcut>cr</Shortcut>
+            <Description>Code snippet for Console.ReadLine</Description>
+            <Author>Guy Siedes</Author>  
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal Editable="false">
+                    <ID>SystemConsole</ID>
+                    <Function>SimpleTypeName(global::System.Console)</Function>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp"><![CDATA[$SystemConsole$.ReadLine();]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+	
+	    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ip</Title>
+            <Shortcut>ip</Shortcut>
+            <Description>Code snippet for int.Parse(Console.ReadLine</Description>
+            <Author>Guy Siedes</Author>  
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal Editable="false">
+                    <ID>SystemConsole</ID>
+                    <Function>SimpleTypeName(global::System.Console)</Function>
+                </Literal>
+				<Literal Editable="true">
+				  <ID>fieldName</ID>
+				  <ToolTip>Enter the field's name</ToolTip>
+				  <Default>num1</Default>
+				</Literal>
+            </Declarations>
+            <Code Language="csharp"><![CDATA[Console.Write("Enter a number: ");
+			int $fieldName$ = int.Parse($SystemConsole$.ReadLine());]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+	
+	<CodeSnippet  
+		xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet"  
+		Format="1.0.0">  
+	  <Header>  
+		<Title>main</Title>  
+		<Shortcut>main</Shortcut>  
+		<Description>Code snippet for Static void Main</Description>  
+		<Author>Guy Siedes</Author>  
+		<SnippetTypes>  
+		  <SnippetType>Expansion</SnippetType>  
+		</SnippetTypes>  
+	  </Header>  
+	  <Snippet>  
+		<Code Language="csharp"><![CDATA[
+	public static void Main()
+	{
+		$end$
+	}]]>  
+		</Code>  
+	  </Snippet>  
+	</CodeSnippet>
+
+</CodeSnippets>
