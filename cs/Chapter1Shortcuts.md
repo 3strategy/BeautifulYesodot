@@ -67,4 +67,4 @@ int num1 = int.Parse(Console.ReadLine());
 | `Ctrl + Y`        | חזרה על פעולה (Redo)                      |
 | `Ctrl + D`        | שכפול שורה. לא עובד בלי הגדרה ידנית       |
 | `Ctrl + Shift + .`        | זום אין. מגדיל טקסט       |
-| `Ctrl + Shift + ,`        | זום אאוט. מגדיל טקסט       |
+| `, + Ctrl + Shift`        | זום אאוט. מגדיל טקסט       |
