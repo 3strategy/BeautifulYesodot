@@ -6,8 +6,11 @@ tags: []
 lang: he
 ---
 
+התרגילים המובאים כאן מיועדים לתרגול באתר אונלין הבודק עבורכם את התרגילים. כדי להצטרף עליכם להיכנס **כתלמידים** באמצעות ה-gmail לאתר [stacks](https://stacks.co.il). חשוב לא לסמן עצמכם כמורים!!!. לאחר הכניסה תתבקשו להזין משפט כדי להצטרף לכיתה. המשפט הוא **נחש שכח מזל פיל הלך ספר**
+
+
 ## 5א.1 חישוב חשבון במסעדה
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-HkGc3kNDfaICO14)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-HkGc3kNDfaICO14) -->
 
 עליכם לכתוב תוכנית שתנהל את חשבונות הלקוחות במסעדה. מחיר מנה בודדת הוא 9 שקלים.
 
@@ -34,7 +37,7 @@ lang: he
 
 
 ## 5א.2 יום כיף במרכז הקהילתי
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-UxHgHUDinFqk68Q)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-UxHgHUDinFqk68Q) -->
 
 במרכז קהילתי הוחלט לארגן "יום כיף" לילדים. עלות השימוש בכל מתקן היא 4 שקלים לילד.
 
@@ -64,7 +67,7 @@ lang: he
 
 
 ## 5א.3 מבצע מתנות למנויים חדשים
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-RpjAhdV6xnahwan)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-RpjAhdV6xnahwan) -->
 
 עיתון יומי משיק מבצע מתנות למנויים חדשים: מנוי שגילו מעל 50 יקבל תלושי שי, וכל מנוי אחר יקבל ספר.
 
@@ -99,7 +102,7 @@ lang: he
 
 
 ## 5א.4 מסיבת סיום במרכז הקהילתי
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-6T3SuZxigOupjfk)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-6T3SuZxigOupjfk) -->
 
 מרכז קהילתי ארגן מסיבת סיום למשתתפי החוג. עליכם לכתוב תוכנית שתעזור למרכז הקהילתי לנהל את נתוני המסיבה.
 
@@ -134,7 +137,7 @@ lang: he
 
 
 ## 5א.5 ניתוח ציוני תלמידים
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-qQ5Bh005qqzGXND)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-qQ5Bh005qqzGXND) -->
 
 בבית ספר "המצטיינים" נערך מבחן לכל תלמידי שכבה י'. עליכם לכתוב תוכנית שתבצע את הפעולות הבאות:
 
@@ -155,7 +158,7 @@ lang: he
 
 
 ## 5א.6 ספירת קולות בבחירות
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-H1wC83KmbU6AZNi)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-H1wC83KmbU6AZNi) -->
 
 בבחירות למועצת התלמידים בבית ספר תיכון יש שני מועמדים: חגי והדס. תלמיד המעוניין בבחירתו של חגי יצביע 1, ותלמיד המעוניין בבחירתה של הדס יצביע 2.
 
@@ -193,7 +196,7 @@ lang: he
 
 
 ## 5א.7 תעריף שיחות לחו"ל
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-wgwyqNRzHP4iZG8)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-hISWRWsPcOEN/csharp-wgwyqNRzHP4iZG8) -->
 
 בחברת טלפונים סלולריים יש תעריף לדקת שיחה לחו"ל. עליכם לכתוב תוכנית שתבצע את הפעולות הבאות:
 
@@ -223,3 +226,17 @@ lang: he
 1. יש להשתמש ב-Console.ReadLine() לקליטת קלט וב-Console.WriteLine() להדפסת פלט.
 2. יש להקפיד על פורמט הפלט המדויק, כולל רווחים ועיגול הסכומים לשתי ספרות אחרי הנקודה העשרונית.
 
+
+## 5א.8 טיול משפחות  899222.2013.8
+
+{: .box-error}
+תרגיל זה מובא כאן כפי שתומלל מבחינת הבגרות. התרגיל ממחיש עד כמה הגרסה 8ב ב- [stacks](https://stacks.co.il) שונה מגרסה 8 שהיא ללא תוספות AI. הגרסה המשופצת 8ב כוללת הרבה יותר הדרכה לתלמיד - ומדמה פחות את שאלת הבגרות. זו נקודה עבורי לתשומת ליבי, שחשוב לנטרל חלק מהתוספות של ה-AI לפחות בחלק מהתרגילים כדי לא ליצור פער בין התרגול לבין הבחינות!!!
+
+**חברת תיירות מארגנת טיול למשפחות.** 
+המחיר למשתתף בטיול הוא 100 שקלים. מספר המקומות בטיול מוגבל.  
+כתוב תוכנית שתקלוט את מספר המקומות בטיול.  
+כמו כן התכנית תקלוט עבור כל משפחה שנרשמת לטיול את שם המשפחה ואת מספר בני המשפחה הנרשמים לטיול.  
+משפחה לא תוכל להשתתף בטיול אם מספר בני המשפחה הנרשמים לטיול גדול ממספר המקומות הפנויים בטיול. עבור כל משפחה שלא תוכל להשתתף בתכנית תדפיס את שם המשפחה ואת ההודעה "no".  
+עבור כל משפחה שתשתתף בטיול התכנית תדפיס את שם המשפחה, ותחשב ותדפיס את הסכום הכולל שעל המשפחה לשלם עבור הטיול.  
+הקליטה תסתיים כאשר לא יישארו מקומות פנויים בטיול.  
+הערה: אין צורך לבדוק את תקינות הקלט.  

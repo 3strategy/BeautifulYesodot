@@ -304,6 +304,9 @@ else
 
 [⬅ עברו לתרגול 5.3 לולאות מסוגים שונים, מעבר חוסם ודגל בוליאני](/cs/Chapter5Ex5.3)
 
+[⬅ עברו לתרגול 5a לולאות מסוגים שונים - תרגול עם AI](/cst/yesodot/ex5a)
+
+
 ## סרטונים
 
 [סרטוני פרק 6: לולאות while](https://www.youtube.com/playlist?list=PLw4P_RdfuzSiWmGL7PdjcY5Sd8Fqeguo4){:target="_blank"}
