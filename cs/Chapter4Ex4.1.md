@@ -15,7 +15,7 @@ lang: he
 
 כתבו תוכנית המדמה משחק זה. בכל תור יוצגו תוצאות הטלת הסביבונים (מספר בין 1 ל-4), ובסיום יוצג מספר הנקודות שצבר השחקן.
 
-<details><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 static void Main()
 {
     int num1, num2;
