@@ -16,6 +16,8 @@ lang: he
 כתבו תוכנית המדמה משחק זה. בכל תור יוצגו תוצאות הטלת הסביבונים (מספר בין 1 ל-4), ובסיום יוצג מספר הנקודות שצבר השחקן.
 
 <details markdown="1"><summary>פתרון</summary>
+
+```csharp
 static void Main()
 {
     int num1, num2;
@@ -30,6 +32,7 @@ static void Main()
     }
     Console.WriteLine(count);
 }
+```        
 </details>
 
 ## שאלה 4.1.2
