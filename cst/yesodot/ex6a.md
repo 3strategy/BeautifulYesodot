@@ -11,7 +11,7 @@ lang: he
 
 
 ## 6א.1 בדיקת ספרות כפולות
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-j7CEE0uEO0K10kH)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-j7CEE0uEO0K10kH) -->
 
 עליכם לכתוב תוכנית שקולטת מספר שלם חיובי מהמשתמש. התוכנית תבדוק האם קיימת במספר ספרה המופיעה פעמיים, לפחות, ותציג הודעה מתאימה.
 
@@ -27,7 +27,7 @@ lang: he
 2. אם אין ספרה המופיעה פעמיים או יותר, הפלט יהיה: Does not contain duplicate digits
 
 ## 6א.2 גורמים ראשוניים
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-agp509RzSqkWNc6)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-agp509RzSqkWNc6) -->
 
 עליכם לכתוב תוכנית שקולטת מספר טבעי מהמשתמש ומדפיסה את כל הגורמים הראשוניים שלו. כל גורם ראשוני יודפס בנפרד, ויופרד בפסיק ורווח.
 
@@ -47,7 +47,7 @@ lang: he
 
 
 ## 6א.3 היפוך מספר ומכפלה
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-5pKx8zkBXlpQBMV)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-5pKx8zkBXlpQBMV) -->
 
 עליכם לכתוב תוכנית שקולטת מספר טבעי מהמשתמש. התוכנית צריכה לבצע את הפעולות הבאות:
 
@@ -69,7 +69,7 @@ lang: he
 
 
 ## 6א.4 זוגות ספרות סמוכות זהות
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-q0XclOplk14oQEy)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-q0XclOplk14oQEy) -->
 
 עליכם לכתוב תוכנית שקולטת מספר שלם חיובי מהמשתמש. התוכנית תבדוק האם קיימים במספר זוג ספרות סמוכות זהות ותציג הודעה מתאימה על המסך.
 
@@ -95,7 +95,7 @@ lang: he
 
 
 ## 6א.5 ניחוש מספר
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-YPU683xVzfVFVY4)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-YPU683xVzfVFVY4) -->
 
 עליכם לכתוב תוכנית המדמה משחק ניחוש מספרים בין מחשב למשתמש. המחשב ינסה לנחש מספר שהמשתמש בחר (בין 1 ל-100), והמשתמש יספק רמזים.
 
@@ -129,7 +129,7 @@ lang: he
 
 
 ## 6א.6 ניחוש מספר2
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-cFdaaTSXdH2MsWk)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-cFdaaTSXdH2MsWk) -->
 
 עליכם לפתח תוכנית המדמה משחק ניחוש מספרים. המחשב יבחר מספר אקראי בין 1 ל-100. המשתמש יצטרך לנחש את המספר הזה. לאחר כל ניחוש, התוכנית תספק משוב האם הניחוש גבוה מדי, נמוך מדי, או נכון. התוכנית תמשיך לקלוט ניחושים עד שהמשתמש ינחש את המספר הנכון.
 
@@ -160,7 +160,7 @@ lang: he
 
 
 ## 6א.7 סטטיסטיקת ציוני תלמידים
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-G6jXslBXz54BxAz)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-G6jXslBXz54BxAz) -->
 
 עליכם לכתוב תוכנית שקולטת ציוני תלמידים. הקלט יסתיים כאשר המורה מזין את הציון 999. התוכנית צריכה לחשב ולהדפיס את הסטטיסטיקות הבאות:
 
@@ -191,7 +191,7 @@ lang: he
 
 
 ## 6א.8 צמצום שברים
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-WKzqiQ1BhZ6Za0c)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-WKzqiQ1BhZ6Za0c) -->
 
 עליכם לכתוב תוכנית שקולטת שני מספרים שלמים מהמשתמש: מונה (numerator) ומכנה (denominator). התוכנית צריכה לצמצם את השבר המיוצג על ידי המונה והמכנה לצורתו הפשוטה ביותר, ולהדפיס את השבר המצומצם.
 
@@ -214,7 +214,7 @@ lang: he
 
 
 ## 6א.9 תלמיד גבוה ונמוך ביותר
-[link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-AZ7Bc0FjEeSpUbB)
+<!-- [link](https://stacks.co.il/console/classroom/YGUbk7x6V7/assignment/YGUbk7x6V7-csharp-2vlY12BYzzfn/csharp-AZ7Bc0FjEeSpUbB) -->
 
 עליכם לכתוב תוכנית שתקלוט שמות וגבהים של תלמידים. הקלט יסתיים כאשר המשתמש יזין את המילה 'stop' כשם התלמיד. לאחר סיום הקלט, התוכנית תדפיס את השם והגובה של התלמיד הגבוה ביותר ואת השם והגובה של התלמיד הנמוך ביותר.
 
