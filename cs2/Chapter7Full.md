@@ -450,7 +450,7 @@ public static void SayHello(string userName)
     ```
     </details>
 
-    <div markdown="1" class="box-warning'">
+    <div markdown="1" class="box-warning">
     **סימפטומים בעייתיים:** 
     - שלושה בלוקים נפרדים של `while(true)`, אחד עבור כל קלט.
     - פיזור רב של שינויי צבע סביב כל בקשה לקלט, קריאת הקלט וטיפול בשגיאות.
@@ -466,7 +466,7 @@ public static void SayHello(string userName)
     <summary>פתרון</summary>
 
     ```csharp
-    public static void MainCalc2() 
+    public static void MainCalc2()
     {
         // נדמה שהפתרון כתוב בראשי פרקים
         int n1 = Input<int>(); // קריאה לפונקציית קלט גנרית
@@ -489,6 +489,36 @@ public static void SayHello(string userName)
             return num1 / num2;
         Console.WriteLine("\ninvalid opertaion");
         return 0;
+    }
+
+
+    static T Input<T>(string inputRequest = "Please enter a", string invalidFeedback = null)
+    {
+        try
+        {
+            if (inputRequest == "Please enter a")
+                inputRequest = $"Please enter {typeof(T).ToString().Substring(7)}: ";
+
+            WriteInColor(inputRequest, ConsoleColor.Green, ConsoleColor.Yellow);
+            string s = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.White;
+            return (T)Convert.ChangeType(s, typeof(T)); // may throw an exception
+        }
+        catch (Exception)
+        {
+            if (invalidFeedback == null)
+                invalidFeedback = $"Your input type was not a valid {typeof(T)}\n";
+            WriteInColor(invalidFeedback, ConsoleColor.Red, Console.ForegroundColor);
+            return Input<T>(inputRequest, invalidFeedback);
+        }
+    }
+
+
+    public static void WriteInColor(string str, ConsoleColor color, ConsoleColor nextColor = ConsoleColor.White)
+    {
+        Console.ForegroundColor = color;
+        Console.Write(str);
+        Console.ForegroundColor = nextColor;
     }
     ```
 
