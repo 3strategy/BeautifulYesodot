@@ -188,7 +188,8 @@ public static void SayHello(string userName)
 
   <div id="main" class="box">Main(int[] args)
   &lbrace;
-  &nbsp;&nbsp;int n = Function1(42,"alice");
+  &#10;&#13;
+  int n <br>= Function1(42,"alice");
   &rbrace;</div>
   <div id="func" class="box">
     int Function1(<span id="num">int a</span>, <span id="name">string name</span>)
