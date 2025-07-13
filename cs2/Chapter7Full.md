@@ -15,8 +15,8 @@ lang: he
     min-height: 20em; 
     }
     .box {
-      width: 14em;
-      height: 12em;
+      width: 16em;
+      height: 10em;
       border: 2px solid #333;
       border-radius: 6px;
       direction: LTR;
@@ -42,7 +42,7 @@ lang: he
       background: var(--backw-col);
       border: 1px solid #99c;
       border-radius: 4px;
-      font-size: 0.9rem;
+      font-size: 0.9em;
       opacity: 0;
       transition: left 1s ease, top 1s ease, opacity 0.5s ease;
       pointer-events: none;
@@ -422,10 +422,12 @@ $$
 
 <div id="anim-container">
 
-  <div id="main" class="box">Main(int[] args)
+  <div id="main" class="box">void Main(int[] args)
+  <br>
   &lbrace;
   <br>
   int n = Function1(42,"alice");
+  <br>
   &rbrace;</div>
   <div id="func" class="box">
     int Function1(<span id="num">int a</span>, <span id="name">string name</span>)
@@ -708,10 +710,10 @@ $$
 
       // 3) Animate param traveling into Function1’s parentheses
       setTimeout(() => {
-        const endParamX = func.offsetLeft + 80;  // roughly over the '(' inside func box
-        const endParamY = func.offsetTop + 10;
-        param.style.left = endParamX + 'px';
-        param.style.top  = endParamY + 'px';
+        const endParamX = func.offsetLeft + 36;  // roughly over the '(' inside func box
+        const endParamY = func.offsetTop + 4;
+        param.style.left = endParamX + 'em';
+        param.style.top  = endParamY + 'em';
       }, 200);
 
       // 4) Arrow follows shortly after
