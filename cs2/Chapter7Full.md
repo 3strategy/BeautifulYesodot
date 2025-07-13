@@ -741,8 +741,8 @@ $$
       // 7) Animate result traveling back toward Main
       setTimeout(() => {
         const returnX = main.offsetLeft + main.offsetWidth;
-        result.style.left = main.offsetLeft + 30 + 'px';
-        result.style.top = 6 +'em';
+        result.style.left = main.offsetLeft + 40 + 'px';
+        result.style.top = 6.2 +'em';
         arrow.style.left  = returnX + 'px';
       }, 2200);
 
@@ -762,6 +762,6 @@ $$
         param.style.left   = main.offsetLeft + main.offsetWidth + 'px';
         param.style.top    = (main.offsetTop - 50) + 'px';
 
-      }, 3200);
+      }, 4200);
     });
   </script>
