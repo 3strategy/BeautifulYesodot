@@ -697,7 +697,7 @@ $$
       // 1) Prepare function signature and param bubble
       numArg.textContent  = '42';
       nameArg.textContent = '"Alice"';
-      param.textContent  = '(42, "Alice")';
+      param.textContent  = '("Alice" ,42)';
       log.textContent    = 'Main() → calling Function1';
 
       // 2) Fade in arrow and param at Main edge
