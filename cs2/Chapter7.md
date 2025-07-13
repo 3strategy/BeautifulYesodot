@@ -14,13 +14,13 @@ lang: he
     }
     .box {
       width: 250px;
-      height: 60px;
+      height: 140px;
       border: 2px solid #333;
       border-radius: 6px;
       text-align: center;
       line-height: 60px;
       position: absolute;
-      background: #f9f9f9;
+      background: var(--backs-col);
       box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
     }
     #main { top: 40px; left: 40px; }
