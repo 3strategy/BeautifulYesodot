@@ -284,7 +284,7 @@ public static void SayHello(string userName)
         param.textContent  = '(int a, string name)';
         numArg.textContent  = 'int a';
         nameArg.textContent = 'string name';
-        log.textContent      = 'Main() received result "Result"';
+        log.textContent      = 'Main() received result 6';
       }, 3200);
     });
   </script>
