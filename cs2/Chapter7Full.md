@@ -306,6 +306,8 @@ public static void SayHello(string userName)
 ### סיכום ביניים
 בחלקים 7.1-7.2 למדנו כיצד להגדיר פונקציות ללא ערך חזרה: פונקציות המבצעות פעולה (כגון חישוב או הדפסה) ואינן מחזירות נתון חזרה למקום הקריאה. ראינו דוגמאות לפונקציות ללא פרמטרים ועם פרמטרים, והדגשנו את היתרון בגמישות שמקנה העברת פרמטרים. בשלב זה כל הפונקציות שהגדרנו היו עם סוג החזרה void. בחלק הבא נרחיב את היכולת של פונקציות ונדון בפונקציות מחזירות ערך: כיצד פונקציה יכולה לחשב ולהחזיר תוצאה למי שקרא לה. זה יאפשר לנו לכתוב פונקציות כמו Max(a,b) שמחזירה את הגדול מבין שני מספרים, IsPrime(n) שמחזירה אמת/שקר אם המספר ראשוני, ועוד. 
 
+
+
 ## הכח של DRY:
 
 <details markdown="1">
@@ -322,7 +324,8 @@ public static void SayHello(string userName)
 - פתרון השאלה נראה כך:
     <details open markdown="1">
     <summary>פתרון</summary>
-    {% highlight csharp linenos %}static void MainCalc()
+    ```csharp
+    public static void MainCalc()
     {
         int num1, num2;
         char oprtr;
@@ -344,7 +347,8 @@ public static void SayHello(string userName)
             Console.WriteLine($"{num1} / {num2} = {Math.Round(((double)num1 / num2), 2)} ");
         else if (oprtr == '^')
             Console.WriteLine($" {num1} ^ {num2} = {Math.Pow(num1, num2)}");
-    }{% endhighlight %}
+    }
+    ```
     </details>
 
 ## נניח כעת שהשאלה מסתבכת טיפה **ונוספות דרישות:**
@@ -359,7 +363,8 @@ public static void SayHello(string userName)
     פתרון השאלה יראה כך:
 
     <details open markdown="1"><summary>פתרון</summary>
-    {% highlight csharp linenos %}static void MainCalc1()
+    ```csharp
+    static void MainCalc1()
     {
         int num1;
         while (true)
@@ -441,7 +446,8 @@ public static void SayHello(string userName)
         }
         //כ-80 שורות עם 3 קטעים מסיביים שחוזרים על עצמם ועושים בדיוק אותו דבר
         Console.ResetColor(); // restore default colours
-    }{% endhighlight %} 
+    }
+    ```
     </details>
 
     {: .box-note}
@@ -459,7 +465,8 @@ public static void SayHello(string userName)
     <details open markdown="1">
     <summary>פתרון</summary>
 
-    {% highlight csharp linenos %}public static void MainCalc2() 
+    ```csharp
+    public static void MainCalc2() 
     {
         // נדמה שהפתרון כתוב בראשי פרקים
         int n1 = Input<int>(); // קריאה לפונקציית קלט גנרית
@@ -483,11 +490,13 @@ public static void SayHello(string userName)
         Console.WriteLine("\ninvalid opertaion");
         return 0;
     }
-    {% endhighlight %} 
+    ```
 
     </details>
 
 </details>
+
+
 
 # איפה הפרק הבא??? וצריך לסיים את השאלות ולפצל החוצה.
 
