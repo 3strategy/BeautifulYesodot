@@ -8,6 +8,64 @@ mathjax: true
 lang: he
 ---
 
+<head>
+  <style>
+    #anim-container {
+    position: relative;    /* make this the coordinate system for everything inside */
+    min-height: 400px; 
+    }
+    .box {
+      width: 290px;
+      height: 140px;
+      border: 2px solid #333;
+      border-radius: 6px;
+      direction: LTR;
+      text-align:left;
+      line-height: 60px;
+      position: absolute;
+      background: var(--backs-col);
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    #main { top: 40px; left: 40px; }
+    #func { top: 40px; right: 40px; }
+    #arrow {
+      position: absolute;
+      top: 70px;
+      text-align:left;
+      font-size: 2rem;
+      opacity: 0;
+      transition: left 1s ease, opacity 0.5s ease;
+    }
+    .bubble {
+      position: absolute;
+      padding: 4px 8px;
+      background: var(--backw-col);
+      border: 1px solid #99c;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: left 1s ease, top 1s ease, opacity 0.5s ease;
+      pointer-events: none;
+    }
+    #log {
+      position: absolute;
+      direction: LTR;
+      text-align:left;
+      bottom: 150px;
+      left: 40px;
+      right: 40px;
+      font-style: italic;
+      color: var(--text-col);
+    }
+    #start {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+    }
+  </style>
+</head>
+
+
 בפרק זה נלמד כיצד לכתוב פעולות (פונקציות), המחלקות את התוכנית לתתי-משימות, מאפשרות שימוש חוזר בקוד, ומשפרות את קריאות הקוד. . 
 {: .box-note}
 
@@ -335,6 +393,55 @@ avg = (Math.Abs(num1) + Math.Abs(num2)) / 2.0;
 
 
 
+# 7.3 העברה וקבלת ערכים מהפונקציה
+
+נחזור לתחביר הבסיסי:
+
+```csharp
+[modifier(s)] [return_type(s)] FunctionName([parameter_list])
+{
+    // גוף הפונקציה: סדרת פעולות שתתבצענה בקריאה לפונקציה
+}
+```
+
+$$
+\overbrace{\text{public static}}^{\text{מודיפיירים}}
+\quad
+\overbrace{\text{bool}}^{\text{סוג החזרה}}
+\quad
+\overbrace{\text{IsPrime}}^{\text{שם הפונקציה}}
+\quad
+\overbrace{\bigl(\,\text{int }n\bigr)}^{\text{פרמטרים}}
+$$
+
+
+
+<details open markdown="1"><summary>אנימציה: העברת פרמטרים לפונקציה וקבלת ערך מוחזר</summary>
+
+<div id="anim-container">
+
+  <div id="main" class="box">Main(int[] args)
+  &lbrace;
+  <br>
+  int n = Function1(42,"alice");
+  &rbrace;</div>
+  <div id="func" class="box">
+    int Function1(<span id="num">int a</span>, <span id="name">string name</span>)
+  </div>
+
+  <div id="arrow">➔</div>
+  <div id="param" class="bubble">( … )</div>
+  <div id="result" class="bubble">…</div>
+
+  <div id="log">Click “Start” to see the call.</div>
+  <button id="start">Start Animation</button>
+
+
+
+
+</div>
+
+</details>
 
 
 
@@ -567,3 +674,80 @@ avg = (Math.Abs(num1) + Math.Abs(num2)) / 2.0;
 ## סרטונים
 [סרטוני פרק 7: פעולות](https://www.youtube.com/playlist?list=PLw4P_RdfuzSh3nsdxq7oMeTbxZtADUsuv){:target="_blank"}
 
+
+
+
+  <script>
+    const main   = document.getElementById('main');
+    const func   = document.getElementById('func');
+    const arrow  = document.getElementById('arrow');
+    const param  = document.getElementById('param');
+    const result = document.getElementById('result');
+    const log    = document.getElementById('log');
+    const btn    = document.getElementById('start');
+    const numArg = document.getElementById('num');
+    const nameArg= document.getElementById('name');
+
+    btn.addEventListener('click', () => {
+      // 1) Prepare function signature and param bubble
+      numArg.textContent  = '42';
+      nameArg.textContent = '"Alice"';
+      param.textContent  = '(42, "Alice")';
+      log.textContent    = 'Main() → calling Function1';
+
+      // 2) Fade in arrow and param at Main edge
+      const startX = main.offsetLeft + main.offsetWidth;
+      arrow.style.left   = startX + 'px';
+      arrow.style.opacity= 1;
+      param.style.left   = startX + 'px';
+      param.style.top    = (main.offsetTop - 20) + 'px';
+      param.style.opacity= 1;
+
+      // 3) Animate param traveling into Function1’s parentheses
+      setTimeout(() => {
+        const endParamX = func.offsetLeft + 80;  // roughly over the '(' inside func box
+        const endParamY = func.offsetTop + 10;
+        param.style.left = endParamX + 'px';
+        param.style.top  = endParamY + 'px';
+      }, 200);
+
+      // 4) Arrow follows shortly after
+      setTimeout(() => {
+        arrow.style.left = (func.offsetLeft - 30) + 'px';
+      }, 600);
+
+      // 5) When param arrives, “consume” it into Function1
+      setTimeout(() => {
+        param.style.opacity = 0;
+        log.textContent     = 'Function1 is processing…';
+      }, 1400);
+
+      // 6) After a pause, prepare return value bubble at func
+      setTimeout(() => {
+        result.textContent   = '6';
+        result.style.left    = (func.offsetLeft + func.offsetWidth - 20) + 'px';
+        result.style.top     = (func.offsetTop - 20) + 'px';
+        result.style.opacity = 1;
+        log.textContent      = 'Function1 returns 6';
+        arrow.textContent    = '⟵';
+      }, 2000);
+
+      // 7) Animate result traveling back toward Main
+      setTimeout(() => {
+        const returnX = main.offsetLeft + main.offsetWidth;
+        result.style.left = returnX + 'px';
+        arrow.style.left  = returnX + 'px';
+      }, 2200);
+
+      // 8) Hide arrow & result, finish log
+      setTimeout(() => {
+        arrow.style.opacity  = 0;
+        result.style.opacity = 0;
+        arrow.textContent    = '➔'; // reset arrow
+        param.textContent  = '(int a, string name)';
+        numArg.textContent  = 'int a';
+        nameArg.textContent = 'string name';
+        log.textContent      = 'Main() received result 6';
+      }, 3200);
+    });
+  </script>
