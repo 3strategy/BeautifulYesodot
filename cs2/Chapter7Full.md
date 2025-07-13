@@ -697,7 +697,8 @@ $$
       // 1) Prepare function signature and param bubble
       numArg.textContent  = '42';
       nameArg.textContent = '"Alice"';
-      param.textContent  = '("Alice" ,42)';
+      param.textContent  = '(42, "Alice")';
+      param.direction = 'LTR';
       log.textContent    = 'Main() → calling Function1';
 
       // 2) Fade in arrow and param at Main edge
@@ -740,7 +741,8 @@ $$
       // 7) Animate result traveling back toward Main
       setTimeout(() => {
         const returnX = main.offsetLeft + main.offsetWidth;
-        result.style.left = returnX + 'px';
+        result.style.left = main.offsetLeft + 30 + 'px';
+        result.style.top = 3em;
         arrow.style.left  = returnX + 'px';
       }, 2200);
 
