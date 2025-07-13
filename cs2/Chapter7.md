@@ -35,7 +35,7 @@ lang: he
     .bubble {
       position: absolute;
       padding: 4px 8px;
-      background: #eef;
+      background: var(--backw-col);
       border: 1px solid #99c;
       border-radius: 4px;
       font-size: 0.9rem;
@@ -50,7 +50,7 @@ lang: he
       left: 40px;
       right: 40px;
       font-style: italic;
-      color: #555;
+      color: var(--text-col);
     }
     #start {
       position: absolute;
