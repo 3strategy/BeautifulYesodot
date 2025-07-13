@@ -28,11 +28,11 @@ lang: he
 
 | החישוב הדרוש                                       | כותרת הפעולה                                      |
 |----------------------------------------------------|---------------------------------------------------|
-| א. חישוב ההפרש בין שני גבהים                      | `csharp int HeightDifference(int height1, int height2)`  |
-| ב. חישוב מספר הספרות שיש למספר נתון              | `int CountDigits(int number)`                     |
-| ג. בדיקה האם המספר a מתחלק ב-b באופן שלם         | `bool IsDivisible(int a, int b)`                  |
-| ד. בדיקה האם המספר השלישי הוא ממוצע של שני הראשונים | `bool IsAverageOf(int first, int second, int third)` |
-| ה. מחרוזת המכילה תוכן של קובץ מסוים במחשב         | `string ReadFileContent(string filePath)`          |
+| א. חישוב ההפרש בין שני גבהים                      | `static int HeightDifference(int height1, int height2)`  |
+| ב. חישוב מספר הספרות שיש למספר נתון              | `static int CountDigits(int number)`                     |
+| ג. בדיקה האם המספר a מתחלק ב-b באופן שלם         | `static bool IsDivisible(int a, int b)`                  |
+| ד. בדיקה האם המספר השלישי הוא ממוצע של שני הראשונים | `static bool IsAverageOf(int first, int second, int third)` |
+| ה. מחרוזת המכילה תוכן של קובץ מסוים במחשב         | `static string ReadFileContent(string filePath)`          |
 {: .table-rl}
 
 </details>
@@ -58,7 +58,7 @@ lang: he
 כתבו פעולה `Factorial(int n)` המקבלת מספר שלם ומחזירה עצרת שלו
 
 
-# 7.3.4 תכונות חלוקה
+## 7.3.4 תכונות חלוקה
 <!-- 4.0.5 במצגת 4-5 -->
 
 {: .subq}
