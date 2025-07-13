@@ -426,7 +426,7 @@ $$
   <br>
   &lbrace;
   <br>
-  int n = Function1(42,"alice");
+  &nbsp;&nbsp;int n = Function1(42,"alice");
   <br>
   &rbrace;</div>
   <div id="func" class="box">
@@ -710,8 +710,8 @@ $$
 
       // 3) Animate param traveling into Function1’s parentheses
       setTimeout(() => {
-        const endParamX = func.offsetLeft + 36;  // roughly over the '(' inside func box
-        const endParamY = func.offsetTop + 4;
+        const endParamX = func.offsetLeft + 4;  // roughly over the '(' inside func box
+        const endParamY = func.offsetTop + 1;
         param.style.left = endParamX + 'em';
         param.style.top  = endParamY + 'em';
       }, 200);
