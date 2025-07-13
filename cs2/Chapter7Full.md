@@ -696,8 +696,7 @@ $$
 
     btn.addEventListener('click', () => {
       // 1) Prepare function signature and param bubble
-      numArg.textContent  = '42';
-      nameArg.textContent = '"Alice"';
+
       param.textContent  = '(42, "Alice")';
       param.textAlign = 'left';
       param.direction = 'LTR';
@@ -717,6 +716,8 @@ $$
         const endParamY = func.offsetTop +5;
         param.style.left = endParamX + 'px';
         param.style.top  = endParamY + 'px';
+        numArg.textContent  = '42';
+        nameArg.textContent = '"Alice"';
       }, 200);
 
       // 4) Arrow follows shortly after
