@@ -300,6 +300,16 @@ button:hover {
     direction: ltr;
 }
 
+.table-rl td:first-child,
+.table-rl th:first-child {
+  text-align: right;
+}
+
+.table-rl td:nth-child(2),
+.table-rl th:nth-child(2) {
+  text-align: left;
+}
+
 .table-he {
     direction: rtl;
     text-align: right;
