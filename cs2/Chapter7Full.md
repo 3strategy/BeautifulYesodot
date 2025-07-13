@@ -411,7 +411,7 @@ avg = (Math.Abs(num1) + Math.Abs(num2)) / 2.0;
 $$
 \overbrace{\text{public static}}^{\text{מודיפיירים}}
 \quad
-\overbrace{\text{bool}}^{\text{סוג החזרה}}
+\overbrace{\text{ bool }}^{\text{סוג החזרה}}
 \quad
 \overbrace{\text{IsPrime}}^{\text{שם הפונקציה}}
 \quad
@@ -713,7 +713,7 @@ $$
 
       // 3) Animate param traveling into Function1’s parentheses
       setTimeout(() => {
-        const endParamX = func.offsetLeft + 200;  // roughly over the '(' inside func box
+        const endParamX = func.offsetLeft + 150;  // roughly over the '(' inside func box
         const endParamY = func.offsetTop +5;
         param.style.left = endParamX + 'px';
         param.style.top  = endParamY + 'px';
@@ -743,8 +743,8 @@ $$
       // 7) Animate result traveling back toward Main
       setTimeout(() => {
         const returnX = main.offsetLeft + main.offsetWidth;
-        result.style.left = 4.5 + 'em';
-        result.style.top = 5.8 +'em';
+        result.style.left = 3.8 + 'em';
+        result.style.top = 5 +'em';
         arrow.style.left  = returnX + 'px';
       }, 2200);
 
