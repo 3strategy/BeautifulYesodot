@@ -12,11 +12,11 @@ lang: he
   <style>
     #anim-container {
     position: relative;    /* make this the coordinate system for everything inside */
-    min-height: 400px; 
+    min-height: 20em; 
     }
     .box {
-      width: 7em;
-      height: 4em;
+      width: 14em;
+      height: 12em;
       border: 2px solid #333;
       border-radius: 6px;
       direction: LTR;
