@@ -95,30 +95,31 @@ flowchart TD
 
     פתרון השאלה נראה כך:
     <details open markdown="1"><summary>פתרון</summary>
-    {% highlight csharp linenos %}static void MainCalc()
-    {
-        int num1, num2;
-        char oprtr;
+    
+        {% highlight csharp linenos %}static void MainCalc()
+        {
+            int num1, num2;
+            char oprtr;
 
-        Console.Write("Enter first number ");
-        num1 = int.Parse(Console.ReadLine());
-        Console.Write("Enter second number ");
-        num2 = int.Parse(Console.ReadLine());
-        Console.Write("Enter operator ");
-        oprtr = char.Parse(Console.ReadLine());
+            Console.Write("Enter first number ");
+            num1 = int.Parse(Console.ReadLine());
+            Console.Write("Enter second number ");
+            num2 = int.Parse(Console.ReadLine());
+            Console.Write("Enter operator ");
+            oprtr = char.Parse(Console.ReadLine());
 
-        if (oprtr == '+')
-            Console.WriteLine($"{num1} + {num2} = {num1 + num2} ");
-        else if (oprtr == '-')
-            Console.WriteLine($"{num1} - {num2} = {num1 - num2} ");
-        else if (oprtr == '*')
-            Console.WriteLine($"{num1} * {num2} = {num1 * num2} ");
-        else if (oprtr == '/')
-            Console.WriteLine($"{num1} / {num2} = {Math.Round(((double)num1 / num2), 2)} ");
-        else if (oprtr == '^')
-            Console.WriteLine($" {num1} ^ {num2} = {Math.Pow(num1, num2)}");
-    }
-    {% endhighlight %}
+            if (oprtr == '+')
+                Console.WriteLine($"{num1} + {num2} = {num1 + num2} ");
+            else if (oprtr == '-')
+                Console.WriteLine($"{num1} - {num2} = {num1 - num2} ");
+            else if (oprtr == '*')
+                Console.WriteLine($"{num1} * {num2} = {num1 * num2} ");
+            else if (oprtr == '/')
+                Console.WriteLine($"{num1} / {num2} = {Math.Round(((double)num1 / num2), 2)} ");
+            else if (oprtr == '^')
+                Console.WriteLine($" {num1} ^ {num2} = {Math.Pow(num1, num2)}");
+        }
+        {% endhighlight %}
 
     </details>
 
@@ -135,91 +136,91 @@ flowchart TD
 
     <details open markdown="1"><summary>פתרון</summary>
 
-    {% highlight csharp linenos %}static void MainCalc1()
-    {
-        int num1;
-        while (true)
+        {% highlight csharp linenos %}static void MainCalc1()
         {
+            int num1;
+            while (true)
+            {
 
-            Console.ForegroundColor = ConsoleColor.Green; // prompt in green
-            Console.Write("Please enter an integer: ");
-            Console.ForegroundColor = ConsoleColor.Yellow;                 // user types in yellow
-            string input1 = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.Green; // prompt in green
+                Console.Write("Please enter an integer: ");
+                Console.ForegroundColor = ConsoleColor.Yellow;                 // user types in yellow
+                string input1 = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.White;
+
+                if (int.TryParse(input1, out num1))
+                {
+                    break; // valid, exit loop
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red; // error in red, then retry
+                    Console.WriteLine("Invalid integer. Please try again.");
+                }
+            }
+
+            double num2;
+            while (true) // --- Read second number (double) ---
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Please enter a double: ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                string input2 = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.White;
+
+                if (double.TryParse(input2, out num2))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid double. Please try again.");
+                }
+            }
+
+            // --- Read operator ---
+            char oprtr;
+            while (true)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Please enter operation (+, -, *, /): ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                string opInput = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.White;
+
+                if (char.TryParse(opInput, out oprtr) &&
+                    (oprtr == '+' || oprtr == '-' || oprtr == '*' || oprtr == '/'))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid operator. Must be +, -, * or /.");
+                }
+            }
+
+            // --- Do the calculation inline ---
             Console.ForegroundColor = ConsoleColor.White;
-
-            if (int.TryParse(input1, out num1))
+            if (oprtr == '+')
+                Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
+            else if (oprtr == '-')
+                Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
+            else if (oprtr == '*')
+                Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
+            else if (oprtr == '/')
             {
-                break; // valid, exit loop
+                if (num2 != 0)
+                    Console.WriteLine($"{num1} / {num2} = {Math.Round((double)num1 / num2, 2)}");
+                else
+                    Console.WriteLine("Cannot divide by zero.");
             }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red; // error in red, then retry
-                Console.WriteLine("Invalid integer. Please try again.");
-            }
-        }
+            //כ-80 שורות עם 3 קטעים מסיביים שחוזרים על עצמם ועושים בדיוק אותו דבר
+            Console.ResetColor(); // restore default colours
+        } 
+        {% endhighlight %} 
 
-        double num2;
-        while (true) // --- Read second number (double) ---
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("Please enter a double: ");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            string input2 = Console.ReadLine();
-            Console.ForegroundColor = ConsoleColor.White;
-
-            if (double.TryParse(input2, out num2))
-            {
-                break;
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Invalid double. Please try again.");
-            }
-        }
-
-        // --- Read operator ---
-        char oprtr;
-        while (true)
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("Please enter operation (+, -, *, /): ");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            string opInput = Console.ReadLine();
-            Console.ForegroundColor = ConsoleColor.White;
-
-            if (char.TryParse(opInput, out oprtr) &&
-                (oprtr == '+' || oprtr == '-' || oprtr == '*' || oprtr == '/'))
-            {
-                break;
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Invalid operator. Must be +, -, * or /.");
-            }
-        }
-
-        // --- Do the calculation inline ---
-        Console.ForegroundColor = ConsoleColor.White;
-        if (oprtr == '+')
-            Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
-        else if (oprtr == '-')
-            Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
-        else if (oprtr == '*')
-            Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
-        else if (oprtr == '/')
-        {
-            if (num2 != 0)
-                Console.WriteLine($"{num1} / {num2} = {Math.Round((double)num1 / num2, 2)}");
-            else
-                Console.WriteLine("Cannot divide by zero.");
-        }
-        //כ-80 שורות עם 3 קטעים מסיביים שחוזרים על עצמם ועושים בדיוק אותו דבר
-        Console.ResetColor(); // restore default colours
-    } 
-    {% endhighlight %} 
-    
     </details>
 
 > **מסקנות** {: .box-note}
