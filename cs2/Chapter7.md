@@ -28,6 +28,7 @@ lang: he
     #arrow {
       position: absolute;
       top: 70px;
+      text-align:left;
       font-size: 2rem;
       opacity: 0;
       transition: left 1s ease, opacity 0.5s ease;
@@ -211,74 +212,53 @@ public static void SayHello(string userName)
 
 בפרקים 7.1–7.2 למדנו להגדיר פונקציות מסוג `void` ללא פרמטרים ועם פרמטרים. בפונקציות אלה ניתן לאגד קוד חוזר, לשפר קריאות ולהפוך את הקוד לגמיש יותר. בפונקציות הבאות (פרק 7.3) נלמד על פונקציות שמחזירות ערך (`return`), כולל טיפוסי ערך בסיסיים ובוליאני.
 
-  <script>
+<script>
     const main   = document.getElementById('main');
     const func   = document.getElementById('func');
     const arrow  = document.getElementById('arrow');
-    const param  = document.getElementById('param');
-    const result = document.getElementById('result');
     const log    = document.getElementById('log');
-    const btn    = document.getElementById('start');
     const numArg = document.getElementById('num');
     const nameArg= document.getElementById('name');
+    const btn    = document.getElementById('start');
 
     btn.addEventListener('click', () => {
-      // 1) Prepare function signature and param bubble
+      // 1) Prepare arguments and log
       numArg.textContent  = '42';
       nameArg.textContent = '"Alice"';
-      param.textContent  = '(42, "Alice")';
-      log.textContent    = 'Main() → calling Function1';
+      log.textContent     = 'Main() calls Function1(42, "Alice")';
 
-      // 2) Fade in arrow and param at Main edge
-      const startX = main.offsetLeft + main.offsetWidth;
-      arrow.style.left   = startX + 'px';
-      arrow.style.opacity= 1;
-      param.style.left   = startX + 'px';
-      param.style.top    = (main.offsetTop - 20) + 'px';
-      param.style.opacity= 1;
+      // 2) Position arrow at the edge of Main
+      arrow.style.opacity = 1;
+      arrow.style.left    = (main.offsetLeft + main.offsetWidth) + 'px';
 
-      // 3) Animate param traveling into Function1’s parentheses
-      setTimeout(() => {
-        const endParamX = func.offsetLeft + 80;  // roughly over the '(' inside func box
-        const endParamY = func.offsetTop + 10;
-        param.style.left = endParamX + 'px';
-        param.style.top  = endParamY + 'px';
-      }, 200);
-
-      // 4) Arrow follows shortly after
+      // 3) Animate call: arrow moves to Function1
       setTimeout(() => {
         arrow.style.left = (func.offsetLeft - 30) + 'px';
-      }, 600);
+      }, 100);
 
-      // 5) When param arrives, “consume” it into Function1
+      // 4) While arrow is moving, show “working” message
       setTimeout(() => {
-        param.style.opacity = 0;
-        log.textContent     = 'Function1 is processing…';
-      }, 1400);
+        log.textContent = 'Function1 is doing stuff…';
+      }, 1200);
 
-      // 6) After a pause, prepare return value bubble at func
+      // 5) After “work” is done, animate return
       setTimeout(() => {
-        result.textContent   = '"Result"';
-        result.style.left    = (func.offsetLeft + func.offsetWidth - 20) + 'px';
-        result.style.top     = (func.offsetTop - 20) + 'px';
-        result.style.opacity = 1;
-        log.textContent      = 'Function1 returns "Result"';
-        arrow.textContent    = '⟵';
-      }, 2000);
+        log.textContent = 'Function1 returns "Result" to Main()';
+        // small back-arrow effect
+        arrow.textContent = '⟵';
+        arrow.style.left  = (func.offsetLeft + func.offsetWidth - 20) + 'px';
+      }, 2500);
 
-      // 7) Animate result traveling back toward Main
+      // 6) Move arrow back to Main
       setTimeout(() => {
-        const returnX = main.offsetLeft + main.offsetWidth;
-        result.style.left = returnX + 'px';
-        arrow.style.left  = returnX + 'px';
-      }, 2200);
+        arrow.style.left  = (main.offsetLeft + main.offsetWidth) + 'px';
+      }, 2600);
 
-      // 8) Hide arrow & result, finish log
+      // 7) Fade arrow out and show final state
       setTimeout(() => {
-        arrow.style.opacity  = 0;
-        result.style.opacity = 0;
-        arrow.textContent    = '➔'; // reset arrow
-        log.textContent      = 'Main() received result "Result"';
-      }, 3200);
+        arrow.style.opacity = 0;
+        log.textContent     = 'Main() received result "Result"';
+        arrow.textContent   = '➔'; // reset arrow direction
+      }, 3800);
     });
-  </script>
+</script>
