@@ -48,7 +48,9 @@ navbar-links:
     - תרגול 7.2: "/cs2/Chapter7Ex7.2"
     - פרק 7 מקוצר: "/cs2/Chapter7"
 
-  חיצוני מדמח:
+  חיצוני:
+    - אתר מבני נתונים: "https://מבני.שלי.com"
+    - אתר מתמטיקה: "https://מתמטיקה.com"
     - מכתב 503 (מסמך קישורים): https://docs.google.com/document/d/1pzqtdzM2CrUpjx7KYljAHM5lbd1IGOhGfL5ju7XnJVY/edit?usp=sharing
     - קמפוס יסודות: "https://courses.campus.gov.il/courses/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/course/"
 
