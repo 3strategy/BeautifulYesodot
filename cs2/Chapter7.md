@@ -6,6 +6,55 @@ author: גיא סידס
 lang: he
 ---
 
+<head>
+  <style>
+    .box {
+      width: 180px;
+      height: 60px;
+      border: 2px solid #333;
+      border-radius: 6px;
+      text-align: center;
+      line-height: 60px;
+      position: absolute;
+      background: #f9f9f9;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    #main { top: 40px; left: 40px; }
+    #func { top: 40px; right: 40px; }
+    #arrow {
+      position: absolute;
+      top: 70px;
+      font-size: 2rem;
+      opacity: 0;
+      transition: left 1s ease, opacity 0.5s ease;
+    }
+    .bubble {
+      position: absolute;
+      padding: 4px 8px;
+      background: #eef;
+      border: 1px solid #99c;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: left 1s ease, top 1s ease, opacity 0.5s ease;
+      pointer-events: none;
+    }
+    #log {
+      position: absolute;
+      bottom: 20px;
+      left: 40px;
+      right: 40px;
+      font-style: italic;
+      color: #555;
+    }
+    #start {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+    }
+  </style>
+</head>
+
 {: .box-note}
 **הערה:** חלק מהמורים מלמדים פונקציות מוקדם יותר – כבר לאחר לולאת `for` ולפני לולאת `while` או אפילו לפני `for`. עם זאת, בסילבוס זה הוחלט ללמד פונקציות רק לאחר לולאות `for`, `while` ולולאות מקוננות, כחלק משלב חשיבה אלגוריתמי מתקדם. אומנם אישית אני ממליץ ללמד פונקציות מוקדם יותר, אך נתיישר עם הסילבוס ונציג את הפרק בהמשך לפרק 6.
 
