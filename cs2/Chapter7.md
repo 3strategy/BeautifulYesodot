@@ -22,18 +22,17 @@ lang: he
       background: #f9f9f9;
       box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
     }
-    #main { left: 40px; }
-    #func { right: 40px; }
+    #main { top: 40px; left: 40px; }
+    #func { top: 40px; right: 40px; }
     #arrow {
-    position: absolute;    /* position absolutely inside #anim-container */
-    top: 70px;             /* 70px down from the top of the container, not the page */
-    left: 0;               /* JS will override this on start */
-    font-size: 2rem;
-    opacity: 0;
-    transition: left 1s ease, opacity 0.5s ease;
+      position: absolute;
+      top: 70px;
+      font-size: 2rem;
+      opacity: 0;
+      transition: left 1s ease, opacity 0.5s ease;
     }
     .bubble {
-      position: relative;
+      position: absolute;
       padding: 4px 8px;
       background: #eef;
       border: 1px solid #99c;
@@ -44,7 +43,7 @@ lang: he
       pointer-events: none;
     }
     #log {
-      position: relative;
+      position: absolute;
       bottom: 20px;
       left: 40px;
       right: 40px;
@@ -52,7 +51,7 @@ lang: he
       color: #555;
     }
     #start {
-      position: relative;
+      position: absolute;
       bottom: 20px;
       right: 40px;
     }
