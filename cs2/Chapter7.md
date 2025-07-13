@@ -45,6 +45,8 @@ public static void SumEven100()
 ```
 </details>
 
+---
+
 <details open markdown="1"><summary>תרשים זרימה של קריאה ל-3 פונקציות</summary>
 
 <div class="mermaid">
@@ -68,6 +70,8 @@ flowchart TD
 </div>
 
 </details>
+
+
 
 ## 7.2 פונקציות עם פרמטרים
 
@@ -113,9 +117,110 @@ public static void SayHello(string userName)
 {
     Console.WriteLine($"שלום, {userName}!");
 }
-```</details>
+```
+
+</details>
+
+
+---
+
+
+<details open markdown="1"><summary>אנימציה: העברת פרמטרים לפונקציה</summary>
+
+<div>
+
+  <div id="main" class="box">Main()</div>
+  <div id="func" class="box">
+    Function1(<span id="num"></span>, <span id="name"></span>)
+  </div>
+
+  <div id="arrow">➔</div>
+  <div id="param" class="bubble">( … )</div>
+  <div id="result" class="bubble">…</div>
+
+  <div id="log">Click “Start” to see the call.</div>
+  <button id="start">Start Animation</button>
+
+
+
+
+</div>
+
+</details>
+
 
 ### סיכום הביניים
 
 בפרקים 7.1–7.2 למדנו להגדיר פונקציות מסוג `void` ללא פרמטרים ועם פרמטרים. בפונקציות אלה ניתן לאגד קוד חוזר, לשפר קריאות ולהפוך את הקוד לגמיש יותר. בפונקציות הבאות (פרק 7.3) נלמד על פונקציות שמחזירות ערך (`return`), כולל טיפוסי ערך בסיסיים ובוליאני.
 
+  <script>
+    const main   = document.getElementById('main');
+    const func   = document.getElementById('func');
+    const arrow  = document.getElementById('arrow');
+    const param  = document.getElementById('param');
+    const result = document.getElementById('result');
+    const log    = document.getElementById('log');
+    const btn    = document.getElementById('start');
+    const numArg = document.getElementById('num');
+    const nameArg= document.getElementById('name');
+
+    btn.addEventListener('click', () => {
+      // 1) Prepare function signature and param bubble
+      numArg.textContent  = '42';
+      nameArg.textContent = '"Alice"';
+      param.textContent  = '(42, "Alice")';
+      log.textContent    = 'Main() → calling Function1';
+
+      // 2) Fade in arrow and param at Main edge
+      const startX = main.offsetLeft + main.offsetWidth;
+      arrow.style.left   = startX + 'px';
+      arrow.style.opacity= 1;
+      param.style.left   = startX + 'px';
+      param.style.top    = (main.offsetTop - 20) + 'px';
+      param.style.opacity= 1;
+
+      // 3) Animate param traveling into Function1’s parentheses
+      setTimeout(() => {
+        const endParamX = func.offsetLeft + 80;  // roughly over the '(' inside func box
+        const endParamY = func.offsetTop + 10;
+        param.style.left = endParamX + 'px';
+        param.style.top  = endParamY + 'px';
+      }, 200);
+
+      // 4) Arrow follows shortly after
+      setTimeout(() => {
+        arrow.style.left = (func.offsetLeft - 30) + 'px';
+      }, 600);
+
+      // 5) When param arrives, “consume” it into Function1
+      setTimeout(() => {
+        param.style.opacity = 0;
+        log.textContent     = 'Function1 is processing…';
+      }, 1400);
+
+      // 6) After a pause, prepare return value bubble at func
+      setTimeout(() => {
+        result.textContent   = '"Result"';
+        result.style.left    = (func.offsetLeft + func.offsetWidth - 20) + 'px';
+        result.style.top     = (func.offsetTop - 20) + 'px';
+        result.style.opacity = 1;
+        log.textContent      = 'Function1 returns "Result"';
+        arrow.textContent    = '⟵';
+      }, 2000);
+
+      // 7) Animate result traveling back toward Main
+      setTimeout(() => {
+        const returnX = main.offsetLeft + main.offsetWidth;
+        result.style.left = returnX + 'px';
+        arrow.style.left  = returnX + 'px';
+      }, 2200);
+
+      // 8) Hide arrow & result, finish log
+      setTimeout(() => {
+        arrow.style.opacity  = 0;
+        result.style.opacity = 0;
+        arrow.textContent    = '➔'; // reset arrow
+        log.textContent      = 'Main() received result "Result"';
+      }, 3200);
+    });
+  </script>
