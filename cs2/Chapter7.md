@@ -45,6 +45,7 @@ lang: he
     }
     #log {
       position: absolute;
+      direction: LTR;
       text-align:left;
       bottom: 150px;
       left: 40px;
@@ -185,7 +186,8 @@ public static void SayHello(string userName)
 
   <div id="main" class="box">Main(int[] args)
   &lbrace;
-  &nbsp;&nbsp;Function1(42,"alice")</div>
+  &nbsp;&nbsp;Function1(42,"alice");
+  &rbrace;</div>
   <div id="func" class="box">
     Function1(<span id="num">int a</span>, <span id="name">string name</span>)
   </div>
