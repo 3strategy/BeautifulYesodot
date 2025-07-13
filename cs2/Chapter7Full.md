@@ -742,7 +742,7 @@ $$
       setTimeout(() => {
         const returnX = main.offsetLeft + main.offsetWidth;
         result.style.left = main.offsetLeft + 30 + 'px';
-        result.style.top = 3 +'em';
+        result.style.top = 6 +'em';
         arrow.style.left  = returnX + 'px';
       }, 2200);
 
@@ -750,6 +750,7 @@ $$
       setTimeout(() => {
         arrow.style.opacity  = 0;
         result.style.opacity = 0;
+        result.style.left    = (func.offsetLeft + func.offsetWidth - 20) + 'px';
         arrow.textContent    = '➔'; // reset arrow
 
         numArg.textContent  = 'int a';
