@@ -21,14 +21,14 @@ lang: he
 | ה. מחרוזת המכילה תוכן של קובץ מסוים במחשב         |        |
 {: .table-rl}
 
+---
+
 <details markdown="1"><summary>פתרון</summary>
 
 
 | החישוב הדרוש                                       | כותרת הפעולה                                      |
 |----------------------------------------------------|---------------------------------------------------|
-| א. חישוב ההפרש בין שני גבהים                      | ```csharp
-int HeightDifference(int height1, int height2)
-```  |
+| א. חישוב ההפרש בין שני גבהים                      | `csharp int HeightDifference(int height1, int height2)`  |
 | ב. חישוב מספר הספרות שיש למספר נתון              | `int CountDigits(int number)`                     |
 | ג. בדיקה האם המספר a מתחלק ב-b באופן שלם         | `bool IsDivisible(int a, int b)`                  |
 | ד. בדיקה האם המספר השלישי הוא ממוצע של שני הראשונים | `bool IsAverageOf(int first, int second, int third)` |
