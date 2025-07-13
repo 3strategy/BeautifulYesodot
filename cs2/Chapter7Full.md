@@ -628,10 +628,11 @@ $$
             return num1 * num2;
         else if (oprtr == '/')
             return Math.Round(num1 / num2, 3);
-        Console.WriteLine("\ninvalid opertaion");
+        WriteInColor("\ninvalid opertaion", ConsoleColor.Red);
         return 0;
     }
 
+    // פונקציה שיודעת לקלוט כפי צריך כולל בקשת קלט והודעות שגיאה
     public static T Input<T>(string inputRequest = "Please enter a", string invalidFeedback = null)
     {
         try
@@ -648,16 +649,19 @@ $$
         {
             if (invalidFeedback == null)
                 invalidFeedback = $"Your input type was not a valid {typeof(T)}\n";
-            WriteInColor(invalidFeedback, ConsoleColor.Red, Console.ForegroundColor);
+            WriteInColor(invalidFeedback, ConsoleColor.Red);
             return Input<T>(inputRequest, invalidFeedback);
         }
     }
 
-    public static void WriteInColor(string str, ConsoleColor color, ConsoleColor nextColor = ConsoleColor.White)
-    {
+    // פונקציה שמדפיסה בצבע
+    public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? nextColor = null)
+    { 
+        if (nextColor == null)
+            nextColor = Console.ForegroundColor; // use current color if not specified
         Console.ForegroundColor = color;
         Console.Write(str);
-        Console.ForegroundColor = nextColor;
+        Console.ForegroundColor = (ConsoleColor)nextColor;
     }
     ```
 
