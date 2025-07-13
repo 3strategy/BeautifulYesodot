@@ -11,54 +11,72 @@ lang: he
 
 תרגול בכתיבת פונקציות המקבלות קלט דרך פרמטרים ומבצעות חישובים או הדפסות.
 
-### 7.2.1 — זוגי או אי-זוגי?
+## 7.2.1 — זוגי או אי-זוגי?
 **מבוסס על 5.1.1**
 
-א. כתבו פונקציה `PrintEvenOrOdd(int n)` שמקבלת מספר `n` ומדפיסה `"n is even"` או `"n is odd"` בהתאם.
+{: .subq}
+א. כתבו פונקציה `PrintEvenOrOdd(int n)` המקבלת מספר שלם n ומדפיסה הודעה המציינת האם n הוא זוגי או אי-זוגי. למשל, עבור הקריאה PrintEvenOrOdd(13) תודפס ההודעה: 13 is odd.
 
-ב. כתבו `Main` הקולט מספר שלם אחד מהמשתמש וקורא לפונקציה עם הערך שהוזן.
+{: .subq}
+ב. כתבו פונקציה Main הקולטת מהמשתמש מספר שלם אחד, וקוראת לפונקציה שכתבתם כדי להציג את התוצאה. 
 
 <details markdown="1"><summary>אין פתרון</summary></details>
 
 ---
 
-### 7.2.2 — המקסימום מבין שלושה מספרים
+## 7.2.2 — המקסימום מבין שלושה מספרים
 **מבוסס על 4.3.4**
 
-א. כתבו פונקציה `PrintMax3(int a, int b, int c)` שמדפיסה `"Max is X"` כאשר `X` הוא הערך המקסימלי מבין `a,b,c`.
+{: .subq}
+א. כתבו פונקציה `PrintMax3(int a, int b, int c)` המדפיסה את הערך המקסימלי מבין שלושת המספרים a, b, c. לדוגמה, הקריאה `PrintMax3(7, -2, 7)` תדפיס: Max is 7.
 
-ב. כתבו `Main` הקולט שלושה מספרים וחותם לקריאה לפונקציה.
+{: .subq}
+ב. הוסיפו בתוכנית פונקציית Main שקולטת שלושה מספרים שלמים מהמשתמש, וקוראת ל-PrintMax3 עם שלושת הערכים שהוקלדו. 
 
 <details markdown="1"><summary>אין פתרון</summary></details>
 
 ---
 
-### 7.2.3 — הדפסת תו פעמים רבות
+## 7.2.3 — הדפסת תו פעמים רבות
 **מבוסס על דפוס PrintStars**
 
-כתבו פונקציה `PrintLine(char ch, int count)` שמדפיסה בשורה אחת את התו `ch` בדיוק `count` פעמים.
+{: .subq}
+א. צרו פונקציה `PrintLine(char ch, int count)` המקבלת תו (Character) ומספר שלם, ומדפיסה בשורה אחת את התו שהתקבל count פעמים. למשל, `PrintLine('#', 5)` תפיק את השורה: ####.
+
+{: .subq}
+ב. כתבו פונקציה Main שקוראת לפונקציה זו מספר פעמים, עם פרמטרים שונים לפי בחירתכם, להדגמת הפעולה (ניתן לבקש קלט מהמשתמש עבור התו ומספר הפעמים). 
 
 <details markdown="1"><summary>אין פתרון</summary></details>
 
 ---
 
-### 7.2.4 — משולש כוכביות גמיש
+## 7.2.4 — משולש כוכביות גמיש
 **מבוסס על 6.1.1 Pattern 4**
 
-כתבו פונקציה `PrintTriangle(int n)` שמדפיסה משולש כוכביות בן `n` שורות: שורה 1 עם כוכבית אחת, שורה 2 עם 2, ..., עד שורה `n` עם `n` כוכביות.
+כתבו פונקציה `PrintTriangle(int n)` המדפיסה משולש כוכביות בן n שורות. בשורה הראשונה יודפס כוכבית אחת, בשנייה 2, וכן הלאה עד לשורה ה-n שתכיל n כוכביות. לדוגמה, `PrintTriangle(4)` יפיק:
+
+```
+*  
+**  
+***  
+****  
+```
 
 <details markdown="1"><summary>אין פתרון</summary></details>
 
----
 
-### 7.2.5 — כל המחלקים של מספר
+## 7.2.5 — כל המחלקים של מספר
 **מבוסס על 5.2.3**
 
-כתבו פונקציה `PrintDivisors(int num)` שמקבלת מספר חיובי ומדפיסה את כל המחלקים החיוביים שלו, מופרדים ברווח.
+{: .subq}
+א. כתבו פונקציה `PrintDivisors(int num)` שמקבלת מספר שלם חיובי num ומדפיסה את כל המחלקים (divisors) החיוביים של num. למשל, עבור הקלט 28 הפלט יהיה: 1, 2, 4, 7, 14, 28 (ניתן להדפיס ברצף מופרד בפסיקים או בשורות נפרדות).
 
-<details markdown="1"><summary>פתרון</summary>
-```csharp
-public static void PrintDivisors(int num)
+{: .subq}
+ב. (אתגר) נסו לייעל את הפונקציה כך שלא תבצע איטרציות מיותרות מעבר לנדרש. 
+
+<details markdown="1"><summary>פתרון</summary> 
+
+{% highlight csharp linenos %}public static void PrintDivisors(int num)
 {
     for (int candidate = 1; candidate <= num; candidate++)
     {
@@ -67,5 +85,55 @@ public static void PrintDivisors(int num)
     }
     Console.WriteLine();
 }
-```</details>
 
+{% endhighlight %} 
+
+</details>
+
+
+
+## 7.2.6 - בדיקת מספר ראשוני
+
+{: .subq}
+א. כתבו פונקציה `public static void PrintIsPrime(int num)` המקבלת מספר שלם חיובי ובודקת האם הוא ראשוני. הפונקציה תדפיס הודעה מתאימה, למשל: 17 is prime או 18 is not prime.
+
+{: .subq}
+ב. הוסיפו בתוכנית פונקציית Main הקולטת מספר מהמשתמש, וקוראת לפונקציה שכתבתם כדי להציג את ההודעה המתאימה. 
+
+<details markdown="1"><summary>אין פתרון</summary></details>
+
+## 7.2.7 - סדרת פיבונאצ'י
+
+{: .subq}
+א. כתבו פונקציה `PrintFibonacci(int n)` שמקבלת מספר שלם חיובי n ומדפיסה את n האיברים הראשונים בסדרת פיבונאצ'י. סדרת פיבונאצ'י מתחילה בערכים 0, 1, וכל איבר לאחר מכן הוא סכום שני האיברים הקודמים לו. לדוגמה, עבור הקריאה `PrintFibonacci(8)` הפלט יהיה: 0 1 1 2 3 5 8 13.
+
+{: .subq}
+ב. צרו פונקציה Main הקולטת מהמשתמש מספר חיובי אחד, וקוראת ל-PrintFibonacci עם הערך שהוזן. 
+
+<details markdown="1"><summary>פתרון</summary> 
+
+{% highlight csharp linenos %}public static void PrintFibonacci(int n)
+{
+    int a = 0, b = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        Console.Write($" {a}");
+        int next = a + b;
+        a = b;
+        b = next;
+    }
+    Console.WriteLine();
+}
+{% endhighlight %} 
+
+</details>
+
+## 7.2.8 - הדפסת שם מספר פעמים
+כתבו פונקציה `PrintNameMultiple(string name, int times)` המקבלת שם (מחרוזת) ומספר שלם times, ומדפיסה את השם שהתקבל times פעמים ברצף אחד אחרי השני. למשל, הקריאה PrintNameMultiple("Noa", 3) תדפיס: Noa Noa Noa (באותה שורה או בשורות שונות - לפי החלטתכם). 
+
+<details markdown="1"><summary>אין פתרון</summary></details>
+
+## 7.2.9 - ממוצע ציונים
+פונקציה `PrintAverage(int grade1, int grade2, int grade3)` מקבלת שלושה ציונים (בין 0 ל-100) ומדפיסה את הממוצע שלהם. לדוגמה, PrintAverage(90, 85, 100) תדפיס: Average = 91.67 (אפשר לעגל את התוצאה לשני מקומות עשרוניים). כתבו את הפונקציה הנ"ל, והוסיפו תוכנית ראשית הקולטת שלושה ציונים מהמשתמש ומשתמשת בפונקציה כדי להציג את הממוצע. 
+
+<details markdown="1"><summary>אין פתרון</summary></details>
