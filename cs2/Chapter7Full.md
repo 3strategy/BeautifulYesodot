@@ -415,16 +415,7 @@ $$
 \quad
 \overbrace{\text{IsPrime}}^{\text{שם הפונקציה}}
 \quad
-\overbrace{\bigl(\,\text{int }n\bigr)}^{\text{פרמטרים}}\\
-
-
-\overbrace{\text{public static}}^{\text{מודיפיירים}}
-\quad
-\overbrace{\text{bool}}^{\text{סוג החזרה}}
-\quad
-\overbrace{\text{IsPrime}}^{\text{שם הפונקציה}}
-\quad
-\overbrace{\bigl(\,\text{int }n\ \underbrace{= -1}_{\text{\scriptsize ערך ברירת מחדל}}\bigr)}^{\text{פרמטרים}}
+\overbrace{\bigl(\,\text{int }n\ \underbrace{ = -1}_{\text{ערך ברירת מחדל}}\bigr)}^{\text{פרמטרים}}
 $$
 
 
@@ -752,8 +743,8 @@ $$
       // 7) Animate result traveling back toward Main
       setTimeout(() => {
         const returnX = main.offsetLeft + main.offsetWidth;
-        result.style.left = main.offsetLeft + 50 + 'px';
-        result.style.top = 6.2 +'em';
+        result.style.left = 4.5 + 'em';
+        result.style.top = 5.8 +'em';
         arrow.style.left  = returnX + 'px';
       }, 2200);
 
