@@ -705,13 +705,13 @@ $$
       arrow.style.left   = startX + 'px';
       arrow.style.opacity= 1;
       param.style.left   = startX + 'px';
-      param.style.top    = (main.offsetTop - 20) + 'px';
+      param.style.top    = (main.offsetTop - 50) + 'px';
       param.style.opacity= 1;
 
       // 3) Animate param traveling into Function1’s parentheses
       setTimeout(() => {
-        const endParamX = func.offsetLeft + 100;  // roughly over the '(' inside func box
-        const endParamY = func.offsetTop + 50;
+        const endParamX = func.offsetLeft + 200;  // roughly over the '(' inside func box
+        const endParamY = func.offsetTop +5;
         param.style.left = endParamX + 'px';
         param.style.top  = endParamY + 'px';
       }, 200);
