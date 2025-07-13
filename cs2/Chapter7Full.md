@@ -475,7 +475,7 @@ public static void SayHello(string userName)
         Console.WriteLine($"{n1} {action} {n2} = {Calc(n1, n2, action)}");
     }
 
-    static double Calc(double num1, double num2, char oprtr)
+    public static double Calc(double num1, double num2, char oprtr)
     {
         // הפונקציה מקבלת שני מספרים ופעולה ומחזירה את התוצאה
         // היא לא מתעסקת בענייני קלט ופלט
@@ -486,13 +486,12 @@ public static void SayHello(string userName)
         else if (oprtr == '*')
             return num1 * num2;
         else if (oprtr == '/')
-            return num1 / num2;
+            return Math.Round(num1 / num2, 3);
         Console.WriteLine("\ninvalid opertaion");
         return 0;
     }
 
-
-    static T Input<T>(string inputRequest = "Please enter a", string invalidFeedback = null)
+    public static T Input<T>(string inputRequest = "Please enter a", string invalidFeedback = null)
     {
         try
         {
@@ -512,7 +511,6 @@ public static void SayHello(string userName)
             return Input<T>(inputRequest, invalidFeedback);
         }
     }
-
 
     public static void WriteInColor(string str, ConsoleColor color, ConsoleColor nextColor = ConsoleColor.White)
     {
