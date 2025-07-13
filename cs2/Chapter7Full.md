@@ -742,7 +742,7 @@ $$
       setTimeout(() => {
         const returnX = main.offsetLeft + main.offsetWidth;
         result.style.left = main.offsetLeft + 30 + 'px';
-        result.style.top = 3em;
+        result.style.top = 3 +'em';
         arrow.style.left  = returnX + 'px';
       }, 2200);
 
