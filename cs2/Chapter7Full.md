@@ -311,20 +311,17 @@ public static void SayHello(string userName)
 <details markdown="1">
 <summary>הכח של DRY (Don't Repeat Yourself)</summary>
 
-
 ניקח כדוגמא את השאלה הבאה שפתרנו כבר:
 עליכם לכתוב תוכנית שקולטת מהמשתמש 2 מספרים שלמים ותו.
 התוכנית תדפיס את הביטוי החשבוני ואת תוצאת החישוב שמתקבל בהתאם לתו שנקלט.
 לדוגמה: 
-- עבור המספרים 2,3 והתן '+' התוכנית תדפיס: 5 = 2+3 
-- עבור המספרים 2,3 והתן '^' התוכנית תדפיס: 8 = 3^2
-- עבור המספרים 6,3 והתן '/' התוכנית תדפיס: 2 = 6/3
+- עבור המספרים 2,3 והתו '+' התוכנית תדפיס: 5 = 2+3 
+- עבור המספרים 2,3 והתו '^' התוכנית תדפיס: 8 = 3^2
+- עבור המספרים 6,3 והתו '/' התוכנית תדפיס: 2 = 6/3
 
-    פתרון השאלה נראה כך:
-
+- פתרון השאלה נראה כך:
     <details open markdown="1">
     <summary>פתרון</summary>
-
     {% highlight csharp linenos %}static void MainCalc()
     {
         int num1, num2;
@@ -347,9 +344,7 @@ public static void SayHello(string userName)
             Console.WriteLine($"{num1} / {num2} = {Math.Round(((double)num1 / num2), 2)} ");
         else if (oprtr == '^')
             Console.WriteLine($" {num1} ^ {num2} = {Math.Pow(num1, num2)}");
-    }
-    {% endhighlight %}    
-
+    }{% endhighlight %}
     </details>
 
 ## נניח כעת שהשאלה מסתבכת טיפה **ונוספות דרישות:**
@@ -364,7 +359,6 @@ public static void SayHello(string userName)
     פתרון השאלה יראה כך:
 
     <details open markdown="1"><summary>פתרון</summary>
-
     {% highlight csharp linenos %}static void MainCalc1()
     {
         int num1;
@@ -447,9 +441,7 @@ public static void SayHello(string userName)
         }
         //כ-80 שורות עם 3 קטעים מסיביים שחוזרים על עצמם ועושים בדיוק אותו דבר
         Console.ResetColor(); // restore default colours
-    } 
-    {% endhighlight %} 
-
+    }{% endhighlight %} 
     </details>
 
     {: .box-note}
