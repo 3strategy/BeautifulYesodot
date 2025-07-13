@@ -613,10 +613,10 @@ $$
         int n1 = Input<int>(); // קריאה לפונקציית קלט גנרית
         double n2 = Input<double>();
         char action = Input<char>("Please enter operation +-/*: ");
-        Console.WriteLine($"{n1} {action} {n2} = {Calc(n1, n2, action)}");
+        Console.WriteLine($"{n1} {action} {n2} = {Calc(n1, action, n2)}");
     }
 
-    public static double Calc(double num1, double num2, char oprtr)
+    public static double Calc(double num1, char oprtr = '+', double num2 = 0)
     {
         // הפונקציה מקבלת שני מספרים ופעולה ומחזירה את התוצאה
         // היא לא מתעסקת בענייני קלט ופלט
@@ -656,15 +656,55 @@ $$
 
     // פונקציה שמדפיסה בצבע
     public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? nextColor = null)
-    { 
+    {
         if (nextColor == null)
             nextColor = Console.ForegroundColor; // use current color if not specified
         Console.ForegroundColor = color;
         Console.Write(str);
         Console.ForegroundColor = (ConsoleColor)nextColor;
+    }   
+    ```
+
+
+
+    </details>
+
+    <details><summary>הסבר על פונקציות גנריות</summary>
+    פונקציה גנרית היא פונקציה שבה מגדירים פרמטר טיפוס (לרוב `T`) כברירת מחדל – כך שמי שקורא לה יכול לציין באיזה טיפוס להשתמש בקריאה, וזה גם קובע את טיפוס הערך שזו תחזיר.
+
+    ```csharp
+    static T Identity<T>(T value) {
+    return value;
     }
     ```
 
+    **דוגמאות לקריאה:**
+    - `Identity<int>(5)` מחזירה `int`
+    - `Identity<string>("שלום")` מחזירה `string`
+
+    {: .box-success}
+    פונקציות גנריות אינן חלק מתכנית הלימודים של כיתה יוד, אך **הן בשימוש נרחב בכיתה יא'**. גם ביא' תלמידים לא ידרשו לדעת לכתוב פונקציות גנריות, אך ידרשו להשתמש בהן.
+
+    </details>
+
+    <details><summary>הערה על פרמטרים אופציונליים ועל nullable types</summary>
+
+    פרמטרים אופציונליים מקבלים ערך ברירת מחדל (`= value`), ולכן אינם חייבים לעבור בפועל בעת הקריאה.\
+    - **הם חייבים להיות בסוף רשימת הפרמטרים** כדי שזיהוי הערכים יהיה ברור: אחרת, ללא named arguments, לא נוכל להבין מי זה מי בין הפרמטרים.
+    - **אפשרות נוספת:** ניתן לדלג על פרמטר אופציונלי באמצע הרשימה על־ידי שימוש ב־named arguments ו–\
+        למשל: `double res = Calc(3, num2: 5);` תשתמש ב–`oprtr = '+'` כברירת מחדל. אנחנו סיפקנו את הפרמטר האופציונאלי השני.
+    - **השימוש ב־nullable type** (`ConsoleColor?`) בפונקציה שלהלן, מאפשר לקבוע `null` כערך ברירת מחדל, וכך לבדוק האם המשתמש העלים את הפרמטר.
+        אם הוא `null` – נוכל להחליט בתוך הפונקציה מה תהיה ברירת המחדל, כאן: הצבע הנוכחי. לא ניתן היה לבצע קביעה דינמית כזו של ערך ברירת מחדל, בתוך שורת הפרמטרים
+        ```csharp
+        public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? nextColor = null)
+        {
+            if (nextColor == null)
+                nextColor = Console.ForegroundColor; // משתמשים בצבע הנוכחי אם לא צויין אחרת
+            Console.ForegroundColor = color;
+            Console.Write(str);
+            Console.ForegroundColor = (ConsoleColor)nextColor;
+        }
+        ```
     </details>
 
 </details>
