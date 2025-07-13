@@ -80,222 +80,9 @@ flowchart TD
 ## סיכום:
 פונקציות הן אבני בניין בסיסיות בתכנות מודרני המאפשרות כתיבת קוד **DRY** (Don't Repeat Yourself) תוך **חלוקת התוכנה לחלקים הגיוניים**. באמצעות פונקציות נוכל לבנות תוכניות מורכבות באופן מדורג: נפתח ונבדוק כל פונקציה בנפרד, ואז נשלב אותן יחד לפתרון הבעיה הכללית. בפונקציות נשתמש שוב ושוב לאורך התכנות - הן כלי עוצמתי בהפחתת סיבוכיות התוכנה ושיפור הקריאות והתחזוקה שלה.
 
- </details>
-
-<details markdown="1"><summary>הכח של DRY (Don't Repeat Yourself)</summary>
-
-## הכח של DRY:
-ניקח כדוגמא את השאלה הבאה שפתרנו כבר:
-עליכם לכתוב תוכנית שקולטת מהמשתמש 2 מספרים שלמים ותו.
-התוכנית תדפיס את הביטוי החשבוני ואת תוצאת החישוב שמתקבל בהתאם לתו שנקלט.
-לדוגמה: 
-- עבור המספרים 2,3 והתן '+' התוכנית תדפיס: 5 = 2+3 
-- עבור המספרים 2,3 והתן '^' התוכנית תדפיס: 8 = 3^2
-- עבור המספרים 6,3 והתן '/' התוכנית תדפיס: 2 = 6/3
-
-    פתרון השאלה נראה כך:
-    <details open markdown="1"><summary>פתרון</summary>
-    
-        {% highlight csharp linenos %}static void MainCalc()
-        {
-            int num1, num2;
-            char oprtr;
-
-            Console.Write("Enter first number ");
-            num1 = int.Parse(Console.ReadLine());
-            Console.Write("Enter second number ");
-            num2 = int.Parse(Console.ReadLine());
-            Console.Write("Enter operator ");
-            oprtr = char.Parse(Console.ReadLine());
-
-            if (oprtr == '+')
-                Console.WriteLine($"{num1} + {num2} = {num1 + num2} ");
-            else if (oprtr == '-')
-                Console.WriteLine($"{num1} - {num2} = {num1 - num2} ");
-            else if (oprtr == '*')
-                Console.WriteLine($"{num1} * {num2} = {num1 * num2} ");
-            else if (oprtr == '/')
-                Console.WriteLine($"{num1} / {num2} = {Math.Round(((double)num1 / num2), 2)} ");
-            else if (oprtr == '^')
-                Console.WriteLine($" {num1} ^ {num2} = {Math.Pow(num1, num2)}");
-        }
-        {% endhighlight %}
-
-    </details>
-
-## נניח כעת שהשאלה מסתבכת טיפה **ונוספות דרישות:**
-עליכם לכתוב תוכנית שקולטת מהמשתמש 2 מספרים שלמים ותו.
-התוכנית תדפיס את הביטוי החשבוני ואת תוצאת החישוב שמתקבל בהתאם לתו שנקלט. 
-**יש לעמוד בנוסף בדרישות הבאות:**
-- בשלב הפנייה לקלט יש להדפיס בירוק
-- בזמן שהמשתמש מקליד יש לקלוט בצבע צהוב
-- יש לכתוב בתבנית הבודקת את תקינות הקלט
-- במידה שיש טעות בקלט יש להדפיס הודעה מתאימה באדום ולחזור לבצע קלט
-
-    פתרון השאלה יראה כך:
-
-    <details open markdown="1"><summary>פתרון</summary>
-
-        {% highlight csharp linenos %}static void MainCalc1()
-        {
-            int num1;
-            while (true)
-            {
-
-                Console.ForegroundColor = ConsoleColor.Green; // prompt in green
-                Console.Write("Please enter an integer: ");
-                Console.ForegroundColor = ConsoleColor.Yellow;                 // user types in yellow
-                string input1 = Console.ReadLine();
-                Console.ForegroundColor = ConsoleColor.White;
-
-                if (int.TryParse(input1, out num1))
-                {
-                    break; // valid, exit loop
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red; // error in red, then retry
-                    Console.WriteLine("Invalid integer. Please try again.");
-                }
-            }
-
-            double num2;
-            while (true) // --- Read second number (double) ---
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("Please enter a double: ");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                string input2 = Console.ReadLine();
-                Console.ForegroundColor = ConsoleColor.White;
-
-                if (double.TryParse(input2, out num2))
-                {
-                    break;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Invalid double. Please try again.");
-                }
-            }
-
-            // --- Read operator ---
-            char oprtr;
-            while (true)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("Please enter operation (+, -, *, /): ");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                string opInput = Console.ReadLine();
-                Console.ForegroundColor = ConsoleColor.White;
-
-                if (char.TryParse(opInput, out oprtr) &&
-                    (oprtr == '+' || oprtr == '-' || oprtr == '*' || oprtr == '/'))
-                {
-                    break;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Invalid operator. Must be +, -, * or /.");
-                }
-            }
-
-            // --- Do the calculation inline ---
-            Console.ForegroundColor = ConsoleColor.White;
-            if (oprtr == '+')
-                Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
-            else if (oprtr == '-')
-                Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
-            else if (oprtr == '*')
-                Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
-            else if (oprtr == '/')
-            {
-                if (num2 != 0)
-                    Console.WriteLine($"{num1} / {num2} = {Math.Round((double)num1 / num2, 2)}");
-                else
-                    Console.WriteLine("Cannot divide by zero.");
-            }
-            //כ-80 שורות עם 3 קטעים מסיביים שחוזרים על עצמם ועושים בדיוק אותו דבר
-            Console.ResetColor(); // restore default colours
-        } 
-        {% endhighlight %} 
-
-    </details>
-
-> **מסקנות** {: .box-note}
->
-> * שלושה בלוקים נפרדים של `while(true)`, אחד עבור כל קלט.
-> * פיזור רב של שינויי צבע סביב כל בקשה לקלט, קריאת הקלט וטיפול בשגיאות.
-> * ניתוח נתונים בתוך הקוד (inline parsing) באמצעות `TryParse` והצגת הודעות שגיאה.
-> * כל לוגיקת החישוב מוטמעת בתוך `Main` במקום פונקציה נפרדת לשימוש חוזר.
->
-> ההכרזות הכפולות והקוד הרב־שכבתיות הללו ממחישות היטב מדוע כדאי להשתמש בפונקציות, ואפילו יותר — בעזר **גנרי** כמו `Input<T>()` — כדי לצמצם כפילויות ולשפר את קריאות הקוד.
-
-## כך תיראה השאלה בכתיבה תוך פיצול לפונצקיות
-
-{% highlight csharp linenos %}public static void MainCalc2() 
-{
-    // נדמה שהפתרון כתוב בראשי פרקים
-    int n1 = Input<int>(); // קריאה לפונקציית קלט גנרית
-    double n2 = Input<double>();
-    char action = Input<char>("Please enter operation +-/*: ");
-    Console.WriteLine($"{n1} {action} {n2} = {Calc(n1, n2, action)}");
-}
-
-static double Calc(double num1, double num2, char oprtr)
-{
-    // הפונקציה מקבלת שני מספרים ופעולה ומחזירה את התוצאה
-    // היא לא מתעסקת בענייני קלט ופלט
-    if (oprtr == '+')
-        return num1 + num2;
-    else if (oprtr == '-')
-        return num1 - num2;
-    else if (oprtr == '*')
-        return num1 * num2;
-    else if (oprtr == '/')
-        return num1 / num2;
-    Console.WriteLine("\ninvalid opertaion");
-    return 0;
-}
+</details>
 
 
-static T Input<T>(string inputRequest = "Please enter a", string invalidFeedback = null)
-{
-    try
-    {
-        if (inputRequest == "Please enter a")
-        {
-            if (typeof(T) == typeof(int))
-                inputRequest = "Please enter an integer: ";
-            else if (typeof(T) == typeof(double))
-                inputRequest = "Please enter a double: ";
-            else if (typeof(T) == typeof(char))
-                inputRequest = "Please enter a char: ";
-            else if (typeof(T) == typeof(string))
-                inputRequest = "Please enter a string: ";
-            else
-                inputRequest = $"Please enter a {typeof(T)}: ";
-        }
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.Write(inputRequest);
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        string s = Console.ReadLine();
-        Console.ForegroundColor = ConsoleColor.White;
-        return (T)Convert.ChangeType(s, typeof(T));
-    }
-    catch (Exception)
-    {
-        if (invalidFeedback == null)
-            invalidFeedback = $"Your input type was not a valid {typeof(T)}";
-        var oldColor = Console.ForegroundColor;
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine(invalidFeedback);
-        Console.ForegroundColor = oldColor;
-        return Input<T>(inputRequest, invalidFeedback);
-    }
-}
-{% endhighlight %} 
 
 
 ## הגדרת פונקציה ב-#C:
@@ -518,6 +305,198 @@ public static void SayHello(string userName)
 
 ### סיכום ביניים
 בחלקים 7.1-7.2 למדנו כיצד להגדיר פונקציות ללא ערך חזרה: פונקציות המבצעות פעולה (כגון חישוב או הדפסה) ואינן מחזירות נתון חזרה למקום הקריאה. ראינו דוגמאות לפונקציות ללא פרמטרים ועם פרמטרים, והדגשנו את היתרון בגמישות שמקנה העברת פרמטרים. בשלב זה כל הפונקציות שהגדרנו היו עם סוג החזרה void. בחלק הבא נרחיב את היכולת של פונקציות ונדון בפונקציות מחזירות ערך: כיצד פונקציה יכולה לחשב ולהחזיר תוצאה למי שקרא לה. זה יאפשר לנו לכתוב פונקציות כמו Max(a,b) שמחזירה את הגדול מבין שני מספרים, IsPrime(n) שמחזירה אמת/שקר אם המספר ראשוני, ועוד. 
+
+## הכח של DRY:
+
+<details markdown="1">
+<summary>הכח של DRY (Don't Repeat Yourself)</summary>
+
+
+ניקח כדוגמא את השאלה הבאה שפתרנו כבר:
+עליכם לכתוב תוכנית שקולטת מהמשתמש 2 מספרים שלמים ותו.
+התוכנית תדפיס את הביטוי החשבוני ואת תוצאת החישוב שמתקבל בהתאם לתו שנקלט.
+לדוגמה: 
+- עבור המספרים 2,3 והתן '+' התוכנית תדפיס: 5 = 2+3 
+- עבור המספרים 2,3 והתן '^' התוכנית תדפיס: 8 = 3^2
+- עבור המספרים 6,3 והתן '/' התוכנית תדפיס: 2 = 6/3
+
+    פתרון השאלה נראה כך:
+
+    <details open markdown="1">
+    <summary>פתרון</summary>
+    
+    {% highlight csharp linenos %}static void MainCalc()
+    {
+        int num1, num2;
+        char oprtr;
+
+        Console.Write("Enter first number ");
+        num1 = int.Parse(Console.ReadLine());
+        Console.Write("Enter second number ");
+        num2 = int.Parse(Console.ReadLine());
+        Console.Write("Enter operator ");
+        oprtr = char.Parse(Console.ReadLine());
+
+        if (oprtr == '+')
+            Console.WriteLine($"{num1} + {num2} = {num1 + num2} ");
+        else if (oprtr == '-')
+            Console.WriteLine($"{num1} - {num2} = {num1 - num2} ");
+        else if (oprtr == '*')
+            Console.WriteLine($"{num1} * {num2} = {num1 * num2} ");
+        else if (oprtr == '/')
+            Console.WriteLine($"{num1} / {num2} = {Math.Round(((double)num1 / num2), 2)} ");
+        else if (oprtr == '^')
+            Console.WriteLine($" {num1} ^ {num2} = {Math.Pow(num1, num2)}");
+    }
+    {% endhighlight %}
+
+    </details>
+
+## נניח כעת שהשאלה מסתבכת טיפה **ונוספות דרישות:**
+עליכם לכתוב תוכנית שקולטת מהמשתמש 2 מספרים שלמים ותו.
+התוכנית תדפיס את הביטוי החשבוני ואת תוצאת החישוב שמתקבל בהתאם לתו שנקלט. 
+**יש לעמוד בנוסף בדרישות הבאות:**
+- בשלב הפנייה לקלט יש להדפיס בירוק
+- בזמן שהמשתמש מקליד יש לקלוט בצבע צהוב
+- יש לכתוב בתבנית הבודקת את תקינות הקלט
+- במידה שיש טעות בקלט יש להדפיס הודעה מתאימה באדום ולחזור לבצע קלט
+
+    פתרון השאלה יראה כך:
+
+    <details open markdown="1"><summary>פתרון</summary>
+
+    {% highlight csharp linenos %}static void MainCalc1()
+    {
+        int num1;
+        while (true)
+        {
+
+            Console.ForegroundColor = ConsoleColor.Green; // prompt in green
+            Console.Write("Please enter an integer: ");
+            Console.ForegroundColor = ConsoleColor.Yellow;                 // user types in yellow
+            string input1 = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.White;
+
+            if (int.TryParse(input1, out num1))
+            {
+                break; // valid, exit loop
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red; // error in red, then retry
+                Console.WriteLine("Invalid integer. Please try again.");
+            }
+        }
+
+        double num2;
+        while (true) // --- Read second number (double) ---
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("Please enter a double: ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            string input2 = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.White;
+
+            if (double.TryParse(input2, out num2))
+            {
+                break;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Invalid double. Please try again.");
+            }
+        }
+
+        // --- Read operator ---
+        char oprtr;
+        while (true)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("Please enter operation (+, -, *, /): ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            string opInput = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.White;
+
+            if (char.TryParse(opInput, out oprtr) &&
+                (oprtr == '+' || oprtr == '-' || oprtr == '*' || oprtr == '/'))
+            {
+                break;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Invalid operator. Must be +, -, * or /.");
+            }
+        }
+
+        // --- Do the calculation inline ---
+        Console.ForegroundColor = ConsoleColor.White;
+        if (oprtr == '+')
+            Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
+        else if (oprtr == '-')
+            Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
+        else if (oprtr == '*')
+            Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
+        else if (oprtr == '/')
+        {
+            if (num2 != 0)
+                Console.WriteLine($"{num1} / {num2} = {Math.Round((double)num1 / num2, 2)}");
+            else
+                Console.WriteLine("Cannot divide by zero.");
+        }
+        //כ-80 שורות עם 3 קטעים מסיביים שחוזרים על עצמם ועושים בדיוק אותו דבר
+        Console.ResetColor(); // restore default colours
+    } 
+    {% endhighlight %} 
+
+    </details>
+
+    > **מסקנות** {: .box-note}
+    >
+    > * שלושה בלוקים נפרדים של `while(true)`, אחד עבור כל קלט.
+    > * פיזור רב של שינויי צבע סביב כל בקשה לקלט, קריאת הקלט וטיפול בשגיאות.
+    > * ניתוח נתונים בתוך הקוד (inline parsing) באמצעות `TryParse` והצגת הודעות שגיאה.
+    > * כל לוגיקת החישוב מוטמעת בתוך `Main` במקום פונקציה נפרדת לשימוש חוזר.
+    >
+    > ההכרזות הכפולות והקוד הרב־שכבתיות הללו ממחישות היטב מדוע כדאי להשתמש בפונקציות, ואפילו יותר — בעזר **גנרי** כמו `Input<T>()` — כדי לצמצם כפילויות ולשפר את קריאות הקוד.
+
+
+
+    ## כך תיראה השאלה בכתיבה תוך פיצול לפונקציות:
+
+    <details open markdown="1">
+    <summary>פתרון</summary>
+
+    {% highlight csharp linenos %}public static void MainCalc2() 
+    {
+        // נדמה שהפתרון כתוב בראשי פרקים
+        int n1 = Input<int>(); // קריאה לפונקציית קלט גנרית
+        double n2 = Input<double>();
+        char action = Input<char>("Please enter operation +-/*: ");
+        Console.WriteLine($"{n1} {action} {n2} = {Calc(n1, n2, action)}");
+    }
+
+    static double Calc(double num1, double num2, char oprtr)
+    {
+        // הפונקציה מקבלת שני מספרים ופעולה ומחזירה את התוצאה
+        // היא לא מתעסקת בענייני קלט ופלט
+        if (oprtr == '+')
+            return num1 + num2;
+        else if (oprtr == '-')
+            return num1 - num2;
+        else if (oprtr == '*')
+            return num1 * num2;
+        else if (oprtr == '/')
+            return num1 / num2;
+        Console.WriteLine("\ninvalid opertaion");
+        return 0;
+    }
+    {% endhighlight %} 
+
+    </details>
+
+</details>
 
 # איפה הפרק הבא??? וצריך לסיים את השאלות ולפצל החוצה.
 
