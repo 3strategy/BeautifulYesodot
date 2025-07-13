@@ -13,7 +13,7 @@ lang: he
     min-height: 400px; 
     }
     .box {
-      width: 250px;
+      width: 290px;
       height: 140px;
       border: 2px solid #333;
       border-radius: 6px;
@@ -188,10 +188,10 @@ public static void SayHello(string userName)
 
   <div id="main" class="box">Main(int[] args)
   &lbrace;
-  &nbsp;&nbsp;Function1(42,"alice");
+  &nbsp;&nbsp;int n = Function1(42,"alice");
   &rbrace;</div>
   <div id="func" class="box">
-    Function1(<span id="num">int a</span>, <span id="name">string name</span>)
+    int Function1(<span id="num">int a</span>, <span id="name">string name</span>)
   </div>
 
   <div id="arrow">➔</div>
@@ -260,11 +260,11 @@ public static void SayHello(string userName)
 
       // 6) After a pause, prepare return value bubble at func
       setTimeout(() => {
-        result.textContent   = '"Result"';
+        result.textContent   = '6';
         result.style.left    = (func.offsetLeft + func.offsetWidth - 20) + 'px';
         result.style.top     = (func.offsetTop - 20) + 'px';
         result.style.opacity = 1;
-        log.textContent      = 'Function1 returns "Result"';
+        log.textContent      = 'Function1 returns 6';
         arrow.textContent    = '⟵';
       }, 2000);
 
@@ -281,6 +281,8 @@ public static void SayHello(string userName)
         result.style.opacity = 0;
         arrow.textContent    = '➔'; // reset arrow
         param.textContent  = '(int a, string name)';
+        numArg.textContent  = 'int a';
+        nameArg.textContent = 'string name';
         log.textContent      = 'Main() received result "Result"';
       }, 3200);
     });
