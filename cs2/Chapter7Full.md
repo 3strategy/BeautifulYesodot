@@ -718,17 +718,19 @@ $$
         param.style.top  = endParamY + 'px';
       }, 200);
 
-      // 3b) Animate param traveling into Function1’s parentheses
-      setTimeout(() => {
-        numArg.textContent  = '42';
-        nameArg.textContent = '"Alice"';
-      }, 400);
-      
+
+
       // 4) Arrow follows shortly after
       setTimeout(() => {
         arrow.style.left = (func.offsetLeft - 30) + 'px';
       }, 600);
 
+      // 3b) Animate param traveling into Function1’s parentheses
+      setTimeout(() => {
+        numArg.textContent  = '42';
+        nameArg.textContent = '"Alice"';
+      }, 800);
+      
       // 5) When param arrives, “consume” it into Function1
       setTimeout(() => {
         param.style.opacity = 0;
