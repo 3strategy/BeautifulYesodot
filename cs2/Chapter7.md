@@ -10,6 +10,7 @@ lang: he
   <style>
     #anim-container {
     position: relative;    /* make this the coordinate system for everything inside */
+    min-height: 400px; 
     }
     .box {
       width: 180px;
