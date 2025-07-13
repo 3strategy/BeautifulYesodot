@@ -361,5 +361,11 @@ int %value;     // Special character ❌
 ## תרגול
 [⬅ עברו לתרגול 1.1 - משתנים קלט והשמה](/cs/Chapter1Ex1.1)
 
+[⬅ עברו לתרגול 1.2 על משתנים, קלט/פלט ופעולות חשבון בסיסיות](/cs/Chapter1Ex1.2)
+
+[⬅ עברו לתרגול 1.3 – תרגול מתקדם: חישובים, המרות וחסכונות](/cs/Chapter1Ex1.3)
+
+[⬅ עברו לתרגול 1.4 – שארית חלוקה](/cs/Chapter1Ex1.4)
+
 ## סרטונים
 [סרטוני פרק 1](https://youtube.com/playlist?list=PLw4P_RdfuzSirWjKrYrwudzauSKkwqC1z&si=7_UxQuHnK-BcW1k8){:target="_blank"}
