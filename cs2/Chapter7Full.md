@@ -710,10 +710,10 @@ $$
 
       // 3) Animate param traveling into Function1’s parentheses
       setTimeout(() => {
-        const endParamX = func.offsetLeft + 4;  // roughly over the '(' inside func box
-        const endParamY = func.offsetTop + 1;
-        param.style.left = endParamX + 'em';
-        param.style.top  = endParamY + 'em';
+        const endParamX = func.offsetLeft + 100;  // roughly over the '(' inside func box
+        const endParamY = func.offsetTop + 50;
+        param.style.left = endParamX + 'px';
+        param.style.top  = endParamY + 'px';
       }, 200);
 
       // 4) Arrow follows shortly after
