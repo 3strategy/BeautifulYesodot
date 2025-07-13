@@ -324,7 +324,7 @@ public static void SayHello(string userName)
 
     <details open markdown="1">
     <summary>פתרון</summary>
-    
+
     {% highlight csharp linenos %}static void MainCalc()
     {
         int num1, num2;
@@ -348,7 +348,7 @@ public static void SayHello(string userName)
         else if (oprtr == '^')
             Console.WriteLine($" {num1} ^ {num2} = {Math.Pow(num1, num2)}");
     }
-    {% endhighlight %}
+    {% endhighlight %}    
 
     </details>
 
@@ -452,14 +452,13 @@ public static void SayHello(string userName)
 
     </details>
 
-    > **מסקנות** {: .box-note}
-    >
-    > * שלושה בלוקים נפרדים של `while(true)`, אחד עבור כל קלט.
-    > * פיזור רב של שינויי צבע סביב כל בקשה לקלט, קריאת הקלט וטיפול בשגיאות.
-    > * ניתוח נתונים בתוך הקוד (inline parsing) באמצעות `TryParse` והצגת הודעות שגיאה.
-    > * כל לוגיקת החישוב מוטמעת בתוך `Main` במקום פונקציה נפרדת לשימוש חוזר.
-    >
-    > ההכרזות הכפולות והקוד הרב־שכבתיות הללו ממחישות היטב מדוע כדאי להשתמש בפונקציות, ואפילו יותר — בעזר **גנרי** כמו `Input<T>()` — כדי לצמצם כפילויות ולשפר את קריאות הקוד.
+    {: .box-note}
+    **מסקנות** 
+    - שלושה בלוקים נפרדים של `while(true)`, אחד עבור כל קלט.
+    - פיזור רב של שינויי צבע סביב כל בקשה לקלט, קריאת הקלט וטיפול בשגיאות.
+    - ניתוח נתונים בתוך הקוד (inline parsing) באמצעות `TryParse` והצגת הודעות שגיאה.
+    - כל לוגיקת החישוב מוטמעת בתוך `Main` במקום פונקציה נפרדת לשימוש חוזר.
+    - ההכרזות הכפולות והקוד הרב־שכבתיות הללו ממחישות היטב מדוע כדאי להשתמש בפונקציות, ואפילו יותר — בעזר **גנרי** כמו `Input<T>()` — כדי לצמצם כפילויות ולשפר את קריאות הקוד.
 
 
 
