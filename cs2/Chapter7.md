@@ -182,9 +182,9 @@ public static void SayHello(string userName)
 
 <div id="anim-container">
 
-  <div id="main" class="box">Main()</div>
+  <div id="main" class="box">Main(int[] args)</br>&lbrace;</br>&nbsp;&nbsp;Function1(42,"alice")</div>
   <div id="func" class="box">
-    Function1(<span id="num"></span>, <span id="name"></span>)
+    Function1(<span id="num">int a</span>, <span id="name">string name</span>)
   </div>
 
   <div id="arrow">➔</div>
