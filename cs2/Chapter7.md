@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "פרק 7 - פונקציות"
+title: "פרק 7 - פונקציות מקוצר"
 subtitle: "פישוט מבני הקוד בעזרת פעולות חוזרות"
 author: גיא סידס
 lang: he
@@ -8,6 +8,9 @@ lang: he
 
 <head>
   <style>
+    #anim-container {
+    position: relative;    /* make this the coordinate system for everything inside */
+    }
     .box {
       width: 180px;
       height: 60px;
@@ -22,11 +25,12 @@ lang: he
     #main { left: 40px; }
     #func { right: 40px; }
     #arrow {
-      position: relative;
-      top: 70px;
-      font-size: 2rem;
-      opacity: 0;
-      transition: left 1s ease, opacity 0.5s ease;
+    position: absolute;    /* position absolutely inside #anim-container */
+    top: 70px;             /* 70px down from the top of the container, not the page */
+    left: 0;               /* JS will override this on start */
+    font-size: 2rem;
+    opacity: 0;
+    transition: left 1s ease, opacity 0.5s ease;
     }
     .bubble {
       position: relative;
@@ -176,7 +180,7 @@ public static void SayHello(string userName)
 
 <details open markdown="1"><summary>אנימציה: העברת פרמטרים לפונקציה</summary>
 
-<div>
+<div id="anim-container">
 
   <div id="main" class="box">Main()</div>
   <div id="func" class="box">
