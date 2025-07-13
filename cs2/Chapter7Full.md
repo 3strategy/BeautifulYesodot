@@ -749,15 +749,14 @@ $$
         arrow.style.opacity  = 0;
         result.style.opacity = 0;
         arrow.textContent    = '➔'; // reset arrow
-        param.textContent  = '(int a, string name)';
+
         numArg.textContent  = 'int a';
         nameArg.textContent = 'string name';
         log.textContent      = 'Main() received result 6';
 
-        startX = main.offsetLeft + main.offsetWidth;
         arrow.style.left   = startX + 'px';
-        arrow.style.opacity= 1;
-        param.style.left   = startX + 'px';
+        
+        param.style.left   = main.offsetLeft + main.offsetWidth + 'px';
         param.style.top    = (main.offsetTop - 50) + 'px';
 
       }, 3200);
