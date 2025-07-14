@@ -65,16 +65,46 @@ lang: he
 א. כתבו פעולה המקבלת זוג מספרים שלמים. הפעולה תחזיר false אם המספרים שווים או קטנים מ-1. בכל מקרה אחר, אם המספר הראשון מתחלק (ללא שארית) במספר השני או אם המספר השני מתחלק (ללא שארית) במספר הראשון יוחזר true, אחרת false.
 
 {: .subq} 
-ב. כתבו תכנית ראשית הבודקת את הפעולה עבור 5 זוגות מספרים ומדפיסה הודעה מתאימה עבור כל זוג מספרים. 
+ב. העזרו בקוד המצורף לבדיקת הפעולה שכתבתם בסעיף א: התכנית בודקת עבור 5 זוגות מספרים ומדפיסה הודעה מתאימה עבור כל זוג מספרים. 
 ניתן כשנלמד מערכים להגדיר מערך ולהשתמש בלולאת foreach באופן הבא: 
 
 ```csharp
-var col = new (int, int)[] { (3, 5), (5, 15), (2, 5), (3, 6), (10, 5) };
-foreach (var pair in col)
+using System;
+using System.Diagnostics;
+
+class Program
 {
-    // call the function refering pair.Item1, pair.Item2
+    
+    // לכאן יש להעתיק את מימוש הפונקציה שכתבתם בסעיף א'
+    static bool CheckPair(int number1, int number2)
+    {
+        // מימוש הפונקציה שלכם...
+
+    }
+    static void Main()
+    {
+        // אוסף הזוגות לבדיקה: (מספר ראשון, מספר שני, התוצאה הצפויה)
+        var testPairs = new (int First, int Second, bool Expected)[]
+        {
+            (3, 5, false),
+            (5, 15, true),
+            (2, 5, false),
+            (3, 6, true),
+            (10, 5, true)
+        };
+
+        foreach (var (first, second, expected) in testPairs)
+        {
+            bool actual = CheckPair(first, second);    // קריאה לפונקציה מסעיף א׳
+            Debug.Assert(actual == expected,
+                $"test failed for ({first}, {second}): expected {expected}, actual {actual}");
+            Console.WriteLine($"({first}, {second}) -> expected: {expected}, actual: {actual}");
+        }
+    }
+
 }
 ```
+
 <!-- 
 ממתין למחרוזות
 # 7.3.3 חבר מושבעים
