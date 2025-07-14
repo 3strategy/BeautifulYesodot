@@ -10,16 +10,15 @@ lang: he
   <style>
     #anim-container {
     position: relative;    /* make this the coordinate system for everything inside */
-    min-height: 400px; 
+    min-height: 20em; 
     }
     .box {
-      width: 290px;
-      height: 140px;
+      width: 16em;
+      height: 10em;
       border: 2px solid #333;
       border-radius: 6px;
       direction: LTR;
       text-align:left;
-      line-height: 60px;
       position: absolute;
       background: var(--backs-col);
       box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
@@ -40,7 +39,7 @@ lang: he
       background: var(--backw-col);
       border: 1px solid #99c;
       border-radius: 4px;
-      font-size: 0.9rem;
+      font-size: 0.9em;
       opacity: 0;
       transition: left 1s ease, top 1s ease, opacity 0.5s ease;
       pointer-events: none;
@@ -227,9 +226,10 @@ public static void SayHello(string userName)
 
     btn.addEventListener('click', () => {
       // 1) Prepare function signature and param bubble
-      numArg.textContent  = '42';
-      nameArg.textContent = '"Alice"';
+
       param.textContent  = '(42, "Alice")';
+      param.textAlign = 'left';
+      param.direction = 'LTR';
       log.textContent    = 'Main() → calling Function1';
 
       // 2) Fade in arrow and param at Main edge
@@ -237,21 +237,29 @@ public static void SayHello(string userName)
       arrow.style.left   = startX + 'px';
       arrow.style.opacity= 1;
       param.style.left   = startX + 'px';
-      param.style.top    = (main.offsetTop - 20) + 'px';
+      param.style.top    = (main.offsetTop - 50) + 'px';
       param.style.opacity= 1;
 
       // 3) Animate param traveling into Function1’s parentheses
       setTimeout(() => {
-        const endParamX = func.offsetLeft + 80;  // roughly over the '(' inside func box
-        const endParamY = func.offsetTop + 10;
+        const endParamX = func.offsetLeft + 150;  // roughly over the '(' inside func box
+        const endParamY = func.offsetTop +5;
         param.style.left = endParamX + 'px';
         param.style.top  = endParamY + 'px';
       }, 200);
+
+
 
       // 4) Arrow follows shortly after
       setTimeout(() => {
         arrow.style.left = (func.offsetLeft - 30) + 'px';
       }, 600);
+
+      // 3b) Animate param traveling into Function1’s parentheses
+      setTimeout(() => {
+        numArg.textContent  = '42';
+        nameArg.textContent = '"Alice"';
+      }, 800);
 
       // 5) When param arrives, “consume” it into Function1
       setTimeout(() => {
@@ -272,7 +280,8 @@ public static void SayHello(string userName)
       // 7) Animate result traveling back toward Main
       setTimeout(() => {
         const returnX = main.offsetLeft + main.offsetWidth;
-        result.style.left = returnX + 'px';
+        result.style.left = 3.8 + 'em';
+        result.style.top = 5 +'em';
         arrow.style.left  = returnX + 'px';
       }, 2200);
 
@@ -280,11 +289,18 @@ public static void SayHello(string userName)
       setTimeout(() => {
         arrow.style.opacity  = 0;
         result.style.opacity = 0;
+        result.style.left    = (func.offsetLeft + func.offsetWidth - 20) + 'px';
         arrow.textContent    = '➔'; // reset arrow
-        param.textContent  = '(int a, string name)';
+
         numArg.textContent  = 'int a';
         nameArg.textContent = 'string name';
         log.textContent      = 'Main() received result 6';
-      }, 3200);
+
+        arrow.style.left   = startX + 'px';
+        
+        param.style.left   = main.offsetLeft + main.offsetWidth + 'px';
+        param.style.top    = (main.offsetTop - 50) + 'px';
+
+      }, 4200);
     });
   </script>
