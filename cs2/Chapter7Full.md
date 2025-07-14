@@ -75,7 +75,7 @@ lang: he
 
 הגדרה: פונקציה היא מקבץ של פקודות המאוגדות תחת שם מזוהה, שניתן לקרוא לו (להפעיל אותו) מתוך חלקים שונים בתוכנית כדי לבצע משימה מוגדרת. פונקציה יכולה לקבל נתונים קלט (פרמטרים) ויכולה גם להחזיר תוצאה לפונקציה שקראה לה
 - כאשר קוראים לפונקציה, התוכנית עוצרת בנקודת הקריאה, עוברת לביצוע קוד הפונקציה, ולאחר סיום הפונקציה - חוזרת לנקודת הקריאה עם ערך שחושב (אם הפונקציה מחזירה ערך)
-- אין כאן מבנה חדש לחלוטין - כבר השתמשנו בפונקציות שקיימות בספריות השפה כגון, `()Console.WriteLine` או `()Math.Sqrt`, וגם ראינו ש-Main היא פונקציה מיוחדת שבה מתחילה התוכנית. יחד עם זאת, פונקציות שאנו כותבים בעצמנו הן כלי מרכזי לבניית תוכניות מורכבות: הן **מאפשרות לנו לפרק בעיות לתתי-משימות, להימנע מחזרת קוד, ולכתוב תוכניות קריאות ונוחות יותר לתחזוקה**.
+- אין כאן מבנה חדש לחלוטין - כבר השתמשנו בפונקציות שקיימות בספריות השפה כגון, `()Console.WriteLine` או `()Math.Sqrt`, וגם ראינו ש-`Main` היא פונקציה מיוחדת שבה מתחילה התוכנית. יחד עם זאת, פונקציות שאנו כותבים בעצמנו הן כלי מרכזי לבניית תוכניות מורכבות: הן **מאפשרות לנו לפרק בעיות לתתי-משימות, להימנע מחזרת קוד, ולכתוב תוכניות קריאות ונוחות יותר לתחזוקה**.
 
 ## בפרק זה נלמד כיצד להגדיר פונקציות משלנו ולקרוא להן.
 
@@ -364,7 +364,7 @@ public static void SayHello(string userName)
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>דרכים אפשריות לזימון פונקציה</summary>
 
 **דרך א': בהוראת השמה:**
@@ -602,73 +602,73 @@ $$
     </div>
 
 
-    ### כך תיראה השאלה בכתיבה תוך פיצול לפונקציות:
+### כך תיראה השאלה בכתיבה תוך פיצול לפונקציות:
 
-    <details open markdown="1">
-    <summary>פתרון</summary>
+<details open markdown="1">
+<summary>פתרון</summary>
 
-    ```csharp
-    public static void MainCalc2()
+```csharp
+public static void MainCalc2()
+{
+    // נדמה שהפתרון כתוב בראשי פרקים
+    int n1 = Input<int>(); // קריאה לפונקציית קלט גנרית
+    double n2 = Input<double>();
+    char action = Input<char>("Please enter operation +-/*: ");
+    Console.WriteLine($"{n1} {action} {n2} = {Calc(n1, action, n2)}");
+}
+
+public static double Calc(double num1, char oprtr = '+', double num2 = 0)
+{
+    // הפונקציה מקבלת שני מספרים ופעולה ומחזירה את התוצאה
+    // היא לא מתעסקת בענייני קלט ופלט
+    if (oprtr == '+')
+        return num1 + num2;
+    else if (oprtr == '-')
+        return num1 - num2;
+    else if (oprtr == '*')
+        return num1 * num2;
+    else if (oprtr == '/')
+        return Math.Round(num1 / num2, 3);
+    WriteInColor("\ninvalid opertaion", ConsoleColor.Red);
+    return 0;
+}
+
+// פונקציה שיודעת לקלוט כפי צריך כולל בקשת קלט והודעות שגיאה
+public static T Input<T>(string inputRequest = "Please enter a", string invalidFeedback = null)
+{
+    try
     {
-        // נדמה שהפתרון כתוב בראשי פרקים
-        int n1 = Input<int>(); // קריאה לפונקציית קלט גנרית
-        double n2 = Input<double>();
-        char action = Input<char>("Please enter operation +-/*: ");
-        Console.WriteLine($"{n1} {action} {n2} = {Calc(n1, action, n2)}");
+        if (inputRequest == "Please enter a")
+            inputRequest = $"Please enter {typeof(T).ToString().Substring(7)}: ";
+
+        WriteInColor(inputRequest, ConsoleColor.Green, ConsoleColor.Yellow);
+        string s = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.White;
+        return (T)Convert.ChangeType(s, typeof(T)); // may throw an exception
     }
-
-    public static double Calc(double num1, char oprtr = '+', double num2 = 0)
+    catch (Exception)
     {
-        // הפונקציה מקבלת שני מספרים ופעולה ומחזירה את התוצאה
-        // היא לא מתעסקת בענייני קלט ופלט
-        if (oprtr == '+')
-            return num1 + num2;
-        else if (oprtr == '-')
-            return num1 - num2;
-        else if (oprtr == '*')
-            return num1 * num2;
-        else if (oprtr == '/')
-            return Math.Round(num1 / num2, 3);
-        WriteInColor("\ninvalid opertaion", ConsoleColor.Red);
-        return 0;
+        if (invalidFeedback == null)
+            invalidFeedback = $"Your input type was not a valid {typeof(T)}\n";
+        WriteInColor(invalidFeedback, ConsoleColor.Red);
+        return Input<T>(inputRequest, invalidFeedback);
     }
+}
 
-    // פונקציה שיודעת לקלוט כפי צריך כולל בקשת קלט והודעות שגיאה
-    public static T Input<T>(string inputRequest = "Please enter a", string invalidFeedback = null)
-    {
-        try
-        {
-            if (inputRequest == "Please enter a")
-                inputRequest = $"Please enter {typeof(T).ToString().Substring(7)}: ";
-
-            WriteInColor(inputRequest, ConsoleColor.Green, ConsoleColor.Yellow);
-            string s = Console.ReadLine();
-            Console.ForegroundColor = ConsoleColor.White;
-            return (T)Convert.ChangeType(s, typeof(T)); // may throw an exception
-        }
-        catch (Exception)
-        {
-            if (invalidFeedback == null)
-                invalidFeedback = $"Your input type was not a valid {typeof(T)}\n";
-            WriteInColor(invalidFeedback, ConsoleColor.Red);
-            return Input<T>(inputRequest, invalidFeedback);
-        }
-    }
-
-    // פונקציה שמדפיסה בצבע
-    public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? nextColor = null)
-    {
-        if (nextColor == null)
-            nextColor = Console.ForegroundColor; // use current color if not specified
-        Console.ForegroundColor = color;
-        Console.Write(str);
-        Console.ForegroundColor = (ConsoleColor)nextColor;
-    }   
-    ```
+// פונקציה שמדפיסה בצבע
+public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? nextColor = null)
+{
+    if (nextColor == null)
+        nextColor = Console.ForegroundColor; // use current color if not specified
+    Console.ForegroundColor = color;
+    Console.Write(str);
+    Console.ForegroundColor = (ConsoleColor)nextColor;
+}   
+```
 
 
 
-    </details>
+</details>
 
 
 
@@ -688,7 +688,7 @@ static T Identity<T>(T value)
 
 **דוגמאות לקריאה:**
 - `Identity<int>(5)` מחזירה `int`
-- `Identity<string>("שלום")` מחזירה `string`
+- `Identity<string>("hello")` מחזירה `string`
 
 {: .box-success}
 פונקציות גנריות אינן חלק מתכנית הלימודים של כיתה יוד, אך **הן בשימוש נרחב בכיתה יא'**. גם ביא' תלמידים לא ידרשו לדעת לכתוב פונקציות גנריות, אך ידרשו להשתמש בהן.
@@ -697,11 +697,11 @@ static T Identity<T>(T value)
 
 <details markdown="1"><summary>הערה על פרמטרים אופציונליים ועל nullable types</summary>
 
-פרמטרים אופציונליים מקבלים ערך ברירת מחדל (`= value`), ולכן אינם חייבים לעבור בפועל בעת הקריאה.\
+פרמטרים אופציונליים מקבלים ערך ברירת מחדל (`value =`), ולכן אינם חייבים לעבור בפועל בעת הקריאה.
 - **הם חייבים להיות בסוף רשימת הפרמטרים** כדי שזיהוי הערכים יהיה ברור: אחרת, ללא named arguments, לא נוכל להבין מי זה מי בין הפרמטרים.
-- **אפשרות נוספת:** ניתן לדלג על פרמטר אופציונלי באמצע הרשימה על־ידי שימוש ב־named arguments ו–\
-    למשל: `double res = Calc(3, num2: 5);` תשתמש ב–`oprtr = '+'` כברירת מחדל. אנחנו סיפקנו את הפרמטר האופציונאלי השני.
-- **השימוש ב־nullable type** (`ConsoleColor?`) בפונקציה שלהלן, מאפשר לקבוע `null` כערך ברירת מחדל, וכך לבדוק האם המשתמש העלים את הפרמטר.
+- **אפשרות נוספת:** ניתן לדלג על פרמטר אופציונלי באמצע הרשימה על־ידי שימוש ב־named arguments.
+    למשל בקריאה הבאה לפונקציה `Calc`: `;double res = Calc(3, num2: 5)` הפונקציה (ראו בקוד שלעיל) תשתמש ב–`oprtr&nbsp;=&nbsp;'+'` כברירת מחדל. אנחנו סיפקנו את הפרמטר האופציונאלי השני.
+- C# מאפשרת לרשום סימן שאלה לצד הטיפוס כדי להצהיר שערכו יכול להיות null (הערך **כלום**, בשונה ממצב unassigned כשלא הוגדר ערך). השימוש ב־(`ConsoleColor?`) nullable type  בפונקציה שלהלן, מאפשר לקבוע `null` כערך ברירת מחדל, וכך לבדוק האם המשתמש החסיר את הפרמטר.
     אם הוא `null` – נוכל להחליט בתוך הפונקציה מה תהיה ברירת המחדל, כאן: הצבע הנוכחי. לא ניתן היה לבצע קביעה דינמית כזו של ערך ברירת מחדל, בתוך שורת הפרמטרים
     ```csharp
     public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? nextColor = null)
@@ -715,26 +715,28 @@ static T Identity<T>(T value)
     ```
 </details>
 
-<details markdown="1"><summary>אני רק שאלה: אז גם הפונקציה `Main(int[] args)` מקבלת פרמטרים?</summary>
+<details markdown="1"><summary>אני רק שאלה: האם גם הפונקציה Main(int[] args) מקבלת פרמטרים?</summary>
 
-כן. לגמרי. אם תריצו את ה-executable של הפרוייקט שלכם תוכלו לשלוח פרמטרים ל-Main\
+כן. לגמרי. זו בדיוק המשמעות של מה שרשום בסוגריים. אם תריצו את ה-executable של הפרוייקט שלכם תוכלו לשלוח פרמטרים ל-`Main`
 הדרך הקצרה כדי לעשות זאת היא:
-1. לפתור את ה-explorer בתיקיית הפרוייקט
+1. לפתוח את ה-explorer (סייר הקבצים), בתיקיית הפרוייקט. תזכורת: עושים זאת בקליק ימני על הפרוייקט ובחירת <span style="display:inline-block; transform: rotate(180deg);">
+  ↩
+</span>Open Folder in File Explorer מהתפריט.
 1. להיכנס לתת התיקיה `bin\debug\net9.0`. שם אמור להמתין לכם קובץ עם סיומת .exe. זהו ה-executable שלכם שתואם לקימפול האחרון שעשיתם בהרצה האחרונה.
 1. כעת עליכם לפתוח Command Prompt בדיוק בתיקייה זו. יש לכך דרך פשוטה: פשוט רושמים `cmd` בשורת הכתובת של ה-explorer.
-1. כעת תוכלו להריץ את הפרוייטק על ידי הקלדת שמו בחלון ה-cmd שנפתח. אם תרצו לשלוח פרמטרים פשוט רישמו אותם בזה אחר זה.
+1. כעת תוכלו להריץ את הפרוייטק על ידי הקלדת שמו בחלון השחור שנפתח. אם תרצו לשלוח פרמטרים פשוט רישמו אותם בזה אחר זה, למשל `ConsoleApp.exe 3 * 8`.
 </details>
 
-<details markdown="1"><summary>ועוד שאלה קטנה: איך כותבים פונקציה כמו $$f(x) = x^2$$ בשורה אחת?</summary>
+<details markdown="1"><summary>ועוד שאלה קטנה: איך כותבים בשורה אחת פונקציה כמו $$? f(x) = x^2$$</summary>
 
 ```csharp
+// כתיבת פונקציה בשורה אחת
 static double f(double x) => x*x;
 ```
 
-בעצם במקום לבצע חישובים ולסיים בפקודה `return x;` אפשר פשוט להשתמש בחץ הקיצור ולרשום את הערך שיש להחזיר או את הפקודה שנרצה לבצע, כל עוד ניתן לרשום אותה בשורה אחת, ניתן להשתמש בתחביר המקוצר
-
-
-אז קיבלנו שהפונקציה שכתבנו נראית די דומה לכתיבה של פונקציה במתמטיקה. אבל בכל זאת - לא לשכוח: naming convertions for functions: **אות ראשונה גדולה** (בשונה ממשתנים) וכל מילה חדשה אות גדולה כמו במשתנים. ב-Java גם בפונקציות האות הראשונה קטנה.
+- בעצם במקום לבצע חישובים ולסיים בפקודה `;return num`, אם ניתן לרשום את החישוב בשורה אחת, מותר להשתמש בחץ הקיצור ולרשום את הערך שיש להחזיר או את הפקודה שנרצה לבצע ישירות בתחביר מקוצר ללא סוגריים.
+- מתקבלת פונקציה די דומה לכתיבה במתמטיקה. 
+- לא לשכוח: naming convertions for functions: **אות ראשונה גדולה** (בשונה ממשתנים ומ-Java).
 
 </details>
 

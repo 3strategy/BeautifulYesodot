@@ -4,7 +4,9 @@ h2 {
     margin-top: 3em
 }
 
-
+strong {
+    color: var(--footer-text-col)
+}
 
 
 /* Default: Dark theme (as built from _config.yml) */
