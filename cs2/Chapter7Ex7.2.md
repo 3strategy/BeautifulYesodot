@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "תרגול 7.2 - פונקציות void עם פרמטרים"
+title: "תרגול 7.2 - פונקציות void המקבלות פרמטרים"
 subtitle: "תרגול בכתיבת פונקציות המקבלות פרמטרים, מבצעות חישובים והדפסות אך אינן מחזירות ערך"
 tags: [functions, parameters, C#]
 mathjax: true
