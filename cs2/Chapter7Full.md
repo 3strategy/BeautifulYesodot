@@ -498,7 +498,7 @@ s = s.ToUpper().Replace("WORLD", "C#").Replace("HELLO,", "Go");
 - בשרשור שיטות (כדוגמת `s.ToUpper().Replace(...)`), ההחזרה נעשית דרך נקודה ימינה, וכל פעולה מחזירה מצביע לאובייקט (קיים או חדש).
 
 
-## 7.4 לימוד מדוגמא: הכח של DRY ופונקציות גנריות
+## 7.4 לימוד מדוגמא: הכח של DRY
 
 <details markdown="1">
 <summary>לימוד מדוגמא: הכח של DRY (Don't Repeat Yourself)</summary>
@@ -681,19 +681,6 @@ public static double Calc(double num1, char oprtr = '+', double num2 = 0)
     return 0;
 }
 
-// an Overloaded version of Calc
-public static string Calc(string[] args)
-{
-    if (args.Length >= 3)
-    {
-        double res = Calc(int.Parse(args[0]), char.Parse(args[1]), int.Parse(args[2]));
-        return $"{args[0]} {args[1]} {args[2]} = {res}";
-    }
-
-    WriteInColor("\ninvalid request", ConsoleColor.Red);
-    return "";
-}
-
 // פונקציה שיודעת לקלוט כפי צריך כולל בקשת קלט והודעות שגיאה
 public static T Input<T>(string inputRequest = "Please enter a", string invalidFeedback = null)
 {
@@ -757,13 +744,22 @@ public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? ne
 </details>
 
 
-### סיכום ביניים 4: ניתוח קוד, פרמטרים אופציונאליים
+### סיכום ביניים 4: ניתוח קוד, פרמטרים אופציונאליים, nullable types
+
+- השוואה בין פתרון ראשוני ללא פונקציות (כ־80 שורות, לולאות `while` כפולות, שינויי צבע ופיזור לוגיקה ב־`Main`) לבין פתרון מפוצל לפונקציות.
+- פונקציה גנרית `Input<T>` מרכזת את כל טיפול הקלט, העברת פרמטרי הנחייה (`inputRequest`), טיפול בשגיאות וחזרה רק עם ערך תקין.
+- פונקציית `Calc(num1, oprtr, num2)` מפצלת את הלוגיקה של החישוב, משפרת קריאות ויכולת בדיקה נפרדת.
+- פרמטרים אופציונליים (`char oprtr = '+'`, `double num2 = 0`): ערכי ברירת מחדל בסוף הרשימה, מאפשרים קריאות קצרות וברורות.
+- שימוש ב־named arguments לדילוג על פרמטרים אופציונליים באמצע רשימת הפרמטרים.
+- nullable types (`ConsoleColor? nextColor = null`) מאפשרים קביעת ברירת מחדל דינמית בתוך הפונקציה (למשל, שימוש ב־`Console.ForegroundColor` הנוכחי אם לא צויין צבע אחר).
+
+
 
 
 
 ## 7.5 העברת פרמטרים ל-Main. פונקציות בכתיב מקוצר
 
-<details markdown="1"><summary>אני רק שאלה: האם גם הפונקציה Main(int[] args) מקבלת פרמטרים?</summary>
+<details markdown="1"><summary>האם גם הפונקציה Main(int[] args) מקבלת פרמטרים?</summary>
 
 כן. לגמרי. זו בדיוק המשמעות של מה שרשום בסוגריים. אם תריצו את ה-executable של הפרוייקט שלכם תוכלו לשלוח פרמטרים ל-`Main`
 הדרך הקצרה כדי לעשות זאת היא:
@@ -775,21 +771,31 @@ public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? ne
 1. כעת תוכלו להריץ את הפרוייטק על ידי הקלדת שמו בחלון השחור שנפתח. אם תרצו לשלוח פרמטרים פשוט רישמו אותם בזה אחר זה, למשל `ConsoleApp.exe 3 * 8`.
 </details>
 
-<details markdown="1"><summary>ועוד שאלה קטנה: איך כותבים בשורה אחת פונקציה כמו $$? f(x) = x^2$$</summary>
+<details markdown="1"><summary>איך כותבים בשורה אחת פונקציה כמו $$? f(x) = x^2$$</summary>
 
 ```csharp
 // כתיבת פונקציה בשורה אחת
 static double F(double x) => x*x;
 ```
 
-- בעצם במקום לבצע חישובים ולסיים בפקודה `;return num`, אם ניתן לרשום את החישוב בשורה אחת, מותר להשתמש בחץ הקיצור ולרשום את הערך שיש להחזיר או את הפקודה שנרצה לבצע ישירות בתחביר מקוצר ללא סוגריים.
+- בעצם במקום לבצע חישובים ולסיים בפקודה `;return num`, **אם ניתן לרשום את החישוב בשורה אחת, מותר להשתמש בחץ הקיצור** ולרשום את הערך שיש להחזיר או את הפקודה שנרצה לבצע ישירות בתחביר מקוצר ללא סוגריים.
 - מתקבלת פונקציה די דומה לכתיבה במתמטיקה. 
 - לא לשכוח: naming convertions for functions: **אות ראשונה גדולה** (בשונה ממשתנים ומ-Java).
 
 </details>
 
 
-### סיכום ביניים 5
+### סיכום ביניים 5: העברת פרמטרים ל-Main וכתיב מקוצר
+
+- לפונקציה `Main(string[] args)` (או `Main(int[] args)`) ניתן להעביר פרמטרים בעת הרצה דרך שורת הפקודה, לדוגמה: `ConsoleApp.exe 3 * 8`.
+- כדי להריץ את הקובץ המהווצ׳ (`.exe`) עם פרמטרים: נכנסים לתיקייה `bin\debug\net9.0`, פותחים `cmd`, ומקלידים את שם הקובץ ואחריו הערכים הרצויים.
+- כתיבת פונקציה בשורת חץ (`=>`) מאפשרת תמצות חישוב יחיד והחזרת ערך מיידית, למשל:
+  ```csharp
+  static double F(double x) => x * x;
+  ```
+- תחביר מקוצר משפר קריאות ודומה לכתיבה מתמטית, תוך שמירה על כללי `PascalCase` לשמות פונקציות.
+- ניתן להשתמש בחיצים מקוצרים גם עבור פעולות נוספות, כל עוד הפונקציה מחזירה ערך אחד בלבד.
+
 
 
 
@@ -797,24 +803,60 @@ static double F(double x) => x*x;
 ## 7.6 Generics
 
 <details markdown="1"><summary>הסבר על פונקציות גנריות</summary>
+## 7.6: פונקציית Input במבט מעמיק ו-try/catch
 
-פונקציה גנרית היא פונקציה שבה מגדירים פרמטר טיפוס (לרוב `T`) כברירת מחדל – כך שמי שקורא לה יכול לציין באיזה טיפוס להשתמש בקריאה, וזה גם קובע את טיפוס הערך שזו תחזיר.
+בפרק זה נבחן לעומק את פונקציית הקלט הגנרית `Input<T>` שבדוגמא 7.4, ונבחן את מנגנון הטיפול בשגיאות.
 
 ```csharp
-static T Identity<T>(T value) 
+// פונקציה שיודעת לקלוט כפי צריך כולל בקשת קלט והודעות שגיאה
+public static T Input<T>(string inputRequest = "Please enter a", string invalidFeedback = null)
 {
-    return value;
+    try
+    {
+        if (inputRequest == "Please enter a")
+            inputRequest = $"Please enter {typeof(T).ToString().Substring(7)}: ";
+
+        WriteInColor(inputRequest, ConsoleColor.Green, ConsoleColor.Yellow);
+        string s = Console.ReadLine();
+        
+        Console.ForegroundColor = ConsoleColor.White;
+        return (T)Convert.ChangeType(s, typeof(T)); // may throw an exception
+    }
+    catch (Exception)
+    {
+        if (invalidFeedback == null)
+            invalidFeedback = $"Your input type was not a valid {typeof(T)}\n";
+        WriteInColor(invalidFeedback, ConsoleColor.Red);
+        return Input<T>(inputRequest, invalidFeedback);
+    }
 }
 ```
 
-**דוגמאות לקריאה:**
-- `Identity<int>(5)` מחזירה `int`
-- `Identity<string>("hello")` מחזירה `string`
+**הבהרות ותובנות:**
 
-{: .box-success}
-פונקציות גנריות אינן חלק מתכנית הלימודים של כיתה יוד, אך **הן בשימוש נרחב בכיתה יא'**. גם ביא' תלמידים לא ידרשו לדעת לכתוב פונקציות גנריות, אך ידרשו להשתמש בהן.
+- לפונקציה שני פרמטרים עם ערכי ברירת מחדל:
+  - `inputRequest`: מחרוזת תזכורת להצגת הודעה ראשונית.
+  - `invalidFeedback`: הודעת שגיאה פנימית המשמשת רק בקריאה רקורסיבית.
+- מבנה `try/catch`:
+  - **try**: ניסיון המרה דינמית (`Convert.ChangeType`) והחזרת ערך מטיפוס `T`.
+  - **catch**: תפיסת חריגות בעת המרה כושלת, הצגת הודעת שגיאה והפעלה מחודשת של הפונקציה (רקורסיה) עד לקבלת קלט תקין.
+  - שימו לב: **טיפול ב־try/catch הוא נושא מתקדם** ואינו חלק מתכנית הלימודים של כיתה י׳.
+- דוגמאות קריאה חיצונית:
+  - `int x = Input<int>();`
+  - `double d = Input<double>("Enter value: ");`
+  - `char op = Input<char>("Enter operator (+,-,*,/): ");`
+
 
 </details>
+
+### סיכום ביניים 6: Generics and try/catch
+- שני הנושאים אינם בתכנית הלימוד ביסודות, אך שימוש בפונקציות גנריות נדרש ביא'.
+- `Input<T>` היא פונקציה **גנרית** המבטיחה קלט חוקי לכל טיפוס דרך המרת טיפוסים דינמית.
+- שימוש בברירת מחדל לפרמטרים מאפשר קריאה פשוטה מצד המשתמש, תוך שמירה על יכולת שליטה פנימית בטיפול בשגיאות.
+- מבנה `try/catch` יחד עם קריאה רקורסיבית (קריאה של הפונקציה לעצמה) מוודאים סריקה חוזרת עד להגעת קלט תקין.
+- חשוב לזכור: ניהול חריגות (`try/catch`) נחשב לנושא מתקדם, מעבר לתכנית הלימודים של כיתה י׳.
+
+
 
 
 
