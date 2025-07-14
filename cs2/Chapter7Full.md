@@ -739,11 +739,11 @@ public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? ne
 <details markdown="1"><summary>פרמטרים אופציונליים ועל nullable types</summary>
 
 פרמטרים אופציונליים מקבלים ערך ברירת מחדל (`value =`), ולכן אינם חייבים לעבור בפועל בעת הקריאה.
-- **הם חייבים להיות בסוף רשימת הפרמטרים** כדי שזיהוי הערכים יהיה ברור: אחרת, ללא named arguments, לא נוכל להבין מי זה מי בין הפרמטרים.
+- **הם חייבים להיות בסוף רשימת הפרמטרים** כדי שזיהוי הערכים יהיה ברור: אחרת, ללא named arguments, לא נוכל להבחין מי זה מי, בין הפרמטרים.
 - **אפשרות נוספת:** ניתן לדלג על פרמטר אופציונלי באמצע הרשימה על־ידי שימוש ב־named arguments.
-    למשל בקריאה הבאה לפונקציה `Calc`: `;double res = Calc(3, num2: 5)` הפונקציה (ראו בקוד שלעיל) תשתמש ב–`oprtr&nbsp;=&nbsp;'+'` כברירת מחדל. אנחנו סיפקנו את הפרמטר האופציונאלי השני.
-- C# מאפשרת לרשום סימן שאלה לצד הטיפוס כדי להצהיר שערכו יכול להיות null (הערך **כלום**, בשונה ממצב unassigned כשלא הוגדר ערך). השימוש ב־(`ConsoleColor?`) nullable type  בפונקציה שלהלן, מאפשר לקבוע `null` כערך ברירת מחדל, וכך לבדוק האם המשתמש החסיר את הפרמטר.
-    אם הוא `null` – נוכל להחליט בתוך הפונקציה מה תהיה ברירת המחדל, כאן: הצבע הנוכחי. לא ניתן היה לבצע קביעה דינמית כזו של ערך ברירת מחדל, בתוך שורת הפרמטרים
+    למשל בקריאה הבאה לפונקציה: `;double res = Calc(3, num2: 5)` הפונקציה (ראו בקוד שלעיל) תשתמש ב–`oprtr='+'` כברירת מחדל. אנחנו סיפקנו את הפרמטר האופציונאלי **השני** על ידי ציון מפורש.
+- C# מאפשרת לרשום❓לצד הטיפוס כדי להצהיר שערכו יכול להיות null (הערך **כלום**, בשונה ממצב unassigned כשלא הוגדר ערך). השימוש ב־(`?ConsoleColor`) nullable type  בפונקציה שלהלן, מאפשר לקבוע `null` כערך ברירת מחדל, וכך לבדוק האם המשתמש החסיר את הפרמטר.
+    אם הוא `null` – נוכל להחליט בתוך הפונקציה מה תהיה ברירת המחדל, (כאן: הצבע הנוכחי). לא ניתן היה לבצע קביעה דינמית כזו של ערך ברירת מחדל, בתוך שורת הפרמטרים
     ```csharp
     public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? nextColor = null)
     {
@@ -779,7 +779,7 @@ public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? ne
 
 ```csharp
 // כתיבת פונקציה בשורה אחת
-static double f(double x) => x*x;
+static double F(double x) => x*x;
 ```
 
 - בעצם במקום לבצע חישובים ולסיים בפקודה `;return num`, אם ניתן לרשום את החישוב בשורה אחת, מותר להשתמש בחץ הקיצור ולרשום את הערך שיש להחזיר או את הפקודה שנרצה לבצע ישירות בתחביר מקוצר ללא סוגריים.
@@ -822,8 +822,44 @@ static T Identity<T>(T value)
 
 ---
 
-## 7.6 העמסת פונקציות (function overloading)
+## 7.7 העמסת פונקציות (function overloading)
+נניח שנרצה לקרוא לפונקציה `Calc` באופן הבא:
 
+```csharp
+public static void Main(string[] args)
+{
+    if (args.Length == 0)
+        MainCalc2();
+    else
+        Console.WriteLine(Calc(args));
+}
+```
+האם נוכל לכתוב פונקציה נוספת בשם Calc שתעבוד קצת אחרת?
+כיצד נכתוב פונקציה שמקבלת את args שזמין לפונקציה Main, מחלצת ממנו את הערכים הדרושים לה, מחשבת את החישוב ומחזירה לנו מחרוזת של התוצאה?
+
+<details markdown="1"><summary>פתרון</summary>
+הפתרון הוא בהעמסת פונקציות: Function Overloading.
+
+```csharp
+/// <summary>
+/// an Overloaded version of Calc:
+/// </summary>
+/// <param name="args">מערך שבו שלושת הפרמטרים - מספר, אופרטור, ומספר</param>
+/// <returns>מחזיקה את תוצאת החישוב כמחרוזת מוכנה לשימוש בצורת תרגיל חשבוני</returns>
+public static string Calc(string[] args)
+{
+    if (args.Length >= 3)
+    {
+        double res = Calc(int.Parse(args[0]), char.Parse(args[1]), int.Parse(args[2]));
+        return $"{args[0]} {args[1]} {args[2]} = {res}";
+    }
+
+    WriteInColor("\ninvalid request", ConsoleColor.Red);
+    return "";
+}
+```
+
+</details>
 
 
 
