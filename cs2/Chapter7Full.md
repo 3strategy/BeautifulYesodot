@@ -423,11 +423,11 @@ Console.WriteLine(name.ToUpper().Substring(1,3));
 $$
 \overbrace{\text{public static}}^{\text{מודיפיירים}}
 \quad
-\overbrace{\text{ bool }}^{\text{סוג החזרה}}
+\overbrace{\text{bool}}^{\text{סוג החזרה}}
 \quad
 \overbrace{\text{IsPrime}}^{\text{שם הפונקציה}}
 \quad
-\overbrace{\bigl(\,\text{int }n\ \underbrace{ = -1}_{\text{ערך ברירת מחדל}}\bigr)}^{\text{פרמטרים}}
+\overbrace{\bigl(\,\text{int }\ \underbrace{n=-1}_{\text{ברירת מחדל}}\bigr)}^{\text{פרמטרים}}
 $$
 
 
