@@ -340,7 +340,7 @@ public static void Main()
 ```
 נסו לחשוב כיצד לכתוב זאת (Tip: השתמשו בלולאה מקוננת), לפני שאתם חושפים את הפתרון.
 
-<details markdown="1"><summary>פתרון:</summary>
+<details markdown="1"><summary>פתרון מקונן = פחות טוב כאן מבחינה פדגוגית:</summary>
 
 {% highlight csharp linenos %}public static void PrintRectangle(int rows, int cols)
 {
@@ -354,8 +354,16 @@ public static void Main()
 {% endhighlight %}
 
  </details>
+<details markdown="1"><summary>פתרון שמשתמש בפונקציה שכבר כתבנו - עדיף:</summary>
 
+{% highlight csharp linenos %}private static void PrintRectangle(int v1, int v2)
+{
+    for (int i = 0; i < v1; i++)
+        PrintStars(v2); //prints a row
+}
+{% endhighlight %} 
 כמובן, פרמטרים יכולים להיות מכל טיפוס - לא רק מספרים. לדוגמה, נוכל לכתוב פונקציה המקבלת מחרוזת ומדפיסה ברכה אישית: 
+</details>
 
 <details markdown="1"><summary>SayHello - פונקציה המקבלת פרמטר מטיפוס מחרוזת</summary>
 
