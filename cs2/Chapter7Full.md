@@ -421,7 +421,7 @@ Console.WriteLine(name.ToUpper().Substring(1,3));
 ```
 
 $$
-\overbrace{\text{public static}}^{\text{מודיפיירים}}
+\overbrace{\text{static}}^{\text{מודיפייר}}
 \quad
 \overbrace{\text{bool}}^{\text{סוג החזרה}}
 \quad
