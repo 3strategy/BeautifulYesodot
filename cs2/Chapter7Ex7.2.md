@@ -135,6 +135,30 @@ lang: he
 <details markdown="1"><summary>אין פתרון</summary></details>
 
 
+
+## 7.2.10 - חישוב סכום של כל הקומבינציות
+כתבו פעולה המקבלת 3 מספרים שלמים, הפעולה מדפיסה את כל הסכומים האפשריים (כולל הביטויים לחישוב הסכומים).
+למשל: עבור המספרים n1=1, n2=2, n3=3 הפעולה תדפיס כפלט:
+1+2=3
+1+3=4
+2+3=5
+
+
+<details markdown="1"><summary>פתרון</summary></details>
+
+```csharp
+static void Main(string[] args)
+{
+    Get3ParamsAndMultiply(1,2,3);
+}
+public static void Get3ParamsAndMultiply(int n1, int n2, int n3)
+{
+    Console.WriteLine($"{n1} + {n2} = {n1 + n2}");
+    Console.WriteLine($"{n2} + {n3} = {n3 + n2}");
+    Console.WriteLine($"{n1} + {n3} = {n1 + n3}");
+}
+```
+
 [⬅ עברו לתרגול 7.1 - פונקציות void: פעולות ללא פרמטרים](/cs2/Chapter7Ex7.1)
 
 [⬅ עברו לתרגול 7.3 - פונקציות המקבלות ומחזירות ערך](/cs2/Chapter7Ex7.3)
