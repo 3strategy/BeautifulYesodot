@@ -57,7 +57,7 @@ navbar-links:
 
 
   תכנים:
-    - מבחן זמני: "/mathtests/582q3/"
+    - מבחן זמני: "/cs/GuysFinalFireBase/"
     - החלפת רקע: "javascript:toggleTheme();"
     - החלפת גודל: "javascript:toggleSize();"
 
