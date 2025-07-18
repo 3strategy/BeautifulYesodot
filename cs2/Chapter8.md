@@ -29,3 +29,15 @@ Console.WriteLine(s[5]); // Exception: index out of range  : שגיאת זמן �
 s[1] = 'G'; // Property or indexr cannot be assigned to -- it is read only 
 
 ```
+
+
+לדבר על מיון לקסיקוגרפי:
+string s1 = "Goat";
+string s2 = "great";
+string s3 = "car";
+string s4 = "Car";
+
+Console.WriteLine(s1.CompareTo(s2)); // -1 meaning s2 comes before
+Console.WriteLine(s4.CompareTo(s2)); // -1 meaning car comes before
+Console.WriteLine(s4.CompareTo(s3)); // 1 meaning Car comes after car
+Console.WriteLine(s4.CompareTo(s4)); // 3 meaning same position
