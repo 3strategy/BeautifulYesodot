@@ -7,6 +7,63 @@ lang: he
 ---
 
 
+## פונקציות עיקריות ב-PresenceActivity:
+
+
+```java
+protected void onCreate(Bundle savedInstanceState) {
+```
+
+```java
+public void onPartialResults(String text) {
+```
+
+```java
+public void onResults(String text) {
+```
+
+```java
+/// was used in the dev process before Speech was introduced.
+private void uploadMockDataToFirebase() {
+```
+
+```java
+/// was used in the dev process before speech was introduced.
+/// to work with this you need to revive the btnDebug that was
+/// btn deleted on build of 18Jul 07:48am
+private void populateMockData() {
+```
+
+```java
+/**
+ * 🔄 Pushes a single transcript entry to RTDB using rounded-time + lesson key
+ * /P{YY}_{uid}/W{current week}/{MMDDMMM_HHmmL#}/
+ * /P25_tTe3W4vIjHe0HSqRXxAIUBxIzKg1/W29/0718Jul_0830L1
+ */
+private void pushRawTranscript(String newEntry) {
+```
+
+```java
+/**
+ * 🔍 identifying the most probable class.
+ */
+private Boolean detectClass() {
+```
+
+```java
+/**
+ * Parses a single transcript line and updates student statuses.
+ */
+private void analyzeTranscriptLine(String line) {
+```
+
+```java
+/**
+ * Builds the summary strings and updates the TextViews.
+ */
+private void updateUI() {
+```
+
 # Code Files
 
 {: .page-break-before}
