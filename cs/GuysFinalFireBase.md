@@ -9,7 +9,7 @@ lang: he
 
 # Code Files
 
-{: page-break-before}
+{: .page-break-before}
 ### DoneTasksActivity.java
 
 *Path: DoneTasksActivity.java*
@@ -729,7 +729,7 @@ public class MaakavActivity extends MasterActivity {
 }
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### MainActivity.java
 
 *Path: MainActivity.java*
@@ -1050,7 +1050,7 @@ public class MainActivity extends MasterActivity implements AdapterView.OnItemCl
 }
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### PresenceActivity.java
 
 *Path: PresenceActivity.java*
@@ -1646,7 +1646,7 @@ public class PresenceActivity extends MasterActivity {
 }
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### ProfileActivity.java
 
 *Path: ProfileActivity.java*
@@ -1866,7 +1866,7 @@ public class ProfileActivity extends MasterActivity {
 
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### ReportsActivity.java
 
 *Path: ReportsActivity.java*
@@ -1901,7 +1901,7 @@ public class ReportsActivity extends MasterActivity {
 }
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### TaskActivity.java
 
 *Path: TaskActivity.java*
@@ -2216,7 +2216,7 @@ public class TaskActivity extends MasterActivity implements AdapterView.OnItemSe
 }
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### YearsActivity.java
 
 *Path: YearsActivity.java*
@@ -2611,7 +2611,7 @@ public class YearsActivity extends MasterActivity implements AdapterView.OnItemS
 }
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### DoneTaskAdapter.java
 
 *Path: DoneTaskAdapter.java*
@@ -2757,7 +2757,7 @@ public class DoneTaskAdapter extends BaseAdapter {
 
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### Student.java
 
 *Path: Student.java*
@@ -2827,7 +2827,7 @@ public class Student {
 
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### MasterActivity.java
 
 *Path: MasterActivity.java*
@@ -2982,7 +2982,7 @@ public abstract class MasterActivity extends AppCompatActivity {
 
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### FBRef.java
 
 *Path: FBRef.java*
@@ -3101,7 +3101,7 @@ public class FBRef {
 
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### AndroidManifest.xml
 
 *Path: AndroidManifest.xml*
@@ -3165,7 +3165,7 @@ public class FBRef {
 </manifest>
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### activity_done_tasks.xml
 
 *Path: activity_done_tasks.xml*
@@ -3321,7 +3321,7 @@ public class FBRef {
 </LinearLayout>
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### activity_login.xml
 
 *Path: activity_login.xml*
@@ -3473,7 +3473,7 @@ public class FBRef {
 </LinearLayout>
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### activity_maakav.xml
 
 *Path: activity_maakav.xml*
@@ -3491,7 +3491,7 @@ public class FBRef {
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### activity_main.xml
 
 *Path: activity_main.xml*
@@ -3641,7 +3641,7 @@ public class FBRef {
 </LinearLayout>
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### activity_master.xml
 
 *Path: activity_master.xml*
@@ -3658,7 +3658,7 @@ public class FBRef {
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### activity_presence.xml
 
 *Path: activity_presence.xml*
@@ -3782,7 +3782,7 @@ public class FBRef {
 
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### activity_profile.xml
 
 *Path: activity_profile.xml*
@@ -3905,7 +3905,7 @@ public class FBRef {
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### activity_reports.xml
 
 *Path: activity_reports.xml*
@@ -3923,7 +3923,7 @@ public class FBRef {
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### activity_task.xml
 
 *Path: activity_task.xml*
@@ -4157,7 +4157,7 @@ public class FBRef {
 </LinearLayout>
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### activity_years.xml
 
 *Path: activity_years.xml*
@@ -4355,7 +4355,7 @@ public class FBRef {
 </LinearLayout>
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### donetask_layout.xml
 
 *Path: donetask_layout.xml*
@@ -4401,7 +4401,7 @@ public class FBRef {
 </LinearLayout>
 ```
 
-{: page-break-before}
+{: .page-break-before}
 ### task_layout.xml
 
 *Path: task_layout.xml*
