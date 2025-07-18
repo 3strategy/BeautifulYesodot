@@ -298,9 +298,8 @@ button:hover {
     border-radius: 0;
 }
 
-.page-break {
-  page-break-after: always;
-}
+.page-break-after { page-break-after: always; }
+.page-break-before { page-break-before: always; }
 
 .table-en {
     direction: ltr;
