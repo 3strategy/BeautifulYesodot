@@ -14,6 +14,7 @@ lang: he
 
 *Path: DoneTasksActivity.java*
 
+{: page-break-after}
 ```java
 package com.example.tasks.Activities;
 
@@ -277,7 +278,6 @@ public class DoneTasksActivity extends MasterActivity implements AdapterView.OnI
 }
 ```
 
-{: page-break-before}
 ### LoginActivity.java
 
 *Path: LoginActivity.java*
@@ -693,11 +693,13 @@ public class LoginActivity extends AppCompatActivity {
 }
 ```
 
-{: page-break-before}
+
+
 ### MaakavActivity.java
 
 *Path: MaakavActivity.java*
 
+{: page-break-after}
 ```java
 package com.example.tasks.Activities;
 
@@ -732,7 +734,7 @@ public class MaakavActivity extends MasterActivity {
 ### MainActivity.java
 
 *Path: MainActivity.java*
-
+{: page-break-after}
 ```java
 package com.example.tasks.Activities;
 
@@ -1054,6 +1056,7 @@ public class MainActivity extends MasterActivity implements AdapterView.OnItemCl
 
 *Path: PresenceActivity.java*
 
+{: page-break-after}
 ```java
 package com.example.tasks.Activities;
 
