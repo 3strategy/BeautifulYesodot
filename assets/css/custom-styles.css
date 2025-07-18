@@ -299,7 +299,11 @@ button:hover {
 }
 
 .page-break-after { page-break-after: always; }
-.page-break-before { page-break-before: always; }
+
+.page-break-before {
+  break-before: page;
+  page-break-before: always;
+}
 
 .table-en {
     direction: ltr;

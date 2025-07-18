@@ -14,7 +14,6 @@ lang: he
 
 *Path: DoneTasksActivity.java*
 
-{: page-break-after}
 ```java
 package com.example.tasks.Activities;
 
@@ -1056,7 +1055,7 @@ public class MainActivity extends MasterActivity implements AdapterView.OnItemCl
 
 *Path: PresenceActivity.java*
 
-{: page-break-after}
+
 ```java
 package com.example.tasks.Activities;
 
