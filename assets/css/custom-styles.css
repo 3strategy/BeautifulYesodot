@@ -298,6 +298,10 @@ button:hover {
     border-radius: 0;
 }
 
+.page-break {
+  page-break-after: always;
+}
+
 .table-en {
     direction: ltr;
 }
