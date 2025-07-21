@@ -302,3 +302,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
+
+---
+
+## תרגול
+
+[⬅ עברו לתרגול 9.1 - מערך חד ממדי](/cs2/Chapter9Ex9.1)
