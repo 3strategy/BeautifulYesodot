@@ -41,7 +41,7 @@ details, details > summary { display: none; }
 ```csharp
 static void Main(string[] args)
 {
-    string car = "BMW";
+    string   car  =  "BMW" ;
 
     Console.WriteLine(car);
 }
@@ -147,7 +147,7 @@ static void Main(string[] args)
 ```csharp
 static void Main(string[] args)
 {
-    string[] cars = { "BMW", "Ford", "Kia" };
+    string[] cars = { "BMW", "Ford", "Kia" }; //direct instanciation
 
     foreach (string car in cars)
         Console.WriteLine(car); // הרבה יותר פשוט
@@ -196,7 +196,8 @@ static void Main(string[] args)
 {
     int[] nums = { 3,2,1 };
     Add10(nums);
-    PrintArr(nums);
+    PrintArr(nums); 
+    PrintArr(["bus", "bug", "beer", "bear"]); //instanciation in a call
 }
 public static void Add10(int[] arr)
 {
@@ -214,55 +215,56 @@ static void PrintArr<T>(T[] arr)
 
 
 
-<div id="stage"></div>
-<div style="margin-bottom:2em;">
+<div class="button-container">
   <button id="prevBtn">הקודם</button>
   <button id="nextBtn">הבא</button>
 </div>
+<div id="stage"></div>
 
-
-<script>
+<script defer>
 document.addEventListener('DOMContentLoaded', () => {
-    const steps = [...document.querySelectorAll('details')]
-        .map(d => d.querySelector('pre').cloneNode(true));
-    const stage = document.getElementById('stage');
-    let idx = 0;
+  const steps = [...document.querySelectorAll('details')]
+    .map(d => d.querySelector('pre').cloneNode(true));
+  const stage = document.getElementById('stage');
+  let idx = 0;
 
-    // Initialize first code
-    let current = stage.appendChild(steps[0].cloneNode(true));
-    current.classList.add('show');
+  // Start with one code block
+  let current = stage.appendChild(steps[0].cloneNode(true));
+  current.classList.add('show');
 
-    function crossfade(toIdx) {
-        if (toIdx === idx) return;
-        const next = stage.appendChild(steps[toIdx].cloneNode(true));
-        next.classList.add('show');
-        next.style.opacity = 0;
-        next.getBoundingClientRect();
-        next.style.opacity = 1;
-        current.style.opacity = 0;
-        setTimeout(() => {
-            current.remove();
-            current = next;
-            idx = toIdx;
-        }, 800);
+  function crossfade(toIdx) {
+    if (toIdx === idx) return;
+    const next = stage.appendChild(steps[toIdx].cloneNode(true));
+    next.classList.add('show');
+    next.style.opacity = 0;
+    next.getBoundingClientRect(); // force reflow
+    next.style.opacity = 1;
+    current.style.opacity = 0;
+    setTimeout(() => {
+      current.remove();
+      current = next;
+      idx = toIdx;
+    }, 800);
+  }
+
+  // Buttons
+  document.getElementById('nextBtn').onclick = () => 
+    crossfade((idx + 1) % steps.length);
+  document.getElementById('prevBtn').onclick = () => 
+    crossfade((idx + steps.length - 1) % steps.length);
+
+  // Stage left click = next, right click = prev
+  stage.addEventListener('mousedown', e => {
+    if (e.button === 0) { // Left
+      crossfade((idx + 1) % steps.length);
+      e.preventDefault();
     }
-
-    // Mouse click handling: left=next, right=prev
-    stage.addEventListener('mousedown', e => {
-        if (e.button === 0) { // Left click
-            crossfade((idx + 1) % steps.length);
-            e.preventDefault();
-        }
-        if (e.button === 2) { // Right click
-            crossfade((idx + steps.length - 1) % steps.length);
-            e.preventDefault();
-        }
-    });
-
-    // Prevent menu on right click (just over the stage)
-    stage.addEventListener('contextmenu', e => {
-        e.preventDefault();
-    });
+    if (e.button === 2) { // Right
+      crossfade((idx + steps.length - 1) % steps.length);
+      e.preventDefault();
+    }
+  });
+  stage.addEventListener('contextmenu', e => e.preventDefault());
 });
 </script>
 
