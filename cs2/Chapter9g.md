@@ -58,6 +58,12 @@ static void Main(string[] args)
     Console.WriteLine(cars);
 }
 ```
+פלט
+```
+System.String[]
+```
+
+
 </details>
 
 <details markdown="1"><summary></summary>
@@ -70,6 +76,10 @@ static void Main(string[] args)
     Console.WriteLine(cars[0]);
 }
 ```
+פלט
+```
+BMW
+```
 </details>
 
 
@@ -80,12 +90,14 @@ static void Main(string[] args)
 {
     string[] cars = { "BMW", "Ford", "Kia" };
 
-    Console.WriteLine(cars[0]);
-    Console.WriteLine(cars[1]);
-    Console.WriteLine(cars[2]);
-    Console.WriteLine(cars[3]); //index out of range exception
 
-    
+        Console.WriteLine(cars[0]);
+        Console.WriteLine(cars[1]);
+        Console.WriteLine(cars[2]);
+        Console.WriteLine(cars[3]); //index out of range exception
+        Console.ReadLine();
+
+
 }
 ```
 </details>
@@ -104,7 +116,7 @@ static void Main(string[] args)
         Console.WriteLine(cars[1]);
         Console.WriteLine(cars[2]);
         Console.WriteLine(cars[3]); //index out of range exception
-        Console.ReadLine();
+    
     }
     catch (Exception e)
     {
@@ -154,7 +166,7 @@ static void Main(string[] args)
     
     for (int i = 0; i < cars.Length; i++)
     {
-        cars[i] = "BMW" + i + 100;
+        cars[i] = "BMW" + i;
         Console.WriteLine(cars[i]);
     }
 }
@@ -171,7 +183,7 @@ static void Main(string[] args)
     string[] cars = new string[5];
 
     foreach (string car in cars) 
-        car = "BMW"; // ===== לא אפשרי  ======
+        car = "BMW"; // ===== השמה - לא אפשרית  ======
 }
 ```
 </details>
