@@ -12,6 +12,8 @@ lang: he
 
 
 
+<details><summary></summary>
+
 ```csharp
 static void Main(string[] args)
 {
@@ -20,6 +22,9 @@ static void Main(string[] args)
     Console.WriteLine(car);
 }
 ```
+</details>
+
+<details><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -29,6 +34,9 @@ static void Main(string[] args)
     Console.WriteLine(cars);
 }
 ```
+</details>
+
+<details><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -38,7 +46,10 @@ static void Main(string[] args)
     Console.WriteLine(cars[0]);
 }
 ```
+</details>
 
+
+<details><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -53,8 +64,11 @@ static void Main(string[] args)
     
 }
 ```
+</details>
 
 
+
+<details><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -74,7 +88,10 @@ static void Main(string[] args)
     }
 }
 ```
+</details>
 
+
+<details><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -85,8 +102,11 @@ static void Main(string[] args)
         Console.WriteLine(cars[i]);
 }
 ```
+</details>
 
 
+
+<details><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -97,8 +117,11 @@ static void Main(string[] args)
         Console.WriteLine(car); // הרבה יותר פשוט
 }
 ```
+</details>
 
 
+
+<details><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -112,8 +135,11 @@ static void Main(string[] args)
     }
 }
 ```
+</details>
 
 
+
+<details><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -124,3 +150,4 @@ static void Main(string[] args)
         car = "BMW"; // ===== לא אפשרי  ======
 }
 ```
+</details>

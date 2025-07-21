@@ -12,7 +12,7 @@ lang: he
 details, details > summary { display: none; }
 #stage {
   position: relative;
-  min-height: 80px;
+  min-height: 16em;
   width: 100%;
 }
 #stage pre {
@@ -20,7 +20,7 @@ details, details > summary { display: none; }
   top: 0; left: 0; right: 0; bottom: 0;
   margin: 0;
   opacity: 0;
-  transition: opacity 1.8s;
+  transition: opacity 3s;
   z-index: 1;
   direction: ltr;
   background: inherit;
@@ -36,7 +36,7 @@ details, details > summary { display: none; }
 
 
 
-<details markdown="1"><summary>p</summary>
+<details><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -48,17 +48,134 @@ static void Main(string[] args)
 ```
 </details>
 
-<details  markdown="1"><summary>p</summary>
+<details><summary></summary>
 
 ```csharp
 static void Main(string[] args)
 {
     string[] cars = { "BMW", "Ford", "Kia" };
 
-    Console.WriteLine(cars.Length);
+    Console.WriteLine(cars);
 }
 ```
 </details>
+
+<details><summary></summary>
+
+```csharp
+static void Main(string[] args)
+{
+    string[] cars = { "BMW", "Ford", "Kia" };
+
+    Console.WriteLine(cars[0]);
+}
+```
+</details>
+
+
+<details><summary></summary>
+
+```csharp
+static void Main(string[] args)
+{
+    string[] cars = { "BMW", "Ford", "Kia" };
+
+    Console.WriteLine(cars[0]);
+    Console.WriteLine(cars[1]);
+    Console.WriteLine(cars[2]);
+    Console.WriteLine(cars[3]); //index out of range exception
+
+    
+}
+```
+</details>
+
+
+
+<details><summary></summary>
+
+```csharp
+static void Main(string[] args)
+{
+    string[] cars = { "BMW", "Ford", "Kia" };
+    try
+    {
+        Console.WriteLine(cars[0]);
+        Console.WriteLine(cars[1]);
+        Console.WriteLine(cars[2]);
+        Console.WriteLine(cars[3]); //index out of range exception
+        Console.ReadLine();
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"we had aproblem: {e.Message}");
+    }
+}
+```
+</details>
+
+
+<details><summary></summary>
+
+```csharp
+static void Main(string[] args)
+{
+    string[] cars = { "BMW", "Ford", "Kia" };
+    
+    for (int i = 0; i < cars.Length; i++)
+        Console.WriteLine(cars[i]);
+}
+```
+</details>
+
+
+
+<details><summary></summary>
+
+```csharp
+static void Main(string[] args)
+{
+    string[] cars = { "BMW", "Ford", "Kia" };
+
+    foreach (string car in cars)
+        Console.WriteLine(car); // הרבה יותר פשוט
+}
+```
+</details>
+
+
+
+<details><summary></summary>
+
+```csharp
+static void Main(string[] args)
+{
+    string[] cars = new string[5]; // איתחול לגודל 5
+    
+    for (int i = 0; i < cars.Length; i++)
+    {
+        cars[i] = "BMW" + i + 100;
+        Console.WriteLine(cars[i]);
+    }
+}
+```
+</details>
+
+
+
+<details><summary></summary>
+
+```csharp
+static void Main(string[] args)
+{
+    string[] cars = new string[5];
+
+    foreach (string car in cars) 
+        car = "BMW"; // ===== לא אפשרי  ======
+}
+```
+</details>
+
 
 
 
