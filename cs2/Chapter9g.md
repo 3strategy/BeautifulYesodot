@@ -41,7 +41,7 @@ details, details > summary { display: none; }
 ```csharp
 static void Main(string[] args)
 {
-    string   car  =  "BMW" ;
+    string   car  =   "BMW";
 
     Console.WriteLine(car);
 }
@@ -55,13 +55,10 @@ static void Main(string[] args)
 {
     string[] cars = { "BMW", "Ford", "Kia" };
 
-    Console.WriteLine(cars);
+    Console.WriteLine(cars); // ⟹  System.String[]
 }
 ```
-פלט
-```
-System.String[]
-```
+
 
 
 </details>
@@ -75,10 +72,6 @@ static void Main(string[] args)
 
     Console.WriteLine(cars[0]);
 }
-```
-פלט
-```
-BMW
 ```
 </details>
 
@@ -95,7 +88,10 @@ static void Main(string[] args)
         Console.WriteLine(cars[1]);
         Console.WriteLine(cars[2]);
         Console.WriteLine(cars[3]); //index out of range exception
+        // Program WILL CRUSH 
         Console.ReadLine();
+
+
 
 
 }
