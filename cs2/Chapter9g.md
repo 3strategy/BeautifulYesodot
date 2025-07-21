@@ -12,7 +12,7 @@ lang: he
 details, details > summary { display: none; }
 #stage {
   position: relative;
-  min-height: 16em;
+  min-height: 27em;
   width: 100%;
 }
 #stage pre {
@@ -178,8 +178,6 @@ static void Main(string[] args)
 
 
 
-
-## Display stage
 
 
 <div id="stage"></div>
