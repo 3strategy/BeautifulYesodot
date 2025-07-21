@@ -31,6 +31,7 @@ navbar-links:
     - הטיפוס תו 1: "/cs/Chapter1Char"
     - קיצורים: "/cs/Chapter1Shortcuts/"
     - תשע: "/cs2/Chapter9f"
+    - תשע: "/cs2/Chapter9g"
     - פרק 2 Math,Random: "/cs/Chapter2/"
     - תרגול 2.1: "/cs/Chapter2Ex2.1/"
     - תקציר עד כאן: "/cs/ChapterSyntaxSummary"
