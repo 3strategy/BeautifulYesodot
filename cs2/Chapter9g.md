@@ -12,7 +12,7 @@ lang: he
 details, details > summary { display: none; }
 #stage {
   position: relative;
-  min-height: 27em;
+  min-height: 25em;
   width: 100%;
 }
 #stage pre {
@@ -180,14 +180,36 @@ static void Main(string[] args)
 ```csharp
 static void Main(string[] args)
 {
-    string[] cars = new string[5];
+    string[] cars = new string[5]; // מקצה מערך בגודל 5
 
     foreach (string car in cars) 
-        car = "BMW"; // ===== השמה - לא אפשרית  ======
+        car = "BMW"; // ===== !!! השמה - לא אפשרית  ======
+        // ועדיין, נח ושימושי כשעובדים עם עצמים
 }
 ```
 </details>
 
+<details markdown="1"><summary></summary>
+
+```csharp
+static void Main(string[] args)
+{
+    int[] nums = { 3,2,1 };
+    Add10(nums);
+    PrintArr(nums);
+}
+public static void Add10(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+        arr[i] += 10;
+}
+static void PrintArr<T>(T[] arr)
+{
+    foreach (var item in arr) 
+        Console.Write($" {item}, ");
+}
+```
+</details>
 
 
 
@@ -199,42 +221,48 @@ static void Main(string[] args)
 </div>
 
 
-
-<script defer>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
-  const steps = [...document.querySelectorAll('details')].map(
-    d => d.querySelector('pre').cloneNode(true)
-  );
-  const stage = document.getElementById('stage');
-  let idx = 0;
-  let current = stage.appendChild(steps[0].cloneNode(true));
-  current.classList.add('show');
+    const steps = [...document.querySelectorAll('details')]
+        .map(d => d.querySelector('pre').cloneNode(true));
+    const stage = document.getElementById('stage');
+    let idx = 0;
 
-  function crossfade(toIdx) {
-    if (toIdx === idx) return;
-    const next = stage.appendChild(steps[toIdx].cloneNode(true));
-    next.classList.add('show');
-    next.style.opacity = 0; // start hidden
+    // Initialize first code
+    let current = stage.appendChild(steps[0].cloneNode(true));
+    current.classList.add('show');
 
-    // Force style reflow for transition to work reliably
-    next.getBoundingClientRect();
-    
-    // Start both transitions
-    next.style.opacity = 1;
-    current.style.opacity = 0;
+    function crossfade(toIdx) {
+        if (toIdx === idx) return;
+        const next = stage.appendChild(steps[toIdx].cloneNode(true));
+        next.classList.add('show');
+        next.style.opacity = 0;
+        next.getBoundingClientRect();
+        next.style.opacity = 1;
+        current.style.opacity = 0;
+        setTimeout(() => {
+            current.remove();
+            current = next;
+            idx = toIdx;
+        }, 800);
+    }
 
-    setTimeout(() => {
-      current.remove();
-      current = next;
-      idx = toIdx;
-    }, 800); // matches transition duration
-  }
-  
-  document.getElementById('nextBtn').onclick = () =>
-    crossfade((idx + 1) % steps.length);
+    // Mouse click handling: left=next, right=prev
+    stage.addEventListener('mousedown', e => {
+        if (e.button === 0) { // Left click
+            crossfade((idx + 1) % steps.length);
+            e.preventDefault();
+        }
+        if (e.button === 2) { // Right click
+            crossfade((idx + steps.length - 1) % steps.length);
+            e.preventDefault();
+        }
+    });
 
-  document.getElementById('prevBtn').onclick = () =>
-    crossfade((idx + steps.length - 1) % steps.length);
+    // Prevent menu on right click (just over the stage)
+    stage.addEventListener('contextmenu', e => {
+        e.preventDefault();
+    });
 });
 </script>
 
