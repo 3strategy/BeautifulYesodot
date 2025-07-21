@@ -8,12 +8,43 @@ mathjax: true
 lang: he
 ---
 
+<style>
+/* Hide details/summary so only the stage is visible */
+details,
+details > summary {
+  display: none;
+}
+/* Stage and animation styles */
+#stage {
+  position: relative;
+  width: 100%;
+  min-height: 80px;
+  margin-bottom: 1em;
+}
+#stage pre {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.7s;
+  pointer-events: none;
+  direction: ltr;
+}
+#stage pre.fg {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+#stage pre.bg {
+  z-index: 1;
+}
+</style>
 
 
 
 
 
-{% raw %}
+
 <details markdown="1"><summary>p</summary>
 
 ```csharp
@@ -38,34 +69,49 @@ static void Main(string[] args)
 ```
 </details>
 
-{% endraw %}
+
 
 ## Display stage
 
 
 <div id="stage"></div>
+<div style="margin-bottom:2em;">
+  <button id="prevBtn">הקודם</button>
+  <button id="nextBtn">הבא</button>
+</div>
 
 
 
 <script defer>
-    document.addEventListener('DOMContentLoaded', () => {
-    // 1️⃣ collect the rendered <pre> blocks inside every <details>
-    const steps = [...document.querySelectorAll('details')] 
-                    .map(d => d.querySelector('pre').cloneNode(true));
-    const stage = document.getElementById('stage');// 2️⃣ prepare stage with two <pre> elements for cross‑fade
-    let fg = stage.appendChild(steps[0]);
-    fg.classList.add('fg');
-    let bg = stage.appendChild(fg.cloneNode(true));
+document.addEventListener('DOMContentLoaded', () => {
+  // 1️⃣ Collect <pre> blocks from <details>
+  const steps = [...document.querySelectorAll('details')]
+    .map(d => d.querySelector('pre').cloneNode(true));
+  const stage = document.getElementById('stage');
+  let idx = 0;
+  let fg = stage.appendChild(steps[0].cloneNode(true));
+  fg.classList.add('fg');
+
+  function showStep(newIdx) {
+    if (newIdx === idx) return;
+    const bg = stage.appendChild(steps[newIdx].cloneNode(true));
     bg.classList.add('bg');
-    let idx = 0;
-    setInterval(() => {
-        // swap roles
-        [fg, bg] = [bg, fg];
-        fg.classList.replace('bg', 'fg');
-        bg.classList.replace('fg', 'bg');
-        // load next snippet into the background element
-        idx = (idx + 1) % steps.length;
-        bg.innerHTML = steps[idx].innerHTML;
-    }, 2500); // 2.5 s per frame
-    });
+    setTimeout(() => {
+      fg.classList.remove('fg');
+      fg.classList.add('bg');
+      bg.classList.remove('bg');
+      bg.classList.add('fg');
+      fg.remove();
+      fg = bg;
+      idx = newIdx;
+    }, 700); // matches CSS transition duration
+  }
+
+  document.getElementById('nextBtn').onclick = () =>
+    showStep((idx + 1) % steps.length);
+
+  document.getElementById('prevBtn').onclick = () =>
+    showStep((idx + steps.length - 1) % steps.length);
+});
 </script>
+
