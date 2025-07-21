@@ -36,7 +36,7 @@ details, details > summary { display: none; }
 
 
 
-<details><summary></summary>
+<details markdown="1"><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -48,7 +48,7 @@ static void Main(string[] args)
 ```
 </details>
 
-<details><summary></summary>
+<details markdown="1"><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -60,7 +60,7 @@ static void Main(string[] args)
 ```
 </details>
 
-<details><summary></summary>
+<details markdown="1"><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -73,7 +73,7 @@ static void Main(string[] args)
 </details>
 
 
-<details><summary></summary>
+<details markdown="1"><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -92,7 +92,7 @@ static void Main(string[] args)
 
 
 
-<details><summary></summary>
+<details markdown="1"><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -115,7 +115,7 @@ static void Main(string[] args)
 </details>
 
 
-<details><summary></summary>
+<details markdown="1"><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -130,7 +130,7 @@ static void Main(string[] args)
 
 
 
-<details><summary></summary>
+<details markdown="1"><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -145,7 +145,7 @@ static void Main(string[] args)
 
 
 
-<details><summary></summary>
+<details markdown="1"><summary></summary>
 
 ```csharp
 static void Main(string[] args)
@@ -163,7 +163,7 @@ static void Main(string[] args)
 
 
 
-<details><summary></summary>
+<details markdown="1"><summary></summary>
 
 ```csharp
 static void Main(string[] args)
