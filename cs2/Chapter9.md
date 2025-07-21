@@ -192,8 +192,8 @@ static void Main(string[] args)
 {
     int[] nums = { 3,2,1 };
     Add10(nums);
-    PrintArr(nums); 
-    PrintArr(["bus", "bug", "beer", "bear"]); //instanciation in a call
+    PrintArr(nums); // prints 13  12  11
+    PrintArr(["bus", "bug", "beer", "bear"]); //instanciation in a call with [ ] 
 }
 public static void Add10(int[] arr)
 {
@@ -202,12 +202,46 @@ public static void Add10(int[] arr)
 }
 static void PrintArr<T>(T[] arr)
 {
-    foreach (var item in arr) 
-        Console.Write($" {item}, ");
+    foreach (var item in arr)
+        Console.Write($" {item} ");
+    Console.WriteLine();
 }
 ```
 </details>
 
+
+<details markdown="1"><summary></summary>
+
+```csharp
+static void Main(string[] args)
+{
+    string[] cars = new string[5];
+    Console.Write(cars[0].Length); // Null Reference Exception
+    cars[0] = cars[0] + "wow";
+
+}
+```
+</details>
+
+
+<details markdown="1"><summary></summary>
+
+```csharp
+static void Main(string[] args)
+{
+    char[] chars = ['h', 'e', 'l', 'l', 'o'];
+    PrintArr(chars); //        h  e  l  l  o
+    WillItChange_יתשנה_או_לא(chars);
+    PrintArr(chars); // Stays  h  e  l  l  o
+}
+
+static void WillItChange_יתשנה_או_לא(char[] arr)
+{
+    arr = ['h', 'e', 'l', 'l', '_', 'N', 'o'];
+}
+
+```
+</details>
 
 
 
@@ -216,6 +250,10 @@ static void PrintArr<T>(T[] arr)
   <button id="nextBtn">הבא</button>
 </div>
 <div id="stage"></div>
+
+
+
+
 
 <script defer>
 document.addEventListener('DOMContentLoaded', () => {

@@ -29,9 +29,7 @@ navbar-links:
     - תרגול 1.1: "/cs/Chapter1Ex1.1/"
     - פרק 1 השלמות: "/cs/Chapter1b/"
     - הטיפוס תו 1: "/cs/Chapter1Char"
-    - קיצורים: "/cs/Chapter1Shortcuts/"
-    - תשע: "/cs2/Chapter9f"
-    - תשע: "/cs2/Chapter9g"
+    - קיצורים: "/cs/Chapter1Shortcuts/" 
     - פרק 2 Math,Random: "/cs/Chapter2/"
     - תרגול 2.1: "/cs/Chapter2Ex2.1/"
     - תקציר עד כאן: "/cs/ChapterSyntaxSummary"
@@ -43,12 +41,17 @@ navbar-links:
     - פרק 4b עוד על for: "/cs/Chapter4b/"
     - פרק 6 לולאות מקוננות: "/cs2/Chapter6/" 
      
+
   חלק ב: 
     - פרק 6 לולאות מקוננות: "/cs2/Chapter6/"
     - פרק 7 מורחב: "/cs2/Chapter7Full"
     - תרגול 7.3: "/cs2/Chapter7Ex7.3"
     - פרק 7 המשך: "/cs2/Chapter7FullB"
     - פרק 7 מקוצר: "/cs2/Chapter7Short"
+    - פרק 8 מחרוזות: "/cs2/Chapter8"
+    - פרק 9 מערכים: "/cs2/Chapter9"
+    - פרק 9 הערות: "/cs2/Chapter9"
+
 
   חיצוני:
     - אתר מבני נתונים: "https://מבני.שלי.com"

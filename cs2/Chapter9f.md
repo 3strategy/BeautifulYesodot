@@ -1,153 +1,33 @@
 ---
 layout: page
 title: "פרק 9 מערך חד ממדי"
-subtitle: "משתנים הבנויים כאוסף"
+subtitle: "הערות והרחבות"
 author: גיא סידס
 tags: [מערך, מערכים, חד ממדי]
 mathjax: true
 lang: he
 ---
 
+## inline initializations
 
-
-
-
-<details><summary></summary>
+### בכל המקומות מאתחלים עם {} אז איך פתאום יש [ ]?
 
 ```csharp
-static void Main(string[] args)
+public static void FunctionName(int[] arr)
 {
-    string car = "BMW";
-
-    Console.WriteLine(car);
+    int[] nums = [1, 2, 3, 4, 5];
+    arr = [1, 3, 5, 7, 9];
 }
 ```
-</details>
-
-<details><summary></summary>
+That square-bracket `array literal` syntax wasn’t valid until C# 12. As of C# 12 (shipped with .NET 8 in November 2023), the language gained **collection expressions**, which let you write:
 
 ```csharp
-static void Main(string[] args)
-{
-    string[] cars = { "BMW", "Ford", "Kia" };
+// Pre-C# 12:
+int[] nums = new int[] { 1, 2, 3, 4, 5 };
 
-    Console.WriteLine(cars);
-}
+// C# 12 “collection expression” (array literal):
+int[] nums = [1, 2, 3, 4, 5];
 ```
-</details>
-
-<details><summary></summary>
-
-```csharp
-static void Main(string[] args)
-{
-    string[] cars = { "BMW", "Ford", "Kia" };
-
-    Console.WriteLine(cars[0]);
-}
-```
-</details>
+instead of the old curly-brace form. Under the covers it’s just syntactic sugar for the same array-initializer, but the official feature name is **collection expressions** (often referred to informally as **collection literals**)
 
 
-<details><summary></summary>
-
-```csharp
-static void Main(string[] args)
-{
-    string[] cars = { "BMW", "Ford", "Kia" };
-
-    Console.WriteLine(cars[0]);
-    Console.WriteLine(cars[1]);
-    Console.WriteLine(cars[2]);
-    Console.WriteLine(cars[3]); //index out of range exception
-
-    
-}
-```
-</details>
-
-
-
-<details><summary></summary>
-
-```csharp
-static void Main(string[] args)
-{
-    string[] cars = { "BMW", "Ford", "Kia" };
-    try
-    {
-        Console.WriteLine(cars[0]);
-        Console.WriteLine(cars[1]);
-        Console.WriteLine(cars[2]);
-        Console.WriteLine(cars[3]); //index out of range exception
-        Console.ReadLine();
-    }
-    catch (Exception e)
-    {
-        Console.WriteLine($"we had aproblem: {e.Message}");
-    }
-}
-```
-</details>
-
-
-<details><summary></summary>
-
-```csharp
-static void Main(string[] args)
-{
-    string[] cars = { "BMW", "Ford", "Kia" };
-    
-    for (int i = 0; i < cars.Length; i++)
-        Console.WriteLine(cars[i]);
-}
-```
-</details>
-
-
-
-<details><summary></summary>
-
-```csharp
-static void Main(string[] args)
-{
-    string[] cars = { "BMW", "Ford", "Kia" };
-
-    foreach (string car in cars)
-        Console.WriteLine(car); // הרבה יותר פשוט
-}
-```
-</details>
-
-
-
-<details><summary></summary>
-
-```csharp
-static void Main(string[] args)
-{
-    string[] cars = new string[5]; // איתחול לגודל 5
-    
-    for (int i = 0; i < cars.Length; i++)
-    {
-        cars[i] = "BMW" + i + 100;
-        Console.WriteLine(cars[i]);
-    }
-}
-```
-</details>
-
-
-
-<details><summary></summary>
-
-```csharp
-static void Main(string[] args)
-{
-    string[] cars = new string[5];
-
-    foreach (string car in cars) 
-        car = "BMW"; // ===== לא אפשרי  ======
-}
-```
-</details>
