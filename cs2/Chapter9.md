@@ -55,7 +55,7 @@ details, details > summary { display: none; }
 
 
 
-<details markdown="1"><summary>נניח שנרצה להפוך את car לאוסף של מחרוזות</summary>
+<details markdown="1"><summary>1. נניח שנרצה להפוך את car לאוסף של מחרוזות</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -67,7 +67,7 @@ static void Main(string[] args)
 ```
 </details>
 
-<details markdown="1"><summary>הוספנו: סוגריים מרובעים, סוגריים מסולסלים, ולשון רבים</summary>
+<details markdown="1"><summary>2. הוספנו: סוגריים מרובעים, סוגריים מסולסלים, ולשון רבים</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -82,7 +82,7 @@ static void Main(string[] args)
 
 </details>
 
-<details markdown="1"><summary>ניתן לגשת לאיבר במערך לפי מיקום</summary>
+<details markdown="1"><summary>3. ניתן לגשת לאיבר במערך לפי מיקום</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -96,7 +96,7 @@ static void Main(string[] args)
 </details>
 
 
-<details markdown="1"><summary>כאן כבר יש לנו בעיה</summary>
+<details markdown="1"><summary>4. כאן כבר יש לנו בעיה</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -120,7 +120,7 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>5. אפשר לטפל במצבי Exception</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -131,7 +131,7 @@ static void Main(string[] args)
         Console.WriteLine(cars[0]);
         Console.WriteLine(cars[1]);
         Console.WriteLine(cars[2]);
-        Console.WriteLine(cars[3]); //index out of range exception
+        Console.WriteLine(cars[3]); // Index Out of Range exception
     
     }
     catch (Exception e)
@@ -143,12 +143,12 @@ static void Main(string[] args)
 </details>
 
 
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>6. ניעזר בלולאות כדי לרוץ על כל איברי המערך, אבל,</summary>
 
 ```csharp
 static void Main(string[] args)
 {
-    string[] cars = { "BMW", "Ford", "Kia" };
+    string[] cars = [ "BMW", "Ford", "Kia" ]; // ??? {מסולסלים} לא היו קודם סוגריים 
     
     for (int i = 0; i < cars.Length; i++)
         Console.WriteLine(cars[i]);
@@ -158,12 +158,12 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>7. לולאת foreach יותר נוחה בהרבה מקרים</summary>
 
 ```csharp
 static void Main(string[] args)
 {
-    string[] cars = { "BMW", "Ford", "Kia" }; //direct instanciation
+    string[] cars = { "BMW", "Ford", "Kia" }; //inline initialization
 
     foreach (string car in cars)
         Console.WriteLine(car); // הרבה יותר פשוט
@@ -173,13 +173,14 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>8. כאן מקצים מערך בגודל מסויים וזה סוף פסוק</summary>
 
 ```csharp
 static void Main(string[] args)
 {
-    string[] cars = new string[5]; // איתחול לגודל 5
-    
+    string[] cars = new string[5]; // איתחול לגודל 5.  לא יורשה לשנות את הגודל בהמשך
+                                  // ולכן בהמשך הדרך בפרוייקטים נעבוד עם מבנים אחרים
+                                 // אסור בשימוש Array.Resize(ref cars, 10); אסור בשימוש
     for (int i = 0; i < cars.Length; i++)
     {
         cars[i] = "BMW" + i;
@@ -191,7 +192,7 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>9. הבדל חשוב בין סוגי הלולאות - לא ניתן לבצע השמה ב-foreach</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -205,7 +206,7 @@ static void Main(string[] args)
 ```
 </details>
 
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>10. אפשר לשלוח מערך לפונקציה.</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -213,14 +214,14 @@ static void Main(string[] args)
     int[] nums = { 3,2,1 };
     Add10(nums);
     PrintArr(nums); // prints 13  12  11
-    PrintArr(["bus", "bug", "beer", "bear"]); //instanciation in a call with [ ] 
+    PrintArr(["bus", "bug", "beer", "bear"]); //instanciation in a call with [ ] ???
 }
 public static void Add10(int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
         arr[i] += 10;
 }
-static void PrintArr<T>(T[] arr)
+static void PrintArr<T>(T[] arr) // מה נסגר עם הפונקציות הגנריות האלה?
 {
     foreach (var item in arr)
         Console.Write($" {item} ");
@@ -230,21 +231,23 @@ static void PrintArr<T>(T[] arr)
 </details>
 
 
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>11. המערך מאותחל ל-nulls</summary>
 
 ```csharp
 static void Main(string[] args)
 {
-    string[] cars = new string[5];
-    Console.Write(cars[0].Length); // Null Reference Exception
-    cars[0] = cars[0] + "wow";
+    string[] cars = new string[5];  // אז לא יודפס כלום null אפשר להדפיס את איברי המערך. הם כולם
+    //=== = "" קיימת דרישה בבחינות לבצע לולאת איתחול שמאפסת את אברי המערך. או במקרה זה מגדירה את כולם ===
+    //=== מאד לא סביר ומתנגש עם העבודה עם עצמים בהמשך === אמשיך לברר לכם את הנקודה 
+    Console.Write(cars[0].Length); // Null Reference Exception אבל לא ניתן לגשת לתכונה כשאין עדין עצם
+    cars[0] = cars[0] + "wow";    // null ובכל זאת ניתן לשרשר מחרוזת עם 
 
 }
 ```
 </details>
 
 
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>12. בואו ננסה להבין מה זה object reference</summary>
 
 ```csharp
 static void Main(string[] args)
