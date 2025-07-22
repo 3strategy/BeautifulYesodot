@@ -312,12 +312,12 @@ static void Main(string[] args)
 ```csharp
 static void Main(string[] args)
 {
-    string[] cars = ["BMW", "Ford", "Kia" ,"T"]; // 🤔 ??? {מסולסלים} לא היו קודם סוגריים 😲
+    string[] cars = ["BMW", "Ford", "Kia" ,"T"]; 
 
     foreach (var c in cars)
     {
         string sOrNos = c.Length > 1 ? "s" : ""; // Ternary
-        Console.WriteLine($"{c} is {c.Length} meter{sOrNos} long"); // 👮 i גישה ישירה לאיבר באינדקס
+        Console.WriteLine($"{c} is {c.Length} meter{sOrNos} long"); 
     }      
 }
 ```
