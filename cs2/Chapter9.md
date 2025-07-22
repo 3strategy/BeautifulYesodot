@@ -267,6 +267,45 @@ static void WillItChange_יתשנה_או_לא(char[] arr)
 ```
 </details>
 
+<details markdown="1"><summary>13. דוגמא עם ternary operator</summary>
+
+```csharp
+static void Main(string[] args)
+{
+    string[] cars = ["BMW", "Ford", "Kia" ,"T"]; // 🤔 ??? {מסולסלים} לא היו קודם סוגריים 😲
+
+    for (int i = 0; i < cars.Length; i++)
+    {
+        //ternary operator
+        Console.WriteLine($"{cars[i]} is " +
+            $"{cars[i].Length} meter{(cars[i].Length>1 ? "s" : "")} long"); // 👮 i גישה ישירה לאיבר באינדקס
+    }
+        
+}
+
+```
+</details>
+
+
+<details markdown="1"><summary>14. דוגמא עם ternary operator with higher perf</summary>
+
+```csharp
+static void Main(string[] args)
+{
+    string[] cars = ["BMW", "Ford", "Kia" ,"T"]; // 🤔 ??? {מסולסלים} לא היו קודם סוגריים 😲
+
+    for (int i = 0; i < cars.Length; i++)
+    {
+        //ternary operator
+        Console.WriteLine($"{cars[i]} is " +
+            $"{cars[i].Length} meter{(cars[i].Length>1 ? "s" : "")} long"); // 👮 i גישה ישירה לאיבר באינדקס
+    }
+        
+}
+
+```
+</details>
+
 
  <!-- this is the actual page that is displayed -->
 <!-- =============================================== -->
