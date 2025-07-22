@@ -502,5 +502,5 @@ A B C D E
 
 [⬅ עברו לתרגול 6.3 - Patterns לולאות מקוננות ללא פתרונות](/cs2/Chapter6Ex6.3)
 
-[⬅ עברו לתרגול 6.4 - לולאות מקוננות - Karel The Robot](/cs2/Chapter6Ex6.4KKarel)
+[⬅ עברו לתרגול 6.4 - לולאות מקוננות - Karel The Robot](/cs2/Chapter6Ex6.4Karel)
 
