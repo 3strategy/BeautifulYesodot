@@ -40,7 +40,7 @@ details, details > summary { display: none; }
   text-align: center;
   font-weight: bold;
   min-height: 2em;
-  margin-bottom: -3em;
+  margin-bottom: -4em;
   margin-top: 0;
 }
 .copy-success {
@@ -74,7 +74,7 @@ static void Main(string[] args)
 {
     string[] cars = { "BMW", "Ford", "Kia" };
 
-    Console.WriteLine(cars); // ⟹ לא ממש עוזר System.String[] לא כמו פייתון
+    Console.WriteLine(cars); // ⟹😟לא כמו פייתון. לא ממש עוזר System.String[] מדפיס
 }
 ```
 
@@ -131,7 +131,7 @@ static void Main(string[] args)
         Console.WriteLine(cars[0]);
         Console.WriteLine(cars[1]);
         Console.WriteLine(cars[2]);
-        Console.WriteLine(cars[3]); // Index Out of Range exception
+        Console.WriteLine(cars[3]); // 😥Index Out of Range exception😥
     
     }
     catch (Exception e)
@@ -148,10 +148,10 @@ static void Main(string[] args)
 ```csharp
 static void Main(string[] args)
 {
-    string[] cars = [ "BMW", "Ford", "Kia" ]; // ??? {מסולסלים} לא היו קודם סוגריים 
+    string[] cars = [ "BMW", "Ford", "Kia" ]; // 🤔 ??? {מסולסלים} לא היו קודם סוגריים 😲
     
     for (int i = 0; i < cars.Length; i++)
-        Console.WriteLine(cars[i]);
+        Console.WriteLine(cars[i]); // 👮 i גישה ישירה לאיבר באינדקס
 }
 ```
 </details>
@@ -165,7 +165,7 @@ static void Main(string[] args)
 {
     string[] cars = { "BMW", "Ford", "Kia" }; //inline initialization
 
-    foreach (string car in cars)
+    foreach (string car in cars) 🐭
         Console.WriteLine(car); // הרבה יותר פשוט
 }
 ```
@@ -352,6 +352,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ---
 
+## המשך למידה
+[⬅ עברו לפרק 9b - הערות והרחבות](/cs2/Chapter9b)
+
+[⬅ עברו לפרק 9c - מערך מונים וצוברים](/cs2/Chapter9c)
+
+
 ## תרגול
 
 [⬅ עברו לתרגול 9.1 - מערך חד ממדי](/cs2/Chapter9Ex9.1)
+
+
+## סרטונים
+
+[סרטוני פרק 9: פעולות](https://www.youtube.com/playlist?list=PLnVUJu2KuoA2cT3X-Fui7j6HZJWZM6vnK){:target="_blank"}
+
