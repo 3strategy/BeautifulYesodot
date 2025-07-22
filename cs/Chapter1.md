@@ -374,3 +374,5 @@ int %value;     // Special character ❌
 
 ## סרטונים
 [סרטוני פרק 1](https://youtube.com/playlist?list=PLw4P_RdfuzSirWjKrYrwudzauSKkwqC1z&si=7_UxQuHnK-BcW1k8){:target="_blank"}
+
+[פלייליסט השתלמות חלק א](https://www.youtube.com/playlist?list=PLnVUJu2KuoA04DlduroHvjZfhbxagO9nP){:target="_blank"}

@@ -449,3 +449,4 @@ Console.WriteLine("Number of changes: " + count);
 ## סרטונים
 [סרטוני פרק 6: לולאות for](https://www.youtube.com/playlist?list=PLw4P_RdfuzShl0iRsytc83T2ZHm3kvUAD){:target="_blank"}
 
+[פלייליסט השתלמות חלק א](https://www.youtube.com/playlist?list=PLnVUJu2KuoA04DlduroHvjZfhbxagO9nP){:target="_blank"}

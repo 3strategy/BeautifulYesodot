@@ -540,8 +540,9 @@ s = s.ToUpper().Replace("WORLD", "C#").Replace("HELLO,", "Go");
 [⬅ עברו לתרגול 7.3 - פונקציות המקבלות ומחזירות ערך](/cs2/Chapter7Ex7.3)
 
 ## סרטונים
-[סרטוני פרק 7: פעולות](https://www.youtube.com/playlist?list=PLw4P_RdfuzSh3nsdxq7oMeTbxZtADUsuv){:target="_blank"}
+[סרטוני קמפוס פרק 7: פעולות](https://www.youtube.com/playlist?list=PLw4P_RdfuzSh3nsdxq7oMeTbxZtADUsuv){:target="_blank"}
 
+[פלייליסט השתלמות חלק ב](https://www.youtube.com/playlist?list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S){:target="_blank"}
 
 
   <script>
