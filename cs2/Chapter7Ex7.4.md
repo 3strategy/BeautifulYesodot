@@ -12,6 +12,7 @@ lang: he
 {: .box-note}
 
 
+Alan Partridge II - Apple Turnover | Codewars
 
 * [Find the capitals | Codewars (7)](https://www.codewars.com/kata/539ee3b6757843632d00026b)
 * [Isograms | Codewars (7)](https://www.codewars.com/kata/54ba84be607a92aa900000f1)
@@ -80,3 +81,4 @@ lang: he
 * [All Star Code Challenge #18 | Codewars (7)](https://www.codewars.com/kata/5865918c6b569962950002a1)
 * [Beginner Series #2 Clock | Codewars (7)](https://www.codewars.com/kata/55f9bca8ecaa9eac7100004a)
 * [Find the capitals | Codewars (7)](https://www.codewars.com/kata/539ee3b6757843632d00026b)
+
