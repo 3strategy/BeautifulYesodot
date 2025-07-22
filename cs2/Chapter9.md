@@ -30,12 +30,14 @@ details, details > summary { display: none; }
   z-index: 2;
 }
 .button-container {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  text-align: center;
 }
 #explanation {
-  margin: 0 0 0.6em 0;
-  min-height: 1.8em;
+  margin: 1em 0 2em 0;
+  min-height: 2em;
   font-weight: bold;
+  text-align: center;
 }
 .copy-success {
   color: green;
@@ -45,7 +47,6 @@ details, details > summary { display: none; }
   vertical-align: middle;
 }
 </style>
-
 
 
 
@@ -261,15 +262,14 @@ static void WillItChange_יתשנה_או_לא(char[] arr)
 
  <!-- this is the actual page that is displayed -->
 <!-- =============================================== -->
-<div id="explanation"></div>
 <div class="button-container">
   <button id="prevBtn">הקודם</button>
   <button id="nextBtn">הבא</button>
   <button id="copyBtn">העתק קוד</button>
   <span id="copyStatus" class="copy-success" style="display:none;">הועתק!</span>
 </div>
+<div id="explanation"></div>
 <div id="stage"></div>
-
 
 
 
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
       current = next;
       idx = toIdx;
       explanation.textContent = blocks[toIdx].summary;
-    }, 800);
+    }, 3000);
   }
 
   // Button handlers
@@ -341,7 +341,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 });
 </script>
-
 
 
 ---
