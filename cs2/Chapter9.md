@@ -39,8 +39,9 @@ details, details > summary { display: none; }
 #explanation {
   text-align: center;
   font-weight: bold;
+  font-size: 1em;
   min-height: 1em;
-  margin-bottom: -3.4em;
+  margin-bottom: -3.1em;
   margin-top: 0;
 }
 .copy-success {
@@ -55,7 +56,7 @@ details, details > summary { display: none; }
 
 
 
-<details markdown="1"><summary>1. נניח שנרצה להפוך את car לאוסף של מחרוזות</summary>
+<details markdown="1"><summary>1. נניח שנרצה להפוך את car **לאוסף של מחרוזות**</summary>
 
 ```csharp
 static void Main(string[] args)
