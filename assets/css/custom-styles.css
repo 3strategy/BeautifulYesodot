@@ -247,8 +247,8 @@ canvas {
 }
 
 button {
-    padding: 15px 8px;
-    font-size: 18px;
+    padding: 0.8em 0.2em;
+    font-size: 1em;
     background-color: var(--backn-col);
     border: none;
     border-radius: 5px;

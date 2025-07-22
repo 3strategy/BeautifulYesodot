@@ -39,8 +39,8 @@ details, details > summary { display: none; }
 #explanation {
   text-align: center;
   font-weight: bold;
-  min-height: 2em;
-  margin-bottom: -4em;
+  min-height: 1em;
+  margin-bottom: -3.4em;
   margin-top: 0;
 }
 .copy-success {
