@@ -284,23 +284,22 @@ static void WillItChange_יתשנה_או_לא(char[] arr)
 
 <script defer>
 document.addEventListener('DOMContentLoaded', () => {
-  // Extract summaries and codes:
-  const blocks = [...document.querySelectorAll('details')].map(d => {
-      return {
-        summary: d.querySelector('summary').textContent,
-        codeEl: d.querySelector('pre').cloneNode(true)
-      };
-  });
+  // Extract code blocks and processed summaries (markdown-style bold to <strong>)
+  const blocks = [...document.querySelectorAll('details')].map(d => ({
+    codeEl: d.querySelector('pre').cloneNode(true),
+    // Allows using **bold** in summary
+    summary: d.querySelector('summary').innerHTML.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+  }));
   const stage = document.getElementById('stage');
   const explanation = document.getElementById('explanation');
   const copyBtn = document.getElementById('copyBtn');
   const copyStatus = document.getElementById('copyStatus');
   let idx = 0;
 
-  // Initial display
+  // Initial code block display
   let current = stage.appendChild(blocks[0].codeEl.cloneNode(true));
   current.classList.add('show');
-  explanation.textContent = blocks[0].summary;
+  if(explanation) explanation.innerHTML = blocks[0].summary;
 
   function crossfade(toIdx) {
     if (toIdx === idx) return;
@@ -314,18 +313,19 @@ document.addEventListener('DOMContentLoaded', () => {
       current.remove();
       current = next;
       idx = toIdx;
-      explanation.textContent = blocks[toIdx].summary;
-    }, 3000);
+      if(explanation) explanation.innerHTML = blocks[toIdx].summary;
+    }, 3000); // 3s transition
   }
 
-  // Button handlers
-  document.getElementById('nextBtn').onclick = () =>
-    crossfade((idx + 1) % blocks.length);
-  document.getElementById('prevBtn').onclick = () =>
-    crossfade((idx + blocks.length - 1) % blocks.length);
+  // Buttons (ensure these elements exist before binding)
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  if(nextBtn) nextBtn.onclick = () => crossfade((idx + 1) % blocks.length);
+  if(prevBtn) prevBtn.onclick = () => crossfade((idx + blocks.length - 1) % blocks.length);
 
-  // Mouse click on stage (not buttons)
+  // Mouse click on stage (not buttons!)
   stage.addEventListener('mousedown', e => {
+    // Only respond if not clicking on code selection or non-left/right button
     if (e.button === 0) { // Left
       crossfade((idx + 1) % blocks.length);
       e.preventDefault();
@@ -337,19 +337,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   stage.addEventListener('contextmenu', e => e.preventDefault());
 
-  // Copy button handler
-  copyBtn.onclick = () => {
-    // Find and copy code from currently displayed <pre>
+  // Copy button
+  if(copyBtn) copyBtn.onclick = () => {
     const code = current.textContent;
-    // Use Clipboard API if available
     navigator.clipboard.writeText(code).then(() => {
-      copyStatus.style.display = 'inline-block';
-      setTimeout(() => { copyStatus.style.display = 'none'; }, 1200);
+      if(copyStatus) {
+        copyStatus.style.display = 'inline-block';
+        setTimeout(() => { copyStatus.style.display = 'none'; }, 1200);
+      }
     });
   };
 });
 </script>
-
 
 ---
 
