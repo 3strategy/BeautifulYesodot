@@ -297,12 +297,29 @@ static void Main(string[] args)
     for (int i = 0; i < cars.Length; i++)
     {
         //ternary operator
-        Console.WriteLine($"{cars[i]} is " +
-            $"{cars[i].Length} meter{(cars[i].Length>1 ? "s" : "")} long"); // 👮 i גישה ישירה לאיבר באינדקס
-    }
-        
+        string c = cars[i]; // 👮 i גישה ישירה לאיבר באינדקס
+        string sOrNos = c.Length > 1 ? "s" : ""; // Ternary
+        Console.WriteLine($"{c} is {c.Length} meter{sOrNos} long"); // 👮 i גישה ישירה לאיבר באינדקס
+    }     
 }
 
+```
+</details>
+
+
+<details markdown="1"><summary>15. דוגמא עם ternary operator in a foreach</summary>
+
+```csharp
+static void Main(string[] args)
+{
+    string[] cars = ["BMW", "Ford", "Kia" ,"T"]; // 🤔 ??? {מסולסלים} לא היו קודם סוגריים 😲
+
+    foreach (var c in cars)
+    {
+        string sOrNos = c.Length > 1 ? "s" : ""; // Ternary
+        Console.WriteLine($"{c} is {c.Length} meter{sOrNos} long"); // 👮 i גישה ישירה לאיבר באינדקס
+    }      
+}
 ```
 </details>
 
