@@ -18,16 +18,31 @@ details, details > summary { display: none; }
 #stage pre {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  margin: 0;
   opacity: 0;
   transition: opacity 3s;
   z-index: 1;
   direction: ltr;
   background: inherit;
+  margin: 0;
 }
 #stage pre.show {
   opacity: 1;
   z-index: 2;
+}
+.button-container {
+  margin-bottom: 2em;
+}
+#explanation {
+  margin: 0 0 0.6em 0;
+  min-height: 1.8em;
+  font-weight: bold;
+}
+.copy-success {
+  color: green;
+  font-size: 0.9em;
+  margin-right: 1em;
+  display: inline-block;
+  vertical-align: middle;
 }
 </style>
 
@@ -36,7 +51,7 @@ details, details > summary { display: none; }
 
 
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -48,7 +63,7 @@ static void Main(string[] args)
 ```
 </details>
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -63,7 +78,7 @@ static void Main(string[] args)
 
 </details>
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -76,7 +91,7 @@ static void Main(string[] args)
 </details>
 
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -100,7 +115,7 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -123,7 +138,7 @@ static void Main(string[] args)
 </details>
 
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -138,7 +153,7 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -153,7 +168,7 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -171,7 +186,7 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -185,7 +200,7 @@ static void Main(string[] args)
 ```
 </details>
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -210,7 +225,7 @@ static void PrintArr<T>(T[] arr)
 </details>
 
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -224,7 +239,7 @@ static void Main(string[] args)
 </details>
 
 
-<details markdown="1"><summary></summary>
+<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -244,10 +259,14 @@ static void WillItChange_יתשנה_או_לא(char[] arr)
 </details>
 
 
-
+ <!-- this is the actual page that is displayed -->
+<!-- =============================================== -->
+<div id="explanation"></div>
 <div class="button-container">
   <button id="prevBtn">הקודם</button>
   <button id="nextBtn">הבא</button>
+  <button id="copyBtn">העתק קוד</button>
+  <span id="copyStatus" class="copy-success" style="display:none;">הועתק!</span>
 </div>
 <div id="stage"></div>
 
@@ -257,18 +276,27 @@ static void WillItChange_יתשנה_או_לא(char[] arr)
 
 <script defer>
 document.addEventListener('DOMContentLoaded', () => {
-  const steps = [...document.querySelectorAll('details')]
-    .map(d => d.querySelector('pre').cloneNode(true));
+  // Extract summaries and codes:
+  const blocks = [...document.querySelectorAll('details')].map(d => {
+      return {
+        summary: d.querySelector('summary').textContent,
+        codeEl: d.querySelector('pre').cloneNode(true)
+      };
+  });
   const stage = document.getElementById('stage');
+  const explanation = document.getElementById('explanation');
+  const copyBtn = document.getElementById('copyBtn');
+  const copyStatus = document.getElementById('copyStatus');
   let idx = 0;
 
-  // Start with one code block
-  let current = stage.appendChild(steps[0].cloneNode(true));
+  // Initial display
+  let current = stage.appendChild(blocks[0].codeEl.cloneNode(true));
   current.classList.add('show');
+  explanation.textContent = blocks[0].summary;
 
   function crossfade(toIdx) {
     if (toIdx === idx) return;
-    const next = stage.appendChild(steps[toIdx].cloneNode(true));
+    const next = stage.appendChild(blocks[toIdx].codeEl.cloneNode(true));
     next.classList.add('show');
     next.style.opacity = 0;
     next.getBoundingClientRect(); // force reflow
@@ -278,27 +306,39 @@ document.addEventListener('DOMContentLoaded', () => {
       current.remove();
       current = next;
       idx = toIdx;
+      explanation.textContent = blocks[toIdx].summary;
     }, 800);
   }
 
-  // Buttons
-  document.getElementById('nextBtn').onclick = () => 
-    crossfade((idx + 1) % steps.length);
-  document.getElementById('prevBtn').onclick = () => 
-    crossfade((idx + steps.length - 1) % steps.length);
+  // Button handlers
+  document.getElementById('nextBtn').onclick = () =>
+    crossfade((idx + 1) % blocks.length);
+  document.getElementById('prevBtn').onclick = () =>
+    crossfade((idx + blocks.length - 1) % blocks.length);
 
-  // Stage left click = next, right click = prev
+  // Mouse click on stage (not buttons)
   stage.addEventListener('mousedown', e => {
     if (e.button === 0) { // Left
-      crossfade((idx + 1) % steps.length);
+      crossfade((idx + 1) % blocks.length);
       e.preventDefault();
     }
     if (e.button === 2) { // Right
-      crossfade((idx + steps.length - 1) % steps.length);
+      crossfade((idx + blocks.length - 1) % blocks.length);
       e.preventDefault();
     }
   });
   stage.addEventListener('contextmenu', e => e.preventDefault());
+
+  // Copy button handler
+  copyBtn.onclick = () => {
+    // Find and copy code from currently displayed <pre>
+    const code = current.textContent;
+    // Use Clipboard API if available
+    navigator.clipboard.writeText(code).then(() => {
+      copyStatus.style.display = 'inline-block';
+      setTimeout(() => { copyStatus.style.display = 'none'; }, 1200);
+    });
+  };
 });
 </script>
 
