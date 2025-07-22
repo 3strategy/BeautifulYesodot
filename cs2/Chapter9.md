@@ -68,7 +68,7 @@ static void Main(string[] args)
 ```
 </details>
 
-<details markdown="1"><summary>2. הוספנו: סוגריים מרובעים, סוגריים מסולסלים, ולשון רבים</summary>
+<details markdown="1"><summary>2. הוספנו: סוגריים **מסולסלים**, לשון **רבים**, וסוגריים **מרובעים**, </summary>
 
 ```csharp
 static void Main(string[] args)
@@ -83,7 +83,7 @@ static void Main(string[] args)
 
 </details>
 
-<details markdown="1"><summary>3. ניתן לגשת לאיבר במערך לפי מיקום</summary>
+<details markdown="1"><summary>3. ניתן לגשת לאיבר במערך **לפי מיקום**</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -97,7 +97,7 @@ static void Main(string[] args)
 </details>
 
 
-<details markdown="1"><summary>4. כאן כבר יש לנו בעיה</summary>
+<details markdown="1"><summary>4. כאן כבר יש לנו **בעיה**</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -121,7 +121,7 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>5. אפשר לטפל במצבי Exception</summary>
+<details markdown="1"><summary>5. אפשר לטפל במצבי **Exception**</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -144,7 +144,7 @@ static void Main(string[] args)
 </details>
 
 
-<details markdown="1"><summary>6. ניעזר בלולאות כדי לרוץ על כל איברי המערך, אבל,</summary>
+<details markdown="1"><summary>6. ניעזר בלולאות כדי **לעבור על כל איברי המערך**, אבל,</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -159,7 +159,7 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>7. לולאת foreach יותר נוחה בהרבה מקרים</summary>
+<details markdown="1"><summary>7. **foreach יותר נוח** בהרבה מקרים</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -174,7 +174,7 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>8. כאן מקצים מערך בגודל מסויים וזה סוף פסוק</summary>
+<details markdown="1"><summary>8. כאן מקצים מערך בגודל מסויים וזה **סוף פסוק**</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -193,7 +193,7 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>9. הבדל חשוב בין סוגי הלולאות - לא ניתן לבצע השמה ב-foreach</summary>
+<details markdown="1"><summary>9. הבדל **חשוב** בין סוגי הלולאות - **לא ניתן לבצע השמה ב-foreach**</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -207,7 +207,7 @@ static void Main(string[] args)
 ```
 </details>
 
-<details markdown="1"><summary>10. אפשר לשלוח מערך לפונקציה.</summary>
+<details markdown="1"><summary>10. אפשר **לשלוח מערך כארגומנט** לפונקציה.</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -232,7 +232,7 @@ static void PrintArr<T>(T[] arr) // מה נסגר עם הפונקציות הגנ
 </details>
 
 
-<details markdown="1"><summary>11. המערך מאותחל ל-nulls</summary>
+<details markdown="1"><summary>11. המערך **מאותחל ל-nulls** או לאפסים או ל-false בהתאם לטיפוס</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -248,7 +248,7 @@ static void Main(string[] args)
 </details>
 
 
-<details markdown="1"><summary>12. בואו ננסה להבין מה זה object reference</summary>
+<details markdown="1"><summary>12. בואו ננסה להבין, **מה זה object reference**</summary>
 
 ```csharp
 static void Main(string[] args)
