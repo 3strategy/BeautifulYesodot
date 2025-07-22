@@ -30,14 +30,18 @@ details, details > summary { display: none; }
   z-index: 2;
 }
 .button-container {
+  margin-top: 1em;
   margin-bottom: 1em;
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4em;
 }
 #explanation {
-  margin: 1em 0 2em 0;
-  min-height: 2em;
-  font-weight: bold;
   text-align: center;
+  font-weight: bold;
+  min-height: 2em;
+  margin-bottom: -1em;
+  margin-top: 0;
 }
 .copy-success {
   color: green;
@@ -51,8 +55,7 @@ details, details > summary { display: none; }
 
 
 
-
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>נניח שנרצה להפוך את car לאוסף של מחרוזות</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -64,14 +67,14 @@ static void Main(string[] args)
 ```
 </details>
 
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>הוספנו: סוגריים מרובעים, סוגריים מסולסלים, ולשון רבים</summary>
 
 ```csharp
 static void Main(string[] args)
 {
     string[] cars = { "BMW", "Ford", "Kia" };
 
-    Console.WriteLine(cars); // ⟹  System.String[]
+    Console.WriteLine(cars); // ⟹ לא ממש עוזר System.String[] לא כמו פייתון
 }
 ```
 
@@ -79,20 +82,21 @@ static void Main(string[] args)
 
 </details>
 
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>ניתן לגשת לאיבר במערך לפי מיקום</summary>
 
 ```csharp
 static void Main(string[] args)
 {
     string[] cars = { "BMW", "Ford", "Kia" };
 
-    Console.WriteLine(cars[0]);
+    Console.WriteLine(cars[0]); // prints BMW, מתנהג כמו במחרוזת
+    Console.WriteLine(cars[0][1]); // ??? ומה זה ידפיס
 }
 ```
 </details>
 
 
-<details markdown="1"><summary>להוסיף מה הולכים לעשות כאן</summary>
+<details markdown="1"><summary>כאן כבר יש לנו בעיה</summary>
 
 ```csharp
 static void Main(string[] args)
