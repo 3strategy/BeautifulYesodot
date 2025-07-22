@@ -362,6 +362,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 [⬅ עברו לתרגול 9.1 - מערך חד ממדי](/cs2/Chapter9Ex9.1)
 
+[⬅ עברו לתרגול 9.2 - מערכים - שאלות ב- CodeWars](/cs2/Chapter9Ex9.2)
+
+
 
 ## סרטונים
 

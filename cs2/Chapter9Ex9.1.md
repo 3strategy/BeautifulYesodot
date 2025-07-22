@@ -1,9 +1,9 @@
 ---
 layout: page
-title: "פרק 9 מערך חד ממדי"
-subtitle: "הערות והרחבות"
+title: "9.1 תרגול בסיסי במערך"
+subtitle: "תרגול במערך"
 author: גיא סידס
-tags: [מערך, מערכים, חד ממדי]
+tags: [מערך, תרגול מערכים, חד ממדי]
 mathjax: true
 lang: he
 ---
