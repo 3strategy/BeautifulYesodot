@@ -30,17 +30,17 @@ details, details > summary { display: none; }
   z-index: 2;
 }
 .button-container {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 0em;
+  margin-bottom: 2em;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 0.4em;
 }
 #explanation {
   text-align: center;
   font-weight: bold;
   min-height: 2em;
-  margin-bottom: -1em;
+  margin-bottom: -3em;
   margin-top: 0;
 }
 .copy-success {
