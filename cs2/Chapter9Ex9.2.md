@@ -66,3 +66,8 @@ lang: he
 
 ## 9.2.12 מערך מונים
 [Isograms | Codewars](https://www.codewars.com/kata/54ba84be607a92aa900000f1)
+
+
+
+## קישורים
+[⬅ חזרה לתרגול 9.1 - מערך חד ממדי](/cs2/Chapter9Ex9.1)

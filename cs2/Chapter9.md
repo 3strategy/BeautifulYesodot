@@ -3,7 +3,7 @@ layout: page
 title: "פרק 9 מערך חד ממדי"
 subtitle: "משתנים הבנויים כאוסף"
 author: גיא סידס
-tags: [מערך, מערכים, חד ממדי]
+tags: [מערך, מערכים, חד ממדי, Ternary operator]
 mathjax: true
 lang: he
 ---

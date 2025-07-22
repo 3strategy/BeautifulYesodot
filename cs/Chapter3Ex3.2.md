@@ -2,6 +2,7 @@
 layout: page
 title: "תרגול תנאים ושארית חלוקה"
 subtitle: "תרגול 3.2 תנאים מורכבים ושארית חלוקה"
+tags: [שארית חלוקה, תנאי מורכב, תנאים מורכבים, Ternary operator]
 author: גיא סידס
 mathjax: true
 lang: he
