@@ -187,6 +187,9 @@ public static bool IsPalindrom(int[] arr)
 }
 ```
 
+</details>
+
+
 ## דוגמא פתורה: חשבון מילולי
 <!-- פתרון שאלת החשבון 8.4 ממטלה 2 -->
 כתבו פונקציה ב-C# בשם `MathInWords` המקבלת מחרוזת המתארת פעולה מתמטית בשפה האנגלית (חיבור או חיסור) ומחזירה את התוצאה במילים באנגלית.
@@ -262,6 +265,7 @@ public static int NumFromWord(string s)
 ```
 
 </details>
+
 
 
 

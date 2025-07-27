@@ -43,7 +43,7 @@ navbar-links:
      
 
   חלק ב: 
-    - מצגות קמפוס: "cs2/hapterCampus"
+    - מצגות קמפוס: "cs2/ChapterCampus.md"
     - פרק 6 לולאות מקוננות: "/cs2/Chapter6/"
     - פרק 7 מורחב: "/cs2/Chapter7Full"
     - תרגול 7.3: "/cs2/Chapter7Ex7.3"
@@ -51,9 +51,8 @@ navbar-links:
     - פרק 7 מקוצר: "/cs2/Chapter7Short"
     - פרק 8 מחרוזות: "/cs2/Chapter8"
     - פרק 9 מערכים: "/cs2/Chapter9"
-    - פרק 9 מערכים ללא אנימציה: "/cs2/Chapter9a"
-
-    - פרק 9 הערות: "/cs2/Chapter9b"
+    - פרק 9a מערכים ללא אנימציה: "/cs2/Chapter9a"
+    - פרק 9b המשך ודוגמאות: "/cs2/Chapter9b"
     - תרגול 9.1: "/cs2/Chapter9Ex9.1"
     - תרגול 9.2 CodeWars: "/cs2/Chapter9Ex9.2"
     - פרק 9c מערך מונים: "/cs2/Chapter9c"
