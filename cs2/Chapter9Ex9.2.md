@@ -11,6 +11,65 @@ lang: he
 {: .box-note}
 לא עברתי על כל השאלות לאחרונה. יתכן שחלק לא קשורות למערכים. 
 
+## כיצד לכתוב פתרון ל-Kata ב-Visual Studio:
+
+1. אחרי שלוחצים Train יפתח חלון ובו הבסיס לקוד הפתרון
+    ניקח לדוגמא את השאלה על [ספירת כבשים](https://www.codewars.com/kata/5b077ebdaf15be5c7f000077)
+    ```csharp
+    public static class Kata
+    {
+        public static string CountSheep(int n)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    ```
+
+1. נעתיק את הקוד הזה לקובץ חדש של מחלקה (שניתן ליצור באמצעות Ctrl+Shift+A), או פשוט נדביק אותו מעל למחלקה Program, ככה:
+    ```csharp
+    namespace ConsoleApp31
+    {
+
+    // מדביק מחוץ למחלקה Program
+
+        public static class Kata
+        {
+            public static string CountSheep(int n)
+            {
+                throw new NotImplementedException(); // את השורה הזו נמחק
+            }
+        }
+        ```
+
+        internal class Program
+        {
+            static void Main(string[] args)
+            {
+                string res = Kata.CountSheep(5);
+                Console.WriteLine(res);
+                Console.ReadLine();
+            }
+        }
+    }
+    ```
+1. ברגע שאנו מוכנים עם פתרון מלא, שבדקנו ונראה לנו תקין, נעתיק אותו בחזרה לתוך CodeWars
+    ```csharp
+    public static class Kata
+    {
+        public static string CountSheep(int n)
+        {
+            string result = "";
+            for (int i = 1; i <= n; i++)
+                result += $"{i} sheep...";
+            return result;
+        }
+    }
+    ```
+
+**כך זה נראה במקרה שיצרנו את המחלקה בקובץ נפרד:**
+![alt text](image-1.png)
+
+
 ## 9.2.1 
 [Odd or Even](https://www.codewars.com/kata/5949481f86420f59480000e7)
 
