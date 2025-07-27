@@ -91,19 +91,19 @@ lang: he
 <details markedown="1"><summary>פתרון</summary>
 
 ```csharp
-    public static void Q917(int[] arr, int k)
-    {   // Given an array of integers, rotate the array
-        // to the right by k steps, where k is non-negative.
-        int[] kNums = new int[k]; // מכיל את האחרונים שעתידים להידרס
-        for (int i = 1; i <= k; i++)
-            kNums[^i] = arr[^i]; // הולך ישר ל-3 האחרונים
+public static void Q917(int[] arr, int k)
+{   // Given an array of integers, rotate the array
+    // to the right by k steps, where k is non-negative.
+    int[] kNums = new int[k]; // מכיל את האחרונים שעתידים להידרס
+    for (int i = 1; i <= k; i++)
+        kNums[^i] = arr[^i]; // הולך ישר ל-3 האחרונים
 
-        for (int i = arr.Length - 1-k; i >= 0; i--)
-            arr[i+k] = arr[i]; // מזיז את כל השאר ימינה
+    for (int i = arr.Length - 1-k; i >= 0; i--)
+        arr[i+k] = arr[i]; // מזיז את כל השאר ימינה
 
-        for (int i = 0; i < k; i++)
-            arr[i] = kNums[i]; // מכניס את ה-3 האחרונים למקומם החדש
-    }
+    for (int i = 0; i < k; i++)
+        arr[i] = kNums[i]; // מכניס את ה-3 האחרונים למקומם החדש
+}
 ```
 </details>
 
