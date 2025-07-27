@@ -39,14 +39,14 @@ lang: he
                 throw new NotImplementedException(); // את השורה הזו נמחק
             }
         }
-        ```
+        
 
         internal class Program
         {
             static void Main(string[] args)
             {
-                string res = Kata.CountSheep(5);
-                Console.WriteLine(res);
+                string res = Kata.CountSheep(5); // קריאה לפונקציה תוך שימוש בשם המחלקה
+                Console.WriteLine(res); // :התחביר זהה לחלוטין לקריאה כאן, המוכרת לנו
                 Console.ReadLine();
             }
         }

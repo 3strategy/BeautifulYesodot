@@ -55,7 +55,8 @@ static void Main(string[] args)
 
 
 <details markdown="1"><summary>4. כאן כבר יש לנו בעיה</summary>
-פניה ל-index שלא קיים במערך תקריס את התכנית עם ndex Out Of Range Exception
+פניה ל-index שלא קיים במערך תקריס את התכנית עם **Exception: Index Out Of Range**
+הדגמנו בשיעור מה המשמעות של קריסה של תכנית.
 
 ```csharp
 static void Main(string[] args)
@@ -68,7 +69,7 @@ static void Main(string[] args)
         Console.WriteLine(cars[2]);
         Console.WriteLine(cars[3]); //index out of range exception
         // Program WILL CRUSH 
-        Console.ReadLine();
+        Console.ReadLine(); // שורה זו לא נחוצה בימינו - אלא כדי להדגים את משמעות הקריסה
 
 
 
@@ -229,18 +230,18 @@ static void Main(string[] args)
 
 
 <details markdown="1"><summary>12. בואו ננסה להבין, מה זה object reference</summary>
-כאן מודגם מה שאסור לעשות. ברגע שיש הוראת השמה כפי שמופיעה בפוקציה `WillItChange` מוקצה מערך חדש, בכתובת חדשה בזכרון וזו הכתובת שעליה מצביע מעתה `arr`. **למשתנה `chars` אין שום מושג** שהשינוי הזה קרה. בדיוק כפי שכאשר אנו משנים פרמטר בפונקציה - מי ששלח לנו את הארגומנט לא יכול לדעת ששינוי כזה קרה.
+כאן מודגם מה **שאסור לעשות**. ברגע שיש הוראת השמה כפי שמופיעה בפוקציה `WillItChange` מוקצה מערך חדש, בכתובת חדשה בזכרון וזו הכתובת שעליה מצביע מעתה `arr`. **למשתנה `chars` אין שום מושג** שהשינוי הזה קרה. בדיוק כפי שכאשר אנו משנים פרמטר בפונקציה, מי ששלח לנו את הארגומנט לא יכול לדעת שהשינוי הזה קרה.
 
 ```csharp
 static void Main(string[] args)
 {
     char[] chars = ['h', 'e', 'l', 'l', 'o'];
     PrintArr(chars); //        h  e  l  l  o
-    WillItChange_יתשנה_או_לא(chars);
+    WillItChange(chars);
     PrintArr(chars); // Stays  h  e  l  l  o
 }
 
-static void WillItChange_יתשנה_או_לא(char[] arr)
+static void WillItChange(char[] arr)
 {
     arr = ['h', 'e', 'l', 'l', '_', 'N', 'o'];
 }

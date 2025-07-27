@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "פרק 9 מערכים - הערות ותוספות"
-subtitle: "הערות והרחבות"
+subtitle: "הערות והרחבות על מערכים. קישורים לקמפוס"
 author: גיא סידס
-tags: [מערך, מערכים, חד ממדי, מערך מונים, מערך צוברים]
+tags: [איתחול עם סוגריים מרובעים, מצגות קמפוס, גישה לאיבר מהסוף, ^i]
 mathjax: true
 lang: he
 ---
@@ -87,61 +87,61 @@ last = arr[-1]           # 50
 second_to_last = arr[-2] # 40
 ```
 
-# מערך מונים
+
+## כיצד להגיע למצגות קמפוס
+
+חלק מהקישורים פשוט מובילים למצגות:
+
+[פרק 1 הוראות הדפסה ומשתנים](https://lomdot.education.gov.il/Qualitest/CSA01-variables/index.html){:target="_blank"}
+
+[פרק 2 אופרטורים וביטויים לוגיים](https://lomdot.education.gov.il/Qualitest/CSA02-operators_new/index.html){:target="_blank"}
+
+[פרק 3 המחלקה Math](https://lomdot.education.gov.il/Qualitest/CSA03-MathLibrary/index.html){:target="_blank"}
+
+[פרק 4 תנאים](https://lomdot.education.gov.il/Qualitest/CSA04-if/index.html){:target="_blank"}
+
+[פרק 5 לולאות for](https://lomdot.education.gov.il/Qualitest/CSA05-for/index.html){:target="_blank"}
+
+[פרק 6 לולאות while](https://lomdot.education.gov.il/Qualitest/CSA06-while/index.html){:target="_blank"}
+
+[פרק 7 פעולות](https://lomdot.education.gov.il/Qualitest/CSA07-actions/index.html){:target="_blank"}
+
+[פרק 8 מחרוזות](https://lomdot.education.gov.il/Qualitest/CSA08-strings/index.html){:target="_blank"}
+
+[פרק 9 מערך חד ממדי](https://lomdot.education.gov.il/Qualitest/CSA09-1D/index.html){:target="_blank"}
+
+[פרק 10 מערך דו ממדי](https://lomdot.education.gov.il/Qualitest/CSA10-2D/index.html){:target="_blank"}
+
+[פרק 11 עצמים](https://lomdot.education.gov.il/Qualitest/CSA11A-objects/index.html){:target="_blank"}
+
+[פרק 12 הורשה ](https://lomdot.education.gov.il/Qualitest/CSA11C-abstract/index.html){:target="_blank"}
+
+[פרק 13 פולימורפיזם ](https://lomdot.education.gov.il/Qualitest/CSA12/index.html){:target="_blank"}
+
+[פרק 14 ממשקים ](https://lomdot.education.gov.il/Qualitest/CSA13/index.html){:target="_blank"}
 
 
-מערך שבו כל אינדקס מייצג ערך מסוים, והערך במיקום זה מציין את מספר הפעמים שהערך הופיע.
 
-### שאלה לדוגמה
 
-**הבעיה:** נתון מערך של מספרים בתחום 0–100. כתבו פונקציה המחזירה מערך מונים המצביע על כמות ההופעות של כל מספר.
+**במידה שלא, אתם נגשים לתת פרק 0. כאן בדוגמא, 9.0 ובוחרים בלשונית השמאלית:**
+![alt text](image-2.png)
 
-#### פתרון
-
-```csharp
-int[] CountOccurrences(int[] arr) {
-  int[] counts = new int[101];
-  foreach (int x in arr) {
-    if (x >= 0 && x <= 100) counts[x]++;
-  }
-  return counts;
-}
-```
-
----
-
-## מערך דגלים בוליאניים
-
-מערך בוליאני (`bool[]`) בו כל אינדקס מייצג ערך מסוים, והערך `true` מציין נוכחות או תקינות, ו-`false` חוסר.
-
-### שאלה לדוגמה
-
-**הבעיה:** נתון מערך של מספרים בתחום 0–100. כתבו פונקציה שבודקת אם מספר נתון `n` הופיע לפחות פעם אחת במערך.
-
-#### פתרון
-
-```csharp
-bool[] BuildFlags(int[] arr) {
-  bool[] flags = new bool[101];
-  foreach (int x in arr) {
-    if (x >= 0 && x <= 100) flags[x] = true;
-  }
-  return flags;
-}
-
-bool Exists(int n, bool[] flags) {
-  return (n >= 0 && n < flags.Length) && flags[n];
-}
-```
-
----
-
-> **הערה חשובה:** בשימוש בטווח ערכים פתוח (למשל כל מספר `int`), שיטות אלו עלולות לגרום לבעיות אחסון וביצועים קשות. במקרים מעשיים נהוג להשתמש במבני נתונים דינמיים (למשל `Dictionary<int,int>` או `HashSet<int>`).
-
+ולוחצים כדי לפתוח את המצגת
+![alt text](image-3.png)
 
 
 ## קישורים
 
 [⬅ עברו לפרק 9 - מערכים](/cs2/Chapter9)
 
+[⬅ עברו לפרק 9a - גרסת ללא אנימציות](/cs2/Chapter9a)
+
 [⬅ עברו לפרק 9c - מערך מונים וצוברים](/cs2/Chapter9c)
+
+
+
+## תרגול
+
+[⬅ עברו לתרגול 9.1 - מערך חד ממדי](/cs2/Chapter9Ex9.1)
+
+[⬅ עברו לתרגול 9.2 - מערכים - שאלות ב- CodeWars](/cs2/Chapter9Ex9.2)
