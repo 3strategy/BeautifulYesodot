@@ -79,6 +79,26 @@ lang: he
 יש לכתוב תוכנית המזיזה את הערכים במערך חד מימדי מקום אחד ימינה, כאשר האיבר במקום האחרון עובר למקום הראשון. 
     לדוגמה עבור המערך \{ arr = \{1,2,3,4,5  יתבצע שינוי ויהיה \{ arr = \{5,1,2,3,4
 
+## הזזה ימינה ב-k מקומות 9.1.7
+כמו השאלה שלעיל, אבל גלגול ימינה של k איברים
+
+<details markedown="1"><summary>פתרון</summary>
+
+```csharp
+    public static void Q917(int[] arr, int k)
+    {   // Given an array of integers, rotate the array
+        // to the right by k steps, where k is non-negative.
+        int[] kNums = new int[k]; // מכיל את האחרונים שעתידים להידרס
+        for (int i = 1; i <= k; i++)
+            kNums[^i] = arr[^i]; // הולך ישר ל-3 האחרונים
+
+        for (int i = arr.Length - 1-k; i >= 0; i--)
+            arr[i+k] = arr[i]; // מזיז את כל השאר ימינה
+
+        for (int i = 0; i < k; i++)
+            arr[i] = kNums[i]; // מכניס את ה-3 האחרונים למקומם החדש
+    }
+```
 
 ## 9.1.8 פילטר
 

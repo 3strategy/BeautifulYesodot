@@ -83,8 +83,8 @@ int secondToLast = arr[^2]; // 40 פונה למקום לפני אחרון
 
 ```python
 arr = [10, 20, 30, 40, 50]
-last = arr[-1]           # 50
-second_to_last = arr[-2] # 40
+last = arr[^1]           # 50
+second_to_last = arr[^2] # 40
 ```
 
 
