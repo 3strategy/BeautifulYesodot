@@ -3,7 +3,7 @@ layout: page
 title: "פרק 9 מערכים - הערות ותוספות"
 subtitle: "הערות והרחבות על מערכים. קישורים לקמפוס"
 author: גיא סידס
-tags: [איתחול עם סוגריים מרובעים, מצגות קמפוס, גישה לאיבר מהסוף, ^i]
+tags: [איתחול עם סוגריים מרובעים, גישה לאיבר מהסוף, ^i, פלינדרום במערך]
 mathjax: true
 lang: he
 ---
@@ -81,53 +81,188 @@ int last = arr[^1];        // C# syntax. 50 פונה למקום אחרון
 int secondToLast = arr[^2]; // 40 פונה למקום לפני אחרון
 ```
 
-```python
-arr = [10, 20, 30, 40, 50]
-last = arr[^1]           # 50
-second_to_last = arr[^2] # 40
+```cs
+int[] arr = [10, 20, 30, 40, 50]
+int last = arr[^1]           // 50
+int second_to_last = arr[^2] // 40
 ```
 
+## דוגמא פתורה: גלגול מערך ב-k איברים
+השאלה מבוססת 9.1.7 ונוספת הדרישה לגלגל את האיברים שעתידים להידרס:
 
-## כיצד להגיע למצגות קמפוס
+כתבו פונקציה ב־C# בשם `RotateArray` המקבלת:
 
-חלק מהקישורים פשוט מובילים למצגות:
+1. מערך שלמים (`int[] arr`)
+2. מספר שלם `k` (לא שלילי)
 
-[פרק 1 הוראות הדפסה ומשתנים](https://lomdot.education.gov.il/Qualitest/CSA01-variables/index.html){:target="_blank"}
+והופכת את המערך על ידי גלגול ימינה ב־`k` צעדים.
 
-[פרק 2 אופרטורים וביטויים לוגיים](https://lomdot.education.gov.il/Qualitest/CSA02-operators_new/index.html){:target="_blank"}
+**דוגמא:**
 
-[פרק 3 המחלקה Math](https://lomdot.education.gov.il/Qualitest/CSA03-MathLibrary/index.html){:target="_blank"}
+```csharp
+static void Main(string[] args)
+{
+    int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    RotateArray(nums, 3);
+    // לאחר הקריאה: nums = { 7, 8, 9, 1, 2, 3, 4, 5, 6 }
+}
+```
 
-[פרק 4 תנאים](https://lomdot.education.gov.il/Qualitest/CSA04-if/index.html){:target="_blank"}
+**הסבר קצר:**
+הפונקציה תעתיק את `k` האיברים האחרונים של המערך לתחילתו, ותזיז את שאר האיברים ימינה בהתאם, כך שהתוצאה תהיה גלגול ימינה ב־`k` צעדים.
 
-[פרק 5 לולאות for](https://lomdot.education.gov.il/Qualitest/CSA05-for/index.html){:target="_blank"}
+<details markdown="1"><summary>פתרון מלא תוך שימוש במערך עזר</summary>
 
-[פרק 6 לולאות while](https://lomdot.education.gov.il/Qualitest/CSA06-while/index.html){:target="_blank"}
+```csharp
+public static void RotateArray(int[] arr, int k)
+{
+    int n = arr.Length;
+    k %= n;
+    int[] kNums = new int[k];         // מחזיק את k האיברים האחרונים
+    for (int i = 1; i <= k; i++)
+        kNums[^i] = arr[^i];          // העתקת k האיברים מהסוף
 
-[פרק 7 פעולות](https://lomdot.education.gov.il/Qualitest/CSA07-actions/index.html){:target="_blank"}
+    for (int i = n - 1 - k; i >= 0; i--)
+        arr[i + k] = arr[i];          // הזזת כל האיברים הנותרים ימינה
 
-[פרק 8 מחרוזות](https://lomdot.education.gov.il/Qualitest/CSA08-strings/index.html){:target="_blank"}
+    for (int i = 0; i < k; i++)
+        arr[i] = kNums[i];           // הכנסת האיברים האחרונים למקומם החדש
+}
+```
 
-[פרק 9 מערך חד ממדי](https://lomdot.education.gov.il/Qualitest/CSA09-1D/index.html){:target="_blank"}
-
-[פרק 10 מערך דו ממדי](https://lomdot.education.gov.il/Qualitest/CSA10-2D/index.html){:target="_blank"}
-
-[פרק 11 עצמים](https://lomdot.education.gov.il/Qualitest/CSA11A-objects/index.html){:target="_blank"}
-
-[פרק 12 הורשה ](https://lomdot.education.gov.il/Qualitest/CSA11C-abstract/index.html){:target="_blank"}
-
-[פרק 13 פולימורפיזם ](https://lomdot.education.gov.il/Qualitest/CSA12/index.html){:target="_blank"}
-
-[פרק 14 ממשקים ](https://lomdot.education.gov.il/Qualitest/CSA13/index.html){:target="_blank"}
+</details>
 
 
+<details markdown="1"><summary>פתרון חלקי ללא שימוש במערך עזר</summary>
+
+```csharp
+// פתרון שעובד כרגע רק במקרה שאורך המערך אי זוגי
+public static void Q917(int[] arr, int k)
+{  //============== FAIL ON EVEN LENGHT!!!  ============================
+
+    //1 keep number 3 (index 2) in memory, 
+    //2. put index0 in index 2
+    //1. put 5 in tmp, and put tmp memory over 5.
+    int tmp = arr[0];
+    int l = arr.Length;
+    for (int i = 0; i < l * k; i += k) // פעמים k כדי שהלולאה תתבצע
+    {                                  // l * k  יש לכפול את 
+        int tmp2 = tmp;                // וכך להתאים את עצמנו לגודל הקפיצה
+        tmp = arr[(i + k) % l];
+        arr[(i + k) % l] = tmp2;
+    }
+}
+```
+
+</details>
+
+## דוגמא פתורה: האם אברי המערך הם פלינדרום, באמצעות גישה עם ^כובע
+
+<details markdown="1"><summary>פתרון</summary>
+
+כדי להשתמש ב- `Debug.Assert` יש להוסיף בתחילת העמוד
+
+```csharp
+using System.Diagnostics;
+```
+
+```csharp
+static void Main(string[] args)
+{
+    Debug.Assert(!IsPalindrom([1, 2, 3, 1, 1]), "not a palindrom");
+    Debug.Assert(IsPalindrom([1])== true, "a palindrom"); // == true אין צורך לרשום
+    Debug.Assert(IsPalindrom([1, 2, 3, 2, 1]) == true, "yes it's a palindrom");
+    Debug.Assert(IsPalindrom([1, 2, 2, 1]), "yes it's a palindrom");
+    Debug.Assert(IsPalindrom([]), "a palindrom");
+}
+
+public static bool IsPalindrom(int[] arr)
+{
+    int l = arr.Length;
+    for (int i = 0; i < l / 2; i++)
+        if (arr[i] != arr[^(i + 1)]) // כשמסתכלים על אינדקס 0 משמאל
+            return false;            // צריך לבקש את אינדקס כובע 1 מימין
+
+    return true;
+}
+```
+
+## דוגמא פתורה: חשבון מילולי
+<!-- פתרון שאלת החשבון 8.4 ממטלה 2 -->
+כתבו פונקציה ב-C# בשם `MathInWords` המקבלת מחרוזת המתארת פעולה מתמטית בשפה האנגלית (חיבור או חיסור) ומחזירה את התוצאה במילים באנגלית.
+
+**פרמטרים:**
+- `input` (type: `string`) – מחרוזת בפורמט `<Number> <operator> <Number>` כאשר `<operator>` הוא `plus` או `minus` (לא רגיש לרישיות).
+
+**דוגמאות לשימוש:**
+```csharp
+Console.WriteLine(MathInWords("One plus one"));   // Output: "Two"
+Console.WriteLine(MathInWords("zero Plus one")); // Output: "One"
+Console.WriteLine(MathInWords("one minus One")); // Output: "Zero"
+```
+
+**הערות:**
+- הפעולות המתמטיות הנתמכות הן רק חיבור (`plus`) וחיסור (`minus`).
+- המספרים בקלט יהיו בתחום **0–2**.
+- תחביר הקלט עלול לכלול רישיות שונה (e.g., `One`, `one`, `ONE`), עליכם להתייחס לזה באופן שאינו רגיש לרישיות (.ToLower() or .ToUpper() לפני שמתחילים לעבוד).
+- התוצאה תופק במילים באנגלית, כאשר התו הראשון של המחרוזת צריך להיות אות גדולה (Capitalized).
 
 
-**במידה שלא, אתם נגשים לתת פרק 0. כאן בדוגמא, 9.0 ובוחרים בלשונית השמאלית:**
-![alt text](image-2.png)
 
-ולוחצים כדי לפתוח את המצגת
-![alt text](image-3.png)
+
+<details markdown="1"><summary>פתרון</summary>
+
+```csharp
+public static string MathInWords(string s)
+{
+    n = n + 5;
+    s = s.ToLower() + " "; // הפיכת המחרוזת לאותיות קטנות
+    string[] sss = s.Split(' ');
+    string[] strings = new string[3];// 1 = "", s2 = "", s3 = "";
+    int j = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        while (s[j] != ' ') // עד מציאת רווח
+        {
+            strings[i] += s[j]; // הוספת התו למחרוזת
+            j++;
+        }
+        j++;
+    }
+    int n1 = NumFromWord(strings[0]); // המרת המילה הראשונה למספר
+    int n2 = NumFromWord(strings[2]); // המרת המילה הראשונה למספר
+    if(strings[1] == "plus")
+        return WordFromNum(n1 + n2);
+
+    return WordFromNum(n1 - n2);
+}
+
+public static string WordFromNum(int num)
+{   // ממספר למילה
+    if(num == 0)
+        return "Zero";
+    if(num == 1)
+        return "One";
+    if (num == 2)
+        return "Two";
+
+    return "Unknown number";
+}
+
+
+public static int NumFromWord(string s)
+{   // ממירה מילה למספר
+    if (s == "zero") 
+        return 0;
+    if (s == "one") 
+        return 1;
+
+    return 2;
+}
+```
+
+</details>
+
 
 
 ## קישורים
