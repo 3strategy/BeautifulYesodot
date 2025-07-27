@@ -88,7 +88,7 @@ lang: he
 אחרי הזזה ציקלית 2 ימינה:
 `[4,5,1,2,3]`
 
-<details markedown="1"><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון</summary>
 
 ```csharp
 public static void Q917(int[] arr, int k)

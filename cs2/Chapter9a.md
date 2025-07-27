@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "פרק 9 מערך ללא אנימציה"
+title: "פרק 9a - מערך ללא אנימציה"
 subtitle: "משתנים הבנויים כאוסף. גרסה ללא אנימציה"
 author: גיא סידס
 tags: [מערך, מערכים, חד ממדי, Ternary operator, foreach]

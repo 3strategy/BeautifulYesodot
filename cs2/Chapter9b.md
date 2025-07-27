@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "פרק 9 מערכים - הערות ותוספות"
+title: "פרק 9b - מערכים - הערות ותוספות"
 subtitle: "הערות והרחבות על מערכים. קישורים לקמפוס"
 author: גיא סידס
 tags: [איתחול עם סוגריים מרובעים, גישה לאיבר מהסוף, ^i, פלינדרום במערך]
@@ -90,7 +90,7 @@ int second_to_last = arr[^2] // 40
 ## דוגמא פתורה: גלגול מערך ב-k איברים
 השאלה מבוססת 9.1.7 ונוספת הדרישה לגלגל את האיברים שעתידים להידרס:
 
-כתבו פונקציה ב־C# בשם `RotateArray` המקבלת:
+כתבו פונקציה ב־C# בשם `RotateArray` או `Q917b` המקבלת:
 
 1. מערך שלמים (`int[] arr`)
 2. מספר שלם `k` (לא שלילי)
@@ -114,22 +114,20 @@ static void Main(string[] args)
 <details markdown="1"><summary>פתרון מלא תוך שימוש במערך עזר</summary>
 
 ```csharp
-public static void RotateArray(int[] arr, int k)
-{
-    int n = arr.Length;
-    k %= n;
-    int[] kNums = new int[k];         // מחזיק את k האיברים האחרונים
+public static void Q917b(int[] arr, int k)
+{   // Given an array of integers, rotate the array
+    // to the right by k steps, where k is non-negative.
+    int[] kNums = new int[k]; // מכיל את האחרונים שעתידים להידרס
     for (int i = 1; i <= k; i++)
-        kNums[^i] = arr[^i];          // העתקת k האיברים מהסוף
+        kNums[^i] = arr[^i]; // הולך ישר ל-3 האחרונים
 
-    for (int i = n - 1 - k; i >= 0; i--)
-        arr[i + k] = arr[i];          // הזזת כל האיברים הנותרים ימינה
+    for (int i = arr.Length - 1-k; i >= 0; i--)
+        arr[i+k] = arr[i]; // מזיז את כל השאר ימינה
 
     for (int i = 0; i < k; i++)
-        arr[i] = kNums[i];           // הכנסת האיברים האחרונים למקומם החדש
+        arr[i] = kNums[i]; // מכניס את ה-3 האחרונים למקומם החדש
 }
 ```
-
 </details>
 
 
