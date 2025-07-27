@@ -309,16 +309,6 @@ static void Main(string[] args)
 </details>
 
 
- <!-- this is the actual page that is displayed -->
-<!-- =============================================== -->
-<!-- <div class="button-container">
-  <button id="prevBtn">הקודם</button>
-  <button id="nextBtn">הבא</button>
-  <button id="copyBtn">העתק קוד</button>
-  <span id="copyStatus" class="copy-success" style="display:none;">הועתק!</span>
-</div>
-<div id="explanation"></div>
-<div id="stage"></div> -->
 
 
 

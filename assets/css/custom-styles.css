@@ -142,6 +142,10 @@ strong {
     }
 }
 
+details {
+    margin-top:1.5em;
+}
+
 pre {
     direction: ltr !important;
     text-align: left !important;
