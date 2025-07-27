@@ -2,7 +2,7 @@
 layout: page
 title: "תרגול 7.3 - פונקציות המקבלות ומחזירות ערך"
 subtitle: "תרגול בכתיבת פונקציות המקבלות פרמטרים, ומחזירות ערך"
-tags: [functions, parameters, C#]
+tags: [functions, parameters, C#, foreach, פתרונות]
 mathjax: true
 lang: he
 ---
@@ -343,6 +343,8 @@ class Program
 
 ## קישורים
     
+[⬅ השוו פתרונות ל- 7.3 - פונקציות, כולל פתרונות](/cs2/Chapter7Ex7.3withSolutions.md)
+
 [⬅ עברו לתרגול 7.1 - פונקציות void: פעולות ללא פרמטרים](/cs2/Chapter7Ex7.1)
 
 [⬅ עברו לתרגול 7.2 - פונקציות המקבלות פרמטרים](/cs2/Chapter7Ex7.2)

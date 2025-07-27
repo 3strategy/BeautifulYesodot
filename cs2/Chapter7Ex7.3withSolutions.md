@@ -2,7 +2,7 @@
 layout: page
 title: "תרגול 7.3 - פונקציות המקבלות ומחזירות ערך"
 subtitle: "תרגול בכתיבת פונקציות המקבלות פרמטרים, ומחזירות ערך"
-tags: [functions, parameters, C#]
+tags: [functions, parameters, C#, foreach]
 mathjax: true
 lang: he
 ---

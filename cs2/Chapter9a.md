@@ -3,7 +3,7 @@ layout: page
 title: "פרק 9 מערך ללא אנימציה"
 subtitle: "משתנים הבנויים כאוסף. גרסה ללא אנימציה"
 author: גיא סידס
-tags: [מערך, מערכים, חד ממדי, Ternary operator]
+tags: [מערך, מערכים, חד ממדי, Ternary operator, foreach]
 mathjax: true
 lang: he
 ---
@@ -140,6 +140,8 @@ static void Main(string[] args)
 ```
 </details>
 
+{: .box-success}
+array.Length, ומבנה הבקרה **foreach** [כלולים בתכנית](https://meyda.education.gov.il/files/CSIT/CS_1-2-4_ver_2-63.pdf#page=55){:target="_blank"} **ויש לעודד את השימוש** בהם בעבודה עם מערכים.
 
 
 <details markdown="1"><summary>8. כאן מקצים מערך בגודל מסויים וזה סוף פסוק</summary>
