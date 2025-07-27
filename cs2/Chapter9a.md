@@ -164,7 +164,7 @@ static void Main(string[] args)
 
 
 <details markdown="1"><summary>9. הבדל חשוב בין סוגי הלולאות - לא ניתן לבצע השמה ב-foreach</summary>
-כבר הבהרתי
+כבר הבהרתי: לא ניתן לבצע השמה לאיברים בלולאת foreach. אם האיברים הם אובייקטים ניתן לפעול עליהם ולשנות את תכונותיהם
 
 ```csharp
 static void Main(string[] args)
@@ -179,6 +179,9 @@ static void Main(string[] args)
 </details>
 
 <details markdown="1"><summary>10. אפשר לשלוח מערך כארגומנט לפונקציה.</summary>
+צורת עבודה זו תהיה צינור המידע הראשי שלנו בעבודה עם פונקציות בתרגילים הבאים
+אם הפונקציה משנה את אחד הערכים במערך ה-`Main` תראת את השינוי, מפני שגם ה-Main וגם הפונקציה מצביעים לאותו מקום בזכרון. מה שמועבר לפונקציה אינו שכפול של המערך אלא שכפול של הכתובת שלו בזכרון.
+כל עוד אנחנו לא מפנים את int[] nums לכתובת אחרת הפונקציה והתכנית הראשית ממשיכים לראות שתיהן את אותו אובייקט (את אותו מקום בזכרון שבו המערך היחיד נמצא)
 
 ```csharp
 static void Main(string[] args)
@@ -204,6 +207,7 @@ static void PrintArr<T>(T[] arr) // מה נסגר עם הפונקציות הגנ
 
 
 <details markdown="1"><summary>11. המערך מאותחל ל-nulls או לאפסים או ל-false בהתאם לטיפוס</summary>
+בבחינות יש להוסיף הערכה, שמניחים שאיברי המערך אותחלו.
 
 ```csharp
 static void Main(string[] args)
@@ -220,6 +224,7 @@ static void Main(string[] args)
 
 
 <details markdown="1"><summary>12. בואו ננסה להבין, מה זה object reference</summary>
+כאן מודגם מה שאסור לעשות. ברגע שיש הוראת השמה כפי שמופיעה בפוקציה `WillItChange` מוקצה מערך חדש, בכתובת חדשה בזכרון וזו הכתובת שעליה מצביע מעתה `arr` **למשתנה `chars` אין שום מושג** שהשינוי הזה קרה. בדיוק כפי שכאשר אנו משנים פרמטר בפונקציה - מי ששלח לנו את הארגומנט לא יכול לדעת ששינוי כזה קרה.
 
 ```csharp
 static void Main(string[] args)
@@ -239,6 +244,14 @@ static void WillItChange_יתשנה_או_לא(char[] arr)
 </details>
 
 <details markdown="1"><summary>13. דוגמא עם ternary operator</summary>
+טרנרי נכתב באופן הבא:
+yes/no question? value if yes : value if no
+
+או במילים אחרות:
+
+`logical expression? value if true : value if false`
+
+ראו דוגמא נוספת קצת יותר קריאה בקטע הבא.
 
 ```csharp
 static void Main(string[] args)
@@ -279,6 +292,7 @@ static void Main(string[] args)
 
 
 <details markdown="1"><summary>15. דוגמא עם ternary operator in a foreach</summary>
+שוב דוגמא של טרנטי - וכאן בולטת הפשטות של כתיבה בעזרת לולאת foreach
 
 ```csharp
 static void Main(string[] args)
