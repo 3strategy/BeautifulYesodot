@@ -7,57 +7,13 @@ tags: [מערך, מערכים, חד ממדי, Ternary operator]
 mathjax: true
 lang: he
 ---
-
+<!-- see Chapter9 for the animated version for the teacher -->
 <!-- https://www.perplexity.ai/search/this-page-goes-to-github-pages-z3w2NJR4SHqGVk14l89Rmw -->
-<style>
-details, details > summary { display: none; }
-#stage {
-  position: relative;
-  min-height: 25em;
-  width: 100%;
-}
-#stage pre {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  opacity: 0;
-  transition: opacity 3s;
-  z-index: 1;
-  direction: ltr;
-  background: inherit;
-  margin: 0;
-}
-#stage pre.show {
-  opacity: 1;
-  z-index: 2;
-}
-.button-container {
-  margin-top: 0em;
-  margin-bottom: 2em;
-  display: flex;
-  justify-content: flex-start;
-  gap: 0.4em;
-}
-#explanation {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1em;
-  min-height: 1em;
-  margin-bottom: -3.1em;
-  margin-top: 0;
-}
-.copy-success {
-  color: green;
-  font-size: 0.9em;
-  margin-right: 1em;
-  display: inline-block;
-  vertical-align: middle;
-}
-</style>
 
 
 
 
-<details markdown="1"><summary>1. נניח שנרצה להפוך את car **לאוסף של מחרוזות**</summary>
+<details markdown="1"><summary>1. נניח שנרצה להפוך את car לאוסף של מחרוזות</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -69,7 +25,7 @@ static void Main(string[] args)
 ```
 </details>
 
-<details markdown="1"><summary>2. הוספנו: סוגריים **מסולסלים**, לשון **רבים**, וסוגריים **מרובעים**, </summary>
+<details markdown="1"><summary>2. הוספנו: סוגריים מסולסלים, לשון רבים, וסוגריים מרובעים, </summary>
 
 ```csharp
 static void Main(string[] args)
@@ -84,7 +40,7 @@ static void Main(string[] args)
 
 </details>
 
-<details markdown="1"><summary>3. ניתן לגשת לאיבר במערך **לפי מיקום**</summary>
+<details markdown="1"><summary>3. ניתן לגשת לאיבר במערך לפי מיקום</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -98,7 +54,8 @@ static void Main(string[] args)
 </details>
 
 
-<details markdown="1"><summary>4. כאן כבר יש לנו **בעיה**</summary>
+<details markdown="1"><summary>4. כאן כבר יש לנו בעיה</summary>
+פניה ל-index שלא קיים במערך תקריס את התכנית עם ndex Out Of Range Exception
 
 ```csharp
 static void Main(string[] args)
@@ -122,7 +79,8 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>5. אפשר לטפל במצבי **Exception**</summary>
+<details markdown="1"><summary>5. אפשר לטפל במצבי Exception</summary>
+הוראת try/catch אינה בתכנית הלימודים אך תשתמש את התלמידים בהמשך.
 
 ```csharp
 static void Main(string[] args)
@@ -145,7 +103,11 @@ static void Main(string[] args)
 </details>
 
 
-<details markdown="1"><summary>6. ניעזר בלולאות כדי **לעבור על כל איברי המערך**, אבל,</summary>
+<details markdown="1"><summary>6. ניעזר בלולאות כדי לעבור על כל איברי המערך, אבל,</summary>
+מעבר בלולאה על כל איברי המערך הוא קל באמצעות התחביר בו השתלמנו ללולאות עד היום: מתחילים מ-0 ומגיעים עד לפני `cars.Length`
+האינדקס cars.Length הוא הראשון שחורג מהמערך. cars.Length היא **תכונה** של מערך. 
+
+החל מסוף 2023 ניתן לאתחל מערך באופן ישיר (כלומר כולל השמת הערכים) גם בכתיבת סוגריים מרובעים
 
 ```csharp
 static void Main(string[] args)
@@ -160,7 +122,11 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>7. **foreach יותר נוח** בהרבה מקרים</summary>
+<details markdown="1"><summary>7. foreach יותר נוח בהרבה מקרים</summary>
+כאן עבור אותה מטרה אנו משתמשים בלולאה מסוג חדש - foreach - שבעצם יודעת להתגלגל על אוספים. `string car` הופך בכל סיבוב של הלולאה להיות האיבר הבא במערך, וכך ניתן להשתמש בו מבלי לדעת את המיקום שלו.
+כפי שהזכרתי עכבר שאוכל חריצי גבינה, לא באמת סוכם כמה יש ואז רץ בינהם באמצעות אינדק. הוא פשוט עובר אחד אחד. 
+1. בצורה זו אין לנו מידע על מיקום.
+1. לא ניתן בצע כתיבה לתוך car (לעומת `cars[i] = "Toyota"` שניתן לרשום).
 
 ```csharp
 static void Main(string[] args)
@@ -175,7 +141,10 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>8. כאן מקצים מערך בגודל מסויים וזה **סוף פסוק**</summary>
+<details markdown="1"><summary>8. כאן מקצים מערך בגודל מסויים וזה סוף פסוק</summary>
+כאן מוקצה מערך ריק בגודל 5.
+לא ניתן לשנות את גודל המערך. (גם אם ניתן, אסור להשתמש בזה).
+
 
 ```csharp
 static void Main(string[] args)
@@ -194,7 +163,8 @@ static void Main(string[] args)
 
 
 
-<details markdown="1"><summary>9. הבדל **חשוב** בין סוגי הלולאות - **לא ניתן לבצע השמה ב-foreach**</summary>
+<details markdown="1"><summary>9. הבדל חשוב בין סוגי הלולאות - לא ניתן לבצע השמה ב-foreach</summary>
+כבר הבהרתי
 
 ```csharp
 static void Main(string[] args)
@@ -208,7 +178,7 @@ static void Main(string[] args)
 ```
 </details>
 
-<details markdown="1"><summary>10. אפשר **לשלוח מערך כארגומנט** לפונקציה.</summary>
+<details markdown="1"><summary>10. אפשר לשלוח מערך כארגומנט לפונקציה.</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -233,7 +203,7 @@ static void PrintArr<T>(T[] arr) // מה נסגר עם הפונקציות הגנ
 </details>
 
 
-<details markdown="1"><summary>11. המערך **מאותחל ל-nulls** או לאפסים או ל-false בהתאם לטיפוס</summary>
+<details markdown="1"><summary>11. המערך מאותחל ל-nulls או לאפסים או ל-false בהתאם לטיפוס</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -249,7 +219,7 @@ static void Main(string[] args)
 </details>
 
 
-<details markdown="1"><summary>12. בואו ננסה להבין, **מה זה object reference**</summary>
+<details markdown="1"><summary>12. בואו ננסה להבין, מה זה object reference</summary>
 
 ```csharp
 static void Main(string[] args)
@@ -327,90 +297,23 @@ static void Main(string[] args)
 
  <!-- this is the actual page that is displayed -->
 <!-- =============================================== -->
-<div class="button-container">
+<!-- <div class="button-container">
   <button id="prevBtn">הקודם</button>
   <button id="nextBtn">הבא</button>
   <button id="copyBtn">העתק קוד</button>
   <span id="copyStatus" class="copy-success" style="display:none;">הועתק!</span>
 </div>
 <div id="explanation"></div>
-<div id="stage"></div>
+<div id="stage"></div> -->
 
 
 
 
-<script defer>
-document.addEventListener('DOMContentLoaded', () => {
-  // Extract code blocks and processed summaries (markdown-style bold to <strong>)
-  const blocks = [...document.querySelectorAll('details')].map(d => ({
-    codeEl: d.querySelector('pre').cloneNode(true),
-    // Allows using **bold** in summary
-    summary: d.querySelector('summary').innerHTML.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-  }));
-  const stage = document.getElementById('stage');
-  const explanation = document.getElementById('explanation');
-  const copyBtn = document.getElementById('copyBtn');
-  const copyStatus = document.getElementById('copyStatus');
-  let idx = 0;
-
-  // Initial code block display
-  let current = stage.appendChild(blocks[0].codeEl.cloneNode(true));
-  current.classList.add('show');
-  if(explanation) explanation.innerHTML = blocks[0].summary;
-
-  function crossfade(toIdx) {
-    if (toIdx === idx) return;
-    const next = stage.appendChild(blocks[toIdx].codeEl.cloneNode(true));
-    next.classList.add('show');
-    next.style.opacity = 0;
-    next.getBoundingClientRect(); // force reflow
-    next.style.opacity = 1;
-    current.style.opacity = 0;
-    setTimeout(() => {
-      current.remove();
-      current = next;
-      idx = toIdx;
-      if(explanation) explanation.innerHTML = blocks[toIdx].summary;
-    }, 3000); // 3s transition
-  }
-
-  // Buttons (ensure these elements exist before binding)
-  const nextBtn = document.getElementById('nextBtn');
-  const prevBtn = document.getElementById('prevBtn');
-  if(nextBtn) nextBtn.onclick = () => crossfade((idx + 1) % blocks.length);
-  if(prevBtn) prevBtn.onclick = () => crossfade((idx + blocks.length - 1) % blocks.length);
-
-  // Mouse click on stage (not buttons!)
-  stage.addEventListener('mousedown', e => {
-    // Only respond if not clicking on code selection or non-left/right button
-    if (e.button === 0) { // Left
-      crossfade((idx + 1) % blocks.length);
-      e.preventDefault();
-    }
-    if (e.button === 2) { // Right
-      crossfade((idx + blocks.length - 1) % blocks.length);
-      e.preventDefault();
-    }
-  });
-  stage.addEventListener('contextmenu', e => e.preventDefault());
-
-  // Copy button
-  if(copyBtn) copyBtn.onclick = () => {
-    const code = current.textContent;
-    navigator.clipboard.writeText(code).then(() => {
-      if(copyStatus) {
-        copyStatus.style.display = 'inline-block';
-        setTimeout(() => { copyStatus.style.display = 'none'; }, 1200);
-      }
-    });
-  };
-});
-</script>
 
 ---
 
 ## המשך למידה
-[⬅ עברו לפרק 9a - גרסת ללא אנימציות](/cs2/Chapter9a)
+[⬅ עברו לפרק 9 - גרסה עם אנימציות](/cs2/Chapter9)
 
 
 [⬅ עברו לפרק 9b - הערות והרחבות](/cs2/Chapter9b)

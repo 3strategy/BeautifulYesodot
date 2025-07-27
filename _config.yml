@@ -50,10 +50,12 @@ navbar-links:
     - פרק 7 מקוצר: "/cs2/Chapter7Short"
     - פרק 8 מחרוזות: "/cs2/Chapter8"
     - פרק 9 מערכים: "/cs2/Chapter9"
+    - פרק 9 מערכים ללא אנימציה: "/cs2/Chapter9a"
+
     - פרק 9 הערות: "/cs2/Chapter9b"
     - תרגול 9.1: "/cs2/Chapter9Ex9.1"
     - תרגול 9.2 CodeWars: "/cs2/Chapter9Ex9.2"
-    - פרק 9 מערך מונים: "/cs2/Chapter9c"
+    - פרק 9c מערך מונים: "/cs2/Chapter9c"
 
   חיצוני:
     - אתר מבני נתונים: "https://מבני.שלי.com"
