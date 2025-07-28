@@ -113,15 +113,6 @@ public static void Q917(int[] arr, int k)
 
 </details>
 
-[פתרון ללא מערך עזר]({% link cs2/Chapter9b.md %}#917noArr)
-
-
-[פתרון2]({% link Chapter9b.md %}#917noArr)
-
-[test3]({% link Chapter9b.md %}#917noArr)
-
-[test5]({% link Chapter9b %}#917noArr)
-
 
 ## 9.1.8 פילטר
 
