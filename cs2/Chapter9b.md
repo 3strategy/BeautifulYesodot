@@ -87,10 +87,10 @@ int last = arr[^1]           // 50
 int second_to_last = arr[^2] // 40
 ```
 
-## דוגמא פתורה: גלגול מערך ב-k איברים
+## דוגמא פתורה: גלגול מערך ב-k איברים {:#917noArr}
 השאלה מבוססת 9.1.7 ונוספת הדרישה לגלגל את האיברים שעתידים להידרס:
 
-כתבו פונקציה ב־C# בשם `RotateArray` או `Q917b` המקבלת:
+כתבו פונקציה ב־C# בשם `RotateArray` או `Q917noArr` המקבלת:
 
 1. מערך שלמים (`int[] arr`)
 2. מספר שלם `k` (לא שלילי)
@@ -117,6 +117,9 @@ static void Main(string[] args)
 public static void Q917b(int[] arr, int k)
 {   // Given an array of integers, rotate the array
     // to the right by k steps, where k is non-negative.
+    if (arr.Length<=k ) // הגנה מחריגות
+        return;
+
     int[] kNums = new int[k]; // מכיל את האחרונים שעתידים להידרס
     for (int i = 1; i <= k; i++)
         kNums[^i] = arr[^i]; // הולך ישר ל-3 האחרונים
@@ -131,7 +134,7 @@ public static void Q917b(int[] arr, int k)
 </details>
 
 
-<details markdown="1"><summary>פתרון חלקי ללא שימוש במערך עזר</summary>
+<details markdown="1"><summary>פתרון חלקי ללא שימוש במערך עזר (עובד לפעמים)</summary>
 
 ```csharp
 // פתרון שעובד כרגע רק במקרה שאורך המערך אי זוגי
@@ -153,6 +156,40 @@ public static void Q917(int[] arr, int k)
 ```
 
 </details>
+
+
+<details markdown="1"><summary>פתרון מלא ללא שימוש במערך עזר</summary>
+
+```csharp
+public static void Q917noArr(int[] arr, int k)
+{
+    if (arr.Length<=k ) // הגנה מחריגות
+        return;
+    int tmp = arr[0];
+    int l = arr.Length;
+    int adjust = 0; //adjustment
+    for (int i = 0; i < l * k; i += k)
+    {
+        int tmp2 = tmp;
+        if ((i + k) % l != adjust)  // check for overlap
+        {
+            tmp = arr[(i + k) % l];
+            arr[(i + k) % l] = tmp2;
+        }
+        // special case - we already moved the 0 index
+        else // (consider adjust was 0 as an example) 
+        {
+            tmp = arr[(i + k) % l + 1]; // copy from next index
+            arr[(i + k) % l] = tmp2;
+            i++;//shift by 1 [breaching MISRA well formed loops]
+            adjust++; // this way we will detect next overlap
+        }
+    }
+}
+```
+
+</details>
+
 
 ## דוגמא פתורה: האם אברי המערך הם פלינדרום, באמצעות גישה עם ^כובע
 

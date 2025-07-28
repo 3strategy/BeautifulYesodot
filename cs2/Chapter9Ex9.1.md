@@ -94,6 +94,9 @@ lang: he
 public static void Q917(int[] arr, int k)
 {   // Given an array of integers, rotate the array
     // to the right by k steps, where k is non-negative.
+    if (arr.Length <= k)
+        return;
+
     int[] kNums = new int[k]; // מכיל את האחרונים שעתידים להידרס
     for (int i = 1; i <= k; i++)
         kNums[^i] = arr[^i]; // הולך ישר ל-3 האחרונים
@@ -105,7 +108,13 @@ public static void Q917(int[] arr, int k)
         arr[i] = kNums[i]; // מכניס את ה-3 האחרונים למקומם החדש
 }
 ```
+
+
+
 </details>
+
+[פתרון ללא מערך עזר]({% link _cs2/Chapter9b.md %}#917noArr)
+
 
 ## 9.1.8 פילטר
 
