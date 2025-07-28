@@ -327,7 +327,7 @@ static void Main(string[] args)
 ## המשך למידה
 [⬅ עברו לפרק 9 - גרסה עם אנימציות](/cs2/Chapter9)
 
-[⬅ עברו לרשימת מצגות קמפוס]({% link cs2/Chapter9b.md %}#campus-arr-excercises)
+[⬅ עברו לרשימת שקפי תרגול במערכים במצגת קמפוס]({% link cs2/Chapter9b.md %}#campus-arr-excercises)
 
 [⬅ עברו לפרק 9b - הערות והרחבות](/cs2/Chapter9b)
 
