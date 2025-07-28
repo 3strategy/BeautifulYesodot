@@ -113,6 +113,7 @@ public static void Q917(int[] arr, int k)
 
 </details>
 
+[Link text]({% link cs2/Chapter9b.md %}#no-arr917)
 
 ## 9.1.8 פילטר
 
