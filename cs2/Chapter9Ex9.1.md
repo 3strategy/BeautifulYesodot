@@ -43,6 +43,14 @@ Excellent
  
 ---
 
+## לפני 9.1.2 נתרגל משאלות של רוני רובן 
+השאלות והגיטים שלו כאן
+[קישור לדף השאלות](cs2/arrays3_cs.pdf)
+[קישור לגיט](https://github.com/porteno12/Amazing3Assignment)
+[קישור לגיט נוסף](https://github.com/porteno12/HowManyDigitsInArray.git)
+
+ 
+---
 
 ## 9.1.2 קליטת שמות יחודיים
 יש לכתוב תוכנית הקולטת 8 שמות של תלמידים ומוסיפה אותם לרשימת תלמידי הכיתה באופן הבא:
@@ -54,6 +62,11 @@ Excellent
 הערה: הודעות הפלט חייבות להיות **בדיוק**
 - `Console.WriteLine("Enter a name:");`
 - `Console.WriteLine("We cannot assign you to this class");`
+
+---
+
+הפתרונות ל-9.1.1 9.1.2 [כאן](https://docs.google.com/document/d/1BV4tA68PYnwoWDvuK9vQ6A2j1U624phN98D7_YkeEhM/edit?usp=sharing)
+{: .box-note}
 
 ---
 
