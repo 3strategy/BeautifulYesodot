@@ -45,7 +45,7 @@ Excellent
 
 ## לפני 9.1.2 נתרגל משאלות של רוני רובן 
 השאלות והגיטים שלו כאן
-[קישור לדף השאלות](cs2/arrays3_cs.pdf)
+[קישור לדף השאלות](/cs2/arrays3_cs.pdf)
 [קישור לגיט](https://github.com/porteno12/Amazing3Assignment)
 [קישור לגיט נוסף](https://github.com/porteno12/HowManyDigitsInArray.git)
 
