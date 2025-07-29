@@ -8,7 +8,7 @@ mathjax: true
 lang: he
 ---
 
-את שאלות 9.1.1ו-  9.1.2 יש לפתור בתוך פרוייקט שתורידו מגיט האב שבאמצעותו תבדקו את השאלות.  הקישור להעתקה הוא (https://github.com/3strategy/ConsArrays)[כאן] [וההוראות כאן](https://github.com/3strategy/ConsArrays/blob/master/README.md).
+את שאלות 9.1.1ו-  9.1.2 יש לפתור בתוך פרוייקט שתורידו מגיט האב שבאמצעותו תבדקו את השאלות.  הקישור להעתקה הוא [כאן](https://github.com/3strategy/ConsArrays) [וההוראות כאן](https://github.com/3strategy/ConsArrays/blob/master/README.md).
 {: .box-note}
 
 ## 9.1.1 חישוב ממוצע ציונים מעל הממוצע ועוד
