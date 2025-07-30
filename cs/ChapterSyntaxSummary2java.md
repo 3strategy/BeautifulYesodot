@@ -24,8 +24,8 @@ public class Program {
      */
     public static void Q322() {
         System.out.print("Enter something: "); // פלט/הדפסה/בקשה/הודעה למשתמש
-        Scanner scanner = new Scanner(System.in);
-        int min = Integer.parseInt(scanner.nextLine()); // קלט מספר שלם, המרה, והשמה.
+        Scanner input = new Scanner(System.in);
+        int min = input.nextInt()); // קלט מספר שלם, המרה, והשמה.
 
         int max = 5; // בבחינה מספיק לרשום כך ========== קלוט מספר שלם =========
 
