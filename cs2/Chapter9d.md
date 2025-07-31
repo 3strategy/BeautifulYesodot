@@ -612,7 +612,7 @@ public static void SelectionSort(int[] arr)
 
 ```csharp
 // Generic methods
-public static void PrintGeneric<T>(T[] arr)
+public static void Print<T>(T[] arr)
 {
     foreach (T item in arr)
         Console.Write(item + ", ");
@@ -621,7 +621,7 @@ public static void PrintGeneric<T>(T[] arr)
 ```
 
 ```csharp
-public static int CountGeneric<T>(T[] arr, T value)
+public static int Count<T>(T[] arr, T value)
 {
     int count = 0;
     foreach (T item in arr)
@@ -632,7 +632,7 @@ public static int CountGeneric<T>(T[] arr, T value)
 ```
 
 ```csharp
-public static bool IsExistGeneric<T>(T[] arr, T value)
+public static bool Exists<T>(T[] arr, T value)
 {
     foreach (T item in arr)
         if (EqualityComparer<T>.Default.Equals(item, value))
@@ -640,9 +640,8 @@ public static bool IsExistGeneric<T>(T[] arr, T value)
     return false;
 }
 ```
-#### פונקציית מינימום גנרית: לא בתכנית הלימודים
 
-<details markdown="1"><summary>פונקציית מינימום גנרית</summary>
+<details markdown="1"><summary>פונקציית מינימום גנרית: לא בתכנית הלימודים</summary>
 
 ```csharp
 /// <summary>
