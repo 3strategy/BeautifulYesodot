@@ -18,35 +18,6 @@ lang: he
 
 
 
-<details markdown="1"><summary>דוגמאות לפונקציות עזר גנריות</summary>
-
-        // Generic methods
-        public static void PrintGeneric<T>(T[] arr)
-        {
-            foreach (T item in arr)
-                Console.Write(item + ", ");
-            Console.WriteLine();
-        }
-
-        public static int CountGeneric<T>(T[] arr, T value)
-        {
-            int count = 0;
-            foreach (T item in arr)
-                if (EqualityComparer<T>.Default.Equals(item, value))
-                    count++;
-            return count;
-        }
-
-        public static bool IsExistGeneric<T>(T[] arr, T value)
-        {
-            foreach (T item in arr)
-                if (EqualityComparer<T>.Default.Equals(item, value))
-                    return true;
-            return false;
-        }
-
-</details>
-
 <details markdown="1"><summary>פעולות בסיסיות</summary>
 
 #### פעולה המדפיסה מערך:
@@ -54,16 +25,15 @@ lang: he
 תבנית לפעולה העוברת על כל איברי המערך
 
 ```csharp
-// פעולה המקבלת מערך ומדפיסה אותו
-// תבנית למעבר על אברי מערך
-public static void Print(int[] arr)
-{
-    for (int i = 0; i < arr.Length; i++)
-    {
-        Console.Write(arr[i] + ", ");
-    }
-    Console.WriteLine();    // מעבר שורה
-}
+        // פעולה המקבלת מערך ומדפיסה אותו
+        // תבנית למעבר על אברי מערך
+        public static void Print(int[] arr)
+        {
+            foreach (int num in arr)
+                Console.Write(num + ", ");
+
+            Console.WriteLine();    // מעבר שורה
+        }
 ```
 
 #### פעולה המדפיסה מערך בסדר הפוך:
@@ -118,9 +88,9 @@ public static int Sum(int[] arr)
 public static int Count(int[] arr, int num)
 {
     int count = 0;
-    for (int i = 0; i < arr.Length; i++)
+    foreach (int x in arr)
     {
-        if (arr[i] == num)
+        if (x == num)
             count++;
     }
     return count;
@@ -243,12 +213,12 @@ public static void CircleRight(int[] arr)
 // פעולה המקבלת מערך ומספר ומחזירה אמת אם הוא קיים
 public static bool IsExist(int[] arr, int num)
 {
-    bool found = false;
-    for (int i = 0; i < arr.Length && !found; i++)
+    foreach (int x in arr)
     {
-        found = (arr[i] == num);
+        if (x == num)
+            return true;
     }
-    return found;
+    return false;
 }
 ```
 
@@ -286,7 +256,7 @@ public static bool IsOle(int[] arr)
 #### בדיקה אם כל איברי המערך כפולות של 3:
 
 ```csharp
-// פעולה המקבלת מערך ומחזירה אמת אם כולם כפולות 3
+// פעולה המקבלת מערך ומחזירה אמת אם כולם כפולות של 3
 public static bool IsAllTrio(int[] arr)
 {
     bool isAll = true;
@@ -295,6 +265,19 @@ public static bool IsAllTrio(int[] arr)
         isAll = (arr[i] % 3 == 0);
     }
     return isAll;
+}
+```
+
+```csharp
+// foreach: פעולה המקבלת מערך ומחזירה אמת אם כולם כפולות 3
+public static bool IsAllTrioForEach(int[] arr)
+{
+    foreach (int x in arr)
+    {
+        if (x % 3 != 0)
+            return false;
+    }
+    return true;
 }
 ```
 
@@ -420,13 +403,12 @@ public static int MaxSequence(int[] arr)
 // פעולה המסדרת מערך על פי רצפים של ערכים (גירסה 1)
 public static void SequenceOrder(int[] arr)
 {
-    int tmp, j;
     for (int i = 0; i < arr.Length - 1; i++)
     {
-        j = FindValue(arr, arr[i], i + 1);
+        int j = FindValue(arr, arr[i], i + 1);
         if (j > 0)
         {
-            tmp = arr[i + 1]; arr[i + 1] = arr[j]; arr[j] = tmp;
+            (arr[i + 1], arr[j]) = (arr[j], arr[i + 1]);
         }
     }
 }
@@ -447,21 +429,21 @@ public static int FindValue(int[] arr, int value, int start)
 // פעולה המסדרת מערך על פי רצפים של ערכים (גירסה 2)
 public static void SequenceOrder2(int[] arr)
 {
-    int tmp;
     for (int i = 0; i < arr.Length - 1; i++)
         for (int j = i + 1; j < arr.Length; j++)
             if (arr[i] == arr[j])
             {
-                tmp = arr[i + 1]; arr[i + 1] = arr[j]; arr[j] = tmp;
-                i++;
+                (arr[i + 1], arr[j]) = (arr[j], arr[i + 1]); // swap
+                i++; // Counters MISRA well formed loops
             }
 }
 ```
 
-#### לכידת רצפים לכיווץ (zip):
+#### לכידת רצפים של ערכים זהים לכיווץ (zip):
+
 
 ```csharp
-// פעולה המקבלת מערך ומחזירה מערך זיג-זג של ערך וכמותו ברצף
+// פעולה המקבלת מערך שאינו ריק ומחזירה מערך שבו כל זוג עוקבים הוא ערך וכמותו ברצף
 public static int[] Zip(int[] arr)
 {
     int[] tmp = new int[arr.Length * 2];
@@ -469,10 +451,16 @@ public static int[] Zip(int[] arr)
     for (int i = 0; i < arr.Length - 1; i++)
     {
         if (arr[i] == arr[i + 1]) len++;
-        else { tmp[p] = arr[i]; tmp[p+1] = len; p += 2; len = 1; }
+        else
+        {
+            tmp[p] = arr[i];
+            tmp[p + 1] = len;
+            p += 2;
+            len = 1;
+        }
     }
     // טיפול ברצף האחרון
-    tmp[p] = arr[arr.Length - 1]; tmp[p+1] = len;
+    tmp[p] = arr[arr.Length - 1]; tmp[p + 1] = len;
     return Resize(tmp, p + 2);
 }
 ```
@@ -485,12 +473,12 @@ public static int[] UnZip(int[] arr)
 {
     int[] tmp = new int[SumOdd(arr)];
     int value, j = 0;
-    for (int i = 0; i < arr.Length; i += 2)
+    for (int i = 0; i < arr.Length - 1; i += 2)
     {
         value = arr[i];
-        for (int n = 0; n < arr[i+1]; n++)
+        for (int n = 0; n < arr[i + 1]; n++)
             tmp[j + n] = value;
-        j += arr[i+1];
+        j += arr[i + 1];
     }
     return tmp;
 }
@@ -512,28 +500,122 @@ public static int SumOdd(int[] arr)
 
 ```csharp
 // מיון בועות: עוברים על המערך ומבצעים מעבר אחד בכל איטרציה
-public static void BubleSort(int[] arr)
+public static void BubbleSort(int[] arr)
 {
-    for (int i = 0; i < arr.Length; i++)
-        BubleSort(arr, arr.Length - 1);
-}
-```
-
-```csharp
-// פעולת עזר: מעבר יחיד במערך
-private static void BubleSort(int[] arr, int end)
-{
-    for (int i = 0; i < end - 1; i++)
-        if (arr[i] > arr[i+1]) 
-            Swap(arr, i, i+1);
+    for (int i = arr.Length - 1; i >= 0; i--)
+        for (int j = 0; j < i; j++)
+            if (arr[j] > arr[j + 1])
+                (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
 }
 ```
 
 ```csharp
 // פעולת עזר להחלפת ערכים במערך
 private static void Swap(int[] arr, int inx1, int inx2)
-{
-    int tmp = arr[inx1]; arr[inx1] = arr[inx2]; arr[inx2] = tmp;
+{   // אפשר גם
+    //(arr[inx1], arr[inx2]) = (arr[inx2], arr[inx1]);
+    int tmp = arr[inx1];
+    arr[inx1] = arr[inx2];
+    arr[inx2] = tmp;
 }
 ```
+
+```csharp
+public static void BubbleSortClaude(int[] arr)
+{
+    if (arr == null || arr.Length <= 1)
+        return;
+
+    int n = arr.Length;
+
+    for (int i = 0; i < n - 1; i++)
+    {
+        bool swapped = false;
+
+        // Last i elements are already in place
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                swapped = true;
+            }
+        }
+
+        // If no swapping occurred, array is already sorted
+        if (!swapped)
+            break;
+    }
+}
+```
+
+```csharp
+// מיון הוספה (Insertion Sort)
+public static void InsertionSort(int[] arr)
+{
+    // בסורינג מבוסס הוספה – נסדר כל איבר למיקום הנכון בתוך תת-מערך ממויין
+    for (int i = 1; i < arr.Length; i++)
+    {
+        int key = arr[i];
+        int j = i - 1;
+        // הזזת האיברים הגדולים מימין למקום אחד קדימה
+        while (j >= 0 && arr[j] > key)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key; // הכנסת האיבר למקומו הנכון
+    }
+}
+```
+
+```csharp
+// מיון בחירה (Selection Sort)
+public static void SelectionSort(int[] arr)
+{
+    // בסורינג מבוסס בחירה – נבחר את הערך הקטן ביותר בכל איטרציה
+    for (int i = 0; i < arr.Length - 1; i++)
+    {
+        int minIndex = i;
+        for (int j = i + 1; j < arr.Length; j++)
+        {
+            if (arr[j] < arr[minIndex])
+                minIndex = j;
+        }
+        // החלפת הערך הקטן ביותר למקום הנוכחי
+        (arr[i], arr[minIndex]) = (arr[minIndex], arr[i]);
+    }
+}
+```
+</details>
+
+
+
+<details markdown="1"><summary>דוגמאות לפונקציות עזר גנריות</summary>
+
+        // Generic methods
+        public static void PrintGeneric<T>(T[] arr)
+        {
+            foreach (T item in arr)
+                Console.Write(item + ", ");
+            Console.WriteLine();
+        }
+
+        public static int CountGeneric<T>(T[] arr, T value)
+        {
+            int count = 0;
+            foreach (T item in arr)
+                if (EqualityComparer<T>.Default.Equals(item, value))
+                    count++;
+            return count;
+        }
+
+        public static bool IsExistGeneric<T>(T[] arr, T value)
+        {
+            foreach (T item in arr)
+                if (EqualityComparer<T>.Default.Equals(item, value))
+                    return true;
+            return false;
+        }
+
 </details>
