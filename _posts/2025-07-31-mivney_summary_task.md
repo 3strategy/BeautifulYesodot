@@ -26,6 +26,7 @@ lang: he
 
 ---
 
+{: .page-break-before}
 # חלק ב׳ - עבודת חקר: בניית פרויקט בדיקות שיתופי {.page-break-before}
 
 זה לא הנושא עליו התבקשנו לכתוב, אבל **זה חשוב יותר**.
@@ -50,11 +51,11 @@ lang: he
 [Here is the GPT chat](https://chatgpt.com/share/687fcb71-ee74-800e-8cf4-8f5ecca3f73c) 
 
 
-![alt text](https://github.com/3strategy/Console250722Mivney/blob/master/image-2.png)
+![צפיה בתוצאות הבדיקות](image-2.png)
 
 #### First run
 When you first run the project you should get this:
-![alt text](https://github.com/3strategy/Console250722Mivney/blob/master/image.png)
+![יצוג גרפי של עץ](image.png)
 
 ---
 
@@ -88,8 +89,8 @@ This usage is demonstrated in this test class:
 
 ---
 
-<!-- blob/master -->
-# חלק ג׳ - כתיבת פונקציות הרחבה רקורסיביות והשוואת ביצועים {.page-break-before}
+{: .page-break-before}
+# חלק ג׳ - כתיבת פונקציות הרחבה רקורסיביות והשוואת ביצועים
 
 בתהליך כתיבת פונקציות הרחבה (`Extension Methods`) הרקורסיביות `ToArray` ו-`ToArray2`, התמקדנו (אני ו-GPT) ביצירת שתי גרסאות:
 
