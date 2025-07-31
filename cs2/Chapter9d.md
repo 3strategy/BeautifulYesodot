@@ -377,6 +377,23 @@ public static int IMin(int[] arr)
 }
 ```
 
+#### משולב: מיקום וערך בפונקציה אחת
+```csharp
+/// <summary>
+///  פעולה המקבלת מערך ומחזירה את המיקום של הערך המינימלי
+/// ואת הערך המינימאלי
+/// </summary>
+/// <param name="arr"></param>
+/// <returns>a tuple טאפל עם אינדס של מינימום וערך מינימום</returns>
+public static (int, int) MinTup(int[] arr)
+{
+    int iMin = 0;
+    for (int i = 1; i < arr.Length; i++)
+        if (arr[i] < arr[iMin]) iMin = i;
+    return (iMin, arr[iMin]);
+}
+```
+
 </details>
 
 <details markdown="1"><summary>פעולות עבור רצפים</summary>
@@ -593,29 +610,66 @@ public static void SelectionSort(int[] arr)
 
 <details markdown="1"><summary>דוגמאות לפונקציות עזר גנריות</summary>
 
-        // Generic methods
-        public static void PrintGeneric<T>(T[] arr)
-        {
-            foreach (T item in arr)
-                Console.Write(item + ", ");
-            Console.WriteLine();
-        }
+```csharp
+// Generic methods
+public static void PrintGeneric<T>(T[] arr)
+{
+    foreach (T item in arr)
+        Console.Write(item + ", ");
+    Console.WriteLine();
+}
+```
 
-        public static int CountGeneric<T>(T[] arr, T value)
-        {
-            int count = 0;
-            foreach (T item in arr)
-                if (EqualityComparer<T>.Default.Equals(item, value))
-                    count++;
-            return count;
-        }
+```csharp
+public static int CountGeneric<T>(T[] arr, T value)
+{
+    int count = 0;
+    foreach (T item in arr)
+        if (EqualityComparer<T>.Default.Equals(item, value))
+            count++;
+    return count;
+}
+```
 
-        public static bool IsExistGeneric<T>(T[] arr, T value)
+```csharp
+public static bool IsExistGeneric<T>(T[] arr, T value)
+{
+    foreach (T item in arr)
+        if (EqualityComparer<T>.Default.Equals(item, value))
+            return true;
+    return false;
+}
+```
+#### לא בתכנית הלימודים
+```csharp
+/// <summary>
+/// ומחזירה את המיקום של הערך המינימלי IComparable פעולה המקבלת מערך של כל דבר המממש
+/// וערך מינימלי או עצם שהתכונה שלו מינימלית
+/// Generic version supporting any comparable type
+/// אם התלמיד יכול לשנות את המחלקה - הוא יכול לדאוג שהיא תתאים לשימוש כזה
+/// Returns index -1 and default(T) when array is empty or null.
+/// </summary>
+public static (int Index, T MinValue) MinTupGeneric<T>(T[] arr) where T : IComparable<T>
+{
+    if (arr == null || arr.Length == 0)
+        return (-1, default(T));
+
+    int minIndex = 0;
+    T minValue = arr[0];
+    for (int i = 1; i < arr.Length; i++)
+    {
+        if (arr[i].CompareTo(minValue) < 0)
         {
-            foreach (T item in arr)
-                if (EqualityComparer<T>.Default.Equals(item, value))
-                    return true;
-            return false;
+            minIndex = i;
+            minValue = arr[i];
         }
+    }
+    return (minIndex, minValue);
+}
+//// Example usage:
+// var cars = new Car[] { new Car("Toyota", 20000), new Car("Honda", 18000), new Car("Ford", 22000) };
+// var (minIndex, minCar) = MinTupGeneric(cars);
+// Console.WriteLine($"Cheapest: {minCar.GetModel()} at {minCar.GetPrice()} (index {minIndex})");
+```
 
 </details>
