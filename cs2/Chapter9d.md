@@ -15,6 +15,38 @@ lang: he
 **שימו לב:**
 במידה שתרצו להשתמש בפעולות אלו בבחינת הבגרות תצטרכו לכתוב אותן.
 
+
+
+
+<details markdown="1"><summary>דוגמאות לפונקציות עזר גנריות</summary>
+
+        // Generic methods
+        public static void PrintGeneric<T>(T[] arr)
+        {
+            foreach (T item in arr)
+                Console.Write(item + ", ");
+            Console.WriteLine();
+        }
+
+        public static int CountGeneric<T>(T[] arr, T value)
+        {
+            int count = 0;
+            foreach (T item in arr)
+                if (EqualityComparer<T>.Default.Equals(item, value))
+                    count++;
+            return count;
+        }
+
+        public static bool IsExistGeneric<T>(T[] arr, T value)
+        {
+            foreach (T item in arr)
+                if (EqualityComparer<T>.Default.Equals(item, value))
+                    return true;
+            return false;
+        }
+
+</details>
+
 <details markdown="1"><summary>פעולות בסיסיות</summary>
 
 #### פעולה המדפיסה מערך:
@@ -96,7 +128,7 @@ public static int Count(int[] arr, int num)
 ```
 </details>
 
-<details markdown="1"><summary>פעולות בסיסיות</summary>פעולות הממלאות/בונות מערך</details>
+<details markdown="1"><summary>פעולות הממלאות/בונות מערך</summary>
 
 #### פעולה הקולטת ערכים לתוך מערך:
 
@@ -163,12 +195,11 @@ public static void FillRnd(int[] arr, int min, int max)
 // פעולה המקבלת מערך וגודל ומחזירה מערך חדש בגודל זה
 public static int[] Resize(int[] arr, int size)
 {
-    int[] newarr = new int[size];
-    for (int i = 0; i < newarr.Length; i++)
-    {
-        newarr[i] = arr[i];
-    }
-    return newarr;
+    int[] newArr = new int[size];
+    for (int i = 0; i < newArr.Length && i < arr.Length; i++)
+        newArr[i] = arr[i];
+
+    return newArr;
 }
 ```
 
@@ -204,7 +235,7 @@ public static void CircleRight(int[] arr)
 
 </details>
 
-<details markdown="1"><summary>פעולות בסיסיות</summary>פעולות לבדיקת תנאי במערך</summayr>
+<details markdown="1"><summary>פעולות לבדיקת תנאי במערך</summary>
 
 #### בדיקת קיום ערך:
 
@@ -309,7 +340,7 @@ public static int[] UnCommonValues(int[] arr1, int[] arr2)
 ```
 </details>
 
-<details markdown="1"><summary>פעולות בסיסיות</summary>פעולות עבור ערך מקסימלי/מינימלי במערך</summary>
+<details markdown="1"><summary>פעולות עבור ערך מקסימלי/מינימלי במערך</summary>
 
 #### מקסימום:
 
@@ -365,7 +396,7 @@ public static int IMin(int[] arr)
 
 </details>
 
-<details markdown="1"><summary>פעולות בסיסיות</summary>פעולות עבור רצפים</summary>
+<details markdown="1"><summary>פעולות עבור רצפים</summary>
 
 #### אורך הרצף הארוך ביותר:
 
@@ -475,7 +506,7 @@ public static int SumOdd(int[] arr)
 ```
 </details>
 
-<details markdown="1"><summary>פעולות בסיסיות</summary>מיונים</summary>
+<details markdown="1"><summary>מיונים</summary>
 
 #### מיון בועות (Bubble Sort)
 
@@ -486,7 +517,9 @@ public static void BubleSort(int[] arr)
     for (int i = 0; i < arr.Length; i++)
         BubleSort(arr, arr.Length - 1);
 }
+```
 
+```csharp
 // פעולת עזר: מעבר יחיד במערך
 private static void BubleSort(int[] arr, int end)
 {
