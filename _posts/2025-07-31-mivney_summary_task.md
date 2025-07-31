@@ -40,8 +40,9 @@ lang: he
 
 ##  הסבר בנוגע להתקנה ושימוש בפרוייטק
 
-להלן קובץ ה- README של הפרוייקט הציבורי
+להלן קובץ ה- **README** של הפרוייקט הציבורי
 
+<div style="border: 1px solid black; padding: 10px;">
 ### This is a demo of adding a test project.
 
 1. Going by the book, went very badly (due to the usage of Unit4.dll which requires .Net Framework). See earlier versions of this readme if you want to see details.
@@ -79,6 +80,8 @@ or with **line spaces** and this would support test cases like this one:
 ```
 This usage is demonstrated in this test class:
 `..\Test3rdTry\BinNode\SumBinaryTreeNodes.cs`
+
+</div>
 
 ---
 
