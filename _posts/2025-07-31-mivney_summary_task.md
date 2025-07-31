@@ -51,7 +51,7 @@ lang: he
 2. I ended up bringing in an old unit test project that was created with NUnit framework (that's no longer proposed).
 3. So the shortest way to get started is by cloning this project and working on it. 
 
-[Here is the GPT chat](https://chatgpt.com/share/687fcb71-ee74-800e-8cf4-8f5ecca3f73c) 
+The **GPT** chat [is here](https://chatgpt.com/share/687fcb71-ee74-800e-8cf4-8f5ecca3f73c) 
 
 
 ![צפיה בתוצאות הבדיקות](/assets/img/image-2.png)
@@ -63,7 +63,7 @@ When you first run the project you should get this:
 
 ---
 
-the project now support creating trees (mainly for testing purposed) using the following syntax:
+The project now supports creating trees (mainly for testing purposes) using the following syntax:
 
 ```csharp
 var root = BuildTreeFromVisual(new[] {
@@ -73,7 +73,7 @@ var root = BuildTreeFromVisual(new[] {
 });
 ```
 
-or with **line spaces** and this would support test cases like this one:
+Or,  with **line spaces** and this would support test cases like this one:
 ```
 [TestCase(new[] {
     "   10   ",
