@@ -54,6 +54,8 @@ lang: he
 
 ![צפיה בתוצאות הבדיקות](image-2.png)
 
+![alt text](image-1.png)
+
 #### First run
 When you first run the project you should get this:
 ![יצוג גרפי של עץ](image.png)
