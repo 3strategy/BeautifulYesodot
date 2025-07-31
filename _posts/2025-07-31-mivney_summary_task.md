@@ -27,7 +27,7 @@ lang: he
 ---
 
 {: .page-break-before}
-# חלק ב׳ - עבודת חקר: בניית פרויקט בדיקות שיתופי {.page-break-before}
+# חלק ב׳ - עבודת חקר: בניית פרויקט בדיקות שיתופי
 
 זה לא הנושא עליו התבקשנו לכתוב, אבל **זה חשוב יותר**.
 הפרויקט השיתופי בגיט הציבורי היה מורכב מן הצפוי והתפתח לאורך 17 גרסאות. התחלתי עם הקמת תשתית הבדיקות, הוספת קבצי `.gitignore`, ו-README מסודר לתיעוד. נתקלתי בתחילה בבעיות תאימות בין פרוייקט הבדיקות לבין .netFramework שגרמו לשגיאות יוצאות דופן. **התהליך כלל 2 מחיקות ובניות מחדש** של הפרויקט, הפעם כספריית מחלקות (ClassLibrary) תוך שימוש ב-NUnit שנוסף דרך NuGet. כיוון שגם טכניקה זו נכשלה והניבה פרוייקט בדיקות כושל, השתמשתי לבסוף בתשתית ישנה יותר מפרוייקטי בדיקות קודמים, ויצרתי בסיס איתן שעליו ניתן לעבוד, אשר מאשפר להינות מכל העולמות (עולם ה-`UnitTests` והעולם הגרפי של `Unit4.dll` שהכין ולרי פקאר ז"ל). 
@@ -42,7 +42,7 @@ lang: he
 
 להלן קובץ ה- **README** של הפרוייקט הציבורי
 
-<div style="border: 1px solid black; padding: 10px;">
+<div markdown ="1" style="border: 1px solid black; padding: 10px;">
 ### This is a demo of adding a test project.
 
 1. Going by the book, went very badly (due to the usage of Unit4.dll which requires .Net Framework). See earlier versions of this readme if you want to see details.
