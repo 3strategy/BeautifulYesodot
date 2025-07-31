@@ -52,13 +52,12 @@ lang: he
 [Here is the GPT chat](https://chatgpt.com/share/687fcb71-ee74-800e-8cf4-8f5ecca3f73c) 
 
 
-![צפיה בתוצאות הבדיקות](image-2.png)
+![צפיה בתוצאות הבדיקות](./image-2.png)
 
-![alt text](image-1.png)
 
 #### First run
 When you first run the project you should get this:
-![יצוג גרפי של עץ](image.png)
+![יצוג גרפי של עץ](./image.png)
 
 ---
 
