@@ -640,7 +640,10 @@ public static bool IsExistGeneric<T>(T[] arr, T value)
     return false;
 }
 ```
-#### לא בתכנית הלימודים
+#### פונקציית מינימום גנרית: לא בתכנית הלימודים
+
+<details markdown="1"><summary>פונקציית מינימום גנרית</summary>
+
 ```csharp
 /// <summary>
 /// ומחזירה את המיקום של הערך המינימלי IComparable פעולה המקבלת מערך של כל דבר המממש
@@ -649,7 +652,7 @@ public static bool IsExistGeneric<T>(T[] arr, T value)
 /// אם התלמיד יכול לשנות את המחלקה - הוא יכול לדאוג שהיא תתאים לשימוש כזה
 /// Returns index -1 and default(T) when array is empty or null.
 /// </summary>
-public static (int Index, T MinValue) MinTupGeneric<T>(T[] arr) where T : IComparable<T>
+public static (int Index, T MinValue) Min<T>(T[] arr) where T : IComparable<T>
 {
     if (arr == null || arr.Length == 0)
         return (-1, default(T));
@@ -668,8 +671,36 @@ public static (int Index, T MinValue) MinTupGeneric<T>(T[] arr) where T : ICompa
 }
 //// Example usage:
 // var cars = new Car[] { new Car("Toyota", 20000), new Car("Honda", 18000), new Car("Ford", 22000) };
-// var (minIndex, minCar) = MinTupGeneric(cars);
+// var (minIndex, minCar) = Min(cars);
 // Console.WriteLine($"Cheapest: {minCar.GetModel()} at {minCar.GetPrice()} (index {minIndex})");
+
+public class Car : IComparable<Car>
+{
+    private string model;
+    private double price;
+
+    public Car(string model, double price)
+    {
+        this.model = model;
+        this.price = price;
+    }
+
+    public string GetModel() { return model; }
+    public void SetModel(string model) { this.model = model; }
+
+    public double GetPrice() { return price; }
+    public void SetPrice(double price) { this.price = price; }
+
+    public int CompareTo(Car other)
+    {
+        if (other == null) return 1;
+        return this.price.CompareTo(other.price);
+    }
+}
+
 ```
+
+
+</details>
 
 </details>
