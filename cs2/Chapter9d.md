@@ -96,7 +96,7 @@ public static int Count(int[] arr, int num)
 ```
 </details>
 
-### פעולות הממלאות/בונות מערך
+<details markdown="1"><summary>פעולות בסיסיות</summary>פעולות הממלאות/בונות מערך</details>
 
 #### פעולה הקולטת ערכים לתוך מערך:
 
@@ -202,7 +202,9 @@ public static void CircleRight(int[] arr)
 }
 ```
 
-### פעולות לבדיקת תנאי במערך
+</details>
+
+<details markdown="1"><summary>פעולות בסיסיות</summary>פעולות לבדיקת תנאי במערך</summayr>
 
 #### בדיקת קיום ערך:
 
@@ -305,8 +307,9 @@ public static int[] UnCommonValues(int[] arr1, int[] arr2)
     return Resize(arr, count);
 }
 ```
+</details>
 
-### פעולות עבור ערך מקסימלי/מינימלי במערך
+<details markdown="1"><summary>פעולות בסיסיות</summary>פעולות עבור ערך מקסימלי/מינימלי במערך</summary>
 
 #### מקסימום:
 
@@ -360,7 +363,9 @@ public static int IMin(int[] arr)
 }
 ```
 
-### פעולות עבור רצפים
+</details>
+
+<details markdown="1"><summary>פעולות בסיסיות</summary>פעולות עבור רצפים</summary>
 
 #### אורך הרצף הארוך ביותר:
 
@@ -468,8 +473,11 @@ public static int SumOdd(int[] arr)
     return sum;
 }
 ```
+</details>
 
-### מיון בועות (Bubble Sort)
+<details markdown="1"><summary>פעולות בסיסיות</summary>מיונים</summary>
+
+#### מיון בועות (Bubble Sort)
 
 ```csharp
 // מיון בועות: עוברים על המערך ומבצעים מעבר אחד בכל איטרציה
@@ -495,3 +503,4 @@ private static void Swap(int[] arr, int inx1, int inx2)
     int tmp = arr[inx1]; arr[inx1] = arr[inx2]; arr[inx2] = tmp;
 }
 ```
+</details>
