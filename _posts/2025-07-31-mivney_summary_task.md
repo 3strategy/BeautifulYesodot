@@ -42,7 +42,7 @@ lang: he
 
 להלן קובץ ה- **README** של הפרוייקט הציבורי
 
-<div markdown ="1" style="border: 1px solid black; padding: 10px;">
+<div markdown ="1" style="direction:ltr; text-align: left; border: 1px solid black; padding: 10px;">
 ### This is a demo of adding a test project.
 
 1. Going by the book, went very badly (due to the usage of Unit4.dll which requires .Net Framework). See earlier versions of this readme if you want to see details.
