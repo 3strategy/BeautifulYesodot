@@ -3,7 +3,7 @@ layout: page
 title: "פרק 9b - מערכים - הערות ותוספות"
 subtitle: "הערות והרחבות על מערכים. קישורים לקמפוס"
 author: גיא סידס
-tags: [איתחול עם סוגריים מרובעים, גישה לאיבר מהסוף, ^i, פלינדרום במערך]
+tags: [איתחול עם סוגריים מרובעים, חשבון מילולי, שאלה 8.4, גישה לאיבר מהסוף, ^i, פלינדרום במערך]
 mathjax: true
 lang: he
 ---
@@ -247,7 +247,7 @@ Console.WriteLine(MathInWords("one minus One")); // Output: "Zero"
 
 
 
-<details markdown="1"><summary>פתרון</summary>
+<details markdown="1"><summary>פתרון חשבון מילולי שאלה 8.4</summary>
 
 ```csharp
 public static string MathInWords(string s)
