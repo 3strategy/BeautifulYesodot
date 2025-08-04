@@ -62,7 +62,7 @@ s2 = s1.Remove(5,11);
 // s2 = ?
 
 st = "Dont say hello";
-s1 = st.SubString(5, 8);
+s1 = st.Substring(5, 8);
 // s1 = ?
 
 s1 = "You are OK";
