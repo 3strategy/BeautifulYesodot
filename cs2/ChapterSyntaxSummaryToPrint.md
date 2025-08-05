@@ -2,12 +2,12 @@
 layout: page-to-print
 ---
 
-### סיכום תחביר: פונקציות מחרוזות ומערכים ב-C#
+
 
 #### 1. פונקציית MinTup
 
 ```csharp
-public static (int, int) MinTup(int[] arr)
+public static (int, int) MinTup(int[] arr) // returns tuple
 {
     int iMin = 0;
     for (int i = 1; i < arr.Length; i++)
@@ -15,7 +15,7 @@ public static (int, int) MinTup(int[] arr)
         if (arr[i] < arr[iMin])
             iMin = i; // מוצא את המינימום ואת האינדקס שלו
     }
-    return (iMin, arr[iMin]);
+    return (iMin, arr[iMin]); // tuple החזרת 
 }
 ```
 
@@ -60,8 +60,10 @@ int res2 = MultiplyAtIndex([1, 2, 3], 2); // תחביר 2023 לאותה קריא
 int MultiplyAtIndex(int[] arr, int index) => arr[index] * index; // תחביר מקוצר
 ```
 
-#### 6. מציאת מספר זוגי אחרון במערך
+#### 6. מציאת איבר אחרון המקיים תנאי, ב3 דרכים
+בדוגמא זו: מציאת מספר **זוגי אחרון** במערך
 
+{: .subq}
 א. תחביר רגיל עם לולאת for הפוכה ו-break
 ```csharp
 int LastEven(int[] arr)
@@ -81,35 +83,35 @@ int LastEven(int[] arr)
 
 {: .subq}
 ב. שימוש בתחביר כובע (^) ולולאת for הפוכה ו-break
-    ```csharp
-    int LastEvenHat(int[] arr)
+```csharp
+int LastEvenHat(int[] arr)
+{
+    int lastEven = -1;
+    for (int i = 1; i <= arr.Length; i++)
     {
-        int lastEven = -1;
-        for (int i = 1; i <= arr.Length; i++)
+        if (arr[^i] % 2 == 0)
         {
-            if (arr[^i] % 2 == 0)
-            {
-                lastEven = arr[^i];
-                break;
-            }
+            lastEven = arr[^i];
+            break;
         }
-        return lastEven;
     }
-    ```
+    return lastEven;
+}
+```
 
 {: .subq}
 ג. תחביר foreach קדימה בלי break
 
-  ```csharp
-  int LastEvenForeach(int[] arr)
-  {
-      int lastEven = -1;
-      foreach (int num in arr)
-      {
-          if (num % 2 == 0)
-              lastEven = num;
-      }
-      return lastEven;
-  }
-  ```
+```csharp
+int LastEvenForeach(int[] arr)
+{
+    int lastEven = -1;
+    foreach (int num in arr)
+    {
+        if (num % 2 == 0)
+            lastEven = num;
+    }
+    return lastEven;
+}
+```
 
