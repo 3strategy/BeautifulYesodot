@@ -43,7 +43,7 @@ navbar-links:
      
 
   חלק ב: 
-    - מצגות קמפוס: "cs2/ChapterCampus"
+    - מצגות קמפוס: "/cs2/ChapterCampus"
     - פרק 6 לולאות מקוננות: "/cs2/Chapter6/"
     - פרק 7 מורחב: "/cs2/Chapter7Full"
     - תרגול 7.3: "/cs2/Chapter7Ex7.3"
@@ -57,7 +57,7 @@ navbar-links:
     - תרגול 9.2 CodeWars: "/cs2/Chapter9Ex9.2"
     - פרק 9c מערך מונים: "/cs2/Chapter9c"
     - פרק 9d תבניות במערך: "/cs2/Chapter9d"
-
+    - תקציר תחביר: "/cs2/ChapterSyntaxSummaryToPrint"
   חיצוני:
     - אתר מבני נתונים: "https://מבני.שלי.com"
     - אתר מתמטיקה: "https://מתמטיקה.com"
