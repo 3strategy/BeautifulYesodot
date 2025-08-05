@@ -325,20 +325,20 @@ static void Main(string[] args)
 ---
 
 ## המשך למידה
-[⬅ עברו לפרק 9 - גרסה עם אנימציות](/cs2/Chapter9)
+[⬅ עִבְרוּ לפרק 9 - גרסה עם אנימציות](/cs2/Chapter9)
 
-[⬅ עברו לרשימת שקפי תרגול במערכים במצגת קמפוס]({% link cs2/Chapter9b.md %}#campus-arr-excercises)
+[⬅ עִבְרוּ לרשימת שקפי תרגול במערכים במצגת קמפוס]({% link cs2/Chapter9b.md %}#campus-arr-excercises)
 
-[⬅ עברו לפרק 9b - הערות והרחבות](/cs2/Chapter9b)
+[⬅ עִבְרוּ לפרק 9b - הערות והרחבות](/cs2/Chapter9b)
 
-[⬅ עברו לפרק 9c - מערך מונים וצוברים](/cs2/Chapter9c)
+[⬅ עִבְרוּ לפרק 9c - מערך מונים וצוברים](/cs2/Chapter9c)
 
 
 ## תרגול
 
-[⬅ עברו לתרגול 9.1 - מערך חד ממדי](/cs2/Chapter9Ex9.1)
+[⬅ עִבְרוּ לתרגול 9.1 - מערך חד ממדי](/cs2/Chapter9Ex9.1)
 
-[⬅ עברו לתרגול 9.2 - מערכים - שאלות ב- CodeWars](/cs2/Chapter9Ex9.2)
+[⬅ עִבְרוּ לתרגול 9.2 - מערכים - שאלות ב- CodeWars](/cs2/Chapter9Ex9.2)
 
 
 
@@ -347,3 +347,4 @@ static void Main(string[] args)
 [סרטוני פרק 9: פעולות](https://www.youtube.com/playlist?list=PLnVUJu2KuoA2cT3X-Fui7j6HZJWZM6vnK){:target="_blank"}
 
 [פלייליסט השתלמות חלק ב](https://www.youtube.com/playlist?list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S){:target="_blank"}
+

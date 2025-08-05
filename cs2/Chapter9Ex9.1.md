@@ -203,9 +203,9 @@ Console.WriteLine(MathInWords("one minus One")); // Output: "Zero"
 
 ## קישורים
 
-[⬅ עברו לרשימת שקפי תרגול במערכים במצגת קמפוס]({% link cs2/Chapter9b.md %}#campus-arr-excercises)
+[⬅ עִבְרוּ לרשימת שקפי תרגול במערכים במצגת קמפוס]({% link cs2/Chapter9b.md %}#campus-arr-excercises)
 
 
-[⬅ עברו לתרגול 9.2 - מערכים - שאלות ב- CodeWars](/cs2/Chapter9Ex9.2)
+[⬅ עִבְרוּ לתרגול 9.2 - מערכים - שאלות ב- CodeWars](/cs2/Chapter9Ex9.2)
 
-עברו לרשימת שקפי תרגול במערכים במצגת קמפוס]
+עִבְרוּ לרשימת שקפי תרגול במערכים במצגת קמפוס]

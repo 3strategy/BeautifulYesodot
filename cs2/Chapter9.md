@@ -410,21 +410,21 @@ document.addEventListener('DOMContentLoaded', () => {
 ---
 
 ## המשך למידה
-[⬅ עברו לפרק 9a - גרסת ללא אנימציות](/cs2/Chapter9a)
+[⬅ עִבְרוּ לפרק 9a - גרסת ללא אנימציות](/cs2/Chapter9a)
 
 
-[⬅ עברו לפרק 9b - הערות והרחבות](/cs2/Chapter9b)
+[⬅ עִבְרוּ לפרק 9b - הערות והרחבות](/cs2/Chapter9b)
 
-[⬅ עברו לפרק 9c - מערך מונים וצוברים](/cs2/Chapter9c)
+[⬅ עִבְרוּ לפרק 9c - מערך מונים וצוברים](/cs2/Chapter9c)
 
 
 ## תרגול
 
-[⬅ עברו לרשימת שקפי תרגול במערכים במצגת קמפוס]({% link cs2/Chapter9b.md %}#campus-arr-excercises)
+[⬅ עִבְרוּ לרשימת שקפי תרגול במערכים במצגת קמפוס]({% link cs2/Chapter9b.md %}#campus-arr-excercises)
 
-[⬅ עברו לתרגול 9.1 - מערך חד ממדי](/cs2/Chapter9Ex9.1)
+[⬅ עִבְרוּ לתרגול 9.1 - מערך חד ממדי](/cs2/Chapter9Ex9.1)
 
-[⬅ עברו לתרגול 9.2 - מערכים - שאלות ב- CodeWars](/cs2/Chapter9Ex9.2)
+[⬅ עִבְרוּ לתרגול 9.2 - מערכים - שאלות ב- CodeWars](/cs2/Chapter9Ex9.2)
 
 
 

@@ -441,11 +441,11 @@ public static string Calc(string[] args)
 
 ## תרגול
 
-[⬅ עברו לתרגול 7.1 - פונקציות void: פעולות ללא פרמטרים](/cs2/Chapter7Ex7.1)
+[⬅ עִבְרוּ לתרגול 7.1 - פונקציות void: פעולות ללא פרמטרים](/cs2/Chapter7Ex7.1)
 
-[⬅ עברו לתרגול 7.2 - פונקציות המקבלות פרמטרים](/cs2/Chapter7Ex7.2)
+[⬅ עִבְרוּ לתרגול 7.2 - פונקציות המקבלות פרמטרים](/cs2/Chapter7Ex7.2)
 
-[⬅ עברו לתרגול 7.3 - פונקציות המקבלות ומחזירות ערך](/cs2/Chapter7Ex7.3)
+[⬅ עִבְרוּ לתרגול 7.3 - פונקציות המקבלות ומחזירות ערך](/cs2/Chapter7Ex7.3)
 
 ## סרטונים
 [סרטוני פרק 7: פעולות](https://www.youtube.com/playlist?list=PLw4P_RdfuzSh3nsdxq7oMeTbxZtADUsuv){:target="_blank"}
