@@ -208,4 +208,6 @@ Console.WriteLine(MathInWords("one minus One")); // Output: "Zero"
 
 [⬅ עִבְרוּ לתרגול 9.2 - מערכים - שאלות ב- CodeWars](/cs2/Chapter9Ex9.2)
 
-עִבְרוּ לרשימת שקפי תרגול במערכים במצגת קמפוס]
+[⬅ עִבְרוּ לרשימת שקפי תרגול במערכים במצגת קמפוס]({% link cs2/Chapter9b.md %}#campus-arr-excercises)
+
+[קישור למטלה 25 עד שאארגן אותה מסודר](https://docs.google.com/document/d/1nT5SIx4R1a49nZNHtJbZM5Bu2w8nVqK9GIppGUT_G4s/edit?usp=sharing)

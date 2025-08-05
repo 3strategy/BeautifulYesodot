@@ -68,63 +68,64 @@ lang: he
 ![alt text](image-1.png)
 
 
-## 9.2.1 
+## 9.2.1 (7kyu)
 [Odd or Even](https://www.codewars.com/kata/5949481f86420f59480000e7)
 
 ---
 
-## 9.2.2
+## 9.2.2 (8kyu)
 [How good are you really? | Codewars](https://www.codewars.com/kata/5601409514fc93442500010b)
 
 ---
 
-## 9.2.3 
+## 9.2.3 (7kyu)
 [Exes and Ohs | Codewars](https://www.codewars.com/kata/55908aad6620c066bc00002a)
 
 ---
 
-## 9.2.4
+## 9.2.4 (7kyu)
 [Complementary DNA | Codewars](https://www.codewars.com/kata/554e4a2f232cdd87d9000038)
 
 ---
 
-## 9.2.5 
+## 9.2.5 (7kyu)
 [You're a square! | Codewars](https://www.codewars.com/kata/54c27a33fb7da0db0100040e)
 
 ---
 
-## 9.2.6 
+## 9.2.6 (7kyu)
 [Credit Card Mask | Codewars](https://www.codewars.com/kata/5412509bd436bd33920011bc)
 
 ---
 
-## 9.2.7
+## 9.2.7 (8kyu)
 [Find the smallest integer in the array | Codewars](https://www.codewars.com/kata/55a2d7ebe362935a210000b2)
 
 ---
 
-## 9.2.8
+## 9.2.8 (7yku)
 [Least Larger | Codewars](https://www.codewars.com/kata/5f8341f6d030dc002a69d7e4)
 
-## 9.2.9
+## 9.2.9 (7kyu)
 [Likes Vs Dislikes | Codewars](https://www.codewars.com/kata/62ad72443809a4006998218a)
 
 ---
 
-## 9.2.10 קשה
+## 9.2.10 סכום שני הקטנים ביותר. קשה. (7kyu)
 [Sum of two lowest positive integers | Codewars](https://www.codewars.com/kata/558fc85d8fd1938afb000014)
 
 ---
 
-## 9.2.11
+## 9.2.11 (אני חיברתי)
 [Valid house numbers](https://www.codewars.com/kata/62a9cb1b667bb50057491757)
 
 ---
 
-## 9.2.12 מערך מונים
+## 9.2.12 מערך מונים (7kyu)
 [Isograms | Codewars](https://www.codewars.com/kata/54ba84be607a92aa900000f1)
 
-
+## 9.2.13 (6kyu)
+[Equal Sides Of An Array](https://www.codewars.com/kata/5679aa472b8f57fb8c000047)
 
 ## קישורים
 
