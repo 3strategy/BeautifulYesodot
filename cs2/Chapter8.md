@@ -42,7 +42,7 @@ string s4 = "Car";
 Console.WriteLine(s1.CompareTo(s2)); // -1 meaning s2 comes before
 Console.WriteLine(s4.CompareTo(s2)); // -1 meaning car comes before
 Console.WriteLine(s4.CompareTo(s3)); // 1 meaning Car comes after car
-Console.WriteLine(s4.CompareTo(s4)); // 3 meaning same position
+Console.WriteLine(s4.CompareTo(s4)); // 0 meaning same position
 ```
 
 ## תרגילים להתנסות

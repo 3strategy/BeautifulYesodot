@@ -19,7 +19,7 @@ lang: he
 #### פתרון
 
 ```csharp
-int[] CountOccurrences(int[] arr) {
+public static int[] CountOccurrences(int[] arr) {
   int[] counts = new int[101];
   foreach (int x in arr) {
     if (x >= 0 && x <= 100) counts[x]++;
@@ -41,7 +41,7 @@ int[] CountOccurrences(int[] arr) {
 #### פתרון
 
 ```csharp
-bool[] BuildFlags(int[] arr) {
+public static bool[] BuildFlags(int[] arr) {
   bool[] flags = new bool[101];
   foreach (int x in arr) {
     if (x >= 0 && x <= 100) flags[x] = true;
@@ -49,7 +49,7 @@ bool[] BuildFlags(int[] arr) {
   return flags;
 }
 
-bool Exists(int n, bool[] flags) {
+public static bool Exists(int n, bool[] flags) {
   return (n >= 0 && n < flags.Length) && flags[n];
 }
 ```
@@ -260,7 +260,7 @@ int sum_1_3 = RangeSum(1, 3, prefix);      // 11 - 1 = 10
 #### פתרון
 
 ```csharp
-int[] CountOccurrences(int[] arr) {
+public static int[] CountOccurrences(int[] arr) {
   int[] counts = new int[101];
   foreach (int x in arr) {
     if (x >= 0 && x <= 100) counts[x]++;
@@ -282,7 +282,7 @@ int[] CountOccurrences(int[] arr) {
 #### פתרון
 
 ```csharp
-bool[] BuildFlags(int[] arr) {
+public static bool[] BuildFlags(int[] arr) {
   bool[] flags = new bool[101];
   foreach (int x in arr) {
     if (x >= 0 && x <= 100) flags[x] = true;
@@ -290,7 +290,7 @@ bool[] BuildFlags(int[] arr) {
   return flags;
 }
 
-bool Exists(int n, bool[] flags) {
+public static bool Exists(int n, bool[] flags) {
   return (n >= 0 && n < flags.Length) && flags[n];
 }
 ```

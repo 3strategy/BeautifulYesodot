@@ -29,10 +29,11 @@ bool has = s.Contains("Exam"); // בודקת קיום תת-מחרוזת
 int len = s.Length; // מחזירה את אורך המחרוזת
 ```
 
-#### 3. העמסת פונקציות ותחביר פונקציה מקוצר
+#### 3. העמסת פונקציות ותחביר פונקציה מקוצר Method Overloading
 
 ```csharp
-// תחביר מקוצר
+// תחביר מקוצר. הפונקציה קוראת לפונקציה שמתחת ומחזירה את התוצאה שהיא מקבלת ממנה
+// { return... }  החץ הוא במקום הסוגריים והריטורן
 public static string SubS(string stt, int start) => SubS(stt, start, stt.Length - start);
 
 // תחביר מלא עם לולאה
@@ -57,7 +58,7 @@ string[] cars2 = { "BMW", "Ford", "Kia" }; // איתחול ישיר (לא נית
 int result = MultiplyAtIndex(new int[] { 1, 2, 3 }, 2); // קריאה לפונקציה
 int res2 = MultiplyAtIndex([1, 2, 3], 2); // תחביר 2023 לאותה קריאה
 
-int MultiplyAtIndex(int[] arr, int index) => arr[index] * index; // תחביר מקוצר
+public static int MultiplyAtIndex(int[] arr, int index) => arr[index] * index; // תחביר מקוצר
 ```
 
 {: .page-break-before}
@@ -67,7 +68,7 @@ int MultiplyAtIndex(int[] arr, int index) => arr[index] * index; // תחביר �
 {: .subq}
 א. תחביר רגיל עם לולאת for הפוכה ו-break
 ```csharp
-int LastEven(int[] arr)
+public static int LastEven(int[] arr)
 {
     int lastEven = -1;
     for (int i = arr.Length - 1; i >= 0; i--)
@@ -85,7 +86,7 @@ int LastEven(int[] arr)
 {: .subq}
 ב. שימוש בתחביר כובע (^) ולולאת for הפוכה ו-break
 ```csharp
-int LastEvenHat(int[] arr)
+public static int LastEvenHat(int[] arr)
 {
     int lastEven = -1;
     for (int i = 1; i <= arr.Length; i++)
@@ -104,7 +105,7 @@ int LastEvenHat(int[] arr)
 ג. תחביר foreach קדימה בלי break
 
 ```csharp
-int LastEvenForeach(int[] arr)
+public static int LastEvenForeach(int[] arr)
 {
     int lastEven = -1;
     foreach (int num in arr)
@@ -116,3 +117,17 @@ int LastEvenForeach(int[] arr)
 }
 ```
 
+#### 7. מערך מונים
+**הבעיה:** נתון מערך של מספרים בתחום 0–100. כתבו פונקציה המחזירה מערך מונים המצביע על כמות ההופעות של כל מספר.
+```csharp
+public static int[] CountOccurrences(int[] arr) 
+{
+    int[] counts = new int[101];
+    foreach (int x in arr) 
+    {
+        if (x >= 0 && x <= 100) 
+        counts[x]++;
+    }
+    return counts;
+}
+```
