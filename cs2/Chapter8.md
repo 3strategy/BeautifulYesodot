@@ -75,3 +75,15 @@ s2 = "beri";
 st = s1.Insert(2, s2);
 // st = ?
 ```
+
+
+## תרגול
+
+[⬅ עברו לתרגול 3.1 - מחרוזות](/cs2/Chapter8Ex8.1)
+
+
+
+
+## סרטונים
+
+[סרטוני פרק 8: מחרוזות](https://www.youtube.com/playlist?list=PLnVUJu2KuoA22PXymfu7FrV3hrYIinEb7){:target="_blank"}

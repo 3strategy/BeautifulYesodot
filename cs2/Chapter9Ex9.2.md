@@ -16,7 +16,7 @@ lang: he
 1. אחרי שלוחצים Train יפתח חלון ובו הבסיס לקוד הפתרון
     ניקח לדוגמא את השאלה על [ספירת כבשים](https://www.codewars.com/kata/5b077ebdaf15be5c7f000077)
     ```csharp
-    public static class Kata
+    public static class Kata // Train זה מה שמופיע שם באתר כשלוחצים 
     {
         public static string CountSheep(int n)
         {
@@ -29,18 +29,16 @@ lang: he
     ```csharp
     namespace ConsoleApp31
     {
-
-    // מדביק מחוץ למחלקה Program
-
+        // Program נדביק מחוץ למחלקה 
         public static class Kata
         {
             public static string CountSheep(int n)
-            {
-                throw new NotImplementedException(); // את השורה הזו נמחק
+            {   // כאן נכתוב את הפתרון שלנו
+                throw new NotImplementedException(); // !!! את השורה הזו נמחק
             }
         }
         
-
+        // כאן נבדוק את הפתרון שלינו
         internal class Program
         {
             static void Main(string[] args)
@@ -130,5 +128,8 @@ lang: he
 
 ## קישורים
 
+[⬅ חזרה לפרק 9a - מערך חד ממדי](/cs2/Chapter9a)
+
 [⬅ חזרה לתרגול 9.1 - מערך חד ממדי](/cs2/Chapter9Ex9.1)
 
+[⬅ מעבר לתרגול CodeWars לא עבר וידוא התאמה מבחינת רמת קושי והתאמה לידע](/cs2/Chapter9Ex9.xToSort)

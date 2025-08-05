@@ -60,6 +60,7 @@ int res2 = MultiplyAtIndex([1, 2, 3], 2); // תחביר 2023 לאותה קריא
 int MultiplyAtIndex(int[] arr, int index) => arr[index] * index; // תחביר מקוצר
 ```
 
+{: .page-break-before}
 #### 6. מציאת איבר אחרון המקיים תנאי, ב3 דרכים
 בדוגמא זו: מציאת מספר **זוגי אחרון** במערך
 
