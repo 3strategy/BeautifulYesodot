@@ -11,45 +11,85 @@ lang: he
 {: .box-note}
 להלן רשימת קישורים לשאלות מבגרויות שאינן דורשות ידע בעצמים ומחלקות
 
-[381 2019 שאלה 1](https://meyda.education.gov.il/sheeloney_bagrut/2019/6/HEB/899381.pdf)
 
-[381 שאלה 3 2020 איבר שוויון](https://meyda.education.gov.il/sheeloney_bagrut/2020/5/HEB/899381.pdf)
+## שאלון 899381 (עד תשפ"ד 2024)
+[2019 שאלה 1](/bagruyot/2019.6.381.pdf)
 
-[381 קיץ 2020 הפעולה Above](https://meyda.education.gov.il/sheeloney_bagrut/2020/6/HEB/899381.pdf)
+[שאלה 3 2020 איבר שוויון](/bagruyot/2020.5.381.pdf)
 
-[381 נבצרים 2021 שאלה 1, מחרוזת כפולה](https://meyda.education.gov.il/sheeloney_bagrut/2021/5/HEB/899381.pdf)
+[קיץ 2020 הפעולה Above](/bagruyot/2020.6.381.pdf)
 
-[381 קיץ 2021 שאלה 1 פילטר](https://meyda.education.gov.il/sheeloney_bagrut/2021/6/HEB/899381.pdf)
+[נבצרים 2021 שאלה 1, מחרוזת כפולה](/bagruyot/2021.5.381.pdf)
 
-[381 2022 שאלה 1 multiply](https://meyda.education.gov.il/sheeloney_bagrut/2022/6/HEB/899381.pdf)
+[קיץ 2021 שאלה 1 פילטר](/bagruyot/2021.6.381.pdf)
 
-[381 2022 שאלה 2 סריקה לפי תאים](https://meyda.education.gov.il/sheeloney_bagrut/2022/6/HEB/899381.pdf)
+[2022 שאלה 1 multiply](/bagruyot/2022.6.381.pdf)
 
-[381 2023 שאלה 1 מערך ממוין בחיוביים](https://meyda.education.gov.il/sheeloney_bagrut/2023/6/HEB/899381.pdf)
+[2022 שאלה 2 סריקה לפי תאים](/bagruyot/2022.6.381.pdf)
 
-[381 2023 שאלה 2 מערך הפרשים](https://meyda.education.gov.il/sheeloney_bagrut/2023/6/HEB/899381.pdf)
+[2023 שאלה 1 מערך ממוין בחיוביים](/bagruyot/2023.6.381.pdf)
 
-[381 2024 שאלה 1 biggest sum](https://meyda.education.gov.il/sheeloney_bagrut/2024/6/HEB/899381.pdf)
+[2023 שאלה 2 מערך הפרשים](/bagruyot/2023.6.381.pdf)
 
-[381 2024 שאלה 2 באורך הגלות - מערך מכונות לייצור ברגים](https://meyda.education.gov.il/sheeloney_bagrut/2024/6/HEB/899381.pdf)
+[2024 שאלה 1 biggest sum](/bagruyot/2024.6.381.pdf)
 
-[371 2023 שאלה 1 - מעקב](https://meyda.education.gov.il/sheeloney_bagrut/2023/6/HEB/899371.pdf)
-
-[371 2023 שאלה 2 - משחק קליעה למטרה](https://meyda.education.gov.il/sheeloney_bagrut/2023/6/HEB/899371.pdf)
-
-[371 2023 שאלה 3 - מועצת העיר](https://meyda.education.gov.il/sheeloney_bagrut/2023/6/HEB/899371.pdf)
-
-[371 2023 שאלה 6 - הצפנת מסר](https://meyda.education.gov.il/sheeloney_bagrut/2023/6/HEB/899371.pdf)
-
-[371 2024 שאלה 1 מעקב](https://meyda.education.gov.il/sheeloney_bagrut/2024/6/HEB/899371.pdf)
-
-[371 2024 שאלה 2 מערך סיסמאות](https://meyda.education.gov.il/sheeloney_bagrut/2024/6/HEB/899371.pdf)
-
-[371 2024 שאלה 3 מערך מעורבל](https://meyda.education.gov.il/sheeloney_bagrut/2024/6/HEB/899371.pdf)
-
-[371 2024 שאלה 6 באורך הגלות - סכום הספרות העמוק](https://meyda.education.gov.il/sheeloney_bagrut/2024/6/HEB/899371.pdf)
+[2024 שאלה 2 באורך הגלות - מערך מכונות לייצור ברגים](/bagruyot/2024.6.381.pdf)
 
 
+## שאלון 899371 החל מתשפ"ג (2023)
+[2023 שאלה 1 - מעקב](/bagruyot/2023.6.371.pdf)
+
+[2023 שאלה 2 - משחק קליעה למטרה](/bagruyot/2023.6.371.pdf)
+
+[2023 שאלה 3 - מועצת העיר](/bagruyot/2023.6.371.pdf)
+
+[2023 שאלה 6 - הצפנת מסר](/bagruyot/2023.6.371.pdf)
+
+[2024 שאלה 1 מעקב](/bagruyot/2024.6.371.pdf)
+
+[2024 שאלה 2 מערך סיסמאות](/bagruyot/2024.6.371.pdf)
+
+[2024 שאלה 3 מערך מעורבל](/bagruyot/2024.6.371.pdf)
+
+[2024 שאלה 6 באורך הגלות - סכום הספרות העמוק](/bagruyot/2024.6.371.pdf)
+
+
+## שאלון 899222 החל מתשע"א (2011)
+[קיץ 2002 לבררררר](/bagruyot/2002.6.222.pdf)
+
+[קיץ 2003 לבררררר](/bagruyot/2003.6.222.pdf)
+
+[קיץ 2004 לבררררר](/bagruyot/2004.6.222.pdf)
+
+[קיץ 2005 לבררררר](/bagruyot/2005.6.222.pdf)
+
+[קיץ 2006 לבררררר](/bagruyot/2006.6.222.pdf)
+
+[קיץ 2007 לבררררר](/bagruyot/2007.6.222.pdf)
+
+[קיץ 2008 לבררררר](/bagruyot/2008.6.222.pdf)
+
+[קיץ 2009 לבררררר](/bagruyot/2009.6.222.pdf)
+
+[קיץ 2010 לבררררר](/bagruyot/2010.6.222.pdf)
+
+[קיץ 2011 כל 10 השאלות](/bagruyot/2011.6.222.pdf)
+
+[קיץ 2012 כל (10) השאלות פרט ל-9](/bagruyot/2012.6.222.pdf)
+
+[קיץ 2013 כל השלאות פרט ל-9](/bagruyot/2013.6.222.pdf)
+
+[קיץ 2014 כל השאלות פרט ל-16,17,18,19,20](/bagruyot/2014.6.222.pdf)
+
+[קיץ 2015 כל השאלות פרט ל-9](/bagruyot/2015.6.222.pdf)
+
+[קיץ 2016 כל השאלות לברררררררר](/bagruyot/2016.6.222.pdf)
+
+[קיץ 2017 כל השאלות לברררררררר](/bagruyot/2017.6.222.pdf)
+
+קיץ 2018 חסר לברררררררר
+
+[קיץ 2019 כל השאלות לברררררררר](/bagruyot/2019.6.222.pdf)
 
 
 ## קישורים
