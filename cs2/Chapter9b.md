@@ -327,6 +327,8 @@ public static int NumFromWord(string s)
 
 [⬅ עברו  לנקודות צפיה חשובות בסרטון שיעור 9b](/cs2/VideoLinks/Chapter9VidLinks)
 
+
+
 [⬅ עִבְרוּ לפרק 9 - מערכים](/cs2/Chapter9)
 
 [⬅ עִבְרוּ לפרק 9a - גרסת ללא אנימציות](/cs2/Chapter9a)
@@ -341,3 +343,12 @@ public static int NumFromWord(string s)
 
 [⬅ עִבְרוּ לתרגול 9.2 - מערכים - שאלות ב- CodeWars](/cs2/Chapter9Ex9.2)
 
+
+#### זמני:
+[srt1](/cs2/VideoLinks/captions_part01.txt)
+
+[srt2](/cs2/VideoLinks/captions_part02.txt)
+
+[srt3](/cs2/VideoLinks/captions_part03.txt)
+
+[srt4](/cs2/VideoLinks/captions_part04.txt)
