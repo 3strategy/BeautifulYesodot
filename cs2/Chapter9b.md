@@ -327,6 +327,7 @@ public static int NumFromWord(string s)
 
 [⬅ עברו  לנקודות צפיה חשובות בסרטון שיעור 9b](/cs2/VideoLinks/Chapter9VidLinks)
 
+[לא קשור: עבודה עם LLM על מיני פרוייקט WPF לטיפול בבעיית הקישורים לסרטונים](https://www.youtube.com/playlist?list=PLnVUJu2KuoA2SlsoD7iVn4Xfc2Rds-ymH)
 
 
 [⬅ עִבְרוּ לפרק 9 - מערכים](/cs2/Chapter9)
