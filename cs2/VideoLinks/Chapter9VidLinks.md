@@ -1,108 +1,42 @@
+
+
 ## קישורים מרכזיים לסרטון הדרכה במערכים ב-C#
 
-- [12:45](https://youtu.be/fUEoGfG0HzU?si=tRJq5aesEA5XjTK_&t=690) - **המשמעות של מצביע למערך** שמועבר לפונקציה
-- [17:40](https://youtu.be/fUEoGfG0HzU?si=gMntr5mXxGNdSj8g&t=1060) - תחבירים חלופיים **לאיתחול מערך**
+- [`00:00:06`](https://youtu.be/fUEoGfG0HzU?t=6) שיעור שני במערכים
+- [`00:06:06`](https://youtu.be/fUEoGfG0HzU?t=366) הבדלים בין מערכים לרשימות מעבר על איברי המערך
+- [`00:12:06`](https://youtu.be/fUEoGfG0HzU?t=726) הקצאת זיכרון, שימוש במצביעים, והשפעת שינויים על משתנים בתוך פונקציות.
+- [`00:18:06`](https://youtu.be/fUEoGfG0HzU?t=1086) עבודה עם מערכים בתוך פונקצ
+- [`00:24:06`](https://youtu.be/fUEoGfG0HzU?t=1446) הבנת ההבדל בין משתנים למערכים בפונקציות
+- [`00:30:06`](https://youtu.be/fUEoGfG0HzU?t=1806) דיון מעמיק על מערכים בשפת ב#, כולל הסברים על הפניות בזיכרון, השפעתן על העברת ערכים לפונקציות, וההבדלים בין מערכים בגדלים שונים.
+- [`00:36:06`](https://youtu.be/fUEoGfG0HzU?t=2166) הזזת איברים במערך
+- [`00:42:06`](https://youtu.be/fUEoGfG0HzU?t=2526) הסבר על הזזה מעגלית של איברים במערך, כולל טיפים למניעת שגיאות אינדקס והדגמה של פתרונות לתרגילים.
+- [`00:48:06`](https://youtu.be/fUEoGfG0HzU?t=2886) הזזה shift במערך, בכמותk והעתקת איברים
+- [`00:54:06`](https://youtu.be/fUEoGfG0HzU?t=3246) עבודה עם מערכים, כולל טכניקות להעתקת איברים, טיפול בלולאות. ניסוח שאלה מאתגרת לקראת ה-01:00
+- [`01:00:06`](https://youtu.be/fUEoGfG0HzU?t=3606) גלגול k יברים במערך ללא שימוש במערך עזר
+- [`01:06:06`](https://youtu.be/fUEoGfG0HzU?t=3966) ההבדלים בין מחרוזות ומערכים בפייתון כשניגשים לפי אינדקס שלילי בפייתון וכובע ב-C#
+- [`01:12:06`](https://youtu.be/fUEoGfG0HzU?t=4326) מערכים וניהול זיכרון: הבנת העקרונות הבסיסיים
+- [`01:18:06`](https://youtu.be/fUEoGfG0HzU?t=4686) הסבר על ניהול זיכרון בשפות תכנות, שכפול מערכים והשוואת תוכן בין מערכים, עם דגש על חשיבות ההבנה של מבני נתונים.
+- [`01:24:06`](https://youtu.be/fUEoGfG0HzU?t=5046) השוואת מערכים בתכנות - לולאות
+- [`01:30:06`](https://youtu.be/fUEoGfG0HzU?t=5406) כתיבת פונקציה ההופכת את אברי המערך. יציאה להפסקה קצרה
 
-
-
-### מה שחשב Copilot - עבודה בחלקים:
-#### חלק 1
-- [0:00:06](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6s) – פתיחה והפעלה של AI companion
-- [0:00:32](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=32s) – סקירת תוספות מהשיעור הקודם
-- [0:00:39](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=39s) – דיון על מערך מונים ואתחול עם סוגריים מרובעים
-- [0:01:12](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=72s) – הסבר על מגבלות תחביר בסביבת Framework
-- [0:01:29](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=89s) – אינדקס שלילי ומספור מהסוף במערכים
-- [0:01:42](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=102s) – סימון “^” לגישה לתא האחרון
-- [0:02:05](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=125s) – קיצור לולאת רוורס עם `for`
-- [0:03:02](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=182s) – הסברים על קמפוס וגישה למצגות
-- [0:04:17](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=257s) – מערכים: הכרזה על גודל קבוע
-- [0:05:31](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=331s) – שימוש ב־List להוספה והסרה
-- [0:06:45](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=405s) – הבדל בין מערך לרשימה בגמישות ובאינדוקס
-- [0:08:11](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=491s) – הדגמה: לולאה על מערך מול רשימה
-- [0:09:26](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=566s) – הסבר על הפניות במעבר מערכים לפונקציה
-- [0:10:43](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=643s) – דיון על העברת ערכים לפי הפנייה ותחביר C#
-- [0:11:30](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=690s) – פתיחה של Visual Studio לצורך המחשה
-- [0:12:01](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=721s) – כתובת זיכרון והבדלים בין הקצאה להפנייה
-- [0:13:08](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=788s) – מצביעים ואובייקטים חדשים מול העתקה
-- [0:14:05](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=845s) – הדגמה של 'new' והשפעתה על קשרי זיכרון
-- [0:15:08](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=908s) – השלכה של הקצאת מערך חדש על מצביעים קיימים
-- [0:16:10](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=970s) – העברת משתנים מול מערכים לפונקציה – שינויים בזיכרון
-- [0:17:55](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=1075s) – שימוש ב־`ref` להשפעה על זיכרון חיצוני
-- [0:19:08](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=1148s) – סכנות בשימוש לא מבוקר בהפניות ו־`new`
-- [0:20:12](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=1212s) – סיכום נושא הפניות – חוזר על נקודת השבירה עם הקצאה
-- [0:21:45](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=1305s) – שאלות של תלמידים: האם מערכים מועתקים או מופנים
-- [0:23:22](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=1402s) – שיחת העמקה על קופסאות זיכרון ומצביעים מתחלפים
-- [0:25:00](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=1500s) – ניתוח הבדל בין משתנה רגיל להפניה לפונקציה
-- [0:27:00](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=1620s) – איך הקצאת ערך חדש שובר קשר עם מערך מקורי
-- [0:29:00](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=1740s) – מתי ההפניות שומרות קשר ומתי קופצות לכתובת חדשה
-- [0:31:00](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=1860s) – מודולו והקצאת ערכים – היפוך מערך וגלגול איברים
-- [0:33:00](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=1980s) – סיכום תרגול הזזה מעגלית וממה להיזהר בפונקציה
-- [0:34:30](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=2070s) – שאלות תלמידים: האם ניתן לפתור בלי מערך עזר
-- [0:36:00](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=2160s) – דגשים על `foreach` והבדלים בשינוי ערכים
-- [0:38:00](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=2280s) – שאלה 917: הזזת איברים ימינה ובאגים אפשריים
-- [0:40:00](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=2400s) – דיבוג הדוגמה ותיקון בעיות אינדקס וגלגול
-- [1:01:04](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=3664s) – סוף הקובץ הראשון – מעבר לפונקציית ספליט לפענוח מחרוזות
-
-#### חלק 2
-- [1:15:30](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=4650s) – שימוש ב־Debug.Assert לבדיקות יעילות קוד בשאלת Codewars
-- [1:16:12](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=4672s) – הסבר כיצד הפונקציה תמיד מחזירה ערך קבוע ואיך זה משפיע על הבדיקות
-- [1:17:08](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=4628s) – הדגמה: מעבר מפוריד ל־for רגיל בפתרון קאטא
-- [1:18:32](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=4712s) – יישום התנאי לבדיקה אם הסכום זוגי או אי־זוגי
-- [1:19:46](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=4786s) – Debug.Assert מרובה: איך לבדוק מקרים רבים יחד
-- [1:20:25](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=4825s) – ניהול מחרוזות עבור פונקציית "one plus zero"
-- [1:21:52](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=4912s) – טיפול בשגיאת אינדקס – בעיה בפיצול מחרוזות ללא רווח סופי
-- [1:22:40](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=4960s) – שימוש ב־`ToLower()` להכנת מחרוזת לבדיקה
-- [1:23:24](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5004s) – הצעת פתרון חלופי ע"י הוספת רווח סופי: קיצור אלגנטי
-- [1:24:36](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5076s) – פיצול מחרוזת ל־3 חלקים בלולאה ידנית
-- [1:26:02](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5162s) – הצגת בעיית המחרוזת השלישית ללא תו רווח – אינדקס out of range
-- [1:27:27](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5247s) – הסבר פדגוגי: מדוע לא להשתמש ב־`Split` בבגרות
-- [1:28:45](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5325s) – התחלת תרגום מילים למספרים – מערך ממופה
-- [1:30:12](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5412s) – ביצוע פעולת חשבון על סמך מילים באנגלית
-- [1:31:40](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5500s) – הסבר על ההבדל בין פתרון יעיל ובין פתרון שעובד – פרפורמנס
-- [1:33:00](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5580s) – מעבר לדיבוג עמוק: איך להריץ בדיקות מדויקות בעזרת `Assert`
-- [1:34:23](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5663s) – שיקולים בבחירת שיטה לפתרון: אייפים מול מערך ממופה
-- [1:35:52](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5752s) – הסבר כיצד להשתמש בתבנית עם קלאס `kata` לפתרון קוד
-- [1:37:24](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5844s) – שימוש נכון ב־Visual Studio לפיתוח קוד תרגול מאורגן
-- [1:39:10](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=5950s) – הסבר כיצד מערכת Codewars מדרגת פתרונות לפי יעילות
-- [1:40:36](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6036s) – מבט על הסביבה של Codewars: משוב, ניקוד ותרגול מבוסס פרופיל
-- [1:42:05](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6125s) – טיפ: תרגול עם Visual Studio יחד עם Copy&Paste לאתר
-- [1:43:28](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6208s) – דגשים לפתרון: ניקוד גבוה מתקבל רק עם ניסיון מוצלח ראשוני
-- [1:45:02](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6302s) – מעבר לפונקציות `Sum()` מוכנות בסי־שארפ – מתי כן ולמה לא בבגרות
-- [1:46:26](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6386s) – המלצה פדגוגית: להכיר את כללי השפה אך להתאים לרמה הנדרשת
-- [1:48:00](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6480s) – ניתוח שאלה בגרות קלאסית מול שאלה מתקדמת – ספליט מול לולאה
-- [1:49:23](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6563s) – פרקטיקה: איך להריץ קוד בגיטה מול Codewars לשם אימון
-- [1:50:58](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6658s) – תרגול של שאלה נוספת יחד עם קלאס שנקרא `kata`
-- [1:52:36](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6756s) – הסברים על תהליך כתיבה והערכה ב־Codewars – הגשת פתרון והתנסות
-- [1:54:12](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6852s) – דגשים על אופן קבלת פידבק, ניקוד והשוואת פתרונות באתר
-- [1:55:42](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=6942s) – המשך פתרון שאלה על "one plus zero" – מיפוי והחזרת מחרוזת חדשה
-- [1:57:00](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=7020s) – תרגול כיתתי: כיצד למצוא פתרון שונה לשאלה קיימת
-- [1:58:30](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=7110s) – דגשים לקראת מבחן – איך לבנות גישה פתרונית אופטימלית
-- [2:00:04](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=7204s) – המלצה: להתחיל מהשאלות הפשוטות (כמו 92) כדי לעלות ברמת הקושי
-- [2:01:48](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=7308s) – הסבר על שימוש באתרים תרגוליים – איך לא להעתיק אלא להבין
-- [2:03:15](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=7395s) – שאלות תלמידים: איפה רואים את הניקוד המצטבר ב־Codewars
-- [2:04:50](https://www.youtube.com/watch?v=fUEoGfG0HzU&t=7490s) – הסבר על הבדל בין test לבין attempt – התמודדות עם פידבק
-
-
-#### חלק 3
-
-
-#### חלק 4
-
-
-### מה שחשב GPT על הכתוביות
-
-- [00:00](https://youtu.be/fUEoGfG0HzU?t=0) - פתיחה והקדמה
-- [01:30](https://youtu.be/fUEoGfG0HzU?t=90) - יצירת מערכים בסיסית
-- [03:15](https://youtu.be/fUEoGfG0HzU?t=195) - גישה לאיברי מערך
-- [05:40](https://youtu.be/fUEoGfG0HzU?t=340) - לולאות על מערכים
-- [09:10](https://youtu.be/fUEoGfG0HzU?t=550) - הדגמה ראשונה של תרגיל Codewars
-- [12:45](https://youtu.be/fUEoGfG0HzU?t=765) - פתרון תרגיל Codewars באמצעות VS2022
-- [17:20](https://youtu.be/fUEoGfG0HzU?t=1040) - העברת הפתרון מ-VS2022 לאתר Codewars
-- [21:50](https://youtu.be/fUEoGfG0HzU?t=1310) - תרגיל נוסף בנושא מערכים באתר Codewars
-- [25:10](https://youtu.be/fUEoGfG0HzU?t=1510) - טיפול בשגיאות נפוצות בעבודה עם מערכים
-- [28:40](https://youtu.be/fUEoGfG0HzU?t=1720) - מערכים דו-ממדיים
-- [32:15](https://youtu.be/fUEoGfG0HzU?t=1935) - לולאות על מערכים דו-ממדיים
-- [36:05](https://youtu.be/fUEoGfG0HzU?t=2165) - שימוש במערכים בשיטות (methods)
-- [39:30](https://youtu.be/fUEoGfG0HzU?t=2370) - הדגמה נוספת של פתרון Kata באתר Codewars
-- [43:50](https://youtu.be/fUEoGfG0HzU?t=2630) - סיכום והמלצות לעבודה נכונה עם מערכים
-
+- [`01:42:06`](https://youtu.be/fUEoGfG0HzU?t=6126) דיון על תרגיל הזזת תאים במערך ושימוש בשיפט מעגלי.
+- [`01:48:06`](https://youtu.be/fUEoGfG0HzU?t=6486) דיונים על תהליכים טכנולוגיים, חוויות אישיות עם GPT Agent  שנכנס ל-Gmail עם AI, והבנת תהליכי עבודה עם מחשבים.
+- [`01:54:06`](https://youtu.be/fUEoGfG0HzU?t=6846) פתרון הבעיה הציקלית
+- [`02:00:06`](https://youtu.be/fUEoGfG0HzU?t=7206) הזזה ושינוי מיקום
+- [`02:12:06`](https://youtu.be/fUEoGfG0HzU?t=7926) עבודה עם מערכים, כולל דיבוג בעיות לוגיות, שימוש במודולו, והבנת תהליכים של החלפת ערכים במערכים.
+- [`02:18:06`](https://youtu.be/fUEoGfG0HzU?t=8286) תקלות במערכים: ניסיון לפתור בעיה באמצעות שימוש בלולאות ומשתנים
+- [`02:24:06`](https://youtu.be/fUEoGfG0HzU?t=8646) הסברים על פונקציות, שימוש במשתנים זמניים, פתרון בעיות, והדרכה על עבודה עם Visual Studio.
+- [`02:30:06`](https://youtu.be/fUEoGfG0HzU?t=9006) קנטרול שיפט A: יצירת מחלקה חדשה עם . עבודה באתר CodeWars על קאטות
+- [`02:36:06`](https://youtu.be/fUEoGfG0HzU?t=9366) עבודה באתר CodeWars על קאטות
+- [`02:42:06`](https://youtu.be/fUEoGfG0HzU?t=9726) שימוש ב-foreach במערכים בשפת סי שארפ
+- [`02:48:06`](https://youtu.be/fUEoGfG0HzU?t=10086)  פיצול מחרוזת לשלוש מילים
+- [`03:00:06`](https://youtu.be/fUEoGfG0HzU?t=10806)  פיצול מחרוזות, שימוש בלולאות ופתרון בעיות בתכנות ללא שימוש בפונקציות מוכנות כמו split.
+- [`03:06:06`](https://youtu.be/fUEoGfG0HzU?t=11166) פתרון בעיות באמצעות פירוק לבעיות קטנות, שימוש במבני בקרה, והחזרת ערכים מתודולוגית.
+- [`03:12:06`](https://youtu.be/fUEoGfG0HzU?t=11526) פיתוח פונקציה להמרת מספר למילה בשפת C#
+- [`03:18:06`](https://youtu.be/fUEoGfG0HzU?t=11886) הבנת access modifiers לפונקציות הבדל בין public ל-private והשפעתם על נראות המשתנים והפונקציות בקוד.
+- [`03:24:06`](https://youtu.be/fUEoGfG0HzU?t=12246) משתנים גלובליים בשפת C#
+- [`03:30:06`](https://youtu.be/fUEoGfG0HzU?t=12606) דיון על כתיבת פונקציות בשפת סי שארפ והבעיות הנלוות בהן (בזמן תרגול).
+- [`03:36:06`](https://youtu.be/fUEoGfG0HzU?t=12966) שיתוף מסכים בזום של הרבה אנשים. לא עבד. כמה שלא ניסינו
+- [`03:42:06`](https://youtu.be/fUEoGfG0HzU?t=13326) שיחה על פתרון בעיות בתכנות, כולל דיון על פונקציות, מערכים ופלינדרומים בשיעור תכנות בשפת סי שארפ.
+- [`03:48:06`](https://youtu.be/fUEoGfG0HzU?t=13686) בדיקת פלינדרום, שימוש ב- Debug.Assert ולצורך זה using System.Diagnostics
+- [`03:54:06`](https://youtu.be/fUEoGfG0HzU?t=14046) דיון על בדיקות פונקציות, שליחת קוד ותהליך דיבוג בקבוצה, כולל התייחסות לבעיות במקרים זוגיים ואי זוגיים.
