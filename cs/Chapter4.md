@@ -432,6 +432,12 @@ Console.WriteLine("Number of changes: " + count);
 
 </details>
 
+## קישורים
+[⬅ עברו  לנקודות צפיה חשובות בסרטון שיעור פרק 4b](/cs2/VideoLinks/Chapter4VidLinks)
+
+
+
+
 ## תרגול
 
 [⬅ עִבְרוּ לתרגול 4.1 - לולאות for: שארית חלוקה](/cs/Chapter4Ex4.1)

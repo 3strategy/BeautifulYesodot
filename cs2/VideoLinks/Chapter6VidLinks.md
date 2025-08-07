@@ -2,7 +2,7 @@
 layout: page
 title: "פרק 6 - לולאות מקוננות"
 subtitle: "קישורים לנקודות זמן בהקלטת השיעור"
-tags: קינון, כוכביות, patterns
+tags: קינון, כוכביות, patterns,  נקודות צפייה
 author: גיא סידס
 lang: he
 ---
