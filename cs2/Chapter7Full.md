@@ -636,3 +636,9 @@ s = s.ToUpper().Replace("WORLD", "C#").Replace("HELLO,", "Go");
       }, 4200);
     });
   </script>
+
+
+
+## קישורים
+  
+[⬅ עברו  לנקודות צפיה חשובות בסרטון שיעור 7b](/cs2/VideoLinks/Chapter7VidLinks)

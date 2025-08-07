@@ -327,6 +327,10 @@ static void Main(string[] args)
 ## המשך למידה
 [⬅ עִבְרוּ לפרק 9 - גרסה עם אנימציות](/cs2/Chapter9)
 
+
+[⬅ עברו  לנקודות צפיה חשובות בסרטון שיעור 9b](/cs2/VideoLinks/Chapter9VidLinks)
+
+
 [⬅ עִבְרוּ לרשימת שקפי תרגול במערכים במצגת קמפוס]({% link cs2/Chapter9b.md %}#campus-arr-excercises)
 
 [⬅ עִבְרוּ לפרק 9b - הערות והרחבות](/cs2/Chapter9b)

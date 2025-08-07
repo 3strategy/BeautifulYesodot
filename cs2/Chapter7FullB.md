@@ -438,6 +438,10 @@ public static string Calc(string[] args)
 
 
 
+## קישורים
+  
+[⬅ עברו  לנקודות צפיה חשובות בסרטון שיעור 7b](/cs2/VideoLinks/Chapter7VidLinks)
+
 
 ## תרגול
 
