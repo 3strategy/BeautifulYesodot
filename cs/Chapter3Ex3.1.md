@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "תנאים וביטויים לוגיים"
-subtitle: "תרגול תרגיל 3.1 תנאים פשוטים"
+title: "תרגול 3.1 - תנאים וביטויים לוגיים"
+subtitle: "תרגול 3.1 תנאים פשוטים"
 author: גיא סידס
 mathjax: true
 lang: he

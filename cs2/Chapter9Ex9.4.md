@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "9.2 תרגול CodeWars במערך"
+title: "תרגול 9.4 - CodeWars לא מפולטר"
 subtitle: "CodeWars"
 author: גיא סידס
 tags: [מערך, תרגול מערכים, חד ממדי, CodeWars]
@@ -9,8 +9,9 @@ lang: he
 ---
 
 {: .box-note}
-לא עברתי על כל השאלות לאחרונה. יתכן שחלק לא קשורות למערכים. 
+לא עברתי על השאלות. בטוח שחלק לא קשורות למערכים ויתכן שחלק קשות כך סתם. 
 
+<!-- 
 ## 9.2.1 
 [Odd or Even](https://www.codewars.com/kata/5949481f86420f59480000e7)
 
@@ -66,7 +67,7 @@ lang: he
 
 ## 9.2.12 מערך מונים
 [Isograms | Codewars](https://www.codewars.com/kata/54ba84be607a92aa900000f1)
-
+ -->
 
 
 ## קישורים

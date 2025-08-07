@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "2.1 המחלקות Math, Random"
+title: "תרגול 2.1 - המחלקות Math, Random"
 subtitle: "תרגול פונקציות מתמטיות והגרלת מספרים אקראיים"
 author: גיא סידס
 mathjax: true

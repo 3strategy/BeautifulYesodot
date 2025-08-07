@@ -2,7 +2,7 @@
 layout: page
 title: "תרגול 4.5 - לולאות for: גִּלְגוּל, עוקבים"
 subtitle: "תרגול מתקדם בשימוש במשתנה עזר בלולאות. השוואה בין ערכים סמוכים. טבלאות מעקב"
-tags: [גילגול, שמירת היסטוריה, תרגול for, sliding window, rolling comparison]
+tags: [גילגול, גלגול, הסטוריה, שמירת היסטוריה, תרגול for, sliding window, rolling comparison]
 author: גיא סידס
 lang: he
 ---
