@@ -7,10 +7,7 @@ author: גיא סידס
 lang: he
 ---
 
-## קישורים מרכזיים לסרטון הדרכה במערכים ב-C#
-
-### לנסות לצפות בנקודה של 01:36 ולהבין מה לא עושים
-
+## קישורים לנקודות בסרטון פונקציות ראשון 15/7 
 - [`00:00:04`](https://youtu.be/WpzbOc5as4g?t=4) פונקציות - כלי מרכזי לפתרון בעיות.
 - [`00:06:04`](https://youtu.be/WpzbOc5as4g?t=364) הבנת מבנה הפונקציות והגדרותיהן בתכנות, כולל מודיפיירים, טיפוסים והחזרת ערכים.
 - [`00:12:04`](https://youtu.be/WpzbOc5as4g?t=724) פונקציות בסיסיות: הגדרה, חתימה, שימושים, יתרונות. מדוע כדאי ללמד פונקציות מוקדם יותר
@@ -39,7 +36,7 @@ lang: he
 - [`02:24:04`](https://youtu.be/WpzbOc5as4g?t=8644) הרכבת פונקציות והבנת סדר פעולות בקוד
 
 
-## (נושאים מתקדמים) קישורים בסרטון חלק ב'
+## קישורים לנקודות בסרטון חלק ב 15/7 חלק 2 (נושאים מתקדמים)
 - [`00:00:02`](https://youtu.be/Sq4Sy4u6ISg?t=2) תרגול פונקציות בשפת תכנות: פתרון בעיות עם לולאות, החזרת ערכים ושיפור קוד.
 - [`00:06:02`](https://youtu.be/Sq4Sy4u6ISg?t=362) שיפוט ושיפור קוד פונקציה עם דיבוג והחזרת ערכים מותאמים
 - [`00:12:02`](https://youtu.be/Sq4Sy4u6ISg?t=722) תוכנית לבדיקת 7 בום. תוכנית מתקדמת להדגמת הצורך בפונקציות. הדפסות צבעוניות ובקרה על קלט בהתאם לתנאים שונים
@@ -49,3 +46,19 @@ lang: he
 - [`00:36:02`](https://youtu.be/Sq4Sy4u6ISg?t=2162) ניהול בקשות ופלטים דינמיים בפונקציות עם טיפול בשגיאות והמרות טיפוסיות
 - [`00:42:02`](https://youtu.be/Sq4Sy4u6ISg?t=2522) פונקציה גנרית ורקורסיבית
 - [`00:48:02`](https://youtu.be/Sq4Sy4u6ISg?t=2882) nullable types.שימוש בפרמטרים אופציונליים בפונקציות (שני מושגים נפרדים). ניהול צבעים, הגדרות ברירת מחדל.  Method Overloading
+
+## NEW FORMAT:
+- [`00:00:02`](https://www.youtube.com/watch?v=Sq4Sy4u6ISg&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=2) תרגול פונקציות בשפת תכנות: פתרון בעיות עם לולאות, החזרת ערכים ושיפור קוד.
+- [`00:06:02`](https://www.youtube.com/watch?v=Sq4Sy4u6ISg&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=362) שיפוט ושיפור קוד פונקציה עם דיבוג והחזרת ערכים מותאמים
+- [`00:12:02`](https://www.youtube.com/watch?v=Sq4Sy4u6ISg&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=722) תוכנית לבדיקת 7 בום. תוכנית מתקדמת להדגמת הצורך בפונקציות. הדפסות צבעוניות ובקרה על קלט בהתאם לתנאים שונים
+- [`00:18:02`](https://www.youtube.com/watch?v=Sq4Sy4u6ISg&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=1082) פונקציה לטיפול בשגיאות קלט והמרת טיפוסים בפונקציות: טיפול בשגיאות והנחיות למשתמש
+- [`00:24:02`](https://www.youtube.com/watch?v=Sq4Sy4u6ISg&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=1442) ייעול קוד באמצעות פונקציות: הפחתת חזרות ושיפור קריאות הקוד
+- [`00:30:02`](https://www.youtube.com/watch?v=Sq4Sy4u6ISg&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=1802) פונקציות גנריות (המאשפרות לקורא להן לקבוע את הטיפוס). ערכי ברירת מחדל.
+- [`00:36:02`](https://www.youtube.com/watch?v=Sq4Sy4u6ISg&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=2162) ניהול בקשות ופלטים דינמיים בפונקציות עם טיפול בשגיאות והמרות טיפוסיות
+- [`00:42:02`](https://www.youtube.com/watch?v=Sq4Sy4u6ISg&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=2522) פונקציה גנרית ורקורסיבית
+- [`00:48:02`](https://www.youtube.com/watch?v=Sq4Sy4u6ISg&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=2882) nullable types.שימוש בפרמטרים אופציונליים בפונקציות (שני מושגים נפרדים). ניהול צבעים, הגדרות ברירת מחדל.  Method Overloading
+
+
+## קישורים לנקודות בסרטון 22/7 תקציר שיעור 15/7
+
+
