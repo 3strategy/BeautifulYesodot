@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "פרק 4 - לולאות"
+title: "פרק 4 לצפייה - לולאות for"
 subtitle: "קישורים לנקודות זמן בהקלטת השיעור"
 tags:  כוכביות, patterns, נקודות צפייה
 author: גיא סידס
