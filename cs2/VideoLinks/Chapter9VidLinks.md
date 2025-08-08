@@ -9,6 +9,19 @@ lang: he
 
 
 ## קישורים לנקודות בסרטון ראשון במערכים 22/7 
+- [`00:00:00`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=0) מערכים חד-ממדיים. מעבר ממשתנה למערך. צורות איתחול ישיר. הבדל מפייתון (תכולה אחידה)
+- [`00:05:18`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=318) דיון על טיפוסי נתונים במערכים ומחרוזות, כולל שאלות על גמישות טיפוסית, הדפסת תווים מיוחדים והבנת מבנים פונקציונליים.
+- [`00:10:36`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=636) אורך מחרוזת והדפסת סמיילי (תופס שני תווים בזכרון). OutputEncoding והדפסת עברית. המלצה להימנע.
+- [`00:15:54`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=954) אינדקס אוט אוף ריינג' - טעות נפוצה בתכנות Exception: Index Out of Range. המחשת קריסה של תוכנית.
+- [`00:21:12`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=1272) למה הכוונה ש-Exception מקריס את התוכנית? מניעת קריסת תוכנית בעקבות אקספשן באמצעות try, catch
+- [`00:26:30`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=1590) ניהול שגיאות בתוכנה: שימוש בטריי וקאטצ' כדי להתמודד עם בעיות בזמן ריצה
+- [`00:31:48`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=1908) הבהרות לגבי העמסת פונקציות. הפסקה, הבהרה לגבי שימוש במחלקות הגרפיות של צפרדעים וצבים והצורך ב-.netFramework.
+- [`00:37:06`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=2226) תהליך הכנת תמונה קבוצתית בזום עם דגש על פתיחת מצלמות ונוכחות המשתתפים
+- [`00:42:24`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=2544) העמסת פעולות: פונקציה עם גרסאות שונות לקבלת פרמטרים שונים.. שימוש בערכי ברירת מחדל. תשובה לגבי Roselyn Compiler
+- [`00:47:42`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=2862) הבנת עקרונות כתיבת פונקציות בשפת C# והבדלים בין פרמטרים שונים בפונקציות מועמסות.
+- [`00:53:00`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=3180) הבנת עקרונות אוברלואדינג בפונקציות ושימוש במערכים, כולל טיפול בשגיאות והדפסת תוצאות.
+- [`00:58:18`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=3498) הבנת העמסת פעולות, כולל דוגמאות והמחשות מהחיים.
+- [`01:03:36`](https://www.youtube.com/watch?v=GKzrfu3-5MA&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=3816) דיון על הבדלים בין פונקציות, טיפוסים מוחזרים, והדרכים ללמד תכנות בצורה דינמית ומודולרית. תהליך למידה והבנה של קוד, טכניקות לשיפור נראות הקוד ושימוש בכלים טכנולוגיים לשמירה על סדר והבנה.
 
 
 

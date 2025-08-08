@@ -49,6 +49,14 @@ lang: he
 
 
 
-## קישורים לנקודות בסרטון 22/7 תקציר שיעור 15/7
+## קישורים לנקודות בסרטון : השלמות לשיעור 15/7 העברת ארגומנטים למיין, שימוש ב-tuple
 
+- [`00:00:02`](https://www.youtube.com/watch?v=Nx0E3SSirLk&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=2) העברת ארגומנטים לפונקציה Main. הרצה מ-cmd
+- [`00:05:02`](https://www.youtube.com/watch?v=Nx0E3SSirLk&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=302) דיבוג חי של תוכנה: ניסיון **כושל** להתחבר לתהליך ריצה ולבצע בדיקות בזמן אמת.
+- [`00:10:02`](https://www.youtube.com/watch?v=Nx0E3SSirLk&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=602) הרצת תוכנית מהווינדוס עם פרמטרים. יצירת קיצור shortcut שמריץ כולל הארגומנטים
+- [`00:12:32`](https://www.youtube.com/watch?v=Nx0E3SSirLk&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=752) פונקצית Mainהמקבלת מערך ומחזירה תשובה מספרית. ביצוע parse על הארגומנטים שבמערך
+- [`00:15:02`](https://www.youtube.com/watch?v=Nx0E3SSirLk&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=902) פונקציות עם פרמטרים. כתיבה מקוצרת של פונקציה. function overloading (העמסת פעולות)
+- [`00:17:32`](https://www.youtube.com/watch?v=Nx0E3SSirLk&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=1052) פונקציות המחזירות צמד ערכים (tuple)
+- [`00:20:02`](https://www.youtube.com/watch?v=Nx0E3SSirLk&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=1202) שימוש בפונקציות עם טאפלים: ניסיונות ופתרונות  ל-tuple
+- [`00:22:32`](https://www.youtube.com/watch?v=Nx0E3SSirLk&list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S&t=1352) דיון על הוראת פונקציות והחזרות tuple שלא תשרת את התלמיד בבגרות, אבל כן בפרוייקטים ובחיים.
 
