@@ -2,7 +2,7 @@
 layout: page 
 title: "תרגול 6.2 - לולאות מקוננות"
 subtitle: "תרגול כללי בלולאות מקוננות"
-tags: [מונה, צובר, כופל,nesting, min, max, sum, count, תרגול מעורב,סכום ספרות עמוק, leafify, קינון]
+tags: [מונה, צובר, כופל,nesting, min,svg, max, sum, count, תרגול מעורב,סכום ספרות עמוק, leafify, קינון]
 mathjax: true
 lang: he
 ---
