@@ -33,8 +33,8 @@ strong {
     --code-back-col: #353535;
     
     /* Dark theme gradient colors */
-    --pre-bg-1: rgba(255,255,255, 0.08);
-    --pre-bg-2: rgba(255,255,255, 0.02);
+    --pre-bg-1: rgba(255, 255, 255, 0.08);
+    --pre-bg-2: rgba(255, 255, 255, 0.02);
 
     --code-img: repeating-linear-gradient(
         var(--pre-bg-1) 0,
@@ -77,8 +77,8 @@ strong {
     --code-back-col: #FFFFFF;
     
     /* Light theme gradient colors */
-    --pre-bg-1: rgba(0,0,0, 0.04);
-    --pre-bg-2: rgba(0,0,0, 0.02);
+    --pre-bg-1: rgba(0, 0, 0, 0.04);
+    --pre-bg-2: rgba(0, 0, 0, 0.02);
 
     --code-img: repeating-linear-gradient(
         var(--pre-bg-1) 0,
@@ -101,12 +101,13 @@ strong {
     font-size: 1.8em;
 
     pre {
-        font-size: 1.0em; 
+        font-size: 1.0em;
     }
 
     h1 {
         font-size: 2em;
     }
+
     h2,
     h3 {
         margin-top: 7em;
@@ -374,4 +375,30 @@ pre code span.c1 {
     color: var(--code-comments-col) !important;
     font-family: 'Arimo';
     font-weight: bold;
+}
+
+
+/* --- Leaf bullets: opt-in per list via .leafify --- */
+.leafify {
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0 ;
+    padding-inline-start: 1.4em;
+}
+
+.leafify>li {
+    position: relative;
+    padding-inline-start: 1.4em;
+    /* replaces padding-left for LTR, padding-right for RTL */
+}
+
+.leafify>li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: .25em;
+    width: 1em;
+    height: 1em;
+    background: no-repeat center/contain;
+    background-image: url('/assets/img/simple_leaf_half.svg');
 }
