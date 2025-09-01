@@ -182,7 +182,7 @@ Console.WriteLine("The number entered is: " + number);
     int num = int.Parse(Console.ReadLine());
     while (num > 0) // המספר יאבד ספרה בכל סיבוב
     {
-        int digit = num % 10; // חילוץ ספרה אחרונה
+        int digit = num % 10; // חילוץ ספרה ימנית
         Console.WriteLine(digit); // הדפסת הספרה
         // num = num / 10 קיצוץ ספרה
         num /= 10; // המספר יאבד ספרה בכל סיבוב
