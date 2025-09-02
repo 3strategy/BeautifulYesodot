@@ -24,6 +24,7 @@ author: גיא סידס
 navbar-links:
 
   מדמח מחזור 3:
+    - פתיחת שנה: "/cs/0YearOpening"
     - פרק 0 מעקב התקדמות: "/cs/Chapter0/"
     - פרק 1 קלט ופלט: "/cs/Chapter1/"
     - תרגול 1.1: "/cs/Chapter1Ex1.1/"
