@@ -7,7 +7,7 @@ mathjax: true
 lang: he
 ---
 
-[⬅ תחביר. קישור לגרסה להדפסה כולל קצת דברים שלא למדנו](/cs/ChapterSyntaxSummary2ToPrint)
+
 
 ```java
 import java.util.Random;
@@ -76,6 +76,4 @@ public class Main {
     }
 }
 ```
-
-[⬅ תחביר. קישור לגרסה להדפסה כולל קצת דברים שלא למדנו](/cs/ChapterSyntaxSummary2ToPrint)
 
