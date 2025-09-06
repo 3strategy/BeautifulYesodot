@@ -10,12 +10,10 @@ lang: he
 [⬅ תחביר. קישור לגרסה להדפסה כולל קצת דברים שלא למדנו](/cs/ChapterSyntaxSummary2ToPrint)
 
 ```java
-package consoleapp121; // {} ניתן לרשום ; וכך "לחסוך" זוג סוגריים
-
 import java.util.Random;
 import java.util.Scanner;
 
-public class Program {
+public class Main {
     // static היא מחוץ לפונקציות! חייבים להגדיר את rnd ביצירת מופע של
     public static Random rnd = new Random(); // ריק פרט לבדיקות seed משאירים
 
@@ -25,7 +23,7 @@ public class Program {
     public static void Q322() {
         System.out.print("Enter something: "); // פלט/הדפסה/בקשה/הודעה למשתמש
         Scanner input = new Scanner(System.in);
-        int min = input.nextInt()); // קלט מספר שלם, המרה, והשמה.
+        int min = input.nextInt(); // קלט מספר שלם, המרה, והשמה.
 
         int max = 5; // בבחינה מספיק לרשום כך ========== קלוט מספר שלם =========
 
@@ -38,8 +36,8 @@ public class Program {
         double sqr = Math.sqrt(avg); // שורש ריבועי
         int twoBehzkat3 = (int)Math.pow(2, 3); // חזקה 2³ ממשי ואז המרת int
 
-        System.out.printf("min: %d and max is %d%n", min, max); // שרשור מומלץ
-        System.out.printf("sqr: %.4f ... %n", sqr); // עיגול ל-4 ספרות
+        System.out.printf("min: %d and max is %d%n", min, max); // שרשור ישן
+        System.out.println(STR."min: \{min} and max is \{max}"); // Java 21+ -שרשור ב
         System.out.printf("avg: %.3f ...%n", avg); // מבטיח פורמט 3 ספרות
         int mod3 = max % 3; // שארית חלוקה ב-3
         int rDigit = max % 10; // מחלץ ספרה ימנית
