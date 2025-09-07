@@ -13,7 +13,7 @@ lang: he
 
 
 
-## 1. תקציר 📜
+## 1. תקציר 📜 {#id1.}
 
 <div markdown="1" class="box-success"><!-- Html setting of a class to the div has more flexiblity compared to {: .box-success}--------->
 הפרויקט פותח כחלק מהשתלמות **Android Studio** ומתמקד בשילוב עמוד **WebView** שמריץ משחק HTML שהומר מ‑Python (Colab). האפליקציה מדגימה:
@@ -28,7 +28,7 @@ lang: he
 
 ---
 
-## 2. ארכיטקטורת‑על
+## 2. ארכיטקטורת‑על {#id2.}
 
 
 
@@ -69,7 +69,7 @@ classDiagram
 
 ---
 
-## 3. מודול WebView – המשחק *ttrainer*
+## 3. מודול WebView – המשחק *ttrainer* {#id3.}
 
 
 * **HTML → WebView**: עמוד HTML שעבר ריפקטור מפייתון/Colab כדי לרוץ ב‑Web.
@@ -87,7 +87,7 @@ fun postScore(score: Int) {
 
 ---
 
-## 4. MainActivity & Fragments
+## 4. MainActivity & Fragments {#id4.}
 
 **חלק ממה שכתוב כאן הוא הזיה של GPT בפועל יש 4 פרגמנטים וצריך לעדכן את הטבלה ידנית**
 
@@ -102,7 +102,7 @@ Additional UI tweaks — הקטנת Action Bar ו‑Navigation Bar כדי ל
 
 ---
 
-## 5. Alarm Scheduler & Notification ⏰
+## 5. Alarm Scheduler & Notification ⏰ {#id5.}
 
 
 * התראה מיידית בעת פתיחת האפליקציה (ערוץ "welcome")
@@ -122,7 +122,7 @@ alarmMgr.setExactAndAllowWhileIdle(
 
 ---
 
-## 6. חיישנים – Shake to Close 📳
+## 6. חיישנים – Shake to Close 📳 {#id6.}
 
 | אתגר             | פתרון                                                |
 | ---------------- | ---------------------------------------------------- |
@@ -131,7 +131,7 @@ alarmMgr.setExactAndAllowWhileIdle(
 
 ---
 
-## 7. אתגרים מרכזיים & פתרונות
+## 7. אתגרים מרכזיים & פתרונות {#id7.}
 
 
 
@@ -145,7 +145,7 @@ alarmMgr.setExactAndAllowWhileIdle(
 
 ---
 
-## 8. "Lessons Learned" 🤓
+## 8. "Lessons Learned" 🤓 {#id8.}
 
 
 
@@ -155,7 +155,7 @@ alarmMgr.setExactAndAllowWhileIdle(
 
 ---
 
-## 9. TODO / הרחבות עתידיות
+## 9. TODO / הרחבות עתידיות {#id9.}
 
 
 
@@ -165,7 +165,7 @@ alarmMgr.setExactAndAllowWhileIdle(
 
 ---
 
-## 10. בנייה והרצה ⚙️
+## 10. בנייה והרצה ⚙️ {#id10.}
 
 
 ```bash
@@ -179,7 +179,7 @@ cd GuysFinalAndroidAssignment
 
 ---
 
-## 11. קרדיטים 🙏
+## 11. קרדיטים 🙏 {#id11.}
 
 
 * **Guy Siedes** — פיתוח, עיצוב, בדיקות.

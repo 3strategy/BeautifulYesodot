@@ -13,59 +13,59 @@ lang: he
 
 <!-- 
 ## 9.2.1 
-[Odd or Even](https://www.codewars.com/kata/5949481f86420f59480000e7)
+[Odd or Even](https://www.codewars.com/kata/5949481f86420f59480000e7) {#id9.2.1}
 
 ---
 
 ## 9.2.2
-[How good are you really? | Codewars](https://www.codewars.com/kata/5601409514fc93442500010b)
+[How good are you really? | Codewars](https://www.codewars.com/kata/5601409514fc93442500010b) {#id9.2.2}
 
 ---
 
 ## 9.2.3 
-[Exes and Ohs | Codewars](https://www.codewars.com/kata/55908aad6620c066bc00002a)
+[Exes and Ohs | Codewars](https://www.codewars.com/kata/55908aad6620c066bc00002a) {#id9.2.3}
 
 ---
 
 ## 9.2.4
-[Complementary DNA | Codewars](https://www.codewars.com/kata/554e4a2f232cdd87d9000038)
+[Complementary DNA | Codewars](https://www.codewars.com/kata/554e4a2f232cdd87d9000038) {#id9.2.4}
 
 ---
 
 ## 9.2.5 
-[You're a square! | Codewars](https://www.codewars.com/kata/54c27a33fb7da0db0100040e)
+[You're a square! | Codewars](https://www.codewars.com/kata/54c27a33fb7da0db0100040e) {#id9.2.5}
 
 ---
 
-## 9.2.6 להזיז למחרוזות!!!
+## 9.2.6 להזיז למחרוזות!!! {#id9.2.6}
 [Credit Card Mask | Codewars](https://www.codewars.com/kata/5412509bd436bd33920011bc)
 
 ---
 
 ## 9.2.7
-[Find the smallest integer in the array | Codewars](https://www.codewars.com/kata/55a2d7ebe362935a210000b2)
+[Find the smallest integer in the array | Codewars](https://www.codewars.com/kata/55a2d7ebe362935a210000b2) {#id9.2.7}
 
 ---
 
 ## 9.2.8
-[Least Larger | Codewars (7)arr](https://www.codewars.com/kata/5f8341f6d030dc002a69d7e4)
+[Least Larger | Codewars (7)arr](https://www.codewars.com/kata/5f8341f6d030dc002a69d7e4) {#id9.2.8}
 
 ## 9.2.9
-[Likes Vs Dislikes | Codewars(7)arr](https://www.codewars.com/kata/62ad72443809a4006998218a)
+[Likes Vs Dislikes | Codewars(7)arr](https://www.codewars.com/kata/62ad72443809a4006998218a) {#id9.2.9}
 
 ---
 
-## 9.2.10 קשה
+## 9.2.10 קשה {#id9.2.10}
 [Sum of two lowest positive integers | Codewars](https://www.codewars.com/kata/558fc85d8fd1938afb000014)
 
 ---
 
 ## 9.2.11
-[Valid house numbers (7)arr](https://www.codewars.com/kata/62a9cb1b667bb50057491757)
+[Valid house numbers (7)arr](https://www.codewars.com/kata/62a9cb1b667bb50057491757) {#id9.2.11}
 
 ---
 
-## 9.2.12 מערך מונים
+## 9.2.12 מערך מונים {#id9.2.12}
 [Isograms | Codewars](https://www.codewars.com/kata/54ba84be607a92aa900000f1)
  -->
 
@@ -221,7 +221,7 @@ Human Readable Time (5 kyu)
 
 # results by Perplexity who seems to have invented stuff.
 
-## 8 kyu
+## 8 kyu {#id8}
 
 - [Even or Odd (8 kyu)](https://www.codewars.com/kata/53da3dbb4a5168369a0000fe)
 - [Find the first non-consecutive number (8 kyu)](https://www.codewars.com/kata/58f8a3a27a5c28d92e000144)
@@ -238,7 +238,7 @@ Human Readable Time (5 kyu)
 - [Sum of positive (8 kyu)](https://www.codewars.com/kata/5715eaedb436cf5606000381)
 - [Transportation on vacation (8 kyu)](https://www.codewars.com/kata/568d0dd208ee69389d000016)
 
-## 7 kyu
+## 7 kyu {#id7}
 
 - [Disemvowel Trolls (7 kyu)](https://www.codewars.com/kata/52fba66badcd10859f00097e)
 - [Find the next perfect square! (7 kyu)](https://www.codewars.com/kata/56269eb78ad2e4ced1000013)
@@ -248,7 +248,7 @@ Human Readable Time (5 kyu)
 
 
 
-## 6 kyu
+## 6 kyu {#id6}
 
 - [Bit Counting (6 kyu)](https://www.codewars.com/kata/526571aae218b8ee490006f4)
 
@@ -258,18 +258,18 @@ Human Readable Time (5 kyu)
 - [Unique In Order (6 kyu)](https://www.codewars.com/kata/54e6533c92449cc251001667)
 - [Who likes it? (6 kyu)](https://www.codewars.com/kata/5266876b8f4bf2da9b000362)
 
-## 5 kyu
+## 5 kyu {#id5}
 
 - [Beeramid (5 kyu)](https://www.codewars.com/kata/5a045fee46d843effa000070)
 - [Calculating with Functions (5 kyu)](https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39)
 - [Moving Zeros To The End (5 kyu)](https://www.codewars.com/kata/52597aa56021e91c93000cb0)
 - [Valid Parentheses (5 kyu)](https://www.codewars.com/kata/52774a314c2333f0a7000688)
 
-## 4 kyu
+## 4 kyu {#id4}
 
 
 
-## 3 kyu
+## 3 kyu {#id3}
 
 - [Regex validate PIN code (3 kyu)](https://www.codewars.com/kata/55f8a9c06c018a0d6e000132)
 

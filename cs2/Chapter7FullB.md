@@ -15,7 +15,7 @@ lang: he
 קשה להאמין שה-AI עשה שינוי כל כך גדול בחיינו שהגענו עד לשלב זה ועד היום לא הזכרתי בכלל את stack**overflow**. מדובר באתר שעד לא מזמן היה מוקד העליה לרגל של כל מתכנת, מורה, תלמיד שרוצה לברר משהו במדעי המחשב. אני מקווה שהאתר הזה ימצא דרך לשרוד. מדובר בכלי שהיה **כל כך חשוב** - שלימדתי כיצד להשתמש בו. האתר מכיל את כל השאלות, וכל התשובות, מדורגות לפי תועלת.
 {: .box-success}
 
-## 7.4 לימוד מדוגמא: הכח של DRY
+## 7.4 לימוד מדוגמא: הכח של DRY {#id7.4}
 מפאת אורך הקוד, הקטעים שלהלן מקופלים באקורדיון. פתחו וסגרו לפי הצורך. אין משמעות לסיכום ללא ההקשר (השאלה וגרסאות הפתרון). כך מופיע כל הפרק.
 
 <details markdown="1">
@@ -275,7 +275,7 @@ public static void WriteInColor(string str, ConsoleColor color, ConsoleColor? ne
 
 
 
-## 7.5 העברת פרמטרים ל-Main. פונקציות בכתיב מקוצר
+## 7.5 העברת פרמטרים ל-Main. פונקציות בכתיב מקוצר {#id7.5}
 
 <details markdown="1"><summary>האם גם הפונקציה Main(int[] args) מקבלת פרמטרים?</summary>
 
@@ -317,10 +317,10 @@ static double F(double x) => x*x;
 
 
 
-## 7.6 Generics
+## 7.6 Generics {#id7.6}
 
 <details markdown="1"><summary>הסבר על פונקציות גנריות</summary>
-## 7.6: פונקציית Input במבט מעמיק ו-try/catch
+## 7.6: פונקציית Input במבט מעמיק ו-try/catch {#id7.6}
 
 בפרק זה נבחן לעומק את פונקציית הקלט הגנרית `Input<T>` שבדוגמא 7.4, ונבחן את מנגנון הטיפול בשגיאות.
 
@@ -381,7 +381,7 @@ public static T Input<T>(string inputRequest = "Please enter a", string invalidF
 
 ---
 
-## 7.7 העמסת פונקציות (method overloading)
+## 7.7 העמסת פונקציות (method overloading) {#id7.7}
 נניח שנרצה לקרוא לפונקציה `Calc` כפי שמבוצע בשורה 6:
 
 {% highlight csharp linenos %}public static void Main(string[] args)
