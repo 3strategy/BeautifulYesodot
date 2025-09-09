@@ -35,6 +35,7 @@ navbar-links:
     - תרגול 2.1: "/cs/Chapter2Ex2.1/"
     - תקציר עד כאן: "/cs/ChapterSyntaxSummary"
     - פרק 3 if: "/cs/Chapter3/"
+    - פרק 2 עבודה עם מחלקות : "/cs/Chapter2Frogs"
     - פרק 4 for: "/cs/Chapter4/"
     - תרגול 4.1: "/cs/Chapter4Ex4.1/"
     - פרק 5 while: "/cs/Chapter5/"
