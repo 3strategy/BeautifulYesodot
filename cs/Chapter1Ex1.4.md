@@ -2,7 +2,7 @@
 layout: page 
 title: "תרגול 1.4 – שארית חלוקה" 
 subtitle: "בתרגול זה נתמקד בפעולות חלוקה ושארית"
-tags: [interpolation, שרשור מחרוזות]
+tags: [interpolation, שרשור מחרוזות, מרחק אותיות במעגל]
 lang: he
 ---
 
@@ -192,12 +192,12 @@ Console.WriteLine($"Stopped cars: {stopped}");
 
 במעגל זה המרחק בין כל שתי אותיות הוא תמיד **1**.
 
-```mermaid
+<div class="mermaid">
 graph LR
     A[a] --- B[b]
     B --- C[c]
     C --- A
-```
+</div>
 
 ---
 
@@ -206,14 +206,14 @@ graph LR
 * המרחק בין **d** ל־**b** הוא **2** (דרך d→c→b).
 * המרחק בין **d** ל־**a** הוא **2** ולא 3 (כי הולכים בכיוון d→e→a).
 
-```mermaid
+<div class="mermaid">
 graph LR
     A[a] --- B[b]
     B --- C[c]
     C --- D[d]
     D --- E[e]
     E --- A
-```
+</div>
 
 ---
 
