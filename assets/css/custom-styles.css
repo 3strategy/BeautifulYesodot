@@ -141,6 +141,31 @@ strong {
             transform: scale(1.4);
         }
     }
+
+    /* Custom styles for 1280x800 resolution */
+    @media (width: 1280px) and (height: 800px) {
+    html, body {
+        font-size: 1.3em;
+    }
+    .container-md {
+        /* Slightly larger scaling and padding for this resolution */
+        transform: scale(1.7);
+        max-width: 100% !important;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    h1 {
+        font-size: 2.3em;
+    }
+    h2, h3 {
+        font-size: 2em;
+        margin-top: 8em;
+    }
+    pre, code {
+        font-size: 1.15em;
+    }
+    /* You can add more selectors here for further tweaks */
+    }
 }
 
 details {
@@ -379,6 +404,7 @@ pre code span.c1 {
 }
 
 
+
 /* --- Leaf bullets: opt-in per list via .leafify --- */
 .leafify {
     list-style: none;
@@ -403,3 +429,92 @@ pre code span.c1 {
     background: no-repeat center/contain;
     background-image: url('/assets/img/simple_leaf_half.svg');
 }
+
+/* ================= Mermaid node styling =============== 
+==========================================================*/
+/* Additional arrow targeting for dark mode */
+.mermaid .arrowheadPath {
+  fill: var(--text-col) !important;
+  stroke: var(--text-col) !important;
+}
+
+/* Alternative arrow selectors */
+.mermaid .arrowhead {
+  fill: var(--text-col) !important;
+  stroke: var(--text-col) !important;
+}
+
+.mermaid marker path {
+  fill: var(--text-col) !important;
+  stroke: var(--text-col) !important;
+}
+
+.mermaid defs marker path {
+  fill: var(--text-col) !important;
+  stroke: var(--text-col) !important;
+}
+
+/* Catch-all for any arrow markers */
+.mermaid marker[id*="arrow"] path {
+  fill: var(--text-col) !important;
+  stroke: var(--text-col) !important;
+}
+
+.mermaid marker[id*="Triangle"] path {
+  fill: var(--text-col) !important;
+  stroke: var(--text-col) !important;
+}
+
+/* Also try targeting by element type */
+.mermaid polygon {
+  fill: var(--text-col) !important;
+  stroke: var(--text-col) !important;
+}
+
+/* Mermaid arrow lines */
+.mermaid .flowchart-link {
+  stroke: var(--text-col) !important;
+  stroke-width: 2px !important;
+}
+
+/* All edge paths */
+.mermaid .edgePaths .path {
+  stroke: var(--text-col) !important;
+  stroke-width: 2px !important;
+}
+
+/* Specific targeting for the edge thickness classes */
+.mermaid .edge-thickness-normal {
+  stroke: var(--text-col) !important;
+}
+
+/* Target the marker definitions (arrow heads) */
+.mermaid defs marker[id*="pointEnd"] path,
+.mermaid defs marker[id*="flowchart"] path {
+  fill: var(--text-col) !important;
+  stroke: var(--text-col) !important;
+}
+
+/* Catch-all for any marker paths */
+.mermaid marker path {
+  fill: var(--text-col) !important;
+  stroke: var(--text-col) !important;
+}
+
+
+/* for gaant mermaid */
+/* .mermaid svg .section {
+  fill: var(--page-col) !important;
+  opacity: 1 !important;
+}
+
+.mermaid svg .sectionTitle,
+.mermaid svg .titleText,
+.mermaid svg .taskText {
+  fill: var(--text-col) !important;
+} */
+
+/* Any additional classes that need text colored */
+/* .mermaid svg .grid .tick text {
+  fill: var(--text-col) !important;
+} */
