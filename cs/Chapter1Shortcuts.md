@@ -30,8 +30,9 @@ lang: he
 
 1. [לחצו על הקישור להורדת קובץ קיצורים מעודכן](/cs/rl.snippet)
 2. פתחו את **סייר הקבצים** ע"י הקלדת explorer בשורת החיפוש
-3. הדביקו את הנתיב בשורת הכתובת של סייר הקבצים 
-
+3. דפדפו למסמכים ⟶ Visual Studio 2022 ⟶ Code Snippets ⟶ Visual C# ⟶ My Code Snippets
+4. שימו את הקובץ שם
+5. [למחלקות - ניתן להוריד גם את הקובץ הבא ולשים באותה תיקייה](/cs/gs.snippet)
     
     documents\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets
     
