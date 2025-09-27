@@ -74,8 +74,14 @@ navbar-links:
     - החלפת רקע: "javascript:toggleTheme();"
     - החלפת גודל: "javascript:toggleSize();"
 
-
-
+  בדיקה:
+    - תת-תפריט1:
+      - תכנית: "https://meyda.education.gov.il/files/CSIT/CS_1-2-4_ver_2-63.pdf#page=56"
+      - בגרויות: "https://meyda.education.gov.il/bagmgr"
+    - תת-תפריט2:
+      - תכנית: "https://meyda.education.gov.il/files/CSIT/CS_1-2-4_ver_2-63.pdf#page=56"
+      - בגרויות: "https://meyda.education.gov.il/bagmgr"
+      
 ################
 # --- Logo --- #
 ################
