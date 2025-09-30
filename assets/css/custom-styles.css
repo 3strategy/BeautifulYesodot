@@ -43,6 +43,7 @@ strong {
         var(--pre-bg-2) calc(var(--line-height) * 2.2)
     );
 
+    --code-ncls-col: #44C9B0;
     --code-met-col: #DCDCAA;
     --code-keyw-col: #D8A0DF;
     --code-bracets-col: #EEEEDD;
@@ -87,6 +88,7 @@ strong {
         var(--pre-bg-2) calc(var(--line-height) * 2.2)
     );
 
+    --code-ncls-col: #2B91AF;
     --code-met-col: #74531F;
     --code-keyw-col: #9108C4;
     --code-bracets-col: #040404;
@@ -165,6 +167,19 @@ strong {
         font-size: 1.15em;
     }
     /* You can add more selectors here for further tweaks */
+    }
+
+}
+
+
+/* Mobile-friendly override for the 2 column */
+@media (max-width: 768px) {
+    .two-columns {
+        flex-direction: column; /* stack instead of side-by-side */
+    }
+
+    .two-columns .column {
+        width: 100%;   /* each column takes full width */
     }
 }
 
@@ -392,6 +407,7 @@ pre code span.kc { color: #569CD6 !important; }
 pre .lineno { color: #666666 !important; }
 
 /* CSharp Code formatting */
+pre code span.nc { color: var(--code-ncls-col) !important; }
 pre code span.nf { color: var(--code-met-col) !important; }
 pre code span.n { color: var(--code-vars-col) !important; }
 pre code span.kt { color: var(--code-types-col) !important; }
@@ -430,44 +446,41 @@ pre code span.c1 {
     background-image: url('/assets/img/simple_leaf_half.svg');
 }
 
+.two-columns {
+  display: flex;
+  gap: 20px;
+}
+.two-columns .column {
+  flex: 1;
+}
+
 /* ================= Mermaid node styling =============== 
 ==========================================================*/
 /* Additional arrow targeting for dark mode */
 .mermaid .arrowheadPath {
-  fill: var(--text-col) !important;
+  fill: none !important;
   stroke: var(--text-col) !important;
 }
-
 /* Alternative arrow selectors */
 .mermaid .arrowhead {
-  fill: var(--text-col) !important;
+  fill: none !important;
   stroke: var(--text-col) !important;
 }
-
 .mermaid marker path {
-  fill: var(--text-col) !important;
+  fill: none !important;
   stroke: var(--text-col) !important;
 }
-
 .mermaid defs marker path {
-  fill: var(--text-col) !important;
+  fill: none !important;
   stroke: var(--text-col) !important;
 }
-
 /* Catch-all for any arrow markers */
 .mermaid marker[id*="arrow"] path {
-  fill: var(--text-col) !important;
+  fill: none !important;
   stroke: var(--text-col) !important;
 }
-
 .mermaid marker[id*="Triangle"] path {
-  fill: var(--text-col) !important;
-  stroke: var(--text-col) !important;
-}
-
-/* Also try targeting by element type */
-.mermaid polygon {
-  fill: var(--text-col) !important;
+  fill: none !important;
   stroke: var(--text-col) !important;
 }
 
@@ -491,7 +504,7 @@ pre code span.c1 {
 /* Target the marker definitions (arrow heads) */
 .mermaid defs marker[id*="pointEnd"] path,
 .mermaid defs marker[id*="flowchart"] path {
-  fill: var(--text-col) !important;
+  fill: none !important;
   stroke: var(--text-col) !important;
 }
 
@@ -501,11 +514,13 @@ pre code span.c1 {
   stroke: var(--text-col) !important;
 }
 
-
-/* for gaant mermaid */
-/* .mermaid svg .section {
-  fill: var(--page-col) !important;
-  opacity: 1 !important;
+/* Target composition markers specifically */
+.mermaid marker[id$="aggregationStart"] path,
+.mermaid marker[id$="aggregationEnd"] path,
+.mermaid marker[id$="compositionStart"] path,
+.mermaid marker[id$="compositionEnd"] path {
+  fill: var(--text-col) !important;
+  stroke: var(--text-col) !important;
 }
 
 .mermaid svg .sectionTitle,
