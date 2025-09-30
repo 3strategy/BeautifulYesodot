@@ -83,4 +83,44 @@ else
 
 
 
+
+## 3.1.7 סידור מספרים {#id3.1.7}
+
+יש לקלוט שני מספרים `n1`, `n2`.  
+לאחר הקלט יש לבדוק מי מהם גדול יותר, ולדאוג לכך שהגדול יאוחסן במשתנה `n2` והקטן יאוחסן במשתנה `n1`.  
+
+> יש להשתמש **בתנאים (if)** ולא להשתמש בפונקציה `Math.Max`.
+
+לדוגמה:  
+- קלט: `n1 = 8`, `n2 = 3`  
+- פלט לאחר העיבוד: `n1 = 3`, `n2 = 8`
+
+<details markdown="1"><summary>פתרון</summary>
+
+```csharp
+
+static void Main()
+{
+    Console.Write("הכנס מספר ראשון: ");
+    int n1 = int.Parse(Console.ReadLine());
+
+    Console.Write("הכנס מספר שני: ");
+    int n2 = int.Parse(Console.ReadLine());
+
+    if (n1 > n2)
+    {
+        int tmp = n1; // החלפה
+        n1 = n2;
+        n2 = tmp;
+    }
+
+    Console.WriteLine($"לאחר הסידור: n1={n1}, n2={n2}");
+}
+
+```
+
+</details>
+
+
+
 [⬅ מעבר לתרגול 3.2 - תרגילים בתנאים מורכבים](/cs/Chapter3Ex3.2)
