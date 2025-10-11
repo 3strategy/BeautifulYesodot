@@ -24,43 +24,100 @@ author: גיא סידס
 navbar-links:
 
   מדמח מחזור 3:
-    - פתיחת שנה: "/cs/0YearOpening"
-    - פרק 0 מעקב התקדמות: "/cs/Chapter0/"
-    - פרק 1 קלט ופלט: "/cs/Chapter1/"
-    - תרגול 1.1: "/cs/Chapter1Ex1.1/"
-    - פרק 1 השלמות: "/cs/Chapter1b/"
-    - הטיפוס תו 1: "/cs/Chapter1Char"
-    - קיצורים: "/cs/Chapter1Shortcuts/" 
-    - פרק 2 Math,Random: "/cs/Chapter2/"
-    - תרגול 2.1: "/cs/Chapter2Ex2.1/"
-    - תקציר עד כאן: "/cs/ChapterSyntaxSummary"
-    - פרק 3 if: "/cs/Chapter3/"
-    - פרק 2 עבודה עם מחלקות : "/cs/Chapter2Frogs"
-    - פרק 4 for: "/cs/Chapter4/"
-    - תרגול 4.1: "/cs/Chapter4Ex4.1/"
-    - פרק 5 while: "/cs/Chapter5/"
-    - תרגול 5a: "/cst/yesodot/ex5a"
-    - פרק 4b עוד על for: "/cs/Chapter4b/"
-    - פרק 6 לולאות מקוננות: "/cs2/Chapter6/" 
-     
+    
+    - פרק 0:
+        - פתיחת שנה: "/cs/0YearOpening"
+        - פרק 0 מעקב התקדמות: "/cs/Chapter0/"
+        - קיצורים: "/cs/Chapter1Shortcuts/"
+        - מצגות קמפוס: "/cs2/ChapterCampus"
+        - פלייליסט חלק א: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA04DlduroHvjZfhbxagO9nP"
+        - פלייליסט חלק ב: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S"
 
-  חלק ב: 
-    - מצגות קמפוס: "/cs2/ChapterCampus"
-    - פרק 6 לולאות מקוננות: "/cs2/Chapter6/"
-    - פרק 7 מורחב: "/cs2/Chapter7Full"
-    - תרגול 7.3: "/cs2/Chapter7Ex7.3"
-    - פרק 7 המשך: "/cs2/Chapter7FullB"
-    - פרק 7 מקוצר: "/cs2/Chapter7Short"
-    - פרק 8 מחרוזות: "/cs2/Chapter8"
-    - פרק 9 מערכים: "/cs2/Chapter9"
-    - פרק 9a מערכים ללא אנימציה: "/cs2/Chapter9a"
-    - פרק 9b המשך ודוגמאות: "/cs2/Chapter9b"
-    - תרגול 9.1: "/cs2/Chapter9Ex9.1"
-    - תרגול 9.2 CodeWars: "/cs2/Chapter9Ex9.2"
-    - תרגול 9.3 מבגרויות: "/cs2/Chapter9Ex9.3"
-    - פרק 9c מערך מונים: "/cs2/Chapter9c"
-    - פרק 9d תבניות במערך: "/cs2/Chapter9d"
+    - פרק 1 קלט ופלט:
+        - פרק 1 קלט ופלט: "/cs/Chapter1/"
+        - פרק 1 השלמות: "/cs/Chapter1b/"
+        - הטיפוס תו 1: "/cs/Chapter1Char"
+        - תרגול 1.1: "/cs/Chapter1Ex1.1/"
+        - תרגול 1.2: "/cs/Chapter1Ex1.2/"
+        - תרגול 1.3: "/cs/Chapter1Ex1.3/"
+        - תרגול 1.4: "/cs/Chapter1Ex1.4/"
+        - סרטוני פרק 1: "https://youtube.com/playlist?list=PLw4P_RdfuzSirWjKrYrwudzauSKkwqC1z&si=7_UxQuHnK-BcW1k8"
+
+    - פרק 2 Math,Random: 
+        - פרק 2 Math,Random: "/cs/Chapter2/"
+        - תרגול 2.1: "/cs/Chapter2Ex2.1/"
+        - פרק 2 עבודה עם מחלקות: "/cs/Chapter2Frogs"
+
+    - פרק 3 if:
+        - פרק 3 if: "/cs/Chapter3/"
+        - תרגול 3.1: "/cs/Chapter3Ex3.1/"
+        - תרגול 3.2: "/cs/Chapter3Ex3.2/"
+        - תרגול 3.3: "/cs/Chapter3Ex3.3/"
+        - תרגול 3.4: "/cs/Chapter3Ex3.4/"
+        - סרטוני ביטויים לוגיים: "https://www.youtube.com/playlist?list=PLw4P_RdfuzSjVGWRUCg9qWvDkkSWrANtP"
+        - סרטוני תנאים: "https://www.youtube.com/playlist?list=PLw4P_RdfuzSitIvnpWSgqZLJHot9__eSG"
+
+    - פרק 4 for:
+        - פרק 4 for: "/cs/Chapter4/"
+        - פרק 4b עוד על for: "/cs/Chapter4b/"
+        - תרגול 4.1: "/cs/Chapter4Ex4.1/"
+        - תרגול 4.2: "/cs/Chapter4Ex4.2/"
+        - תרגול 4.3: "/cs/Chapter4Ex4.3/"
+        - תרגול 4.4: "/cs/Chapter4Ex4.4/"
+        - תרגול 4.5: "/cs/Chapter4Ex4.5/"
+        - אינדקס צפייה: "/cs2/VideoLinks/Chapter4VidLinks/"
+        - סרטוני קמפוס: "https://www.youtube.com/playlist?list=PLw4P_RdfuzShl0iRsytc83T2ZHm3kvUAD"
+
+    - פרק 5 while:
+        - פרק 5 while: "/cs/Chapter5/"
+        # - תרגול 5a stacks הגשות שלי: "/cst/yesodot/ex5a"
+        - תרגול 5.1: "/cs/Chapter5Ex5.1"
+        - תרגול 5.2: "/cs/Chapter5Ex5.2"
+        - תרגול 5.3: "/cs/Chapter5Ex5.3"
+
+    - תקציר עד כאן: "/cs/ChapterSyntaxSummary"
+
+
+  חלק ב:
+
+    - פרק 6 לולאות מקוננות:
+        - לולאות מקוננות: "/cs2/Chapter6/"
+        - תרגול 6.1: "/cs2/Chapter6Ex6.1/"
+        - תרגול 6.2: "/cs2/Chapter6Ex6.2/"
+        - תרגול 6.3: "/cs2/Chapter6Ex6.3/"
+        - תרגול 6.4 Karel: "/cs2/Chapter6Ex6.4Karel/"
+        - אינדקס צפייה: "/cs2/VideoLinks/Chapter6VidLinks"
+
+    - פרק 7 פעולות:
+        - פרק 7 מקוצר: "/cs2/Chapter7Short"
+        - פרק 7 מורחב: "/cs2/Chapter7Full"      
+        - פרק 7 המשך: "/cs2/Chapter7FullB"
+        - תרגול 7.1: "/cs2/Chapter7Ex7.1"
+        - תרגול 7.2: "/cs2/Chapter7Ex7.2"
+        - תרגול 7.3: "/cs2/Chapter7Ex7.3"
+        - תרגול 7.3 פתור: "/cs2/Chapter7Ex7.3withSolutions"
+        - אינדקס צפיה: "/cs2/VideoLinks/Chapter7VidLinks"
+        - סרטוני פעולות: "https://www.youtube.com/playlist?list=PLw4P_RdfuzSh3nsdxq7oMeTbxZtADUsuv"
+
+    - פרק 8 מחרוזות:
+        - פרק 8 מחרוזות: "/cs2/Chapter8"
+        - תרגול 8.1: "/cs2/Chapter8Ex8.1"
+        - סרטוני מחרוזות: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA22PXymfu7FrV3hrYIinEb7"
+
+    - פרק 9:
+        - פרק 9 מערכים: "/cs2/Chapter9"
+        - פרק 9a מערכים ללא אנימציה: "/cs2/Chapter9a"
+        - פרק 9b המשך ודוגמאות: "/cs2/Chapter9b"
+        - תרגול 9.1: "/cs2/Chapter9Ex9.1"
+        - תרגול 9.2 CodeWars: "/cs2/Chapter9Ex9.2"
+        - תרגול 9.3 מבגרויות: "/cs2/Chapter9Ex9.3"
+        - פרק 9c מערך מונים: "/cs2/Chapter9c"
+        - פרק 9d תבניות במערך: "/cs2/Chapter9d"
+        - אינדקס צפייה: "/cs2/VideoLinks/Chapter9VidLinks/"
+        - סרטוני פרק 9: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA2cT3X-Fui7j6HZJWZM6vnK"
+
     - תקציר תחביר: "/cs2/ChapterSyntaxSummaryToPrint"
+
   חיצוני:
     - אתר מבני נתונים: "https://מבני.שלי.com"
     - אתר מתמטיקה: "https://מתמטיקה.com"
