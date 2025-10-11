@@ -344,3 +344,6 @@ public static int NumFromWord(string s)
 
 [⬅ עִבְרוּ לתרגול 9.2 - מערכים - שאלות ב- CodeWars](/cs2/Chapter9Ex9.2)
 
+[⬅ עִבְרוּ לקאהוט 1 של עדן ארז - מערך חד ממדי](https://create.kahoot.it/details/2179097c-9b0d-46d4-8e7c-21e990cc6b68)
+
+[⬅ עִבְרוּ לקאהוט 2 של עדן ארז - מערך חד ממדי של עצמים (לא בחומר עדיין)](https://create.kahoot.it/details/798a4855-d710-49d0-b170-00b672ee36c9)
