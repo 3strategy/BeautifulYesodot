@@ -29,6 +29,33 @@ let BeautifulJekyllJS = {
     BeautifulJekyllJS.initImgs();
 
     BeautifulJekyllJS.initSearch();
+
+    // Enable multi-level dropdowns in navbar
+    // Toggle nested submenus on click without closing the parent dropdown
+    $('.navbar .dropdown-menu').on('click', 'a.dropdown-toggle', function(e) {
+      const $toggle = $(this);
+      const $submenu = $toggle.next('.dropdown-menu');
+      if ($submenu.length) {
+        e.preventDefault();
+        e.stopPropagation();
+        if ($submenu.hasClass('show')) {
+          // Collapse if it's already open
+          $submenu.removeClass('show');
+          $toggle.parent('.dropdown-submenu').removeClass('show');
+        } else {
+          // Close only sibling submenus in the same level, then open this one
+          const $level = $toggle.closest('.dropdown-menu');
+          $level.find('> .dropdown-submenu .dropdown-menu.show').removeClass('show');
+          $level.find('> .dropdown-submenu.show').removeClass('show');
+          $submenu.addClass('show');
+          $toggle.parent('.dropdown-submenu').addClass('show');
+        }
+      }
+    });
+    // When the top-level dropdown closes, close any open submenus
+    $('.navbar .dropdown').on('hidden.bs.dropdown', function () {
+      $(this).find('.dropdown-menu .show').removeClass('show');
+    });
   },
 
   initNavbar : function() {
