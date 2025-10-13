@@ -38,7 +38,7 @@ lang: he
 
 מבנה משפט תנאי פשוט:
 
-{% highlight csharp linenos %}
+{% highlight cs mark_lines="2" %}
 int score = 85;
 if (score >= 60) // Logical Expression לביטוי שבסוגריים קוראים ביטוי לוגי
 {
