@@ -604,7 +604,7 @@ pre code span.c1 {
 .mermaid svg .titleText,
 .mermaid svg .taskText {
   fill: var(--text-col) !important;
-} */
+}
 
 /* Any additional classes that need text colored */
 /* .mermaid svg .grid .tick text {
