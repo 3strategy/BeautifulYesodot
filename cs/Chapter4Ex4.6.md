@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "תרגול 4.3 לולאות for: מינימום, מקסימום, ספירה, צבירה ושארית חלוקה"
+title: "תרגול 4.6 טבלאות מעקב בלולאות"
 subtitle: "תרגילי for עם טבלאות מעקב"
-tags: [מונה, צובר, min, max, sum, count, תרגול for, טבלת מעקב]
+tags: [תרגול for, טבלת מעקב]
 mathjax: true
 lang: he
 ---
