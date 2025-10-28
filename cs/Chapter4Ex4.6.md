@@ -16,8 +16,7 @@ lang: he
 
 ## שאלה 1
 
-```csharp
-public static void What()
+{% highlight csharp linenos %}public static void What()
 {
     int x = 7;
     int y = 0;
@@ -32,18 +31,17 @@ public static void What()
     
     Console.WriteLine(y);
 }
-```
+{% endhighlight %}
 
-1. מה הפלט?
-2. מה מטרת הקוד
+1. עקבו אחר הקוד בטבלת מעקב
+2. מה הפלט?
+3. מה מטרת הקוד?
 
 ---
 
 ## שאלה 2
 
-
-```csharp
-public static void What()
+{% highlight csharp linenos %}public static void What()
 {
     int a = 8;
     int b = 3;
@@ -56,17 +54,17 @@ public static void What()
     
     Console.WriteLine(c);
 }
-```
+{% endhighlight %}
 
-1. מה הפלט?
-2. מה מטרת הקוד
+1. עקבו אחר הקוד בטבלת מעקב
+2. מה הפלט?
+3. מה מטרת הקוד?
 
 ---
 
 ## שאלה 3
 
-```csharp
-public static void What()
+{% highlight csharp linenos %}public static void What()
 {
     int m = 0;
     int n = 1;
@@ -80,8 +78,54 @@ public static void What()
     
     Console.WriteLine(n);
 }
-```
+{% endhighlight %}
 
+1. עקבו אחר הקוד בטבלת מעקב
+2. מה הפלט?
+3. מה מטרת הקוד?
 
-1. מה הפלט?
-2. מה מטרת הקוד
+---
+
+## שאלה 4
+
+{% highlight csharp linenos %}public static void What()
+{
+    int p = int.Parse(Console.ReadLine());
+    int q = int.Parse(Console.ReadLine());
+    int r = p;
+    
+    for (; r >= q; )
+    {
+        r = r - q;
+    }
+    
+    Console.WriteLine(r);
+}
+{% endhighlight %}
+
+1. א. עקבו אחר הקוד בטבלת מעקב עבור הקלטים `23` ו-`7`. מה יהיה הפלט?  
+   ב. בטבלה נוספת עקבו אחר הקלטים `17` ו-`5`. מה יהיה הפלט?
+2. מה מטרת הקוד?
+
+---
+
+## שאלה 5
+
+{% highlight csharp linenos %}public static void What()
+{
+    int s = int.Parse(Console.ReadLine());
+    int t = int.Parse(Console.ReadLine());
+    int u = 1;
+    
+    for (int j = 1; j <= t; j++)
+    {
+        u = u * s;
+    }
+    
+    Console.WriteLine(u);
+}
+{% endhighlight %}
+
+1. א. עקבו אחר הקוד בטבלת מעקב עבור הקלטים `2` ו-`5`. מה יהיה הפלט?  
+   ב. בטבלה נוספת עקבו אחר הקלטים `3` ו-`4`. מה יהיה הפלט?
+2. מה מטרת הקוד?

@@ -2,7 +2,7 @@
 layout: page 
 title: "תרגול 4.1 - לולאות for"
 subtitle: "תרגול בלולאות for"
-tags: מונה
+tags: מונה, ראשוני
 mathjax: true
 lang: he
 ---
