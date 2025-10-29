@@ -127,7 +127,8 @@ navbar-links:
     - תכנית הלימודים: "https://meyda.education.gov.il/files/CSIT/CS_1-2-4_ver_2-63.pdf#page=56"
     - מה מותר ומה אסור: "https://docs.google.com/document/d/1_38kIc1UwK7Eiz673KyBjqGdkJeqa-I5kGCDOMckHqc/edit?usp=sharing"
     - בגרויות באתר משרד החינוך: "https://meyda.education.gov.il/bagmgr"
-
+    - מה מותר ומה אסור: "https://docs.google.com/document/d/1_38kIc1UwK7Eiz673KyBjqGdkJeqa-I5kGCDOMckHqc/edit?usp=sharing"
+    
   תכנים:
     - מבחן זמני: "/cs/GuysFinalFireBase/"
     - החלפת רקע: "javascript:toggleTheme();"
