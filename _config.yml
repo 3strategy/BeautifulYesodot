@@ -32,7 +32,8 @@ navbar-links:
         - מצגות קמפוס: "/cs2/ChapterCampus"
         - פלייליסט חלק א: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA04DlduroHvjZfhbxagO9nP"
         - פלייליסט חלק ב: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S"
-
+        - הנחיות בחינה א1: "/cs/ExamInstructions"
+        
     - פרק 1 קלט ופלט:
         - פרק 1 קלט ופלט: "/cs/Chapter1/"
         - פרק 1 השלמות: "/cs/Chapter1b/"
