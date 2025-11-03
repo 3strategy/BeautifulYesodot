@@ -36,6 +36,7 @@ navbar-links:
         
     - פרק 1 קלט ופלט:
         - פרק 1 קלט ופלט: "/cs/Chapter1/"
+        - עבודה במערכת הגשות: "/cs/Chapter1Hagashot"
         - פרק 1 השלמות: "/cs/Chapter1b/"
         - הטיפוס תו 1: "/cs/Chapter1Char"
         - תרגול 1.1: "/cs/Chapter1Ex1.1/"
