@@ -20,7 +20,7 @@ lang: he
 - מותר לכתוב בעט / בעיפרון בולט 2B / בעט מחיק (לא מומלץ).  
 - בכתיבת כל תוכנית יש לכלול כותרת: `()public static void Main`  
 - את שאלה 4 פותרים ב-Notepad על המחשב ומגישים לתוך מטלת **Forms** שתחכה לכם. מומלץ להיכנס למטלה לפני תחילת הבחינה.  
-- בסיום יש לסרוק את הבחינה באמצעות סורק אפליקציית **Classroom** (ללא הטופס) ולהגיש.  
+- בסיום יש לסרוק את הבחינה באמצעות סורק אפליקציית **Classroom** (ללא הטופס) ולהגיש.  . יש להגיש את המקור אלי בנוסף.
 - יש להניח טלפונים במצב שקט, על השולחן שלי. אין להוציא טלפונים מחדר הבחינה עד שאחרון הנבחנים מגיש.  
 
 ---
@@ -35,7 +35,7 @@ lang: he
 - You may write with a pen / 2B bold pencil / erasable pen (not recommended).  
 - Every program you write must include the header: `public static void Main()`  
 - Question 4 must be solved in Notepad on the computer and submitted to the **Forms** assignment that will be waiting for you. It is recommended to open the assignment before the exam starts.  
-- At the end, scan the exam using the **Classroom** app scanner (without the form) and submit.  
+- At the end, scan the exam using the **Classroom** app scanner (without the form) and submit. Also hand me the phisical test.  
 - Phones must be placed on silent mode on my desk. Phones may not be taken out of the exam room until the last student has submitted.  
 
 ---
@@ -48,7 +48,7 @@ lang: he
 - Можно писать ручкой / мягким карандашом 2B / стираемой ручкой (не рекомендуется).  
 - В каждой программе необходимо указать заголовок: `public static void Main()`  
 - Вопрос №4 нужно решить в **Notepad** на компьютере и отправить в задание **Forms**, которое будет ждать вас. Рекомендуется открыть задание до начала экзамена.  
-- В конце отсканируйте работу с помощью сканера приложения **Classroom** (без формы) и отправьте.  
+- В конце передайте бумажный вариант и отправьте скан работы через сканер Classroom (без формы). 
 - Телефоны должны лежать на моём столе в беззвучном режиме. Запрещено выносить телефоны из аудитории до сдачи работы последним учащимся.  
 
 ---
