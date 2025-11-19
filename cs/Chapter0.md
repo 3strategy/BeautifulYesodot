@@ -44,7 +44,7 @@ ul.task-list .task-list-item-checkbox {
 
 - [ ] רישום במצפן
 
-- [ ] VS2022 התקנת
+- [ ] VS2026 התקנת
 
 - [ ] Basic output: Console.WriteLine and Console.Write פלט בסיסי
 

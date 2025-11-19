@@ -30,19 +30,19 @@ lang: he
 
 1. [לחצו על הקישור להורדת קובץ קיצורים מעודכן](/cs/rl.snippet)
 2. פתחו את **סייר הקבצים** ע"י הקלדת explorer בשורת החיפוש
-3. דפדפו למסמכים ⟶ Visual Studio 2022 ⟶ Code Snippets ⟶ Visual C# ⟶ My Code Snippets
+3. דפדפו למסמכים ⟶ Visual Studio 18 ⟶ Code Snippets ⟶ Visual C# ⟶ My Code Snippets
 4. שימו את הקובץ שם
 5. [למחלקות - ניתן להוריד גם את הקובץ הבא ולשים באותה תיקייה](/cs/gs.snippet)
     
-    documents\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets
+    documents\Visual Studio 18\Code Snippets\Visual C#\My Code Snippets
     
     או
 
-    מסמכים\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets
+    מסמכים\Visual Studio 18\Code Snippets\Visual C#\My Code Snippets
     
     או
 
-    %USERPROFILE%\Documents\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets
+    %USERPROFILE%\Documents\Visual Studio 18\Code Snippets\Visual C#\My Code Snippets
 
     או, שתכנסו באופן ידני מתוך המסמכים שלכם, לתתי התיקיות הרשומות כאן עד שתגיעו
 
