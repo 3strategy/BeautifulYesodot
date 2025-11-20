@@ -77,7 +77,7 @@ lang: he
 </div>
 <div markdown="1" class="column">
 <!-- תמונה מוצעת: אייקון/לוגו WhatsApp -->
-![alt text](image-6b.png)
+![alt text](/assets/img/Opening/image-6b.png)
 </div>
 </div>
 
@@ -123,7 +123,7 @@ lang: he
 - שעות פרטניות/תמיכה יתואמו ויעודכנו בהמשך (יפורסם בקבוצה).
 
 
-![alt text](image-7b.png)
+![alt text](/assets/img/Opening/image-7b.png)
 
 
 
@@ -141,4 +141,4 @@ lang: he
 
 ## שאלות❓
 
-![alt text](image-11.png)
+![alt text](/assets/img/Opening/image-11.png)
