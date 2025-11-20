@@ -16,15 +16,15 @@ lang: he
 <details markdown="1">
 <summary>מינהלות - רישום למצפן ולקמפוס</summary>
 
-[רישום למצפן. למורים שעדיין לא נרשמו](https://mpm.education.gov.il/rishum/mobile/rishumOvedOraa/0/homePage){:target="_blank"}
+<!-- [רישום למצפן. למורים שעדיין לא נרשמו](https://mpm.education.gov.il/rishum/mobile/rishumOvedOraa/0/homePage){:target="_blank"}
 
-[קלאסרום של  תל-אביב (גיא)](https://classroom.google.com/c/NzY2NTYyODk0OTA5){:target="_blank"}
+[קלאסרום של  תל-אביב (גיא)](https://classroom.google.com/c/NzY2NTYyODk0OTA5){:target="_blank"} -->
 
 [קישור לרישום לקמפוס](https://campus.gov.il/){:target="_blank"}
 
 [קישור לקורס יסודות בקמפוס](https://courses.campus.gov.il/courses/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/course/){:target="_blank"}
 
-[מצגת החשיפה של ההשתלמות](https://docs.google.com/presentation/d/1bJKwPhASzTI2te4ET5bD9VIVATF2L5ue5iWR3c2c7EI/edit?usp=drivesdk{:target="_blank"})
+<!-- [מצגת החשיפה של ההשתלמות](https://docs.google.com/presentation/d/1bJKwPhASzTI2te4ET5bD9VIVATF2L5ue5iWR3c2c7EI/edit?usp=drivesdk{:target="_blank"}) -->
 
 </details>
 
