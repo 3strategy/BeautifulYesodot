@@ -26,6 +26,7 @@ navbar-links:
   מדמח מחזור 3:
     
     - פרק 0:
+        - מצטרפים חדשים: "/cs/0YearOpeningMerge"
         - פתיחת שנה: "/cs/0YearOpening"
         - פרק 0 מעקב התקדמות: "/cs/Chapter0/"
         - קיצורים: "/cs/Chapter1Shortcuts/"
