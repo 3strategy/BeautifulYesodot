@@ -500,7 +500,7 @@ Created for educators using Google Classroom for automated feedback delivery.
 
 Supports Hebrew RTL formatting with native Google Docs API integration.
 
-Actual Google Sheets doc containing the scripts - distributed to teachers per request (drop me a whatsapp at +972586444461).
+Actual Google Sheets doc containing the scripts - distributed to teachers per request (drop me a whatsapp at [+972586444461](https://wa.me/972586444461)).
 
 
 
