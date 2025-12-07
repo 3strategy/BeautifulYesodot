@@ -24,11 +24,11 @@ lang: he
   1. חקירת LLM ויצירת משוב  
   2. הפצה למסמכי התלמידים ב־Classroom  
 - ✅ **תמיכה מלאה בעברית**  
-  כיווניות RTL, כותרות, רשימות, וטקסט קוד (LTR) – הכל מעוצב אוטומטית ב־Docs. :contentReference
+  כיווניות RTL, כותרות, רשימות, וטקסט קוד (LTR) – הכל מעוצב אוטומטית ב־Docs.
 - ✅ **פירוק Markdown**  
-  המערכת לוקחת את ה־markdown שהמודל מחזיר, ומתרגמת אותו לסגנונות Docs מקומיים (כותרות, הדגשה, bullets וכו'). :contentReference
+  המערכת לוקחת את ה־markdown שהמודל מחזיר, ומתרגמת אותו לסגנונות Docs מקומיים (כותרות, הדגשה, bullets וכו').
 - ✅ **מיפוי תלמידים חכם**  
-  סנכרון רשימת תלמידים מתוך Classroom, בניית טבלת StudentMapping ומיפוי דוא״ל→StudentID. :contentReference{index=4}  
+  סנכרון רשימת תלמידים מתוך Classroom, בניית טבלת StudentMapping ומיפוי דוא״ל→StudentID.  
 - ✅ **לוג שגיאות ומעקב סטטוסים**  
   לכל שורה בגליון יש סטטוס, Debug Log, תוצאות LLM גולמיות וציונים מחושבים.
 
@@ -60,7 +60,7 @@ lang: he
 ### שלב 1: יצירת מטלת Quiz ב־Google Classroom
 
 1. ב־**Google Classroom** צרו **Assignment** חדש.
-2. בחרו **Create → Quiz Assignment** – זה ייצור טופס Google Forms משויך. :contentReference[oaicite:7]{index=7}  
+2. בחרו **Create → Quiz Assignment** – זה ייצור טופס Google Forms משויך. 
 3. בכרטיסיית **Settings → Responses** בטופס –  
 
    {: .box-warning}
