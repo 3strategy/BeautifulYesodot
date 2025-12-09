@@ -2,6 +2,7 @@
 layout: page
 title: "פרק 4 - לולאות for"
 subtitle: "ביצוע פעולות חוזרות באמצעות לולאות for"
+tags: [גילגול, גלגול, הסטוריה, שמירת היסטוריה, for, sliding window, rolling comparison]
 author: גיא סידס
 lang: he
 ---
