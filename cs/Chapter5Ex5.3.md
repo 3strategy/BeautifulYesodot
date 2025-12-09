@@ -166,7 +166,12 @@ Enter an integer. negative to stop:
 זו שאלה מסוג מעבר חוסם.
 כתבו תוכנית הקולטת תווים בזה אחר זה. כל עוד התו הנוכחי אינו סימן נקודה (`'.'`) והדגל `error=false`. בתוך הלולאה מדפיסים את התו. אם מתקבל תו שאינו אות אנגלית (לא בין `'A'` ל־`'Z'` ולא בין `'a'` ל־`'z'`), מעדכנים `error=true` כדי לגרום לעצירת הלולאה.
 
-<details markdown="1"><summary>הדרכה</summary>  
+<details markdown="1"><summary>הדרכה דרך א'</summary>  
+- כתבו לולאת `while(true)`
+- הגדירו תנאי יציאה עם `break` בתוך הלולאה
+</details>
+
+<details markdown="1"><summary>הדרכה דרך ב'</summary>  
 - הגדירו דגל (בוליאני) `error = false`.  
 - תנאי ה־`while` יהיה `ch != '.' && !error`.  
 - בכל איטרציה קלטו תו (`char ch`) ובדקו האם טווח האותיות תקין.  
