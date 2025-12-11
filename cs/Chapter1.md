@@ -29,19 +29,19 @@ lang: he
 </details>
 
 
-<details markdown="1"><summary>התקנה ועבודה ב-VS2026</summary>
+<details open markdown="1"><summary>התקנה ועבודה ב-VS2026</summary>
 
 ## סביבת העבודה (Visual Studio)
 התקינו את התוכנה **בזמנכם החופשי.** אני אוכל לעזור ל-3-4 שרוצים עזרה ומעדיפים להתחיל התקנה במהלך השיעור.
 
 סביבת הפיתוח שלנו תהיה Visual Studio 2026, המשמשת לכתיבת קוד בשפת C#. 
-[כנסו לקישור והתקינו את גרסת community](https://visualstudio.microsoft.com/vs/community/){:target="_blank"}
+[כנסו לקישור והתקינו את גרסת community](https://visualstudio.microsoft.com/vs/community/){:target="_blank"} בהתאם להנחיות שבסרטון הבא, הכולל ההתאמות הנדרשות לתכנות בסביבת אינטרנט.
 {: .box-success}
 
 שימו לב: הקישור הוא **לגרסת ה-Community**. בכל גרסה אחרת תתקעו בבעיית רישוי לאחר מספר שבועות
 {: .box-error}
 
-
+{% include youtube.html id="r1sAUsJ-BmE" %}
 
 ## התקנת ויז'ואל סטודיו 2026 Community
 
@@ -49,11 +49,12 @@ lang: he
 ![alt text](/assets/img/vs2026workloads.jpg)
 
 
+<!-- 
 {: .box-warning}
 לפניכם סרטון הדרכה קצר, מותאם לצפיה מטלפון, צעד אחר צעד להתקנת סביבת העבודה.
 **שימו לב:** בסרטון אין סימון של ה- workloads וה-templates שלעיל, הדרושים לקורס תכנות בסביבת אינטרנט.
 
-{% include youtube.html id="yhBm8yLmIkM" %} 
+{% include youtube.html id="yhBm8yLmIkM" %} -->
 
 ## שלבי יצירת תוכנית חדשה ב-Visual Studio 2026:
 1. פתחו פרויקט חדש מסוג Console App.
