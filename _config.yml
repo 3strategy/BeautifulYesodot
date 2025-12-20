@@ -135,12 +135,12 @@ navbar-links:
     #     - עבודה נכונה 11.7: "/cs3/Objects_07_UsingObjects/"
     #     - קישורים 11.9: "/cs3/Objects_09_Links/"
 
-    - פרק 11 עצמים:
-        - למה 11.1: "/cs3e/Objects_01_WhyWhatPrinciples/"
-        - כתיבת מחלקות 11.5: "/cs3/Objects_05_BuildingClasses/"
-        - בנאים ו-new 11.6: "/cs3/Objects_06_ConstructorsAndNew/"
-        - עבודה נכונה 11.7: "/cs3/Objects_07_UsingObjects/"
-        - קישורים 11.9: "/cs3/Objects_09_Links/"
+    # - פרק 11 עצמים:
+    #     - למה 11.1: "/cs3e/Objects_01_WhyWhatPrinciples/"
+    #     - כתיבת מחלקות 11.5: "/cs3/Objects_05_BuildingClasses/"
+    #     - בנאים ו-new 11.6: "/cs3/Objects_06_ConstructorsAndNew/"
+    #     - עבודה נכונה 11.7: "/cs3/Objects_07_UsingObjects/"
+    #     - קישורים 11.9: "/cs3/Objects_09_Links/"
 
   חיצוני:
     - אתר מבני נתונים: "https://מבני.שלי.com"
