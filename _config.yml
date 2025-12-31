@@ -124,10 +124,10 @@ navbar-links:
     - תקציר תחביר: "/cs2/ChapterSyntaxSummaryToPrint"
 
   חלק ג:
-    - פרק 10 מערך דו ממדי: "/cs3/Chapter10/"
-    # - פרק 11 עצמים:
-    #     - למה 11.1: "/cs3/Objects_01_WhyObjects/"
-    #     - מהו עצם 11.2: "/cs3/Objects_02_WhatIsObject/"
+    # - פרק 10 מערך דו ממדי: "/cs3/Chapter10/"
+    - פרק 11 עצמים:
+        - למה 11.1: "/cs3/Objects_01_WhyObjects/"
+        - מהו עצם 11.2: "/cs3/Objects_02_WhatIsObject/"
     #     - עקרונות 11.3: "/cs3/Objects_03_Principles/"
     #     - מחלקה לעומת עצם 11.4: "/cs3/Objects_04_TypeVsObject/"
     #     - כתיבת מחלקות 11.5: "/cs3/Objects_05_BuildingClasses/"
@@ -135,12 +135,6 @@ navbar-links:
     #     - עבודה נכונה 11.7: "/cs3/Objects_07_UsingObjects/"
     #     - קישורים 11.9: "/cs3/Objects_09_Links/"
 
-    # - פרק 11 עצמים:
-    #     - למה 11.1: "/cs3e/Objects_01_WhyWhatPrinciples/"
-    #     - כתיבת מחלקות 11.5: "/cs3/Objects_05_BuildingClasses/"
-    #     - בנאים ו-new 11.6: "/cs3/Objects_06_ConstructorsAndNew/"
-    #     - עבודה נכונה 11.7: "/cs3/Objects_07_UsingObjects/"
-    #     - קישורים 11.9: "/cs3/Objects_09_Links/"
 
   חיצוני:
     - אתר מבני נתונים: "https://מבני.שלי.com"
@@ -151,7 +145,14 @@ navbar-links:
     - מה מותר ומה אסור: "https://docs.google.com/document/d/1_38kIc1UwK7Eiz673KyBjqGdkJeqa-I5kGCDOMckHqc/edit?usp=sharing"
     - בגרויות באתר משרד החינוך: "https://meyda.education.gov.il/bagmgr"
     - מה מותר ומה אסור: "https://docs.google.com/document/d/1_38kIc1UwK7Eiz673KyBjqGdkJeqa-I5kGCDOMckHqc/edit?usp=sharing"
-    
+
+    - פרק 11 עצמים:
+        - למה 11.1: "/cs3e/Objects_01_WhyWhatPrinciples/"
+        - כתיבת מחלקות 11.2: "/cs3e/Objects_02_BuildingClasses/"
+        - 11.3Don't Ask: "/cs3e/Objects_03_DontAskTell/"
+        - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
+        - קישורים 11.9: "/cs3e/Objects_09_Links/"
+
   הגדרות:
     # - מבחן זמני: "/cs/GuysFinalFireBase/"
     - החלפת רקע: "javascript:toggleTheme();"

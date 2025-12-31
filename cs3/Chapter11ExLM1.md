@@ -51,14 +51,13 @@ public static int DigitsRange(int num)
 public static bool CheckLengthMatch(int num)
 ``` -->
 
-#### שאלה 2: המספרים ה'נרקיסיסטיים' במערך (מערך, שימוש בפעולות עזר)
+### שאלה 2: המספרים ה'נרקיסיסטיים' במערך (מערך, שימוש בפעולות עזר)
 
 מתמטיקאים וחובבי חידות עוסקים בחקר מספרים יוצאי דופן. מספר שלם חיובי – **num** ייקרא **"מספר נרקיסיסטי"** אם מתקיים התנאי: מחברים את כל הספרות של `num` כשהן מועלות בחזקת כמות הספרות שיש ב-`num`, והסכום שמתקבל שווה ל-`num`.
 
 לדוגמה: המספר 407 הוא נרקיסיסטי, כי כמות הספרות היא 3, ומתקיים: $$4^3 + 0^3 + 7^3 = 64 + 0 + 343 = 407$$.
 
 נתון מערך של מספרים שלמים – `arr` מטיפוס `int`.
-
 
 א. נתונות שתי פעולות עזר שאינכם נדרשים לכתוב:
 
@@ -67,23 +66,14 @@ public static bool CheckLengthMatch(int num)
 
   כתבו פעולה חיצונית ששמה `IsNarcissistic` בשפת Java או `isNarcissistic` בשפת C#, המקבלת מספר שלם חיובי – `num` (הגדול מ־0) ומחזירה `true` אם המספר הוא "מספר נרקיסיסטי", ואחרת מחזירה `false`.
 
-<!-- הפעולה:
-```csharp
-public static bool IsNarcissistic(int num)
-``` -->
-
 ב. כתבו פעולה חיצונית ששמה `CountNarcArray` בשפת Java או `countNarcArray` בשפת C#
+
 - הפעולה מקבלת את המערך – `arr`, ומחזירה את כמות המספרים הנרקיסיסטיים המופיעים במערך.
 - **הערה**: חובה להיעזר בפעולה שכתבתם בסעיף א.
 
-<!-- הפעולה:
-```csharp
-public static int CountNarcArray(int[] arr)
-``` -->
-
 ---
 
-#### שאלה 3: יעילות - חידת אוזיריס (Ozirim)
+### שאלה 3: יעילות - חידת אוזיריס (Ozirim)
 
 נוסע יקר,
 אתה ניצב מול פתחו של מקדש רע, אל השמש והסדר. על קירות האבן חקוקות אלפי ספרות, וכל אחת מהן שומרת סוד קדום.
@@ -102,11 +92,6 @@ $$O(1) + O(2) + O(3) + \dots + O(2025)$$
 {: .subq}
 א. כתבו פעולה חיצונית ששמה `DigitProduct` בשפת Java או `digitProduct` בשפת C#, המקבלת מספר שלם חיובי – `num` ומחזירה את "חותם האוזיריס" שלו (מכפלת כל ספרותיו).
 
-<!-- הפעולה:
-```csharp
-public static long DigitProduct(int num)
-``` -->
-
 {: .subq}
 ב. כתבו פעולה חיצונית ששמה `CalculateOzirimSum` בשפת Java או `calculateOzirimSum` בשפת C#, המקבלת מספר שלם חיובי – `N` ומחזירה את סכום כל חותמות האוזיריס של המספרים מ-1 ועד `N`.
 
@@ -119,7 +104,6 @@ public static long DigitProduct(int num)
 
 {: .subq}
 ג. נתחו את יעילות הפעולה שכתבתם בסעיף ב' מבחינת סיבוכיות זמן ריצה, וציינו את הסיבוכיות במונחי $$O$$ (Big O) ביחס ל-`N`. הסבירו בקצרה מדוע זו הסיבוכיות.
-
 
 ## הכנה לבגרות: תרגול לוגיקה ומבני נתונים - חלק ב'
 
@@ -136,20 +120,19 @@ public static long DigitProduct(int num)
 
 הניחו שפעולות `get/Get` ו-`set/Set` קיימות עבור תכונות המחלקה.
 
-```mermaid
+<div class="mermaid" style="direction:ltr;">
 
     classDiagram
     class MeterReading{
         - int id
-        - int currentValue
+        - int currentValueeee
         - int maxThreshold
         - bool isFaulty
         + MeterReading(id: int, value: int, threshold: int)
         + checkFault() bool
     }
 
-```
-
+</div>
 
 {: .subq}
 א. כתבו פעולה בונה במחלקה `MeterReading` המקבלת את מספר המונה – `id` (מטיפוס שלם), את הצריכה הנוכחית – `currentValue` (מטיפוס שלם), ואת הסף המקסימלי – `maxThreshold` (מטיפוס שלם).
@@ -193,8 +176,7 @@ public static long DigitProduct(int num)
 - כל המחלקים 1, 2, 3, 5, 6, 9 מופיעים כספרות במספר 90918.
 - לכן 90918 הוא "ייחודי חלוקתית".
 
-{: .subq}
-א. נתונות פעולות עזר שאינכם נדרשים לכתוב:
+נתונות פעולות עזר שאינכם נדרשים לכתוב:
 `DigitExists(num, digit)`: מקבלת מספר שלם חיובי `num` וספרה `digit` (בין 0 ל-9), ומחזירה `true` אם `digit` מופיעה ב-`num`.
 
 כתבו פעולה חיצונית ששמה `CheckDivisorAppearance` בשפת Java או `checkDivisorAppearance` בשפת C#, המקבלת מספר שלם חיובי – `num`. הפעולה מחזירה `true` אם **כל** המחלקים החיוביים והשלמים החד-ספרתיים של `num` (חוץ מ-`num` עצמו) מופיעים כספרות במספר `num`. אחרת היא מחזירה `false`.
