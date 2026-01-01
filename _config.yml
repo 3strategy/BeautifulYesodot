@@ -125,15 +125,10 @@ navbar-links:
 
   חלק ג:
     # - פרק 10 מערך דו ממדי: "/cs3/Chapter10/"
+    - סיכום הפרקים הקודמים: "/cs3e/ChapterGimelOpening/"
     - פרק 11 עצמים:
-        - למה 11.1: "/cs3/Objects_01_WhyObjects/"
-        - מהו עצם 11.2: "/cs3/Objects_02_WhatIsObject/"
-    #     - עקרונות 11.3: "/cs3/Objects_03_Principles/"
-    #     - מחלקה לעומת עצם 11.4: "/cs3/Objects_04_TypeVsObject/"
-    #     - כתיבת מחלקות 11.5: "/cs3/Objects_05_BuildingClasses/"
-    #     - בנאים ו-new 11.6: "/cs3/Objects_06_ConstructorsAndNew/"
-    #     - עבודה נכונה 11.7: "/cs3/Objects_07_UsingObjects/"
-    #     - קישורים 11.9: "/cs3/Objects_09_Links/"
+        - למה ומה 11.1: "cs3e/Objects_01_WhyWhatPrinciples/"
+
 
 
   חיצוני:
