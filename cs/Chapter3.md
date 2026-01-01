@@ -32,7 +32,7 @@ lang: he
 
 </details>
 
-## משפטי תנאי - if, else
+## משפטי תנאי - if, else {#id3if}
 
 משפט תנאי מאפשר לנו לבצע פעולה מסוימת רק אם תנאי מסוים מתקיים.
 
@@ -110,7 +110,7 @@ else
 
 </details>
 
-## אופרטורים של השוואה ואופרטורים לוגיים ##
+## אופרטורים של השוואה ואופרטורים לוגיים {#id3ops}
 
 
 
@@ -296,7 +296,7 @@ if (found)
     Console.WriteLine("Number found");
     {% endhighlight %}
 
-## בדיקת פלינדרום. **טבלת מעקב**
+## בדיקת פלינדרום. **טבלת מעקב** {#id3palindrome}
 
 כתבו תוכנית ב-C# הקולטת מספר תלת-ספרתי חיובי (`num`) ומדפיצה הודעה אם המספר הוא פלינדרום. פלינדרום הוא מילה, מספר, משפט או כל רצף סמלים אחר, שקריאתו מימין לשמאל ומשמאל לימין היא זהה.
 
@@ -373,5 +373,4 @@ else
 [סרטוני פרק 2: ביטויים לוגיים](https://www.youtube.com/playlist?list=PLw4P_RdfuzSjVGWRUCg9qWvDkkSWrANtP){:target="_blank"}
 
 [סרטוני פרק 4: משפטי תנאי](https://www.youtube.com/playlist?list=PLw4P_RdfuzSitIvnpWSgqZLJHot9__eSG){:target="_blank"}
-
 

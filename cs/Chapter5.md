@@ -14,7 +14,7 @@ lang: he
 {: box-warning}
 **סדר הוראה:** יש מורים המעדיפים ללמד לולאת while לפני לולאת for. עשו כפי שמרגיש לכם נכון
 
-## מבנה לולאת while
+## מבנה לולאת while {#id5compare}
 
 לולאת `while` משמשת לביצוע פעולה מספר לא מוגדר של פעמים, כל עוד התנאי מתקיים.
 
@@ -205,7 +205,7 @@ Console.WriteLine("The number entered is: " + number);
 
 ---
 
-## דוגמת קוד: הפיכת סדר הספרות
+## דוגמת קוד: הפיכת סדר הספרות {#id5reverse}
 
 הקוד הבא קולט מספר, בונה מחדש את המספר בסדר ספרות הפוך (למשל 1234 → 4321) ומדפיס את התוצאה.
 
@@ -311,4 +311,3 @@ else
 ## סרטונים
 
 [סרטוני פרק 6: לולאות while](https://www.youtube.com/playlist?list=PLw4P_RdfuzSiWmGL7PdjcY5Sd8Fqeguo4){:target="_blank"}
-

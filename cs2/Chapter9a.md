@@ -10,8 +10,7 @@ lang: he
 <!-- see Chapter9 for the animated version for the teacher -->
 <!-- https://www.perplexity.ai/search/this-page-goes-to-github-pages-z3w2NJR4SHqGVk14l89Rmw -->
 
-
-
+## מבוא למערכים {#id9basics}
 
 <details markdown="1"><summary>1. נניח שנרצה להפוך את car לאוסף של מחרוזות</summary>
 
@@ -351,4 +350,3 @@ static void Main(string[] args)
 [סרטוני פרק 9: פעולות](https://www.youtube.com/playlist?list=PLnVUJu2KuoA2cT3X-Fui7j6HZJWZM6vnK){:target="_blank"}
 
 [פלייליסט השתלמות חלק ב](https://www.youtube.com/playlist?list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S){:target="_blank"}
-
