@@ -427,6 +427,13 @@ button:hover {
   page-break-before: always;
 }
 
+
+/*support cell highlighting in tables*/
+td:has(i), th:has(i) {
+    background-color: var(--backs-col) !important;
+}
+
+
 .table-en {
     direction: ltr;
 }
@@ -529,6 +536,15 @@ pre code span.c1 {
 }
 .two-columns .column {
   flex: 1;
+}
+
+/* highligting with the ruby custom plugin */
+mark {
+  background-color: #fcf8e3; /* A pleasant cream-yellow */
+  border-bottom: 1px solid #fbeed5;
+  color: #8a6d3b;
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
 }
 
 /* ================= Mermaid node styling =============== 

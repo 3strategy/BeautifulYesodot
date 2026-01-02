@@ -23,7 +23,7 @@ author: גיא סידס
 
 navbar-links:
 
-  מדמח מחזור 3:
+  חלק א:
     
     - פרק 0:
         - מצטרפים חדשים: "/cs/0YearOpeningMerge"
@@ -124,7 +124,10 @@ navbar-links:
     - תקציר תחביר: "/cs2/ChapterSyntaxSummaryToPrint"
 
   חלק ג:
-    # - פרק 10 מערך דו ממדי: "/cs3/Chapter10/"
+    - פרק 10 מערך דו ממדי: 
+        - הפרק: "/cs33/Chapter10"
+        - 10.1 תרגיל אלכסונים: "/cs3e/Ex/Ex10.1"
+        #- 10.2 תרגול מתקדם ובגרויות: "/cs3e/Ex/Ex10.2"
     - סיכום הפרקים הקודמים: "/cs3e/ChapterGimelOpening/"
     - פרק 11 עצמים:
         - למה ומה 11.1: "cs3e/Objects_01_WhyWhatPrinciples/"
