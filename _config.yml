@@ -74,6 +74,7 @@ navbar-links:
 
     - פרק 5 while:
         - פרק 5 while: "/cs/Chapter5/"
+        - 5 משחק בלולאות: "/cs/Chapter5codetrooper/"
         # - תרגול 5a stacks הגשות שלי: "/cst/yesodot/ex5a"
         - תרגול 5.1: "/cs/Chapter5Ex5.1"
         - תרגול 5.2: "/cs/Chapter5Ex5.2"
