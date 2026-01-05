@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>אתגר הלוגיקה - המחשב האנושי</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #282c34;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 { margin: 5px 0; color: #61dafb; font-size: 2em; }
+        p { margin-bottom: 10px; font-size: 1.1em; color: #abb2bf; }
+
+        .code-box {
+            background-color: #1e1e1e;
+            border: 2px solid #61dafb;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            direction: ltr;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .variable { color: #d19a66; }
+        .operator { color: #56b6c2; }
+        .number { color: #98c379; }
+
+        /* --- אזור המשחק --- */
+        .game-area {
+            display: grid;
+            /* שינוי מרכזי: הגדלתי את העמודה והשורה הראשונות ל-80px כדי ליצור מרווח */
+            grid-template-columns: 80px auto; 
+            grid-template-rows: 80px auto;    
+            direction: ltr; 
+            gap: 5px;
+        }
+
+        /* עיצוב כותרות הצירים */
+        .axis-label {
+            color: #e5c07b; /* צהוב-זהב */
+            font-size: 1.6em; /* הגדלה משמעותית של הפונט */
+            font-weight: bold;
+            font-family: monospace;
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .axis-label-col {
+            grid-column: 2;
+            grid-row: 1;
+            align-self: start; /* מצמיד למעלה רחוק מהמספרים */
+            text-align: center;
+            margin-top: 5px;   /* קצת רווח מהגבול העליון */
+        }
+
+        .axis-label-row {
+            grid-column: 1;
+            grid-row: 2;
+            justify-self: start; /* מצמיד שמאלה רחוק מהמספרים */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            margin-left: 5px; /* קצת רווח מהגבול השמאלי */
+        }
+
+        /* --- המספרים (0, 1, 2...) --- */
+        .header-numbers {
+            font-size: 1.1em;
+            color: #ffffff;
+            font-weight: bold;
+            font-family: 'Segoe UI', sans-serif;
+            opacity: 0.9;
+        }
+
+        .col-numbers {
+            grid-column: 2;
+            grid-row: 1;
+            display: grid;
+            grid-template-columns: repeat(5, 55px); 
+            gap: 5px;
+            align-items: end; /* מצמיד את המספרים למטה, קרוב לגריד */
+            justify-items: center;
+            margin-bottom: 5px;
+        }
+
+        .row-numbers {
+            grid-column: 1;
+            grid-row: 2;
+            display: grid;
+            grid-template-rows: repeat(5, 55px);
+            gap: 5px;
+            align-items: center;
+            justify-items: end; /* מצמיד את המספרים ימינה, קרוב לגריד */
+            margin-right: 10px;
+        }
+
+        /* --- הגריד והמשבצות --- */
+        .grid-container {
+            grid-column: 2;
+            grid-row: 2;
+            display: grid;
+            grid-template-columns: repeat(5, 55px);
+            grid-template-rows: repeat(5, 55px);
+            gap: 5px;
+            
+            padding: 8px;
+            border: 2px dashed #5c6370; 
+            border-radius: 10px;
+            background-color: rgba(0,0,0,0.2);
+        }
+
+        .cell {
+            width: 55px;
+            height: 55px;
+            background-color: #3b4048;
+            border: 2px solid #555;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .cell:hover { background-color: #4b5263; transform: scale(1.05); }
+        
+        .cell.selected {
+            background-color: #61dafb;
+            border-color: #fff;
+            box-shadow: 0 0 10px #61dafb;
+        }
+
+        .cell.wrong {
+            background-color: #e06c75 !important;
+            animation: shake 0.5s;
+        }
+
+        .coords-hint {
+            font-size: 10px;
+            color: rgba(255,255,255,0.2);
+            position: absolute;
+            bottom: 2px;
+            right: 4px;
+            pointer-events: none;
+        }
+
+        .btn {
+            background-color: #98c379;
+            color: #282c34;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1.2em;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 0 3px 0 #6d8f53;
+            transition: transform 0.1s;
+        }
+        .btn:hover { background-color: #aadd86; }
+        .btn:active { transform: translateY(3px); box-shadow: none; }
+
+        #message {
+            height: 30px;
+            margin-top: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(5px); }
+            50% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>הצייר הלוגי</h1>
+    <p>תפקידך לסמן את כל המשבצות שמקיימות את התנאי!</p>
+
+    <div class="code-box" id="codeDisplay">
+        Loading...
+    </div>
+
+    <div class="game-area">
+        
+        <div class="axis-label axis-label-col">
+            col (עמודה) &rarr;
+        </div>
+
+        <div class="header-numbers col-numbers">
+            <div>0</div><div>1</div><div>2</div><div>3</div><div>4</div>
+        </div>
+
+        <div class="axis-label axis-label-row">
+             &larr; row (שורה)
+        </div>
+
+        <div class="header-numbers row-numbers">
+            <div>0</div><div>1</div><div>2</div><div>3</div><div>4</div>
+        </div>
+
+        <div class="grid-container" id="grid"></div>
+    </div>
+
+    <button class="btn" onclick="checkSolution()">בדוק תשובה</button>
+    <div id="message"></div>
+
+    <script>
+        const levels = [
+            {
+                text: 'if (row == 2)',
+                check: (r, c) => r === 2
+            },
+            {
+                text: 'if (col == 1 || col == 3)',
+                check: (r, c) => c === 1 || c === 3
+            },
+            {
+                text: 'if (row == col)',
+                check: (r, c) => r === c
+            },
+            {
+                text: 'if (row == 0 || col == 4)',
+                check: (r, c) => r === 0 || c === 4
+            },
+            {
+                text: 'if (row >= 1 && row <= 3 && col >= 1 && col <= 3)',
+                check: (r, c) => r >= 1 && r <= 3 && c >= 1 && c <= 3
+            },
+            {
+                text: 'if ((row + col) % 2 == 0)',
+                check: (r, c) => (r + c) % 2 === 0
+            }
+        ];
+
+        let currentLevel = 0;
+        let grid = document.getElementById('grid');
+        let codeDisplay = document.getElementById('codeDisplay');
+        let message = document.getElementById('message');
+
+        function initLevel() {
+            grid.innerHTML = '';
+            message.innerText = '';
+            
+            let logicText = levels[currentLevel].text;
+
+            logicText = logicText.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            logicText = logicText.replace(/(\|\||&&|==|!=|&gt;=|&lt;=|&gt;|&lt;|%)/g, '<span class="operator">$1</span>');
+            logicText = logicText
+                .replace(/row/g, '<span class="variable">row</span>')
+                .replace(/col/g, '<span class="variable">col</span>')
+                .replace(/(\d+)/g, '<span class="number">$1</span>');
+            
+            codeDisplay.innerHTML = logicText;
+
+            for (let r = 0; r < 5; r++) {
+                for (let c = 0; c < 5; c++) {
+                    let cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.dataset.row = r;
+                    cell.dataset.col = c;
+                    
+                    let hint = document.createElement('span');
+                    hint.className = 'coords-hint';
+                    hint.innerText = `${r},${c}`;
+                    cell.appendChild(hint);
+
+                    cell.onclick = function() {
+                        if(this.classList.contains('selected')) {
+                            this.classList.remove('selected');
+                        } else {
+                            this.classList.add('selected');
+                            this.classList.remove('wrong');
+                        }
+                    };
+                    grid.appendChild(cell);
+                }
+            }
+        }
+
+        function checkSolution() {
+            let cells = document.querySelectorAll('.cell');
+            let allCorrect = true;
+            let logic = levels[currentLevel].check;
+            let anySelected = false;
+
+            cells.forEach(cell => {
+                let r = parseInt(cell.dataset.row);
+                let c = parseInt(cell.dataset.col);
+                let shouldBeSelected = logic(r, c);
+                let isSelected = cell.classList.contains('selected');
+
+                if (isSelected) anySelected = true;
+
+                if (shouldBeSelected !== isSelected) {
+                    allCorrect = false;
+                    if (isSelected && !shouldBeSelected) {
+                        cell.classList.add('wrong');
+                    }
+                }
+            });
+
+            if (allCorrect) {
+                message.style.color = '#98c379';
+                message.innerText = 'מעולה! כל הכבוד!';
+                setTimeout(() => {
+                    currentLevel++;
+                    if (currentLevel < levels.length) {
+                        initLevel();
+                    } else {
+                        codeDisplay.innerHTML = "סיימת את כל השלבים!";
+                        grid.innerHTML = '<h2 style="grid-column: span 5; color: #61dafb; text-align:center; align-self:center; font-size:2em;">ניצחון!</h2>';
+                        document.querySelector('.btn').style.display = 'none';
+                    }
+                }, 1500);
+            } else {
+                message.style.color = '#e06c75';
+                if (!anySelected) {
+                     message.innerText = 'לא סימנת כלום...';
+                } else {
+                     message.innerText = 'טעות! בדקי את המשבצות האדומות.';
+                }
+            }
+        }
+
+        initLevel();
+    </script>
+</body>
+</html>
