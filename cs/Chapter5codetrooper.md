@@ -349,6 +349,10 @@ lang: he
       text-shadow: 0 0 10px #000;
   }
   
+  .text-neon-green {
+      color: var(--neon-green) !important;
+  }
+  
   .level-indicator {
       color: var(--neon-pink);
       font-weight: bold;
@@ -1001,10 +1005,18 @@ while (true) {
              <div className="doc-item"><span className="code-snippet">Fire()</span></div>
              <div className="doc-item"><span className="code-snippet">Sleep(ms)</span></div>
              <div className="doc-item"><span className="code-snippet">Reload()</span></div>
+             
+             {isIfUnlocked && (
+                 <>
+                    <div className="doc-item"><span className="code-snippet text-neon-green">(...) if</span></div>
+                    <div className="doc-item"><span className="code-snippet text-neon-green">IsPlaneAbove()</span></div>
+                 </>
+             )}
+
              <hr className="doc-separator" />
              <div className="debug-section">
                  <button className="neon-btn debug-btn" onClick={resetProgress}>
-                    אפס התקדמות (Debug)
+                    Reset
                  </button>
              </div>
            </div>
