@@ -58,6 +58,8 @@ Enter rainfall for day 4: 35
 Target reached after 4 days.
 ```
 
+---
+
 <details><summary>פתרון</summary>
 
 {% highlight csharp linenos %}int totalRainfall = 0;
@@ -75,6 +77,8 @@ Console.WriteLine($"\nTarget reached after {daysCount} days.");
 {% endhighlight %}
 
 </details>
+
+---
 
 ## דוגמא 2: לולאה עד לקבלת קלט רצוי מהמשתמש
 
@@ -95,7 +99,9 @@ while (number <= 0) // יתכן שלא תרוץ כלל
 Console.WriteLine("The number entered is: " + number);
 {% endhighlight %}
 
-### דוגמא 3: עצירת הקלט בהתקיים תנאי (שימוש בזקיף):
+---
+
+### דוגמא 3: עצירת הקלט בהתקיים תנאי (שימוש בזקיף)
 
 {% highlight csharp linenos %}Console.Write("Enter number (0 to stop): ");
 int n = int.Parse(Console.ReadLine());
@@ -120,6 +126,8 @@ You entered: 3
 Enter number (0 to stop): 0
 Stopped.
 ```
+
+---
 
 ## לולאות while ושימוש ב-break
 
@@ -168,17 +176,17 @@ while (true) // break דוגמא 1 במימוש באמצעות
 Console.WriteLine("The number entered is: " + number);
 {% endhighlight %}
 
-
-
----
-# פירוק ובניית מספר שלם - C#
 ---
 
-## פירוק מספר
+## פירוק ובניית מספר שלם
+
+---
+
+### פירוק מספר
 
 פירוק מספר בלולאת while מתבצע ע\"י חילוץ ספרות בעזרת מודולו 10, והתקדמות ע\"י חלוקה ב־10 עד שהמספר מסתיים.
 
-### קוד C#: מדפיס את כל הספרות של מספר שלם
+#### קוד C#: מדפיס את כל הספרות של מספר שלם
 
 {% highlight csharp linenos %}public static void Main()
 {
@@ -196,12 +204,13 @@ Console.WriteLine("The number entered is: " + number);
 
 ---
 
-## בניית מספר מתוך ספרות
+### בניית מספר מתוך ספרות
 
 כדי לבנות מספר מתוך רצף ספרות (ללא מערכים), נכפול את המספר הקיים ב-10 ונוסיף את הספרה החדשה בכל שלב.
 
 **דוגמה:**  
 כדי לבנות את המספר 374 מהספרות 3, 7, 4 (בסדר הזה):  
+
 - מתחילים מ־0  
 - מוסיפים 3 $$→ 0×10+3=3$$  
 - מוסיפים 7 $$→ 3 × 10 + 7 = 37$$  
@@ -228,6 +237,7 @@ Console.WriteLine("The number entered is: " + number);
 }
 {% endhighlight %}
 
+---
 
 ## הרחבה שימוש מומלץ ולא מומלץ ב-break
 
@@ -248,6 +258,8 @@ while (true)
         break; // יציאה ברורה מהלולאה
 }
 ```
+
+---
 
 ### מתי מומלץ להימנע מ-break?
 
@@ -273,10 +285,10 @@ else
     Console.WriteLine("Not a prime number");
 ```
 
-
 ---
 
-### עצות נוספות ממומחה:
+### עצות נוספות ממומחה
+
 (חלק מההסבר מבוסס על ידע נוסף שעדיין לא למדנו)
 
 > בגדול זה משתנה קצת מחברה לחברה, בסוף לרוב החברות יש הסבר פנימי למה מותר ומה אסור.
@@ -294,9 +306,6 @@ else
 לסיכום, השתמשו ב-`break` כאשר הוא תורם לקריאות הקוד וליעילות, אך הקפידו להימנע משימוש בו כשהוא עלול להקשות על הבנת הקוד.
 
 </details>
-
-
-
 
 {: .box-warning}
 **אזהרה:** ודאו תמיד שלולאת `while` מכילה תנאי שיגרום להפסקת הלולאה, כדי למנוע לולאה אינסופית.

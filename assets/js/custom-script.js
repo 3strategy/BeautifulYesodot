@@ -43,12 +43,84 @@ function toggleSize() {
   }
 }
 
+function getPresentationContainer() {
+  return document.querySelector(".post-content")
+    || document.querySelector(".page-content")
+    || document.querySelector("article");
+}
+
+function wrapPresentationSlides(container) {
+  if (!container || container.dataset.presentationWrapped === "true") return;
+
+  const nodes = Array.from(container.childNodes);
+  if (!nodes.length) return;
+
+  const fragment = document.createDocumentFragment();
+  let slide = document.createElement("section");
+  slide.className = "presentation-slide";
+  let hasContent = false;
+
+  nodes.forEach((node) => {
+    const isHr = node.nodeType === 1 && node.tagName === "HR";
+
+    slide.appendChild(node);
+
+    if (isHr) {
+      if (hasContent) {
+        fragment.appendChild(slide);
+        slide = document.createElement("section");
+        slide.className = "presentation-slide";
+        hasContent = false;
+      }
+      return;
+    }
+
+    if (node.nodeType === 1 || (node.nodeType === 3 && node.textContent.trim() !== "")) {
+      hasContent = true;
+    }
+  });
+
+  if (slide.childNodes.length) {
+    fragment.appendChild(slide);
+  }
+
+  container.appendChild(fragment);
+  container.dataset.presentationWrapped = "true";
+}
+
+function unwrapPresentationSlides(container) {
+  if (!container || container.dataset.presentationWrapped !== "true") return;
+
+  const slides = Array.from(container.children).filter((child) =>
+    child.classList && child.classList.contains("presentation-slide")
+  );
+  if (!slides.length) {
+    delete container.dataset.presentationWrapped;
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+  slides.forEach((slide) => {
+    while (slide.firstChild) {
+      fragment.appendChild(slide.firstChild);
+    }
+  });
+
+  slides.forEach((slide) => slide.remove());
+  container.appendChild(fragment);
+  delete container.dataset.presentationWrapped;
+}
+
 function togglePresentationMode() {
   const body = document.body;
   const isPresentation = body.classList.toggle("presentation-mode");
+  const container = getPresentationContainer();
 
   if (isPresentation) {
+    wrapPresentationSlides(container);
     window.scrollTo(0, 0);
+  } else {
+    unwrapPresentationSlides(container);
   }
 }
 

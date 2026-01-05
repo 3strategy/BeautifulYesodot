@@ -195,13 +195,27 @@ body.presentation-mode .post-content,
 body.presentation-mode .page-content {
     font-size: 3vw !important;
     line-height: 1.5;
+}
+
+body.presentation-mode,
+body.presentation-mode main {
+    scroll-snap-type: y mandatory;
+}
+
+body.presentation-mode .presentation-slide {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     padding: 5% 10%;
+    box-sizing: border-box;
 }
 
 body.presentation-mode hr {
-    margin-top: 100vh !important;
     border: none !important;
-    visibility: hidden;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: none !important;
 }
 
 body.presentation-mode img {
