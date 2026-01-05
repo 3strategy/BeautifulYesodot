@@ -1038,7 +1038,7 @@ while (true) {
                    <div className="unlock-title">Level Up!</div>
                    <div className="unlock-desc">כל הכבוד! נצחת את השלב הראשון.</div>
                    <div className="unlock-desc">פקודה חדשה נפתחה:</div>
-                   <div className="unlock-item">if (...)</div>
+                   <div className="unlock-item">(...) if</div>
                    <div className="unlock-desc">עכשיו תוכלו להשתמש בתנאים כדי ליצור הגנה חכמה יותר!</div>
                    <button 
                        className="neon-btn unlock-btn" 
