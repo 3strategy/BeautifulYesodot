@@ -437,6 +437,7 @@ function compileDefender(code) {
     .replace(/Fire\(/g, 'await fire(')
     .replace(/Sleep\(/g, 'await sleep(')
     .replace(/IsPlaneAbove\(\)/g, 'api.isPlaneAbove()') 
+    .replace(/TroopersExist\(\)/g, 'api.paratroopersExist()')
     .replace(/Reload\(\)/g, 'await reload()')
     // Inject loop check to prevent infinite loop hang
     // Supports: 'while(true)' -> 'while(await api.loopCheck() && true)'
@@ -1010,6 +1011,7 @@ while (true) {
                  <>
                     <div className="doc-item"><span className="code-snippet text-neon-green">(...) if</span></div>
                     <div className="doc-item"><span className="code-snippet text-neon-green">IsPlaneAbove()</span></div>
+                    <div className="doc-item"><span className="code-snippet text-neon-green">TroopersExist()</span></div>
                  </>
              )}
 
@@ -1049,9 +1051,10 @@ while (true) {
                <div className="unlock-box">
                    <div className="unlock-title">Level Up!</div>
                    <div className="unlock-desc">כל הכבוד! נצחת את השלב הראשון.</div>
-                   <div className="unlock-desc">פקודה חדשה נפתחה:</div>
+                   <div className="unlock-desc">פקודות חדשות נפתחו:</div>
                    <div className="unlock-item">(...) if</div>
-                   <div className="unlock-desc">עכשיו תוכלו להשתמש בתנאים כדי ליצור הגנה חכמה יותר!</div>
+                   <div className="unlock-item">Sensors</div>
+                   <div className="unlock-desc">עכשיו תוכלו להשתמש בתנאים ובחיישנים להגנה חכמה!</div>
                    <button 
                        className="neon-btn unlock-btn" 
                        onClick={() => {
