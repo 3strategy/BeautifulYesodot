@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>אתגר קוד האובייקטים - קרדיט: דפנה ל.ר</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        h1 { 
+            margin: 10px 0; 
+            color: #e94560; 
+            font-size: 2.5em; 
+            text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+        }
+        
+        .level-info {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        p { 
+            margin-bottom: 15px; 
+            font-size: 1.2em; 
+            color: #abb2bf; 
+            max-width: 900px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 30px;
+            width: 95%;
+            max-width: 1400px;
+            justify-content: center;
+            align-items: flex-start;
+            direction: ltr;
+        }
+
+        .left-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .class-box {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border: 3px solid #e94560;
+            padding: 20px;
+            border-radius: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1em;
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
+            text-align: left;
+            white-space: pre-wrap;
+            color: #abb2bf;
+        }
+
+        .code-box {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border: 3px solid #f39c12;
+            padding: 20px;
+            border-radius: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1em;
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
+            text-align: left;
+            white-space: pre-wrap;
+            color: #abb2bf;
+        }
+
+        .objects-container {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border: 3px solid #3498db;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        .objects-title {
+            color: #3498db;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .objects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .object-card {
+            background: linear-gradient(145deg, #252a3d, #1e2332);
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .object-ref {
+            color: #e94560;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .object-field {
+            color: #3498db;
+            margin: 4px 0;
+        }
+
+        .array-container {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border: 3px solid #9b59b6;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(155, 89, 182, 0.3);
+        }
+
+        .array-title {
+            color: #9b59b6;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .array-visual {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .array-cell {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(145deg, #252a3d, #1e2332);
+            border: 2px solid #9b59b6;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+
+        .array-index {
+            position: absolute;
+            top: 2px;
+            left: 5px;
+            font-size: 0.7em;
+            color: #7f8c8d;
+        }
+
+        .array-ref {
+            color: #e94560;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .answer-section {
+            margin-top: 20px;
+        }
+
+        .question {
+            color: #f39c12;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .answer-input {
+            background: linear-gradient(145deg, #252a3d, #1e2332);
+            border: 3px solid #2ecc71;
+            border-radius: 10px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.3em;
+            color: white;
+            text-align: center;
+            width: 200px;
+            margin: 10px auto;
+            display: block;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #27ae60;
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
+        }
+
+        .keyword { color: #c678dd; }
+        .type { color: #61afef; }
+        .variable { color: #e06c75; }
+        .method { color: #56b6c2; }
+        .number { color: #d19a66; }
+        .operator { color: #abb2bf; }
+        .comment { color: #5c6370; }
+
+        .btn {
+            background: linear-gradient(145deg, #2ecc71, #27ae60);
+            color: white;
+            border: none;
+            padding: 12px 40px;
+            font-size: 1.3em;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            transition: all 0.2s;
+        }
+        
+        .btn:hover { 
+            background: linear-gradient(145deg, #3ae374, #2ecc71);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+        }
+
+        #message {
+            height: 35px;
+            margin-top: 15px;
+            font-size: 1.4em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .stat-item {
+            padding: 8px 20px;
+            background: rgba(233, 69, 96, 0.1);
+            border: 2px solid #e94560;
+            border-radius: 8px;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px #2ecc71; }
+            50% { box-shadow: 0 0 40px #2ecc71; }
+        }
+
+        .victory {
+            animation: glow 1s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💻 אתגר קוד האובייקטים - DLR</h1>
+    <div class="level-info">שלב <span id="levelNum">1</span> מתוך <span id="totalLevels">10</span></div>
+    <p>קרא את הקוד וחשב מה יהיה הפלט!</p>
+
+    <div class="stats">
+        <div class="stat-item">⭐ ניקוד: <span id="score">0</span></div>
+        <div class="stat-item">❌ טעויות: <span id="mistakes">0</span></div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="left-panel">
+            <div class="class-box" id="classDisplay"></div>
+            <div class="code-box" id="codeDisplay"></div>
+        </div>
+
+        <div class="right-panel">
+            <div class="objects-container">
+                <div class="objects-title">אובייקטים בזיכרון:</div>
+                <div class="objects-grid" id="objectsGrid"></div>
+            </div>
+
+            <div class="array-container">
+                <div class="array-title" id="arrayTitle">arr[]</div>
+                <div class="array-visual" id="arrayVisual"></div>
+            </div>
+
+            <div class="answer-section">
+                <div class="question" id="question">מה הפלט?</div>
+                <input type="text" class="answer-input" id="answerInput" placeholder="הקלד תשובה">
+                <button class="btn" onclick="checkAnswer()">בדוק תשובה</button>
+                <div id="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const levels = [
+            {
+                className: 'Time',
+                classCode: `class Time {
+  private int hours;
+  private int minutes;
+  
+  public Time(int h, int m) {
+    hours = h;
+    minutes = m;
+  }
+  
+  public int getHours() {
+    return hours;
+  }
+  
+  public int getMinutes() {
+    return minutes;
+  }
+}`,
+                objects: [
+                    {ref: 't1', h: 8, m: 30},
+                    {ref: 't2', h: 12, m: 15},
+                    {ref: 't3', h: 9, m: 45}
+                ],
+                arrayRefs: ['t1', 't2', 't3'],
+                code: `Time[] arr = new Time[3];
+arr[0] = t1;
+arr[1] = t2;
+arr[2] = t3;
+int sum = 0;
+for (int i = 0; i < arr.length; i++) {
+  sum += arr[i].getHours();
+}
+System.out.println(sum);`,
+                question: 'מה יודפס?',
+                answer: '29',
+                explanation: '8 + 12 + 9 = 29'
+            },
+            {
+                className: 'Time',
+                classCode: `class Time {
+  private int hours;
+  private int minutes;
+  
+  public Time(int h, int m) {
+    hours = h;
+    minutes = m;
+  }
+  
+  public int getHours() {
+    return hours;
+  }
+  
+  public int getMinutes() {
+    return minutes;
+  }
+}`,
+                objects: [
+                    {ref: 't1', h: 10, m: 20},
+                    {ref: 't2', h: 14, m: 45},
+                    {ref: 't3', h: 9, m: 30},
+                    {ref: 't4', h: 11, m: 15}
+                ],
+                arrayRefs: ['t1', 't2', 't3', 't4'],
+                code: `Time[] arr = new Time[4];
+arr[0] = t1;
+arr[1] = t2;
+arr[2] = t3;
+arr[3] = t4;
+int count = 0;
+for (int i = 0; i < arr.length; i++) {
+  if (arr[i].getHours() >= 10) {
+    count++;
+  }
+}
+System.out.println(count);`,
+                question: 'מה יודפס?',
+                answer: '3',
+                explanation: 't1(10), t2(14), t4(11) >= 10'
+            },
+            {
+                className: 'Time',
+                classCode: `class Time {
+  private int hours;
+  private int minutes;
+  
+  public Time(int h, int m) {
+    hours = h;
+    minutes = m;
+  }
+  
+  public int getHours() {
+    return hours;
+  }
+  
+  public int getMinutes() {
+    return minutes;
+  }
+}`,
+                objects: [
+                    {ref: 't1', h: 8, m: 15},
+                    {ref: 't2', h: 9, m: 45},
+                    {ref: 't3', h: 10, m: 30}
+                ],
+                arrayRefs: ['t1', 't2', 't3'],
+                code: `Time[] arr = new Time[3];
+arr[0] = t1;
+arr[1] = t2;
+arr[2] = t3;
+int max = arr[0].getHours();
+for (int i = 1; i < arr.length; i++) {
+  if (arr[i].getHours() > max) {
+    max = arr[i].getHours();
+  }
+}
+System.out.println(max);`,
+                question: 'מה יודפס?',
+                answer: '10',
+                explanation: 'השעה המקסימלית היא 10'
+            },
+            {
+                className: 'Time',
+                classCode: `class Time {
+  private int hours;
+  private int minutes;
+  
+  public Time(int h, int m) {
+    hours = h;
+    minutes = m;
+  }
+  
+  public int getHours() {
+    return hours;
+  }
+  
+  public int getMinutes() {
+    return minutes;
+  }
+}`,
+                objects: [
+                    {ref: 't1', h: 9, m: 30},
+                    {ref: 't2', h: 10, m: 15},
+                    {ref: 't3', h: 9, m: 45},
+                    {ref: 't4', h: 11, m: 20}
+                ],
+                arrayRefs: ['t1', 't2', 't3', 't4'],
+                code: `Time[] arr = new Time[4];
+arr[0] = t1;
+arr[1] = t2;
+arr[2] = t3;
+arr[3] = t4;
+int sum = 0;
+for (int i = 0; i < arr.length; i++) {
+  sum += arr[i].getMinutes();
+}
+System.out.println(sum);`,
+                question: 'מה יודפס?',
+                answer: '110',
+                explanation: '30 + 15 + 45 + 20 = 110'
+            },
+            {
+                className: 'Time',
+                classCode: `class Time {
+  private int hours;
+  private int minutes;
+  
+  public Time(int h, int m) {
+    hours = h;
+    minutes = m;
+  }
+  
+  public int getHours() {
+    return hours;
+  }
+  
+  public int getMinutes() {
+    return minutes;
+  }
+}`,
+                objects: [
+                    {ref: 't1', h: 8, m: 0},
+                    {ref: 't2', h: 9, m: 30},
+                    {ref: 't3', h: 10, m: 0},
+                    {ref: 't4', h: 11, m: 15}
+                ],
+                arrayRefs: ['t1', 't2', 't3', 't4'],
+                code: `Time[] arr = new Time[4];
+arr[0] = t1;
+arr[1] = t2;
+arr[2] = t3;
+arr[3] = t4;
+int count = 0;
+for (int i = 0; i < arr.length; i++) {
+  if (arr[i].getMinutes() == 0) {
+    count++;
+  }
+}
+System.out.println(count);`,
+                question: 'מה יודפס?',
+                answer: '2',
+                explanation: 't1 ו-t3 יש להם 0 דקות'
+            },
+            {
+                className: 'Time',
+                classCode: `class Time {
+  private int hours;
+  private int minutes;
+  
+  public Time(int h, int m) {
+    hours = h;
+    minutes = m;
+  }
+  
+  public int getHours() {
+    return hours;
+  }
+  
+  public int getMinutes() {
+    return minutes;
+  }
+}`,
+                objects: [
+                    {ref: 't1', h: 9, m: 20},
+                    {ref: 't2', h: 10, m: 35},
+                    {ref: 't3', h: 11, m: 50}
+                ],
+                arrayRefs: ['t1', 't2', 't3'],
+                code: `Time[] arr = new Time[3];
+arr[0] = t1;
+arr[1] = t2;
+arr[2] = t3;
+int result = 0;
+for (int i = 0; i < arr.length; i++) {
+  if (arr[i].getMinutes() > 30) {
+    result += arr[i].getHours();
+  }
+}
+System.out.println(result);`,
+                question: 'מה יודפס?',
+                answer: '21',
+                explanation: 't2(10) + t3(11) = 21, כי הדקות שלהם > 30'
+            },
+            {
+                className: 'Time',
+                classCode: `class Time {
+  private int hours;
+  private int minutes;
+  
+  public Time(int h, int m) {
+    hours = h;
+    minutes = m;
+  }
+  
+  public int getHours() {
+    return hours;
+  }
+  
+  public int getMinutes() {
+    return minutes;
+  }
+}`,
+                objects: [
+                    {ref: 't1', h: 8, m: 30},
+                    {ref: 't2', h: 12, m: 45},
+                    {ref: 't3', h: 9, m: 15}
+                ],
+                arrayRefs: ['t2', 't1', 't3'],
+                code: `Time[] arr = new Time[3];
+arr[0] = t2;
+arr[1] = t1;
+arr[2] = t3;
+System.out.println(arr[1].getHours());`,
+                question: 'מה יודפס?',
+                answer: '8',
+                explanation: 'arr[1] מצביע על t1 שיש לו 8 שעות'
+            },
+            {
+                className: 'Time',
+                classCode: `class Time {
+  private int hours;
+  private int minutes;
+  
+  public Time(int h, int m) {
+    hours = h;
+    minutes = m;
+  }
+  
+  public int getHours() {
+    return hours;
+  }
+  
+  public int getMinutes() {
+    return minutes;
+  }
+}`,
+                objects: [
+                    {ref: 't1', h: 10, m: 20},
+                    {ref: 't2', h: 14, m: 30},
+                    {ref: 't3', h: 9, m: 50},
+                    {ref: 't4', h: 11, m: 10}
+                ],
+                arrayRefs: ['t1', 't2', 't3', 't4'],
+                code: `Time[] arr = new Time[4];
+arr[0] = t1;
+arr[1] = t2;
+arr[2] = t3;
+arr[3] = t4;
+int min = arr[0].getHours();
+for (int i = 1; i < arr.length; i++) {
+  if (arr[i].getHours() < min) {
+    min = arr[i].getHours();
+  }
+}
+System.out.println(min);`,
+                question: 'מה יודפס?',
+                answer: '9',
+                explanation: 'המינימום הוא t3 עם 9 שעות'
+            },
+            {
+                className: 'Time',
+                classCode: `class Time {
+  private int hours;
+  private int minutes;
+  
+  public Time(int h, int m) {
+    hours = h;
+    minutes = m;
+  }
+  
+  public int getHours() {
+    return hours;
+  }
+  
+  public int getMinutes() {
+    return minutes;
+  }
+}`,
+                objects: [
+                    {ref: 't1', h: 8, m: 15},
+                    {ref: 't2', h: 9, m: 30},
+                    {ref: 't3', h: 8, m: 45}
+                ],
+                arrayRefs: ['t1', 't2', 't3'],
+                code: `Time[] arr = new Time[3];
+arr[0] = t1;
+arr[1] = t2;
+arr[2] = t3;
+int count = 0;
+for (int i = 0; i < arr.length; i++) {
+  if (arr[i].getHours() == 8) {
+    count++;
+  }
+}
+System.out.println(count);`,
+                question: 'מה יודפס?',
+                answer: '2',
+                explanation: 't1 ו-t3 שניהם בשעה 8'
+            },
+            {
+                className: 'Time',
+                classCode: `class Time {
+  private int hours;
+  private int minutes;
+  
+  public Time(int h, int m) {
+    hours = h;
+    minutes = m;
+  }
+  
+  public int getHours() {
+    return hours;
+  }
+  
+  public int getMinutes() {
+    return minutes;
+  }
+}`,
+                objects: [
+                    {ref: 't1', h: 9, m: 25},
+                    {ref: 't2', h: 10, m: 40},
+                    {ref: 't3', h: 11, m: 35},
+                    {ref: 't4', h: 12, m: 50}
+                ],
+                arrayRefs: ['t1', 't2', 't3', 't4'],
+                code: `Time[] arr = new Time[4];
+arr[0] = t1;
+arr[1] = t2;
+arr[2] = t3;
+arr[3] = t4;
+int sum = 0;
+for (int i = 0; i < arr.length/2; i++) {
+  sum += arr[i].getMinutes();
+}
+System.out.println(sum);`,
+                question: 'מה יודפס?',
+                answer: '65',
+                explanation: 'רק החצי הראשון: 25 + 40 = 65'
+            }
+        ];
+
+        let currentLevel = 0;
+        let score = 0;
+        let mistakes = 0;
+
+        function initLevel() {
+            const level = levels[currentLevel];
+            
+            document.getElementById('levelNum').innerText = currentLevel + 1;
+            document.getElementById('totalLevels').innerText = levels.length;
+            document.getElementById('message').innerText = '';
+            document.getElementById('answerInput').value = '';
+            
+            // הצגת המחלקה
+            document.getElementById('classDisplay').textContent = level.classCode;
+            
+            // הצגת האובייקטים
+            const grid = document.getElementById('objectsGrid');
+            grid.innerHTML = '';
+            level.objects.forEach(obj => {
+                const card = document.createElement('div');
+                card.className = 'object-card';
+                card.innerHTML = `
+                    <div class="object-ref">${obj.ref}:</div>
+                    <div class="object-field">h: ${obj.h}</div>
+                    <div class="object-field">m: ${obj.m}</div>
+                `;
+                grid.appendChild(card);
+            });
+            
+            // הצגת המערך
+            document.getElementById('arrayTitle').textContent = `${level.className}[] arr`;
+            const visual = document.getElementById('arrayVisual');
+            visual.innerHTML = '';
+            level.arrayRefs.forEach((ref, i) => {
+                const cell = document.createElement('div');
+                cell.className = 'array-cell';
+                cell.innerHTML = `
+                    <div class="array-index">[${i}]</div>
+                    <div class="array-ref">${ref}</div>
+                `;
+                visual.appendChild(cell);
+            });
+            
+            // הצגת הקוד
+            document.getElementById('codeDisplay').textContent = level.code;
+            
+            // הצגת השאלה
+            document.getElementById('question').innerText = level.question;
+        }
+
+        function displayClass(level) {
+            let code = level.classCode;
+            code = code.replace(/(class|private|public|int|return|new)\b/g, '<span class="keyword">$1</span>');
+            code = code.replace(/\b(Time)\b/g, '<span class="type">$1</span>');
+            code = code.replace(/\b(hours|minutes|h|m)\b/g, '<span class="variable">$1</span>');
+            document.getElementById('classDisplay').innerHTML = code;
+        }
+
+        function displayObjects(level) {
+            const grid = document.getElementById('objectsGrid');
+            grid.innerHTML = '';
+            
+            level.objects.forEach(obj => {
+                const card = document.createElement('div');
+                card.className = 'object-card';
+                card.innerHTML = `
+                    <div class="object-ref">${obj.ref}:</div>
+                    <div class="object-field">h: ${obj.h}</div>
+                    <div class="object-field">m: ${obj.m}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function displayArray(level) {
+            document.getElementById('arrayTitle').innerText = `${level.className}[] arr`;
+            const visual = document.getElementById('arrayVisual');
+            visual.innerHTML = '';
+            
+            level.arrayRefs.forEach((ref, i) => {
+                const cell = document.createElement('div');
+                cell.className = 'array-cell';
+                cell.innerHTML = `
+                    <div class="array-index">[${i}]</div>
+                    <div class="array-ref">${ref}</div>
+                `;
+                visual.appendChild(cell);
+            });
+        }
+
+        function displayCode(level) {
+            let html = level.code;
+            // קודם escape של < ו->
+            html = html.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            // אחר כך הוספת צביעה
+            html = html.replace(/\b(for|int|if|new)\b/g, '<span class="keyword">$1</span>');
+            html = html.replace(/\b(Time)\b/g, '<span class="type">$1</span>');
+            html = html.replace(/\b(arr|sum|count|max|min|result|i)\b/g, '<span class="variable">$1</span>');
+            html = html.replace(/\b(getHours|getMinutes|println)\b/g, '<span class="method">$1</span>');
+            html = html.replace(/System\.out\b/g, '<span class="type">System.out</span>');
+            html = html.replace(/\b(\d+)\b/g, '<span class="number">$1</span>');
+            html = html.replace(/(\+\+|\+=|-=|&lt;=|&gt;=|==|!=|&lt;|&gt;|\+|-|\*|\/)/g, '<span class="operator">$1</span>');
+            
+            document.getElementById('codeDisplay').innerHTML = html;
+        }
+
+        function checkAnswer() {
+            const level = levels[currentLevel];
+            const userAnswer = document.getElementById('answerInput').value.trim();
+            const message = document.getElementById('message');
+            
+            if (userAnswer === '') {
+                message.style.color = '#f39c12';
+                message.innerText = 'הקלד תשובה!';
+                return;
+            }
+            
+            if (userAnswer === level.answer) {
+                message.style.color = '#2ecc71';
+                message.innerText = '🎉 נכון! ' + level.explanation;
+                score += 100;
+                document.getElementById('score').innerText = score;
+                
+                setTimeout(() => {
+                    currentLevel++;
+                    if (currentLevel < levels.length) {
+                        initLevel();
+                    } else {
+                        showVictory();
+                    }
+                }, 2500);
+            } else {
+                message.style.color = '#e74c3c';
+                message.innerText = `❌ לא נכון. התשובה הנכונה: ${level.answer} (${level.explanation})`;
+                mistakes++;
+                document.getElementById('score').innerText = score;
+                document.getElementById('mistakes').innerText = mistakes;
+            }
+        }
+
+        function showVictory() {
+            document.querySelector('.content-wrapper').innerHTML = `
+                <div style="text-align: center; padding: 50px;">
+                    <h2 style="color: #2ecc71; font-size: 3em;">🏆 ניצחת! 🏆</h2>
+                    <p style="font-size: 2em;">ניקוד סופי: ${score}</p>
+                    <p style="font-size: 1.5em;">טעויות: ${mistakes}</p>
+                </div>
+            `;
+        }
+
+        document.getElementById('answerInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+
+        initLevel();
+    </script>
+</body>
+</html>

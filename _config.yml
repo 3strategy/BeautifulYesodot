@@ -127,7 +127,7 @@ navbar-links:
   חלק ג:
     - פרק 10 מערך דו ממדי: 
         - הפרק: "/cs3e/Chapter10"
-        - 10b טור ושורה: "/cs3e/Chapter10BidiInteractive"
+        - 10b טור ושורה: "/cs3e/Ex/Chapter10BidiInteractive"
         - 10.1 תרגיל אלכסונים: "/cs3e/Ex/Ex10.1"
 
         #- 10.2 תרגול מתקדם ובגרויות: "/cs3e/Ex/Ex10.2"

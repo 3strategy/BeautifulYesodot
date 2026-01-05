@@ -1,17 +1,24 @@
 ---
 layout: page
 title: "פרק 10 - תרגול מערך דו-ממדי"
-subtitle: "הצייר הלוגי - אתגר אינטראקטיבי"
+subtitle: "תרגול ראשוני אינטראקטיבי. קרדיט דפנה ל.ר."
 author: גיא סידס
 lang: he
-tags: 2d-array, interactive, game
+tags: 2d-array, interactive,אינטרקטיבי, game
 ---
 
 <style>
     .interactive-container {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #282c34;
-        color: white;
+        --accent-col: var(--link-col);
+        --muted-col: var(--code-comments-col);
+        --panel-col: var(--backn-col);
+        --panel-border-col: var(--navbar-border-col);
+        --danger-col: var(--backe-col);
+        --success-col: var(--backs-col);
+
+        background-color: var(--page-col);
+        color: var(--text-col);
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -24,24 +31,24 @@ tags: 2d-array, interactive, game
         direction: rtl; /* Ensure base direction is RTL for Hebrew text */
     }
 
-    .interactive-container h1 { margin: 5px 0; color: #61dafb; font-size: 2em; }
-    .interactive-container p { margin-bottom: 10px; font-size: 1.1em; color: #abb2bf; }
+    .interactive-container h1 { margin: 5px 0; color: var(--accent-col); font-size: 2em; }
+    .interactive-container p { margin-bottom: 10px; font-size: 1.1em; color: var(--muted-col); }
 
     .interactive-container .code-box {
-        background-color: #1e1e1e;
-        border: 2px solid #61dafb;
+        background-color: var(--code-back-col);
+        border: 2px solid var(--accent-col);
         padding: 10px 25px;
         border-radius: 8px;
         font-family: 'Courier New', Courier, monospace;
         font-size: 1.4em;
         margin-bottom: 15px;
         direction: ltr; /* Code is always LTR */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.35);
     }
 
-    .interactive-container .variable { color: #d19a66; }
-    .interactive-container .operator { color: #56b6c2; }
-    .interactive-container .number { color: #98c379; }
+    .interactive-container .variable { color: var(--code-met-col); }
+    .interactive-container .operator { color: var(--code-types-col); }
+    .interactive-container .number { color: var(--code-numbers-col); }
 
     /* --- אזור המשחק --- */
     .interactive-container .game-area {
@@ -55,11 +62,11 @@ tags: 2d-array, interactive, game
 
     /* עיצוב כותרות הצירים */
     .interactive-container .axis-label {
-        color: #e5c07b; /* צהוב-זהב */
+        color: var(--code-met-col); /* צהוב-זהב */
         font-size: 1.6em; /* הגדלה משמעותית של הפונט */
         font-weight: bold;
         font-family: monospace;
-        text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+        text-shadow: 0px 1px 2px rgba(0,0,0,0.35);
     }
 
     .interactive-container .axis-label-col {
@@ -85,7 +92,7 @@ tags: 2d-array, interactive, game
     /* --- המספרים (0, 1, 2...) --- */
     .interactive-container .header-numbers {
         font-size: 1.1em;
-        color: #ffffff;
+        color: var(--text-col);
         font-weight: bold;
         font-family: 'Segoe UI', sans-serif;
         opacity: 0.9;
@@ -123,16 +130,16 @@ tags: 2d-array, interactive, game
         gap: 5px;
         
         padding: 8px;
-        border: 2px dashed #5c6370; 
+        border: 2px dashed var(--panel-border-col); 
         border-radius: 10px;
-        background-color: rgba(0,0,0,0.2);
+        background-color: var(--panel-col);
     }
 
     .interactive-container .cell {
         width: 55px;
         height: 55px;
-        background-color: #3b4048;
-        border: 2px solid #555;
+        background-color: var(--backw-col);
+        border: 2px solid var(--panel-border-col);
         border-radius: 6px;
         cursor: pointer;
         transition: all 0.2s;
@@ -142,22 +149,23 @@ tags: 2d-array, interactive, game
         position: relative;
     }
 
-    .interactive-container .cell:hover { background-color: #4b5263; transform: scale(1.05); }
+    .interactive-container .cell:hover { background-color: var(--backn-col); transform: scale(1.05); }
     
     .interactive-container .cell.selected {
-        background-color: #61dafb;
-        border-color: #fff;
-        box-shadow: 0 0 10px #61dafb;
+        background-color: var(--accent-col);
+        border-color: var(--text-col);
+        box-shadow: 0 0 10px var(--accent-col);
     }
 
     .interactive-container .cell.wrong {
-        background-color: #e06c75 !important;
+        background-color: var(--danger-col) !important;
         animation: shake 0.5s;
     }
 
     .interactive-container .coords-hint {
         font-size: 10px;
-        color: rgba(255,255,255,0.2);
+        color: var(--text-col);
+        opacity: 0.35;
         position: absolute;
         bottom: 2px;
         right: 4px;
@@ -165,8 +173,8 @@ tags: 2d-array, interactive, game
     }
 
     .interactive-container .btn {
-        background-color: #98c379;
-        color: #282c34;
+        background-color: var(--success-col);
+        color: var(--text-col);
         border: none;
         padding: 10px 30px;
         font-size: 1.2em;
@@ -174,10 +182,10 @@ tags: 2d-array, interactive, game
         cursor: pointer;
         font-weight: bold;
         margin-top: 15px;
-        box-shadow: 0 3px 0 #6d8f53;
+        box-shadow: 0 3px 0 var(--panel-border-col);
         transition: transform 0.1s;
     }
-    .interactive-container .btn:hover { background-color: #aadd86; }
+    .interactive-container .btn:hover { background-color: var(--backw-col); }
     .interactive-container .btn:active { transform: translateY(3px); box-shadow: none; }
 
     .interactive-container #logic-painter-message {
@@ -185,7 +193,7 @@ tags: 2d-array, interactive, game
         margin-top: 10px;
         font-size: 1.2em;
         font-weight: bold;
-        text-shadow: 1px 1px 2px black;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.35);
     }
 
     @keyframes shake {
@@ -199,7 +207,6 @@ tags: 2d-array, interactive, game
 
 <div class="interactive-container">
 
-    <h1>הצייר הלוגי</h1>
     <p>תפקידך לסמן את כל המשבצות שמקיימות את התנאי!</p>
 
     <div class="code-box" id="logic-painter-code">

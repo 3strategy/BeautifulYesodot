@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Code Trooper
-tags: [csharp, game, loop, control structure]
+tags: [csharp, game, צנחנים, paratrooper, loop, control structure, interactive, אינטרקטיבי, פונקציות בוליאניות]
 mathjax: true
 lang: he
 ---
