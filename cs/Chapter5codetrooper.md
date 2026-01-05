@@ -247,6 +247,26 @@ lang: he
   .doc-item {
      margin-bottom: 5px;
   }
+
+  /* Restart Overlay */
+  .restart-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 100px;
+      pointer-events: none;
+  }
+  
+  .restart-btn {
+      pointer-events: auto;
+      background: #000;
+      font-size: 1.2rem;
+  }
 </style>
 
 <div id="game-root"></div>
@@ -326,6 +346,7 @@ function compileDefender(code) {
     .replace(/Fire\(/g, 'await fire(')
     .replace(/Sleep\(/g, 'await sleep(')
     .replace(/IsPlaneAbove\(\)/g, 'api.isPlaneAbove()') 
+    .replace(/Reload\(\)/g, 'await reload()')
     // Inject loop check to prevent infinite loop hang
     // Supports: 'while(true)' -> 'while(await api.loopCheck() && true)'
     .replace(/while\s*\(/g, 'while(await api.loopCheck() && ');
@@ -333,7 +354,7 @@ function compileDefender(code) {
   // Wrap in async function
   const runnable = `
     return async function(api) {
-      const { rotate, fire, sleep, isPlaneAbove } = api;
+      const { rotate, fire, sleep, isPlaneAbove, reload } = api;
       try {
         __CODE_PLACEHOLDER__
       } catch (e) {
@@ -373,7 +394,7 @@ function CodeEditor({ label, value, onChange, placeholder, disabled, error }) {
   );
 }
 
-function GameCanvas({ gameState, onInit }) {
+function GameCanvas({ gameState, onInit, onRestart }) {
   const canvasRef = useRef(null);
   
   useEffect(() => {
@@ -477,12 +498,27 @@ function GameCanvas({ gameState, onInit }) {
   return (
     <div className="canvas-container">
       <canvas ref={canvasRef} width={CANVAS_WIDTH} height={CANVAS_HEIGHT} />
+      {gameState?.gameOver && (
+          <div className="restart-overlay">
+              <button 
+                  className="neon-btn restart-btn" 
+                  onClick={onRestart}
+              >
+                  שחק שוב
+              </button>
+          </div>
+      )}
     </div>
   );
 }
 
 function GameRoot() {
   const [phase, setPhase] = useState(PHASE_P1_PROGRAM);
+  
+  // Progression System
+  const [wins, setWins] = useState(() => parseInt(localStorage.getItem('codetrooper_wins') || '0'));
+  const level = wins >= 1 ? 2 : 1;
+  const isIfUnlocked = level >= 2;
   
   // Attacker State
   const [p1Code, setP1Code] = useState(
@@ -524,8 +560,28 @@ while (true) {
     troopers: [], // {x, y, active}
     projectiles: [],
     score: 0,
-    time: 0
+    time: 0,
+    ammo: 10,
+    maxAmmo: 10,
+    totalSpawned: 0,
+    finishedSpawning: false,
+    gameOver: false,
+    winner: null
   });
+
+  const simulationRef = useRef(null);
+
+  const stopSimulation = () => {
+      if (simulationRef.current) {
+          simulationRef.current.stop();
+          simulationRef.current = null;
+      }
+  };
+
+  // Cleanup on unmount
+  useEffect(() => {
+      return () => stopSimulation();
+  }, []);
 
   // Actions
   const handleP1Submit = () => {
@@ -539,7 +595,7 @@ while (true) {
   };
 
   const handleP2Submit = () => {
-     const res = compileDefender(p2Code);
+     const res = compileDefender(p2Code, isIfUnlocked);
     if (res.error) {
       setP2Error(res.error);
       return;
@@ -548,67 +604,132 @@ while (true) {
     startSimulation();
   };
   
+  const handleRestart = () => {
+      stopSimulation();
+      setPhase(PHASE_P1_PROGRAM);
+  };
+  
+  const handleWin = (who) => {
+      if (who === "המגן (תותח)") {
+          const newWins = wins + 1;
+          setWins(newWins);
+          localStorage.setItem('codetrooper_wins', newWins);
+      }
+  };
+  
   const startSimulation = async () => {
+    stopSimulation(); // Safety clear
+
+    // Hack to access state in API (Defined early to avoid TDZ in closures)
+    const gameStateRef = { current: null };
+
+    // Reset Game State completely
+    const initialState = {
+      cannonAngle: 0,
+      troopers: [],
+      projectiles: [],
+      score: 0,
+      time: 0,
+      ammo: 10,
+      maxAmmo: 10,
+      totalSpawned: 0,
+      finishedSpawning: false,
+      gameOver: false,
+      winner: null
+    };
+    
+    setGameState(initialState);
+    gameStateRef.current = initialState; // Init ref immediately
+
     setPhase(PHASE_SIMULATION);
     
-    // Initialize Simulation
-    const troopers = [];
-    const projectiles = [];
-    let angle = 0;
+    // Initialize Simulation variables
     
     // Attacker Logic Runner
     const p1Res = compileAttacker(p1Code);
-    const p2Res = compileDefender(p2Code);
+    const p2Res = compileDefender(p2Code, isIfUnlocked);
     
     if (!p1Res.fn || !p2Res.fn) return; // Should not happen
+    
+    // Control flag for THIS simulation run
+    let isSimulationRunning = true;
     
     // --- Simulation Loop Drivers ---
     
     // P1 Driver
     p1Res.fn({
       spawn: async (x, delay) => {
+         if (!isSimulationRunning) return;
          await new Promise(r => setTimeout(r, delay));
+         if (!isSimulationRunning) return;
          setGameState(prev => ({
             ...prev,
-            troopers: [...prev.troopers, { id: generateId(), x, y: 0, speed: 2 }]
+            troopers: [...prev.troopers, { id: generateId(), x, y: 0, speed: 2 }],
+            totalSpawned: (prev.totalSpawned || 0) + 1
          }));
       },
       sleep: (ms) => new Promise(r => setTimeout(r, ms))
+    }).then(() => {
+        if (isSimulationRunning) {
+            setGameState(prev => ({ ...prev, finishedSpawning: true }));
+        }
     });
     
     // P2 Driver
-    let running = true;
     p2Res.fn({
       rotate: async (deg) => {
+        if (!isSimulationRunning) return;
         // Smooth rotation simulation? or instant? Instant logic for code, smooth visual
         setGameState(prev => ({ ...prev, cannonAngle: prev.cannonAngle + deg }));
         await new Promise(r => setTimeout(r, 50)); // Sim delay
       },
       fire: async () => {
+         if (!isSimulationRunning) return;
          // Add projectile
-         setGameState(prev => ({
-           ...prev,
-           projectiles: [...prev.projectiles, { 
-             id: generateId(), 
-             x: CANVAS_WIDTH/2, 
-             y: CANVAS_HEIGHT-40, 
-             angle: prev.cannonAngle,
-             speed: 5
-           }]
-         }));
-         await new Promise(r => setTimeout(r, 100)); // Reload time
+         let fired = false;
+         
+         // Use Ref for Synchronous Check!
+         if (gameStateRef.current.ammo > 0) {
+             fired = true;
+             setGameState(prev => ({
+                 ...prev,
+                 ammo: prev.ammo - 1,
+                 projectiles: [...prev.projectiles, { 
+                     id: generateId(), 
+                     x: CANVAS_WIDTH/2, 
+                     y: CANVAS_HEIGHT-40, 
+                     angle: prev.cannonAngle,
+                     speed: 5
+                 }]
+             }));
+         }
+         
+         if (fired) await new Promise(r => setTimeout(r, 100)); // Reload time
+         else await new Promise(r => setTimeout(r, 50)); // Click empty
+      },
+      reload: async () => {
+          if (!isSimulationRunning) return;
+          await new Promise(r => setTimeout(r, 2000)); // Long reload
+          if (!isSimulationRunning) return;
+          setGameState(prev => ({ ...prev, ammo: prev.maxAmmo }));
       },
       sleep: (ms) => new Promise(r => setTimeout(r, ms)),
-      isPlaneAbove: () => false, // TODO
+      isPlaneAbove: () => {
+          return gameStateRef.current.troopers.some(t => Math.abs(t.x - CANVAS_WIDTH/2) < 200 && t.y < CANVAS_HEIGHT/2);
+      },
+      paratroopersExist: () => {
+          return gameStateRef.current.troopers.length > 0;
+      },
       loopCheck: async () => {
         await new Promise(r => setTimeout(r, 16)); // Yield to event loop
-        return running;
+        return isSimulationRunning;
       }
     });
 
     // Main Physics Loop
     const interval = setInterval(() => {
       setGameState(prev => {
+        gameStateRef.current = prev; // Update Ref
         if (prev.gameOver) return prev;
 
         // 1. Move Troopers
@@ -666,6 +787,11 @@ while (true) {
         if (landedCount >= 3) {
            gameOver = true;
            winner = "התוקף (צנחנים)";
+        } 
+        // Defender Wins: All spawned, 0 active, < 3 landed
+        else if (prev.finishedSpawning && survivingTroopers.length === 0) {
+           gameOver = true;
+           winner = "המגן (תותח)";
         }
         
         // If simulation time > 30s? Or all spawned and dead?
@@ -684,11 +810,28 @@ while (true) {
       });
     }, 1000/60);
     
-    return () => {
-      clearInterval(interval);
-      // Cleanup running async functions? Hard to cancel them without AbortController, but for hotseat it's okay.
+    // Store cleanup
+    simulationRef.current = {
+        stop: () => {
+            isSimulationRunning = false;
+            clearInterval(interval);
+        }
     };
   };
+
+  useEffect(() => {
+      if (gameState.gameOver && gameState.winner === "המגן (תותח)") {
+          handleWin("המגן (תותח)");
+      }
+      // Auto-stop scripts on game over?
+      if (gameState.gameOver && simulationRef.current) {
+         // simulationRef.current.stop(); 
+         // Don't stop immediately, let them see the result? 
+         // Actually, if we stop updates, explosions freeze.
+         // Let's keep interval running but scripts stopped? 
+         // For now, let it run until user clicks "Play Again"
+      }
+  }, [gameState.gameOver]);
 
   return (
     <div className="game-container">
@@ -699,7 +842,7 @@ while (true) {
           {phase === PHASE_SIMULATION && "סימולציה בזמן אמת"}
         </div>
         <div className="score">
-           ניקוד: {gameState.score}
+           ניקוד: {gameState.score} | תחמושת: {gameState.ammo}/{gameState.maxAmmo}
         </div>
       </header>
 
@@ -708,7 +851,7 @@ while (true) {
         {/* Main View Area */}
         <div className="main-view">
           {phase === PHASE_SIMULATION ? (
-             <GameCanvas gameState={gameState} onInit={() => {}} />
+             <GameCanvas gameState={gameState} onInit={() => {}} onRestart={handleRestart} />
           ) : (
              <div className="canvas-container empty-canvas-placeholder">
                 <div>
@@ -760,6 +903,7 @@ while (true) {
              <div className="doc-item"><span className="code-snippet">Rotate(deg)</span></div>
              <div className="doc-item"><span className="code-snippet">Fire()</span></div>
              <div className="doc-item"><span className="code-snippet">Sleep(ms)</span></div>
+             <div className="doc-item"><span className="code-snippet">Reload()</span></div>
            </div>
 
         </div>
