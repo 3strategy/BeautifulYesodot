@@ -20,6 +20,8 @@ lang: he
 
 המבנה הכללי:
 
+---
+
 {% highlight csharp linenos %}int counter = 0;
 while (counter < 3)
 {
@@ -30,7 +32,7 @@ while (counter < 3)
 
 דוגמת פלט:
 
-```
+```Text
 The number is: 0
 The number is: 1
 The number is: 2
@@ -39,14 +41,15 @@ The number is: 2
 זוהי כמובן בחירה שגויה של מימוש. מקרה בו יודעים את מספר החזרות, יש לממש באמצעות לולאת for
 {: .box-warning}
 
+---
+
 ## דוגמא 1: צבירת משקעים – Counting Rainfall
 
 קלטו כמויות משקעים יומיות (במ"מ). השאלה: אחרי כמה ימים עברה כמות הגשם המצטברת יעד של 100 מ"מ. 
 
+**פלט רצוי:**
 
-#### פלט רצוי:
-
-```
+```Text
 Enter rainfall for day 1: 30
 Enter rainfall for day 2: 20
 Enter rainfall for day 3: 25
@@ -54,6 +57,7 @@ Enter rainfall for day 4: 35
 
 Target reached after 4 days.
 ```
+
 <details><summary>פתרון</summary>
 
 {% highlight csharp linenos %}int totalRainfall = 0;

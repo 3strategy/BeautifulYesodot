@@ -171,6 +171,46 @@ strong {
 
 }
 
+/* PRESENTATION MODE OVERRIDES */
+body.presentation-mode nav,
+body.presentation-mode footer,
+body.presentation-mode .header-section,
+body.presentation-mode #disqus_thread,
+body.presentation-mode .pager {
+    display: none !important;
+}
+
+body.presentation-mode .container,
+body.presentation-mode .container-md,
+body.presentation-mode .row,
+body.presentation-mode main {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.presentation-mode article,
+body.presentation-mode .post-content,
+body.presentation-mode .page-content {
+    font-size: 3vw !important;
+    line-height: 1.5;
+    padding: 5% 10%;
+}
+
+body.presentation-mode hr {
+    margin-top: 100vh !important;
+    border: none !important;
+    visibility: hidden;
+}
+
+body.presentation-mode img {
+    max-height: 70vh;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 
 /* Mobile-friendly override for the 2 column */
 @media (max-width: 768px) {

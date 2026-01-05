@@ -158,6 +158,8 @@ navbar-links:
     # - מבחן זמני: "/cs/GuysFinalFireBase/"
     - החלפת רקע: "javascript:toggleTheme();"
     - החלפת גודל: "javascript:toggleSize();"
+    - Reader Mode: "/"
+    - Presentation Mode: "javascript:togglePresentationMode();"
 
 
 ################

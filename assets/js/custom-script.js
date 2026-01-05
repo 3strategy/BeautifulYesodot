@@ -43,6 +43,21 @@ function toggleSize() {
   }
 }
 
+function togglePresentationMode() {
+  const body = document.body;
+  const isPresentation = body.classList.toggle("presentation-mode");
+
+  if (isPresentation) {
+    window.scrollTo(0, 0);
+  }
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && document.body.classList.contains("presentation-mode")) {
+    togglePresentationMode();
+  }
+});
+
 // Convert fenced ```mermaid code blocks to <div class="mermaid"> before Mermaid runs
 document.addEventListener('DOMContentLoaded', function () {
   try {
