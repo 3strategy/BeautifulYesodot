@@ -248,7 +248,6 @@ lang: he
      margin-bottom: 5px;
   }
 
-  /* Restart Overlay */
   .restart-overlay {
       position: absolute;
       top: 0;
@@ -256,16 +255,104 @@ lang: he
       right: 0;
       bottom: 0;
       display: flex;
-      align-items: flex-end;
+      align-items: center; 
       justify-content: center;
-      padding-bottom: 100px;
+      background: rgba(0,0,0,0.6);
       pointer-events: none;
+      z-index: 50;
   }
   
   .restart-btn {
       pointer-events: auto;
       background: #000;
       font-size: 1.2rem;
+  }
+  
+  /* Unlock Modal */
+  .unlock-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.5s;
+  }
+  
+  .unlock-box {
+      background: #111;
+      border: 2px solid var(--neon-green);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 500px;
+      box-shadow: 0 0 50px var(--neon-green);
+      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .unlock-title {
+      color: var(--neon-green);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px var(--neon-green);
+  }
+  
+  .unlock-item {
+      font-size: 1.5rem;
+      color: #fff;
+      margin: 20px 0;
+      font-family: monospace;
+      background: #222;
+      padding: 10px;
+      border-radius: 8px;
+  }
+  
+  .unlock-desc {
+      color: #ccc;
+      margin-bottom: 30px;
+  }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes popIn { from { transform: scale(0.8); } to { transform: scale(1); } }
+  
+  .unlock-btn {
+      font-size: 1.2rem;
+      padding: 10px 40px;
+  }
+  
+  .debug-section {
+      margin-top: 20px;
+  }
+  
+  .debug-btn {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+      border-color: #555;
+      color: #888;
+  }
+  
+  .game-over-overlay-root {
+      position: absolute;
+      z-index: 50;
+  }
+  
+  .game-over-content {
+      text-align: center;
+  }
+  
+  .game-over-title {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #fff;
+      text-shadow: 0 0 10px #000;
+  }
+  
+  .level-indicator {
+      color: var(--neon-pink);
+      font-weight: bold;
+      font-size: 1.1rem;
   }
 </style>
 
@@ -498,16 +585,6 @@ function GameCanvas({ gameState, onInit, onRestart }) {
   return (
     <div className="canvas-container">
       <canvas ref={canvasRef} width={CANVAS_WIDTH} height={CANVAS_HEIGHT} />
-      {gameState?.gameOver && (
-          <div className="restart-overlay">
-              <button 
-                  className="neon-btn restart-btn" 
-                  onClick={onRestart}
-              >
-                  שחק שוב
-              </button>
-          </div>
-      )}
     </div>
   );
 }
@@ -515,10 +592,12 @@ function GameCanvas({ gameState, onInit, onRestart }) {
 function GameRoot() {
   const [phase, setPhase] = useState(PHASE_P1_PROGRAM);
   
-  // Progression System
   const [wins, setWins] = useState(() => parseInt(localStorage.getItem('codetrooper_wins') || '0'));
   const level = wins >= 1 ? 2 : 1;
   const isIfUnlocked = level >= 2;
+  
+  // Unlock Celebration State
+  const [showLevelUp, setShowLevelUp] = useState(false);
   
   // Attacker State
   const [p1Code, setP1Code] = useState(
@@ -614,7 +693,19 @@ while (true) {
           const newWins = wins + 1;
           setWins(newWins);
           localStorage.setItem('codetrooper_wins', newWins);
+          
+          // Check for Level Up (0 -> 1)
+          // Instant trigger
+          if (newWins === 1) { 
+              setShowLevelUp(true);
+          }
       }
+  };
+  
+  const resetProgress = () => {
+      localStorage.removeItem('codetrooper_wins');
+      setWins(0);
+      window.location.reload();
   };
   
   const startSimulation = async () => {
@@ -841,6 +932,12 @@ while (true) {
           {phase === PHASE_P2_PROGRAM && "שלב 2: המגן (תותח)"}
           {phase === PHASE_SIMULATION && "סימולציה בזמן אמת"}
         </div>
+        
+        {/* Progress Indicator */}
+        <div className="level-indicator">
+            שלב {level} {isIfUnlocked ? "(מומחה)" : "(מתחיל)"}
+        </div>
+
         <div className="score">
            ניקוד: {gameState.score} | תחמושת: {gameState.ammo}/{gameState.maxAmmo}
         </div>
@@ -904,10 +1001,57 @@ while (true) {
              <div className="doc-item"><span className="code-snippet">Fire()</span></div>
              <div className="doc-item"><span className="code-snippet">Sleep(ms)</span></div>
              <div className="doc-item"><span className="code-snippet">Reload()</span></div>
+             <hr className="doc-separator" />
+             <div className="debug-section">
+                 <button className="neon-btn debug-btn" onClick={resetProgress}>
+                    אפס התקדמות (Debug)
+                 </button>
+             </div>
            </div>
 
         </div>
-      </div>
+       </div>
+       
+       {/* Game Over Overlays handled here to avoid conflict */}
+       
+       {/* 1. Play Again (Standard) */}
+       {gameState.gameOver && !showLevelUp && (
+           <div className="restart-overlay game-over-overlay-root">
+               <div className="game-over-content">
+                 <div className="game-over-title">
+                    {gameState.winner === "המגן (תותח)" ? "ניצחון!" : "המשחק נגמר"}
+                 </div>
+                 <button 
+                     className="neon-btn restart-btn" 
+                     onClick={handleRestart}
+                 >
+                     שחק שוב
+                 </button>
+               </div>
+           </div>
+       )}
+
+       {/* 2. Level Up Modal (Special) */}
+       {showLevelUp && (
+           <div className="unlock-overlay">
+               <div className="unlock-box">
+                   <div className="unlock-title">Level Up!</div>
+                   <div className="unlock-desc">כל הכבוד! נצחת את השלב הראשון.</div>
+                   <div className="unlock-desc">פקודה חדשה נפתחה:</div>
+                   <div className="unlock-item">if (...)</div>
+                   <div className="unlock-desc">עכשיו תוכלו להשתמש בתנאים כדי ליצור הגנה חכמה יותר!</div>
+                   <button 
+                       className="neon-btn unlock-btn" 
+                       onClick={() => {
+                           setShowLevelUp(false);
+                           handleRestart();
+                       }}
+                   >
+                       מעולה! (המשך)
+                   </button>
+               </div>
+           </div>
+       )}
     </div>
   );
 }
