@@ -345,4 +345,4 @@ tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטי
 
 </div>
 
-<script src="/assets/js/logic-painter-diag.js"></script>
+<script src="/assets/js/logic-painter-diag-final.js"></script>
