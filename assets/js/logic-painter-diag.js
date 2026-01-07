@@ -46,6 +46,51 @@ for (int i = 0; i < arr.GetLength(0); i++)
     }
   }
 }`
+        },
+        {
+            title: 'Level 4: below main diagonal',
+            prompt: 'סימון כל התאים מתחת לאלכסון הראשי.',
+            target: (r, c) => r > c,
+            starterCode: `for (int i = 0; i < arr.GetLength(0); i++)
+{
+  for (int j = 0; j < arr.GetLength(1); j++)
+  {
+    if (i > j)
+    {
+      arr[i, j] = true;
+    }
+  }
+}`
+        },
+        {
+            title: 'Level 5: above secondary diagonal',
+            prompt: 'סימון כל התאים מעל לאלכסון המשני.',
+            target: (r, c) => r + c < GRID_COLS - 1,
+            starterCode: `for (int i = 0; i < arr.GetLength(0); i++)
+{
+  for (int j = 0; j < arr.GetLength(1); j++)
+  {
+    if (i + j < arr.GetLength(0) - 1)
+    {
+      arr[i, j] = true;
+    }
+  }
+}`
+        },
+        {
+            title: 'Level 6: checkerboard',
+            prompt: 'Checkerboard marking (one yes one no).',
+            target: (r, c) => (r + c) % 2 === 0,
+            starterCode: `for (int i = 0; i < arr.GetLength(0); i++)
+{
+  for (int j = 0; j < arr.GetLength(1); j++)
+  {
+    if ((i + j) % 2 == 0)
+    {
+      arr[i, j] = true;
+    }
+  }
+}`
         }
     ];
 
