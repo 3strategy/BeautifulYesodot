@@ -133,8 +133,12 @@ navbar-links:
         #- 10.2 תרגול מתקדם ובגרויות: "/cs3e/Ex/Ex10.2"
     - סיכום הפרקים הקודמים: "/cs3e/ChapterGimelOpening/"
     - פרק 11 עצמים:
-        - למה ומה 11.1: "cs3e/Objects_01_WhyWhatPrinciples/"
-
+        - למה 11.1: "/cs3e/Objects_01_WhyWhatPrinciples/"
+        - 11.1 תרגול אינטרקטיבי: "/cs3e/Ex/Ex11.1objects_array_interactive.html"
+        - כתיבת מחלקות 11.2: "/cs3e/Objects_02_BuildingClasses/"
+        - 11.3Don't Ask: "/cs3e/Objects_03_DontAskTell/"
+        - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
+        - קישורים 11.9: "/cs3e/Objects_09_Links/"
 
 
   חיצוני:
@@ -147,12 +151,7 @@ navbar-links:
     - בגרויות באתר משרד החינוך: "https://meyda.education.gov.il/bagmgr"
     - מה מותר ומה אסור: "https://docs.google.com/document/d/1_38kIc1UwK7Eiz673KyBjqGdkJeqa-I5kGCDOMckHqc/edit?usp=sharing"
 
-    - פרק 11 עצמים:
-        - למה 11.1: "/cs3e/Objects_01_WhyWhatPrinciples/"
-        - כתיבת מחלקות 11.2: "/cs3e/Objects_02_BuildingClasses/"
-        - 11.3Don't Ask: "/cs3e/Objects_03_DontAskTell/"
-        - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
-        - קישורים 11.9: "/cs3e/Objects_09_Links/"
+
 
   הגדרות:
     # - מבחן זמני: "/cs/GuysFinalFireBase/"

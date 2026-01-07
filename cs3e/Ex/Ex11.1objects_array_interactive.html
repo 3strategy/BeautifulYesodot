@@ -277,7 +277,7 @@
 </head>
 <body>
 
-    <h1>💻 אתגר קוד האובייקטים - DLR</h1>
+    <h1>💻 אתגר קוד האובייקטים - קרדיט: דפנה ל.ר.</h1>
     <div class="level-info">שלב <span id="levelNum">1</span> מתוך <span id="totalLevels">10</span></div>
     <p>קרא את הקוד וחשב מה יהיה הפלט!</p>
 
@@ -325,11 +325,11 @@
     minutes = m;
   }
   
-  public int getHours() {
+  public int GetHours() {
     return hours;
   }
   
-  public int getMinutes() {
+  public int GetMinutes() {
     return minutes;
   }
 }`,
@@ -344,10 +344,11 @@ arr[0] = t1;
 arr[1] = t2;
 arr[2] = t3;
 int sum = 0;
-for (int i = 0; i < arr.length; i++) {
-  sum += arr[i].getHours();
+for (int i = 0; i < arr.Length; i++)
+{
+  sum += arr[i].GetHours();
 }
-System.out.println(sum);`,
+Console.WriteLine(sum);`,
                 question: 'מה יודפס?',
                 answer: '29',
                 explanation: '8 + 12 + 9 = 29'
@@ -363,11 +364,11 @@ System.out.println(sum);`,
     minutes = m;
   }
   
-  public int getHours() {
+  public int GetHours() {
     return hours;
   }
   
-  public int getMinutes() {
+  public int GetMinutes() {
     return minutes;
   }
 }`,
@@ -384,12 +385,13 @@ arr[1] = t2;
 arr[2] = t3;
 arr[3] = t4;
 int count = 0;
-for (int i = 0; i < arr.length; i++) {
-  if (arr[i].getHours() >= 10) {
+for (int i = 0; i < arr.Length; i++)
+{
+  if (arr[i].GetHours() >= 10) {
     count++;
   }
 }
-System.out.println(count);`,
+Console.WriteLine(count);`,
                 question: 'מה יודפס?',
                 answer: '3',
                 explanation: 't1(10), t2(14), t4(11) >= 10'
@@ -405,11 +407,11 @@ System.out.println(count);`,
     minutes = m;
   }
   
-  public int getHours() {
+  public int GetHours() {
     return hours;
   }
   
-  public int getMinutes() {
+  public int GetMinutes() {
     return minutes;
   }
 }`,
@@ -423,13 +425,14 @@ System.out.println(count);`,
 arr[0] = t1;
 arr[1] = t2;
 arr[2] = t3;
-int max = arr[0].getHours();
-for (int i = 1; i < arr.length; i++) {
-  if (arr[i].getHours() > max) {
-    max = arr[i].getHours();
+int max = arr[0].GetHours();
+for (int i = 1; i < arr.Length; i++)
+{
+  if (arr[i].GetHours() > max) {
+    max = arr[i].GetHours();
   }
 }
-System.out.println(max);`,
+Console.WriteLine(max);`,
                 question: 'מה יודפס?',
                 answer: '10',
                 explanation: 'השעה המקסימלית היא 10'
@@ -445,11 +448,11 @@ System.out.println(max);`,
     minutes = m;
   }
   
-  public int getHours() {
+  public int GetHours() {
     return hours;
   }
   
-  public int getMinutes() {
+  public int GetMinutes() {
     return minutes;
   }
 }`,
@@ -466,10 +469,11 @@ arr[1] = t2;
 arr[2] = t3;
 arr[3] = t4;
 int sum = 0;
-for (int i = 0; i < arr.length; i++) {
-  sum += arr[i].getMinutes();
+for (int i = 0; i < arr.Length; i++)
+{
+  sum += arr[i].GetMinutes();
 }
-System.out.println(sum);`,
+Console.WriteLine(sum);`,
                 question: 'מה יודפס?',
                 answer: '110',
                 explanation: '30 + 15 + 45 + 20 = 110'
@@ -485,11 +489,11 @@ System.out.println(sum);`,
     minutes = m;
   }
   
-  public int getHours() {
+  public int GetHours() {
     return hours;
   }
   
-  public int getMinutes() {
+  public int GetMinutes() {
     return minutes;
   }
 }`,
@@ -506,12 +510,13 @@ arr[1] = t2;
 arr[2] = t3;
 arr[3] = t4;
 int count = 0;
-for (int i = 0; i < arr.length; i++) {
-  if (arr[i].getMinutes() == 0) {
+for (int i = 0; i < arr.Length; i++)
+{
+  if (arr[i].GetMinutes() == 0) {
     count++;
   }
 }
-System.out.println(count);`,
+Console.WriteLine(count);`,
                 question: 'מה יודפס?',
                 answer: '2',
                 explanation: 't1 ו-t3 יש להם 0 דקות'
@@ -527,11 +532,11 @@ System.out.println(count);`,
     minutes = m;
   }
   
-  public int getHours() {
+  public int GetHours() {
     return hours;
   }
   
-  public int getMinutes() {
+  public int GetMinutes() {
     return minutes;
   }
 }`,
@@ -546,12 +551,13 @@ arr[0] = t1;
 arr[1] = t2;
 arr[2] = t3;
 int result = 0;
-for (int i = 0; i < arr.length; i++) {
-  if (arr[i].getMinutes() > 30) {
-    result += arr[i].getHours();
+for (int i = 0; i < arr.Length; i++)
+{
+  if (arr[i].GetMinutes() > 30) {
+    result += arr[i].GetHours();
   }
 }
-System.out.println(result);`,
+Console.WriteLine(result);`,
                 question: 'מה יודפס?',
                 answer: '21',
                 explanation: 't2(10) + t3(11) = 21, כי הדקות שלהם > 30'
@@ -567,11 +573,11 @@ System.out.println(result);`,
     minutes = m;
   }
   
-  public int getHours() {
+  public int GetHours() {
     return hours;
   }
   
-  public int getMinutes() {
+  public int GetMinutes() {
     return minutes;
   }
 }`,
@@ -585,7 +591,7 @@ System.out.println(result);`,
 arr[0] = t2;
 arr[1] = t1;
 arr[2] = t3;
-System.out.println(arr[1].getHours());`,
+Console.WriteLine(arr[1].GetHours());`,
                 question: 'מה יודפס?',
                 answer: '8',
                 explanation: 'arr[1] מצביע על t1 שיש לו 8 שעות'
@@ -601,11 +607,11 @@ System.out.println(arr[1].getHours());`,
     minutes = m;
   }
   
-  public int getHours() {
+  public int GetHours() {
     return hours;
   }
   
-  public int getMinutes() {
+  public int GetMinutes() {
     return minutes;
   }
 }`,
@@ -621,13 +627,14 @@ arr[0] = t1;
 arr[1] = t2;
 arr[2] = t3;
 arr[3] = t4;
-int min = arr[0].getHours();
-for (int i = 1; i < arr.length; i++) {
-  if (arr[i].getHours() < min) {
-    min = arr[i].getHours();
+int min = arr[0].GetHours();
+for (int i = 1; i < arr.Length; i++)
+{
+  if (arr[i].GetHours() < min) {
+    min = arr[i].GetHours();
   }
 }
-System.out.println(min);`,
+Console.WriteLine(min);`,
                 question: 'מה יודפס?',
                 answer: '9',
                 explanation: 'המינימום הוא t3 עם 9 שעות'
@@ -643,11 +650,11 @@ System.out.println(min);`,
     minutes = m;
   }
   
-  public int getHours() {
+  public int GetHours() {
     return hours;
   }
   
-  public int getMinutes() {
+  public int GetMinutes() {
     return minutes;
   }
 }`,
@@ -662,12 +669,13 @@ arr[0] = t1;
 arr[1] = t2;
 arr[2] = t3;
 int count = 0;
-for (int i = 0; i < arr.length; i++) {
-  if (arr[i].getHours() == 8) {
+for (int i = 0; i < arr.Length; i++)
+{
+  if (arr[i].GetHours() == 8) {
     count++;
   }
 }
-System.out.println(count);`,
+Console.WriteLine(count);`,
                 question: 'מה יודפס?',
                 answer: '2',
                 explanation: 't1 ו-t3 שניהם בשעה 8'
@@ -683,11 +691,11 @@ System.out.println(count);`,
     minutes = m;
   }
   
-  public int getHours() {
+  public int GetHours() {
     return hours;
   }
   
-  public int getMinutes() {
+  public int GetMinutes() {
     return minutes;
   }
 }`,
@@ -705,9 +713,9 @@ arr[2] = t3;
 arr[3] = t4;
 int sum = 0;
 for (int i = 0; i < arr.length/2; i++) {
-  sum += arr[i].getMinutes();
+  sum += arr[i].GetMinutes();
 }
-System.out.println(sum);`,
+Console.WriteLine(sum);`,
                 question: 'מה יודפס?',
                 answer: '65',
                 explanation: 'רק החצי הראשון: 25 + 40 = 65'
