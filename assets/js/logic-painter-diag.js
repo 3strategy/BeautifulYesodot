@@ -14,6 +14,38 @@ for (int i = 0; i < arr.GetLength(0); i++)
 {
   arr[i, i] = true;
 }`
+        },
+        {
+            title: 'Level 2: secondary diagonal',
+            prompt: 'Write C# for-loops that set arr[row, col] = true for the secondary diagonal.',
+            target: (r, c) => r + c === GRID_COLS - 1,
+            starterCode: `bool[,] arr = new bool[5, 5];
+for (int i = 0; i < arr.GetLength(0); i++)
+{
+  for (int j = 0; j < arr.GetLength(1); j++)
+  {
+    if (i + j == arr.GetLength(0) - 1)
+    {
+      arr[i, j] = true;
+    }
+  }
+}`
+        },
+        {
+            title: 'Level 3: contour',
+            prompt: 'Write C# for-loops that set arr[row, col] = true for the contour (outer border).',
+            target: (r, c) => r === 0 || c === 0 || r === GRID_ROWS - 1 || c === GRID_COLS - 1,
+            starterCode: `bool[,] arr = new bool[5, 5];
+for (int i = 0; i < arr.GetLength(0); i++)
+{
+  for (int j = 0; j < arr.GetLength(1); j++)
+  {
+    if (i == 0 || j == 0 || i == arr.GetLength(0) - 1 || j == arr.GetLength(1) - 1)
+    {
+      arr[i, j] = true;
+    }
+  }
+}`
         }
     ];
 
