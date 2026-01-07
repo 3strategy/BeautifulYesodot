@@ -12,6 +12,23 @@
             starterCode: `bool[,] arr = new bool[5, 5];
 for (int i = 0; i < arr.GetLength(0); i++)
 {
+  for (int j = 0; j < arr.GetLength(1); j++)
+  {
+    if (i == j)
+    {
+      arr[i, j] = true;
+    }
+  }
+}`
+        },
+        {
+            title: 'Level 1b: main diagonal (single loop)',
+            prompt: 'Same target, but use a single loop (no nested loops).',
+            target: (r, c) => r === c,
+            requireSingleLoop: true,
+            starterCode: `bool[,] arr = new bool[5, 5];
+for (int i = 0; i < arr.GetLength(0); i++)
+{
   arr[i, i] = true;
 }`
         },
@@ -21,14 +38,19 @@ for (int i = 0; i < arr.GetLength(0); i++)
             target: (r, c) => r + c === GRID_COLS - 1,
             starterCode: `bool[,] arr = new bool[5, 5];
 for (int i = 0; i < arr.GetLength(0); i++)
-{
   for (int j = 0; j < arr.GetLength(1); j++)
-  {
     if (i + j == arr.GetLength(0) - 1)
-    {
-      arr[i, j] = true;
-    }
-  }
+      arr[i, j] = true;`
+        },
+        {
+            title: 'Level 2b: secondary diagonal (single loop)',
+            prompt: 'Same target, but use a single loop (no nested loops).',
+            target: (r, c) => r + c === GRID_COLS - 1,
+            requireSingleLoop: true,
+            starterCode: `bool[,] arr = new bool[5, 5];
+for (int i = 0; i < arr.GetLength(0); i++)
+{
+  arr[i, arr.GetLength(0) - 1 - i] = true;
 }`
         },
         {
@@ -52,15 +74,9 @@ for (int i = 0; i < arr.GetLength(0); i++)
             prompt: 'סימון כל התאים מתחת לאלכסון הראשי.',
             target: (r, c) => r > c,
             starterCode: `for (int i = 0; i < arr.GetLength(0); i++)
-{
   for (int j = 0; j < arr.GetLength(1); j++)
-  {
     if (i > j)
-    {
-      arr[i, j] = true;
-    }
-  }
-}`
+      arr[i, j] = true;`
         },
         {
             title: 'Level 5: above secondary diagonal',
@@ -82,15 +98,9 @@ for (int i = 0; i < arr.GetLength(0); i++)
             prompt: 'Checkerboard marking (one yes one no).',
             target: (r, c) => (r + c) % 2 === 0,
             starterCode: `for (int i = 0; i < arr.GetLength(0); i++)
-{
   for (int j = 0; j < arr.GetLength(1); j++)
-  {
     if ((i + j) % 2 == 0)
-    {
-      arr[i, j] = true;
-    }
-  }
-}`
+      arr[i, j] = true;`
         }
     ];
 
@@ -205,6 +215,13 @@ for (int i = 0; i < arr.GetLength(0); i++)
             return;
         }
 
+        const level = levels[currentLevel];
+        if (level.requireSingleLoop && (result.forCount !== 1 || result.hasNestedFor)) {
+            message.style.color = '#e06c75';
+            message.innerText = 'This level requires exactly one loop (no nested loops).';
+            return;
+        }
+
         const mismatch = highlightDifferences(result);
         const hasOutOfBounds = result.outOfBounds > 0;
         if (!mismatch && !hasOutOfBounds) {
@@ -275,7 +292,9 @@ for (int i = 0; i < arr.GetLength(0); i++)
             marks: buildEmptyGrid(),
             errors: [],
             assigned: 0,
-            outOfBounds: 0
+            outOfBounds: 0,
+            forCount: 0,
+            hasNestedFor: false
         };
 
         let ast;
@@ -285,6 +304,10 @@ for (int i = 0; i < arr.GetLength(0); i++)
             result.errors.push(error.message);
             return result;
         }
+
+        const analysis = analyzeStatements(ast, 0);
+        result.forCount = analysis.forCount;
+        result.hasNestedFor = analysis.hasNestedFor;
 
         try {
             const env = {};
@@ -299,6 +322,29 @@ for (int i = 0; i < arr.GetLength(0); i++)
         }
 
         return result;
+    }
+
+    function analyzeStatements(statements, loopDepth) {
+        let forCount = 0;
+        let hasNestedFor = false;
+
+        for (const stmt of statements) {
+            if (stmt.type === 'for') {
+                forCount++;
+                if (loopDepth > 0) {
+                    hasNestedFor = true;
+                }
+                const inner = analyzeStatements(stmt.body, loopDepth + 1);
+                forCount += inner.forCount;
+                hasNestedFor = hasNestedFor || inner.hasNestedFor;
+            } else if (stmt.type === 'if') {
+                const inner = analyzeStatements(stmt.body, loopDepth);
+                forCount += inner.forCount;
+                hasNestedFor = hasNestedFor || inner.hasNestedFor;
+            }
+        }
+
+        return { forCount, hasNestedFor };
     }
 
     function buildEmptyGrid() {
