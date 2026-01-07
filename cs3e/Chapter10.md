@@ -103,22 +103,44 @@ lang: he
 דוגמאות:
 ```csharp
 // מערך גבהים בגודל 10 שורות ו-3 עמודות מטיפוס ממשי
-double[,] heights = new double; 
+double[,] heights = new double[10, 3];
 
 // מערך תווים בגודל 8 על 8 (לוח משחק)
-char[,] signs = new new char;
+char[,] signs = new char[8, 8];
 
 // מערך ציונים ל-35 תלמידים ב-5 מקצועות
-int[,] marks = new int;
+int[,] marks = new int[35, 5];
 ```
+
+<details markdown="1"><summary>המקבילה בשפת Java</summary>
+
+```java
+// 10 rows, 3 columns
+double[][] heights = new double[10][3];
+
+// 8x8 grid
+char[][] signs = new char[8][8];
+
+// 35 students, 5 subjects
+int[][] marks = new int[35][5];
+```
+</details>
 
 ### דרך ב': הגדרה ובנייה בשורות נפרדות
 לעיתים נרצה להצהיר על המערך בראש התוכנית ורק מאוחר יותר להקצות לו זיכרון (למשל לאחר שקיבלנו את הגודל מהמשתמש).
 
 ```csharp
 double[,] heights; // הצהרה
-heights = new double; // בנייה והקצאת זיכרון
+heights = new double[10, 3]; // בנייה והקצאת זיכרון
 ```
+
+<details markdown="1"><summary>המקבילה בשפת Java</summary>
+
+```java
+double[][] heights; // declaration
+heights = new double[10][3]; // allocation
+```
+</details>
 
 {: .box-success}
 בניית המערך יכולה להתבצע בכל מקום בקוד, וגודלו יכול להיקבע גם באמצעות משתנים ולא רק על ידי קבועים מספריים.
@@ -129,19 +151,38 @@ heights = new double; // בנייה והקצאת זיכרון
 
 ```csharp
 // אתחול מטריצת מספרים שלמים 3x4
-int[,] arrInt2D = new int { 
+int[,] arrInt2D = new int[,] {
     { 29, 43, 21, 26 },
     { 77, 87, 81, 80 },
     { 92, 93, 97, 91 } 
 };
 
 // אתחול מטריצת תווים 3x4
-char[,] arrChar2D = new char { 
+char[,] arrChar2D = new char[,] {
     { 'X', 'O', 'X', 'O' },
     { '~', '~', '~', '~' },
     { 'A', 'B', 'C', 'D' } 
 };
 ```
+
+<details markdown="1"><summary>המקבילה בשפת Java</summary>
+
+```java
+// 3x4 int matrix
+int[][] arrInt2D = new int[][] {
+    { 29, 43, 21, 26 },
+    { 77, 87, 81, 80 },
+    { 92, 93, 97, 91 }
+};
+
+// 3x4 char matrix
+char[][] arrChar2D = new char[][] {
+    { 'X', 'O', 'X', 'O' },
+    { '~', '~', '~', '~' },
+    { 'A', 'B', 'C', 'D' }
+};
+```
+</details>
 <!-- [תמונה מומלצת: איור של מדפסת המדפיסה טבלאות נתונים, להמחשת פלט של מטריצות מאותחלות] -->
 
 ## פעולות בסיסיות על מטריצות
@@ -172,6 +213,24 @@ for (int i = 0; i < LINE; i++)
 }
 ```
 
+<details markdown="1"><summary>המקבילה בשפת Java</summary>
+
+```java
+final int LINE = 5, COL = 4;
+int[][] mat = new int[LINE][COL];
+Scanner scanner = new Scanner(System.in);
+
+for (int i = 0; i < LINE; i++)
+{
+    for (int j = 0; j < COL; j++)
+    {
+        System.out.print("Enter value for [" + i + "," + j + "]: ");
+        mat[i][j] = Integer.parseInt(scanner.nextLine());
+    }
+}
+```
+</details>
+
 ניתן גם לקלוט נתונים לפי **סדר העמודות** על ידי החלפת סדר הלולאות (הלולאה החיצונית תרוץ על העמודות והפנימית על השורות).
 
 ### פלט של מערך דו-מימדי
@@ -188,6 +247,20 @@ for (int i = 0; i < mat.GetLength(0); i++)
 }
 ```
 
+<details markdown="1"><summary>המקבילה בשפת Java</summary>
+
+```java
+for (int i = 0; i < mat.length; i++)
+{
+    for (int j = 0; j < mat[i].length; j++)
+    {
+        System.out.print(mat[i][j] + " ");
+    }
+    System.out.println(); // end of row
+}
+```
+</details>
+
 ### השמה ושינוי ערכים
 כל איבר במטריצה מתנהג כמשתנה רגיל מהטיפוס שהוגדר. ניתן לבצע עליו פעולות חשבוניות, השמה של מספרים אקראיים ועוד.
 
@@ -197,6 +270,16 @@ mat[i, j]++;    // הגדלת ערך של תא ספציפי ב-1
 Random rand = new Random();
 mat[i, j] = rand.Next(1, 31); // השמת מספר אקראי בין 1 ל-30
 ```
+
+<details markdown="1"><summary>המקבילה בשפת Java</summary>
+
+```java
+num = mat[i][j]; // read element
+mat[i][j]++;     // increment by 1
+Random rand = new Random();
+mat[i][j] = rand.nextInt(30) + 1; // 1..30
+```
+</details>
 
 ## תרגול כיתה: הבנת לולאות על מטריצה
 
