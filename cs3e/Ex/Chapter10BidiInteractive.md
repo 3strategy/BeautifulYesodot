@@ -1,10 +1,10 @@
 ---
 layout: page
 title: "פרק 10 - תרגול מערך דו-ממדי"
-subtitle: "תרגול ראשוני אינטראקטיבי. קרדיט דפנה ל.ר."
+subtitle: "תרגול ראשוני אינטראקטיבי. קרדיט דפנה ל.ר"
 author: גיא סידס
 lang: he
-tags: 2d-array, interactive,אינטרקטיבי, game
+tags: 2d-array, interactive,מערך דו-ממדי,אינטרקטיבי, game
 ---
 
 <style>

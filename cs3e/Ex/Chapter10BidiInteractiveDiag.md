@@ -1,10 +1,10 @@
 ---
 layout: page
 title: "פרק 10 - תרגול מערך דו-ממדי"
-subtitle: "תרגול ראשוני אינטראקטיבי. קרדיט דפנה ל.ר."
+subtitle: "תרגול אינטרקטיבי - לולאות במערך דו-ממדי"
 author: גיא סידס
 lang: he
-tags: 2d-array, interactive,אינטרקטיבי, game
+tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטיבי, game
 ---
 
 <style>
@@ -16,6 +16,8 @@ tags: 2d-array, interactive,אינטרקטיבי, game
         --panel-border-col: var(--navbar-border-col);
         --danger-col: var(--backe-col);
         --success-col: var(--backs-col);
+        --target-col: rgba(97, 175, 239, 0.35);
+        --user-col: rgba(152, 195, 121, 0.7);
 
         background-color: var(--page-col);
         color: var(--text-col);
@@ -141,12 +143,13 @@ tags: 2d-array, interactive,אינטרקטיבי, game
         background-color: var(--backw-col);
         border: 2px solid var(--panel-border-col);
         border-radius: 6px;
-        cursor: pointer;
+        cursor: default;
         transition: all 0.2s;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
+        overflow: hidden;
     }
 
     .interactive-container .cell:hover { background-color: var(--backn-col); transform: scale(1.05); }
@@ -170,6 +173,96 @@ tags: 2d-array, interactive,אינטרקטיבי, game
         bottom: 2px;
         right: 4px;
         pointer-events: none;
+        z-index: 2;
+    }
+
+    .interactive-container .cell.target::before {
+        content: '';
+        position: absolute;
+        inset: 8px;
+        border-radius: 4px;
+        background-color: var(--target-col);
+        z-index: 1;
+    }
+
+    .interactive-container .cell.user::after {
+        content: '';
+        position: absolute;
+        inset: 14px;
+        border-radius: 50%;
+        background-color: var(--user-col);
+        z-index: 1;
+    }
+
+    .interactive-container .cell.extra::after {
+        background-color: var(--danger-col);
+    }
+
+    .interactive-container .cell.miss {
+        outline: 2px dashed var(--danger-col);
+        outline-offset: -4px;
+    }
+
+    .interactive-container .code-input {
+        width: min(760px, 92vw);
+        min-height: 180px;
+        margin-bottom: 10px;
+        background-color: var(--code-back-col);
+        border: 2px solid var(--panel-border-col);
+        border-radius: 8px;
+        padding: 12px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1em;
+        color: var(--text-col);
+        direction: ltr;
+        text-align: left;
+        resize: vertical;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    }
+
+    .interactive-container .legend {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin: 4px 0 12px;
+        font-size: 0.95em;
+        color: var(--muted-col);
+        direction: ltr;
+    }
+
+    .interactive-container .legend-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .interactive-container .legend-swatch {
+        width: 14px;
+        height: 14px;
+        border-radius: 3px;
+        border: 1px solid var(--panel-border-col);
+        display: inline-block;
+    }
+
+    .interactive-container .legend-target {
+        background-color: var(--target-col);
+    }
+
+    .interactive-container .legend-user {
+        background-color: var(--user-col);
+    }
+
+    .interactive-container .level-title {
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-bottom: 6px;
+    }
+
+    .interactive-container .level-hint {
+        font-size: 0.95em;
+        color: var(--muted-col);
+        margin-bottom: 6px;
     }
 
     .interactive-container .btn {
@@ -213,6 +306,19 @@ tags: 2d-array, interactive,אינטרקטיבי, game
         Loading...
     </div>
 
+    <textarea class="code-input" id="logic-painter-input" rows="8" spellcheck="false" aria-label="C# loop input"></textarea>
+
+    <div class="legend">
+        <div class="legend-item">
+            <span class="legend-swatch legend-target"></span>
+            target
+        </div>
+        <div class="legend-item">
+            <span class="legend-swatch legend-user"></span>
+            your marks
+        </div>
+    </div>
+
     <div class="game-area">
         
         <div class="axis-label axis-label-col">
@@ -239,4 +345,4 @@ tags: 2d-array, interactive,אינטרקטיבי, game
 
 </div>
 
-<script src="/assets/js/logic-painter.js"></script>
+<script src="/assets/js/logic-painter-diag.js"></script>
