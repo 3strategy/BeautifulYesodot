@@ -29,7 +29,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
             starterCode: `bool[,] arr = new bool[5, 5];
 for (int i = 0; i < arr.GetLength(0); i++)
 {
-  arr[i, i];
+  //your answer here
 }`
         },
         {
