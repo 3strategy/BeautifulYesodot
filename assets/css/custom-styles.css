@@ -331,6 +331,15 @@ ul, ol {
     gap: 0.6em;
 }
 
+/* Hebrew alphabetic list markers (א, ב, ג, ...) */
+@counter-style alefbet {
+    system: alphabetic;
+    symbols: "\05D0" "\05D1" "\05D2" "\05D3" "\05D4" "\05D5" "\05D6" "\05D7" "\05D8" "\05D9"
+             "\05DB" "\05DC" "\05DE" "\05E0" "\05E1" "\05E2" "\05E4" "\05E6" "\05E7" "\05E8"
+             "\05E9" "\05EA";
+    suffix: ". ";
+}
+
 /* Keep footer social links horizontal despite global UL rule */
 footer .list-inline {
     display: flex !important;
@@ -346,8 +355,10 @@ footer .list-inline {
     padding-inline-start: 1.5em;
 }
 
-.hebrew-list {
+ol.hebrew-list,
+ol.alefbet {
     list-style-type: hebrew;
+    list-style-type: alefbet;
     margin-inline-start: 2em;
     list-style-position: inside;
 }
