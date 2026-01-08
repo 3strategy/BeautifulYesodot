@@ -329,6 +329,8 @@ ul, ol {
     display: flex;
     flex-direction: column;
     gap: 0.6em;
+    list-style-position: outside;
+    padding-inline-start: 2em;
 }
 
 /* Hebrew alphabetic list markers (א, ב, ג, ...) */
@@ -359,8 +361,6 @@ ol.hebrew-list,
 ol.alefbet {
     list-style-type: hebrew;
     list-style-type: alefbet;
-    margin-inline-start: 2em;
-    list-style-position: inside;
 }
 
 #canvas-container {
