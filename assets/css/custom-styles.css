@@ -241,6 +241,12 @@ details {
     margin-top:1.5em;
 }
 
+details > summary {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
 pre {
     direction: ltr !important;
     text-align: left !important;
