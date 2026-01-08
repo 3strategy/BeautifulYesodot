@@ -108,6 +108,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
     let pollingInterval;
     let cellGrid = [];
     let targetGrid = [];
+    let toastTimeout;
 
     function initGame() {
         const grid = document.getElementById('logic-painter-grid');
@@ -172,6 +173,34 @@ for (int i = 0; i < arr.GetLength(0); i++)
         clearUserClasses();
     }
 
+    function showToast(messageText) {
+        const toast = document.getElementById('logic-painter-toast');
+        if (!toast) {
+            return;
+        }
+        toast.textContent = messageText;
+        toast.classList.add('show');
+        if (toastTimeout) {
+            clearTimeout(toastTimeout);
+        }
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 1600);
+    }
+
+    function scrollToInstruction() {
+        const anchor = document.getElementById('logic-painter-container') ||
+            document.getElementById('logic-painter-instruction');
+        const container = document.querySelector('.interactive-container');
+        const target = anchor || container;
+        if (!target) {
+            return;
+        }
+        const rect = target.getBoundingClientRect();
+        const top = window.pageYOffset + rect.top - 12;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }
+
     function buildTargetGrid(level) {
         const grid = buildEmptyGrid();
         for (let r = 0; r < GRID_ROWS; r++) {
@@ -227,10 +256,12 @@ for (int i = 0; i < arr.GetLength(0); i++)
         if (!mismatch && !hasOutOfBounds) {
             message.style.color = '#98c379';
             message.innerText = 'Nice! Your loops match the target.';
+            showToast('Great job!');
             if (currentLevel < levels.length - 1) {
                 setTimeout(() => {
                     currentLevel++;
                     initLevel(codeDisplay, input, message);
+                    scrollToInstruction();
                 }, 1200);
             }
         } else {

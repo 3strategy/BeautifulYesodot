@@ -762,6 +762,7 @@ mark {
     border-radius: 8px;
     padding: 20px;
     direction: rtl;
+    position: relative;
 }
 
 .interactive-container h1 { margin: 5px 0; color: var(--accent-col); font-size: 2em; }
@@ -921,6 +922,29 @@ mark {
     font-size: 1.2em;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.35);
+}
+
+.interactive-container .logic-toast {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    padding: 8px 18px;
+    border-radius: 999px;
+    background-color: var(--panel-col);
+    color: var(--text-col);
+    border: 1px solid var(--panel-border-col);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+    font-size: 1em;
+}
+
+.interactive-container .logic-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 @keyframes shake {

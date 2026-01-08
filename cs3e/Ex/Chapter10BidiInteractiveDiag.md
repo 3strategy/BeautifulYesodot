@@ -112,9 +112,11 @@ tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטי
     }
 </style>
 
-<div class="interactive-container">
+<div class="interactive-container" id="logic-painter-container">
 
-    <p>תפקידך לסמן את כל המשבצות שמקיימות את התנאי!</p>
+    <p>תפקידך לכתוב קוד כך שיסומנו המשבצות המודגשות!</p>
+
+    <div class="logic-toast" id="logic-painter-toast" aria-live="polite"></div>
 
     <div class="code-box" id="logic-painter-code">
         Loading...

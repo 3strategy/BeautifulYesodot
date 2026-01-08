@@ -28,6 +28,7 @@
 
     let currentLevel = 0;
     let pollingInterval;
+    let toastTimeout;
 
     function initGame() {
         let grid = document.getElementById('logic-painter-grid');
@@ -87,6 +88,32 @@
                 }
             }
         }
+        function showToast(messageText) {
+            const toast = document.getElementById('logic-painter-toast');
+            if (!toast) {
+                return;
+            }
+            toast.textContent = messageText;
+            toast.classList.add('show');
+            if (toastTimeout) {
+                clearTimeout(toastTimeout);
+            }
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 1600);
+        }
+
+        function scrollToTop() {
+            const anchor = document.getElementById('logic-painter-container');
+            const container = document.querySelector('.interactive-container');
+            const target = anchor || container;
+            if (!target) {
+                return;
+            }
+            const rect = target.getBoundingClientRect();
+            const top = window.pageYOffset + rect.top - 12;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        }
 
         // -- Expose checkSolution to Global Scope --
         window.checkSolution = function () {
@@ -114,10 +141,12 @@
             if (allCorrect) {
                 message.style.color = '#98c379';
                 message.innerText = 'מעולה! כל הכבוד!';
+                showToast('Great job!');
                 setTimeout(() => {
                     currentLevel++;
                     if (currentLevel < levels.length) {
                         initLevel();
+                        scrollToTop();
                     } else {
                         codeDisplay.innerHTML = "סיימת את כל השלבים!";
                         grid.innerHTML = '<h2 style="grid-column: span 5; color: #61dafb; text-align:center; align-self:center; font-size:2em;">ניצחון!</h2>';
