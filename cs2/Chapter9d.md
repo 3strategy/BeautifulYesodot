@@ -145,10 +145,10 @@ public static void Fill(int[] arr, int num)
 }
 ```
 
-#### פעולה ממלאת מערך בערכים אקראיים בטווח:
+#### פעולה ממלאת מערך בערכים אקראיים בטווח
 
 ```csharp
-static Random rnd = new Random();
+public static Random rnd = new Random();
 // פעולה המקבלת מערך, מינימום ומקסימום וממלאת באקראיים
 public static void FillRnd(int[] arr, int min, int max)
 {
