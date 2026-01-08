@@ -513,6 +513,25 @@ td:has(i), th:has(i) {
   text-align: left;
 }
 
+/* Mixed-language tables by column (h=Hebrew, e=English) */
+.table-heh th:first-child,
+.table-heh td:first-child {
+  text-align: right;
+  direction: rtl;
+}
+
+.table-heh th:nth-child(2),
+.table-heh td:nth-child(2) {
+  text-align: left;
+  direction: ltr;
+}
+
+.table-heh th:nth-child(3),
+.table-heh td:nth-child(3) {
+  text-align: right;
+  direction: rtl;
+}
+
 .table-he th,
 .table-he td {
   text-align: right;
