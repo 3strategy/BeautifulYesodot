@@ -513,6 +513,19 @@ td:has(i), th:has(i) {
   text-align: left;
 }
 
+/* eh: English, Hebrew (opposite of table-rl) */
+.table-eh td:first-child,
+.table-eh th:first-child {
+  text-align: left;
+  direction: ltr;
+}
+
+.table-eh td:nth-child(2),
+.table-eh th:nth-child(2) {
+  text-align: right;
+  direction: rtl;
+}
+
 /* Mixed-language tables by column (h=Hebrew, e=English) */
 .table-heh th:first-child,
 .table-heh td:first-child {
@@ -530,6 +543,102 @@ td:has(i), th:has(i) {
 .table-heh td:nth-child(3) {
   text-align: right;
   direction: rtl;
+}
+
+/* hhe: Hebrew, Hebrew, English */
+.table-hhe th:first-child,
+.table-hhe td:first-child,
+.table-hhe th:nth-child(2),
+.table-hhe td:nth-child(2) {
+  text-align: right;
+  direction: rtl;
+}
+
+.table-hhe th:nth-child(3),
+.table-hhe td:nth-child(3) {
+  text-align: left;
+  direction: ltr;
+}
+
+/* hee: Hebrew, English, English */
+.table-hee th:first-child,
+.table-hee td:first-child {
+  text-align: right;
+  direction: rtl;
+}
+
+.table-hee th:nth-child(2),
+.table-hee td:nth-child(2),
+.table-hee th:nth-child(3),
+.table-hee td:nth-child(3) {
+  text-align: left;
+  direction: ltr;
+}
+
+/* ehe: English, Hebrew, English */
+.table-ehe th:first-child,
+.table-ehe td:first-child,
+.table-ehe th:nth-child(3),
+.table-ehe td:nth-child(3) {
+  text-align: left;
+  direction: ltr;
+}
+
+.table-ehe th:nth-child(2),
+.table-ehe td:nth-child(2) {
+  text-align: right;
+  direction: rtl;
+}
+
+/* ehhe: English, Hebrew, Hebrew, English */
+.table-ehhe th:first-child,
+.table-ehhe td:first-child,
+.table-ehhe th:nth-child(4),
+.table-ehhe td:nth-child(4) {
+  text-align: left;
+  direction: ltr;
+}
+
+.table-ehhe th:nth-child(2),
+.table-ehhe td:nth-child(2),
+.table-ehhe th:nth-child(3),
+.table-ehhe td:nth-child(3) {
+  text-align: right;
+  direction: rtl;
+}
+
+/* heeh: Hebrew, English, English, Hebrew */
+.table-heeh th:first-child,
+.table-heeh td:first-child,
+.table-heeh th:nth-child(4),
+.table-heeh td:nth-child(4) {
+  text-align: right;
+  direction: rtl;
+}
+
+.table-heeh th:nth-child(2),
+.table-heeh td:nth-child(2),
+.table-heeh th:nth-child(3),
+.table-heeh td:nth-child(3) {
+  text-align: left;
+  direction: ltr;
+}
+
+/* hhee: Hebrew, Hebrew, English, English */
+.table-hhee th:first-child,
+.table-hhee td:first-child,
+.table-hhee th:nth-child(2),
+.table-hhee td:nth-child(2) {
+  text-align: right;
+  direction: rtl;
+}
+
+.table-hhee th:nth-child(3),
+.table-hhee td:nth-child(3),
+.table-hhee th:nth-child(4),
+.table-hhee td:nth-child(4) {
+  text-align: left;
+  direction: ltr;
 }
 
 .table-he th,

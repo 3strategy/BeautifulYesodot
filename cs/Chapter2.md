@@ -87,12 +87,12 @@ public static void Main()
 
 ## טבלת מעקב (דוגמה לשימוש ב-Random)
 
-{: .table-en}
+{: .table-hee}
 
 | שורת קוד | dice | פלט                     |
 |-----------|------|-------------------------|
-| הגדרה    | 4    |                         |
-| פלט      | 4    | Dice roll result: 4  |
+| הגדרה | 4    |                         |
+| פלט | 4    | Dice roll result: 4  |
 
 ## למה מאתחלים רק אובייקט אחד, כלומר עובדים עם `static Random`? {#id.staticrandom}
 
