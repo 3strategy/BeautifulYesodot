@@ -131,6 +131,8 @@ tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטי
 
     <div class="logic-toast" id="logic-painter-toast" aria-live="polite"></div>
 
+    <div class="two-columns">
+        <div class="column">
     <div class="code-box" id="logic-painter-code">
         Loading...
     </div>
@@ -148,6 +150,8 @@ tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטי
         </div>
     </div>
 
+        </div>
+        <div class="column">
     <div class="game-area">
         
         <div class="axis-label axis-label-col">
@@ -167,6 +171,9 @@ tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטי
         </div>
 
         <div class="grid-container" id="logic-painter-grid"></div>
+    </div>
+
+        </div>
     </div>
 
     <div class="logic-controls">
