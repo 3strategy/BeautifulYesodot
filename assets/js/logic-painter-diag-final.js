@@ -3,6 +3,7 @@
     const GRID_COLS = 5;
     const MAX_TOTAL_ITERATIONS = 2000;
     const MAX_LOOP_ITERATIONS = 500;
+    const STORAGE_KEY = `logic-painter-diag-final:${window.location.pathname || 'default'}`;
 
     const levels = [
         {
@@ -50,7 +51,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
             starterCode: `bool[,] arr = new bool[5, 5];
 for (int i = 0; i < arr.GetLength(0); i++)
 {
-  arr[i, arr.GetLength(0) - 1 - i];
+  arr[_, _] = true; // your answer here
 }`
         },
         {
@@ -104,17 +105,88 @@ for (int i = 0; i < arr.GetLength(0); i++)
         }
     ];
 
-    let currentLevel = 0;
+    function loadState() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) {
+                return { currentLevel: 0, answers: {} };
+            }
+            const parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed !== 'object') {
+                return { currentLevel: 0, answers: {} };
+            }
+            const answers = parsed.answers && typeof parsed.answers === 'object' ? parsed.answers : {};
+            const storedLevel = Number.isInteger(parsed.currentLevel) ? parsed.currentLevel : 0;
+            return { currentLevel: storedLevel, answers };
+        } catch (error) {
+            return { currentLevel: 0, answers: {} };
+        }
+    }
+
+    function clampLevel(index) {
+        const safeIndex = Number.isInteger(index) ? index : 0;
+        return Math.min(Math.max(safeIndex, 0), levels.length - 1);
+    }
+
+    const storedState = loadState();
+    let currentLevel = clampLevel(storedState.currentLevel);
+    let savedAnswers = storedState.answers;
     let pollingInterval;
     let cellGrid = [];
     let targetGrid = [];
     let toastTimeout;
+
+    function persistState() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                currentLevel,
+                answers: savedAnswers
+            }));
+        } catch (error) {
+            return;
+        }
+    }
+
+    function saveAnswer(levelIndex, code) {
+        savedAnswers[String(levelIndex)] = code;
+        persistState();
+    }
+
+    function getSavedAnswer(levelIndex) {
+        return savedAnswers[String(levelIndex)];
+    }
+
+    function updateNavButtons(prevButton, nextButton) {
+        if (prevButton) {
+            prevButton.disabled = currentLevel <= 0;
+        }
+        if (nextButton) {
+            nextButton.disabled = currentLevel >= levels.length - 1;
+        }
+    }
+
+    function setLevel(nextIndex, codeDisplay, input, message, prevButton, nextButton) {
+        const targetIndex = clampLevel(nextIndex);
+        if (targetIndex === currentLevel) {
+            updateNavButtons(prevButton, nextButton);
+            return;
+        }
+
+        saveAnswer(currentLevel, input.value || '');
+        currentLevel = targetIndex;
+        persistState();
+        initLevel(codeDisplay, input, message, prevButton, nextButton);
+        scrollToInstruction();
+    }
 
     function initGame() {
         const grid = document.getElementById('logic-painter-grid');
         const codeDisplay = document.getElementById('logic-painter-code');
         const message = document.getElementById('logic-painter-message');
         const input = document.getElementById('logic-painter-input');
+        const prevButton = document.getElementById('logic-painter-prev');
+        const nextButton = document.getElementById('logic-painter-next');
+        const resetButton = document.getElementById('logic-painter-reset');
 
         if (!grid || !codeDisplay || !message || !input) {
             return false;
@@ -125,11 +197,39 @@ for (int i = 0; i < arr.GetLength(0); i++)
         }
 
         buildGrid(grid);
-        initLevel(codeDisplay, input, message);
+        initLevel(codeDisplay, input, message, prevButton, nextButton);
+        persistState();
 
         window.checkSolution = function () {
-            runCheck(codeDisplay, input, message);
+            runCheck(codeDisplay, input, message, prevButton, nextButton);
         };
+
+        if (prevButton) {
+            prevButton.addEventListener('click', () => {
+                setLevel(currentLevel - 1, codeDisplay, input, message, prevButton, nextButton);
+            });
+        }
+
+        if (nextButton) {
+            nextButton.addEventListener('click', () => {
+                setLevel(currentLevel + 1, codeDisplay, input, message, prevButton, nextButton);
+            });
+        }
+
+        if (resetButton) {
+            resetButton.addEventListener('click', () => {
+                const level = levels[currentLevel];
+                input.value = level.starterCode;
+                message.innerText = '';
+                clearUserClasses();
+                saveAnswer(currentLevel, input.value);
+                showToast('Reset to starter code.');
+            });
+        }
+
+        input.addEventListener('input', () => {
+            saveAnswer(currentLevel, input.value);
+        });
 
         return true;
     }
@@ -158,10 +258,11 @@ for (int i = 0; i < arr.GetLength(0); i++)
         }
     }
 
-    function initLevel(codeDisplay, input, message) {
+    function initLevel(codeDisplay, input, message, prevButton, nextButton) {
         const level = levels[currentLevel];
         message.innerText = '';
-        input.value = level.starterCode;
+        const savedCode = getSavedAnswer(currentLevel);
+        input.value = savedCode !== undefined ? savedCode : level.starterCode;
 
         codeDisplay.innerHTML = [
             `<div class="level-title">${escapeHtml(level.title)}</div>`,
@@ -171,6 +272,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
         targetGrid = buildTargetGrid(level);
         applyTargetClasses();
         clearUserClasses();
+        updateNavButtons(prevButton, nextButton);
     }
 
     function showToast(messageText) {
@@ -231,8 +333,9 @@ for (int i = 0; i < arr.GetLength(0); i++)
         }
     }
 
-    function runCheck(codeDisplay, input, message) {
+    function runCheck(codeDisplay, input, message, prevButton, nextButton) {
         const code = input.value || '';
+        saveAnswer(currentLevel, code);
         clearUserClasses();
 
         const result = runUserCode(code);
@@ -259,9 +362,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
             showToast('Great job!');
             if (currentLevel < levels.length - 1) {
                 setTimeout(() => {
-                    currentLevel++;
-                    initLevel(codeDisplay, input, message);
-                    scrollToInstruction();
+                    setLevel(currentLevel + 1, codeDisplay, input, message, prevButton, nextButton);
                 }, 1200);
             }
         } else {

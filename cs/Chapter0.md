@@ -38,9 +38,10 @@ ul.task-list .task-list-item-checkbox {
 </style>
 
 ## בעמוד זה תוכלו לסמן לעצמכם נושאים שאתם כבר מבינים ולעקוב אחר הלמידה
+
 פשוט סמנו את הנושאים. הסימון אמור להישאר על המחשב שלכם
 
-# Chapter 1: הדפסה, משתנים והמרות
+## Chapter 1: הדפסה, משתנים והמרות
 
 - [ ] רישום במצפן
 
@@ -58,7 +59,7 @@ ul.task-list .task-list-item-checkbox {
 
 - [ ] Arithmetic operations (+, -, *, /) אופרטורים חשבוניים
 
-- [ ] Integer division: 10/4 equals 2 חלוקה בשלמים 
+- [ ] Integer division: 10/4 equals 2 חלוקה בשלמים
 
 - [ ] remainder (modulus %) האופרטור שארית חלוקה
 
@@ -68,10 +69,7 @@ ul.task-list .task-list-item-checkbox {
 
 - [ ] אופרטורים מיוחדים `+=, -=, *=, /=, ++, --`
 
-
-
-
-# Chapter 2: תנאים, ביטויים לוגיים ושארית חלוקה
+## Chapter 2: תנאים, ביטויים לוגיים ושארית חלוקה
 
 - [ ] Comparison operators  אופרטורים של השוואה
 
@@ -81,7 +79,7 @@ ul.task-list .task-list-item-checkbox {
 
 - [ ] Logical operators `&&, ||, !` אופרטורים לוגיים
 
-- [ ] משמעות הבלוק `{הסוגריים המסולסלים}` 
+- [ ] משמעות הבלוק `{הסוגריים המסולסלים}`
 
 - [ ] סגנונות כתיבת סוגריים
 
@@ -101,8 +99,7 @@ ul.task-list .task-list-item-checkbox {
 
 - [ ] איפוס סביבת העבודה Windows ⟶ Reset Window Layout
 
-
-# Chapter 3: המחלקה Math, Random
+## Chapter 3: המחלקה Math, Random
 
 - [ ] Introduction to the Math class (Math.Pow, Math.Sqrt, Math.Abs) המחלקה המתמטית
 
@@ -118,8 +115,7 @@ ul.task-list .task-list-item-checkbox {
 
 - [ ] הקיצורים הקריטיים cw ⟶ ⟶ הדפסה, Ctrl k d יישור, Ctrl / הערות, Ctrl z לביטול
 
-
-# Chapter 4: לולאות for
+## Chapter 4: לולאות for
 
 - [ ] Basic loop concept and the purpose of repetition ביצוע חוזר. לולאות
 
@@ -135,8 +131,7 @@ ul.task-list .task-list-item-checkbox {
 
 - [ ] Breaking loops prematurely with `break` שימוש בהוראת break ליציאה מוקדמת מלולאה
 
-
-# Chapter 4b: נושאים מתקדמים בתחביר לולאות (ללא קינון)
+## Chapter 4b: נושאים מתקדמים בתחביר לולאות (ללא קינון)
 
 - [ ] Retaining i value after the loop שימור ערך האינדקס לאחר סיום הלולאה
 
@@ -158,8 +153,7 @@ ul.task-list .task-list-item-checkbox {
 
 - [ ] עד לשלב זה הנושא **Variable Scope** אמור להיות ברור
 
-
-# Chapter 5: לולאות while
+## Chapter 5: לולאות while
 
 - [ ] The concept of a conditional loop (while) העיקרון של לולאת
 
@@ -178,7 +172,6 @@ ul.task-list .task-list-item-checkbox {
 - [ ] Debugging while loops with breakpoints (שוב, אין כאן משהו חדש)
 
 <!-- - [ ] Structure of a basic C# program (Main method, class, namespace) מבנה תכנית בסיסית -->
-
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {

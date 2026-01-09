@@ -110,6 +110,19 @@ tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטי
         color: var(--muted-col);
         margin-bottom: 6px;
     }
+
+    .interactive-container .logic-controls {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 12px 0 6px;
+    }
+
+    .interactive-container .logic-controls .btn:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
 </style>
 
 <div class="interactive-container" id="logic-painter-container">
@@ -156,7 +169,12 @@ tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטי
         <div class="grid-container" id="logic-painter-grid"></div>
     </div>
 
-    <button class="btn" onclick="checkSolution()">בדוק תשובה</button>
+    <div class="logic-controls">
+        <button class="btn" id="logic-painter-prev" type="button">Prev</button>
+        <button class="btn" id="logic-painter-next" type="button">Next</button>
+        <button class="btn" id="logic-painter-reset" type="button">Reset</button>
+        <button class="btn" id="logic-painter-check" type="button" onclick="checkSolution()">בדוק תשובה</button>
+    </div>
     <div id="logic-painter-message"></div>
 
 </div>
