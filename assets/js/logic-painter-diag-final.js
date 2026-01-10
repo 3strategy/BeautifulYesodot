@@ -102,6 +102,17 @@ for (int i = 0; i < mat.GetLength(0); i++)
   for (int j = 0; j < mat.GetLength(1); j++)
     // if(__your answer here___)
       mat[i, j] = true;`
+        },
+        {
+            title: 'Level 7: The Diamond Chalenge (single loop)',
+            prompt: 'Mark the diamond outline using a single loop.',
+            target: (r, c) => Math.abs(r - 2) + Math.abs(c - 2) === 2,
+            requireSingleLoop: true,
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
+{
+  // hint: mat[_, _] = mat[_, _] = true;
+}`
         }
     ];
 
@@ -563,7 +574,11 @@ for (int i = 0; i < mat.GetLength(0); i++)
             const statementText = src.slice(index, statementEnd).trim();
             const assignment = parseAssignment(statementText);
             if (assignment) {
-                statements.push(assignment);
+                if (Array.isArray(assignment)) {
+                    statements.push(...assignment);
+                } else {
+                    statements.push(assignment);
+                }
             }
             index = statementEnd;
         }
@@ -677,7 +692,7 @@ for (int i = 0; i < mat.GetLength(0); i++)
         }
         const single = parseSingleStatement(src, index);
         return {
-            statements: single.node ? [single.node] : [],
+            statements: single.nodes,
             index: single.index
         };
     }
@@ -692,21 +707,32 @@ for (int i = 0; i < mat.GetLength(0); i++)
     function parseSingleStatement(src, index) {
         index = skipWhitespaceAndSemicolons(src, index);
         if (startsWithWord(src, index, 'for')) {
-            return parseFor(src, index);
+            const parsed = parseFor(src, index);
+            return { nodes: [parsed.node], index: parsed.index };
         }
         if (startsWithWord(src, index, 'if')) {
-            return parseIf(src, index);
+            const parsed = parseIf(src, index);
+            return { nodes: [parsed.node], index: parsed.index };
         }
 
         const statementEnd = findStatementEnd(src, index);
         const statementText = src.slice(index, statementEnd).trim();
+        const assignment = parseAssignment(statementText);
         return {
-            node: parseAssignment(statementText),
+            nodes: assignment ? (Array.isArray(assignment) ? assignment : [assignment]) : [],
             index: statementEnd
         };
     }
 
     function parseAssignment(text) {
+        const chainMatch = text.match(/mat\s*\[\s*([^\],]+)\s*,\s*([^\]]+)\s*\]\s*=\s*mat\s*\[\s*([^\],]+)\s*,\s*([^\]]+)\s*\]\s*=\s*true\b/i);
+        if (chainMatch) {
+            return [
+                { type: 'assign', rowExpr: chainMatch[1].trim(), colExpr: chainMatch[2].trim() },
+                { type: 'assign', rowExpr: chainMatch[3].trim(), colExpr: chainMatch[4].trim() }
+            ];
+        }
+
         const match = text.match(/mat\s*\[\s*([^\],]+)\s*,\s*([^\]]+)\s*\]\s*=\s*true\b/i);
         if (!match) {
             return null;
@@ -789,7 +815,7 @@ for (int i = 0; i < mat.GetLength(0); i++)
         if (safe === '') {
             throw new Error('Empty expression.');
         }
-        if (/[^0-9+\-*/%()<>!=&|\s]/.test(safe)) {
+        if (/[^0-9+\-*/%()<>!=&|?:\s]/.test(safe)) {
             throw new Error(`Unsupported expression: ${expr.trim()}`);
         }
 
@@ -801,10 +827,33 @@ for (int i = 0; i < mat.GetLength(0); i++)
     }
 
     function normalizeExpression(expr) {
-        return expr
+        const normalized = expr
             .replace(/mat\s*\.\s*GetLength\s*\(\s*0\s*\)/gi, String(GRID_ROWS))
             .replace(/mat\s*\.\s*GetLength\s*\(\s*1\s*\)/gi, String(GRID_COLS))
             .replace(/mat\s*\.\s*Length\b/gi, String(GRID_ROWS * GRID_COLS));
+
+        return expandAbsCalls(normalized);
+    }
+
+    function expandAbsCalls(expr) {
+        const absRegex = /Math\s*\.\s*Abs\s*\(/gi;
+        let output = '';
+        let cursor = 0;
+        while (cursor < expr.length) {
+            absRegex.lastIndex = cursor;
+            const match = absRegex.exec(expr);
+            if (!match) {
+                output += expr.slice(cursor);
+                break;
+            }
+            output += expr.slice(cursor, match.index);
+            const openIndex = match.index + match[0].length - 1;
+            const closeIndex = findMatching(expr, openIndex, '(', ')');
+            const inner = expandAbsCalls(expr.slice(openIndex + 1, closeIndex));
+            output += `(((${inner}) < 0 ? -(${inner}) : (${inner})))`;
+            cursor = closeIndex + 1;
+        }
+        return output;
     }
 
     function substituteVariables(expr, env) {
