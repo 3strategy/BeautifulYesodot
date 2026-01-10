@@ -8,16 +8,16 @@
     const levels = [
         {
             title: 'Level 1: main diagonal',
-            prompt: 'Write C# for-loops that set arr[row, col] = true for the main diagonal.',
+            prompt: 'Write C# for-loops that set mat[row, col] = true for the main diagonal.',
             target: (r, c) => r === c,
-            starterCode: `bool[,] arr = new bool[5, 5];
-for (int i = 0; i < arr.GetLength(0); i++)
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
 {
-  for (int j = 0; j < arr.GetLength(1); j++)
+  for (int j = 0; j < mat.GetLength(1); j++)
   {
     // if(__your answer here___)
     {
-      arr[i, j] = true;
+      mat[i, j] = true;
     }
   }
 }`
@@ -27,45 +27,45 @@ for (int i = 0; i < arr.GetLength(0); i++)
             prompt: 'Same target, but use a single loop (no nested loops).',
             target: (r, c) => r === c,
             requireSingleLoop: true,
-            starterCode: `bool[,] arr = new bool[5, 5];
-for (int i = 0; i < arr.GetLength(0); i++)
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
 {
   //your answer here
 }`
         },
         {
             title: 'Level 2: secondary diagonal',
-            prompt: 'Write C# for-loops that set arr[row, col] = true for the secondary diagonal.',
+            prompt: 'Write C# for-loops that set mat[row, col] = true for the secondary diagonal.',
             target: (r, c) => r + c === GRID_COLS - 1,
-            starterCode: `bool[,] arr = new bool[5, 5];
-for (int i = 0; i < arr.GetLength(0); i++)
-  for (int j = 0; j < arr.GetLength(1); j++)
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
+  for (int j = 0; j < mat.GetLength(1); j++)
     // if(__your answer here___)
-      arr[i, j] = true;`
+      mat[i, j] = true;`
         },
         {
             title: 'Level 2b: secondary diagonal (single loop)',
             prompt: 'Same target, but use a single loop (no nested loops).',
             target: (r, c) => r + c === GRID_COLS - 1,
             requireSingleLoop: true,
-            starterCode: `bool[,] arr = new bool[5, 5];
-for (int i = 0; i < arr.GetLength(0); i++)
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
 {
-  arr[_, _] = true; // your answer here
+  mat[_, _] = true; // your answer here
 }`
         },
         {
             title: 'Level 3: contour',
-            prompt: 'Write C# for-loops that set arr[row, col] = true for the contour (outer border).',
+            prompt: 'Write C# for-loops that set mat[row, col] = true for the contour (outer border).',
             target: (r, c) => r === 0 || c === 0 || r === GRID_ROWS - 1 || c === GRID_COLS - 1,
-            starterCode: `bool[,] arr = new bool[5, 5];
-for (int i = 0; i < arr.GetLength(0); i++)
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
 {
-  for (int j = 0; j < arr.GetLength(1); j++)
+  for (int j = 0; j < mat.GetLength(1); j++)
   {
     // if(__your answer here___)
     {
-      arr[i, j] = true;
+      mat[i, j] = true;
     }
   }
 }`
@@ -74,22 +74,22 @@ for (int i = 0; i < arr.GetLength(0); i++)
             title: 'Level 4: below main diagonal',
             prompt: 'סימון כל התאים מתחת לאלכסון הראשי.',
             target: (r, c) => r > c,
-            starterCode: `for (int i = 0; i < arr.GetLength(0); i++)
-  for (int j = 0; j < arr.GetLength(1); j++)
+            starterCode: `for (int i = 0; i < mat.GetLength(0); i++)
+  for (int j = 0; j < mat.GetLength(1); j++)
     // if(__your answer here___)
-      arr[i, j] = true;`
+      mat[i, j] = true;`
         },
         {
             title: 'Level 5: above secondary diagonal',
             prompt: 'סימון כל התאים מעל לאלכסון המשני.',
             target: (r, c) => r + c < GRID_COLS - 1,
-            starterCode: `for (int i = 0; i < arr.GetLength(0); i++)
+            starterCode: `for (int i = 0; i < mat.GetLength(0); i++)
 {
-  for (int j = 0; j < arr.GetLength(1); j++)
+  for (int j = 0; j < mat.GetLength(1); j++)
   {
     // if(__your answer here___)
     {
-      arr[i, j] = true;
+      mat[i, j] = true;
     }
   }
 }`
@@ -98,10 +98,10 @@ for (int i = 0; i < arr.GetLength(0); i++)
             title: 'Level 6: checkerboard',
             prompt: 'Checkerboard marking (one yes one no).',
             target: (r, c) => (r + c) % 2 === 0,
-            starterCode: `for (int i = 0; i < arr.GetLength(0); i++)
-  for (int j = 0; j < arr.GetLength(1); j++)
+            starterCode: `for (int i = 0; i < mat.GetLength(0); i++)
+  for (int j = 0; j < mat.GetLength(1); j++)
     // if(__your answer here___)
-      arr[i, j] = true;`
+      mat[i, j] = true;`
         }
     ];
 
@@ -473,7 +473,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
         }
 
         if (!result.errors.length && result.assigned === 0) {
-            result.errors.push('No array assignments found. Try arr[i, j] = true;');
+            result.errors.push('No array assignments found. Try mat[i, j] = true;');
         }
 
         return result;
@@ -707,7 +707,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
     }
 
     function parseAssignment(text) {
-        const match = text.match(/arr\s*\[\s*([^\],]+)\s*,\s*([^\]]+)\s*\]\s*=\s*true\b/i);
+        const match = text.match(/mat\s*\[\s*([^\],]+)\s*,\s*([^\]]+)\s*\]\s*=\s*true\b/i);
         if (!match) {
             return null;
         }
@@ -802,9 +802,9 @@ for (int i = 0; i < arr.GetLength(0); i++)
 
     function normalizeExpression(expr) {
         return expr
-            .replace(/arr\s*\.\s*GetLength\s*\(\s*0\s*\)/gi, String(GRID_ROWS))
-            .replace(/arr\s*\.\s*GetLength\s*\(\s*1\s*\)/gi, String(GRID_COLS))
-            .replace(/arr\s*\.\s*Length\b/gi, String(GRID_ROWS * GRID_COLS));
+            .replace(/mat\s*\.\s*GetLength\s*\(\s*0\s*\)/gi, String(GRID_ROWS))
+            .replace(/mat\s*\.\s*GetLength\s*\(\s*1\s*\)/gi, String(GRID_COLS))
+            .replace(/mat\s*\.\s*Length\b/gi, String(GRID_ROWS * GRID_COLS));
     }
 
     function substituteVariables(expr, env) {
