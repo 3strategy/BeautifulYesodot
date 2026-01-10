@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "פרק 10 - תרגול מערך דו-ממדי"
-subtitle: "תרגול אינטרקטיבי - לולאות במערך דו-ממדי"
+title: "פרק 10 - אלכסונים במערך דו-ממדי"
+subtitle: "תרגול אינטרקטיבי - כתיבת לולאות במערך דו-ממדי"
 author: גיא סידס
 lang: he
 tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטיבי, game
