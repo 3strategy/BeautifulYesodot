@@ -123,6 +123,26 @@ tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטי
         opacity: 0.55;
         cursor: not-allowed;
     }
+
+    .interactive-container .logic-toast {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.96);
+    }
+
+    .interactive-container .logic-toast.show {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .interactive-container .logic-toast.level-up {
+        background: linear-gradient(135deg, #f6cf4a, #ff8a3d 45%, #ff4f7b);
+        color: #2a0b00;
+        border-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 18px 35px rgba(255, 140, 60, 0.45),
+            0 0 0 3px rgba(255, 240, 200, 0.45);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
 </style>
 
 <div class="interactive-container" id="logic-painter-container">
@@ -131,7 +151,7 @@ tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטי
 
     <div class="logic-toast" id="logic-painter-toast" aria-live="polite"></div>
 
-    <div class="two-columns">
+    <div class="two-columns" style="direction: ltr">
         <div class="column">
     <div class="code-box" id="logic-painter-code">
         Loading...
@@ -176,11 +196,12 @@ tags: 2d-array, interactive,מערך דו-ממדי,nested loops,אינטרקטי
         </div>
     </div>
 
-    <div class="logic-controls">
-        <button class="btn" id="logic-painter-prev" type="button">Prev</button>
-        <button class="btn" id="logic-painter-next" type="button">Next</button>
+    <div class="logic-controls" style="direction:ltr">
+     <button class="btn" id="logic-painter-check" type="button" onclick="checkSolution()">בדוק תשובה</button>
+        <button class="btn" id="logic-painter-prev" type="button"> ◀ Prev</button>
+        <button class="btn" id="logic-painter-next" type="button">Next  ▶ </button>
         <button class="btn" id="logic-painter-reset" type="button">Reset</button>
-        <button class="btn" id="logic-painter-check" type="button" onclick="checkSolution()">בדוק תשובה</button>
+       
     </div>
     <div id="logic-painter-message"></div>
 

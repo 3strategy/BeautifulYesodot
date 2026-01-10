@@ -275,19 +275,39 @@ for (int i = 0; i < arr.GetLength(0); i++)
         updateNavButtons(prevButton, nextButton);
     }
 
-    function showToast(messageText) {
+    function showToast(messageText, options) {
         const toast = document.getElementById('logic-painter-toast');
         if (!toast) {
-            return;
+            return Promise.resolve();
         }
+        const opts = options || {};
+        const variant = typeof opts.variant === 'string' ? opts.variant.trim() : '';
+        const duration = Number.isFinite(opts.duration) ? opts.duration : 900;
+        const transitionMs = 300;
+        const visibleDuration = Math.max(duration - transitionMs, 0);
+
         toast.textContent = messageText;
+        toast.classList.remove('show', 'level-up');
+        if (variant) {
+            toast.classList.add(variant);
+        }
+
+        void toast.offsetWidth;
         toast.classList.add('show');
+
         if (toastTimeout) {
             clearTimeout(toastTimeout);
         }
-        toastTimeout = setTimeout(() => {
-            toast.classList.remove('show');
-        }, 1600);
+
+        return new Promise((resolve) => {
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+                if (variant) {
+                    toast.classList.remove(variant);
+                }
+                setTimeout(resolve, transitionMs);
+            }, visibleDuration);
+        });
     }
 
     function scrollToInstruction() {
@@ -359,11 +379,14 @@ for (int i = 0; i < arr.GetLength(0); i++)
         if (!mismatch && !hasOutOfBounds) {
             message.style.color = '#98c379';
             message.innerText = 'Nice! Your loops match the target.';
-            showToast('Great job!');
             if (currentLevel < levels.length - 1) {
-                setTimeout(() => {
+                showToast('Great job!', { duration: 800 }).then(() => {
+                    return showToast('Level up!', { duration: 1000, variant: 'level-up' });
+                }).then(() => {
                     setLevel(currentLevel + 1, codeDisplay, input, message, prevButton, nextButton);
-                }, 1200);
+                });
+            } else {
+                showToast('Great job!', { duration: 800 });
             }
         } else {
             const parts = [];
