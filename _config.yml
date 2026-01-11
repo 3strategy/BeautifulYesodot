@@ -26,7 +26,8 @@ navbar-links:
   חלק א:
     
     - פרק 0:
-        - מצטרפים חדשים: "/cs/0YearOpeningMerge"
+        - חשיפת מגמה: "/cs/0YearOpeningIntro"
+        # - מצטרפים חדשים: "/cs/0YearOpeningMerge"
         - פתיחת שנה: "/cs/0YearOpening"
         - פרק 0 מעקב התקדמות: "/cs/Chapter0/"
         - קיצורים: "/cs/Chapter1Shortcuts/"
