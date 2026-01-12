@@ -12,12 +12,15 @@ lang: he
 מחלקת טיפוס הנתונים מחרוזת (String) כוללת בתכנית הלימודים, אך מוגבלת לפעולות הבאות בלבד: myString[ind], .Contains(value), .IndexOf(char), .Length
 {: .box-note}
 
+<details markdown="1"><summary>הערה למורים</summary>
 נובע, שאין הכרח ללמד את הכלים הנוחים שראינו שהם שימושיים ליום יום להדפסות, ולהקנייה של פעולות בשרשרת על עצמים, אבל פחות רלוונטית בהמשך בעבודה עם פונקציות שמטפלות במערכים ובעצמים: .Replace(), .Substring(), .Split(","). תלמידים במקרים רבים גם ישכחו את אופן השימוש הנכון ולכן עדיף להקדיש כמה שפחות זמן לדברים האלו. 
 {: .box-note}
 
 לטעמי גם הבנה ההתנהגות של מחרוזת בהיבט של מצביעים לכתובות זכרון הפניות, הבנת המושג immutable הם מיותרים, במיוחד בשלב זה של הלמידה. עדיף להבין לעומק מהו מצביע לאובייקט כשעובדים עם מערכים, ואחר כך מחלקות.
 
 למי שרוצה להתעמק בהבנה הנושא כבר בשלב זה, ניתן להיעזר [בפרוייקט שהכנתי כאן](https://github.com/3strategy/ConsApp4ObjectAddresses). לא נראה זאת בשיעור (למניעת בלבול מיותר). מומלץ לחזור לפרוייקט הזה לאחר לימוד עצמים (הדוגמא מכילה שני פרוייקטים - אחד לעצמים ואחד למחרוזות. יתכן שבהמשך אוסיף גרסה לשלמים)
+
+</details>
 
 ## וכעת, השאלה היא מה נותר ללמד? {#id8strings}
 כיוון שאנחנו לא בתחילת הלמידה - ניגע ישר בעצם העניין. מחרוזת היא טיפוס שדומה במקצת למערך בכך שניתן לגשת לתו לפי מיקום:
@@ -38,7 +41,79 @@ s[1] = 'G'; // Property or indexr cannot be assigned to -- it is read only
 
 ```
 
-לדבר על מיון לקסיקוגרפי:
+<details markdown="1"><summary>הגדרות קצרות: IndexOf / Contains / Substring / string.Join</summary>
+- `IndexOf` - מחזירה את המיקום (אינדקס) הראשון של תו/מחרוזת בתוך המחרוזת; אם לא נמצא מחזירה -1.
+- `Contains` - מחזירה `true` אם המחרוזת מכילה תו/מחרוזת; אחרת `false`.
+- `Substring(start, length)` - מחזירה תת-מחרוזת החל ממיקום `start` ובאורך `length`.
+- `string.Join(" ", arr)` - מחברת את איברי המערך עם רווחים ביניהם; מומלץ להימנע בשאלות בגרות (יכול להיות שלא יקבלו בבגרות).
+</details>
+
+**דוגמאות קצרות:**
+
+שאלה: עבור כל מילה במערך, הדפס את מיקום האות 'a'.  
+<details markdown="1"><summary>פתרון (הזדמנות טובה ללמוד foreach)</summary>
+```csharp
+string[] words = { "cat", "dog", "banana" };
+
+foreach (string word in words)
+{
+    int index = word.IndexOf('a');
+    Console.WriteLine(index);
+}
+```
+</details>
+
+שאלה: הדפס רק את המילים שמכילות את הרצף "car".  
+<details markdown="1"><summary>פתרון (הזדמנות טובה ללמוד foreach)</summary>
+```csharp
+string[] words = { "car", "cartoon", "dog", "scar" };
+
+foreach (string word in words)
+{
+    if (word.Contains("car"))
+    {
+        Console.WriteLine(word);
+    }
+}
+```
+</details>
+
+שאלה: הדפס את שלושת התווים הראשונים מכל מילה (אם האורך מספיק).  
+<details markdown="1"><summary>פתרון (הזדמנות טובה ללמוד foreach)</summary>
+```csharp
+string[] words = { "hello", "to", "world" };
+
+foreach (string word in words)
+{
+    if (word.Length >= 3)
+    {
+        Console.WriteLine(word.Substring(0, 3));
+    }
+}
+```
+</details>
+
+שאלה: חבר את כל המילים במערך למשפט עם רווחים.  
+<details markdown="1"><summary>פתרון (הזדמנות טובה ללמוד foreach)</summary>
+```csharp
+string[] arr = { "I", "love", "C#" };
+string result = "";
+
+foreach (string word in arr)
+{
+    if (result != "")
+    {
+        result += " ";
+    }
+    result += word;
+}
+
+Console.WriteLine(result);
+// אפשר גם: string.Join(" ", arr) אבל מומלץ להימנע (יכול להיות שלא יקבלו בבגרות)
+```
+</details>
+
+**מיון לקסיקוגרפי:**
 
 ```csharp
 string s1 = "Goat";
