@@ -10,8 +10,15 @@ lang: he
 **מטרת המפגש**: להראות לכם איך נראית הדרך להפוך ממי שמשתמש באפליקציות,   
 למי שבונה אותן.
 
-{% include instagram.html id="DR5JDvbElp3" %}
+{% include mp4.html id="AImeansMoreCSnotLess.mp4" %}
+
+<!-- לקחתי את הטקסט של זאב וביקשתי מ notebooklm לחפש ברשת מאמרים תומכים. על בסיס אלו ביקשתי מ notebooklm לייצר סרטון לתלמידי ט אשר שוקלים בחירת מגמות -->
+
+<!-- {% include instagram.html id="DR5JDvbElp3" %}
 {% include youtube.html id="nKIu9yen5nc" %}
+{% include youtube.html id="RNJCfif1dPY" %} Andrew Ng.
+
+ -->
 
 ---
 
