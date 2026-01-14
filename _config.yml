@@ -141,6 +141,10 @@ navbar-links:
         - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
         - קישורים 11.9: "/cs3e/Objects_09_Links/"
 
+  תב"א:
+    - 1 html: "https://docs.google.com/presentation/d/1Wfgo_PbW09k4XY_U-FmvdOjBWX0NGEWCj16PafzMfKA/edit?usp=sharing"
+    - 3 MasterPage: "https://docs.google.com/presentation/d/1DTFoEBQdky6IW69m2I-sGcvqzs6Etzi2U7TvU3-6ZIk/edit?usp=sharing"
+    - 4 More JavaScript: "https://docs.google.com/presentation/d/1H2u74LjHSzAnlRnB7MO_drahi9x998TNs9O7cJZRvGo/edit?usp=sharing"
 
   חיצוני:
     - אתר מבני נתונים: "https://מבני.שלי.com"
