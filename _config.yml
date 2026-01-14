@@ -26,7 +26,8 @@ navbar-links:
   חלק א:
     
     - פרק 0:
-        - מצטרפים חדשים: "/cs/0YearOpeningMerge"
+        - חשיפת מגמה: "/cs/0YearOpeningIntro"
+        # - מצטרפים חדשים: "/cs/0YearOpeningMerge"
         - פתיחת שנה: "/cs/0YearOpening"
         - פרק 0 מעקב התקדמות: "/cs/Chapter0/"
         - קיצורים: "/cs/Chapter1Shortcuts/"
@@ -125,14 +126,15 @@ navbar-links:
     - תקציר תחביר: "/cs2/ChapterSyntaxSummaryToPrint"
 
   חלק ג:
+    - סיכום הפרקים הקודמים: "/cs3e/ChapterGimelOpening/"
     - פרק 10 מערך דו ממדי: 
         - פרק 10 מערך דו-ממדי: "/cs3e/Chapter10"
         - 10.1.1 טור ושורה אינטרקטיבי: "/cs3e/Ex/Chapter10BidiInteractive"
         - 10.1.2 אלכסונים אינטרקטיבי: "/cs3e/Ex/Chapter10BidiInteractiveDiag"
-        # - 10.1.3 תרגיל אלכסונים: "/cs3e/Ex/Ex10.1"
+        # - 10.1.3 תרגיל אלכסונים: "/cs3e/Ex/Ex10.1" עדיף אינטרקטיבי
 
-        #- 10.2 תרגול מתקדם ובגרויות: "/cs3e/Ex/Ex10.2"
-    - סיכום הפרקים הקודמים: "/cs3e/ChapterGimelOpening/"
+        #- 10.2 תרגול מתקדם ובגרויות: "/cs3e/Ex/Ex10.2" במערכת
+
     - פרק 11 עצמים:
         - למה 11.1: "/cs3e/Objects_01_WhyWhatPrinciples/"
         - 11.1.1 תרגול אינטרקטיבי: "/cs3e/Ex/Ex11.1objects_array_interactive.html"
@@ -149,13 +151,14 @@ navbar-links:
   חיצוני:
     - אתר מבני נתונים: "https://מבני.שלי.com"
     - אתר מתמטיקה: "https://מתמטיקה.com"
+    - שאלות ותשובות: "https://pop.education.gov.il/tchumey_daat/computer-science-software-engineering-cyber/high-school/pedagogy-of/faq/"
     - מכתב 503 (מסמך קישורים): https://docs.google.com/document/d/1pzqtdzM2CrUpjx7KYljAHM5lbd1IGOhGfL5ju7XnJVY/edit?usp=sharing
     - קמפוס יסודות: "https://courses.campus.gov.il/courses/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/course/"
     - תכנית הלימודים: "https://meyda.education.gov.il/files/CSIT/CS_1-2-4_ver_2-63.pdf#page=56"
     - מה מותר ומה אסור: "https://docs.google.com/document/d/1_38kIc1UwK7Eiz673KyBjqGdkJeqa-I5kGCDOMckHqc/edit?usp=sharing"
     - בגרויות באתר משרד החינוך: "https://meyda.education.gov.il/bagmgr"
     - מה מותר ומה אסור: "https://docs.google.com/document/d/1_38kIc1UwK7Eiz673KyBjqGdkJeqa-I5kGCDOMckHqc/edit?usp=sharing"
-
+    - מאגר ההקלטות: "https://pop.education.gov.il/sherutey-tiksuv-bachinuch/vod-broadcasts/"
 
 
   הגדרות:

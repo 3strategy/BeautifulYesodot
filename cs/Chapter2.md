@@ -2,7 +2,7 @@
 layout: page
 title: "פרק 2 המחלקה Math, Random"
 subtitle: "חישובים מתמטיים ומספרים אקראיים"
-tags: [המחלקה Random, המתמטית,דיבוג breakpoints, הגרלות, פונקציות מתמטיות, טבלת מעקב]
+tags: [המחלקה Random,static Random,איתחול סטטי, המתמטית,דיבוג breakpoints, הגרלות, פונקציות מתמטיות, טבלת מעקב]
 author: גיא סידס
 lang: he
 ---
@@ -52,47 +52,60 @@ static void Main(String[] args)
 
 יצירת מספר אקראי שלם בין 1 ל-10:
 
-{% highlight csharp linenos %}Random rnd = new Random();
-int number = rnd.Next(1, 11); // 1-10
-Console.WriteLine(number);
+{% highlight csharp linenos %}public static Random rnd = new Random();
+
+public static void Main()
+{
+ int number = rnd.Next(1, 11); // 1-10
+ Console.WriteLine(number);
+}
 {% endhighlight %}
 
 יצירת מספר אקראי ממשי בין 0 ל-1:
 
-{% highlight csharp linenos %}Random rnd = new Random();
-double number = rnd.NextDouble();
-Console.WriteLine(number);
+{% highlight csharp linenos %}public static Random rnd = new Random();
+
+public static void Main()
+{
+ double number = rnd.NextDouble();
+ Console.WriteLine(number);
+}
 {% endhighlight %}
 
 ## דוגמא לשימוש במספרים אקראיים
 
 הדמיית הטלת קובייה:
 
-{% highlight csharp linenos %}Random rnd = new Random();
-int dice = rnd.Next(1, 7); // 1-6
-Console.WriteLine("Dice roll result: " + dice);
+{% highlight csharp linenos %}public static Random rnd = new Random();
+
+public static void Main()
+{
+ int dice = rnd.Next(1, 7); // 1-6
+ Console.WriteLine("Dice roll result: " + dice);
+}
 {% endhighlight %}
 
 ## טבלת מעקב (דוגמה לשימוש ב-Random)
 
+{: .table-hee}
+
 | שורת קוד | dice | פלט                     |
 |-----------|------|-------------------------|
-| הגדרה    | 4    |                         |
-| פלט      | 4    | Dice roll result: 4  |
-{: .table-en}
+| הגדרה | 4    |                         |
+| פלט | 4    | Dice roll result: 4  |
 
-## למה מאתחלים רק אובייקט אחד של Random?
+## למה מאתחלים רק אובייקט אחד, כלומר עובדים עם `static Random`? {#id.staticrandom}
 
 <details markdown="1"><summary>הוכחה שחשוב להימנע מאיתחול rnd בתוך פונקציה</summary>
 
 {: .box-error}
 מעטים מודעים לבעיה המוסברת כאן. כדי להסביר אותה **חייבים להכיר מערכים**, ורצוי להכיר עצמים. כדאי להיכנס לכאן בשלב מאוחר יותר של הלמידה. אין לכך השלכות לבגרות (מעטים מכירים את הבעייה ואין כמעט ראנדום בבחינות בגרות). כמובן **שלשימושים מציאותיים זו תובנה מאד חשובה.**
 
-**בקוד שלהלן ממלאים מערך של 1000 שלמים במספרים אקראיים 0 או 1. במצב רנדומלי עלינו לצפות לתוצאה יחסית קרובה ל-500 אם נספור את כמות ה-1 שקיבלנו.** (בין 468–532 ב-95% מהניסויים שנערוך). 
+**בקוד שלהלן ממלאים מערך של 1000 שלמים במספרים אקראיים 0 או 1. במצב רנדומלי עלינו לצפות לתוצאה יחסית קרובה ל-500 אם נספור את כמות ה-1 שקיבלנו.** (בין 468–532 ב-95% מהניסויים שנערוך).
 
 **הדוגמא מצליחה להראות את הפגם באיתחול מרובה, כאשר מריצים אותה בגרסת .net framework 4.7.2. יתכן שבגרסאות שונות אלגוריתם בחירת ה-seed יותר מתקדם ומכשיל את הדוגמא.** על כל פנים העיקרון ברור. המופע (אובייקט) rnd הוא מנוע שכבר מכיל בתוכו שרשרת צפוייה מראש של מספרים אקראיים, והשרשרת תלוייה ב-seed שנקבע בעצמו באופן אקראי. כדי ליצור 1000 מספרים אקראיים לא נכון ליצור 1000 מכונות לוטו. מכונה אחת יכולה להגריל אינסוף מספרים. ברגע שיצרנו 1000 מכונות באותו שבריר שנייה (כפי שמודגם כאן) יתכן שרבות מהמכונות שיצרנו זהות, ואנחנו בעצם מבקשים מ-1000 מכונות יחסית זהות, לשלוף את המספר הראשון שיש להן במצבור. התוצאה במקרים טיפוסיים היא אוסף שאינו לגמרי רנדומלי, ובדוגמא קיצונית זו מקבלים ממש 1000 תוצאות שכולן 0 או כולן 1.
 
-{% highlight csharp linenos %}static int[] arr = new int[1000];
+{% highlight cs linenos mark_lines="19 20" %}static int[] arr = new int[1000];
 static int current = 0;
 static void Main(string[] args)
 {

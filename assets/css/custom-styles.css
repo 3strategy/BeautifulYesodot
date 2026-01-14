@@ -241,6 +241,12 @@ details {
     margin-top:1.5em;
 }
 
+details > summary {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
 pre {
     direction: ltr !important;
     text-align: left !important;
@@ -329,6 +335,17 @@ ul, ol {
     display: flex;
     flex-direction: column;
     gap: 0.6em;
+    list-style-position: outside;
+    padding-inline-start: 2em;
+}
+
+/* Hebrew alphabetic list markers (א, ב, ג, ...) */
+@counter-style alefbet {
+    system: alphabetic;
+    symbols: "\05D0" "\05D1" "\05D2" "\05D3" "\05D4" "\05D5" "\05D6" "\05D7" "\05D8" "\05D9"
+             "\05DB" "\05DC" "\05DE" "\05E0" "\05E1" "\05E2" "\05E4" "\05E6" "\05E7" "\05E8"
+             "\05E9" "\05EA";
+    suffix: ". ";
 }
 
 /* Keep footer social links horizontal despite global UL rule */
@@ -346,10 +363,10 @@ footer .list-inline {
     padding-inline-start: 1.5em;
 }
 
-.hebrew-list {
+ol.hebrew-list,
+ol.alefbet {
     list-style-type: hebrew;
-    margin-inline-start: 2em;
-    list-style-position: inside;
+    list-style-type: alefbet;
 }
 
 #canvas-container {
@@ -502,6 +519,134 @@ td:has(i), th:has(i) {
   text-align: left;
 }
 
+/* eh: English, Hebrew (opposite of table-rl) */
+.table-eh td:first-child,
+.table-eh th:first-child {
+  text-align: left;
+  direction: ltr;
+}
+
+.table-eh td:nth-child(2),
+.table-eh th:nth-child(2) {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Mixed-language tables by column (h=Hebrew, e=English) */
+.table-heh th:first-child,
+.table-heh td:first-child {
+  text-align: right;
+  direction: rtl;
+}
+
+.table-heh th:nth-child(2),
+.table-heh td:nth-child(2) {
+  text-align: left;
+  direction: ltr;
+}
+
+.table-heh th:nth-child(3),
+.table-heh td:nth-child(3) {
+  text-align: right;
+  direction: rtl;
+}
+
+/* hhe: Hebrew, Hebrew, English */
+.table-hhe th:first-child,
+.table-hhe td:first-child,
+.table-hhe th:nth-child(2),
+.table-hhe td:nth-child(2) {
+  text-align: right;
+  direction: rtl;
+}
+
+.table-hhe th:nth-child(3),
+.table-hhe td:nth-child(3) {
+  text-align: left;
+  direction: ltr;
+}
+
+/* hee: Hebrew, English, English */
+.table-hee th:first-child,
+.table-hee td:first-child {
+  text-align: right;
+  direction: rtl;
+}
+
+.table-hee th:nth-child(2),
+.table-hee td:nth-child(2),
+.table-hee th:nth-child(3),
+.table-hee td:nth-child(3) {
+  text-align: left;
+  direction: ltr;
+}
+
+/* ehe: English, Hebrew, English */
+.table-ehe th:first-child,
+.table-ehe td:first-child,
+.table-ehe th:nth-child(3),
+.table-ehe td:nth-child(3) {
+  text-align: left;
+  direction: ltr;
+}
+
+.table-ehe th:nth-child(2),
+.table-ehe td:nth-child(2) {
+  text-align: right;
+  direction: rtl;
+}
+
+/* ehhe: English, Hebrew, Hebrew, English */
+.table-ehhe th:first-child,
+.table-ehhe td:first-child,
+.table-ehhe th:nth-child(4),
+.table-ehhe td:nth-child(4) {
+  text-align: left;
+  direction: ltr;
+}
+
+.table-ehhe th:nth-child(2),
+.table-ehhe td:nth-child(2),
+.table-ehhe th:nth-child(3),
+.table-ehhe td:nth-child(3) {
+  text-align: right;
+  direction: rtl;
+}
+
+/* heeh: Hebrew, English, English, Hebrew */
+.table-heeh th:first-child,
+.table-heeh td:first-child,
+.table-heeh th:nth-child(4),
+.table-heeh td:nth-child(4) {
+  text-align: right;
+  direction: rtl;
+}
+
+.table-heeh th:nth-child(2),
+.table-heeh td:nth-child(2),
+.table-heeh th:nth-child(3),
+.table-heeh td:nth-child(3) {
+  text-align: left;
+  direction: ltr;
+}
+
+/* hhee: Hebrew, Hebrew, English, English */
+.table-hhee th:first-child,
+.table-hhee td:first-child,
+.table-hhee th:nth-child(2),
+.table-hhee td:nth-child(2) {
+  text-align: right;
+  direction: rtl;
+}
+
+.table-hhee th:nth-child(3),
+.table-hhee td:nth-child(3),
+.table-hhee th:nth-child(4),
+.table-hhee td:nth-child(4) {
+  text-align: left;
+  direction: ltr;
+}
+
 .table-he th,
 .table-he td {
   text-align: right;
@@ -623,6 +768,7 @@ mark {
     border-radius: 8px;
     padding: 20px;
     direction: rtl;
+    position: relative;
 }
 
 .interactive-container h1 { margin: 5px 0; color: var(--accent-col); font-size: 2em; }
@@ -782,6 +928,29 @@ mark {
     font-size: 1.2em;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.35);
+}
+
+.interactive-container .logic-toast {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    padding: 8px 18px;
+    border-radius: 999px;
+    background-color: var(--panel-col);
+    color: var(--text-col);
+    border: 1px solid var(--panel-border-col);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+    font-size: 1em;
+}
+
+.interactive-container .logic-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 @keyframes shake {

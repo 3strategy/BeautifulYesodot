@@ -3,20 +3,21 @@
     const GRID_COLS = 5;
     const MAX_TOTAL_ITERATIONS = 2000;
     const MAX_LOOP_ITERATIONS = 500;
+    const STORAGE_KEY = `logic-painter-diag-final:${window.location.pathname || 'default'}`;
 
     const levels = [
         {
             title: 'Level 1: main diagonal',
-            prompt: 'Write C# for-loops that set arr[row, col] = true for the main diagonal.',
+            prompt: 'Write C# for-loops that set mat[row, col] = true for the main diagonal.',
             target: (r, c) => r === c,
-            starterCode: `bool[,] arr = new bool[5, 5];
-for (int i = 0; i < arr.GetLength(0); i++)
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
 {
-  for (int j = 0; j < arr.GetLength(1); j++)
+  for (int j = 0; j < mat.GetLength(1); j++)
   {
     // if(__your answer here___)
     {
-      arr[i, j] = true;
+      mat[i, j] = true;
     }
   }
 }`
@@ -26,45 +27,45 @@ for (int i = 0; i < arr.GetLength(0); i++)
             prompt: 'Same target, but use a single loop (no nested loops).',
             target: (r, c) => r === c,
             requireSingleLoop: true,
-            starterCode: `bool[,] arr = new bool[5, 5];
-for (int i = 0; i < arr.GetLength(0); i++)
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
 {
   //your answer here
 }`
         },
         {
             title: 'Level 2: secondary diagonal',
-            prompt: 'Write C# for-loops that set arr[row, col] = true for the secondary diagonal.',
+            prompt: 'Write C# for-loops that set mat[row, col] = true for the secondary diagonal.',
             target: (r, c) => r + c === GRID_COLS - 1,
-            starterCode: `bool[,] arr = new bool[5, 5];
-for (int i = 0; i < arr.GetLength(0); i++)
-  for (int j = 0; j < arr.GetLength(1); j++)
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
+  for (int j = 0; j < mat.GetLength(1); j++)
     // if(__your answer here___)
-      arr[i, j] = true;`
+      mat[i, j] = true;`
         },
         {
             title: 'Level 2b: secondary diagonal (single loop)',
             prompt: 'Same target, but use a single loop (no nested loops).',
             target: (r, c) => r + c === GRID_COLS - 1,
             requireSingleLoop: true,
-            starterCode: `bool[,] arr = new bool[5, 5];
-for (int i = 0; i < arr.GetLength(0); i++)
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
 {
-  arr[i, arr.GetLength(0) - 1 - i];
+  mat[_, _] = true; // your answer here
 }`
         },
         {
             title: 'Level 3: contour',
-            prompt: 'Write C# for-loops that set arr[row, col] = true for the contour (outer border).',
+            prompt: 'Write C# for-loops that set mat[row, col] = true for the contour (outer border).',
             target: (r, c) => r === 0 || c === 0 || r === GRID_ROWS - 1 || c === GRID_COLS - 1,
-            starterCode: `bool[,] arr = new bool[5, 5];
-for (int i = 0; i < arr.GetLength(0); i++)
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
 {
-  for (int j = 0; j < arr.GetLength(1); j++)
+  for (int j = 0; j < mat.GetLength(1); j++)
   {
     // if(__your answer here___)
     {
-      arr[i, j] = true;
+      mat[i, j] = true;
     }
   }
 }`
@@ -73,22 +74,22 @@ for (int i = 0; i < arr.GetLength(0); i++)
             title: 'Level 4: below main diagonal',
             prompt: 'סימון כל התאים מתחת לאלכסון הראשי.',
             target: (r, c) => r > c,
-            starterCode: `for (int i = 0; i < arr.GetLength(0); i++)
-  for (int j = 0; j < arr.GetLength(1); j++)
+            starterCode: `for (int i = 0; i < mat.GetLength(0); i++)
+  for (int j = 0; j < mat.GetLength(1); j++)
     // if(__your answer here___)
-      arr[i, j] = true;`
+      mat[i, j] = true;`
         },
         {
             title: 'Level 5: above secondary diagonal',
             prompt: 'סימון כל התאים מעל לאלכסון המשני.',
             target: (r, c) => r + c < GRID_COLS - 1,
-            starterCode: `for (int i = 0; i < arr.GetLength(0); i++)
+            starterCode: `for (int i = 0; i < mat.GetLength(0); i++)
 {
-  for (int j = 0; j < arr.GetLength(1); j++)
+  for (int j = 0; j < mat.GetLength(1); j++)
   {
     // if(__your answer here___)
     {
-      arr[i, j] = true;
+      mat[i, j] = true;
     }
   }
 }`
@@ -97,23 +98,106 @@ for (int i = 0; i < arr.GetLength(0); i++)
             title: 'Level 6: checkerboard',
             prompt: 'Checkerboard marking (one yes one no).',
             target: (r, c) => (r + c) % 2 === 0,
-            starterCode: `for (int i = 0; i < arr.GetLength(0); i++)
-  for (int j = 0; j < arr.GetLength(1); j++)
+            starterCode: `for (int i = 0; i < mat.GetLength(0); i++)
+  for (int j = 0; j < mat.GetLength(1); j++)
     // if(__your answer here___)
-      arr[i, j] = true;`
+      mat[i, j] = true;`
+        },
+        {
+            title: 'Level 7: The Diamond Chalenge (single loop)',
+            prompt: 'Mark the diamond outline using a single loop.',
+            target: (r, c) => Math.abs(r - 2) + Math.abs(c - 2) === 2,
+            requireSingleLoop: true,
+            starterCode: `bool[,] mat = new bool[5, 5];
+for (int i = 0; i < mat.GetLength(0); i++)
+{
+  // hint: mat[_, _] = mat[_, _] = true;
+}`
         }
     ];
 
-    let currentLevel = 0;
+    function loadState() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) {
+                return { currentLevel: 0, answers: {} };
+            }
+            const parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed !== 'object') {
+                return { currentLevel: 0, answers: {} };
+            }
+            const answers = parsed.answers && typeof parsed.answers === 'object' ? parsed.answers : {};
+            const storedLevel = Number.isInteger(parsed.currentLevel) ? parsed.currentLevel : 0;
+            return { currentLevel: storedLevel, answers };
+        } catch (error) {
+            return { currentLevel: 0, answers: {} };
+        }
+    }
+
+    function clampLevel(index) {
+        const safeIndex = Number.isInteger(index) ? index : 0;
+        return Math.min(Math.max(safeIndex, 0), levels.length - 1);
+    }
+
+    const storedState = loadState();
+    let currentLevel = clampLevel(storedState.currentLevel);
+    let savedAnswers = storedState.answers;
     let pollingInterval;
     let cellGrid = [];
     let targetGrid = [];
+    let toastTimeout;
+
+    function persistState() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                currentLevel,
+                answers: savedAnswers
+            }));
+        } catch (error) {
+            return;
+        }
+    }
+
+    function saveAnswer(levelIndex, code) {
+        savedAnswers[String(levelIndex)] = code;
+        persistState();
+    }
+
+    function getSavedAnswer(levelIndex) {
+        return savedAnswers[String(levelIndex)];
+    }
+
+    function updateNavButtons(prevButton, nextButton) {
+        if (prevButton) {
+            prevButton.disabled = currentLevel <= 0;
+        }
+        if (nextButton) {
+            nextButton.disabled = currentLevel >= levels.length - 1;
+        }
+    }
+
+    function setLevel(nextIndex, codeDisplay, input, message, prevButton, nextButton) {
+        const targetIndex = clampLevel(nextIndex);
+        if (targetIndex === currentLevel) {
+            updateNavButtons(prevButton, nextButton);
+            return;
+        }
+
+        saveAnswer(currentLevel, input.value || '');
+        currentLevel = targetIndex;
+        persistState();
+        initLevel(codeDisplay, input, message, prevButton, nextButton);
+        scrollToInstruction();
+    }
 
     function initGame() {
         const grid = document.getElementById('logic-painter-grid');
         const codeDisplay = document.getElementById('logic-painter-code');
         const message = document.getElementById('logic-painter-message');
         const input = document.getElementById('logic-painter-input');
+        const prevButton = document.getElementById('logic-painter-prev');
+        const nextButton = document.getElementById('logic-painter-next');
+        const resetButton = document.getElementById('logic-painter-reset');
 
         if (!grid || !codeDisplay || !message || !input) {
             return false;
@@ -124,11 +208,39 @@ for (int i = 0; i < arr.GetLength(0); i++)
         }
 
         buildGrid(grid);
-        initLevel(codeDisplay, input, message);
+        initLevel(codeDisplay, input, message, prevButton, nextButton);
+        persistState();
 
         window.checkSolution = function () {
-            runCheck(codeDisplay, input, message);
+            runCheck(codeDisplay, input, message, prevButton, nextButton);
         };
+
+        if (prevButton) {
+            prevButton.addEventListener('click', () => {
+                setLevel(currentLevel - 1, codeDisplay, input, message, prevButton, nextButton);
+            });
+        }
+
+        if (nextButton) {
+            nextButton.addEventListener('click', () => {
+                setLevel(currentLevel + 1, codeDisplay, input, message, prevButton, nextButton);
+            });
+        }
+
+        if (resetButton) {
+            resetButton.addEventListener('click', () => {
+                const level = levels[currentLevel];
+                input.value = level.starterCode;
+                message.innerText = '';
+                clearUserClasses();
+                saveAnswer(currentLevel, input.value);
+                showToast('Reset to starter code.');
+            });
+        }
+
+        input.addEventListener('input', () => {
+            saveAnswer(currentLevel, input.value);
+        });
 
         return true;
     }
@@ -157,10 +269,11 @@ for (int i = 0; i < arr.GetLength(0); i++)
         }
     }
 
-    function initLevel(codeDisplay, input, message) {
+    function initLevel(codeDisplay, input, message, prevButton, nextButton) {
         const level = levels[currentLevel];
         message.innerText = '';
-        input.value = level.starterCode;
+        const savedCode = getSavedAnswer(currentLevel);
+        input.value = savedCode !== undefined ? savedCode : level.starterCode;
 
         codeDisplay.innerHTML = [
             `<div class="level-title">${escapeHtml(level.title)}</div>`,
@@ -170,6 +283,55 @@ for (int i = 0; i < arr.GetLength(0); i++)
         targetGrid = buildTargetGrid(level);
         applyTargetClasses();
         clearUserClasses();
+        updateNavButtons(prevButton, nextButton);
+    }
+
+    function showToast(messageText, options) {
+        const toast = document.getElementById('logic-painter-toast');
+        if (!toast) {
+            return Promise.resolve();
+        }
+        const opts = options || {};
+        const variant = typeof opts.variant === 'string' ? opts.variant.trim() : '';
+        const duration = Number.isFinite(opts.duration) ? opts.duration : 900;
+        const transitionMs = 300;
+        const visibleDuration = Math.max(duration - transitionMs, 0);
+
+        toast.textContent = messageText;
+        toast.classList.remove('show', 'level-up');
+        if (variant) {
+            toast.classList.add(variant);
+        }
+
+        void toast.offsetWidth;
+        toast.classList.add('show');
+
+        if (toastTimeout) {
+            clearTimeout(toastTimeout);
+        }
+
+        return new Promise((resolve) => {
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+                if (variant) {
+                    toast.classList.remove(variant);
+                }
+                setTimeout(resolve, transitionMs);
+            }, visibleDuration);
+        });
+    }
+
+    function scrollToInstruction() {
+        const anchor = document.getElementById('logic-painter-container') ||
+            document.getElementById('logic-painter-instruction');
+        const container = document.querySelector('.interactive-container');
+        const target = anchor || container;
+        if (!target) {
+            return;
+        }
+        const rect = target.getBoundingClientRect();
+        const top = window.pageYOffset + rect.top - 12;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
     }
 
     function buildTargetGrid(level) {
@@ -202,8 +364,9 @@ for (int i = 0; i < arr.GetLength(0); i++)
         }
     }
 
-    function runCheck(codeDisplay, input, message) {
+    function runCheck(codeDisplay, input, message, prevButton, nextButton) {
         const code = input.value || '';
+        saveAnswer(currentLevel, code);
         clearUserClasses();
 
         const result = runUserCode(code);
@@ -228,10 +391,13 @@ for (int i = 0; i < arr.GetLength(0); i++)
             message.style.color = '#98c379';
             message.innerText = 'Nice! Your loops match the target.';
             if (currentLevel < levels.length - 1) {
-                setTimeout(() => {
-                    currentLevel++;
-                    initLevel(codeDisplay, input, message);
-                }, 1200);
+                showToast('Great job!', { duration: 800 }).then(() => {
+                    return showToast('Level up!', { duration: 1000, variant: 'level-up' });
+                }).then(() => {
+                    setLevel(currentLevel + 1, codeDisplay, input, message, prevButton, nextButton);
+                });
+            } else {
+                showToast('Great job!', { duration: 800 });
             }
         } else {
             const parts = [];
@@ -318,7 +484,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
         }
 
         if (!result.errors.length && result.assigned === 0) {
-            result.errors.push('No array assignments found. Try arr[i, j] = true;');
+            result.errors.push('No array assignments found. Try mat[i, j] = true;');
         }
 
         return result;
@@ -408,7 +574,11 @@ for (int i = 0; i < arr.GetLength(0); i++)
             const statementText = src.slice(index, statementEnd).trim();
             const assignment = parseAssignment(statementText);
             if (assignment) {
-                statements.push(assignment);
+                if (Array.isArray(assignment)) {
+                    statements.push(...assignment);
+                } else {
+                    statements.push(assignment);
+                }
             }
             index = statementEnd;
         }
@@ -522,7 +692,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
         }
         const single = parseSingleStatement(src, index);
         return {
-            statements: single.node ? [single.node] : [],
+            statements: single.nodes,
             index: single.index
         };
     }
@@ -537,22 +707,33 @@ for (int i = 0; i < arr.GetLength(0); i++)
     function parseSingleStatement(src, index) {
         index = skipWhitespaceAndSemicolons(src, index);
         if (startsWithWord(src, index, 'for')) {
-            return parseFor(src, index);
+            const parsed = parseFor(src, index);
+            return { nodes: [parsed.node], index: parsed.index };
         }
         if (startsWithWord(src, index, 'if')) {
-            return parseIf(src, index);
+            const parsed = parseIf(src, index);
+            return { nodes: [parsed.node], index: parsed.index };
         }
 
         const statementEnd = findStatementEnd(src, index);
         const statementText = src.slice(index, statementEnd).trim();
+        const assignment = parseAssignment(statementText);
         return {
-            node: parseAssignment(statementText),
+            nodes: assignment ? (Array.isArray(assignment) ? assignment : [assignment]) : [],
             index: statementEnd
         };
     }
 
     function parseAssignment(text) {
-        const match = text.match(/arr\s*\[\s*([^\],]+)\s*,\s*([^\]]+)\s*\]\s*=\s*true\b/i);
+        const chainMatch = text.match(/mat\s*\[\s*([^\],]+)\s*,\s*([^\]]+)\s*\]\s*=\s*mat\s*\[\s*([^\],]+)\s*,\s*([^\]]+)\s*\]\s*=\s*true\b/i);
+        if (chainMatch) {
+            return [
+                { type: 'assign', rowExpr: chainMatch[1].trim(), colExpr: chainMatch[2].trim() },
+                { type: 'assign', rowExpr: chainMatch[3].trim(), colExpr: chainMatch[4].trim() }
+            ];
+        }
+
+        const match = text.match(/mat\s*\[\s*([^\],]+)\s*,\s*([^\]]+)\s*\]\s*=\s*true\b/i);
         if (!match) {
             return null;
         }
@@ -634,7 +815,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
         if (safe === '') {
             throw new Error('Empty expression.');
         }
-        if (/[^0-9+\-*/%()<>!=&|\s]/.test(safe)) {
+        if (/[^0-9+\-*/%()<>!=&|?:\s]/.test(safe)) {
             throw new Error(`Unsupported expression: ${expr.trim()}`);
         }
 
@@ -646,10 +827,33 @@ for (int i = 0; i < arr.GetLength(0); i++)
     }
 
     function normalizeExpression(expr) {
-        return expr
-            .replace(/arr\s*\.\s*GetLength\s*\(\s*0\s*\)/gi, String(GRID_ROWS))
-            .replace(/arr\s*\.\s*GetLength\s*\(\s*1\s*\)/gi, String(GRID_COLS))
-            .replace(/arr\s*\.\s*Length\b/gi, String(GRID_ROWS * GRID_COLS));
+        const normalized = expr
+            .replace(/mat\s*\.\s*GetLength\s*\(\s*0\s*\)/gi, String(GRID_ROWS))
+            .replace(/mat\s*\.\s*GetLength\s*\(\s*1\s*\)/gi, String(GRID_COLS))
+            .replace(/mat\s*\.\s*Length\b/gi, String(GRID_ROWS * GRID_COLS));
+
+        return expandAbsCalls(normalized);
+    }
+
+    function expandAbsCalls(expr) {
+        const absRegex = /Math\s*\.\s*Abs\s*\(/gi;
+        let output = '';
+        let cursor = 0;
+        while (cursor < expr.length) {
+            absRegex.lastIndex = cursor;
+            const match = absRegex.exec(expr);
+            if (!match) {
+                output += expr.slice(cursor);
+                break;
+            }
+            output += expr.slice(cursor, match.index);
+            const openIndex = match.index + match[0].length - 1;
+            const closeIndex = findMatching(expr, openIndex, '(', ')');
+            const inner = expandAbsCalls(expr.slice(openIndex + 1, closeIndex));
+            output += `(((${inner}) < 0 ? -(${inner}) : (${inner})))`;
+            cursor = closeIndex + 1;
+        }
+        return output;
     }
 
     function substituteVariables(expr, env) {
