@@ -257,3 +257,68 @@ public static int Foo(int[] a, int num)
 - `num` **לא נמצא במערך**, ו־**כל 20 האיברים במערך קטנים מ־num**  
   כלומר `num` גדול מכל איברי המערך (וגם שונה מהם).
 
+## שאלה 5 (25 נק)
+
+```cs
+    static int[] Rain(int[] arr)
+    {
+      int sum = 0, count = 0, maxI = 0, streak = 0;
+      for (int i = 0; i < arr.Length; i++)
+      {
+        int n = arr[i];
+        if (n > 0)
+          streak++;
+
+        if (n > arr[maxI])
+          maxI = 1;
+
+        if (n == 0 || i == arr.Length - 1)
+        {
+          if (streak > 2)
+            count++;
+
+          streak = 0;
+        }
+
+      }
+    static int[] Rain(int[] arr)
+    {
+      int sum = 0, count = 0, maxI = 0, streak = 0;
+      for (int i = 0; i < arr.Length; i++)
+      {
+        int n = arr[i];
+        if (n > 0)
+          streak++;
+
+        if (n > arr[maxI])
+          maxI = 1;
+
+        if (n == 0 || i == arr.Length - 1)
+        {
+          if (streak > 2)
+            count++;
+
+          streak = 0;
+        }
+
+      }
+
+      return new int[]{ maxI + 1, count};
+      //return [maxI + 1, count]; // בוחנים לא יכירו
+    }
+
+```
+
+|A |B
+|--|--
+|1<td rowspan="2">3</td>
+|2
+|4|5
+|6|7
+
+
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+<td rowspan="2">Spans two rows</td> | Cell A | Cell B |
+|  Cell C | Cell D |
+| Regular cell | Cell E | Cell F |
