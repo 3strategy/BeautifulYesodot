@@ -1,15 +1,37 @@
-﻿// attention - copy this into the right place, after you Ctrl + Shift + A 
+/// <summary>
+/// Provides console drawing helpers for a 2D coordinate system.
+/// </summary>
+/// <remarks>
+/// Note: copy this class into the appropriate project location after using Ctrl+Shift+A.
+/// </remarks>
 public static class Drawing
 {
-    static public int MIN_Y = -(Console.WindowHeight - 1) / 2;
-    static public int MAX_Y = (Console.WindowHeight - 1) / 2;
-    static public int MIN_X = -(Console.WindowWidth - 1) / 2;
-    static public int MAX_X = (Console.WindowWidth - 1) / 2;
+    /// <summary>
+    /// The minimum y-coordinate supported by the console drawing area.
+    /// </summary>
+    public static int MIN_Y = -(Console.WindowHeight - 1) / 2;
 
-    static private bool bAxesExists = false;
+    /// <summary>
+    /// The maximum y-coordinate supported by the console drawing area.
+    /// </summary>
+    public static int MAX_Y = (Console.WindowHeight - 1) / 2;
 
-    // Draw x/y axes 
-    static public void DrawAxes()
+    /// <summary>
+    /// The minimum x-coordinate supported by the console drawing area.
+    /// </summary>
+    public static int MIN_X = -(Console.WindowWidth - 1) / 2;
+
+    /// <summary>
+    /// The maximum x-coordinate supported by the console drawing area.
+    /// </summary>
+    public static int MAX_X = (Console.WindowWidth - 1) / 2;
+
+    private static bool bAxesExists = false;
+
+    /// <summary>
+    /// Draws the x and y axes once in the console.
+    /// </summary>
+    public static void DrawAxes()
     {
         if (bAxesExists)
             return;
@@ -35,8 +57,12 @@ public static class Drawing
         bAxesExists = true;
     }
 
-    // Set cursor position
-    static public void SetPosition(int x, int y)
+    /// <summary>
+    /// Sets the cursor position using the drawing coordinate system.
+    /// </summary>
+    /// <param name="x">The x-coordinate to position the cursor at.</param>
+    /// <param name="y">The y-coordinate to position the cursor at.</param>
+    public static void SetPosition(int x, int y)
     {
         if (x < MIN_X || x > MAX_X)
         {

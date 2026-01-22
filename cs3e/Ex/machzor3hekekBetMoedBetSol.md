@@ -308,17 +308,3 @@ public static int Foo(int[] a, int num)
     }
 
 ```
-
-|A |B
-|--|--
-|1<td rowspan="2">3</td>
-|2
-|4|5
-|6|7
-
-
-| Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
-<td rowspan="2">Spans two rows</td> | Cell A | Cell B |
-|  Cell C | Cell D |
-| Regular cell | Cell E | Cell F |

@@ -1,19 +1,22 @@
-﻿
-// This class represents a Bucket
+/// <summary>
+/// Represents a bucket with a fixed capacity that can be filled and emptied.
+/// </summary>
 public class Bucket
 {
-    // The attributes of the class
+    // תכונות הדלי
     private string name;
     private int capacity;
     private int currentAmount;
 
-    // Internal attributes used for drawing
-    static private int bucketsCount = 0;
+    private static int bucketsCount = 0;
     private int id;
 
-    // A constructor for the class.
-    // Receives one parameter for capacity and one for bucket's name
-    // Builds a new empty Bucket according to capacity parameter
+    /// <summary>
+    /// בנאי הדלי. יוצר דלי חדש
+    /// Initializes a new empty bucket with a given capacity and name.
+    /// </summary>
+    /// <param name="capacity">The maximum amount the bucket can hold.</param>
+    /// <param name="name">The display name of the bucket.</param>
     public Bucket(int capacity, string name)
     {
         this.name = name;
@@ -23,21 +26,28 @@ public class Bucket
         this.id = bucketsCount++;
     }
 
-    // Methods:
-
-    // Returns the capacity of the bucket
+    /// <summary>
+    /// פעולה מאחזרת: Returns the capacity of the bucket.
+    /// </summary>
+    /// <returns>The bucket capacity.</returns>
     public int GetCapacity()
     {
         return this.capacity;
     }
 
-    // Returns the current amount in the bucket
+    /// <summary>
+    /// פעולה מאחזרת: Returns the current amount of liquid in the bucket.
+    /// </summary>
+    /// <returns>The current amount in the bucket.</returns>
     public int GetCurrentAmount()
     {
         return this.currentAmount;
     }
 
-    // Receives amount and remove it from the bucket
+    /// <summary>
+    /// Removes a specified amount from the bucket.
+    /// </summary>
+    /// <param name="amountToRemove">The amount to remove.</param>
     public void Empty(int amountToRemove)
     {
         if (this.currentAmount < amountToRemove)
@@ -46,22 +56,29 @@ public class Bucket
             this.currentAmount = this.currentAmount - amountToRemove;
     }
 
-    // Empties the bucket completely
+    /// <summary>
+    /// Empties the bucket completely.
+    /// </summary>
     public void EmptyAll()
     {
         this.currentAmount = 0;
     }
 
-    // Checks if the bucket is empty
+    /// <summary>
+    /// Checks whether the bucket is empty.
+    /// </summary>
+    /// <returns>True if the bucket contains no liquid; otherwise, false.</returns>
     public bool IsEmpty()
     {
         return this.currentAmount == 0;
     }
 
-    // Receives amount and add it to the amount it the bucket
+    /// <summary>
+    /// Adds a specified amount to the bucket without exceeding its capacity.
+    /// </summary>
+    /// <param name="amountToAdd">The amount to add.</param>
     public void Fill(int amountToAdd)
     {
-        // if the capacity is too small
         if (this.capacity < this.currentAmount + amountToAdd)
         {
             this.currentAmount = this.capacity;
@@ -70,8 +87,10 @@ public class Bucket
             this.currentAmount += amountToAdd;
     }
 
-    // Receives a bucket and fill it as much as possible from the
-    // current bucket
+    /// <summary>
+    /// Pours as much as possible from this bucket into another bucket.
+    /// </summary>
+    /// <param name="bucketInto">The bucket to pour into.</param>
     public void PourInto(Bucket bucketInto)
     {
         int freespace = bucketInto.GetCapacity() -
@@ -88,14 +107,19 @@ public class Bucket
         }
     }
 
-    // Builds and returns a String from the bucket's attributes and their value
+    /// <summary>
+    /// מחזיר מחרוזת המתארת את הדלי. Returns a string that describes the bucket and its current amount.
+    /// </summary>
+    /// <returns>A string describing the bucket.</returns>
     public override String ToString()
     {
         return $"Bucket {this.name} with capacity={this.capacity} and " +
                $"amount={this.currentAmount}";
     }
 
-    // Draw the bucket
+    /// <summary>
+    /// מצייר את הדלי. Draws a visual representation of the bucket in the console.
+    /// </summary>
     public void Draw()
     {
         int maxCapacity = Drawing.MAX_Y * 2 - 1;
@@ -129,5 +153,4 @@ public class Bucket
 
         Thread.Sleep(500);
     }
-
-} // end of class
+}
