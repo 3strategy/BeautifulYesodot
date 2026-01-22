@@ -18,8 +18,6 @@ public class Point
     /// <summary>
     /// Creates a point with the specified x and y coordinates.
     /// </summary>
-    /// <param name="x">The x-coordinate.</param>
-    /// <param name="y">The y-coordinate.</param>
     public Point(double x, double y)
     {
         this.x = x;
@@ -29,7 +27,6 @@ public class Point
     /// <summary>
     /// Creates a point with the same coordinates as another point.
     /// </summary>
-    /// <param name="other">The point to copy.</param>
     public Point(Point other)
     {
         x = other.x;
@@ -39,7 +36,6 @@ public class Point
     /// <summary>
     /// Gets the x-coordinate of the point.
     /// </summary>
-    /// <returns>The x-coordinate.</returns>
     public double GetX()
     {
         return x;
@@ -48,7 +44,6 @@ public class Point
     /// <summary>
     /// Sets the x-coordinate of the point.
     /// </summary>
-    /// <param name="newX">The new x-coordinate.</param>
     public void SetX(double newX)
     {
         x = newX;
@@ -57,7 +52,6 @@ public class Point
     /// <summary>
     /// Gets the y-coordinate of the point.
     /// </summary>
-    /// <returns>The y-coordinate.</returns>
     public double GetY()
     {
         return this.y;
@@ -66,7 +60,6 @@ public class Point
     /// <summary>
     /// Sets the y-coordinate of the point.
     /// </summary>
-    /// <param name="newY">The new y-coordinate.</param>
     public void SetY(double newY)
     {
         this.y = newY;
@@ -75,10 +68,6 @@ public class Point
     /// <summary>
     /// Returns the quadrant the point lies in. If the point is on an axis, returns 0.
     /// </summary>
-    /// <returns>
-    /// 1 for quadrant I, 2 for quadrant II, 3 for quadrant III, 4 for quadrant IV,
-    /// or 0 if the point is on an axis.
-    /// </returns>
     public int Quadrant()
     {
         if (x > 0 && y > 0)
@@ -96,8 +85,6 @@ public class Point
     /// <summary>
     /// Returns the distance between this point and another point.
     /// </summary>
-    /// <param name="other">The other point.</param>
-    /// <returns>The distance between the two points.</returns>
     public double Distance(Point other)
     {
         return Math.Sqrt(Math.Pow(other.x - this.x, 2) + Math.Pow(other.y - this.y, 2));
@@ -106,8 +93,6 @@ public class Point
     /// <summary>
     /// Returns the midpoint between this point and another point.
     /// </summary>
-    /// <param name="p">The other point.</param>
-    /// <returns>A new point at the midpoint.</returns>
     public Point Middle(Point p)
     {
         double middleX = (this.x + p.x) / 2;
@@ -118,7 +103,6 @@ public class Point
     /// <summary>
     /// Returns a string representation of the point.
     /// </summary>
-    /// <returns>A string in the form "(x,y)".</returns>
     public override string ToString()
     {
         return "(" + this.x + "," + this.y + ")";
@@ -127,7 +111,6 @@ public class Point
     /// <summary>
     /// Draws the point using the console drawing system.
     /// </summary>
-    /// <param name="c">The character to draw at the point.</param>
     public void Draw(char c = '*')
     {
         Drawing.DrawAxes();
