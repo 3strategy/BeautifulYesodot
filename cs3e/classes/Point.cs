@@ -108,13 +108,4 @@ public class Point
         return "(" + this.x + "," + this.y + ")";
     }
 
-    /// <summary>
-    /// Draws the point using the console drawing system.
-    /// </summary>
-    public void Draw(char c = '*')
-    {
-        Drawing.DrawAxes();
-        Drawing.SetPosition((int)this.x, (int)this.y);
-        Console.Write(c);
-    }
 }
