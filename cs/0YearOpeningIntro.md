@@ -7,18 +7,31 @@ lang: he
 ---
 
 {: .box-note}
-**מטרת המפגש**: להראות לכם איך נראית הדרך להפוך ממי שמשתמש באפליקציות,   
+**מטרת המפגש**: להראות לכם איך נראית הדרך להפוך ממי שמשתמש באפליקציות,
+
 למי שבונה אותן.
 
 {% include mp4.html id="AImeansMoreCSnotLess.mp4" %}
 
 <!-- לקחתי את הטקסט של זאב וביקשתי מ notebooklm לחפש ברשת מאמרים תומכים. על בסיס אלו ביקשתי מ notebooklm לייצר סרטון לתלמידי ט אשר שוקלים בחירת מגמות -->
 
-<!-- {% include instagram.html id="DR5JDvbElp3" %}
-{% include youtube.html id="nKIu9yen5nc" %}
-{% include youtube.html id="RNJCfif1dPY" %} Andrew Ng.
+<details markdown="1"><summary סרטונים נוספים></summary>
 
- -->
+{% include instagram.html id="DR5JDvbElp3" %}
+
+---
+{% include youtube.html id="nKIu9yen5nc" %}
+
+---
+{% include youtube.html id="RNJCfif1dPY" %}
+
+---
+{% include instagram.html id="DS0-83Bky9N" %}
+
+---
+{% include instagram.html id="DTL1Se9DnSm" %}
+
+</details>
 
 ---
 
