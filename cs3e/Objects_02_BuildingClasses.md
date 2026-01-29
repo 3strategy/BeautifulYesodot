@@ -71,6 +71,7 @@ public Student(string name, string id)
 
 ```csharp
 Student s1 = new Student("Dana", "123");
+// ואז יש קריאה לפעולה בונה  new כדי לבנות את העצם משתמשים במילה
 ```
 
 **שלבי הבנייה:**
@@ -78,6 +79,91 @@ Student s1 = new Student("Dana", "123");
 1. הקצאת זיכרון
 1. אתחול תכונות
 1. החזרת העצם החדש
+
+```csharp
+public class Student
+{
+    // תכונות
+    private string name;
+
+    // פעולות
+    public string GetName()
+    {
+        return name;
+    }
+}
+```
+
+<details open markdown="1"><summary>המחלקה המלאה כמעט כפי שהוצגה בשיעור</summary>
+
+```csharp
+public class Student
+{
+  private int id;
+
+  private string name;
+
+  private int age;
+
+  public Student()
+  {
+
+  }
+  //  //פעולה בונה מעתיקה
+  public Student(Student other)
+  {
+    this.id = other.id;
+    name = other.name;
+    age = other.age;
+  }
+
+  public Student(int ageee, string nameeee)
+    : this(ageee, nameeee, 110)
+  {
+    Console.WriteLine("Invented ID");
+  }
+  public Student(int age, string name, int id = 110)
+  {
+    this.age = age;
+    this.name = name;
+    this.id = id;
+  }
+
+  public int GetAge()
+  {
+    return age;
+  }
+  public void SetAge(int value)
+  {
+    age = value;
+  }
+  public string GetName()
+  {
+    return name;
+  }
+  public void SetName(string value)
+  {
+    name = value;
+  }
+  public int GetId()
+  {
+    return id;
+  }
+  public void SetId(int value)
+  {
+    id = value;
+  }
+
+  public void AddOneYear()
+  {
+    age++;
+  }
+}
+
+
+```
+
+</details>
 
 ## עבודה עם עצמים
 
