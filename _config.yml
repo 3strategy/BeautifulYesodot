@@ -140,7 +140,7 @@ navbar-links:
         - למה 11.1: "/cs3e/Objects_01_WhyWhatPrinciples/"
         - 11y1 תרגול ראשוני - שימוש במחלקות: "/cs3e/Ex/Ex11y1UsingOurClasses"
         - 11.1.2 תרגול אינטרקטיבי: "/cs3e/Ex/Ex11.1objects_array_interactive.html"
-        - כתיבת מחלקות 11.2: "/cs3e/Objects_02_BuildingClasses/"
+        - כתיבת מחלקות 11.2: "/cs3e/Objects_02_BuildingClasses"
         - 11.3 Don't Ask, Tell: "/cs3e/Objects_03_DontAskTell/"
         - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
         - קישורים 11.9: "/cs3e/Objects_09_Links/"
