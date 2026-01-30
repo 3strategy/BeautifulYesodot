@@ -220,3 +220,80 @@ public int GetId()
 
 public string GetName() => name; // פונקציה בכתיבה מקוצרת 
 ```
+
+---
+
+## דגשים משיעור 29/1
+
+חזרנו על פעולה בונה מעתיקה.
+
+Agent: הרחב עם דוגמא
+
+
+למדנו לשרשר בנאים עם :this, (לא בחומר של יסודות)
+
+ותרגלנו איתחול עצמים תוך פניה לבנאים שונים
+
+הבהרנו את ההבדל בין פעולה פנימית לחיצונית, והדגשתי שפעולה חיצונית תהיה (בהקשר של יסודות) static בלי להסביר ממש מזה זה בשלב זה
+ושפעולה פנימית היא בתוך המחלקה ולא רושמים בה - static. 
+
+Agent: תוכל להוסיף הסבר קצר כאן.
+
+ראינו שוב איך מוסיפים מחלקה שעשינו לה- download ל-Visual Studio
+
+ראינו איך כותבים תכונות, פעולות מאחזרות וקובעות באמצעות הקיצור gs.
+
+בסוף השיעור עבדנו עם המחלקה  `DateTime` שמובנית בשפה, וראינו שוב כיצד הפניות לעצמים מתנהגות.
+
+
+<details open markdown="1"><summary>המחלקה המלאה כמעט כפי שהוצגה בשיעור</summary>
+
+```csharp
+internal partial class Program
+{
+
+  public static void Hizonit7()
+  {
+
+    Student s1 = new Student(); // 0 NO NAME
+    Student s2 = new Student(s1); //משתמש בבונה מעתיקה
+    Student s3 = new Student(5, "Name");
+
+    Test t1 = new Test();
+    Test t2 = new Test(t1.GetTestDate().Add(new TimeSpan(2, 30, 0, 0)));
+    DateTime d = t2.GetTestDate();
+
+    d = d.AddDays(1); // t2 מוסיף יום. לא משפיע על התאריך בתוך 
+    // להפנות למקום החדש בזכרון d - הפעולה תחזיר עצם חדש וההפניה גורמת ל 
+    // t2 לא תהיה שום השפעה על תאריך המבחן שיש בתכונה של 
+  }
+}
+public class Test
+{
+
+  private DateTime testDate;
+
+  public Test()
+    : this(DateTime.Now)
+  {
+  }
+
+  public Test(DateTime testDate)
+  {
+    this.testDate = testDate;
+  }
+
+  public DateTime GetTestDate()
+  {
+    return testDate;
+  }
+  public void SetTestDate(DateTime value)
+  {
+    testDate = value;
+  }
+
+
+}
+```
+
+</details>

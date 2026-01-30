@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Classes and Downloads"
+title: "11y1 תרגול שימוש במחלקות"
 subtitle: "Point, Bucket, and Drawing class files"
 ---
 
