@@ -83,6 +83,7 @@ navbar-links:
         - תרגול 5.3: "/cs/Chapter5Ex5.3"
 
     - תקציר עד כאן: "/cs/ChapterSyntaxSummary"
+    - תקציר א: "/cs/ChapterSyntaxSummary2"
 
 
   חלק ב:
@@ -126,7 +127,7 @@ navbar-links:
         - אינדקס צפייה: "/cs2/VideoLinks/Chapter9VidLinks/"
         - סרטוני פרק 9: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA2cT3X-Fui7j6HZJWZM6vnK"
 
-    - תקציר תחביר: "/cs2/ChapterSyntaxSummaryToPrint"
+    - תקציר תחביר: "/cs2/ChapterSyntaxSummary"
 
   חלק ג:
     - סיכום הפרקים הקודמים: "/cs3e/ChapterGimelOpening/"
@@ -144,6 +145,7 @@ navbar-links:
         - 11.1.2 תרגול אינטרקטיבי: "/cs3e/Ex/Ex11.1objects_array_interactive.html"
         - כתיבת מחלקות 11.2: "/cs3e/Objects_02_BuildingClasses"
         - זום 26.1.29: "/cs3e/Objects_02_BuildingClasses/#id_zoom26_1_29"
+        - תקציר תחביר למבחן 11.2: "/cs3e/Objects_02_IntermediarySummary"
         - 11.3 Don't Ask, Tell: "/cs3e/Objects_03_DontAskTell/"
         - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
         - קישורים 11.9: "/cs3e/Objects_09_Links/"

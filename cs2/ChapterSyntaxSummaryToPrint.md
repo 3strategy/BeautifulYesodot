@@ -1,5 +1,9 @@
 ---
 layout: page-to-print
+tags: [סיכום, תחביר, תקציר, syntax, summary]
+title: תקציר תחביר חלק ב
+mathjax: true
+lang: he
 ---
 
 

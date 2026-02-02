@@ -1,8 +1,8 @@
 ---
-layout: page 
-title: "סיכום תחביר (Java)" 
+layout: page-to-print
+title: "סיכום תחביר חלק א (Java)" 
 subtitle: "סיכום תחביר. כולל כל חלק א - Java" 
-tags: [סיכום, תחביר, syntax, java] 
+tags: [סיכום, תחביר,תקציר, summary, syntax, java] 
 mathjax: true 
 lang: he
 ---
