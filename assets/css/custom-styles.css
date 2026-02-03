@@ -247,6 +247,7 @@ details > summary {
     line-height: 1.1;
 }
 
+
 pre {
     direction: ltr !important;
     text-align: left !important;
@@ -503,6 +504,7 @@ button:hover {
 td:has(i), th:has(i) {
     background-color: var(--backs-col) !important;
 }
+
 
 
 .table-en {
