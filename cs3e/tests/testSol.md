@@ -6,13 +6,13 @@ layout: page
 
 //Q1 
 //start:21:24
-public static int Name(int[] arr)
+public static int Special(int[] arr)
 {
  int a=arr[0];
  int b=arr[1];
  if(a!=b)
  {
-  for (int i=2;i<arr.Length, i++)
+  for (int i=2;i<arr.Length; i++)
   {
     if(arr[i]==b)
       return a;
@@ -21,7 +21,7 @@ public static int Name(int[] arr)
  }
  else //a==b
  {
-   for(int i=2;i<arr.Length, i++)
+   for(int i=2;i<arr.Length; i++)
    {
     if(arr[i]!=a)
       return arr[i];  
@@ -44,13 +44,13 @@ public static int[] Uniques(int[] arr)
  {
    if(n != prev)
    {
-     prev=n;
-     ar2[ind++]=n;
+     prev = n;
+     ar2[ind++] = n;
    }
  }
  int[] ar3 = new int[ind];
- for(int i=0;i<ind, i++)
-  ar3[i]=ar2[i];
+ for(int i = 0; i < ind; i++)
+  ar3[i] = ar2[i];
 
  return ar3;
 }
@@ -61,7 +61,7 @@ public static int[] Uniques(int[] arr)
 public static string Interesting(Product[] arr)
 {
  Product lowP = null;
- foreach(var p in Products)
+ foreach(Product p in arr)
  {
    if(lowP==null && p.GetPrice()>=10)
     lowP = p;
@@ -69,7 +69,7 @@ public static string Interesting(Product[] arr)
     lowP = p;
  }
  
- retrun lowP.GetName();
+ return lowP.GetName();
 }
 //end: 21:37
 
