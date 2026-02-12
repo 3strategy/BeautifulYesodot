@@ -80,32 +80,55 @@ internal class Customer
 ```csharp
 internal class Store
 {
-    private Customer[] arrCust;
-    private int current;
+  private Customer[] arrCust;
 
-    public Customer[] GetArrCust() { return arrCust; }
+  private int current; //יחזיק את האינדקס של התא הריק הראשון
 
-    public Store()
-    {
-        arrCust = new Customer[100];
-        current = 0;
-    }
+  public Customer[] GetArrCust() { return arrCust; }
 
-    public void AddCus(Customer customer)
-    {
-        arrCust[current++] = customer;
-    }
+  public Store()
+  {
+    arrCust = new Customer[100];
+    current = 0;
+  }
 
-    // הדגמת current: לא רצים עד Length אלא רק עד current
-    public string YoungestName()
-    {
-        Customer theBest = arrCust[0];
-        for (int i = 1; i < current; i++)
-            if (arrCust[i].GetAge() < theBest.GetAge())
-                theBest = arrCust[i];
+  public void AddCus(Customer customer)
+  {
+    //arrCust[current++] = customer; // short version
+    arrCust[current] = customer; // current is the index of the first empty cell
+    current++; // current is the index of the next empty place
+  }
 
-        return theBest.GetName();
-    }
+  public Customer RemoveCust(int ind)
+  {
+    if (ind >= current || ind < 0)
+      return null;
+    
+      Customer customer = arrCust[ind];
+    //0 1 2| current == 3
+    //A B C| 
+    for (int i = ind; i < current - 1; i++) // index out of range exception תמיד צריך להיזהר מזה 
+      arrCust[i] = arrCust[i + 1];
+    // B C C
+
+    arrCust[current - 1] = null; 
+    // B C null
+
+    current--;
+    return customer;
+  }
+
+
+  // הדגמת current: לא רצים עד Length אלא רק עד current
+  public string YoungestName()
+  {
+    Customer theBest = arrCust[0];
+    for (int i = 1; i < current; i++)
+      if (arrCust[i].GetAge() < theBest.GetAge())
+        theBest = arrCust[i];
+
+    return theBest.GetName();
+  }
 }
 ```
 

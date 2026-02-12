@@ -145,7 +145,7 @@ navbar-links:
         - 11.1.2 תרגול אינטרקטיבי: "/cs3e/Ex/Ex11.1objects_array_interactive.html"
         - כתיבת מחלקות 11.2: "/cs3e/Objects_02_BuildingClasses"
         - זום 26.1.29: "/cs3e/Objects_02_BuildingClasses/#id_zoom26_1_29"
-        - מערכי עצמים 5.2: "/cs3e/cs3e/Objects_02b_Arrays"
+        - מערכי עצמים 5.2: "/cs3e/Objects_02b_Arrays"
         - תקציר תחביר למבחן 11.2: "/cs3e/Objects_02_IntermediarySummary"
         - 11.3 Don't Ask, Tell: "/cs3e/Objects_03_DontAskTell/"
         - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
