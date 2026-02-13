@@ -93,27 +93,6 @@ internal class Store
   }
 
 
-// TODO: move this function to lesson of 12.2
-  public Customer RemoveCust(int ind)
-  {
-    if (ind >= current || ind < 0)
-      return null;
-    
-      Customer customer = arrCust[ind];
-    //0 1 2| current == 3
-    //A B C| 
-    for (int i = ind; i < current - 1; i++) // index out of range exception תמיד צריך להיזהר מזה 
-      arrCust[i] = arrCust[i + 1];
-    // B C C
-
-    arrCust[current - 1] = null; 
-    // B C null
-
-    current--;
-    return customer;
-  }
-
-
   // הדגמת current: לא רצים עד Length אלא רק עד current
   public string YoungestName()
   {
