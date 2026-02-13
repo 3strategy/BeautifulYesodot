@@ -6,14 +6,7 @@ tags: [C#, arrays, foreach, for, null, current, objects]
 lang: he
 ---
 
-## תיקון הקשר לשיעור
 
-בשיעור הזה לא עבדנו עם `Transport` ו-`Program1`.
-ההדגמות בסוף השיעור היו על:
-
-- `cs3e/Ex/Customer.cs.txt`
-- `cs3e/Ex/Store.cs.txt`
-- `cs3e/Ex/Program2.cs.txt`
 
 ## מה עשינו בחלק הראשון של השיעור (לולאות על מערך עצמים)
 
@@ -99,6 +92,8 @@ internal class Store
     current++; // current is the index of the next empty place
   }
 
+
+// TODO: move this function to lesson of 12.2
   public Customer RemoveCust(int ind)
   {
     if (ind >= current || ind < 0)

@@ -60,16 +60,15 @@ public static int[] Uniques(int[] arr)
 //Q3
 public static string Interesting(Product[] arr)
 {
- Product lowP = null;
- foreach(Product p in arr)
- {
-   if(lowP==null && p.GetPrice()>=10)
-    lowP = p;
-   else if(p.GetPrice() >= 10 && p.GetPrice() < lowP.GetPrice())
-    lowP = p;
- }
+    Product lowP = null;
+    foreach (Product p in arr)
+    {
+      if (p.GetPrice() >= 10)
+        if (lowP == null || p.GetPrice() < lowP.GetPrice())
+          lowP = p;
+    }
  
- return lowP.GetName();
+    return lowP.GetName();
 }
 //end: 21:37
 
