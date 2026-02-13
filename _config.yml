@@ -24,7 +24,7 @@ author: גיא סידס
 navbar-links:
 
   חלק א:
-    
+    - מערכת הגשות: "https://הגשות.שלי.com"
     - פרק 0:
         - חשיפת מגמה: "/cs/0YearOpeningIntro"
         # - מצטרפים חדשים: "/cs/0YearOpeningMerge"
@@ -130,6 +130,7 @@ navbar-links:
     - תקציר תחביר: "/cs2/ChapterSyntaxSummary"
 
   חלק ג:
+    - מערכת הגשות: "https://הגשות.שלי.com"
     - סיכום הפרקים הקודמים: "/cs3e/ChapterGimelOpening/"
     - פרק 10 מערך דו ממדי: 
         - פרק 10 מערך דו-ממדי: "/cs3e/Chapter10"
@@ -147,6 +148,7 @@ navbar-links:
         - זום 26.1.29: "/cs3e/Objects_02_BuildingClasses/#id_zoom26_1_29"
         - מערכי עצמים 5.2: "/cs3e/Objects_02b_Arrays"
         - תקציר תחביר למבחן 11.2: "/cs3e/Objects_02_IntermediarySummary"
+        # - סיכום שיעור 12.2: "/cs3e/Objects_02c_12.2.26"
         - 11.3 Don't Ask, Tell: "/cs3e/Objects_03_DontAskTell/"
         - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
         - קישורים 11.9: "/cs3e/Objects_09_Links/"
@@ -157,6 +159,7 @@ navbar-links:
     - 4 More JavaScript: "https://docs.google.com/presentation/d/1H2u74LjHSzAnlRnB7MO_drahi9x998TNs9O7cJZRvGo/edit?usp=sharing"
 
   חיצוני:
+    - מערכת הגשות: "https://הגשות.שלי.com"
     - אתר מבני נתונים: "https://מבני.שלי.com"
     - אתר מתמטיקה: "https://מתמטיקה.com"
     - שאלות ותשובות: "https://pop.education.gov.il/tchumey_daat/computer-science-software-engineering-cyber/high-school/pedagogy-of/faq/"

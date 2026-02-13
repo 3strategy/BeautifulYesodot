@@ -2,11 +2,11 @@
 layout: page
 title: "פרק 11.2ג – סיכום שיעור 12.2.26"
 subtitle: "המשך מערכי עצמים, null, static, ודיוק על static void Main"
-tags: [C#, objects, arrays, null, static, Main, getters, setters, CodeClassroom]
+tags: [C#, objects, arrays, null, static, Main, getters, setters, CodeClassroom, NUnit, exe, dll, class library]
 lang: he
 ---
 
-## סיכום סיפורי לשיעור (12.2.26)
+## סיכום שיעור (12.2.26)
 
 פתחנו [בחזרה ממוקדת על שיעור קודם](https://youtu.be/9YJ5iEMb28w?t=5): מערך עצמים, לולאות, ומה עובד נקי כשאין `null`. מיד אחר כך הזכרנו את התבנית הפשוטה של “מתחילים מהאיבר הראשון ומחפשים טוב ממנו” [בהנחת מערך מלא](https://youtu.be/9YJ5iEMb28w?t=22), ואז [גרסה עם `null`](https://youtu.be/9YJ5iEMb28w?t=67). שאלתם שוב על `MaxBy` - usage of Lambda expressions -, וחזרנו על כך [שזה חד משמעית אסור בשימוש בבגרות](https://youtu.be/9YJ5iEMb28w?t=112) למרות שהוא נוח. הוא גם קשה להבנה בשלב זה.
 
@@ -16,7 +16,7 @@ lang: he
 
 חשוב לשמר את ההקשר לבגרות: לא נתקלתי בבגרות בשאלה שמבקשת ממש “למחוק + להזיז + לצמצם” (בטח שלא להסיק במשתמע שכך צריך לבצע את המחיקה). בפונקציה כזאת [בדיוק](https://youtu.be/9YJ5iEMb28w?t=1145), אבל כן חשוב להכיר כי זה מחדד מאוד הבנה של `current` והמנגנון [הבסיסי והנקי](https://youtu.be/9YJ5iEMb28w?t=1268).
 
-<details markdown="1"><summary>הקוד שהועבר לחלק זה: <code>RemoveCust</code> עם מעטפת מחלקה</summary>
+<details markdown="1"><summary>הקוד של <code>RemoveCust</code> </summary>
 
 ```csharp
 internal class Customer
@@ -38,19 +38,20 @@ internal class Customer
 
 internal class Store
 {
-  private Customer[] arrCust;
+  private Customer[] arrCust new Customer[100]; // אפילו עדיף
   private int current; // מחזיק את האינדקס של התא הריק הראשון
 
   public Store()
   {
-    arrCust = new Customer[100];
+    //arrCust = new Customer[100]; // = האיתחול שהודגם בשיעור
     current = 0;
   }
 
   public void AddCus(Customer customer)
   {
-    //arrCust[current++] = customer; // short version
+    //arrCust[current++] = customer; // short version as was on 5.2 lesson
     arrCust[current] = customer; // current is the index of the first empty cell
+                                 // current is also the number of customers
     current++; // current is the index of the next empty place
   }
 
@@ -60,11 +61,11 @@ internal class Store
       return null;
     
       Customer customer = arrCust[ind];
-    //0 1 2| current == 3
-    //A B C| 
-    for (int i = ind; i < current - 1; i++) // index out of range exception תמיד צריך להיזהר מזה 
+    //0 1 2  (current == 3 take for example a full array of Length 3 to detect and avoid index out of range situation)
+    //A B C  
+    for (int i = ind; i < current - 1; i++) // index out of range exception : תמיד צריך להיזהר מזה 
       arrCust[i] = arrCust[i + 1];
-    // B C C
+    // B C C (after the loop ends)
 
     arrCust[current - 1] = null; 
     // B C null
@@ -76,7 +77,7 @@ internal class Store
 
 </details>
 
-בשלב התרגול עברנו לשאלה 3 מהמבחן (`Interesting`) והוגדר מראש שהשבלונה של שבוע שעבר לא מספיקה [כמו שהיא](https://youtu.be/9YJ5iEMb28w?t=1455), כי כאן יש סינון `price >= 10`. סביב [00:37:43](https://youtu.be/9YJ5iEMb28w?t=2263) הייתה הבהרה חשובה של ניסוח השאלה (“10 או יותר” לא מבטיח ש-10 קיים), ומהנקודה הזאת נבנה פתרון `lowP = null` שמתעדכן רק כשנכנסים לחלק הרלוונטי [בלי ליפול ל־NullReference](https://youtu.be/9YJ5iEMb28w?t=2319). אחר כך אחד המורים הציע בצדק לשפר קריאות ולהוציא את תנאי `>= 10` לשכבה חיצונית [כדי לא לחזור עליו פעמיים](https://youtu.be/9YJ5iEMb28w?t=2439), והשיפור התקבל [בכיתה](https://youtu.be/9YJ5iEMb28w?t=2544) ועדכנו את [פתרון הבחינה](/cs3e/tests/testSol).
+בשלב התרגול עברנו לשאלה 3 [מהמבחן](/cs3e/tests/Test10.2.26) (`Interesting`) והודגש שהתבנית של שבוע שעבר למערך מלא עצמים לא מספיקה [כמו שהיא](https://youtu.be/9YJ5iEMb28w?t=1455), כי כאן יש סינון `price >= 10`. סביב [00:37:43](https://youtu.be/9YJ5iEMb28w?t=2263) הייתה הבהרה חשובה של ניסוח השאלה (“10 או יותר” לא מבטיח ש-10 קיים), ומהנקודה הזאת נבנה פתרון `lowP = null` שמתעדכן רק כשנכנסים לחלק הרלוונטי [בלי ליפול ל־NullReference](https://youtu.be/9YJ5iEMb28w?t=2319). אחר כך אחד המורים הציע בצדק לשפר קריאות ולהוציא את תנאי `>= 10` לשכבה חיצונית [כדי לא לחזור עליו פעמיים](https://youtu.be/9YJ5iEMb28w?t=2439), והשיפור התקבל [בכיתה](https://youtu.be/9YJ5iEMb28w?t=2544) ועדכנו את [פתרון הבחינה](/cs3e/tests/testSol).
 
 ```csharp
 public static string Interesting(Product[] arr)
@@ -93,7 +94,7 @@ public static string Interesting(Product[] arr)
 }
 ```
 
-באמצע התרגול עלתה תקלה מאוד נפוצה: “פתחתי קובץ שהורדתי, אני רואה אותו ב־Visual Studio, אז הוא בטוח חלק מהפרויקט”. כאן נעצרנו בדיוק כדי לתקן תפיסה: [עצם זה שהקובץ פתוח בעורך לא אומר שהוא בפרויקט](https://youtu.be/9YJ5iEMb28w?t=3389), ולכן חייבים לבצע את השלבים [Right click על הפרויקט](https://youtu.be/9YJ5iEMb28w?t=3448) → [Add](https://youtu.be/9YJ5iEMb28w?t=3451) → [Existing Item](https://youtu.be/9YJ5iEMb28w?t=3457). זו נקודה חשובה מאוד להוראה פרקטית.
+באמצע התרגול עלתה תקלה מאוד נפוצה: “פתחתי קובץ שהורדתי, אני רואה אותו ב־Visual Studio, אז הוא בטוח חלק מהפרויקט”. כאן נעצרנו בדיוק כדי לתקן תפיסה: [עצם זה שהקובץ פתוח בעורך לא אומר שהוא בפרויקט](https://youtu.be/9YJ5iEMb28w?t=3389), ולכן חייבים לבצע את השלבים [קליק ימני על הפרויקט](https://youtu.be/9YJ5iEMb28w?t=3448) ⟵ [Add](https://youtu.be/9YJ5iEMb28w?t=3451) ⟵ [Existing Item](https://youtu.be/9YJ5iEMb28w?t=3457). זו נקודה חשובה מאוד להוראה פרקטית.
 
 במקביל הודגמה גם הסיטואציה של “עובד לי ב־VS אבל לא עובר ב־CodeClassroom”: השגיאה נקראה [בלייב](https://youtu.be/9YJ5iEMb28w?t=2665) ונמצאה בעיית casing (`Getday` מול `GetDay`) [בדיוק במקום שבו הטסטים מצפים לשם אחר](https://youtu.be/9YJ5iEMb28w?t=2706). מכאן הגיעה החזרה על הקיצור `gs`, על PascalCase, ועל הכלל “כל מילה חדשה מתחילה באות גדולה” [כולל ההקשר לג׳אווה](https://youtu.be/9YJ5iEMb28w?t=2777). לכן ההמלצה נשארה חד־משמעית: לעבוד עם snippet `gs` כדי למנוע טעויות שמכשילות טסטים [במערכת ההגשות](https://youtu.be/9YJ5iEMb28w?t=2796).
 
@@ -113,6 +114,8 @@ public static string Interesting(Product[] arr)
 
 ואז נסגר המעגל של `public static void Main`: נשאלה השאלה “למה כל הזמן static ב־Main?” [ב־01:13:21 נבנתה תשובה מדורגת](https://youtu.be/9YJ5iEMb28w?t=4401),: `Main` הוא [entry point יחיד](https://youtu.be/9YJ5iEMb28w?t=4436), ולכן הוא סטטי; בתוך `Main` לא קיים עדיין עצם של `Program`, ולכן אי אפשר לקרוא ישירות לפעולה לא סטטית [בלי ליצור עצם](https://youtu.be/9YJ5iEMb28w?t=4468). בהמשך גם הודגם ששם המחלקה לא חשוב, ו־`Main` יכול לזוז למחלקה אחרת כל עוד נשאר [`Main` יחיד בפרויקט](https://youtu.be/9YJ5iEMb28w?t=4882).
 
+
+
 <details markdown="1"><summary>דיוק קצר למורי Java: ההבדל שהודגש בשיעור</summary>
 
 בשיעור עלתה שוב ושוב ההבחנה שב־C# פונים לסטטי דרך שם מחלקה בלבד, ואילו ב־Java לעיתים אפשר גם דרך reference של עצם (גם אם זה לא מומלץ סגנונית).
@@ -130,5 +133,20 @@ MyType.staticField = 1;   // הצורה המומלצת
 ```
 
 מבחינת הוראה: כדאי להמשיך להתעקש בכיתה על `ClassName.Member` גם ב־Java, כדי לשמור עקביות מחשבתית עם המשמעות של static.
+
+</details>
+
+## יצירת פרוייקט בדיקות - הדגמה {#idNunitTest}
+
+<details markdown="1"><summary>הרחבת מורים (מחוץ לחומר): מתי אין צורך ב־<code>Main</code>, ומתי הוא כן חובה. יצרנו פרוייקט ספרייה, ויצרנו פרוייקט בדיקות</summary>
+
+ההסבר על `static Main` הורחב כאן לפרקטיקה של בניית פתרונות אמיתיים. זו סטייה מחומר הליבה, אבל חשובה מאוד למורים.
+
+1. על הצד ה"שלילי" (כשאין `Main`): יצרנו [Class Library חדשה בתוך אותו Solution](https://youtu.be/9YJ5iEMb28w?t=4713), כדי להמחיש שפרויקט כזה מייצר DLL נוסף ולא נקודת כניסה להרצה.
+2. המשכנו ליצירת [פרויקט בדיקות NUnit](https://youtu.be/9YJ5iEMb28w?t=4932), ואז הודגש במפורש שבפרויקט בדיקות [לא אמור להיות `Main`](https://youtu.be/9YJ5iEMb28w?t=4947).
+3. כדי שה־tests יוכלו לגשת לקוד, הודגם גם שלב החיבור בין הפרויקטים דרך [Add Project Reference](https://youtu.be/9YJ5iEMb28w?t=5020).
+4. על הצד ה"חיובי" (כשכן צריך `Main`): בפרויקט שמטרתו הרצה (`.exe`) חייבת להיות נקודת כניסה אחת; זה סוכם שוב סביב [single entry point](https://youtu.be/9YJ5iEMb28w?t=5477).
+5. כדי להפוך את זה למוחשי, נפתח חלון `cmd` מתוך התיקייה הנכונה (באמצעות הקלדת `cmd` משורת הכתובת ב־Explorer-סייר הקבצים) [והודגם הרצה מה־CMD](https://youtu.be/9YJ5iEMb28w?t=5409).
+6. מאותה הרצה הודגם גם איך שולחים פרמטרים חיצוניים ל־`Main(args)` ואיך קוראים אותם מתוך `args` [בפועל](https://youtu.be/9YJ5iEMb28w?t=5483).
 
 </details>
