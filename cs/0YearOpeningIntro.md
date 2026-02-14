@@ -31,6 +31,11 @@ lang: he
 ---
 {% include instagram.html id="DTL1Se9DnSm" %}
 
+---
+
+<!-- אמסטרדמסקי -->
+{% include youtube.html id="L1XA2bq7nNU" %}
+
 </details>
 
 ---
