@@ -1,4 +1,4 @@
-###########################################################
+﻿###########################################################
 ### Welcome to Beautiful Jekyll!
 ### This config file is meant for settings that affect your entire website. When you first
 ### set up your website you should go through all these settings and edit them, but after
@@ -127,6 +127,7 @@ navbar-links:
         - אינדקס צפייה: "/cs2/VideoLinks/Chapter9VidLinks/"
         - סרטוני פרק 9: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA2cT3X-Fui7j6HZJWZM6vnK"
 
+
     - תקציר תחביר: "/cs2/ChapterSyntaxSummary"
 
   חלק ג:
@@ -153,6 +154,8 @@ navbar-links:
         - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
         - קישורים 11.9: "/cs3e/Objects_09_Links/"
 
+    - עבודה בקבוצות1: "/cs4/team_work"
+    
   תב"א:
     - 1 html: "https://docs.google.com/presentation/d/1Wfgo_PbW09k4XY_U-FmvdOjBWX0NGEWCj16PafzMfKA/edit?usp=sharing"
     - 3 MasterPage: "https://docs.google.com/presentation/d/1DTFoEBQdky6IW69m2I-sGcvqzs6Etzi2U7TvU3-6ZIk/edit?usp=sharing"
@@ -467,3 +470,4 @@ plugins:
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
 lang: he
+
