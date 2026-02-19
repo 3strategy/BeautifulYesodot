@@ -1,9 +1,9 @@
 ---
 layout: page
-title: "Objects 03b Sprite Demo - Teacher Live Coding"
+title: "Objects 03b Sprite Demo"
 subtitle: "Dont Ask Tell with a tiny console Sprite class"
 chapter: 11.3b
-tags: [OOP, C#, Sprite, Console, DontAskTell]
+tags: [OOP, C#, Sprite, Console,Game, DontAskTell]
 lang: en
 ---
 
@@ -16,32 +16,15 @@ body {
 }
 </style>
 
-## Purpose
-Build one tiny `Sprite` class live, no inheritance, start with Java-style getters/setters, then lock down API so the object does the work.
+## Core message
 
-Core message for teachers:
 - `Program` should not ask for internals and draw by itself.
 - `Program` should tell the object: `sprite.MoveNDraw();`
 
-## Time Box
-- `18-25` minutes live coding.
-- Keep one sprite only.
-- Keep one-char shape (`"O"` or `"@"`).
-
-## Stage 0 - Setup
-Create a new console app with two files:
-- `Program.cs`
-- `Sprite.cs`
-
-Minimal `Program.cs` start:
-
-```csharp
-Console.OutputEncoding = System.Text.Encoding.UTF8;
-Console.CursorVisible = false;
-```
-
 ## Stage 1 - First Pass (GS Snippet Style)
+
 First pass is intentionally plain:
+
 - all `private` fields first
 - constructor second
 - vanilla Java-style getters/setters third
@@ -144,11 +127,9 @@ public class Sprite
 }
 ```
 
-Teacher line:
-- This is the quick first pass exactly as generated and lightly renamed.
-
 ## Stage 2 - Modify the Vanilla Code for Game Rules
-Now edit the generated constructor/getters/setters (do not rewrite from scratch).
+
+Edit the generated constructor/getters/setters (do not rewrite from scratch).
 At this stage, hide position internals: make `SetX/SetY` private and remove public `GetX/GetY`.
 
 ```diff
@@ -206,10 +187,12 @@ At this stage, hide position internals: make `SetX/SetY` private and remove publ
 ```
 
 Teacher line:
+
 - We use `double` for movement accuracy, but console draw needs rounded ints.
 - `Program` cannot directly set or read `x/y` anymore; it must tell the sprite what to do.
 
 ## Stage 3 - Add Draw/Erase as One Method
+
 Now give the object its own console behavior.
 
 ```diff
@@ -233,9 +216,11 @@ How to use right now:
 ```
 
 Teacher line:
+
 - Default argument is black, so same method can erase.
 
 ## Stage 4 - Add MoveNDraw (Dont Ask Tell)
+
 Main behavior: erase old, move by `dX`/`dY`, draw new.
 
 ```diff
@@ -249,10 +234,12 @@ Main behavior: erase old, move by `dX`/`dY`, draw new.
 ```
 
 Teacher line:
+
 - Program no longer calculates cursor location or paint details.
 - Program tells sprite to perform its own job.
 
 ## Stage 5 - Program Loop
+
 Very small demo loop for class.
 
 ```diff
@@ -272,33 +259,6 @@ Optional quick key to stop:
 ```csharp
 Console.ReadKey(true);
 ```
-
-## Stage 6 - Optional Refactor to bool API
-If you want to hide color choice from callers even more:
-
-```diff
--public void DrawErase(ConsoleColor drawColor = ConsoleColor.Black)
-+public void DrawAndErase(bool erase = false)
- {
--    Console.ForegroundColor = drawColor;
-+    Console.ForegroundColor = erase ? ConsoleColor.Black : color;
-     Console.SetCursorPosition(GetXInt(), GetYInt());
-     Console.Write(shape);
- }
- 
- public void MoveNDraw()
- {
--    DrawErase();
-+    DrawAndErase(true);
-     SetX(x + dX);
-     SetY(y + dY);
--    DrawErase(color);
-+    DrawAndErase();
- }
-```
-
-Teacher note:
-- For live coding speed today, you can skip this stage.
 
 <details markdown="1"><summary>Later Stage (Optional): key constructor + while-only game loop</summary>
 
@@ -344,6 +304,7 @@ Default mapping is arrows from the base constructor; overload only when you want
 ```
 
 Teacher line:
+
 - This still follows Dont Ask Tell: `sprite.HandleKey(key)` instead of key logic spread in `Program`.
 
 While-only game loop template (no `do-while`):
@@ -369,6 +330,7 @@ while (running)
 </details>
 
 ## Final Sprite.cs (Simple Version)
+
 Recommended final for the live lesson (faster): keep `DrawErase(ConsoleColor ...)`.
 
 {% highlight csharp linenos %}
@@ -459,6 +421,7 @@ Console.ReadKey(true);
 {% endhighlight %}
 
 ## In-Class Talking Points
+
 - Dont Ask Tell: `Program` tells sprite what to do.
 - Encapsulation: draw/move logic stays inside sprite.
 - In Stage 2, `x/y` are no longer exposed (`SetX/SetY` become private, `GetX/GetY` removed).
@@ -466,9 +429,6 @@ Console.ReadKey(true);
 - Bounds default to current console size, but can be overridden in constructor.
 - KIS: no inheritance, one class, one object, one behavior loop.
 
-## Quick Pre-Lesson Alignment Questions
-1. For today, do you want final API to stay `DrawErase(ConsoleColor)` or switch to `DrawAndErase(bool erase = false)` at the end?
-2. In the live demo, stop at auto-movement only, or include the later key-constructor extension?
 
 <details markdown="1"><summary>Final State (Copy/Paste): Arrow Keys Default + ESC loop</summary>
 
