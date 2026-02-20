@@ -28,9 +28,9 @@ lang: he
 
 פה היה המסר הפדגוגי החזק של השיעור: תלמידים רגילים לסביבה דיגיטלית, אבל חייבים לראות גם [איך פתרון נראה בכתב־יד על לוח](https://youtu.be/x9I7fFlODqc?t=3818), כולל דיוק מה כן/לא כותבים בבגרות. בהמשך חיזקנו את זה שוב בדיון על [תרגול כתב־יד מול דיגיטלי](https://youtu.be/x9I7fFlODqc?t=6287) ועל החשיבות של [בדיקה בכתב יד/Notepad](https://youtu.be/x9I7fFlODqc?t=6308).
 
-השאלות שנפתרו:
+**השאלות שנפתרו:**
 
-1. בגרות 2017, שאלון 381, שאלה 2 (משולב אצלנו עם קבצי [2017.6.381/q1.pdf](/bagruyot/2017.6.381/q1.pdf) ו־[2017.6.381/q2.pdf](/bagruyot/2017.6.381/q2.pdf)): [בחירה של השאלה](https://youtu.be/x9I7fFlODqc?t=3970), [הסבר איך לגשת אליה “טיפין טיפין”](https://youtu.be/x9I7fFlODqc?t=5117), עבודה על הכותרות/בנאים [על הלוח](https://youtu.be/x9I7fFlODqc?t=5162), וסיכום למה ההדגמה הזו [קריטית לתלמידים](https://youtu.be/x9I7fFlODqc?t=6126).
+1. בגרות 2017, שאלון 381, שאלה [2017.6.381/q2.pdf](/bagruyot/2017.6.381/q2.pdf): [בחירה של השאלה](https://youtu.be/x9I7fFlODqc?t=3970), [הסבר איך לגשת אליה “טיפין טיפין”](https://youtu.be/x9I7fFlODqc?t=5117), עבודה על הכותרות/בנאים [על הלוח](https://youtu.be/x9I7fFlODqc?t=5162), וסיכום למה ההדגמה הזו [קריטית לתלמידים](https://youtu.be/x9I7fFlODqc?t=6126).
 2. בגרות 2023, שאלון 371, שאלה 4 ([2023.6.371/q4.pdf](/bagruyot/2023.6.371/q4.pdf)): [בחירת השאלה](https://youtu.be/x9I7fFlODqc?t=7466), [מיקום נכון במחלקה פנימית](https://youtu.be/x9I7fFlODqc?t=7631), חישוב ההפרשים והלולאה ([עם גבול נכון](https://youtu.be/x9I7fFlODqc?t=7975)), והדגש למה חייבים [`else if` ולא ערבוב תנאים](https://youtu.be/x9I7fFlODqc?t=8284).
 3. בגרות 2023, שאלון 371, שאלה 5 ([2023.6.371/q5.pdf](/bagruyot/2023.6.371/q5.pdf)): [מעבר לשאלה](https://youtu.be/x9I7fFlODqc?t=8647), כותרת פעולה חיצונית [עם `static`](https://youtu.be/x9I7fFlODqc?t=8815), דפוס `best` על מערך [למציאת הראשון שנכנס](https://youtu.be/x9I7fFlODqc?t=8957), פירוק הקריאה המורכבת על `MyTime.Before(...)` ([כאן היה העומס המחשבתי העיקרי](https://youtu.be/x9I7fFlODqc?t=9303)), וסיום עם [הדפסת התוצאה](https://youtu.be/x9I7fFlODqc?t=9397) וזיהוי שזה אכן [שאלה 5 של 2023/371](https://youtu.be/x9I7fFlODqc?t=9447).
 
