@@ -429,7 +429,6 @@ Console.ReadKey(true);
 - Bounds default to current console size, but can be overridden in constructor.
 - KIS: no inheritance, one class, one object, one behavior loop.
 
-
 <details markdown="1"><summary>Final State (Copy/Paste): Arrow Keys Default + ESC loop</summary>
 
 `Sprite.cs`

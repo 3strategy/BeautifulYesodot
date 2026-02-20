@@ -151,6 +151,7 @@ navbar-links:
         - תקציר תחביר למבחן 11.2: "/cs3e/Objects_02_IntermediarySummary"
         - סיכום שיעור 12.2: "/cs3e/Objects_02c_12.2.26"
         - 11.3 Don't Ask, Tell: "/cs3e/Objects_03_DontAskTell/"
+        - סיכום שיעור 19.3: "/cs3e/Objects_03c_19.2.26"
         - 11.3b Teachers Sprite Demo: "/cs3e/Objects_03bSpriteDemo/"
 
         - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
