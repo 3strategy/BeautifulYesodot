@@ -133,11 +133,44 @@ document.addEventListener("keydown", function (e) {
 // Convert fenced ```mermaid code blocks to <div class="mermaid"> before Mermaid runs
 document.addEventListener('DOMContentLoaded', function () {
   try {
-    const codeBlocks = document.querySelectorAll('pre > code.language-mermaid');
+    const codeBlocks = document.querySelectorAll('pre > code[class*="language-mermaid"]');
+
+    const getMermaidDirClass = (code, pre) => {
+      const classes = new Set();
+      if (code && code.classList) {
+        code.classList.forEach((cls) => classes.add(cls));
+      }
+      if (pre && pre.classList) {
+        pre.classList.forEach((cls) => classes.add(cls));
+      }
+
+      if (classes.has('mermaid-rtl') || classes.has('language-mermaid-rtl')) return 'mermaid-rtl';
+      if (classes.has('mermaid-ltr') || classes.has('language-mermaid-ltr')) return 'mermaid-ltr';
+
+      for (const cls of classes) {
+        if (!cls.startsWith('language-mermaid-')) continue;
+        const suffix = cls.slice('language-mermaid-'.length).toLowerCase();
+        if (suffix === 'rtl' || suffix === 'ltr') return `mermaid-${suffix}`;
+      }
+
+      const dataDir = (code && code.dataset && code.dataset.mermaidDir) ||
+        (pre && pre.dataset && pre.dataset.mermaidDir);
+      if (dataDir === 'rtl' || dataDir === 'ltr') return `mermaid-${dataDir}`;
+
+      const src = code && code.textContent ? code.textContent : '';
+      const dirMatch = src.match(/^\s*%%\s*dir\s*:\s*(rtl|ltr)\s*%%/im);
+      if (dirMatch) return `mermaid-${dirMatch[1].toLowerCase()}`;
+
+      if (/^\s*classDiagram\b/m.test(src) && /[A-Za-z]/.test(src)) return 'mermaid-ltr';
+
+      return '';
+    };
+
     codeBlocks.forEach((code) => {
       const pre = code.parentElement;
       const container = document.createElement('div');
-      container.className = 'mermaid';
+      const dirClass = getMermaidDirClass(code, pre);
+      container.className = dirClass ? `mermaid ${dirClass}` : 'mermaid';
       // textContent decodes any HTML entities into raw Mermaid source
       container.textContent = code.textContent;
       // Replace the whole <pre> block with the Mermaid container
@@ -146,6 +179,67 @@ document.addEventListener('DOMContentLoaded', function () {
   } catch (e) {
     // no-op: fail-safe so other scripts continue to run
     console && console.warn && console.warn('Mermaid fence conversion failed:', e);
+  }
+});
+
+// Clean copy for diff blocks: if the user copies only added (+) lines, strip the leading diff marker.
+// This keeps tutorial `diff` blocks readable while allowing direct paste into source files.
+document.addEventListener('copy', function (event) {
+  try {
+    const selection = window.getSelection && window.getSelection();
+    if (!selection || selection.rangeCount === 0 || selection.isCollapsed) return;
+
+    const toElement = (node) => {
+      if (!node) return null;
+      return node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+    };
+
+    const findDiffContainer = (el) => {
+      if (!el || !el.closest) return null;
+      return el.closest(
+        '.language-diff, .highlighter-rouge.language-diff, code.language-diff, pre code[class*="language-diff"]'
+      );
+    };
+
+    const anchorContainer = findDiffContainer(toElement(selection.anchorNode));
+    const focusContainer = findDiffContainer(toElement(selection.focusNode));
+    if (!anchorContainer || !focusContainer || anchorContainer !== focusContainer) return;
+
+    const selectedText = selection.toString();
+    if (!selectedText || selectedText.indexOf('+') === -1) return;
+
+    const normalized = selectedText.replace(/\r\n/g, '\n');
+    const lines = normalized.split('\n');
+    const nonEmptyLines = lines.filter((line) => line.length > 0);
+    if (nonEmptyLines.length === 0) return;
+
+    // Keep full patch copies intact (headers/hunks/metadata should remain raw).
+    const hasPatchMetadata = nonEmptyLines.some((line) =>
+      /^(diff --git|index |@@|--- |\+\+\+ )/.test(line)
+    );
+    if (hasPatchMetadata) return;
+
+    // Only rewrite clipboard when the user selected pure "added" lines.
+    const allAddedLines = nonEmptyLines.every((line) => line.startsWith('+') && !line.startsWith('+++ '));
+    if (!allAddedLines) return;
+
+    const cleaned = lines.map((line) => (line.startsWith('+') ? line.slice(1) : line)).join('\n');
+    if (cleaned === normalized) return;
+
+    if (event.clipboardData && event.clipboardData.setData) {
+      event.clipboardData.setData('text/plain', cleaned);
+      event.preventDefault();
+      return;
+    }
+
+    // Fallback for browsers that do not expose clipboardData on the copy event.
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(cleaned).catch(() => {});
+      event.preventDefault();
+    }
+  } catch (e) {
+    // Fail-safe: never break normal copy behavior.
+    console && console.warn && console.warn('Diff copy cleanup failed:', e);
   }
 });
 
