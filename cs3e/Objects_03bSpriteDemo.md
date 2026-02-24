@@ -58,11 +58,27 @@ public class Sprite
 }
 ```
 
-## Stage 3 - Add Draw/Erase as One Method
+Bad Usage Example (Program asks for internals and draws by itself):
+
+```csharp
+Sprite s = new Sprite(10, 5, "O", ConsoleColor.Green, 0.2, 0.2);
+Console.ForegroundColor = ConsoleColor.Green;
+Console.SetCursorPosition((int)Math.Round(s.GetX()), (int)Math.Round(s.GetY()));
+Console.Write("O");
+```
+
+Teacher line:
+
+- This works, but `Program` is doing the sprite's drawing job.
+
+## Stage 2 - Add Draw/Erase as One Method
 
 Now give the object its own console behavior.
 
 ```diff
++private int GetXInt() => (int)Math.Round(x);
++private int GetYInt() => (int)Math.Round(y);
++
 +/// <summary>
 +/// Draws in the given color.
 +/// Call without color to erase (default black).
@@ -86,11 +102,14 @@ Teacher line:
 
 - Default argument is black, so same method can erase.
 
-## Stage 4 - Add MoveNDraw (Dont Ask Tell)
+## Stage 3 - Add MoveNDraw (Dont Ask Tell)
 
 Main behavior: erase old, move by `dX`/`dY`, draw new.
 
 ```diff
+-    public double GetY() => y;  // ==BREAKING Change==
+-    public double GetX() => x;  // ==BREAKING Change==
++
 +public void MoveNDraw()
 +{
 +    DrawErase();
@@ -104,17 +123,16 @@ Teacher line:
 
 - Program no longer calculates cursor location or paint details.
 - Program tells sprite to perform its own job.
+- Old `Program` code that relied on `GetX/GetY` should now break, on purpose.
 
 
-## Stage 2 - Modify the Vanilla Code for Game Rules
+## Stage 4 - Modify the Vanilla Code for Game Rules (Bounds Protection)
 
 Edit the generated constructor/getters/setters (do not rewrite from scratch).
-At this stage, hide position internals: make `SetX/SetY` private and remove public `GetX/GetY`.
+At this stage, keep movement updates internal and add bounds protection in `SetX/SetY`.
 
 ```diff
- 
--    public double GetY() => y;
--    public double GetX() => x;
+
 
 -public void SetX(double value) => x = value;
 +private void SetX(double value)
@@ -131,15 +149,12 @@ At this stage, hide position internals: make `SetX/SetY` private and remove publ
 +    else if (value > maxY) y = maxY;
 +    else y = value;
 +}
-+
-+private int GetXInt() => (int)Math.Round(x);
-+private int GetYInt() => (int)Math.Round(y);
 ```
 
 Teacher line:
 
 - We use `double` for movement accuracy, but console draw needs rounded ints.
-- `Program` cannot directly set or read `x/y` anymore; it must tell the sprite what to do.
+- `Program` cannot directly set `x/y` anymore; it must tell the sprite what to do.
 
 
 ## Stage 5 - Program Loop
@@ -314,7 +329,7 @@ Console.ReadKey(true);
 
 - Dont Ask Tell: `Program` tells sprite what to do.
 - Encapsulation: draw/move logic stays inside sprite.
-- In Stage 2, `x/y` are no longer exposed (`SetX/SetY` become private, `GetX/GetY` removed).
+- By Stage 4, `x/y` are no longer exposed (`GetX/GetY` removed in Stage 3, `SetX/SetY` become private in Stage 4).
 - Accuracy: physics values are `double`, rendering uses rounded int.
 - In the later optional version below, bounds default to current console size, but can be overridden in constructor.
 - KIS: no inheritance, one class, one object, one behavior loop.
