@@ -58,55 +58,6 @@ public class Sprite
 }
 ```
 
-## Stage 2 - Modify the Vanilla Code for Game Rules
-
-Edit the generated constructor/getters/setters (do not rewrite from scratch).
-At this stage, hide position internals: make `SetX/SetY` private and remove public `GetX/GetY`.
-
-```diff
- 
--public double GetX()
--{
--    return x;
--}
--
--public double GetY()
--{
--    return y;
--}
--
-+private void SetX(double value)
- {
--    x = value;
-+    if (value < 0) x = 0;
-+    else if (value > maxX) x = maxX;
-+    else x = value;
- }
- 
- private void SetY(double value)
- {
--    y = value;
-+    if (value < 0) y = 0;
-+    else if (value > maxY) y = maxY;
-+    else y = value;
- }
-+
-+private int GetXInt()
-+{
-+    return (int)Math.Round(x);
-+}
-+
-+private int GetYInt()
-+{
-+    return (int)Math.Round(y);
-+}
-```
-
-Teacher line:
-
-- We use `double` for movement accuracy, but console draw needs rounded ints.
-- `Program` cannot directly set or read `x/y` anymore; it must tell the sprite what to do.
-
 ## Stage 3 - Add Draw/Erase as One Method
 
 Now give the object its own console behavior.
@@ -154,13 +105,50 @@ Teacher line:
 - Program no longer calculates cursor location or paint details.
 - Program tells sprite to perform its own job.
 
+
+## Stage 2 - Modify the Vanilla Code for Game Rules
+
+Edit the generated constructor/getters/setters (do not rewrite from scratch).
+At this stage, hide position internals: make `SetX/SetY` private and remove public `GetX/GetY`.
+
+```diff
+ 
+-    public double GetY() => y;
+-    public double GetX() => x;
+
+-public void SetX(double value) => x = value;
++private void SetX(double value)
++ {
++    if (value < 0) x = 0;
++    else if (value > maxX) x = maxX;
++    else x = value;
++ }
+ 
+-public void SetY(double value) => y = value;
++private void SetY(double value)
++{
++    if (value < 0) y = 0;
++    else if (value > maxY) y = maxY;
++    else y = value;
++}
++
++private int GetXInt() => (int)Math.Round(x);
++private int GetYInt() => (int)Math.Round(y);
+```
+
+Teacher line:
+
+- We use `double` for movement accuracy, but console draw needs rounded ints.
+- `Program` cannot directly set or read `x/y` anymore; it must tell the sprite what to do.
+
+
 ## Stage 5 - Program Loop
 
 Very small demo loop for class.
 
 ```diff
-+Sprite s1 = new Sprite(10, 5, "O", ConsoleColor.Yellow,0.35, 0,18);
-+Sprite s2 = new Sprite(10, 5, "O", ConsoleColor.Yellow,0.35, -0,18);
++Sprite s1 = new Sprite(10, 5, "O", ConsoleColor.Yellow, 0.35, 0.18);
++Sprite s2 = new Sprite(10, 5, "O", ConsoleColor.Yellow, 0.35, -0.18);
 +
 +while (!Console.KeyAvailable)
 +{
@@ -219,6 +207,8 @@ Default mapping is arrows from the base constructor; overload only when you want
 +}
 ```
 
+Note: This optional `HandleKey` snippet assumes `SetDX/SetDY` methods exist (shown in the final state below).
+
 Teacher line:
 
 - This still follows Dont Ask Tell: `sprite.HandleKey(key)` instead of key logic spread in `Program`.
@@ -267,8 +257,6 @@ public class Sprite
         SetX(x);
         SetY(y);
     }
-    public double GetY() => y;
-    public double GetX() => x;
     private void SetX(double value)
     {
         if (value < 0) x = 0;
@@ -282,8 +270,8 @@ public class Sprite
         else if (value > maxY) y = maxY;
         else y = value;
     }
-    private int GetXInt() { return (int)Math.Round(x); }
-    private int GetYInt() { return (int)Math.Round(y); }
+    private int GetXInt() => (int)Math.Round(x);
+    private int GetYInt() => (int)Math.Round(y);
 
     /// <summary>
     /// Draws in the given color.
@@ -311,9 +299,7 @@ public class Sprite
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 Console.CursorVisible = false;
 
-Sprite s = new Sprite(10, 5, "O", ConsoleColor.Yellow);
-s.SetDX(0.35);
-s.SetDY(0.18);
+Sprite s = new Sprite(10, 5, "O", ConsoleColor.Yellow, 0.35, 0.18);
 
 while (!Console.KeyAvailable)
 {
@@ -330,7 +316,7 @@ Console.ReadKey(true);
 - Encapsulation: draw/move logic stays inside sprite.
 - In Stage 2, `x/y` are no longer exposed (`SetX/SetY` become private, `GetX/GetY` removed).
 - Accuracy: physics values are `double`, rendering uses rounded int.
-- Bounds default to current console size, but can be overridden in constructor.
+- In the later optional version below, bounds default to current console size, but can be overridden in constructor.
 - KIS: no inheritance, one class, one object, one behavior loop.
 
 <details markdown="1"><summary>Final State (Copy/Paste): Arrow Keys Default + ESC loop</summary>
@@ -395,11 +381,11 @@ public class Sprite
         else y = value;
     }
 
-    private int GetXInt() { return (int)Math.Round(x); }
-    private int GetYInt() { return (int)Math.Round(y); }
+    private int GetXInt() => (int)Math.Round(x);
+    private int GetYInt() => (int)Math.Round(y);
 
-    public void SetDX(double value) { dX = value; }
-    public void SetDY(double value) { dY = value; }
+    public void SetDX(double value) => dX = value;
+    public void SetDY(double value) => dY = value;
 
     public void DrawErase(ConsoleColor drawColor = ConsoleColor.Black)
     {

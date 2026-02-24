@@ -53,7 +53,7 @@ order.CalculateTotal();
 ולא ב־
 
 ```csharp
-CalculateTotal(order.Items, order.Discount, order.TaxRate);
+CalculateTotal(order.GetItems(), order.GetDiscount(), order.GetTaxRate());
 ```
 
 הקוד:
@@ -104,13 +104,13 @@ CalculateTotal(order.Items, order.Discount, order.TaxRate);
 ❌ גישה פרוצדורלית במסווה OOP:
 
 ```csharp
-double area = Geometry.Area(rect.Width, rect.Height);
+double area = Geometry.Area(rect.GetWidth(), rect.GetHeight());
 ```
 
 ✔️ חשיבה מונחית־עצמים:
 
 ```csharp
-double area = rect.Area();
+double area = rect.GetArea();  // rect.Area in C# native propoerties.
 ```
 
 לא בגלל נוחות —
@@ -154,3 +154,6 @@ double area = rect.Area();
 >
 > **Don't Ask – Tell**
 > אינו סיסמה — אלא אבן יסוד של תכנון נכון.
+
+
+[practical example](/cs3e/Objects_03bSpriteDemo/)
