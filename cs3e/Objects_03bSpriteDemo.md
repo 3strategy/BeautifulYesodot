@@ -32,98 +32,29 @@ First pass is intentionally plain:
 ```csharp
 public class Sprite
 {
-    private double x;
-    private double y;
-    private double dX;
-    private double dY;
-    private string shape;
-    private ConsoleColor color;
-    private int maxX;
-    private int maxY;
+    private double x, y; // later make gs private setters with if
+    // just fields:
+    private double dX,dY; // just fields
+    private string shape; // just field
+    private ConsoleColor color; // just field
+    private int maxX, maxY; // just field
 
-    public Sprite(double x, double y, string shape, ConsoleColor color, int maxX = -1, int maxY = -1)
+    public Sprite(double x, double y, string shape, ConsoleColor color, double dx = 0.2, double dy = 0.2)
     {
-        this.x = x;
-        this.y = y;
-        this.dX = 0;
-        this.dY = 0;
         this.shape = shape;
         this.color = color;
-        this.maxX = maxX;
-        this.maxY = maxY;
+        this.maxX = Console.WindowWidth - 1;
+        this.maxY = Console.WindowHeight - 1;
+        dX = dx;
+        dY = dy;
+        SetX(x);
+        SetY(y);
     }
 
-    public double GetX()
-    {
-        return x;
-    }
-    public void SetX(double value)
-    {
-        x = value;
-    }
-
-    public double GetY()
-    {
-        return y;
-    }
-    public void SetY(double value)
-    {
-        y = value;
-    }
-
-    public double GetDX()
-    {
-        return dX;
-    }
-    public void SetDX(double value)
-    {
-        dX = value;
-    }
-
-    public double GetDY()
-    {
-        return dY;
-    }
-    public void SetDY(double value)
-    {
-        dY = value;
-    }
-
-    public string GetShape()
-    {
-        return shape;
-    }
-    public void SetShape(string value)
-    {
-        shape = value;
-    }
-
-    public ConsoleColor GetColor()
-    {
-        return color;
-    }
-    public void SetColor(ConsoleColor value)
-    {
-        color = value;
-    }
-
-    public int GetMaxX()
-    {
-        return maxX;
-    }
-    public void SetMaxX(int value)
-    {
-        maxX = value;
-    }
-
-    public int GetMaxY()
-    {
-        return maxY;
-    }
-    public void SetMaxY(int value)
-    {
-        maxY = value;
-    }
+    public double GetY() => y;
+    public void SetY(double value) => y = value;
+    public double GetX() => x;
+    public void SetX(double value) => x = value;
 }
 ```
 
@@ -133,21 +64,6 @@ Edit the generated constructor/getters/setters (do not rewrite from scratch).
 At this stage, hide position internals: make `SetX/SetY` private and remove public `GetX/GetY`.
 
 ```diff
- public Sprite(double x, double y, string shape, ConsoleColor color, int maxX = -1, int maxY = -1)
- {
--    this.x = x;
--    this.y = y;
-     this.dX = 0;
-     this.dY = 0;
-     this.shape = shape;
-     this.color = color;
--    this.maxX = maxX;
--    this.maxY = maxY;
-+    this.maxX = maxX >= 0 ? maxX : Console.WindowWidth - 1;
-+    this.maxY = maxY >= 0 ? maxY : Console.WindowHeight - 1;
- +    SetX(x);
- +    SetY(y);
- }
  
 -public double GetX()
 -{
@@ -211,7 +127,7 @@ Now give the object its own console behavior.
 How to use right now:
 
 ```diff
-+Sprite s = new Sprite(10, 5, "O", ConsoleColor.Green);
++Sprite s = new Sprite(10, 5, "O", ConsoleColor.Green,0.2,0.2);
 +s.DrawErase(ConsoleColor.Green);
 ```
 
@@ -243,13 +159,13 @@ Teacher line:
 Very small demo loop for class.
 
 ```diff
-+Sprite s = new Sprite(10, 5, "O", ConsoleColor.Yellow);
-+s.SetDX(0.35);
-+s.SetDY(0.18);
++Sprite s1 = new Sprite(10, 5, "O", ConsoleColor.Yellow,0.35, 0,18);
++Sprite s2 = new Sprite(10, 5, "O", ConsoleColor.Yellow,0.35, -0,18);
 +
 +while (!Console.KeyAvailable)
 +{
-+    s.MoveNDraw();
++    s1.MoveNDraw();
++    s2.MoveNDraw();
 +    Thread.Sleep(30);
 +}
 ```
@@ -271,12 +187,12 @@ Default mapping is arrows from the base constructor; overload only when you want
 +private ConsoleKey upKey;
 +private ConsoleKey downKey;
 +
-+public Sprite(double x, double y, string shape, ConsoleColor color, int maxX = -1, int maxY = -1)
++public Sprite(double x, double y, string shape, ConsoleColor color)
 +{
 +    this.shape = shape;
 +    this.color = color;
-+    this.maxX = maxX >= 0 ? maxX : Console.WindowWidth - 1;
-+    this.maxY = maxY >= 0 ? maxY : Console.WindowHeight - 1;
++    this.maxX = Console.WindowWidth - 1;
++    this.maxY = Console.WindowHeight - 1;
 +    this.leftKey = ConsoleKey.LeftArrow;
 +    this.rightKey = ConsoleKey.RightArrow;
 +    this.upKey = ConsoleKey.UpArrow;
@@ -331,52 +247,41 @@ while (running)
 
 ## Final Sprite.cs (Simple Version)
 
-Recommended final for the live lesson (faster): keep `DrawErase(ConsoleColor ...)`.
-
 {% highlight csharp linenos %}
 public class Sprite
 {
-    private double x;
-    private double y;
-    private double dX;
-    private double dY;
-    private string shape;
-    private ConsoleColor color;
-    private int maxX;
-    private int maxY;
-
-    public Sprite(double x, double y, string shape, ConsoleColor color, int maxX = -1, int maxY = -1)
+    private double x, y; // gs private setters
+    //just fields
+    private double dX, dY; // just fields
+    private string shape; // just field
+    private ConsoleColor color; // just field
+    private int maxX, maxY; // just field
+    public Sprite(double x, double y, string shape, ConsoleColor color, double dx = 0.2, double dy = 0.2)
     {
         this.shape = shape;
         this.color = color;
-        this.maxX = maxX >= 0 ? maxX : Console.WindowWidth - 1;
-        this.maxY = maxY >= 0 ? maxY : Console.WindowHeight - 1;
+        this.maxX = Console.WindowWidth - 1;
+        this.maxY = Console.WindowHeight - 1;
+        dX = dx;
+        dY = dy;
         SetX(x);
         SetY(y);
     }
-
+    public double GetY() => y;
+    public double GetX() => x;
     private void SetX(double value)
     {
         if (value < 0) x = 0;
         else if (value > maxX) x = maxX;
         else x = value;
     }
-
     private void SetY(double value)
     {
-        if (value < 0) y = 0;
+        if (value < 0)
+            y = 0;
         else if (value > maxY) y = maxY;
         else y = value;
     }
-
-    public void SetDX(double value) { dX = value; }
-
-    public void SetDY(double value) { dY = value; }
-
-    public void SetColor(ConsoleColor value) { color = value; }
-
-    public void SetShape(string value) { shape = value; }
-
     private int GetXInt() { return (int)Math.Round(x); }
     private int GetYInt() { return (int)Math.Round(y); }
 
@@ -390,7 +295,6 @@ public class Sprite
         Console.SetCursorPosition(GetXInt(), GetYInt());
         Console.Write(shape);
     }
-
     public void MoveNDraw()
     {
         DrawErase();
