@@ -39,6 +39,13 @@
 - Shared utility often relevant for bagrut workflows:
   - `bag_splitter` (WSL): `/home/stra/repos/bag_splitter`
 
+## Bagrut index maintenance (Codex)
+
+- Refresh workflow for `cs2/Chapter9Ex9.3.md` (arrays/classes index):
+  - [`docs/Chapter9Ex9.3-RefreshWorkflow.md`](docs/Chapter9Ex9.3-RefreshWorkflow.md)
+- Reusable script used by that workflow:
+  - `scripts/chapter9ex93_refresh.py`
+
 ## Cross-filesystem access fallback (important)
 
 - When direct PowerShell access to sibling repos or `/mnt/c/...` paths fails with permission/IO errors, use direct WSL shell commands instead.
