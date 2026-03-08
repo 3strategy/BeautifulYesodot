@@ -49,6 +49,74 @@ See https://github.com/adobe-type-tools/cmap-resources
         inset: 0 !important;
       }
     </style>
+    <script>
+      // Auto-height bridge for embedded iframes.
+      // Parent pages can listen to `postMessage` and resize the iframe.
+      document.addEventListener("webviewerloaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const frameId = params.get("frameId") || null;
+        const targetOrigin = params.get("parentOrigin") || "*";
+
+        let lastHeight = 0;
+        let rafId = 0;
+
+        const postHeight = () => {
+          rafId = 0;
+          const container = document.getElementById("viewerContainer");
+          if (!container) {
+            return;
+          }
+
+          const height = Math.ceil(container.scrollHeight);
+          if (!Number.isFinite(height) || height <= 0 || height === lastHeight) {
+            return;
+          }
+          lastHeight = height;
+
+          window.parent.postMessage(
+            {
+              type: "pdfjs-viewer2-height",
+              frameId,
+              height,
+            },
+            targetOrigin
+          );
+        };
+
+        const schedulePostHeight = () => {
+          if (rafId) {
+            return;
+          }
+          rafId = window.requestAnimationFrame(postHeight);
+        };
+
+        const waitForApplication = () => {
+          const app = window.PDFViewerApplication;
+          if (!app?.initializedPromise) {
+            window.setTimeout(waitForApplication, 50);
+            return;
+          }
+
+          app.initializedPromise.then(() => {
+            const events = [
+              "pagesinit",
+              "pagesloaded",
+              "scalechanging",
+              "rotationchanging",
+              "sidebarviewchanged",
+              "updateviewarea",
+            ];
+            for (const eventName of events) {
+              app.eventBus.on(eventName, schedulePostHeight);
+            }
+            window.addEventListener("resize", schedulePostHeight);
+            schedulePostHeight();
+          });
+        };
+
+        waitForApplication();
+      });
+    </script>
 
   <script src="viewer.mjs" type="module"></script>
   </head>
