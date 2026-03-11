@@ -19,6 +19,40 @@ This runbook fixes two issues we saw together:
 - Back up LocalDB data before deleting instances.
 - **Reboot is required after the registry change** before retesting LocalDB.
 
+## Step 0: Optimistic classroom workflow (fast first pass)
+
+When helping many student laptops, try this first before full diagnostics.
+
+### 0A) Recreate the default instance first (no registry change, no reboot)
+
+```powershell
+sqllocaldb stop MSSQLLocalDB -k
+sqllocaldb delete MSSQLLocalDB
+sqllocaldb create MSSQLLocalDB -s
+```
+
+If this succeeds, validate and stop here:
+
+```powershell
+sqllocaldb i MSSQLLocalDB
+```
+
+Expected:
+
+- `State: Running`
+
+### 0B) If 0A fails, classify quickly from `error.log`
+
+```powershell
+Get-Content "$env:LOCALAPPDATA\Microsoft\Microsoft SQL Server Local DB\Instances\MSSQLLocalDB\error.log" -Tail 120
+```
+
+Interpretation:
+
+- If the log references `F:\dbs\...`, this is stale instance metadata. Continue with instance recreate steps (Step 6), including custom instances as needed.
+- If the log shows `misaligned log IOs` or early fatal startup crash, continue with the storage-path fix (Step 1 -> Step 2 -> Step 3 -> Step 4).
+- If unclear, continue with Step 1 for full diagnosis.
+
 ## Step 1: Confirm the symptom (Admin PowerShell)
 
 ```powershell
@@ -216,10 +250,11 @@ Then reboot.
 
 ## Quick field checklist (per computer)
 
-1. Open **Admin PowerShell**.
-2. Run `fsutil fsinfo sectorinfo C:` and note if `PhysicalBytesPerSectorForPerformance` is `32768`.
-3. Apply `ForcedPhysicalSectorSizeInBytes = "* 4095"` under `stornvme`.
-4. **Reboot**.
-5. Test `sqllocaldb start MSSQLLocalDB`.
-6. If it fails with `F:\dbs\...` in `error.log`, delete/recreate the affected LocalDB instances.
-7. Validate `sqllocaldb i <instance>` shows `State: Running`.
+1. (Fast pass) Recreate `MSSQLLocalDB` (`stop/delete/create -s`). If it runs, stop here.
+2. Open **Admin PowerShell**.
+3. Run `fsutil fsinfo sectorinfo C:` and note if `PhysicalBytesPerSectorForPerformance` is `32768`.
+4. Apply `ForcedPhysicalSectorSizeInBytes = "* 4095"` under `stornvme`.
+5. **Reboot**.
+6. Test `sqllocaldb start MSSQLLocalDB`.
+7. If it fails with `F:\dbs\...` in `error.log`, delete/recreate the affected LocalDB instances.
+8. Validate `sqllocaldb i <instance>` shows `State: Running`.

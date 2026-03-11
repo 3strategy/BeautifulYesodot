@@ -19815,10 +19815,17 @@ function webViewerLoad() {
       source: window
     }
   });
-  try {
-    parent.document.dispatchEvent(event);
-  } catch (ex) {
-    console.error("webviewerloaded:", ex);
+  let dispatched = false;
+  if (window.parent !== window) {
+    try {
+      const referrerOrigin = document.referrer ? new URL(document.referrer).origin : null;
+      if (referrerOrigin && referrerOrigin === window.location.origin) {
+        parent.document.dispatchEvent(event);
+        dispatched = true;
+      }
+    } catch (ex) {}
+  }
+  if (!dispatched) {
     document.dispatchEvent(event);
   }
   PDFViewerApplication.run(config);
