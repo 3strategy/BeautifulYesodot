@@ -155,6 +155,8 @@ navbar-links:
         - 11.3b Teachers Sprite Demo: "/cs3e/Objects_03bSpriteDemo/"
 
         - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
+        - עצמים אינטרקטיבי 1: "/cs3e/objectsQuestionnaire"
+        - ירושה אינטרקטיבי 1: "/cs3e/inheritenceQuestionnaire"
         - קישורים 11.9: "/cs3e/Objects_09_Links/"
         - 11.99 BDfix: "/cs3e/fixLocalDB/"
 
@@ -474,4 +476,3 @@ plugins:
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
 lang: he
-
