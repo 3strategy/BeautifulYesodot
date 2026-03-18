@@ -76,7 +76,7 @@ navbar-links:
 
     - פרק 5 while:
         - פרק 5 while: "/cs/Chapter5/"
-        - 5 משחק בלולאות: "/cs/Chapter5codetrooper/"
+        - 5 משחק בלולאות: "/interactive/Chapter5codetrooper/"
         # - תרגול 5a stacks הגשות שלי: "/cst/yesodot/ex5a"
         - תרגול 5.1: "/cs/Chapter5Ex5.1"
         - תרגול 5.2: "/cs/Chapter5Ex5.2"
@@ -135,8 +135,8 @@ navbar-links:
     - סיכום הפרקים הקודמים: "/cs3e/ChapterGimelOpening/"
     - פרק 10 מערך דו ממדי: 
         - פרק 10 מערך דו-ממדי: "/cs3e/Chapter10"
-        - 10.1.1 טור ושורה אינטרקטיבי: "/cs3e/Ex/Chapter10BidiInteractive"
-        - 10.1.2 אלכסונים אינטרקטיבי: "/cs3e/Ex/Chapter10BidiInteractiveDiag"
+        - 10.1.1 טור ושורה אינטרקטיבי: "/interactive/Chapter10BidiInteractive"
+        - 10.1.2 אלכסונים אינטרקטיבי: "/interactive/Chapter10BidiInteractiveDiag"
         # - 10.1.3 תרגיל אלכסונים: "/cs3e/Ex/Ex10.1" עדיף אינטרקטיבי
 
         #- 10.2 תרגול מתקדם ובגרויות: "/cs3e/Ex/Ex10.2" במערכת
@@ -144,7 +144,7 @@ navbar-links:
     - פרק 11 עצמים:
         - למה 11.1: "/cs3e/Objects_01_WhyWhatPrinciples/"
         - 11y1 תרגול ראשוני - שימוש במחלקות: "/cs3e/Ex/Ex11y1UsingOurClasses"
-        - 11.1.2 תרגול אינטרקטיבי: "/cs3e/Ex/Ex11.1objects_array_interactive.html"
+        - 11.1.2 תרגול אינטרקטיבי: "/interactive/Ex11.1objects_array_interactive.html"
         - כתיבת מחלקות 11.2: "/cs3e/Objects_02_BuildingClasses"
         - זום 26.1.29: "/cs3e/Objects_02_BuildingClasses/#id_zoom26_1_29"
         - מערכי עצמים 5.2: "/cs3e/Objects_02b_Arrays"
@@ -155,9 +155,9 @@ navbar-links:
         - 11.3b Teachers Sprite Demo: "/cs3e/Objects_03bSpriteDemo/"
 
         - 11.4 In C#: "/cs3e/Objects_04_in_csharp/"
-        - עצמים אינטרקטיבי 1: "/cs3e/objectsQuestionnaire"
-        - ירושה אינטרקטיבי 2: "/cs3e/inheritenceQuestionnaire"
-        - עצם בתוך עצם אינטרקטיבי 3: "/cs3e/nestedObjectsQuestionnaire"
+        - עצמים אינטרקטיבי 1: "/interactive/objectsQuestionnaire"
+        - ירושה אינטרקטיבי 2: "/interactive/inheritenceQuestionnaire"
+        - עצם בתוך עצם אינטרקטיבי 3: "/interactive/nestedObjectsQuestionnaire"
         - קישורים 11.9: "/cs3e/Objects_09_Links/"
         - 11.99 BDfix: "/cs3e/fixLocalDB/"
 
