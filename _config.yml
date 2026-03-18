@@ -158,6 +158,9 @@ navbar-links:
         - עצמים אינטרקטיבי 1: "/interactive/objectsQuestionnaire"
         - ירושה אינטרקטיבי 2: "/interactive/inheritenceQuestionnaire"
         - עצם בתוך עצם אינטרקטיבי 3: "/interactive/nestedObjectsQuestionnaire"
+        - אכסניה וחדרים אינטרקטיבי 4: "/interactive/02questionnaire2020.6q3"
+        - טיסות ושדה תעופה אינטרקטיבי 5: "/interactive/02questionnaire2018.6q3"
+        - מצלמות תנועה אינטרקטיבי 6: "/interactive/02questionnaire2023.6q3"
         - קישורים 11.9: "/cs3e/Objects_09_Links/"
         - 11.99 BDfix: "/cs3e/fixLocalDB/"
 
