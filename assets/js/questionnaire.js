@@ -47,6 +47,10 @@
     return base.map((q) => shuffleChoices(q, rnd));
   }
 
+  function getAnswerColumns(q) {
+    return q?.answerColumns === 1 ? 1 : 2;
+  }
+
   function Pill({ children }) {
     return <span className="quiz-tag">{children}</span>;
   }
@@ -130,6 +134,9 @@
 
     const q = quizQuestions[qIndex];
     const a = q ? answers[q.id] || { selectedKey: null, revealed: false, isCorrect: undefined } : null;
+    const answerGridClassNames = q
+      ? ["quiz-answers-grid", `quiz-answers-grid-cols-${getAnswerColumns(q)}`]
+      : ["quiz-answers-grid", "quiz-answers-grid-cols-2"];
 
     const progress = useMemo(() => {
       const total = quizQuestions.length;
@@ -199,7 +206,7 @@
           {ui.questionLabel} {qIndex + 1} {ui.ofLabel} {quizQuestions.length}
         </div>
         <h2 className="quiz-question-title">{q.title}</h2>
-        
+
         {q.tags?.length ? (
           <div className="quiz-tags">
             {q.tags.map((t) => (
@@ -212,7 +219,7 @@
 
         {q.code ? <CodeBlock code={q.code} /> : null}
 
-        <div className="quiz-answers-grid">
+        <div className={answerGridClassNames.join(" ")}>
           {q.choices.map((c) => (
             <ChoiceButton
               key={c.key}
