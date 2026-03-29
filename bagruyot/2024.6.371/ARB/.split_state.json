@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "updated_at": "2026-03-29T16:16:58+00:00",
+  "config_hash": "39b3e3314d7e51cc5f5c97e9e1375af69466b81d7e9a79d9d11803dd0824b570",
+  "files": [
+    "full.pdf"
+  ],
+  "processed": {
+    "full.pdf": {
+      "source_path": "\\\\wsl.localhost\\Ubuntu\\home\\stra\\repos\\BeautifulYesodot\\bagruyot\\2024.6.371\\ARB\\full.pdf",
+      "source_hash_sha256": "121d02c90d252c6fc7a7d2f40c90a5c1655b6e18de0af9e78c01ec4a64ac5271",
+      "question_count": 6,
+      "detected_marker_count": 6,
+      "warnings": [],
+      "processed_at": "2026-03-29T16:16:58+00:00"
+    }
+  }
+}
