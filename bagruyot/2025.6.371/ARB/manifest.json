@@ -1,0 +1,178 @@
+{
+  "source_pdf": "\\\\wsl.localhost\\Ubuntu\\home\\stra\\repos\\BeautifulYesodot\\bagruyot\\2025.6.371\\ARB\\full.pdf",
+  "source_hash_sha256": "e9f37015a4e7902afbe2e13d63a92db491f1a9bad0b930af38fb4bb1286dbf4b",
+  "tool_version": "0.1.0",
+  "question_count": 7,
+  "detected_marker_count": 7,
+  "warnings": [
+    "auto marker strategy used: auto_retry_multi_markers"
+  ],
+  "questions": [
+    {
+      "output_name": "q1.pdf",
+      "output_number": 1,
+      "original_number": 1,
+      "detection_method": "marker_regex",
+      "segments": [
+        {
+          "page": 2,
+          "rect": [
+            22.67716535433071,
+            333.46722412109375,
+            572.5988356222318,
+            738.7750397929996
+          ],
+          "pad_top_pt": 19.84251968503937,
+          "pad_bottom_pt": 19.84251968503937
+        }
+      ],
+      "pages_used": [
+        2
+      ]
+    },
+    {
+      "output_name": "q2.pdf",
+      "output_number": 2,
+      "original_number": 2,
+      "detection_method": "marker_regex",
+      "segments": [
+        {
+          "page": 3,
+          "rect": [
+            22.67716535433071,
+            84.66863250732422,
+            572.5988356222318,
+            388.7820893535464
+          ],
+          "pad_top_pt": 19.84251968503937,
+          "pad_bottom_pt": 19.84251968503937
+        }
+      ],
+      "pages_used": [
+        3
+      ]
+    },
+    {
+      "output_name": "q3.pdf",
+      "output_number": 3,
+      "original_number": 3,
+      "detection_method": "marker_regex",
+      "segments": [
+        {
+          "page": 4,
+          "rect": [
+            22.67716535433071,
+            84.66863250732422,
+            572.5988356222318,
+            355.29158032034326
+          ],
+          "pad_top_pt": 19.84251968503937,
+          "pad_bottom_pt": 0.0
+        },
+        {
+          "page": 5,
+          "rect": [
+            22.67716535433071,
+            80.3916624775083,
+            572.5988356222318,
+            151.27360546682763
+          ],
+          "pad_top_pt": 0.0,
+          "pad_bottom_pt": 19.84251968503937
+        }
+      ],
+      "pages_used": [
+        4,
+        5
+      ]
+    },
+    {
+      "output_name": "q4.pdf",
+      "output_number": 4,
+      "original_number": 4,
+      "detection_method": "marker_regex",
+      "segments": [
+        {
+          "page": 5,
+          "rect": [
+            22.67716535433071,
+            151.650634765625,
+            572.5988356222318,
+            777.2761384258121
+          ],
+          "pad_top_pt": 19.84251968503937,
+          "pad_bottom_pt": 19.84251968503937
+        }
+      ],
+      "pages_used": [
+        5
+      ]
+    },
+    {
+      "output_name": "q5.pdf",
+      "output_number": 5,
+      "original_number": 5,
+      "detection_method": "marker_regex",
+      "segments": [
+        {
+          "page": 6,
+          "rect": [
+            22.67716535433071,
+            99.00962829589844,
+            572.5988356222318,
+            419.6675874004214
+          ],
+          "pad_top_pt": 19.84251968503937,
+          "pad_bottom_pt": 19.84251968503937
+        }
+      ],
+      "pages_used": [
+        6
+      ]
+    },
+    {
+      "output_name": "q6.pdf",
+      "output_number": 6,
+      "original_number": 6,
+      "detection_method": "marker_regex",
+      "segments": [
+        {
+          "page": 7,
+          "rect": [
+            22.67716535433071,
+            84.66863250732422,
+            572.5988356222318,
+            189.93263244628906
+          ],
+          "pad_top_pt": 19.84251968503937,
+          "pad_bottom_pt": 19.84251968503937
+        }
+      ],
+      "pages_used": [
+        7
+      ]
+    },
+    {
+      "output_name": "q7.pdf",
+      "output_number": 7,
+      "original_number": 7,
+      "detection_method": "marker_regex",
+      "segments": [
+        {
+          "page": 7,
+          "rect": [
+            22.67716535433071,
+            189.93263244628906,
+            572.5988356222318,
+            679.7646027812808
+          ],
+          "pad_top_pt": 19.84251968503937,
+          "pad_bottom_pt": 19.84251968503937
+        }
+      ],
+      "pages_used": [
+        7
+      ]
+    }
+  ]
+}
