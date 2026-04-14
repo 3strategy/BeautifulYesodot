@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "jekyll": {
+      "users": {
+        "$uid": {
+          ".read": "auth != null && (auth.uid === $uid || auth.uid === 'YtfYwYQ5FxOFk50npfDWF0Ekq7i1')",
+          ".write": "auth != null && (auth.uid === $uid || auth.uid === 'YtfYwYQ5FxOFk50npfDWF0Ekq7i1')"
+        }
+      },
+      "$quizKey": {
+        "$uid": {
+          ".read": "auth != null && (auth.uid === $uid || auth.uid === 'YtfYwYQ5FxOFk50npfDWF0Ekq7i1')",
+          ".write": "auth != null && (auth.uid === 'YtfYwYQ5FxOFk50npfDWF0Ekq7i1' || (auth.uid === $uid && (!data.exists() || data.child('status').val() !== 'submitted')))"
+        }
+      }
+    }
+  }
+}

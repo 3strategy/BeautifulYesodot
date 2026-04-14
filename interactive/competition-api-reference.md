@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "ICode Competition – Python API Quick Reference"
+title: "ICode Competition – Python Quick Reference"
 date: 2025-01-01
 categories: [python, competition, reference]
 tags: [dev, spaceship, flyer, item, api, cheatsheet]
-description: "Compact function reference for the Israeli programming competition platform (toolkit 14200). Extracted for coders who already know Python."
+subtitle: "Compact function reference for the Israeli programming competition platform. For coders who already know Python."
 ---
 
 <style>
@@ -19,6 +19,10 @@ body {
 {: .box-note}
 
 **Legend:** 🔵 action / `None` return · 🟢 property `int` · 🔴 predicate `bool`
+
+{: .box-success}
+
+[Connect to ICode]("https://c.icode4good.com/israel2026?lang=")
 
 ---
 
