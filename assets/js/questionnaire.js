@@ -475,6 +475,12 @@
         ) : null}
 
         {q.promptHe ? <div className="quiz-prompt"><FormattedText text={q.promptHe} /></div> : null}
+        {q.promptHtml
+          ? <div
+              className="quiz-prompt quiz-prompt-html"
+              dangerouslySetInnerHTML={{ __html: q.promptHtml }}
+            />
+          : null}
 
         {q.code ? <CodeBlock code={q.code} /> : null}
 

@@ -15,7 +15,7 @@ quiz_debug_uids:
 
 <!-- interactive -->
 
-<div class="box-note">
+<div class="box-note" markdown="1">
 זהו שאלון מעקב מוגן.
 
 הדף עצמו ציבורי, אבל פתיחת השאלון מחייבת:
