@@ -15,14 +15,18 @@ quiz_debug_uids:
 
 <!-- interactive -->
 
-{: .box-note}
+<div class="box-note">
 זהו שאלון מעקב מוגן.
+
 הדף עצמו ציבורי, אבל פתיחת השאלון מחייבת:
+
 - התחברות עם Google
 - קישור מלא עם `start`, `end`, `token`
 - חלון זמן פעיל
 
-ההתקדמות נשמרת אוטומטית, והשליחה הסופית ננעלת לתלמידים רגילים.
+ההתקדמות נשמרת אוטומטית, והשליחה הסופית ננעלת.
+</div>
+
 
 <div id="tracked-quiz-status"></div>
 <div id="tracked-quiz-account"></div>
