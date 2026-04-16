@@ -147,6 +147,35 @@ function positionChoice(x, y, directionHe) {
   return `${pointText(x, y)}, ${directionHe}`;
 }
 
+function emojiChoiceText(items) {
+  const safeItems = Array.isArray(items) ? items : [items];
+  return safeItems.join(" ו- ");
+}
+
+function emojiChoiceHtml(items) {
+  const safeItems = Array.isArray(items) ? items : [items];
+  return `<span class="quiz-choice-emoji-line">${safeItems.map((item, index) => `
+    ${index ? '<span class="quiz-choice-emoji-joiner">ו-</span>' : ""}
+    <span class="quiz-choice-emoji">${escapeSvgText(item)}</span>
+  `).join("")}</span>`;
+}
+
+function singleEmojiChoice(key, emoji) {
+  return {
+    key,
+    text: emoji,
+    choiceHtml: emojiChoiceHtml([emoji]),
+  };
+}
+
+function pairEmojiChoice(key, left, right) {
+  return {
+    key,
+    text: emojiChoiceText([left, right]),
+    choiceHtml: emojiChoiceHtml([left, right]),
+  };
+}
+
 window.QUIZ_QUESTIONS = [
   {
     id: 1,
@@ -158,10 +187,10 @@ window.QUIZ_QUESTIONS = [
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐘" },
-      { key: "B", text: "🦊" },
-      { key: "C", text: "🦉" },
-      { key: "D", text: "🐰" },
+      singleEmojiChoice("A", "🐘"),
+      singleEmojiChoice("B", "🦊"),
+      singleEmojiChoice("C", "🦉"),
+      singleEmojiChoice("D", "🐰"),
     ],
     correctKey: "A",
     explanationHe: "הפיל כבד מהשועל ומהינשוף, והשועל כבד מהארנב. לכן הפיל הוא הכבד ביותר.",
@@ -177,10 +206,10 @@ window.QUIZ_QUESTIONS = [
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐢" },
-      { key: "B", text: "🐦" },
-      { key: "C", text: "🐸" },
-      { key: "D", text: "🐌" },
+      singleEmojiChoice("A", "🐢"),
+      singleEmojiChoice("B", "🐦"),
+      singleEmojiChoice("C", "🐸"),
+      singleEmojiChoice("D", "🐌"),
     ],
     correctKey: "D",
     explanationHe: "מהמאזניים מתקבלת השרשרת צב > ברווז > צפרדע > חילזון, ולכן החילזון הוא הקל ביותר.",
@@ -241,10 +270,10 @@ window.QUIZ_QUESTIONS = [
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐺" },
-      { key: "B", text: "🦁" },
-      { key: "C", text: "🦊" },
-      { key: "D", text: "🐸" },
+      singleEmojiChoice("A", "🐺"),
+      singleEmojiChoice("B", "🦁"),
+      singleEmojiChoice("C", "🦊"),
+      singleEmojiChoice("D", "🐸"),
     ],
     correctKey: "B",
     explanationHe: "הסדר שמתקבל הוא זאב > אריה > שועל > צפרדע, ולכן האריה הוא השני בכובדו.",
@@ -260,10 +289,10 @@ window.QUIZ_QUESTIONS = [
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🦊" },
-      { key: "B", text: "🐺" },
-      { key: "C", text: "🦉" },
-      { key: "D", text: "🐜" },
+      singleEmojiChoice("A", "🦊"),
+      singleEmojiChoice("B", "🐺"),
+      singleEmojiChoice("C", "🦉"),
+      singleEmojiChoice("D", "🐜"),
     ],
     correctKey: "D",
     explanationHe: "הסדר הוא שועל > זאב > ינשוף > נמלה, ולכן הנמלה היא הקלה ביותר.",
@@ -324,9 +353,9 @@ window.QUIZ_QUESTIONS = [
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐻" },
-      { key: "B", text: "🐟" },
-      { key: "C", text: "🐝" },
+      singleEmojiChoice("A", "🐻"),
+      singleEmojiChoice("B", "🐟"),
+      singleEmojiChoice("C", "🐝"),
       { key: "D", text: "אי אפשר לדעת" },
     ],
     correctKey: "A",
@@ -403,9 +432,9 @@ window.QUIZ_QUESTIONS = [
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐬" },
-      { key: "B", text: "🐡" },
-      { key: "C", text: "🐙" },
+      singleEmojiChoice("A", "🐬"),
+      singleEmojiChoice("B", "🐡"),
+      singleEmojiChoice("C", "🐙"),
       { key: "D", text: "אי אפשר לדעת" },
     ],
     correctKey: "D",
@@ -467,10 +496,10 @@ window.QUIZ_QUESTIONS = [
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🦒" },
-      { key: "B", text: "🦓" },
-      { key: "C", text: "🐐" },
-      { key: "D", text: "🐌" },
+      singleEmojiChoice("A", "🦒"),
+      singleEmojiChoice("B", "🦓"),
+      singleEmojiChoice("C", "🐐"),
+      singleEmojiChoice("D", "🐌"),
     ],
     correctKey: "D",
     explanationHe: "מהמאזניים מתקבלת השרשרת ג'ירפה > זברה > עז > חילזון, ולכן החילזון הוא הקל ביותר.",
@@ -486,9 +515,9 @@ window.QUIZ_QUESTIONS = [
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐘 ו-🦊" },
-      { key: "B", text: "🐘 ו-🦉" },
-      { key: "C", text: "🦊 ו-🐰" },
+      pairEmojiChoice("A", "🐘", "🦊"),
+      pairEmojiChoice("B", "🐘", "🦉"),
+      pairEmojiChoice("C", "🦊", "🐰"),
       { key: "D", text: "אי אפשר לדעת" },
     ],
     correctKey: "A",
@@ -505,8 +534,8 @@ window.QUIZ_QUESTIONS = [
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐙" },
-      { key: "B", text: "🐟" },
+      singleEmojiChoice("A", "🐙"),
+      singleEmojiChoice("B", "🐟"),
       { key: "C", text: "שניהם שוקלים אותו דבר" },
       { key: "D", text: "אי אפשר לדעת" },
     ],

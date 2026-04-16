@@ -44,8 +44,8 @@
     const correctNewPos = idx.findIndex((oldIndex) => oldIndex === correctOldIdx);
 
     const choices = idx.map((oldIndex, newPos) => ({
+      ...old[oldIndex],
       key: LETTERS[newPos],
-      text: old[oldIndex].text,
     }));
 
     return {
@@ -195,6 +195,7 @@
     const isSelected = selectedKey === choice.key;
     const isCorrect = showCorrect && choice.key === correctKey;
     const isWrongSelected = showCorrect && isSelected && choice.key !== correctKey;
+    const choiceHtml = typeof choice?.choiceHtml === "string" ? choice.choiceHtml : null;
 
     const classNames = ["quiz-answer-btn"];
     if (isSelected) classNames.push("is-selected");
@@ -210,7 +211,14 @@
         type="button"
       >
         <div className="quiz-answer-letter">{choice.key}</div>
-        <div className="quiz-answer-text"><FormattedText text={choice.text} /></div>
+        {choiceHtml ? (
+          <div
+            className="quiz-answer-text"
+            dangerouslySetInnerHTML={{ __html: choiceHtml }}
+          />
+        ) : (
+          <div className="quiz-answer-text"><FormattedText text={choice.text} /></div>
+        )}
       </button>
     );
   }

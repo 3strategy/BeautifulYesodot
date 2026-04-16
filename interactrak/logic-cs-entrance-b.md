@@ -37,71 +37,169 @@ quiz_debug_uids:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
 
 <script>
-function escapeBalanceText(text) {
+const BALANCE_RIGHT_ASSET = "{{ '/assets/img/balance.svg' | relative_url }}";
+const BALANCE_LEFT_ASSET = "{{ '/assets/img/balance-mirror.svg' | relative_url }}";
+const BALANCE_BALANCED_ASSET = "{{ '/assets/img/balance-balanced.svg' | relative_url }}";
+const BALANCE_IMAGE_WIDTH = 473;
+const BALANCE_IMAGE_HEIGHT = 255;
+const BALANCE_ROW_SCALE = 0.72;
+const BALANCE_ROW_GAP = 14;
+const BALANCE_ROW_WIDTH = BALANCE_IMAGE_WIDTH * BALANCE_ROW_SCALE;
+const BALANCE_ROW_HEIGHT = BALANCE_IMAGE_HEIGHT * BALANCE_ROW_SCALE;
+const BALANCE_ITEM_SLOTS = {
+  rightHeavy: {
+    left: [
+      { x: 108, y: 84 },
+      { x: 88, y: 86 },
+      { x: 128, y: 86 },
+    ],
+    right: [
+      { x: 377, y: 117 },
+      { x: 355, y: 118 },
+      { x: 399, y: 118 },
+    ],
+  },
+  leftHeavy: {
+    left: [
+      { x: 96, y: 117 },
+      { x: 74, y: 118 },
+      { x: 118, y: 118 },
+    ],
+    right: [
+      { x: 365, y: 84 },
+      { x: 343, y: 86 },
+      { x: 387, y: 86 },
+    ],
+  },
+  balanced: {
+    left: [
+      { x: 108, y: 99 },
+      { x: 86, y: 101 },
+      { x: 130, y: 101 },
+    ],
+    right: [
+      { x: 377, y: 99 },
+      { x: 355, y: 101 },
+      { x: 399, y: 101 },
+    ],
+  },
+};
+
+function escapeSvgText(text) {
   return String(text)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
 }
 
-function buildBalanceRow(row, yOffset) {
-  const relation = row.relation || "equal";
-  const beamLeftY = relation === "leftHeavy" ? 46 : relation === "rightHeavy" ? 70 : 58;
-  const beamRightY = relation === "leftHeavy" ? 70 : relation === "rightHeavy" ? 46 : 58;
-  const leftTrayY = relation === "leftHeavy" ? 84 : relation === "rightHeavy" ? 54 : 70;
-  const rightTrayY = relation === "leftHeavy" ? 54 : relation === "rightHeavy" ? 84 : 70;
-  const leftText = escapeBalanceText((row.left || []).join(" + "));
-  const rightText = escapeBalanceText((row.right || []).join(" + "));
-
-  return `
-    <g transform="translate(0, ${yOffset})">
-      <rect x="20" y="8" width="520" height="96" rx="16" fill="#ffffff" stroke="#d7dee8" />
-      <line x1="150" y1="${beamLeftY}" x2="410" y2="${beamRightY}" stroke="#334155" stroke-width="6" stroke-linecap="round" />
-      <line x1="280" y1="88" x2="280" y2="58" stroke="#475569" stroke-width="12" stroke-linecap="round" />
-      <circle cx="280" cy="58" r="10" fill="#f97316" />
-      <line x1="150" y1="${beamLeftY}" x2="150" y2="${leftTrayY - 8}" stroke="#475569" stroke-width="3.5" />
-      <line x1="410" y1="${beamRightY}" x2="410" y2="${rightTrayY - 8}" stroke="#475569" stroke-width="3.5" />
-      <rect x="74" y="${leftTrayY}" width="152" height="22" rx="11" fill="#cbd5e1" stroke="#94a3b8" />
-      <rect x="334" y="${rightTrayY}" width="152" height="22" rx="11" fill="#cbd5e1" stroke="#94a3b8" />
-      <text x="150" y="${leftTrayY - 10}" text-anchor="middle" font-size="28" font-family="sans-serif" direction="rtl">${leftText}</text>
-      <text x="410" y="${rightTrayY - 10}" text-anchor="middle" font-size="28" font-family="sans-serif" direction="rtl">${rightText}</text>
-    </g>`;
+function renderBalanceItems(items, relation, side) {
+  const slots = BALANCE_ITEM_SLOTS[relation][side];
+  return (items || []).slice(0, slots.length).map((item, index) => {
+    const slot = slots[index];
+    return `<text x="${slot.x}" y="${slot.y}" text-anchor="middle" dominant-baseline="middle" font-size="34" font-family="'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif">${escapeSvgText(item)}</text>`;
+  }).join("");
 }
 
-function buildBalanceSvg(rows) {
-  const width = 560;
-  const rowHeight = 118;
-  const height = (rows.length * rowHeight) + 20;
+function buildBalanceRow(row, yOffset) {
+  const relation = ["leftHeavy", "rightHeavy", "balanced"].includes(row.relation)
+    ? row.relation
+    : "rightHeavy";
+  const asset = relation === "leftHeavy"
+    ? BALANCE_LEFT_ASSET
+    : relation === "balanced"
+      ? BALANCE_BALANCED_ASSET
+      : BALANCE_RIGHT_ASSET;
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 ${width} ${height}" role="img" aria-label="תרשים מאזניים">
-    <rect x="0" y="0" width="${width}" height="${height}" rx="18" fill="#f8fafc" />
-    ${rows.map((row, index) => buildBalanceRow(row, 10 + (index * rowHeight))).join("")}
+  return `<g transform="translate(14, ${yOffset}) scale(${BALANCE_ROW_SCALE})">
+    <image href="${asset}" x="0" y="0" width="${BALANCE_IMAGE_WIDTH}" height="${BALANCE_IMAGE_HEIGHT}" />
+    ${renderBalanceItems(row.left, relation, "left")}
+    ${renderBalanceItems(row.right, relation, "right")}
+  </g>`;
+}
+
+function buildBalancePuzzle(rows) {
+  const safeRows = Array.isArray(rows) ? rows : [];
+  const height = safeRows.length * BALANCE_ROW_HEIGHT + Math.max(0, safeRows.length - 1) * BALANCE_ROW_GAP + 8;
+  const width = BALANCE_ROW_WIDTH + 28;
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 ${width} ${height}" role="img" aria-label="תרגיל מאזניים" style="display:block;margin:0 auto;max-width:380px">
+    ${safeRows.map((row, index) => buildBalanceRow(row, 4 + index * (BALANCE_ROW_HEIGHT + BALANCE_ROW_GAP))).join("")}
   </svg>`;
+}
+
+function ltrCode(text) {
+  return `\`${text}\``;
+}
+
+function signedNumber(value) {
+  return value > 0 ? `+${value}` : `${value}`;
+}
+
+function pointText(x, y) {
+  return ltrCode(`(${x},${y})`);
+}
+
+function deltaText(x, y) {
+  return ltrCode(`(${signedNumber(x)},${signedNumber(y)})`);
+}
+
+function positionChoice(x, y, directionHe) {
+  return `${pointText(x, y)}, ${directionHe}`;
+}
+
+function emojiChoiceText(items) {
+  const safeItems = Array.isArray(items) ? items : [items];
+  return safeItems.join(" ו- ");
+}
+
+function emojiChoiceHtml(items) {
+  const safeItems = Array.isArray(items) ? items : [items];
+  return `<span class="quiz-choice-emoji-line">${safeItems.map((item, index) => `
+    ${index ? '<span class="quiz-choice-emoji-joiner">ו-</span>' : ""}
+    <span class="quiz-choice-emoji">${escapeSvgText(item)}</span>
+  `).join("")}</span>`;
+}
+
+function singleEmojiChoice(key, emoji) {
+  return {
+    key,
+    text: emoji,
+    choiceHtml: emojiChoiceHtml([emoji]),
+  };
+}
+
+function pairEmojiChoice(key, left, right) {
+  return {
+    key,
+    text: emojiChoiceText([left, right]),
+    choiceHtml: emojiChoiceHtml([left, right]),
+  };
 }
 
 window.QUIZ_QUESTIONS = [
   {
     id: 1,
-    title: "שאלה 1: מי כבד יותר?",
-    promptHe: "במאזניים רואים שהגמל כבד יותר מהקואלה. מי כבד יותר?",
-    promptHtml: buildBalanceSvg([
+    title: "שאלה 1: מי הכבד ביותר?",
+    promptHtml: buildBalancePuzzle([
       { left: ["🐫"], right: ["🐨"], relation: "leftHeavy" },
+      { left: ["🐨"], right: ["🦘"], relation: "leftHeavy" },
+      { left: ["🐫"], right: ["🐼"], relation: "leftHeavy" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "הגמל" },
-      { key: "B", text: "הקואלה" },
-      { key: "C", text: "שניהם שוקלים אותו דבר" },
-      { key: "D", text: "אי אפשר לדעת" },
+      singleEmojiChoice("A", "🐫"),
+      singleEmojiChoice("B", "🐨"),
+      singleEmojiChoice("C", "🐼"),
+      singleEmojiChoice("D", "🦘"),
     ],
     correctKey: "A",
-    explanationHe: "הצד של הגמל נמוך יותר במאזניים, ולכן הוא כבד יותר.",
+    explanationHe: "הגמל כבד גם מהקואלה וגם מהפנדה, והקואלה כבדה מהקנגורו. לכן הגמל הוא הכבד ביותר.",
     tags: ["משקל ואיזון"],
   },
   {
     id: 2,
     title: "שאלה 2: דילוגים קדימה ואחורה",
-    promptHe: "רובוט מתחיל ב-2. פקודות: דילוג = +3, צעד אחורה = -1. הסדרה היא: דילוג, צעד אחורה, דילוג, צעד אחורה. לאיזה מספר הוא מגיע?",
+    promptHe: `רובוט מתחיל ב-${ltrCode("2")}. פקודות: דילוג = ${ltrCode("+3")}, צעד אחורה = ${ltrCode("-1")}. הסדרה היא: דילוג, צעד אחורה, דילוג, צעד אחורה. לאיזה מספר הוא מגיע?`,
     choicesDir: "rtl",
     choices: [
       { key: "A", text: "4" },
@@ -110,7 +208,7 @@ window.QUIZ_QUESTIONS = [
       { key: "D", text: "8" },
     ],
     correctKey: "C",
-    explanationHe: "2 ל-5, אחר כך ל-4, שוב ל-7, ולבסוף חזרה ל-6.",
+    explanationHe: `המעבר הוא מ-${ltrCode("2")} ל-${ltrCode("5")}, אחר כך ל-${ltrCode("4")}, שוב ל-${ltrCode("7")}, ולבסוף חזרה ל-${ltrCode("6")}.`,
     tags: ["סימולציית רובוט"],
   },
   {
@@ -145,20 +243,21 @@ window.QUIZ_QUESTIONS = [
   },
   {
     id: 5,
-    title: "שאלה 5: מי קל יותר?",
-    promptHe: "הפנדה שוקלת כמו שני קיפודים. מי הקל יותר?",
-    promptHtml: buildBalanceSvg([
-      { left: ["🐼"], right: ["🦔", "🦔"], relation: "equal" },
+    title: "שאלה 5: מי הקל ביותר?",
+    promptHtml: buildBalancePuzzle([
+      { left: ["🐼"], right: ["🦔", "🦔"], relation: "balanced" },
+      { left: ["🐰"], right: ["🦔"], relation: "leftHeavy" },
+      { left: ["🦔"], right: ["🐌"], relation: "leftHeavy" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "הפנדה" },
-      { key: "B", text: "הקיפוד" },
-      { key: "C", text: "הם שוקלים אותו דבר" },
-      { key: "D", text: "אי אפשר לדעת" },
+      singleEmojiChoice("A", "🐼"),
+      singleEmojiChoice("B", "🦔"),
+      singleEmojiChoice("C", "🐰"),
+      singleEmojiChoice("D", "🐌"),
     ],
-    correctKey: "B",
-    explanationHe: "אם פנדה אחת שווה לשני קיפודים, אז כל קיפוד לבדו קל יותר מהפנדה.",
+    correctKey: "D",
+    explanationHe: "כל קיפוד קל יותר מהפנדה, הארנב כבד מקיפוד, והקיפוד כבד מהחילזון. לכן החילזון הוא הקל ביותר.",
     tags: ["משקל ואיזון"],
   },
   {
@@ -179,20 +278,20 @@ window.QUIZ_QUESTIONS = [
   {
     id: 7,
     title: "שאלה 7: מי הקל ביותר?",
-    promptHe: "כלב הים כבד מהפינגווין, והפינגווין כבד מהסרטן. מי הקל ביותר?",
-    promptHtml: buildBalanceSvg([
+    promptHtml: buildBalancePuzzle([
       { left: ["🦭"], right: ["🐧"], relation: "leftHeavy" },
       { left: ["🐧"], right: ["🦀"], relation: "leftHeavy" },
+      { left: ["🦀"], right: ["🐝"], relation: "leftHeavy" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "כלב הים" },
-      { key: "B", text: "הפינגווין" },
-      { key: "C", text: "הסרטן" },
-      { key: "D", text: "אי אפשר לדעת" },
+      singleEmojiChoice("A", "🦭"),
+      singleEmojiChoice("B", "🐧"),
+      singleEmojiChoice("C", "🦀"),
+      singleEmojiChoice("D", "🐝"),
     ],
-    correctKey: "C",
-    explanationHe: "אם הפינגווין כבד מהסרטן וכלב הים כבד מהפינגווין, אז הסרטן הוא הקל ביותר.",
+    correctKey: "D",
+    explanationHe: "כלב הים כבד מהפינגווין, הפינגווין כבד מהסרטן, והסרטן כבד מהדבורה. לכן הדבורה היא הקלה ביותר.",
     tags: ["משקל ואיזון"],
   },
   {
@@ -213,16 +312,16 @@ window.QUIZ_QUESTIONS = [
   {
     id: 9,
     title: "שאלה 9: ניווט על רשת",
-    promptHe: "רובוט מתחיל בנקודה (1,1). פקודות: מעלה = (0,+1), ימינה = (+1,0), מטה = (0,-1). הסדרה היא: מעלה, ימינה, ימינה, מטה, מעלה. היכן הוא יסיים?",
+    promptHe: `רובוט מתחיל בנקודה ${pointText(1, 1)}. פקודות: מעלה = ${deltaText(0, 1)}, ימינה = ${deltaText(1, 0)}, מטה = ${deltaText(0, -1)}. הסדרה היא: מעלה, ימינה, ימינה, מטה, מעלה. היכן הוא יסיים?`,
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "(2,2)" },
-      { key: "B", text: "(3,1)" },
-      { key: "C", text: "(3,2)" },
-      { key: "D", text: "(4,2)" },
+      { key: "A", text: pointText(2, 2) },
+      { key: "B", text: pointText(3, 1) },
+      { key: "C", text: pointText(3, 2) },
+      { key: "D", text: pointText(4, 2) },
     ],
     correctKey: "C",
-    explanationHe: "המסלול הוא (1,1)→(1,2)→(2,2)→(3,2)→(3,1)→(3,2).",
+    explanationHe: `המסלול הוא ${pointText(1, 1)}→${pointText(1, 2)}→${pointText(2, 2)}→${pointText(3, 2)}→${pointText(3, 1)}→${pointText(3, 2)}.`,
     tags: ["סימולציית רובוט"],
   },
   {
@@ -243,20 +342,20 @@ window.QUIZ_QUESTIONS = [
   {
     id: 11,
     title: "שאלה 11: מי הכבד ביותר?",
-    promptHe: "התמנון שוקל כמו שלושה סרטנים. הקיפוד שוקל כמו שני סרטנים. מי הכבד ביותר?",
-    promptHtml: buildBalanceSvg([
-      { left: ["🐙"], right: ["🦀", "🦀", "🦀"], relation: "equal" },
-      { left: ["🦔"], right: ["🦀", "🦀"], relation: "equal" },
+    promptHtml: buildBalancePuzzle([
+      { left: ["🐙"], right: ["🦀", "🦀", "🦀"], relation: "balanced" },
+      { left: ["🦔"], right: ["🦀", "🦀"], relation: "balanced" },
+      { left: ["🦔"], right: ["🐟"], relation: "leftHeavy" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "התמנון" },
-      { key: "B", text: "הסרטן" },
-      { key: "C", text: "הקיפוד" },
-      { key: "D", text: "כולם שוקלים אותו דבר" },
+      singleEmojiChoice("A", "🐙"),
+      singleEmojiChoice("B", "🦀"),
+      singleEmojiChoice("C", "🦔"),
+      singleEmojiChoice("D", "🐟"),
     ],
     correctKey: "A",
-    explanationHe: "שלושה סרטנים כבדים יותר משני סרטנים, ולכן התמנון כבד יותר מהקיפוד ומהסרטן.",
+    explanationHe: "התמנון שווה לשלושה סרטנים, והקיפוד רק לשני סרטנים. לכן התמנון הוא הכבד ביותר.",
     tags: ["משקל ואיזון"],
   },
   {
@@ -277,7 +376,7 @@ window.QUIZ_QUESTIONS = [
   {
     id: 13,
     title: "שאלה 13: חזרה על זוג פקודות",
-    promptHe: "רובוט מתחיל ב-0. פקודות: קפיצה ימינה = +2, צעד שמאלה = -1. מבצעים פעמיים את הזוג קפיצה ימינה ואז צעד שמאלה, ואחר כך עוד שתי קפיצות ימינה. לאיזה מספר יגיע הרובוט?",
+    promptHe: `רובוט מתחיל ב-${ltrCode("0")}. פקודות: קפיצה ימינה = ${ltrCode("+2")}, צעד שמאלה = ${ltrCode("-1")}. מבצעים פעמיים את הזוג קפיצה ימינה ואז צעד שמאלה, ואחר כך עוד שתי קפיצות ימינה. לאיזה מספר יגיע הרובוט?`,
     choicesDir: "rtl",
     choices: [
       { key: "A", text: "5" },
@@ -286,26 +385,26 @@ window.QUIZ_QUESTIONS = [
       { key: "D", text: "8" },
     ],
     correctKey: "B",
-    explanationHe: "כל זוג פקודות מוסיף 1, ולכן אחרי שתי חזרות מגיעים ל-2. שתי הקפיצות האחרונות מוסיפות עוד 4 ומביאות ל-6.",
+    explanationHe: `כל זוג פקודות מוסיף ${ltrCode("1")}, ולכן אחרי שתי חזרות מגיעים ל-${ltrCode("2")}. שתי ההקפיצות האחרונות מוסיפות עוד ${ltrCode("4")} ומביאות ל-${ltrCode("6")}.`,
     tags: ["סימולציית רובוט"],
   },
   {
     id: 14,
-    title: "שאלה 14: מי הכבד ביותר לפי שרשרת שוויונות?",
-    promptHe: "החתול שוקל כמו שני כלבים, וכלב שוקל כמו שני אוגרים. מי הכבד ביותר?",
-    promptHtml: buildBalanceSvg([
-      { left: ["🐱"], right: ["🐶", "🐶"], relation: "equal" },
-      { left: ["🐶"], right: ["🐹", "🐹"], relation: "equal" },
+    title: "שאלה 14: מי הכבד ביותר?",
+    promptHtml: buildBalancePuzzle([
+      { left: ["🐱"], right: ["🐶", "🐶"], relation: "balanced" },
+      { left: ["🐶"], right: ["🐹", "🐹"], relation: "balanced" },
+      { left: ["🐰"], right: ["🐹"], relation: "leftHeavy" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "החתול" },
-      { key: "B", text: "הכלב" },
-      { key: "C", text: "האוגר" },
-      { key: "D", text: "כולם שוקלים אותו דבר" },
+      singleEmojiChoice("A", "🐱"),
+      singleEmojiChoice("B", "🐶"),
+      singleEmojiChoice("C", "🐹"),
+      singleEmojiChoice("D", "🐰"),
     ],
     correctKey: "A",
-    explanationHe: "החתול שווה לשני כלבים, וכל כלב שווה לשני אוגרים. לכן החתול הוא הכבד ביותר.",
+    explanationHe: "החתול שווה לשני כלבים, וכל כלב שווה לשני אוגרים. לכן החתול כבד יותר מהשאר.",
     tags: ["משקל ואיזון"],
   },
   {
@@ -325,21 +424,21 @@ window.QUIZ_QUESTIONS = [
   },
   {
     id: 16,
-    title: "שאלה 16: מי הכבד ביותר בין שלושה חפצים?",
-    promptHe: "התיק שוקל כמו ספר ועיפרון. הספר שוקל כמו שלושה עפרונות. מי הכבד ביותר?",
-    promptHtml: buildBalanceSvg([
-      { left: ["🎒"], right: ["📚", "✏️"], relation: "equal" },
-      { left: ["📚"], right: ["✏️", "✏️", "✏️"], relation: "equal" },
+    title: "שאלה 16: מי הכבד ביותר?",
+    promptHtml: buildBalancePuzzle([
+      { left: ["🐬"], right: ["🐟"], relation: "leftHeavy" },
+      { left: ["🐡"], right: ["🐟"], relation: "leftHeavy" },
+      { left: ["🐬"], right: ["🐙"], relation: "leftHeavy" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "התיק" },
-      { key: "B", text: "הספר" },
-      { key: "C", text: "העיפרון" },
-      { key: "D", text: "אי אפשר לדעת בוודאות" },
+      singleEmojiChoice("A", "🐬"),
+      singleEmojiChoice("B", "🐡"),
+      singleEmojiChoice("C", "🐙"),
+      { key: "D", text: "אי אפשר לדעת" },
     ],
-    correctKey: "A",
-    explanationHe: "הספר שווה לשלושה עפרונות, והתיק שווה לספר ועוד עיפרון. לכן התיק כבד יותר מכולם.",
+    correctKey: "D",
+    explanationHe: "הדולפין כבד מהדג ומהתמנון, ודג-הנפוח כבד מהדג. אין השוואה בין הדולפין לדג-הנפוח, ולכן אי אפשר לדעת מי הכבד ביותר.",
     tags: ["משקל ואיזון"],
   },
   {
@@ -360,16 +459,16 @@ window.QUIZ_QUESTIONS = [
   {
     id: 18,
     title: "שאלה 18: מסלול עם פניות",
-    promptHe: "רובוט מתחיל ב-(0,0) ופונה צפונה. פקודות: קדימה = צעד אחד בכיוון הנוכחי, ימינה = סיבוב ימינה, שמאלה = סיבוב שמאלה. הסדרה היא: קדימה, קדימה, ימינה, קדימה, שמאלה, קדימה, קדימה. היכן הוא מסיים ולאיזה כיוון הוא פונה?",
+    promptHe: `רובוט מתחיל ב-${pointText(0, 0)} ופונה צפונה. פקודות: קדימה = צעד אחד בכיוון הנוכחי, ימינה = סיבוב ימינה, שמאלה = סיבוב שמאלה. הסדרה היא: קדימה, קדימה, ימינה, קדימה, שמאלה, קדימה, קדימה. היכן הוא מסיים ולאיזה כיוון הוא פונה?`,
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "(1,4), צפונה" },
-      { key: "B", text: "(1,4), מזרחה" },
-      { key: "C", text: "(0,4), צפונה" },
-      { key: "D", text: "(1,3), צפונה" },
+      { key: "A", text: positionChoice(1, 4, "צפונה") },
+      { key: "B", text: positionChoice(1, 4, "מזרחה") },
+      { key: "C", text: positionChoice(0, 4, "צפונה") },
+      { key: "D", text: positionChoice(1, 3, "צפונה") },
     ],
     correctKey: "A",
-    explanationHe: "שתי פקודות קדימה מביאות ל-(0,2), ימינה וקדימה ל-(1,2), ואז שמאלה מחזיר לצפון ושתי פקודות קדימה נוספות מביאות ל-(1,4).",
+    explanationHe: `שתי פקודות קדימה מביאות ל-${pointText(0, 2)}, ימינה וקדימה ל-${pointText(1, 2)}, ואז שמאלה מחזיר לצפון ושתי פקודות קדימה נוספות מביאות ל-${pointText(1, 4)}.`,
     tags: ["סימולציית רובוט"],
   },
   {
@@ -390,21 +489,58 @@ window.QUIZ_QUESTIONS = [
   {
     id: 20,
     title: "שאלה 20: מי הקל ביותר?",
-    promptHe: "האוטובוס שוקל כמו שתי מכוניות. מכונית שוקלת כמו שני אופניים. האופניים כבדים יותר מהקורקינט. מי הקל ביותר?",
-    promptHtml: buildBalanceSvg([
-      { left: ["🚌"], right: ["🚗", "🚗"], relation: "equal" },
-      { left: ["🚗"], right: ["🚲", "🚲"], relation: "equal" },
-      { left: ["🚲"], right: ["🛴"], relation: "leftHeavy" },
+    promptHtml: buildBalancePuzzle([
+      { left: ["🦒"], right: ["🦓", "🦓"], relation: "balanced" },
+      { left: ["🦓"], right: ["🐐"], relation: "leftHeavy" },
+      { left: ["🐐"], right: ["🐌"], relation: "leftHeavy" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "האוטובוס" },
-      { key: "B", text: "המכונית" },
-      { key: "C", text: "האופניים" },
-      { key: "D", text: "הקורקינט" },
+      singleEmojiChoice("A", "🦒"),
+      singleEmojiChoice("B", "🦓"),
+      singleEmojiChoice("C", "🐐"),
+      singleEmojiChoice("D", "🐌"),
     ],
     correctKey: "D",
-    explanationHe: "אם האופניים כבדים מהקורקינט, וכל מכונית ואוטובוס כבדים אפילו יותר, אז הקורקינט הוא הקל ביותר.",
+    explanationHe: "הזברה כבדה מהעז, העז כבדה מהחילזון, והג'ירפה כבדה אפילו יותר. לכן החילזון הוא הקל ביותר.",
+    tags: ["משקל ואיזון"],
+  },
+  {
+    id: 21,
+    title: "שאלה 21: מי שוקל אותו דבר?",
+    promptHtml: buildBalancePuzzle([
+      { left: ["🐫"], right: ["🐨", "🐨"], relation: "balanced" },
+      { left: ["🐼"], right: ["🐨", "🐨"], relation: "balanced" },
+      { left: ["🐶"], right: ["🐨"], relation: "leftHeavy" },
+    ]),
+    choicesDir: "rtl",
+    choices: [
+      pairEmojiChoice("A", "🐫", "🐼"),
+      pairEmojiChoice("B", "🐫", "🐶"),
+      pairEmojiChoice("C", "🐼", "🐨"),
+      { key: "D", text: "אי אפשר לדעת" },
+    ],
+    correctKey: "A",
+    explanationHe: "גם הגמל וגם הפנדה שווים לשתי קואלות, ולכן הם שוקלים אותו דבר.",
+    tags: ["משקל ואיזון"],
+  },
+  {
+    id: 22,
+    title: "שאלה 22: מי כבד יותר?",
+    promptHtml: buildBalancePuzzle([
+      { left: ["🐻"], right: ["🐝", "🐝"], relation: "balanced" },
+      { left: ["🐟"], right: ["🐝", "🐝"], relation: "balanced" },
+      { left: ["🐙"], right: ["🐝"], relation: "leftHeavy" },
+    ]),
+    choicesDir: "rtl",
+    choices: [
+      singleEmojiChoice("A", "🐙"),
+      singleEmojiChoice("B", "🐟"),
+      { key: "C", text: "שניהם שוקלים אותו דבר" },
+      { key: "D", text: "אי אפשר לדעת" },
+    ],
+    correctKey: "D",
+    explanationHe: "הדג שווה לשתי דבורים, ואילו על התמנון יודעים רק שהוא כבד מדבורה אחת. לכן אי אפשר לדעת מי כבד יותר.",
     tags: ["משקל ואיזון"],
   },
 ];
