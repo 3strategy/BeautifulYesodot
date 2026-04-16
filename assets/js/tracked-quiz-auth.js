@@ -24,6 +24,7 @@
     debugBadgeLabel: "Debug",
     debugResetLabel: "Start new debug attempt",
     debugResetConfirmMessage: "Delete the saved quiz record and start over?",
+    debugWindowBypassMessage: "Debug access bypassed the questionnaire time window.",
   };
 
   function runWhenReady(fn) {
@@ -413,7 +414,7 @@
       });
     }
 
-    async function renderQuizSession(user, isDebugUser, loadedRecord, generation) {
+    async function renderQuizSession(user, isDebugUser, loadedRecord, generation, sessionFlags) {
       hasStartedAt = !!loadedRecord?.startedAt;
       const initialState = loadedRecord || {
         status: "in_progress",
@@ -421,10 +422,15 @@
         answers: {},
       };
 
+      const noteLines = [config.labels.autosaveMessage];
+      if (sessionFlags?.debugWindowBypassed) {
+        noteLines.push(config.labels.debugWindowBypassMessage);
+      }
+
       renderAccountBar(accountMount, {
         user,
         isDebug: isDebugUser,
-        note: config.labels.autosaveMessage,
+        note: noteLines.filter(Boolean).join(" "),
         labels: config.labels,
         onSignOut: async () => {
           cancelPendingWork();
@@ -524,7 +530,9 @@
         if (generation !== activeGeneration) return;
 
         const isDebugUser = config.debugUids.includes(user.uid);
-        if (!isDebugUser && !isWindowOpen(config.quizWindowStart, config.quizWindowEnd)) {
+        const windowOpen = isWindowOpen(config.quizWindowStart, config.quizWindowEnd);
+
+        if (!isDebugUser && !windowOpen) {
           renderAccountBar(accountMount, {
             user,
             isDebug: false,
@@ -546,7 +554,9 @@
 
         const snapshot = await get(ref(db, quizPath(user.uid)));
         if (generation !== activeGeneration) return;
-        await renderQuizSession(user, isDebugUser, normalizeLoadedRecord(snapshot.val()), generation);
+        await renderQuizSession(user, isDebugUser, normalizeLoadedRecord(snapshot.val()), generation, {
+          debugWindowBypassed: isDebugUser && !windowOpen,
+        });
       } catch (error) {
         renderAuthError(
           config.labels.loadErrorTitle,

@@ -555,6 +555,7 @@ window.QUIZ_LABELS = {
   debugBadgeLabel: "דיבאג",
   debugResetLabel: "פתיחת ניסיון בדיקה חדש",
   debugResetConfirmMessage: "למחוק את הנתונים השמורים ולהתחיל מחדש?",
+  debugWindowBypassMessage: "חשבון דיבאג עוקף את חלון הזמן של השאלון.",
 };
 
 window.TRACKED_QUIZ_CONFIG = {
