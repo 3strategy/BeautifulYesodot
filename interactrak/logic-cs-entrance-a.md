@@ -7,7 +7,7 @@ full-width: true
 tracked_quiz: true
 quiz_key: "27-logic-cs-entrance-a"
 quiz_window_start: "2026-04-15T08:00:00+03:00"
-quiz_window_end: "2026-08-31T23:59:59+03:00"
+quiz_window_end: "2026-04-15T23:59:59+03:00"
 quiz_unlock_token: "yesodot-logic-a-2026-eK3mP9x1"
 quiz_debug_uids:
   - "YtfYwYQ5FxOFk50npfDWF0Ekq7i1"
@@ -39,6 +39,7 @@ quiz_debug_uids:
 <script>
 const BALANCE_RIGHT_ASSET = "{{ '/assets/img/balance.svg' | relative_url }}";
 const BALANCE_LEFT_ASSET = "{{ '/assets/img/balance-mirror.svg' | relative_url }}";
+const BALANCE_BALANCED_ASSET = "{{ '/assets/img/balance-balanced.svg' | relative_url }}";
 const BALANCE_IMAGE_WIDTH = 473;
 const BALANCE_IMAGE_HEIGHT = 255;
 const BALANCE_ROW_SCALE = 0.72;
@@ -70,6 +71,18 @@ const BALANCE_ITEM_SLOTS = {
       { x: 387, y: 86 },
     ],
   },
+  balanced: {
+    left: [
+      { x: 108, y: 99 },
+      { x: 86, y: 101 },
+      { x: 130, y: 101 },
+    ],
+    right: [
+      { x: 377, y: 99 },
+      { x: 355, y: 101 },
+      { x: 399, y: 101 },
+    ],
+  },
 };
 
 function escapeSvgText(text) {
@@ -88,8 +101,14 @@ function renderBalanceItems(items, relation, side) {
 }
 
 function buildBalanceRow(row, yOffset) {
-  const relation = row.relation === "leftHeavy" ? "leftHeavy" : "rightHeavy";
-  const asset = relation === "leftHeavy" ? BALANCE_LEFT_ASSET : BALANCE_RIGHT_ASSET;
+  const relation = ["leftHeavy", "rightHeavy", "balanced"].includes(row.relation)
+    ? row.relation
+    : "rightHeavy";
+  const asset = relation === "leftHeavy"
+    ? BALANCE_LEFT_ASSET
+    : relation === "balanced"
+      ? BALANCE_BALANCED_ASSET
+      : BALANCE_RIGHT_ASSET;
 
   return `<g transform="translate(14, ${yOffset}) scale(${BALANCE_ROW_SCALE})">
     <image href="${asset}" x="0" y="0" width="${BALANCE_IMAGE_WIDTH}" height="${BALANCE_IMAGE_HEIGHT}" />
@@ -106,6 +125,26 @@ function buildBalancePuzzle(rows) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 ${width} ${height}" role="img" aria-label="תרגיל מאזניים" style="display:block;margin:0 auto;max-width:380px">
     ${safeRows.map((row, index) => buildBalanceRow(row, 4 + index * (BALANCE_ROW_HEIGHT + BALANCE_ROW_GAP))).join("")}
   </svg>`;
+}
+
+function ltrCode(text) {
+  return `\`${text}\``;
+}
+
+function signedNumber(value) {
+  return value > 0 ? `+${value}` : `${value}`;
+}
+
+function pointText(x, y) {
+  return ltrCode(`(${x},${y})`);
+}
+
+function deltaText(x, y) {
+  return ltrCode(`(${signedNumber(x)},${signedNumber(y)})`);
+}
+
+function positionChoice(x, y, directionHe) {
+  return `${pointText(x, y)}, ${directionHe}`;
 }
 
 window.QUIZ_QUESTIONS = [
@@ -150,7 +189,7 @@ window.QUIZ_QUESTIONS = [
   {
     id: 3,
     title: "שאלה 3: רובוט על קו המספרים",
-    promptHe: "רובוט מתחיל ב-0. פקודות: צעד = +1, קפיצה = +2, חזור = -1. הסדרה היא: צעד, קפיצה, צעד, חזור. לאיזה מספר הוא מגיע?",
+    promptHe: `רובוט מתחיל ב-${ltrCode("0")}. פקודות: צעד = ${ltrCode("+1")}, קפיצה = ${ltrCode("+2")}, חזור = ${ltrCode("-1")}. הסדרה היא: צעד, קפיצה, צעד, חזור. לאיזה מספר הוא מגיע?`,
     choicesDir: "rtl",
     choices: [
       { key: "A", text: "1" },
@@ -159,7 +198,7 @@ window.QUIZ_QUESTIONS = [
       { key: "D", text: "4" },
     ],
     correctKey: "C",
-    explanationHe: "0 ל-1, אחר כך ל-3, אחר כך ל-4, ואז חזרה ל-3.",
+    explanationHe: `המעבר הוא ${ltrCode("0")} ל-${ltrCode("1")}, אחר כך ל-${ltrCode("3")}, אחר כך ל-${ltrCode("4")}, ואז חזרה ל-${ltrCode("3")}.`,
     tags: ["סימולציית רובוט"],
   },
   {
@@ -233,16 +272,16 @@ window.QUIZ_QUESTIONS = [
   {
     id: 8,
     title: "שאלה 8: רובוט על לוח משבצות",
-    promptHe: "רובוט מתחיל בנקודה (0,0). פקודות: ימינה = (+1,0), שמאלה = (-1,0), למעלה = (0,+1). הסדרה היא: ימינה, למעלה, ימינה, למעלה, שמאלה. היכן הוא יסיים?",
+    promptHe: `רובוט מתחיל בנקודה ${pointText(0, 0)}. פקודות: ימינה = ${deltaText(1, 0)}, שמאלה = ${deltaText(-1, 0)}, למעלה = ${deltaText(0, 1)}. הסדרה היא: ימינה, למעלה, ימינה, למעלה, שמאלה. היכן הוא יסיים?`,
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "(0,2)" },
-      { key: "B", text: "(1,2)" },
-      { key: "C", text: "(2,1)" },
-      { key: "D", text: "(2,2)" },
+      { key: "A", text: pointText(0, 2) },
+      { key: "B", text: pointText(1, 2) },
+      { key: "C", text: pointText(2, 1) },
+      { key: "D", text: pointText(2, 2) },
     ],
     correctKey: "B",
-    explanationHe: "אחרי הצעדים מתקבל המסלול (0,0)→(1,0)→(1,1)→(2,1)→(2,2)→(1,2).",
+    explanationHe: `אחרי הצעדים מתקבל המסלול ${pointText(0, 0)}→${pointText(1, 0)}→${pointText(1, 1)}→${pointText(2, 1)}→${pointText(2, 2)}→${pointText(1, 2)}.`,
     tags: ["סימולציית רובוט"],
   },
   {
@@ -312,7 +351,7 @@ window.QUIZ_QUESTIONS = [
   {
     id: 13,
     title: "שאלה 13: לולאת פקודות",
-    promptHe: "רובוט מתחיל ב-1. פקודות: קפיצה = +2, חזרה = -1. מבצעים שלוש פעמים את הזוג קפיצה ואז חזרה, ולבסוף עוד קפיצה אחת. לאיזה מספר יגיע הרובוט?",
+    promptHe: `רובוט מתחיל ב-${ltrCode("1")}. פקודות: קפיצה = ${ltrCode("+2")}, חזרה = ${ltrCode("-1")}. מבצעים שלוש פעמים את הזוג קפיצה ואז חזרה, ולבסוף עוד קפיצה אחת. לאיזה מספר יגיע הרובוט?`,
     choicesDir: "rtl",
     choices: [
       { key: "A", text: "4" },
@@ -321,7 +360,7 @@ window.QUIZ_QUESTIONS = [
       { key: "D", text: "7" },
     ],
     correctKey: "C",
-    explanationHe: "כל זוג פקודות מוסיף 1, ולכן אחרי שלוש חזרות מגיעים מ-1 ל-4. הקפיצה האחרונה מביאה ל-6.",
+    explanationHe: `כל זוג פקודות מוסיף ${ltrCode("1")}, ולכן אחרי שלוש חזרות מגיעים מ-${ltrCode("1")} ל-${ltrCode("4")}. הקפיצה האחרונה מביאה ל-${ltrCode("6")}.`,
     tags: ["סימולציית רובוט"],
   },
   {
@@ -391,16 +430,16 @@ window.QUIZ_QUESTIONS = [
   {
     id: 18,
     title: "שאלה 18: רובוט עם כיוון",
-    promptHe: "רובוט מתחיל ב-(0,0) ופונה מזרחה. פקודות: קדימה = צעד אחד בכיוון הנוכחי, ימינה = סיבוב ימינה, שמאלה = סיבוב שמאלה. הסדרה היא: קדימה, ימינה, קדימה, שמאלה, קדימה, קדימה. היכן הוא מסיים ולאיזה כיוון הוא פונה?",
+    promptHe: `רובוט מתחיל ב-${pointText(0, 0)} ופונה מזרחה. פקודות: קדימה = צעד אחד בכיוון הנוכחי, ימינה = סיבוב ימינה, שמאלה = סיבוב שמאלה. הסדרה היא: קדימה, ימינה, קדימה, שמאלה, קדימה, קדימה. היכן הוא מסיים ולאיזה כיוון הוא פונה?`,
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "(3,-1), מזרחה" },
-      { key: "B", text: "(3,1), מזרחה" },
-      { key: "C", text: "(2,-1), דרומה" },
-      { key: "D", text: "(3,-1), דרומה" },
+      { key: "A", text: positionChoice(3, -1, "מזרחה") },
+      { key: "B", text: positionChoice(3, 1, "מזרחה") },
+      { key: "C", text: positionChoice(2, -1, "דרומה") },
+      { key: "D", text: positionChoice(3, -1, "דרומה") },
     ],
     correctKey: "A",
-    explanationHe: "אחרי קדימה מגיעים ל-(1,0), אחרי ימינה וכדימה ל-(1,-1), ואז שמאלה מחזיר למזרח ושתי פקודות קדימה נוספות מביאות ל-(3,-1).",
+    explanationHe: `אחרי קדימה מגיעים ל-${pointText(1, 0)}, אחרי ימינה וקדימה ל-${pointText(1, -1)}, ואז שמאלה מחזיר למזרח ושתי פקודות קדימה נוספות מביאות ל-${pointText(3, -1)}.`,
     tags: ["סימולציית רובוט"],
   },
   {
@@ -435,6 +474,44 @@ window.QUIZ_QUESTIONS = [
     ],
     correctKey: "D",
     explanationHe: "מהמאזניים מתקבלת השרשרת ג'ירפה > זברה > עז > חילזון, ולכן החילזון הוא הקל ביותר.",
+    tags: ["משקל ואיזון"],
+  },
+  {
+    id: 21,
+    title: "שאלה 21: מי שוקל אותו דבר?",
+    promptHtml: buildBalancePuzzle([
+      { left: ["🐘"], right: ["🐰", "🐰"], relation: "balanced" },
+      { left: ["🦊"], right: ["🐰", "🐰"], relation: "balanced" },
+      { left: ["🦉"], right: ["🐰"], relation: "leftHeavy" },
+    ]),
+    choicesDir: "rtl",
+    choices: [
+      { key: "A", text: "🐘 ו-🦊" },
+      { key: "B", text: "🐘 ו-🦉" },
+      { key: "C", text: "🦊 ו-🐰" },
+      { key: "D", text: "אי אפשר לדעת" },
+    ],
+    correctKey: "A",
+    explanationHe: "גם הפיל וגם השועל שווים לשני ארנבים, ולכן הם שוקלים אותו דבר.",
+    tags: ["משקל ואיזון"],
+  },
+  {
+    id: 22,
+    title: "שאלה 22: מי כבד יותר?",
+    promptHtml: buildBalancePuzzle([
+      { left: ["🐻"], right: ["🐝", "🐝"], relation: "balanced" },
+      { left: ["🐟"], right: ["🐝", "🐝"], relation: "balanced" },
+      { left: ["🐙"], right: ["🐝"], relation: "leftHeavy" },
+    ]),
+    choicesDir: "rtl",
+    choices: [
+      { key: "A", text: "🐙" },
+      { key: "B", text: "🐟" },
+      { key: "C", text: "שניהם שוקלים אותו דבר" },
+      { key: "D", text: "אי אפשר לדעת" },
+    ],
+    correctKey: "D",
+    explanationHe: "הדג שווה לשתי דבורים, ואילו על התמנון יודעים רק שהוא כבד מדבורה אחת. לכן אי אפשר לדעת מי כבד יותר.",
     tags: ["משקל ואיזון"],
   },
 ];

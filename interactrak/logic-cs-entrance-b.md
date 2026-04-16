@@ -37,95 +37,65 @@ quiz_debug_uids:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
 
 <script>
-const BALANCE_RIGHT_ASSET = "{{ '/assets/img/balance.svg' | relative_url }}";
-const BALANCE_LEFT_ASSET = "{{ '/assets/img/balance-mirror.svg' | relative_url }}";
-const BALANCE_IMAGE_WIDTH = 473;
-const BALANCE_IMAGE_HEIGHT = 255;
-const BALANCE_ROW_SCALE = 0.72;
-const BALANCE_ROW_GAP = 14;
-const BALANCE_ROW_WIDTH = BALANCE_IMAGE_WIDTH * BALANCE_ROW_SCALE;
-const BALANCE_ROW_HEIGHT = BALANCE_IMAGE_HEIGHT * BALANCE_ROW_SCALE;
-const BALANCE_ITEM_SLOTS = {
-  rightHeavy: {
-    left: [
-      { x: 108, y: 84 },
-      { x: 88, y: 86 },
-      { x: 128, y: 86 },
-    ],
-    right: [
-      { x: 377, y: 117 },
-      { x: 355, y: 118 },
-      { x: 399, y: 118 },
-    ],
-  },
-  leftHeavy: {
-    left: [
-      { x: 96, y: 117 },
-      { x: 74, y: 118 },
-      { x: 118, y: 118 },
-    ],
-    right: [
-      { x: 365, y: 84 },
-      { x: 343, y: 86 },
-      { x: 387, y: 86 },
-    ],
-  },
-};
-
-function escapeSvgText(text) {
+function escapeBalanceText(text) {
   return String(text)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
 }
 
-function renderBalanceItems(items, relation, side) {
-  const slots = BALANCE_ITEM_SLOTS[relation][side];
-  return (items || []).slice(0, slots.length).map((item, index) => {
-    const slot = slots[index];
-    return `<text x="${slot.x}" y="${slot.y}" text-anchor="middle" dominant-baseline="middle" font-size="34" font-family="'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif">${escapeSvgText(item)}</text>`;
-  }).join("");
-}
-
 function buildBalanceRow(row, yOffset) {
-  const relation = row.relation === "leftHeavy" ? "leftHeavy" : "rightHeavy";
-  const asset = relation === "leftHeavy" ? BALANCE_LEFT_ASSET : BALANCE_RIGHT_ASSET;
+  const relation = row.relation || "equal";
+  const beamLeftY = relation === "leftHeavy" ? 46 : relation === "rightHeavy" ? 70 : 58;
+  const beamRightY = relation === "leftHeavy" ? 70 : relation === "rightHeavy" ? 46 : 58;
+  const leftTrayY = relation === "leftHeavy" ? 84 : relation === "rightHeavy" ? 54 : 70;
+  const rightTrayY = relation === "leftHeavy" ? 54 : relation === "rightHeavy" ? 84 : 70;
+  const leftText = escapeBalanceText((row.left || []).join(" + "));
+  const rightText = escapeBalanceText((row.right || []).join(" + "));
 
-  return `<g transform="translate(14, ${yOffset}) scale(${BALANCE_ROW_SCALE})">
-    <image href="${asset}" x="0" y="0" width="${BALANCE_IMAGE_WIDTH}" height="${BALANCE_IMAGE_HEIGHT}" />
-    ${renderBalanceItems(row.left, relation, "left")}
-    ${renderBalanceItems(row.right, relation, "right")}
-  </g>`;
+  return `
+    <g transform="translate(0, ${yOffset})">
+      <rect x="20" y="8" width="520" height="96" rx="16" fill="#ffffff" stroke="#d7dee8" />
+      <line x1="150" y1="${beamLeftY}" x2="410" y2="${beamRightY}" stroke="#334155" stroke-width="6" stroke-linecap="round" />
+      <line x1="280" y1="88" x2="280" y2="58" stroke="#475569" stroke-width="12" stroke-linecap="round" />
+      <circle cx="280" cy="58" r="10" fill="#f97316" />
+      <line x1="150" y1="${beamLeftY}" x2="150" y2="${leftTrayY - 8}" stroke="#475569" stroke-width="3.5" />
+      <line x1="410" y1="${beamRightY}" x2="410" y2="${rightTrayY - 8}" stroke="#475569" stroke-width="3.5" />
+      <rect x="74" y="${leftTrayY}" width="152" height="22" rx="11" fill="#cbd5e1" stroke="#94a3b8" />
+      <rect x="334" y="${rightTrayY}" width="152" height="22" rx="11" fill="#cbd5e1" stroke="#94a3b8" />
+      <text x="150" y="${leftTrayY - 10}" text-anchor="middle" font-size="28" font-family="sans-serif" direction="rtl">${leftText}</text>
+      <text x="410" y="${rightTrayY - 10}" text-anchor="middle" font-size="28" font-family="sans-serif" direction="rtl">${rightText}</text>
+    </g>`;
 }
 
-function buildBalancePuzzle(rows) {
-  const safeRows = Array.isArray(rows) ? rows : [];
-  const height = safeRows.length * BALANCE_ROW_HEIGHT + Math.max(0, safeRows.length - 1) * BALANCE_ROW_GAP + 8;
-  const width = BALANCE_ROW_WIDTH + 28;
+function buildBalanceSvg(rows) {
+  const width = 560;
+  const rowHeight = 118;
+  const height = (rows.length * rowHeight) + 20;
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 ${width} ${height}" role="img" aria-label="תרגיל מאזניים" style="display:block;margin:0 auto;max-width:380px">
-    ${safeRows.map((row, index) => buildBalanceRow(row, 4 + index * (BALANCE_ROW_HEIGHT + BALANCE_ROW_GAP))).join("")}
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 ${width} ${height}" role="img" aria-label="תרשים מאזניים">
+    <rect x="0" y="0" width="${width}" height="${height}" rx="18" fill="#f8fafc" />
+    ${rows.map((row, index) => buildBalanceRow(row, 10 + (index * rowHeight))).join("")}
   </svg>`;
 }
 
 window.QUIZ_QUESTIONS = [
   {
     id: 1,
-    title: "שאלה 1: מי הכבד ביותר?",
-    promptHtml: buildBalancePuzzle([
+    title: "שאלה 1: מי כבד יותר?",
+    promptHe: "במאזניים רואים שהגמל כבד יותר מהקואלה. מי כבד יותר?",
+    promptHtml: buildBalanceSvg([
       { left: ["🐫"], right: ["🐨"], relation: "leftHeavy" },
-      { left: ["🐿️"], right: ["🐨"], relation: "rightHeavy" },
-      { left: ["🐧"], right: ["🐫"], relation: "rightHeavy" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐫" },
-      { key: "B", text: "🐨" },
-      { key: "C", text: "🐧" },
-      { key: "D", text: "🐿️" },
+      { key: "A", text: "הגמל" },
+      { key: "B", text: "הקואלה" },
+      { key: "C", text: "שניהם שוקלים אותו דבר" },
+      { key: "D", text: "אי אפשר לדעת" },
     ],
     correctKey: "A",
-    explanationHe: "הגמל כבד מהקואלה ומהפינגווין, והקואלה כבדה מהסנאי. לכן הגמל הוא הכבד ביותר.",
+    explanationHe: "הצד של הגמל נמוך יותר במאזניים, ולכן הוא כבד יותר.",
     tags: ["משקל ואיזון"],
   },
   {
@@ -176,20 +146,19 @@ window.QUIZ_QUESTIONS = [
   {
     id: 5,
     title: "שאלה 5: מי קל יותר?",
-    promptHtml: buildBalancePuzzle([
-      { left: ["🦔"], right: ["🐼"], relation: "rightHeavy" },
-      { left: ["🦔"], right: ["🦀"], relation: "leftHeavy" },
-      { left: ["🦀"], right: ["🐙"], relation: "rightHeavy" },
+    promptHe: "הפנדה שוקלת כמו שני קיפודים. מי הקל יותר?",
+    promptHtml: buildBalanceSvg([
+      { left: ["🐼"], right: ["🦔", "🦔"], relation: "equal" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐼" },
-      { key: "B", text: "🦔" },
-      { key: "C", text: "🐙" },
-      { key: "D", text: "🦀" },
+      { key: "A", text: "הפנדה" },
+      { key: "B", text: "הקיפוד" },
+      { key: "C", text: "הם שוקלים אותו דבר" },
+      { key: "D", text: "אי אפשר לדעת" },
     ],
-    correctKey: "D",
-    explanationHe: "הסרטן קל מהקיפוד וגם קל מהתמנון, והקיפוד קל מהפנדה. לכן הסרטן הוא הקל ביותר.",
+    correctKey: "B",
+    explanationHe: "אם פנדה אחת שווה לשני קיפודים, אז כל קיפוד לבדו קל יותר מהפנדה.",
     tags: ["משקל ואיזון"],
   },
   {
@@ -209,21 +178,21 @@ window.QUIZ_QUESTIONS = [
   },
   {
     id: 7,
-    title: "שאלה 7: מי השני בכובדו?",
-    promptHtml: buildBalancePuzzle([
-      { left: ["🐋"], right: ["🦭"], relation: "leftHeavy" },
-      { left: ["🐧"], right: ["🦭"], relation: "rightHeavy" },
+    title: "שאלה 7: מי הקל ביותר?",
+    promptHe: "כלב הים כבד מהפינגווין, והפינגווין כבד מהסרטן. מי הקל ביותר?",
+    promptHtml: buildBalanceSvg([
+      { left: ["🦭"], right: ["🐧"], relation: "leftHeavy" },
       { left: ["🐧"], right: ["🦀"], relation: "leftHeavy" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐋" },
-      { key: "B", text: "🦭" },
-      { key: "C", text: "🐧" },
-      { key: "D", text: "🦀" },
+      { key: "A", text: "כלב הים" },
+      { key: "B", text: "הפינגווין" },
+      { key: "C", text: "הסרטן" },
+      { key: "D", text: "אי אפשר לדעת" },
     ],
-    correctKey: "B",
-    explanationHe: "הסדר הוא לווייתן > כלב ים > פינגווין > סרטן, ולכן כלב הים הוא השני בכובדו.",
+    correctKey: "C",
+    explanationHe: "אם הפינגווין כבד מהסרטן וכלב הים כבד מהפינגווין, אז הסרטן הוא הקל ביותר.",
     tags: ["משקל ואיזון"],
   },
   {
@@ -274,20 +243,20 @@ window.QUIZ_QUESTIONS = [
   {
     id: 11,
     title: "שאלה 11: מי הכבד ביותר?",
-    promptHtml: buildBalancePuzzle([
-      { left: ["🐙"], right: ["🦔"], relation: "leftHeavy" },
-      { left: ["🦀"], right: ["🦔"], relation: "rightHeavy" },
-      { left: ["🐙"], right: ["🦀"], relation: "leftHeavy" },
+    promptHe: "התמנון שוקל כמו שלושה סרטנים. הקיפוד שוקל כמו שני סרטנים. מי הכבד ביותר?",
+    promptHtml: buildBalanceSvg([
+      { left: ["🐙"], right: ["🦀", "🦀", "🦀"], relation: "equal" },
+      { left: ["🦔"], right: ["🦀", "🦀"], relation: "equal" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐙" },
-      { key: "B", text: "🦔" },
-      { key: "C", text: "🦀" },
-      { key: "D", text: "אי אפשר לדעת" },
+      { key: "A", text: "התמנון" },
+      { key: "B", text: "הסרטן" },
+      { key: "C", text: "הקיפוד" },
+      { key: "D", text: "כולם שוקלים אותו דבר" },
     ],
     correctKey: "A",
-    explanationHe: "התמנון כבד מהקיפוד ומהסרטן, והקיפוד כבד מהסרטן. לכן התמנון הוא הכבד ביותר.",
+    explanationHe: "שלושה סרטנים כבדים יותר משני סרטנים, ולכן התמנון כבד יותר מהקיפוד ומהסרטן.",
     tags: ["משקל ואיזון"],
   },
   {
@@ -322,21 +291,21 @@ window.QUIZ_QUESTIONS = [
   },
   {
     id: 14,
-    title: "שאלה 14: מי הכבד ביותר?",
-    promptHtml: buildBalancePuzzle([
-      { left: ["🐱"], right: ["🐶"], relation: "leftHeavy" },
-      { left: ["🦎"], right: ["🐹"], relation: "rightHeavy" },
-      { left: ["🦎"], right: ["🐶"], relation: "rightHeavy" },
+    title: "שאלה 14: מי הכבד ביותר לפי שרשרת שוויונות?",
+    promptHe: "החתול שוקל כמו שני כלבים, וכלב שוקל כמו שני אוגרים. מי הכבד ביותר?",
+    promptHtml: buildBalanceSvg([
+      { left: ["🐱"], right: ["🐶", "🐶"], relation: "equal" },
+      { left: ["🐶"], right: ["🐹", "🐹"], relation: "equal" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🐱" },
-      { key: "B", text: "🐹" },
-      { key: "C", text: "🐶" },
-      { key: "D", text: "אי אפשר לדעת" },
+      { key: "A", text: "החתול" },
+      { key: "B", text: "הכלב" },
+      { key: "C", text: "האוגר" },
+      { key: "D", text: "כולם שוקלים אותו דבר" },
     ],
-    correctKey: "D",
-    explanationHe: "החתול כבד מהכלב, והכלב כבד מהלטאה. גם האוגר כבד מהלטאה, אבל אין השוואה בין החתול לאוגר, ולכן אי אפשר לדעת מי הכבד ביותר.",
+    correctKey: "A",
+    explanationHe: "החתול שווה לשני כלבים, וכל כלב שווה לשני אוגרים. לכן החתול הוא הכבד ביותר.",
     tags: ["משקל ואיזון"],
   },
   {
@@ -356,21 +325,21 @@ window.QUIZ_QUESTIONS = [
   },
   {
     id: 16,
-    title: "שאלה 16: מי הקל ביותר?",
-    promptHtml: buildBalancePuzzle([
-      { left: ["📚"], right: ["🎒"], relation: "rightHeavy" },
-      { left: ["📚"], right: ["✏️"], relation: "leftHeavy" },
-      { left: ["📚"], right: ["🧮"], relation: "rightHeavy" },
+    title: "שאלה 16: מי הכבד ביותר בין שלושה חפצים?",
+    promptHe: "התיק שוקל כמו ספר ועיפרון. הספר שוקל כמו שלושה עפרונות. מי הכבד ביותר?",
+    promptHtml: buildBalanceSvg([
+      { left: ["🎒"], right: ["📚", "✏️"], relation: "equal" },
+      { left: ["📚"], right: ["✏️", "✏️", "✏️"], relation: "equal" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🎒" },
-      { key: "B", text: "📚" },
-      { key: "C", text: "🧮" },
-      { key: "D", text: "✏️" },
+      { key: "A", text: "התיק" },
+      { key: "B", text: "הספר" },
+      { key: "C", text: "העיפרון" },
+      { key: "D", text: "אי אפשר לדעת בוודאות" },
     ],
-    correctKey: "D",
-    explanationHe: "הספר כבד מהעיפרון, והתיק והחשבונייה כבדים מהספר. לכן העיפרון הוא הקל ביותר.",
+    correctKey: "A",
+    explanationHe: "הספר שווה לשלושה עפרונות, והתיק שווה לספר ועוד עיפרון. לכן התיק כבד יותר מכולם.",
     tags: ["משקל ואיזון"],
   },
   {
@@ -421,20 +390,21 @@ window.QUIZ_QUESTIONS = [
   {
     id: 20,
     title: "שאלה 20: מי הקל ביותר?",
-    promptHtml: buildBalancePuzzle([
-      { left: ["🚗"], right: ["🚌"], relation: "rightHeavy" },
-      { left: ["🚗"], right: ["🚲"], relation: "leftHeavy" },
+    promptHe: "האוטובוס שוקל כמו שתי מכוניות. מכונית שוקלת כמו שני אופניים. האופניים כבדים יותר מהקורקינט. מי הקל ביותר?",
+    promptHtml: buildBalanceSvg([
+      { left: ["🚌"], right: ["🚗", "🚗"], relation: "equal" },
+      { left: ["🚗"], right: ["🚲", "🚲"], relation: "equal" },
       { left: ["🚲"], right: ["🛴"], relation: "leftHeavy" },
     ]),
     choicesDir: "rtl",
     choices: [
-      { key: "A", text: "🚌" },
-      { key: "B", text: "🚗" },
-      { key: "C", text: "🚲" },
-      { key: "D", text: "🛴" },
+      { key: "A", text: "האוטובוס" },
+      { key: "B", text: "המכונית" },
+      { key: "C", text: "האופניים" },
+      { key: "D", text: "הקורקינט" },
     ],
     correctKey: "D",
-    explanationHe: "האוטובוס כבד מהמכונית, המכונית כבדה מהאופניים, והאופניים כבדים מהקורקינט. לכן הקורקינט הוא הקל ביותר.",
+    explanationHe: "אם האופניים כבדים מהקורקינט, וכל מכונית ואוטובוס כבדים אפילו יותר, אז הקורקינט הוא הקל ביותר.",
     tags: ["משקל ואיזון"],
   },
 ];
