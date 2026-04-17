@@ -267,7 +267,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "יסודות.שלי.com"
+url-pretty: "מבני.שלי.com"
 url-parent: "מתמטיקה.com"
 
 # Add the website title to the title of every page
@@ -461,6 +461,11 @@ defaults:
       path: "" # any file that's not a post will be a "page" layout by default
     values:
       layout: "page"
+  -
+    scope:
+      path: "interactive"
+    values:
+      full-width: true
 
 # Exclude these files from production site
 exclude:
