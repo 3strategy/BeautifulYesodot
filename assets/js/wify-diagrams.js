@@ -17,6 +17,9 @@
     liveTitle: "Live Firebase diagram",
     sourceTitle: "Mermaid source from RTDB",
     emptyMessage: "No Mermaid markdown was found at the configured RTDB path.",
+    sessionsTitle: "Available diagnostic sessions",
+    sessionsEmptyMessage: "No diagnostic sessions with Mermaid markdown were found.",
+    fallbackSessionLabel: "Configured demo session",
   };
 
   function runWhenReady(fn) {
@@ -31,6 +34,7 @@
     return {
       firebaseConfig: rawConfig?.firebaseConfig || null,
       mermaidPath: rawConfig?.mermaidPath || "",
+      sessionsRootPath: rawConfig?.sessionsRootPath || "/wifi/diagnosticSessions",
       allowedUids: Array.isArray(rawConfig?.allowedUids) ? rawConfig.allowedUids : [],
       statusMountId: rawConfig?.statusMountId || "wify-diagrams-status",
       accountMountId: rawConfig?.accountMountId || "wify-diagrams-account",
@@ -145,7 +149,28 @@
       source = source.replace(/^mermaidgraph\b/i, "graph");
     }
 
-    return source;
+    source = normalizeLegacyStatementBreaks(source);
+    return repairUnsafeNodeLabels(source);
+  }
+
+  function repairUnsafeNodeLabels(source) {
+    return source.replace(/\b([A-Za-z][A-Za-z0-9_-]*)\[([^\]\n]+)\]/g, (match, nodeId, label) => {
+      if (/^\s*".*"\s*$/.test(label)) return match;
+      const repairedLabel = label
+        .replace(/"/g, "'")
+        .replace(/\[/g, "(")
+        .replace(/\]/g, ")");
+      return `${nodeId}["${repairedLabel}"]`;
+    });
+  }
+
+  function normalizeLegacyStatementBreaks(source) {
+    const normalized = source
+      .replace(/^(graph\s+(?:LR|RL|TD|TB|BT))\s+/i, "$1\n  ")
+      .replace(/\s{2,}(?=(?:[A-Za-z][A-Za-z0-9_-]*\s*-->|[A-Za-z][A-Za-z0-9_-]*\[))/g, "\n  ")
+      .trim();
+
+    return normalized;
   }
 
   async function waitForMermaid() {
@@ -197,6 +222,158 @@
         extraLines: [error?.message || String(error)],
       });
     }
+  }
+
+  function buildSessionListFromRoot(rawRoot, sessionsRootPath) {
+    const sessions = [];
+    const root = rawRoot && typeof rawRoot === "object" ? rawRoot : {};
+
+    Object.entries(root).forEach(([scopeType, scopes]) => {
+      if (!scopes || typeof scopes !== "object") return;
+      Object.entries(scopes).forEach(([scopeId, writers]) => {
+        if (!writers || typeof writers !== "object") return;
+        Object.entries(writers).forEach(([writerUid, writerSessions]) => {
+          if (!writerSessions || typeof writerSessions !== "object") return;
+          Object.entries(writerSessions).forEach(([sessionId, session]) => {
+            addSession(sessions, {
+              sessionsRootPath,
+              scopeType,
+              scopeId,
+              writerUid,
+              sessionId,
+              session,
+            });
+          });
+        });
+      });
+    });
+
+    return sortSessions(sessions);
+  }
+
+  function buildSessionListFromWriter(rawWriterSessions, sessionsRootPath, scopeType, scopeId, writerUid) {
+    const sessions = [];
+    const writerSessions = rawWriterSessions && typeof rawWriterSessions === "object" ? rawWriterSessions : {};
+
+    Object.entries(writerSessions).forEach(([sessionId, session]) => {
+      addSession(sessions, {
+        sessionsRootPath,
+        scopeType,
+        scopeId,
+        writerUid,
+        sessionId,
+        session,
+      });
+    });
+
+    return sortSessions(sessions);
+  }
+
+  function buildSessionListFromSchool(rawSchoolSessions, sessionsRootPath, schoolId) {
+    const sessions = [];
+    const schoolSessions = rawSchoolSessions && typeof rawSchoolSessions === "object" ? rawSchoolSessions : {};
+
+    Object.entries(schoolSessions).forEach(([writerUid, writerSessions]) => {
+      if (!writerSessions || typeof writerSessions !== "object") return;
+      Object.entries(writerSessions).forEach(([sessionId, session]) => {
+        addSession(sessions, {
+          sessionsRootPath,
+          scopeType: "school",
+          scopeId: schoolId,
+          writerUid,
+          sessionId,
+          session,
+        });
+      });
+    });
+
+    return sortSessions(sessions);
+  }
+
+  function addSession(sessions, spec) {
+    const { sessionsRootPath, scopeType, scopeId, writerUid, sessionId, session } = spec;
+    if (!session || typeof session !== "object" || typeof session.mermaidMarkdown !== "string") return;
+
+    const scopeName = session.environmentScope?.displayName || scopeId;
+    const capturedAt = Number(session.capturedAt) || 0;
+    sessions.push({
+      label: `${formatTimestamp(capturedAt)} | ${scopeType}/${scopeName} | ${session.requestedTransport || "probe"} | ${sessionId}`,
+      path: `${toPath(sessionsRootPath)}/${scopeType}/${scopeId}/${writerUid}/${sessionId}/mermaidMarkdown`,
+      session,
+      capturedAt,
+    });
+  }
+
+  function sortSessions(sessions) {
+    sessions.sort((a, b) => b.capturedAt - a.capturedAt);
+    return sessions;
+  }
+
+  function withFallbackSession(sessions, fallbackMermaidPath, labels) {
+    if (!sessions.length && fallbackMermaidPath) {
+      sessions.push({
+        label: labels.fallbackSessionLabel,
+        path: toPath(fallbackMermaidPath),
+        session: null,
+        capturedAt: 0,
+      });
+    }
+
+    return sessions;
+  }
+
+  function dedupeSessions(sessions) {
+    const seen = new Set();
+    return sortSessions(sessions.filter((session) => {
+      if (seen.has(session.path)) return false;
+      seen.add(session.path);
+      return true;
+    }));
+  }
+
+  function formatTimestamp(value) {
+    if (!Number.isFinite(value) || value <= 0) return "unknown time";
+    return new Date(value).toLocaleString("en-IL", {
+      timeZone: "Asia/Jerusalem",
+      dateStyle: "short",
+      timeStyle: "short",
+    });
+  }
+
+  function renderSessionPicker(target, sessions, selectedPath, labels, onSelect) {
+    clearNode(target);
+
+    const section = createElement("section", "wify-diagram-section");
+    section.appendChild(createElement("h2", "wify-diagram-title", labels.sessionsTitle));
+
+    if (!sessions.length) {
+      section.appendChild(createElement("p", "", labels.sessionsEmptyMessage));
+      target.appendChild(section);
+      return;
+    }
+
+    const select = createElement("select", "wify-session-select");
+    sessions.forEach((session) => {
+      const option = createElement("option", "", session.label);
+      option.value = session.path;
+      option.selected = session.path === selectedPath;
+      select.appendChild(option);
+    });
+    select.addEventListener("change", () => onSelect(select.value));
+    section.appendChild(select);
+
+    const selected = sessions.find((session) => session.path === selectedPath);
+    if (selected) {
+      const meta = createElement("div", "tracked-quiz-card-meta");
+      meta.appendChild(createElement("div", "tracked-quiz-card-meta-line", `RTDB: /${selected.path}`));
+      if (selected.session?.uid) meta.appendChild(createElement("div", "tracked-quiz-card-meta-line", `Writer UID: ${selected.session.uid}`));
+      if (selected.session?.environmentScope?.displayName) {
+        meta.appendChild(createElement("div", "tracked-quiz-card-meta-line", `Scope: ${selected.session.environmentScope.displayName}`));
+      }
+      section.appendChild(meta);
+    }
+
+    target.appendChild(section);
   }
 
   async function bootWifyDiagrams() {
@@ -263,7 +440,63 @@
       }
     }
 
-    async function loadAndRender(user) {
+    let sessionOptions = [];
+    let selectedMermaidPath = toPath(config.mermaidPath);
+
+    async function readSessionOptions(user) {
+      const discovered = [];
+      try {
+        const snapshot = await get(ref(db, toPath(config.sessionsRootPath)));
+        discovered.push(...buildSessionListFromRoot(snapshot.val(), config.sessionsRootPath));
+      } catch (error) {
+        // Root listing is usually blocked by RTDB rules; fall through to allowed scoped reads.
+      }
+
+      if (user?.uid) {
+        try {
+          const personalPath = `${toPath(config.sessionsRootPath)}/personal/${user.uid}/${user.uid}`;
+          const snapshot = await get(ref(db, personalPath));
+          discovered.push(...buildSessionListFromWriter(
+            snapshot.val(),
+            config.sessionsRootPath,
+            "personal",
+            user.uid,
+            user.uid
+          ));
+        } catch (error) {
+          // Personal scoped read may be blocked for accounts without sessions.
+        }
+      }
+
+      try {
+        const schoolsSnapshot = await get(ref(db, "wifi/schools"));
+        const schools = schoolsSnapshot.val() && typeof schoolsSnapshot.val() === "object"
+          ? Object.keys(schoolsSnapshot.val())
+          : [];
+        const schoolSnapshots = await Promise.all(
+          schools.map(async (schoolId) => {
+            try {
+              const schoolPath = `${toPath(config.sessionsRootPath)}/school/${schoolId}`;
+              const snapshot = await get(ref(db, schoolPath));
+              return buildSessionListFromSchool(snapshot.val(), config.sessionsRootPath, schoolId);
+            } catch (error) {
+              return [];
+            }
+          })
+        );
+        schoolSnapshots.forEach((sessions) => discovered.push(...sessions));
+      } catch (error) {
+        // School discovery depends on /wifi/schools read access.
+      }
+
+      sessionOptions = withFallbackSession(dedupeSessions(discovered), config.mermaidPath, config.labels);
+      if (sessionOptions.length && !sessionOptions.some((session) => session.path === selectedMermaidPath)) {
+        selectedMermaidPath = sessionOptions[0].path;
+      }
+    }
+
+    async function loadAndRender(user, requestedPath) {
+      if (requestedPath) selectedMermaidPath = toPath(requestedPath);
       renderAccountBar(accountMount, {
         user,
         labels: config.labels,
@@ -275,11 +508,12 @@
         tone: "note",
         title: config.labels.loadingTitle,
         message: config.labels.loadingMessage,
-        extraLines: [`/${toPath(config.mermaidPath)}`],
+        extraLines: [`/${selectedMermaidPath}`],
       });
       setHidden(rootMount, true);
 
-      const snapshot = await get(ref(db, toPath(config.mermaidPath)));
+      await readSessionOptions(user);
+      const snapshot = await get(ref(db, selectedMermaidPath));
       const source = normalizeMermaidSource(snapshot.val());
 
       if (!source) {
@@ -288,12 +522,21 @@
           tone: "warning",
           title: config.labels.loadErrorTitle,
           message: config.labels.emptyMessage,
-          extraLines: [`/${toPath(config.mermaidPath)}`],
+          extraLines: [`/${selectedMermaidPath}`],
         });
         return;
       }
 
       clearNode(statusMount);
+      renderSessionPicker(statusMount, sessionOptions, selectedMermaidPath, config.labels, (path) => {
+        loadAndRender(user, path).catch((error) => {
+          renderCard(statusMount, {
+            tone: "error",
+            title: config.labels.loadErrorTitle,
+            message: error?.message || config.labels.loadErrorMessage,
+          });
+        });
+      });
       await renderMermaid(rootMount, source, config.labels);
       setHidden(rootMount, false);
     }
