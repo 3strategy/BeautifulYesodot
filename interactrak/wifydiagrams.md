@@ -141,4 +141,4 @@ window.WIFY_DIAGRAMS_CONFIG = {
 };
 </script>
 
-<script src="{{ '/assets/js/wify-diagrams.js' | relative_url }}?v=20260430-4"></script>
+<script src="{{ '/assets/js/wify-diagrams.js' | relative_url }}?v=20260430-5"></script>

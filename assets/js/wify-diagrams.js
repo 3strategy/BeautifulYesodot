@@ -294,10 +294,9 @@
     const { sessionsRootPath, scopeType, scopeId, writerUid, sessionId, session } = spec;
     if (!session || typeof session !== "object" || typeof session.mermaidMarkdown !== "string") return;
 
-    const scopeName = session.environmentScope?.displayName || scopeId;
     const capturedAt = Number(session.capturedAt) || 0;
     sessions.push({
-      label: `${formatTimestamp(capturedAt)} | ${scopeType}/${scopeName} | ${session.requestedTransport || "probe"} | ${sessionId}`,
+      label: buildSessionSummaryLabel(session, sessionId, scopeType, scopeId),
       path: `${toPath(sessionsRootPath)}/${scopeType}/${scopeId}/${writerUid}/${sessionId}/mermaidMarkdown`,
       session,
       capturedAt,
@@ -338,6 +337,69 @@
       dateStyle: "short",
       timeStyle: "short",
     });
+  }
+
+  function buildSessionSummaryLabel(session, sessionId, scopeType, scopeId) {
+    const probes = Array.isArray(session?.probeResults) ? session.probeResults : [];
+    const httpProbes = probes.filter((probe) => (probe?.probeType || "http") === "http");
+    const downloadProbe = probes.find((probe) => probe?.probeType === "download");
+    const selectedNetwork = session?.selectedNetwork || session?.defaultNetwork || {};
+    const transport = session?.requestedTransport || selectedNetwork?.transports?.[0] || "probe";
+    const wifiName = cleanLabel(selectedNetwork?.ssid || selectedNetwork?.interfaceName || selectedNetwork?.label || transport);
+    const dnsOk = httpProbes.some((probe) => probe?.dnsSuccess === true);
+    const resolvedCount = httpProbes.filter((probe) => probe?.dnsSuccess === true).length;
+    const firstResponse = minNumber(httpProbes.map((probe) => probe?.firstResponseMs));
+    const googleProbe = httpProbes.find((probe) => String(probe?.target || "").includes("google.com"));
+    const pingLike = numberOrNull(googleProbe?.firstResponseMs) ?? firstResponse;
+    const bandwidth = numberOrNull(downloadProbe?.downloadMbps);
+    const keySummary = [
+      cleanLabel(transport),
+      wifiName,
+      `dns-${dnsOk ? "ok" : "nok"}`,
+      bandwidth == null ? null : `bw-${Math.round(bandwidth)}mb`,
+      pingLike == null ? null : `ping-${Math.round(pingLike)}ms`,
+      `resolved-${resolvedCount}of${httpProbes.length}`,
+      firstResponse == null ? null : `first-${Math.round(firstResponse)}ms`,
+      `site-${siteSlug(pickSiteProbe(httpProbes)?.target || sessionId)}`,
+    ].filter(Boolean).join("-");
+    const scopeName = cleanLabel(session?.environmentScope?.displayName || scopeId);
+
+    return `${keySummary} | ${scopeType}/${scopeName} | ${formatTimestamp(Number(session?.capturedAt) || 0)}`;
+  }
+
+  function pickSiteProbe(httpProbes) {
+    const successful = httpProbes
+      .filter((probe) => probe?.success)
+      .sort((a, b) => (numberOrNull(b?.firstResponseMs) ?? -1) - (numberOrNull(a?.firstResponseMs) ?? -1));
+    if (successful.length) return successful[0];
+    return httpProbes.find((probe) => !probe?.success) || httpProbes[0] || null;
+  }
+
+  function minNumber(values) {
+    const numbers = values.map(numberOrNull).filter((value) => value != null);
+    return numbers.length ? Math.min(...numbers) : null;
+  }
+
+  function numberOrNull(value) {
+    const number = Number(value);
+    return Number.isFinite(number) ? number : null;
+  }
+
+  function siteSlug(value) {
+    try {
+      return cleanLabel(new URL(value).hostname.replace(/^www\./, "").split(".")[0]).slice(0, 12) || "site";
+    } catch (error) {
+      return cleanLabel(value).slice(0, 12) || "site";
+    }
+  }
+
+  function cleanLabel(value) {
+    return String(value || "")
+      .replace(/^"|"$/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9-]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 48) || "unknown";
   }
 
   function renderSessionPicker(target, sessions, selectedPath, labels, onSelect) {
