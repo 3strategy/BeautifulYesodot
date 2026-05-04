@@ -1,3 +1,11 @@
+---
+layout: page
+title: "Fix SQL Server LocalDB Startup Failures"
+subtitle: "SQL Server 2025 LocalDB on NVMe – Registry & Instance Recovery"
+tags: [SQL Server, LocalDB, NVMe, troubleshooting, Windows, registry, database]
+lang: en
+---
+
 # Fix SQL Server LocalDB Startup Failures (SQL Server 2025 LocalDB on NVMe)
 
 ## Scope
