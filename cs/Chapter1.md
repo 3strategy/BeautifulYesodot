@@ -16,9 +16,12 @@ lang: he
 <details markdown="1">
 <summary>מינהלות - רישום למצפן ולקמפוס</summary>
 
-<!-- [רישום למצפן. למורים שעדיין לא נרשמו](https://mpm.education.gov.il/rishum/mobile/rishumOvedOraa/0/homePage){:target="_blank"}
+[רישום למצפן. פתרון למידה **215685**. למורים שעדיין לא נרשמו](https://mpm.education.gov.il/rishum/mobile/rishumOvedOraa/0/homePage){:target="_blank"}
 
-[קלאסרום של  תל-אביב (גיא)](https://classroom.google.com/c/NzY2NTYyODk0OTA5){:target="_blank"} -->
+
+
+
+<!-- [קלאסרום של  תל-אביב (גיא)](https://classroom.google.com/c/NzY2NTYyODk0OTA5){:target="_blank"} -->
 
 [קישור לרישום לקמפוס](https://campus.gov.il/){:target="_blank"}
 
@@ -45,7 +48,7 @@ lang: he
 
 ## התקנת ויז'ואל סטודיו 2026 Community
 
-**חשוב לסמן את ה-Workloads המסומנים כאן**
+**חשוב לסמן את ה-Workloads המסומנים כאן. אם אין לכם 50 ג'יגה פנויים תסמנו רק .Net desktop deveopment**
 ![alt text](/assets/img/vs2026workloads.jpg)
 
 
