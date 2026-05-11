@@ -8,36 +8,44 @@ lang: he
 ---
 <!-- https://chatgpt.com/c/67f0f869-af10-800e-8479-c8fd3873432c -->
 
-
-
 בפרק זה נכיר את שפת C#, סביבת הפיתוח Visual Studio, נלמד על משתנים, קלט, פלט והמרות בין סוגים שונים של משתנים.
 {: .box-note}
 
-<details markdown="1">
-<summary>מינהלות - רישום למצפן ולקמפוס</summary>
+<details open markdown="1">
+<summary>מינהלות - רישום למצפן ולמערכת הגשות</summary>
 
-[רישום למצפן. פתרון למידה **215685**. למורים שעדיין לא נרשמו](https://mpm.education.gov.il/rishum/mobile/rishumOvedOraa/0/homePage){:target="_blank"}
+1. [ראשית כנסו לאתר יסודות.שלי.com](https://xn--7dbdbn4b5c.xn--eebf2b.com/)
 
+  פשוט הקלידו את הכתובת בדפדפן או חפשו "יסודות עם גיא"
 
+2. [מעמוד זה (חלק א פרק 1) ניתן ללחוץ על הקישור ולהתחבר **למערכת הגשות**](https://הגשות.שלי.com/?join=ZWTRS2){:target="_blank"}
 
-
-<!-- [קלאסרום של  תל-אביב (גיא)](https://classroom.google.com/c/NzY2NTYyODk0OTA5){:target="_blank"} -->
-
-[קישור לרישום לקמפוס](https://campus.gov.il/){:target="_blank"}
-
-[קישור לקורס יסודות בקמפוס](https://courses.campus.gov.il/courses/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/course/){:target="_blank"}
+3. [רישום למצפן. פתרון למידה **215685**. למורים שעדיין לא נרשמו](https://mpm.education.gov.il/rishum/mobile/rishumOvedOraa/0/homePage){:target="_blank"}
 
 <!-- [מצגת החשיפה של ההשתלמות](https://docs.google.com/presentation/d/1bJKwPhASzTI2te4ET5bD9VIVATF2L5ue5iWR3c2c7EI/edit?usp=drivesdk{:target="_blank"}) -->
 
 </details>
 
+<details markdown="1">
+<summary>מינהלות - פחות חשוב - רישום לגוגל קלאסרום ולקמפוס, טופס נוכחות</summary>
+
+1. [קלאסרום של  תל-אביב (גיא)](https://classroom.google.com/c/ODYzODQyOTMzMTkw?cjc=6d3gqtl5){:target="_blank"}
+
+2. [קישור לרישום לקמפוס - קודם נרשמים, לפני שמנסים להצטרף לקורס](https://campus.gov.il/){:target="_blank"}
+
+3. [קישור לקורס יסודות בקמפוס](https://courses.campus.gov.il/courses/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/course/){:target="_blank"}
+
+4. [טופס נוכחות](https://docs.google.com/forms/d/e/1FAIpQLSfMTqnhxJfCplSmPQEAIq_G7tFtURjhQXHoRDqb1YrUv1l_KQ/viewform?usp=header)
+
+</details>
 
 <details open markdown="1"><summary>התקנה ועבודה ב-VS2026</summary>
 
 ## סביבת העבודה (Visual Studio)
+
 התקינו את התוכנה **בזמנכם החופשי.** אני אוכל לעזור ל-3-4 שרוצים עזרה ומעדיפים להתחיל התקנה במהלך השיעור.
 
-סביבת הפיתוח שלנו תהיה Visual Studio 2026, המשמשת לכתיבת קוד בשפת C#. 
+סביבת הפיתוח שלנו תהיה Visual Studio 2026, המשמשת לכתיבת קוד בשפת C#.
 [כנסו לקישור והתקינו את גרסת community](https://visualstudio.microsoft.com/vs/community/){:target="_blank"} בהתאם להנחיות שבסרטון הבא, הכולל ההתאמות הנדרשות לתכנות בסביבת אינטרנט.
 {: .box-success}
 
@@ -51,7 +59,6 @@ lang: he
 **חשוב לסמן את ה-Workloads המסומנים כאן. אם אין לכם 50 ג'יגה פנויים תסמנו רק .Net desktop deveopment**
 ![alt text](/assets/img/vs2026workloads.jpg)
 
-
 <!-- 
 {: .box-warning}
 לפניכם סרטון הדרכה קצר, מותאם לצפיה מטלפון, צעד אחר צעד להתקנת סביבת העבודה.
@@ -59,20 +66,21 @@ lang: he
 
 {% include youtube.html id="yhBm8yLmIkM" %} -->
 
-## שלבי יצירת תוכנית חדשה ב-Visual Studio 2026:
+## שלבי יצירת תוכנית חדשה ב-Visual Studio 2026
+
 1. פתחו פרויקט חדש מסוג Console App.
 2. יוצג לפניכם קוד התוכנית הבסיסית:
 
-{% highlight csharp linenos %}namespace ConsoleApp1 
-{ 
-    class Program 
-    { 
-        public static void Main(string[] args) 
-        { 
-            Console.WriteLine("Hello, World!"); 
-        } 
-    } 
-} 
+{% highlight csharp linenos %}namespace ConsoleApp1
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
 {% endhighlight %}
 
 הריצו את התוכנית בלחיצה על מקש F5 או ⏵, וראו שהיא מדפיסה:
@@ -81,11 +89,10 @@ lang: he
 Hello, World!
 ```
 
-
 ## הסבר נוסף: יצירת פרוייקט בויז'ואל סטודיו 2026
-לפניכם סרטון הסבר על יצירת פרוייקט חדש. פעמים רבות כל תכנית שלנו תהיה פרוייקט חדש ולכן כדאי לתת שם משמעותי באנגלית לפרוייקט:
-{% include youtube.html id="NlFeUFfRkxs" %} 
 
+לפניכם סרטון הסבר על יצירת פרוייקט חדש. פעמים רבות כל תכנית שלנו תהיה פרוייקט חדש ולכן כדאי לתת שם משמעותי באנגלית לפרוייקט:
+{% include youtube.html id="NlFeUFfRkxs" %}
 
 </details>
 
@@ -95,13 +102,14 @@ Hello, World!
 בשיעור הראשון, עד להתקנת VS2026 במחשבים שלכם, נעבוד בסביבות Online. האתר המומלץ ל-C# נמצא [**בקישור הבא: netfiddle.**](https://dotnetfiddle.net/){:target="_blank"}. יש מורים שמעדיפים ללמד רק בסביבות Online.
 
 <details markdown="1"><summary>סביבות אונליין נוספות</summary>  
-* [onecompiler קלט מוזר](https://onecompiler.com/csharp), 
-* [C#מיקרוסופט אינטרקטיבי ללא קלט](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/tutorials/hello-world?tutorial-step=3#code-try-0), 
-* [tutorialspoint](https://www.tutorialspoint.com/compile_csharp_online.php), 
-* [programiz ללא קלט ולא מגיב](https://www.programiz.com/csharp-programming/online-compiler/), 
+* [onecompiler קלט מוזר](https://onecompiler.com/csharp),
+* [C#מיקרוסופט אינטרקטיבי ללא קלט](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/tutorials/hello-world?tutorial-step=3#code-try-0),
+* [tutorialspoint](https://www.tutorialspoint.com/compile_csharp_online.php),
+* [programiz ללא קלט ולא מגיב](https://www.programiz.com/csharp-programming/online-compiler/),
 </details>
 
 ## תכנית ראשונה
+
 1. **כנסו לאתר** [netfiddle](https://dotnetfiddle.net/){:target="_blank"}  והריצו את התוכנית הראשונה:
     {% highlight csharp linenos %}public class Program
     {
@@ -114,11 +122,12 @@ Hello, World!
 
 2. 🧪 לחצו פשוט על כפתור ההרצה ▶. ב-[**netfiddle**](https://dotnetfiddle.net/){:target="_blank"} וב-VS עובד גם הכפתור **F5**.
 
-2. 🧪 נסו וגלו כי ניתן לרשום רק נקודה אחרי המילה Console ולהשלים את הכתיבה על ידי בחירה (מופיעה רשימה שלמה של פקודות ותכונות איתן נוכל לעבוד). לא כולן עובדות בסביבות אונליין. 
+3. 🧪 נסו וגלו כי ניתן לרשום רק נקודה אחרי המילה Console ולהשלים את הכתיבה על ידי בחירה (מופיעה רשימה שלמה של פקודות ותכונות איתן נוכל לעבוד). לא כולן עובדות בסביבות אונליין.
 
-2. 🧪 **נסו להוסיף שורה ולהדפיס את השם שלכם** מתחת לכיתוב `Hello World`.
+4. 🧪 **נסו להוסיף שורה ולהדפיס את השם שלכם** מתחת לכיתוב `Hello World`.
 
 ## משתנים והשמה
+
 משתנה הוא תא בזיכרון המכיל ערך הניתן לשינוי.
 
 דוגמאות להגדרת משתנים בשפת C#:
@@ -133,6 +142,7 @@ string name = "Sara"; // משתנה המכיל מחרוזת
 {: .box-success}
 
 ## הכרזה על משתנה לעומת השמה
+
 ניתן להפריד בין שלב הכרזת המשתנה לבין שלב השמת הערך. לפעמים נכריז עליו ואז ניתן לו ערך בשלב מאוחר יותר.
 
 ```csharp
@@ -140,8 +150,8 @@ int age; // age הכרזה על משתנה בשם
 age = 30; // השמה של ערך לתוך המשתנה
 ```
 
-
 ## הכרזה על כמה משתנים בשורה אחת
+
 ניתן להכריז על כמה משתנים מאותו טיפוס באותה שורה, ואפשר גם לשים בהם ערכים באותה פקודה.
 
 ```csharp
@@ -150,31 +160,31 @@ double x, y, z; // הכרזה בלבד
 ```
 
 {: .box-warning}
-**אזהרה:** כיוון ההשמה הוא מימין לשמאל. 
+**אזהרה:** כיוון ההשמה הוא מימין לשמאל.
 שימו לב: כשאנו כותבים `;x = 5`, זה אומר "שים בתוך x את הערך 5" — כלומר הערך נמצא מימין, והמשתנה שאליו משייכים נמצא משמאל. זהו כיוון הפוך מההרגל בעברית, ולכן זו טעות נפוצה בקרב תלמידים במיוחד במקרים בהם ההשמה היא בין משתנים, כלומר: `;a = b`
 
-
 ## טיפוסי משתנים איתם נעבוד
+
 הטבלה הבאה מציגה את הטיפוסים המרכזיים שנשתמש בהם בקורס:
 
-| טיפוס        | הסבר                                          |
-|--------------|-----------------------------------------------|
+{: .table-rl}
+
+| טיפוס         | הסבר                                          |
+|-------------- | ----------------------------------------------- |
 | מספרים שלמים (ללא נקודה עשרונית)      | `int`                |
 | מספרים ממשיים (כוללים נקודה עשרונית)       | `double`       |
 | תו יחיד (למשל `'A'`, `'%'`, `'9'`)        | `char`          |
 | מחרוזת טקסט (רצף תווים)                   | `string`        |
 | ערך בוליאני: אמת או שקר (`true` או `false`)  | `bool`       |
-{: .table-rl}
-
-
 
 {: .box-success}
 שמות משתנים תמיד יתחילו באות קטנה. כל מילה חדשה, באות גדולה. למשל `string firstName`. בדומה להרבה שפות השפה היא case sensitive (כלומר יש התייחסות לאותיות קטנות וגדולות guy שונה מ- guY).
 
 ## הדפסה וקלט מהמשתמש
+
 נשתמש בפקודות Console לכתיבה ולקבלת קלט:
 
-```csharp 
+```csharp
 Console.Write("Enter your name: "); // פלט ובו בקשת קלט מהמשתמש
 string name = Console.ReadLine(); // name קלט מהמשתמש והשמה לתוך המשתנה
 
@@ -188,29 +198,27 @@ Enter your name: Dan
 Hello, Dan
 ```
 
-
-
-פלט עברי בדרך כלל לא נתמך ב-Console לכן מומלץ לעבוד באנגלית. 
+פלט עברי בדרך כלל לא נתמך ב-Console לכן מומלץ לעבוד באנגלית.
 {: .box-warning}
 
-
-
 ## המרת קלט מטקסט למספר
+
 פקודת `()Console.ReadLine` מחזירה תמיד מחרוזת. כדי להמיר מחרוזת למספר, נשתמש ב- `()int.Parse` או `()double.Parse`:
 
-{% highlight csharp linenos %}Console.Write("Enter your age: "); 
+{% highlight csharp linenos %}Console.Write("Enter your age: ");
 // `int` דוגמא לקלט והמרה שלו לתוך משתנה מטיפוס שלם
-int age = int.Parse(Console.ReadLine()); 
+int age = int.Parse(Console.ReadLine());
 
 // הסוגריים מאפשרים לבצע חישוב לפני ההדפסה
-Console.WriteLine("Next year you will be " + (age + 1)); 
+Console.WriteLine("Next year you will be " + (age + 1));
 // ללא סוגריים נקבל שרשור מחרוזות
-Console.WriteLine("Next year you will NOT be: " + age + 1); 
+Console.WriteLine("Next year you will NOT be: " + age + 1);
 {% endhighlight %}
 
 🧪 העתיקו את הקוד לסביבת העבודה. הריצו וצפו בהבדל בין שתי ההדפסות
 
 ## חלוקה בשלמים
+
 חלוקת שלם בשלם תתפרש תמיד כפעולת חלוקה בשלמים.
 
 מספר_שלם / מספר_שלם, למשל:
@@ -225,7 +233,6 @@ $$13 / 5 = 2\\
 
 🧪 נסו גם אתם את הפקודה `;Console.WriteLine("Result is:" + 13/5)` ואחר כך גם 13.0
 
-
 ## חישובים והמרות (casting)
 לעיתים נדרש להמיר משתנה מסוג אחד לאחר. נשתמש ב-**casting**:
 
@@ -235,9 +242,6 @@ double result = (double)a / b; // 2.5
 double result2 = a / b; // 2
 Console.WriteLine(result);
 Console.WriteLine(result2); {% endhighlight %}
-
-
-
 
 ## אופרטורים אריתמטיים ##
 
@@ -279,7 +283,6 @@ Console.WriteLine(result2); {% endhighlight %}
 קיימות שיטות שונות לקריאת קלט מהמשתמש, [ותכנית הלימודים](https://meyda.education.gov.il/files/CSIT/CS_1-2-4_ver_2-63.pdf#page=56) אינה מתייחסת אליהן באופן ספציפי. בבחינות הבגרות, בכל מקום שיהיה צורך בביצוע פעולת קלט, הצורך ימומש ויתועד כדלקמן:
 ```קריאה לפעולת קלט שקוראת ומדפיסה ערך מסוג int x = ...// int  ```  או, בקצרה ```קלוט מספר שלם // =  int n ```
 **בחינות נערכות בכתב יד עם חומר פתוח מודפס.**
-
 
 {: .box-error}
 **אזהרה:** אם תקלידו קלט שאינו מספרי לפונקציית `int.Parse`, התוכנית תקרוס!
@@ -336,7 +339,6 @@ int %value;     // Special character ❌
 
 ---
 
-
 ## טיפוסי משתנים נוספים שלא נלמד
 יש בשפת C# עוד סוגים רבים של משתנים, אך הם אינם חלק מהתוכנית הלימודית שלנו:
 
@@ -350,7 +352,6 @@ int %value;     // Special character ❌
 {: .box-note}
 הקורס שלנו מתמקד **בחשיבה אלגוריתמית** ולא במגוון הרחב של טיפוסים שקיימים בשפה מסוימת. לכן, נתרגל את העקרונות בעזרת טיפוסים בסיסיים בלבד.
 
-
 </details>
 
 ---
@@ -361,7 +362,7 @@ int %value;     // Special character ❌
 
 1. למה ב-VS2026 כתוב `internal class Program` ולא `public class Program`? אנחנו לא נתעמק בהבדל ובמשמעות של access modifiers בקורס יסודות. אין מניעה להשאיר את זה ככה, ואפשר גם לרשום את המילה `public` במקום המילה `internal`. בבחינות להנחות את התלמידים לרשום `public`.
 
-1. למה יש ב- netfiddle `using System` ובמחשבים מסויימים בכיתה ובבית הספר עוד הרבה שורות אחרות של `using` ? אלו דברים שהתוכנית צריכה כדי לרוץ. לא את כולם. יש הבדלי גרסאות בין סביבות אונליין וסביבות מקומיות, הבדלי גרסאות בין מחשבים שונים במעבדה, ובין בתי ספר. בהתקנות חדשות של VS2026 תרוץ גרסת net9 שבה לא מופיעים כרגע `using`. (אלו קריאות לספריות שכן/לא צריך בהתאם לגרסה). תזרמו עם מה שיש אצלכם במחשב. 
+1. למה יש ב- netfiddle `using System` ובמחשבים מסויימים בכיתה ובבית הספר עוד הרבה שורות אחרות של `using` ? אלו דברים שהתוכנית צריכה כדי לרוץ. לא את כולם. יש הבדלי גרסאות בין סביבות אונליין וסביבות מקומיות, הבדלי גרסאות בין מחשבים שונים במעבדה, ובין בתי ספר. בהתקנות חדשות של VS2026 תרוץ גרסת net9 שבה לא מופיעים כרגע `using`. (אלו קריאות לספריות שכן/לא צריך בהתאם לגרסה). תזרמו עם מה שיש אצלכם במחשב.
 
 1. הדגשתי בשיעור שיהיו מקרים שבהם נפתחה תכנית חדשה שבה חסר המבנה `public Class program { public static void Main()}`. זה יקרה כאשר לא סומנה התיבה `do not use top level statements`, ואין מה לנסות להוסיף/לתקן ידנית (זה לא יעבוד). **תיצרו מחדש תכנית**. ברגע שלמורה יש מספיק ידע, אפשר גם לעבוד עם תכניות שאין בהם את המסגרת הזו של `public Class program { public static void Main()}` אבל בסופו של דבר זה יפגע במידה מסויימת בהמשך הלמידה, כשמגיעים לפעולות (פונקציות) ובמיוחד למחלקות. אתם מקבלים פשטות וקריאות אבל פוגעים קצת בעתיד. בנוסף המצגות בקמפוס וכמעט כל מצגת אחרת שתעבדו איתה או חומר חיצוני יכילו את המבנה המקובל. בבחינות כל תכנית ראשית תתחיל תמיד ב `()public static Void Main`
 
@@ -373,7 +374,10 @@ int %value;     // Special character ❌
 
 </details>
 
-## תרגול
+## אנחנו נתרגל במערכת [CODECLASSROOM](https://הגשות.שלי.com)
+
+### התרגול כאן הוא תחליף
+
 [⬅ עִבְרוּ לתרגול 1.1 - משתנים קלט והשמה](/cs/Chapter1Ex1.1)
 
 [⬅ עִבְרוּ לתרגול 1.2 על משתנים, קלט/פלט ופעולות חשבון בסיסיות](/cs/Chapter1Ex1.2)
