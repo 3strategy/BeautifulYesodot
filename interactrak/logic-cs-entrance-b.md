@@ -6,8 +6,8 @@ lang: he
 full-width: true
 tracked_quiz: true
 quiz_key: "27-logic-cs-entrance-b"
-quiz_window_start: "2026-04-15T08:00:00+03:00"
-quiz_window_end: "2026-08-31T23:59:59+03:00"
+quiz_window_start: "2026-05-14T08:00:00+03:00"
+quiz_window_end: "2026-06-14T23:59:59+03:00"
 quiz_unlock_token: "yesodot-logic-b-2026-rN7qL2w5"
 quiz_debug_uids:
   - "YtfYwYQ5FxOFk50npfDWF0Ekq7i1"
