@@ -6,7 +6,7 @@ lang: he
 full-width: true
 tracked_quiz: true
 quiz_key: "26-percentages-middle-school-2"
-quiz_window_start: "2026-04-14T08:00:00+03:00"
+quiz_window_start: "2026-04-13T08:00:00+03:00"
 quiz_window_end: "2026-05-31T23:59:59+03:00"
 quiz_unlock_token: "yesodot-p2-b-2026-4nQ8X7m2"
 quiz_debug_uids:
