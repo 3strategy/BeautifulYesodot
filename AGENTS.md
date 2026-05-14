@@ -1,5 +1,11 @@
 # AGENTS Context Map
 
+## Quick WSL locations
+
+- BeautifulYesodot: `/home/stra/repos/BeautifulYesodot`
+- BeautifulMivney: `/home/stra/repos/BeautifulMivney`
+- mathBeautifulFork: `/home/stra/sites/mathBeautifulFork`
+
 ## Project scope
 
 - This project teaches CS 101 for:
