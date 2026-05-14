@@ -17,30 +17,53 @@ lang: he
 4. מוסיפים **סוגריים** { }  לפעולה.
 5. קוראים לפעולה מתוך `()Main`. לדוגמא:
 
-    ```csharp
-    using System;
 
-    class Program
+
+הערה: אצלכם זה אמור להיראות ככה אם אתם מנסים פעם ראשונה מהבית
+
+```cs
+namespace ConsoleApp111
+{
+    internal class Program
     {
 
-        static void DefineIntVariables()
+        public static void DefineIntVariables()
         {
             // TODO: למלא את גוף הפעולה לפי הדרישה
         }
 
         static void Main(string[] args)
         {
-            // קריאה לפעולה: כך נגרום לקוד שנכתוב בפעולה לרוץ
-            DefineIntVariables();
-
+            Console.WriteLine("Hello, World!");
         }
     }
-    ```
+}
+```
+
+למי שהיו בשיעור הראיתי איך מגיעים למצב כזה כשרושמים `;` בסוף השורה הראשונה ועוברים שורה (לוחצים enter):
+
+{% highlight csharp linenos mark_lines="5 6 7 8" %}namespace ConsoleApp1;
+
+public class Program
+{
+    public static void DefineIntVariables()
+    {
+        // TODO: למלא את גוף הפעולה לפי הדרישה
+    }
+
+    public static void Main(string[] args)
+    {
+        // קריאה לפעולה: כך נגרום לקוד שנכתוב בפעולה לרוץ
+        DefineIntVariables();
+
+    }
+}
+{% endhighlight %}
 
 
 לאחר מכן:
 
 - פותרים את השאלה כרגיל ב־Visual Studio.  
 - בודקים שהכול עובד.  
-- מעתיקים את הפתרון השלם חזרה למערכת ההגשות.
+- מעתיקים את ==הפעולה כולה== בחזרה למערכת ההגשות.
 
