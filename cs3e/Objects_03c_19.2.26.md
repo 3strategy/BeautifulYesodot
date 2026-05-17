@@ -22,7 +22,7 @@ lang: he
 
 ### 3) דיבוג קוד תלמיד מהגשות
 
-בחלק הדיבוג עברנו על קוד תלמיד מהגשות (מטלת 11y4 שאלה 2 ב־[הגשות.שלי.com](https://הגשות.שלי.com)): [פתיחת קוד ההגשה](https://youtu.be/x9I7fFlODqc?t=4041), זיהוי בעיית naming/טיפוס ([`type` כמילה בעייתית](https://youtu.be/x9I7fFlODqc?t=4200)), קריאת כשל הטסטים ([`expected true but was false`](https://youtu.be/x9I7fFlODqc?t=4560)), ואז הנפילה המרכזית: [חסרה חתימת `static`](https://youtu.be/x9I7fFlODqc?t=4605). משם מצאנו שנשארה [גרסת תבנית כפולה](https://youtu.be/x9I7fFlODqc?t=4639), חודד שהפונקציות המבוקשות הן [במחלקה הראשית ולא בתוך `Bicycle`](https://youtu.be/x9I7fFlODqc?t=4680), ולכן נכון להוסיף [`static` לפעולות החיצוניות](https://youtu.be/x9I7fFlODqc?t=4742).
+בחלק הדיבוג עברנו על קוד תלמיד מהגשות (מטלת 11y4 שאלה 2 ב־[codeclassroom.io](https://codeclassroom.io)): [פתיחת קוד ההגשה](https://youtu.be/x9I7fFlODqc?t=4041), זיהוי בעיית naming/טיפוס ([`type` כמילה בעייתית](https://youtu.be/x9I7fFlODqc?t=4200)), קריאת כשל הטסטים ([`expected true but was false`](https://youtu.be/x9I7fFlODqc?t=4560)), ואז הנפילה המרכזית: [חסרה חתימת `static`](https://youtu.be/x9I7fFlODqc?t=4605). משם מצאנו שנשארה [גרסת תבנית כפולה](https://youtu.be/x9I7fFlODqc?t=4639), חודד שהפונקציות המבוקשות הן [במחלקה הראשית ולא בתוך `Bicycle`](https://youtu.be/x9I7fFlODqc?t=4680), ולכן נכון להוסיף [`static` לפעולות החיצוניות](https://youtu.be/x9I7fFlODqc?t=4742).
 
 ### 4) “המורה פותר על הלוח” + 3 שאלות בגרות
 

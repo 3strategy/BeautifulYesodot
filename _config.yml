@@ -24,7 +24,7 @@ author: גיא סידס
 navbar-links:
 
     # חלק א:
-  מערכת הגשות: "https://הגשות.שלי.com"
+  מערכת הגשות: "https://codeclassroom.io"
 
   פרק 0:
     # - חשיפת מגמה: "/cs/0YearOpeningIntro"
@@ -133,7 +133,7 @@ navbar-links:
     - תקציר תחביר: "/cs2/ChapterSyntaxSummary"
 
   חלק ג:
-    - מערכת הגשות: "https://הגשות.שלי.com"
+    - מערכת הגשות: "https://codeclassroom.io"
     - סיכום הפרקים הקודמים: "/cs3e/ChapterGimelOpening/"
     - פרק 10 מערך דו ממדי: 
         - פרק 10 מערך דו-ממדי: "/cs3e/Chapter10"
@@ -174,7 +174,7 @@ navbar-links:
   #   - 4 More JavaScript: "https://docs.google.com/presentation/d/1H2u74LjHSzAnlRnB7MO_drahi9x998TNs9O7cJZRvGo/edit?usp=sharing"
 
   חיצוני:
-    - מערכת הגשות: "https://הגשות.שלי.com"
+    - מערכת הגשות: "https://codeclassroom.io"
     - אתר מבני נתונים: "https://מבני.שלי.com"
     - אתר מתמטיקה: "https://מתמטיקה.com"
     - שאלות ותשובות: "https://pop.education.gov.il/tchumey_daat/computer-science-software-engineering-cyber/high-school/pedagogy-of/faq/"

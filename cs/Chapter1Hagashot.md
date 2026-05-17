@@ -7,7 +7,7 @@ mathjax: true
 lang: he
 ---
 
-# איך לעבוד נכון עם [מערכת ההגשות](https://הגשות.שלי.com/?join=ZWTRS2)
+## איך לעבוד נכון עם [מערכת ההגשות](https://codeclassroom.io){:target="_blank"}
 
 הדרך המומלצת לעבוד במערכת ההגשות היא:
 

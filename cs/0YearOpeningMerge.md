@@ -59,7 +59,7 @@ lang: he
 ## חומרי לימוד
 
 - **אתר קורס**:**[יסודות.שלי.com](https://יסודות.שלי.com/cs/Chapter1)**. הקלטות זמינות מהקיץ שיכולות לעזור בלמידה עצמית. 
-- Code Classroom מערכת לבדיקת ש.ב. באתר [הגשות.שלי.com](https://הגשות.שלי.com/)
+- Code Classroom מערכת לבדיקת ש.ב. באתר [codeclassroom.io](https://codeclassroom.io/)
 - חומרי הלימוד המלווים: **[campus.il יסודות המחשב](https://courses.campus.gov.il/courses/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/course/)**
 - **ספרים**: "מבט לחלונות" – _אנחנו מסתדרים בלעדיהם_.
 
@@ -69,7 +69,7 @@ lang: he
 
 {: .leafify}
 - **הגשות**: 20%–25% מהציון, **80% מהלמידה וההשפעה על הציון בפועל**.
-- עיקר ההגשות - במערכת ההגשות [Code Classroom](https://הגשות.שלי.com)
+- עיקר ההגשות - במערכת ההגשות [Code Classroom](https://codeclassroom.io)
 - לעיתים רחוקות - הגשות בגוגל קלאסרום
 
 ## קצב השלמת החומר

@@ -18,7 +18,7 @@ lang: he
 
   פשוט הקלידו את הכתובת בדפדפן או חפשו "יסודות עם גיא"
 
-2. [מעמוד זה (חלק א פרק 1) ניתן ללחוץ על הקישור ולהתחבר **למערכת הגשות**](https://הגשות.שלי.com/?join=ZWTRS2){:target="_blank"}
+2. [מעמוד זה (חלק א פרק 1) ניתן ללחוץ על הקישור ולהתחבר **למערכת הגשות**](https://codeclassroom.io){:target="_blank"} בקשו קוד גישה לכיתה מהמורה.
 
 3. [רישום למצפן. פתרון למידה **215685**. למורים שעדיין לא נרשמו](https://mpm.education.gov.il/rishum/mobile/rishumOvedOraa/0/homePage){:target="_blank"}
 
@@ -374,7 +374,7 @@ int %value;     // Special character ❌
 
 </details>
 
-## אנחנו נתרגל במערכת [CODECLASSROOM](https://הגשות.שלי.com)
+## אנחנו נתרגל במערכת [CODECLASSROOM](https://codeclassroom.io){:target="_blank"}
 
 ### התרגול כאן הוא תחליף
 
