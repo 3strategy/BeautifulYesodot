@@ -131,11 +131,57 @@ lang: he
 
 ## צ'ק-ליסט פתיחת שנה
 
-{: .leafify}
-- הצטרפות לקבוצת הווטסאפ של הכיתה
-- גישה ל-**יסודות.שלי.com** ו-**campus.il**
-- התחברות ל Classroom
+
 - התקנת VS2026 בבית
+## צ׳ק-ליסט פתיחת שנה
+
+- הצטרפות לקבוצת הווטסאפ של הכיתה.
+- גישה ל-**מבני.שלי.com** ו-**[קישור לרישום לקמפוס](https://campus.gov.il/){:target="_blank"}**.
+- התחברות ל-**[codeclassroom.io](https://codeclassroom.io){:target="_blank"}** עם משתמש gmail פרטי.
+- התחברות ל Google Classroom - רק בעוד כמה ימים.
+- בדיקת סביבת עבודה בבית (מחשב, חיבור למסך נוסף אם אפשר).
+- מחשב נייד מומלץ:
+  - מסך 15 או 16,
+  - מעבד חזק לניידים כגון Intel Core 7 240H, Intel Core Ultra 5 225H, AMD Ryzen AI 5 340, AMD Ryzen AI 7 350
+  - זיכרון 16Gb (או אפילו 32Gb)
+
+  <details markdown ="1"><summary>CPU comparisons - Gemini, GPT</summary>
+
+  When ranking these processors, they naturally split into two distinct categories: high-power, heavy-duty gaming/workstation chips (the 55W HX-series) and modern, highly efficient thin-and-light laptop chips (the 28W–45W H/AI series).
+
+
+  ## Processor Rankings: Performance, Power, and AI
+
+
+  ### GPT5.5
+
+  {: .table-en}
+
+  | Rank (Overall 2026) | CPU                     | Release | CPU Performance           | Typical Power              | NPU / AI Engine              | Notes                                                                      |
+  | ------------------- | ----------------------- | ------- | ------------------------- | -------------------------- | ---------------------------- | -------------------------------------------------------------------------- |
+  | 1                   | AMD Ryzen AI 7 350      | Q1 2025 | Very high                 | 15W–54W (28W nominal)      | **50 TOPS**                  | Best balance overall, modern Zen 5 + strong AI + excellent efficiency      |
+  | 2                   | Intel Core Ultra 5 225H | 2025    | High                      | ~28W–45W                   | ~13 TOPS NPU                 | Much newer architecture than 13th gen HX, far better battery life          |
+  | 3                   | Intel Core i7-13700HX   | Q1 2023 | **Highest raw multicore** | 55W base, up to 157W turbo | No real NPU                  | Desktop-class brute force CPU, terrible efficiency compared to newer chips |
+  | 4                   | AMD Ryzen AI 5 340      | Q1 2025 | High-mid                  | 15W–54W (28W nominal)      | **50 TOPS**                  | Extremely efficient, strong AI laptop chip                                 |
+  | 5                   | Intel Core 7 240H       | Q4 2024 | Mid-high                  | 45W                        | Minimal / marketing-level AI | Basically a refreshed older H-series chip                                  |
+  | 6                   | Intel Core i7-13650HX   | Q1 2023 | High                      | 55W+                       | No NPU                       | Cut-down HX chip, still fast but power hungry                              |
+
+  ### Google
+
+  {: .table-en}
+
+  | Rank & Processor [1, 3, 4, 5, 6, 7, 8, 9] | Release Date | Base / Max Wattage | Raw Perf Score (PassMark Multi) | Single-Thread Score | Dedicated NPU Speed |
+  |---|---|---|---|---|---|
+  | 1. i7-13700HX | Q1 2023 | 55W / 157W | ~32,030 | ~3,798 | None (0 TOPS) |
+  | 2. i7-13650HX | Q1 2023 | 55W / 157W | ~30,245 | ~3,747 | None (0 TOPS) |
+  | 3. Ryzen AI 7 350 | Q1 2025 | 28W / 54W | ~30,200 | ~3,950 | 50 TOPS (Copilot+) |
+  | 4. Core Ultra 5 225H | Q1 2025 | 28W / 115W | ~28,502 | ~4,278 | 34 TOPS |
+  | 5. Ryzen AI 5 340 | Q1 2025 | 28W / 54W | ~25,100 | ~3,800 | 50 TOPS (Copilot+) |
+  | 6. Core 7 240H | Q1 2025 | 45W / 115W | ~24,718 | ~3,810 | None (0 TOPS) |
+
+
+  </details>
+
 
 ---
 
