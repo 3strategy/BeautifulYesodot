@@ -330,7 +330,7 @@
 
             for (const testEnv of levels[currentLevel].tests()) {
                 const expected = levels[currentLevel].expected(testEnv);
-                const actual = evaluateUserCondition(parsedCondition, testEnv);
+                const actual = evaluateConditionExpression(parsedCondition, testEnv);
                 if (actual !== expected) {
                     firstMismatch = { env: testEnv, expected, actual };
                     break;
@@ -383,7 +383,10 @@
 
     function evaluateUserCondition(code, env) {
         const condition = extractCondition(code);
+        return evaluateConditionExpression(condition, env);
+    }
 
+    function evaluateConditionExpression(condition, env) {
         if (/(^|[^=!<>])=([^=]|$)/.test(condition)) {
             throw new Error('להשוואה משתמשים ב־==. הסימן = מיועד להשמה.');
         }
