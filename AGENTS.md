@@ -74,6 +74,15 @@
   - Use `wsl bash -lc` for simple read/search filesystem operations.
   - Use `wsl.exe -d Ubuntu bash -lic` for commands that rely on shell init files, gem-installed binaries, or project dev environments.
 
+## Notification command (important)
+
+- The notification script is in the user-level Codex folder, not this repo.
+- At the end of each user prompt, run it from PowerShell with:
+  - `Set-Location C:\Users\3stra\.codex; .\notify.ps1 -Title "Codex - BeautifulYesodot - " -Message "<prompt title> Finished"`
+- If the task fails, still run the same script and make the message reflect failure:
+  - `Set-Location C:\Users\3stra\.codex; .\notify.ps1 -Title "Codex - BeautifulYesodot - " -Message "<prompt title> Failed"`
+- Do not first search for a project-local `.codex` folder; BeautifulYesodot does not normally contain one.
+
 ## Tutorial language/style convention
 
 - Default language direction should lean Hebrew unless explicitly decided otherwise for a specific page.
