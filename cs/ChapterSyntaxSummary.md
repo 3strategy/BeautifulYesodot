@@ -31,8 +31,9 @@ public static void Q322()
   double sqr = Math.Sqrt(avg); // שורש ריבועי.
   int twoBehzkat3 = (int)Math.Pow(2, 3); // לשלם (casting) חזקה.2³ ממשי ואז
   Console.WriteLine($"min: {min} and max is {max}"); // שירשור מומלץ
-  Console.WriteLine($"sqr: {sqr:F4} ... "); // (עיגול ל-4 ספרות (בהדפסה בלבד
-  Console.WriteLine($"avg: {avg:0.000} ..."); // 91.500 מבטיח פורמט 3 ספרות
+  Console.WriteLine($"sqr: {sqr:F4}"); // (עיגול ל-4 ספרות (בהדפסה בלבד
+  Console.WriteLine($"avg: {avg:0.000}"); //same. 9.5 ⟶ 9.500. 9.5678 ⟶ 9.568
+
   int mod3 = max % 3; // שארית חלוקה ב-3
   int rDigit = max % 10; // מחלץ ספרה ימנית
   int tensDig = max / 10 % 10; // (ספרת עשרות (בעקבות חלוקה ב-10 וחילוץ ספרה
