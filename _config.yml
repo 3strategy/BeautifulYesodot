@@ -34,11 +34,9 @@ navbar-links:
     - קיצורים: "/cs/Chapter1Shortcuts/"
     - מבנה ציון בגרות במדעי המחשב: "/bagruyot/gradesStructure"
     - מצגות קמפוס: "/cs2/ChapterCampus"
-    - פלייליסט חלק א: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA04DlduroHvjZfhbxagO9nP"
-    - פלייליסט חלק ב: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S"
     - בחירת תלמידים: "/cs/Randomizer"
     - הנחיות בחינה א1: "/cs/ExamInstructions"
-        
+    - הקלטות שלנו: "/cs/Recordings" 
   פרק 1 קלט ופלט:
     - פרק 1 קלט ופלט: "/cs/Chapter1/"
     - עבודה במערכת הגשות: "/cs/Chapter1Hagashot"
@@ -188,7 +186,10 @@ navbar-links:
     - מה מותר ומה אסור: "https://docs.google.com/document/d/1_38kIc1UwK7Eiz673KyBjqGdkJeqa-I5kGCDOMckHqc/edit?usp=sharing"
     - בגרויות באתר משרד החינוך: "https://meyda.education.gov.il/bagmgr"
     - מה מותר ומה אסור: "https://docs.google.com/document/d/1_38kIc1UwK7Eiz673KyBjqGdkJeqa-I5kGCDOMckHqc/edit?usp=sharing"
-    - מאגר ההקלטות: "https://pop.education.gov.il/sherutey-tiksuv-bachinuch/vod-broadcasts/"
+    - מאגר ההקלטות של משרד החינוך: "https://pop.education.gov.il/sherutey-tiksuv-bachinuch/vod-broadcasts/"
+    - פלייליסט חלק א: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA04DlduroHvjZfhbxagO9nP"
+    - פלייליסט חלק ב: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA0igr7xHclrzS2O7bBaqg2S"
+    - פלייליסט מחזור 4 חלק א: "https://www.youtube.com/playlist?list=PLnVUJu2KuoA3hRmg7Dgnuch-AYJ2C_qKT"
 
 
   הגדרות:

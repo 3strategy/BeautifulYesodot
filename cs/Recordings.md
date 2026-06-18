@@ -2,7 +2,7 @@
 layout: page
 title: "הקלטות, סיכומי שיעור"
 subtitle: "קישורי וידאו ממוקדים"
-tags: [סרטונים, סיכומים, תקצירים, playlists, videos, summary]
+tags: [סרטונים, סיכומים, הקלטות, תקצירים, playlists, videos, summary]
 lang: he
 ---
 
