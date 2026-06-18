@@ -57,6 +57,7 @@ navbar-links:
 
   3 if:
     - פרק 3 if: "/cs/Chapter3/"
+    - חזרה ושאלות פרק 3: "/cs/Chapter3ReviewQuestions/"
     - תרגול 3.1: "/cs/Chapter3Ex3.1/"
     - תרגול 3.2: "/cs/Chapter3Ex3.2/"
     - תרגול 3.3: "/cs/Chapter3Ex3.3/"
