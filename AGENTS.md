@@ -97,7 +97,76 @@ main {
 </style>
 ```
 
+- For a short English block inside a Hebrew or mixed-language page, do not apply page-wide LTR styling. Wrap only that block with the shared `.english` class so its direction and alignment remain readable:
+
+```html
+<div markdown="1" class="english">
+
+1. English list item.
+2. Another English list item.
+
+</div>
+```
+
+  Use this for English lists, prompts, quotations, and multi-paragraph examples. When writing mixed content, keep language changes visually contained in an appropriate wrapper instead of relying on inline `direction` or `text-align` styles. This keeps Hebrew pages clean and prevents LTR content from disrupting the surrounding RTL layout.
+
 - Do not retroactively rewrite in-progress tutorials between Hebrew/English unless explicitly requested.
+
+## Important content highlighting and visual flow
+
+- Keep lesson pages visually engaging and easy to scan. Use the repository's design classes to emphasize important guidance, decisions, warnings, successful outcomes, and reusable prompts:
+  - `{: .box-note}` for a short, single-paragraph note;
+  - `{: .box-success}` for a short, single-paragraph positive instruction or completed outcome;
+  - `{: .box-warning}` for risks, guardrails, or caution;
+  - `{: .box-error}` for a failure condition or prohibition that must stand out.
+- When highlighted content contains a list, multiple paragraphs, Markdown structure, or another section, use a block wrapper instead of the short syntax:
+
+```html
+<div markdown="1" class="box-note">
+
+...content with lists, paragraphs, or Markdown...
+
+</div>
+```
+
+- Do not use a `text` code fence merely to emphasize ordinary prose or a prompt instruction; reserve code fences for literal commands, code, or text the reader should copy exactly. Prefer an appropriate design box when the content is instructional or presentation-oriented.
+- Use `<details markdown="1"><summary>…</summary>` for secondary reference material so that the main presentation flow stays focused. Keep primary explanations and decisions visible.
+- Prefer relative CSS units (`rem` for type scale and `em` for local proportional adjustments) over `px`, especially for text and spacing. Use `px` only when a fixed rendering unit is materially more appropriate, such as an SVG stroke width or a one-pixel border.
+
+## Media include convention
+
+- Prefer the repo's shared Jekyll includes for embedded media instead of hand-writing iframe/embed markup in lesson pages.
+- YouTube videos:
+
+```liquid
+{% include youtube.html id="VIDEO_ID" %}
+```
+
+- Looping/autoplaying YouTube background-style embeds:
+
+```liquid
+{% include youtube_loop.html id="VIDEO_ID" %}
+```
+
+- Instagram reels/posts:
+
+```liquid
+{% include instagram.html id="REEL_OR_POST_ID" %}
+```
+
+  If a full Instagram URL is more reliable, use:
+
+```liquid
+{% include instagram.html url="https://www.instagram.com/reel/..." %}
+```
+
+- Local MP4 files under `assets/video/`:
+
+```liquid
+{% include mp4.html id="filename.mp4" %}
+```
+
+- For lesson companion videos, place the YouTube include near the start of the page body, immediately after front matter or the opening note, unless the lesson has a stronger local placement.
 
 ## Tutorial layout pattern convention
 
