@@ -86,6 +86,7 @@
 ## Tutorial language/style convention
 
 - Default language direction should lean Hebrew unless explicitly decided otherwise for a specific page.
+- Mermaid diagrams default to LTR rendering through `assets/js/custom-script.js`; do not wrap diagrams in `.english` just to fix transition order. Use `mermaid-rtl` or `%% dir: rtl %%` only for diagrams whose labels intentionally need RTL rendering.
 - For English markdown tutorials, add this block near the top (after frontmatter and initial note):
 
 ```html

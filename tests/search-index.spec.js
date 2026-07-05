@@ -10,6 +10,16 @@ function loadSearchCorpus() {
 }
 
 test.describe('search corpus menu links', () => {
+  test('is valid JSON when page tags contain quotes', () => {
+    const corpus = loadSearchCorpus();
+
+    expect(corpus).toContainEqual(expect.objectContaining({
+      title: 'מבחן מסכם ג מועד ב 1.7.26',
+      category: expect.stringContaining('תמ&quot;ע'),
+      url: '/teacher-only/cs3e/tests/Test1.7.26/',
+    }));
+  });
+
   test('indexes non-markdown menu links by menu title', () => {
     const corpus = loadSearchCorpus();
     const byTitle = new Map(corpus.map((item) => [item.title, item]));
