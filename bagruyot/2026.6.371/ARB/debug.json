@@ -34,8 +34,8 @@
     "repeated_bottom_key_count": 1
   },
   "noise_patterns": {
-    "directive_count": 19,
-    "footer_count": 13,
+    "directive_count": 22,
+    "footer_count": 20,
     "header_count": 2
   },
   "mixed_language_questions": {},
