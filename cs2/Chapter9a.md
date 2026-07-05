@@ -12,6 +12,9 @@ lang: he
 
 ## מבוא למערכים {#id9basics}
 
+{: .box-success}
+משחק פתיחה לתרגול מערך חד־ממדי, `cars[0][1]`, והשמה לפי אינדקס: [רציף האינדקסים]({{ '/interactive/Chapter9ArrayIndexInteractive' | relative_url }})
+
 <details markdown="1"><summary>1. נניח שנרצה להפוך את car לאוסף של מחרוזות</summary>
 
 ```csharp
