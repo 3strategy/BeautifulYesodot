@@ -250,6 +250,7 @@ details > summary {
 .english {
     direction: ltr;
     text-align: left;
+    padding-inline-start: 1.5em;
 }
 
 
@@ -1044,19 +1045,6 @@ mark {
 .mermaid.mermaid-rtl svg tspan {
   direction: rtl;
   unicode-bidi: embed;
-}
-
-/* Double labels in flowcharts without applying the rule twice to nested nodes. */
-.mermaid svg.flowchart text,
-.mermaid svg.flowchart .nodeLabel,
-.mermaid svg.flowchart .nodeLabel * {
-  font-size: 2rem !important;
-}
-
-/* Keep flowchart edge labels legible after SVG scaling. */
-.mermaid svg.flowchart .edgeLabel,
-.mermaid svg.flowchart .edgeLabel * {
-  font-size: 2rem !important;
 }
 
 /* Class diagrams are dense; retain Mermaid's default typography and geometry. */
