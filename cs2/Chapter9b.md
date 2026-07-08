@@ -110,7 +110,25 @@ static void Main(string[] args)
     // לאחר הקריאה: nums = { 7, 8, 9, 1, 2, 3, 4, 5, 6 }
 }
 ```
-<details markdown="1"><summary>פתרון מלא תוך שימוש במערך עזר</summary>
+
+<details markdown="1" open><summary>פתרון מלא #1 בעזרת מערך חדש ומודולו</summary>
+
+```csharp
+public static void RotateArray(int[] nums, int k)
+{
+    int[] hadash = new int[nums.Length];
+
+    for (int i = 0; i < nums.Length; i++)
+        hadash[(i + k) % nums.Length] = nums[i];
+
+    for (int i = 0; i < nums.Length; i++)
+        nums[i] = hadash[i];
+}
+```
+
+</details>
+
+<details markdown="1"><summary>פתרון מלא #2 תוך שימוש במערך עזר</summary>
 
 ```csharp
 public static void Q917b(int[] arr, int k)
@@ -133,7 +151,7 @@ public static void Q917b(int[] arr, int k)
 </details>
 
 
-<details markdown="1"><summary>פתרון חלקי ללא שימוש במערך עזר (עובד לפעמים)</summary>
+<details markdown="1"><summary>פתרון חלקי #3 ללא שימוש במערך עזר (עובד לפעמים)</summary>
 
 ```csharp
 // פתרון שעובד כרגע רק במקרה שאורך המערך אי זוגי
@@ -157,7 +175,7 @@ public static void Q917(int[] arr, int k)
 </details>
 
 
-<details markdown="1"><summary>פתרון מלא ללא שימוש במערך עזר</summary>
+<details markdown="1"><summary>פתרון מלא #4 ללא שימוש במערך עזר</summary>
 
 ```csharp
 public static void Q917noArr(int[] arr, int k)
