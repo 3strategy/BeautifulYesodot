@@ -382,58 +382,58 @@ public static T Input<T>(string inputRequest = "Please enter a", string invalidF
 ---
 
 ## 7.7 העמסת פונקציות (method overloading) {#id7.7}
-נניח שנרצה לקרוא לפונקציה `Calc` כפי שמבוצע בשורה 6:
+לפעמים אותה פעולה מתאימה לכמה סוגי קלט. לדוגמה, `Sum` יכולה לחבר שני מספרים, לקבל שני מספרים שנכתבו כמחרוזות, או לחשב את סכום הספרות של מספר אחד.
 
-{% highlight csharp linenos %}public static void Main(string[] args)
-{
-    if (args.Length == 0)
-        MainCalc2();
-    else
-        Console.WriteLine(Calc(args));
-}
-{% endhighlight %} 
-
-- האם נוכל לכתוב פונקציה נוספת בשם `Calc` **שתעבוד קצת אחרת**?
-- כיצד נכתוב פונקציה שמקבלת את `args` שזמין לפונקציה `Main`, מחלצת ממנו את הערכים הדרושים לה, מחשבת את החישוב ומחזירה לנו מחרוזת של התוצאה?
-
-<details markdown="1"><summary>פתרון</summary>
-הפתרון הוא בהעמסת פונקציות: method **Overloading**.
+אפשר לתת לכל הפונקציות אותו שם, כל עוד **רשימת הפרמטרים שלהן שונה**. זה נקרא העמסת פונקציות (method overloading).
 
 ```csharp
-/// <summary>
-/// an Overloaded version of Calc:
-/// </summary>
-/// <param name="args">מערך שבו שלושת הפרמטרים - מספר, אופרטור, ומספר</param>
-/// <returns>מחזיקה את תוצאת החישוב כמחרוזת מוכנה לשימוש בצורת תרגיל חשבוני</returns>
-public static string Calc(string[] args)
+static void Main(string[] args)
 {
-    if (args.Length >= 3)
+    int n = 5;
+    int m = 7;
+
+    // Console.WriteLine(Sum(n, m));     // 12
+    Console.WriteLine(Sum("5", "77"));  // 82
+    // Console.WriteLine(Sum(123));      // 6
+}
+
+public static int Sum(int n, int m)
+{
+    return n + m;
+}
+
+public static int Sum(string s1, string s2)
+{
+    // אפשר היה להחזיר ישירות: int.Parse(s1) + int.Parse(s2)
+    // עדיף להשתמש בגרסה שכבר יודעת לחבר שני מספרים:
+    return Sum(int.Parse(s1), int.Parse(s2));
+}
+
+public static int Sum(int n)
+{
+    int sum = 0;
+
+    // סכום ספרות
+    while (n > 0)
     {
-        double res = Calc(int.Parse(args[0]), char.Parse(args[1]), int.Parse(args[2]));
-        return $"{args[0]} {args[1]} {args[2]} = {res}";
+        sum += n % 10;
+        n /= 10;
     }
 
-    WriteInColor("\ninvalid request", ConsoleColor.Red);
-    return "";
+    return sum;
 }
 ```
 
+בקריאה `Sum("5", "77")` הקומפיילר בוחר בגרסה שמקבלת שתי מחרוזות. גרסה זו ממירה אותן למספרים וקוראת ל־`Sum(int, int)`. כך אין צורך לכתוב שוב את פעולת החיבור.
 
-- **עקרון Overloading**: ניתן להגדיר פונקציות בעלות אותו שם עם חתימות שונות (פרמטרים שונים), והקומפיילר יזהה איזו גרסה לקרוא.
-- חתימות Calc:
-  - `Calc(double num1, char oprtr = '+', double num2 = 0)` – מחזירה `double`.
-  - `Calc(string[] args)` – מחזירה `string`, משתמשת בגרסה הראשונה לצורך החישוב.
-- מאפשר גמישות והרחבה: הוספת גרסאות נוספות (למשל `Calc(int, int)`, `Calc(decimal, char, decimal)`) מבלי לשנות את הקוד הקיים.
-- שיפור קריאות ושמירה על שמות פונקציות קוהרנטיים לכל תרחיש שימוש.
-
-
-</details>
+{: .box-note}
+הקומפיילר בוחר את הגרסה המתאימה לפי מספר הפרמטרים והטיפוסים שלהם. סוג הערך המוחזר אינו מספיק כדי להבדיל בין שתי פונקציות: אי אפשר להגדיר שתי פונקציות בעלות אותם פרמטרים ורק ערך החזרה שונה.
 
 ### סיכום ביניים 7: overloading
 
-- `Calc` הוגדרה בשתי גרסאות (overloaded) – לפי סוגי הפרמטרים.
-- הקומפיילר יבחר אוטומטית בגרסה המתאימה לפי רשימת הפרמטרים בעת הקריאה.
-- Overloading הוא כלי מרכזי ליצירת API נקי וכיתוב קוד קריא וממוקד.
+- `Sum` הוגדרה בשלוש גרסאות: `Sum(int, int)`, `Sum(string, string)` ו־`Sum(int)`.
+- הקומפיילר בוחר אוטומטית את הגרסה המתאימה לפי רשימת הפרמטרים בעת הקריאה.
+- אפשר להיעזר בגרסה אחת של פונקציה מתוך גרסה אחרת, וכך להימנע מכפילויות קוד.
 
 
 
@@ -453,7 +453,6 @@ public static string Calc(string[] args)
 
 ## סרטונים
 [סרטוני פרק 7: פעולות](https://www.youtube.com/playlist?list=PLw4P_RdfuzSh3nsdxq7oMeTbxZtADUsuv){:target="_blank"}
-
 
 
 
