@@ -43,6 +43,13 @@ function toggleSize() {
   }
 }
 
+// Open every disclosure section on the current page.
+function expandAllDetails() {
+  document.querySelectorAll('details').forEach((details) => {
+    details.open = true;
+  });
+}
+
 // Convert fenced ```mermaid code blocks to <div class="mermaid"> before Mermaid runs
 document.addEventListener('DOMContentLoaded', function () {
   try {
