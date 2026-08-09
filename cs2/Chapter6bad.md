@@ -3,6 +3,7 @@ layout: page
 title: "BAD פרק 6 - לולאות מקוננות"
 subtitle: "ביצוע חוזר בתוך ביצוע חוזר"
 author: גיא סידס
+credit: "קרדיט: התרגילים וה-patterns מבוססים על: [GeeksforGeeks - Pattern Programs in C](https://www.geeksforgeeks.org/c/pattern-programs-in-c/)"
 lang: he
 ---
 
@@ -133,6 +134,6 @@ A B C D E
 
 ---
 
-### קרדיט:
+<!-- ### קרדיט:
 
-התרגילים וה-patterns מבוססים על: [GeeksforGeeks - Pattern Programs in C](https://www.geeksforgeeks.org/c/pattern-programs-in-c/)
+התרגילים וה-patterns מבוססים על: [GeeksforGeeks - Pattern Programs in C](https://www.geeksforgeeks.org/c/pattern-programs-in-c/) -->
