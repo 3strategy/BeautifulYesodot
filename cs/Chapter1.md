@@ -20,7 +20,7 @@ lang: he
 
 2. [מעמוד זה (חלק א פרק 1) ניתן ללחוץ על הקישור ולהתחבר **למערכת הגשות**](https://codeclassroom.io){:target="_blank"} בקשו קוד גישה לכיתה מהמורה.
 
-3. [רישום למצפן. פתרון למידה **215685**. למורים שעדיין לא נרשמו](https://mpm.education.gov.il/rishum/mobile/rishumOvedOraa/0/homePage){:target="_blank"}
+<!-- 3. [רישום למצפן. פתרון למידה **215685**. למורים שעדיין לא נרשמו](https://mpm.education.gov.il/rishum/mobile/rishumOvedOraa/0/homePage){:target="_blank"} -->
 
 <!-- [מצגת החשיפה של ההשתלמות](https://docs.google.com/presentation/d/1bJKwPhASzTI2te4ET5bD9VIVATF2L5ue5iWR3c2c7EI/edit?usp=drivesdk{:target="_blank"}) -->
 
@@ -29,13 +29,13 @@ lang: he
 <details markdown="1">
 <summary>מינהלות - פחות חשוב - רישום לגוגל קלאסרום ולקמפוס, טופס נוכחות</summary>
 
-1. [קלאסרום של  תל-אביב (גיא)](https://classroom.google.com/c/ODYzODQyOTMzMTkw?cjc=6d3gqtl5){:target="_blank"}
+<!-- 1. [קלאסרום של  תל-אביב (גיא)](https://classroom.google.com/c/ODYzODQyOTMzMTkw?cjc=6d3gqtl5){:target="_blank"} -->
 
 2. [קישור לרישום לקמפוס - קודם נרשמים, לפני שמנסים להצטרף לקורס](https://campus.gov.il/){:target="_blank"}
 
 3. [קישור לקורס יסודות בקמפוס](https://courses.campus.gov.il/courses/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/course/){:target="_blank"}
 
-4. [טופס נוכחות](https://docs.google.com/forms/d/e/1FAIpQLSfMTqnhxJfCplSmPQEAIq_G7tFtURjhQXHoRDqb1YrUv1l_KQ/viewform?usp=header)
+<!-- 4. [טופס נוכחות](https://docs.google.com/forms/d/e/1FAIpQLSfMTqnhxJfCplSmPQEAIq_G7tFtURjhQXHoRDqb1YrUv1l_KQ/viewform?usp=header) -->
 
 </details>
 
