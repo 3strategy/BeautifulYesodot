@@ -10,18 +10,21 @@ tags:
 - Taba
 sequence: 50
 track: core
-class_periods: 2
-published: false
+published: true
 companion_commit: 4519e73eaadd6ca8ac11534db6f79937b8c7561d
 companion_previous: 1f7107067a9abfbfe07a10bbea700175ed3a659d
 ---
 
 {: .box-note}
-מוסיפים דף בתוך הפרויקט הקיים. הטופס עוזר ללמוד שדות ותוויות; שמירת נתונים תגיע בפרק CRUD.
+נוסיף דף לאתר ונקשר אליו מהתפריט. נבנה בו טופס עם שדות ותוויות, ונבדוק איך משתמשים בו.
+
+<!-- lesson-back:start -->
+[חזרה: אתר שנראה טוב עם Bootstrap]({{ '/taba/04-bootstrap/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/4519e73eaadd6ca8ac11534db6f79937b8c7561d) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/1f7107067a9abfbfe07a10bbea700175ed3a659d...4519e73eaadd6ca8ac11534db6f79937b8c7561d)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -35,7 +38,7 @@ companion_previous: 1f7107067a9abfbfe07a10bbea700175ed3a659d
 
 ## דף נוסף, אותו אתר
 
-צרו `Pages/Contact.cshtml`. השורה `@page` מאפשרת להגיע לדף בכתובת `/Contact`. את התפריט עורכים פעם אחת ב־Layout. כרגע מתייחסים ל־asp-page ככתובת לדף בפרויקט; בהמשך נסביר כיצד Razor יוצר href. הכפתור הוא type=button בכוונה, כדי לא להעמיד פנים שנשלח מידע.
+צרו `Pages/Contact.cshtml`. השורה `@page` מאפשרת להגיע לדף בכתובת `/Contact`. את התפריט עורכים פעם אחת ב־Layout. כרגע מתייחסים ל־asp-page ככתובת לדף בפרויקט; בהמשך נסביר כיצד Razor יוצר href. הכפתור `type="button"` אינו שולח את הטופס. לחצו עליו ובדקו שהדף נשאר במקומו.
 
 ## השינויים בקוד
 
@@ -93,3 +96,15 @@ companion_previous: 1f7107067a9abfbfe07a10bbea700175ed3a659d
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- teacher-notes:start
+class_periods: 2
+teacher-notes:end -->
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [כותבים תוכן ב־Markdown]({{ '/taba/05a-markdown/' | relative_url }})
+<!-- lesson-next:end -->

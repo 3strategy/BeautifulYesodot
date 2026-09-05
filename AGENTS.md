@@ -102,6 +102,15 @@
 
 ## Tutorial language/style convention
 
+- All rendered site content is student-facing, including introductions, summaries,
+  navigation labels, titles, and subtitles. Address what students will build,
+  do, observe, and explain.
+- Keep teacher planning, time estimates, pacing decisions, assessment rationale,
+  and authoring/verification notes in HTML comments in the Markdown source.
+  Do not expose these in visible prose or justify curriculum/design decisions to students.
+- Start each lesson immediately after frontmatter with a short student-oriented
+  `{: .box-note}` synopsis, followed by its previous-lesson link. End with next-step links.
+
 - Default language direction should lean Hebrew unless explicitly decided otherwise for a specific page.
 - In Markdown tables, right-align every Hebrew/RTL column with `---:`. Use
   `:---` only for genuinely LTR columns, and `:---:` only for deliberate

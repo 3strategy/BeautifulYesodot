@@ -10,18 +10,21 @@ tags:
 - Taba
 sequence: 51
 track: core
-class_periods: 1
-published: false
+published: true
 companion_commit: 4a0e33a8c464825ae3ddea1fe45431c43a098cb5
 companion_previous: 14c0156fb9c988e627079ddb03c7f84c965a00c0
 ---
 
 {: .box-note}
-כותבים מאמר כתוכן, בלי לעצב כל פסקה ב־HTML. Markdown הוא חלק נדרש מהאתר, ולא רק כלי לתיעוד קוד.
+נכתוב מאמר ב־Markdown עם כותרות, רשימות, תמונה וטבלה. נפתח תצוגה מקדימה ונראה איך סימני הטקסט הופכים למסמך מסודר.
+
+<!-- lesson-back:start -->
+[חזרה: מחברים דפים ובונים טופס]({{ '/taba/05-pages-and-forms/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/4a0e33a8c464825ae3ddea1fe45431c43a098cb5) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/14c0156fb9c988e627079ddb03c7f84c965a00c0...4a0e33a8c464825ae3ddea1fe45431c43a098cb5)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -81,3 +84,15 @@ companion_previous: 14c0156fb9c988e627079ddb03c7f84c965a00c0
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- teacher-notes:start
+class_periods: 1
+teacher-notes:end -->
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [מציירים באמצעות טקסט: Mermaid]({{ '/taba/05b-mermaid/' | relative_url }})
+<!-- lesson-next:end -->

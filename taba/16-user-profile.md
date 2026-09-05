@@ -10,17 +10,21 @@ tags:
 - Taba
 sequence: 160
 track: extension
-published: false
+published: true
 companion_commit: bc1c1048e1ce6b28351acd3297997d99bed5a0e7
 companion_previous: a0d1d6b6f67b875ff6a4071865f989d00f3e58bd
 ---
 
 {: .box-note}
-זו הרחבה קטנה ונפרדת: שם לתצוגה, עיר ותחביב אחד. משתמשים בטבלת המשתמשים הקיימת בלי לבנות מערכת חשבונות מחדש.
+נוסיף לחשבון שלנו שם לתצוגה, עיר ותחביב. נבנה טופס לעריכת הפרופיל ונבדוק שהפרטים נשמרים גם אחרי יציאה וכניסה מחדש.
+
+<!-- lesson-back:start -->
+[חזרה: הרשמה וכניסה עם Microsoft Identity]({{ '/taba/15-local-identity/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/bc1c1048e1ce6b28351acd3297997d99bed5a0e7) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/a0d1d6b6f67b875ff6a4071865f989d00f3e58bd...bc1c1048e1ce6b28351acd3297997d99bed5a0e7)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -319,3 +323,11 @@ public class ProfileModel(UserManager<AppUser> users) : PageModel
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [מי רשאי לערוך? בעלות והרשאות]({{ '/taba/17-authorization/' | relative_url }})
+<!-- lesson-next:end -->

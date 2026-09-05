@@ -1,7 +1,7 @@
 ---
 layout: page
 title: מכרטיס HTML לאובייקט Animal
-subtitle: מזהה, שם, תיאור ונתיב תמונה; מתחילים לאחר היכרות עם מחלקות ותכונות ב־C#
+subtitle: מגדירים תכונות של חיה ומציגים אובייקטים בכרטיסים
 lang: he
 tags:
 - CSharp
@@ -10,18 +10,21 @@ tags:
 - Taba
 sequence: 80
 track: core
-class_periods: 3
-published: false
+published: true
 companion_commit: b3bb71631ca3036ab2563cfe2d7ee21e7a7465a1
 companion_previous: fc5695a907b6ab783a51ff3848f9b57fdcacaf82
 ---
 
 {: .box-note}
-מתחילים לאחר היכרות עם מחלקות ב־C#. כרטיס התצוגה נשאר HTML; המידע שבתוכו מגיע מאובייקט אחד.
+נגדיר מחלקת Animal עם שם, תיאור ותמונה. ניצור ממנה אובייקטים ונציג כרטיס באתר לכל חיה.
+
+<!-- lesson-back:start -->
+[חזרה: הדף הדינמי הראשון]({{ '/taba/07-first-dynamic-page/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/b3bb71631ca3036ab2563cfe2d7ee21e7a7465a1) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/fc5695a907b6ab783a51ff3848f9b57fdcacaf82...b3bb71631ca3036ab2563cfe2d7ee21e7a7465a1)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -147,3 +150,17 @@ public class IndexModel : PageModel
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- teacher-notes:start
+class_periods: 3
+
+לתזמן לאחר היכרות עם מחלקות ותכונות ב־C#.
+teacher-notes:end -->
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/09-ef-sqlite/' | relative_url }})
+<!-- lesson-next:end -->

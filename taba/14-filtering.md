@@ -10,17 +10,21 @@ tags:
 - Taba
 sequence: 140
 track: extension
-published: false
+published: true
 companion_commit: ea85e06dae377e4eca5cdeb7b1ec6222cfcc9668
 companion_previous: f3905d476256306740393fad05fd80ced82a27ab
 ---
 
 {: .box-note}
-מוסיפים יכולת שימושית בלי טבלה נוספת: מחפשים לפי שם ובוחרים מטפל. הסינון אינו משנה את הרשומות.
+נוסיף חיפוש לפי שם וסינון לפי מטפל. נשלב תנאים בשאילתת LINQ ונציג את החיות שמתאימות לבחירה שלנו.
+
+<!-- lesson-back:start -->
+[חזרה: מנהלים מטפלים: CRUD וקשר קיים]({{ '/taba/13a-keeper-crud/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/ea85e06dae377e4eca5cdeb7b1ec6222cfcc9668) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/f3905d476256306740393fad05fd80ced82a27ab...ea85e06dae377e4eca5cdeb7b1ec6222cfcc9668)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -127,3 +131,11 @@ companion_previous: f3905d476256306740393fad05fd80ced82a27ab
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [הרשמה וכניסה עם Microsoft Identity]({{ '/taba/15-local-identity/' | relative_url }})
+<!-- lesson-next:end -->

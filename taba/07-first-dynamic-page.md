@@ -1,7 +1,7 @@
 ---
 layout: page
 title: הדף הדינמי הראשון
-subtitle: נתונים, תנאים ורשימה בדף; מתחילים לאחר לימוד תנאים ולולאות ב־C#
+subtitle: מציגים נתונים עם תנאים ולולאות ב־Razor
 lang: he
 tags:
 - CSharp
@@ -10,18 +10,21 @@ tags:
 - Taba
 sequence: 70
 track: core
-class_periods: 3
-published: false
+published: true
 companion_commit: 06e672ffeb1aa04eec860204b36dcdb1fabaca0c
 companion_previous: 287c690c1d3d39fd12ae46dd725f134954b5c0b4
 ---
 
 {: .box-note}
-מתחילים רק אחרי תנאים ולולאות ב־C#. הדף מקבל טקסט ורשימה מהשרת ומציג אותם בלי להעתיק שורות HTML.
+נציג בדף טקסט ורשימת שמות שמגיעים מ־C#. נשתמש בתנאי כדי לטפל ברשימה ריקה ובלולאה כדי ליצור שורה לכל שם.
+
+<!-- lesson-back:start -->
+[חזרה: מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/06-razor-layout/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/06e672ffeb1aa04eec860204b36dcdb1fabaca0c) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/287c690c1d3d39fd12ae46dd725f134954b5c0b4...06e672ffeb1aa04eec860204b36dcdb1fabaca0c)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -35,7 +38,7 @@ companion_previous: 287c690c1d3d39fd12ae46dd725f134954b5c0b4
 
 ## מחברים ידע שכבר יש לנו
 
-`OnGet` רצה כשהדפדפן מבקש את הדף. היא מכינה Greeting ורשימת שמות. `List<string>` היא אוסף של מחרוזות; בפרק זה משתמשים באוסף מוכן וב־foreach, בלי ללמוד את כל פעולות List. מחלקת PageModel מגיעה מהתשתית: כעת קוראים את גוף הפעולה ואת התנאי. הגדרת מחלקה משלנו תגיע אחרי לימוד המחלקות ב־C#.
+`OnGet` רצה כשהדפדפן מבקש את הדף. היא מכינה Greeting ורשימת שמות. `List<string>` היא אוסף של מחרוזות, ו־`foreach` עוברת על המחרוזות בזו אחר זו. עקבו אחר שם אחד: מצאו אותו ברשימה ב־C# ובשורה שנוצרה בדף.
 
 ## השינויים בקוד
 
@@ -123,3 +126,17 @@ public class DiscoverModel : PageModel
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- teacher-notes:start
+class_periods: 3
+
+לתזמן לאחר תנאים ולולאות ב־C#. PageModel ותשתית האתחול מסופקים בדוגמה.
+teacher-notes:end -->
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [מכרטיס HTML לאובייקט Animal]({{ '/taba/08-animal-model/' | relative_url }})
+<!-- lesson-next:end -->

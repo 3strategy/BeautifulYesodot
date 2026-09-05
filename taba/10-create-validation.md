@@ -10,18 +10,21 @@ tags:
 - Taba
 sequence: 100
 track: core
-class_periods: 3
-published: false
+published: true
 companion_commit: c23009a7f8491b6ca49d54b01e7c9bb0001af7b0
 companion_previous: a604aff5a09479be4863c6da3e9dd3d5e5cd0008
 ---
 
 {: .box-note}
-בפעם הראשונה הטופס שומר רשומה אמיתית. מתחילים מיצירה וולידציה יחד, כדי שלא נלמד קודם לשמור קלט שגוי.
+נבנה טופס להוספת חיה ונשמור את הפרטים במסד. נבדוק את הקלט ונציג הודעת תיקון כשחסר שם, תיאור או נתיב תמונה תקין.
+
+<!-- lesson-back:start -->
+[חזרה: הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/09-ef-sqlite/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/c23009a7f8491b6ca49d54b01e7c9bb0001af7b0) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/a604aff5a09479be4863c6da3e9dd3d5e5cd0008...c23009a7f8491b6ca49d54b01e7c9bb0001af7b0)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -35,11 +38,11 @@ companion_previous: a604aff5a09479be4863c6da3e9dd3d5e5cd0008
 
 ## 1. מתארים קלט תקין
 
-המאפיינים שמעל התכונות הם כללי בדיקה. Required מחייב ערך ו־StringLength מגביל אורך. ImagePath הוא נתיב לתמונה שהוספנו מראש ל־wwwroot/images; אין העלאת קבצים בפרויקט הליבה. הביטוי שבודק את הנתיב הוא תשתית מוכנה, ולא חומר לשינון.
+המאפיינים שמעל התכונות הם כללי בדיקה. Required מחייב ערך ו־StringLength מגביל אורך. ImagePath הוא נתיב לתמונה שהוספנו ל־`wwwroot/images`. הבדיקה דורשת נתיב שמתחיל ב־`/images/` ומסתיים בסיומת תמונה מתאימה. השוו בין `/images/fox.svg` לבין נתיב שגוי ובדקו את ההודעה שמתקבלת.
 
 ## 2. מחברים את הטופס
 
-`asp-for` יוצר שמות שדות שתואמים ל־Animal. `BindProperty` מקבל את הערכים לאחר POST. אם הקלט שגוי, מחזירים Page ומציגים שגיאות עם הערכים שהתלמיד כבר כתב. אם הקלט תקין, יוצרים אובייקט חדש ומעתיקים רק את השדות המותרים. המסד קובע את Id; לא מקבלים אותו מהגולש.
+`asp-for` יוצר שמות שדות שתואמים ל־Animal. `BindProperty` מקבל את הערכים לאחר POST. אם הקלט שגוי, מחזירים Page ומציגים שגיאות עם הערכים שכבר כתבתם. אם הקלט תקין, יוצרים אובייקט חדש ומעתיקים רק את השדות המותרים. המסד קובע את Id; לא מקבלים אותו מהגולש.
 
 ## 3. שומרים פעם אחת
 
@@ -196,3 +199,15 @@ public class CreateModel(AppDbContext db) : PageModel
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- teacher-notes:start
+class_periods: 3
+teacher-notes:end -->
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [מעדכנים ומוחקים רשומות]({{ '/taba/11-edit-delete/' | relative_url }})
+<!-- lesson-next:end -->

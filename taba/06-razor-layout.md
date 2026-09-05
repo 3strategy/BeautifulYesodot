@@ -10,18 +10,21 @@ tags:
 - Taba
 sequence: 60
 track: core
-class_periods: 3
-published: false
+published: true
 companion_commit: 8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882
 companion_previous: afab7e81ccfeaf1905b522f7ac03dc134aebf8e1
 ---
 
 {: .box-note}
-הפרויקט שבו עבדנו מההתחלה הוא Razor Pages. כעת מבינים את התבנית המשותפת ומחברים אליה את המאמר והתרשים שכבר כתבנו.
+נכיר את התבנית המשותפת של האתר ונציג בתוכה את מאמר ה־Markdown ואת תרשים ה־Mermaid שלנו. שינוי בקובץ התוכן יופיע בדף המדריך.
+
+<!-- lesson-back:start -->
+[חזרה: מציירים באמצעות טקסט: Mermaid]({{ '/taba/05b-mermaid/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/afab7e81ccfeaf1905b522f7ac03dc134aebf8e1...8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -39,13 +42,13 @@ companion_previous: afab7e81ccfeaf1905b522f7ac03dc134aebf8e1
 
 ## 2. מתקינים תשתית מוכנה
 
-המורה מספק את תיקיית `wwwroot/lib/mermaid` מהקוד המצורף, כולל הרישיון; אין צורך להעתיק ספרייה מתוך גדר קוד. התקינו את שתי חבילות NuGet. הוסיפו את השירות, דף Guide וקובץ JavaScript כמתואר. מותר להעתיק את התשתית הזו: יעד הלמידה כאן הוא חיבור התוכן לתצוגה, לא כתיבת parser או JavaScript אסינכרוני.
+העתיקו מהקוד המצורף את תיקיית `wwwroot/lib/mermaid`, כולל קובץ הרישיון. התקינו את שתי חבילות NuGet והוסיפו את השירות, דף Guide וקובץ JavaScript לפי השלבים שלמטה.
 
 Markdig ממיר Markdown ל־HTML, הרכיב מנקה אותו, והדפדפן מצייר את Mermaid. `Html.Raw` מקבל רק את התוצאה הנקייה; אין להפעיל אותו על טקסט שהגיע ישירות מטופס. התרשימים מקבלים כיוון LTR משלהם בתוך הדף העברי. תקלה בתרשים משאירה את המקור והודעת תיקון מקומית.
 
 ## 3. ממשיכים לכתוב תוכן
 
-פתחו `/Guide`. שנו את `Content/care.md`, שמרו ורעננו. כעת המאמר והתמונה מוצגים באתר עצמו. אין צורך ללמוד C# לעומק כדי לערוך את המאמר.
+פתחו `/Guide`. שנו את `Content/care.md`, שמרו ורעננו. כעת המאמר והתמונה מוצגים באתר עצמו.
 
 ### פקודות השלב
 
@@ -294,3 +297,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- teacher-notes:start
+class_periods: 3
+
+רכיבי Markdown/Mermaid מסופקים כתשתית. אין צורך ללמד כתיבת parser או JavaScript אסינכרוני בשלב זה.
+teacher-notes:end -->
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [הדף הדינמי הראשון]({{ '/taba/07-first-dynamic-page/' | relative_url }})
+<!-- lesson-next:end -->

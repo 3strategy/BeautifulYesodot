@@ -10,18 +10,21 @@ tags:
 - Taba
 sequence: 30
 track: core
-class_periods: 3
-published: false
+published: true
 companion_commit: cf47e9a44b213154d234e3797e69eb05fbc4c2a3
 companion_previous: 7a9346ec48cfdb1d434e910fbc6076b416cd5828
 ---
 
 {: .box-note}
-לא משנים את התוכן; משנים את המראה באמצעות קובץ CSS משותף. הדפדפן נשאר פתוח לצד העורך.
+נעצב את האתר באמצעות CSS: נשנה צבעים וריווח, נוסיף מחלקת עיצוב ונראה את התוצאה בדפדפן אחרי כל שינוי.
+
+<!-- lesson-back:start -->
+[חזרה: האתר הופך לשלי]({{ '/taba/02-my-theme/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/cf47e9a44b213154d234e3797e69eb05fbc4c2a3) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/7a9346ec48cfdb1d434e910fbc6076b416cd5828...cf47e9a44b213154d234e3797e69eb05fbc4c2a3)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -105,3 +108,15 @@ companion_previous: 7a9346ec48cfdb1d434e910fbc6076b416cd5828
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- teacher-notes:start
+class_periods: 3
+teacher-notes:end -->
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [אתר שנראה טוב עם Bootstrap]({{ '/taba/04-bootstrap/' | relative_url }})
+<!-- lesson-next:end -->

@@ -12,8 +12,7 @@ tags:
 - GitHub
 sequence: 11
 track: core
-class_periods: 1
-published: false
+published: true
 git_safety: לא מעלים סודות וקובצי build; משתמשים ב־gitignore של הפרויקט; אם pull או push נכשלו פונים למורה בלי למחוק עבודה או לבצע force push
 practice: מתחילים כל מפגש ב־pull, מבצעים commits משמעותיים במהלך העבודה ומסיימים ב־commit ו־push; חוזרים על השגרה בבית ובמחשב נייד אישי
 companion_commit: 979d543d83d7d7c9e4f722b5400c60c4253b78a2
@@ -21,11 +20,15 @@ companion_previous: 3e83e27c126c0aa3f02f2977e8923702213ecd43
 ---
 
 {: .box-note}
-עוזבים את העורך הפשוט ועוברים לפרויקט שרץ בסביבת הפיתוח. עורכים כרגע HTML בלבד. השורות שמתחילות ב־@ ותשתית השרת יוסברו בהמשך.
+נריץ את האתר ב־Visual Studio או ב־VS Code, נשנה את התוכן ונראה את התוצאה בדפדפן. נשמור את השינוי ב־Git ונעלה אותו ל־GitHub.
+
+<!-- lesson-back:start -->
+[חזרה: הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/979d543d83d7d7c9e4f722b5400c60c4253b78a2) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/3e83e27c126c0aa3f02f2977e8923702213ecd43...979d543d83d7d7c9e4f722b5400c60c4253b78a2)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -39,7 +42,7 @@ companion_previous: 3e83e27c126c0aa3f02f2977e8923702213ecd43
 
 ## 1. סביבת העבודה
 
-התקינו SDK של .NET 10. ב־Windows השתמשו ב־Visual Studio עם רכיב ASP.NET and web development; אפשר גם VS Code עם C# Dev Kit. ב־macOS השתמשו ב־VS Code עם C# Dev Kit. המורה מכין את ההתקנה מראש כדי שהמפגש לא יהפוך לשיעור התקנות.
+התקינו SDK של .NET 10. ב־Windows השתמשו ב־Visual Studio עם רכיב ASP.NET and web development; אפשר גם VS Code עם C# Dev Kit. ב־macOS השתמשו ב־VS Code עם C# Dev Kit.
 
 צרו ASP.NET Core Web App (Razor Pages), בשם `RazorTaba`, ללא Authentication. אל תבחרו Blazor או MVC. אפשר להשתמש בפקודות להלן בשתי המערכות. אחרי יצירת הפרויקט התאימו את הקבצים המוצגים.
 
@@ -49,11 +52,11 @@ companion_previous: 3e83e27c126c0aa3f02f2977e8923702213ecd43
 
 ## 3. Git ו־GitHub מההתחלה
 
-צרו מאגר תלמיד ב־GitHub והעניקו למורה גישה. ב־Visual Studio השתמשו בחלון Git Changes; ב־VS Code ב־Source Control. במחשב נוסף מבצעים Clone פעם אחת ופותחים את אותה תיקייה. לפני כל מפגש: Pull. אחרי שינוי קטן שהבנתם: בדיקת diff, Stage ו־Commit עם תיאור ברור. בסיום בבית ובמעבדה: Push ובדיקה באתר GitHub.
+צרו מאגר משלכם ב־GitHub והעניקו למורה גישה. ב־Visual Studio השתמשו בחלון Git Changes; ב־VS Code ב־Source Control. במחשב נוסף מבצעים Clone פעם אחת ופותחים את אותה תיקייה. לפני כל מפגש: Pull. אחרי שינוי קטן שהבנתם: בדיקת diff, Stage ו־Commit עם תיאור ברור. בסיום בבית ובמעבדה: Push ובדיקה באתר GitHub.
 
 Commit שומר מקומית; Push שולח ל־GitHub. Pull מביא שינויים מהמחשב האחר. שמירת קובץ אינה Commit, ו־Commit אינו גיבוי מרוחק. הדרישה חלה גם על מחשב נייד אישי. אם מופיעה התנגשות פונים למורה, בלי למחוק קבצים ובלי Force Push.
 
-המאגר כולל `.gitignore`: אין להעלות bin, obj, מסדי נתונים מקומיים או סודות. אין יעד לימודי של PR, branches או merge.
+המאגר כולל `.gitignore`: אין להעלות bin, obj, מסדי נתונים מקומיים או סודות.
 
 ### פקודות השלב
 
@@ -258,3 +261,17 @@ app.Run();
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- teacher-notes:start
+class_periods: 1
+
+להכין התקנות לפני המפגש. אין יעד לימודי של PR, branches או merge.
+teacher-notes:end -->
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [האתר הופך לשלי]({{ '/taba/02-my-theme/' | relative_url }})
+<!-- lesson-next:end -->

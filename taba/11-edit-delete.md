@@ -10,18 +10,21 @@ tags:
 - Taba
 sequence: 110
 track: core
-class_periods: 3
-published: false
+published: true
 companion_commit: 68100fd563b4748c2a344551c3079f524bc1ab5f
 companion_previous: a0b42b62d249a9701b5e2fc371874ede541a006c
 ---
 
 {: .box-note}
-משלימים CRUD: קוראים רשומה לפי מזהה, עורכים את התוכן ומוחקים רק לאחר אישור. התיאור הופך למאמר עם Markdown ו־Mermaid.
+נוסיף לכל חיה דף פרטים, טופס עריכה ואישור מחיקה. נציג את תיאור החיה כמאמר עם Markdown ותרשים Mermaid.
+
+<!-- lesson-back:start -->
+[חזרה: מוסיפים חיה ובודקים קלט]({{ '/taba/10-create-validation/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/68100fd563b4748c2a344551c3079f524bc1ab5f) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/a0b42b62d249a9701b5e2fc371874ede541a006c...68100fd563b4748c2a344551c3079f524bc1ab5f)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -249,3 +252,15 @@ public class EditModel(AppDbContext db) : PageModel
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- teacher-notes:start
+class_periods: 3
+teacher-notes:end -->
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [משלימים ומציגים אתר אישי עם CRUD]({{ '/taba/12-core-project/' | relative_url }})
+<!-- lesson-next:end -->

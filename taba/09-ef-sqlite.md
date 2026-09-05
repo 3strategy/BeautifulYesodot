@@ -10,18 +10,21 @@ tags:
 - Taba
 sequence: 90
 track: core
-class_periods: 4
-published: false
+published: true
 companion_commit: 6f794b34fd8f60f5db34f48ba16971cda347fe40
 companion_previous: ce3e2e502543337eda51497f1f27bdd58b513464
 ---
 
 {: .box-note}
-מחברים את המחלקה שכבר הכרנו למסד SQLite מקומי. זהו Code First: המחלקה מובילה את יצירת הטבלה.
+נחבר את מחלקת Animal למסד SQLite באמצעות EF Core. ניצור טבלה ונציג באתר את הרשומות שנקראות ממנה.
+
+<!-- lesson-back:start -->
+[חזרה: מכרטיס HTML לאובייקט Animal]({{ '/taba/08-animal-model/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/6f794b34fd8f60f5db34f48ba16971cda347fe40) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/ce3e2e502543337eda51497f1f27bdd58b513464...6f794b34fd8f60f5db34f48ba16971cda347fe40)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -37,7 +40,7 @@ companion_previous: ce3e2e502543337eda51497f1f27bdd58b513464
 
 Animal מתארת רשומה. AppDbContext מחבר את EF לטבלאות. DbSet הוא הגישה לטבלת Animals. מיגרציה היא תיאור שינוי במבנה; `database update` מחילה אותו על המסד המקומי. אין להשתמש ב־EnsureCreated לצד migrations.
 
-הפרמטר db מגיע מתשתית התלויות ב־Program. זו תשתית מוכנה; לא צריך ללמוד ארכיטקטורה כדי להבין `db.Animals`. הפעולה האסינכרונית מחכה לקריאה מהמסד; בשלב זה עקבו אחר שורת הקריאה ואחרי הנתונים שמגיעים לדף.
+הפרמטר `db` מספק לדף גישה למסד, לפי ההגדרה ב־Program. `db.Animals` פונה לרשומות החיות. `await` מחכה לסיום הקריאה לפני הצגת התוצאה. עקבו אחר הנתונים משורת הקריאה ועד ללולאה שבדף.
 
 ## מריצים לפי הסדר
 
@@ -183,3 +186,15 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- teacher-notes:start
+class_periods: 4
+teacher-notes:end -->
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [מוסיפים חיה ובודקים קלט]({{ '/taba/10-create-validation/' | relative_url }})
+<!-- lesson-next:end -->

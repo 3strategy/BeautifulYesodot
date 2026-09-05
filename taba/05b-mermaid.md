@@ -10,18 +10,21 @@ tags:
 - Taba
 sequence: 52
 track: core
-class_periods: 1
-published: false
+published: true
 companion_commit: eeefa30a164b1441f3257d619ac151fd3c20fb5f
 companion_previous: ff8ee0ab94c008191e0dca041e92380e7f7d08b4
 ---
 
 {: .box-note}
-תרשים הוא טקסט שאפשר לקרוא, לשנות ולשמור ב־Git. מתחילים בתרשים זרימה קצר עם תוויות בעברית.
+ניצור תרשים זרימה באמצעות Mermaid. נכתוב צמתים וחצים, נוסיף תוויות בעברית ונשנה את התרשים דרך קובץ הטקסט שלו.
+
+<!-- lesson-back:start -->
+[חזרה: כותבים תוכן ב־Markdown]({{ '/taba/05a-markdown/' | relative_url }})
+<!-- lesson-back:end -->
 
 [קוד השלב](https://github.com/3strategy/razortaba/tree/eeefa30a164b1441f3257d619ac151fd3c20fb5f) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/ff8ee0ab94c008191e0dca041e92380e7f7d08b4...eeefa30a164b1441f3257d619ac151fd3c20fb5f)
 
-קישורי GitHub מפנים למאגר פרטי. המורה צריך להעניק הרשאת קריאה; אפשר ללמוד גם מהקוד המופיע כאן.
+אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
 
 ## מה נלמד
 
@@ -70,10 +73,22 @@ companion_previous: ff8ee0ab94c008191e0dca041e92380e7f7d08b4
 
 ## משימה אישית ובדיקת הבנה
 
-בנו תהליך בן ארבעה שלבים בנושא האתר שלכם. הסבירו בעל פה כל חץ. אין צורך בתרשים מחלקות או במסד נתונים בשלב זה.
+בנו תהליך בן ארבעה שלבים בנושא האתר שלכם. הסבירו בעל פה כל חץ.
 
 {: .box-success}
 בסיום שינוי משמעותי: בדקו את ה־diff, בצעו Stage, כתבו הודעת commit שמתארת מה שיניתם, ובצעו Push. ודאו ב־GitHub שהשינוי הגיע. נדרשים לפחות 50 commits משמעותיים לאורך השנה, גם למי שעובד תמיד באותו מחשב נייד.
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
+
+<!-- teacher-notes:start
+class_periods: 1
+teacher-notes:end -->
+
+<!-- lesson-next:start -->
+---
+
+## המשך
+
+- [מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/06-razor-layout/' | relative_url }})
+<!-- lesson-next:end -->
