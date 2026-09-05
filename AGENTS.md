@@ -28,6 +28,23 @@
   - Shared markdown style patterns.
   - Similar site-level configuration approach where practical.
 
+## Multi-menu navigation
+
+- The navigation supports several named menu views. Configure them with
+  `navbar-menu-sets` in `_config.yml`; each set lists the exact top-level
+  `navbar-links` labels that should be visible in that view.
+- Keep shared top-level links (for example submission systems, external links,
+  and settings) out of every set so they remain visible in all views.
+- Add a `בחירת תפריט` submenu under `הגדרות` with
+  `javascript:setMenuSet('<set-id>');` links, and set a valid
+  `navbar-default-menu-set`.
+- The selected menu is stored in the `menu-set` cookie. The common
+  `_includes/nav.html` and `assets/js/custom-script.js` implement the behavior;
+  do not duplicate it in page-local JavaScript.
+- A course may have an empty `items: []` view temporarily. It still provides a
+  selectable course context and keeps only the shared navigation visible until
+  course-specific top-level links are ready.
+
 ## Cross-repo references
 
 - BeautifulYesodot (this repo):
@@ -86,6 +103,12 @@
 ## Tutorial language/style convention
 
 - Default language direction should lean Hebrew unless explicitly decided otherwise for a specific page.
+- In Markdown tables, right-align every Hebrew/RTL column with `---:`. Use
+  `:---` only for genuinely LTR columns, and `:---:` only for deliberate
+  centering.
+- For Hebrew lettered sub-question lists, use a real ordered list with
+  `{: .alefbet}` and ordinary Markdown numbering rather than manually writing
+  `א.`, `ב.`, and so on.
 - Mermaid diagrams default to LTR rendering through `assets/js/custom-script.js`; do not wrap diagrams in `.english` just to fix transition order. Use `mermaid-rtl` or `%% dir: rtl %%` only for diagrams whose labels intentionally need RTL rendering.
 - For English markdown tutorials, add this block near the top (after frontmatter and initial note):
 
@@ -112,6 +135,21 @@ main {
   Use this for English lists, prompts, quotations, and multi-paragraph examples. When writing mixed content, keep language changes visually contained in an appropriate wrapper instead of relying on inline `direction` or `text-align` styles. This keeps Hebrew pages clean and prevents LTR content from disrupting the surrounding RTL layout.
 
 - Do not retroactively rewrite in-progress tutorials between Hebrew/English unless explicitly requested.
+
+## Tutorial diff presentation convention
+
+- Treat each chapter as a transition from the preceding runnable state. For an
+  existing file, show a focused contextual diff; show a complete file only when
+  it is new or a genuine whole-file rewrite is clearer.
+- Use ordinary fenced `diff` blocks for simple changes. For complex diffs, or
+  when the request is to improve or clarify a diff, use Jekyll's Liquid
+  highlighter with `mark_lines` so important unchanged context is visible.
+- In paired `לפני` / `אחרי` comparisons on Hebrew pages, keep source order as
+  `לפני` then `אחרי`, and use `<div class="two-columns before-after">`.
+  On narrow screens that preserves the logical reading order.
+- In diff highlighter blocks, `+` and `-` markers must be the first character
+  of their lines. Use a standalone Unicode vertical ellipsis (`⁞`) at an exact
+  omission point; do not use `...` as if it were copyable source.
 
 ## Important content highlighting and visual flow
 
@@ -223,9 +261,13 @@ main {
 
 <object
   class="questionnaire-source-viewer"
-  data="{{ '/bagruyot/example.pdf' | relative_url }}#page=1"
-  type="application/pdf">
-  <p><a href="{{ '/bagruyot/example.pdf' | relative_url }}#page=1">פתחו את ה-PDF</a></p>
+  data="https://xn--7dbdbn4b5c.xn--eebf2b.com/assets/pdfjs/web/viewer2.html?file=https%3A%2F%2Fxn--7dbdbn4b5c.xn--eebf2b.com%2Fbagruyot%2Fexample.pdf"
+  type="text/html">
+  <p>
+    אם התצוגה לא נטענת בתוך הדף, פתחו את
+    <a href="https://xn--7dbdbn4b5c.xn--eebf2b.com/assets/pdfjs/web/viewer2.html?file=https%3A%2F%2Fxn--7dbdbn4b5c.xn--eebf2b.com%2Fbagruyot%2Fexample.pdf" target="_blank" rel="noopener">viewer2</a>
+    או את <a href="{{ '/bagruyot/example.pdf' | relative_url }}">ה-PDF</a>.
+  </p>
 </object>
 
 </div>

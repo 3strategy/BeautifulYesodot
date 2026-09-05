@@ -194,11 +194,42 @@ navbar-links:
 
   הגדרות:
     # - מבחן זמני: "/cs/GuysFinalFireBase/"
+    - בחירת תפריט:
+      - חלק א: "javascript:setMenuSet('part-a');"
+      - חלק ב: "javascript:setMenuSet('part-b');"
+      - חלק ג: "javascript:setMenuSet('part-c');"
+      - תב״א: "javascript:setMenuSet('taba');"
     - החלפת רקע: "javascript:toggleTheme();"
     - החלפת גודל: "javascript:toggleSize();"
     - פתיחת כל הפרטים: "javascript:expandAllDetails();"
     # - Reader Mode: "/"
     # - Presentation Mode: "javascript:togglePresentationMode();"
+
+# Each top-level navbar item can belong to one or more menu views. Items that
+# are not listed here (such as מערכת הגשות, חיצוני and הגדרות) remain shared.
+navbar-menu-sets:
+  part-a:
+    label: חלק א
+    items:
+      - פרק 0
+      - פרק 1 קלט ופלט
+      - פרק 2 Math,Random
+      - 3 if
+      - פרק 4 for
+      - פרק 5 while
+  part-b:
+    label: חלק ב
+    items:
+      - חלק ב
+  part-c:
+    label: חלק ג
+    items:
+      - חלק ג
+  taba:
+    label: תב״א
+    items: []
+
+navbar-default-menu-set: part-a
 
 
 ################
