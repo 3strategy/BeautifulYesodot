@@ -46,6 +46,9 @@ published: true
 
 ## 3. יוצרים פרויקט דרך הממשק
 
+{: .box-warning}
+קראו את השלבים לפני שמתחילים והישארו באשף עד לאישור **Create project**. מעבר לחלון אחר במהלך השלבים מפסיק את אשף יצירת הפרויקט. אם האשף נסגר לפני שאישרתם יצירה, פתחו שוב **.NET: New Project** והתחילו את הבחירות מחדש.
+
 <div class="two-columns">
 <div markdown="1" class="column">
 
@@ -74,9 +77,39 @@ published: true
 </div>
 </div>
 
-בחרו מיקום לשמירה ותנו לפרויקט שם באנגלית, ללא רווחים, שכולל את שמכם — למשל `GuysRazor`. אין צורך ליצור מראש תיקייה לפרויקט בסייר הקבצים.
+### בוחרים את מיקום הפרויקט
 
-השלימו את חלונות היצירה. אם מוצגת בחירת Framework, בחרו **.NET 10**; אם מוצגת בחירת Authentication, בחרו **None**. פתחו את הפרויקט שנוצר אם תתבקשו, והמתינו לסיום הטעינה.
+<div class="two-columns">
+<div markdown="1" class="column">
+
+בחלון **Project Location** עברו לתיקיית המשתמש שלכם, ובתוכה אל **source → repos**. בחרו בתיקייה הזאת כמיקום הפרויקט, כפי שמוצג בצילום. שם המשתמש אצלכם יהיה שונה.
+
+כשתתבקשו לתת שם לפרויקט, הקלידו שם באנגלית ללא רווחים שכולל את שמכם, למשל `GuysRazorVS`. האשף ייצור את תיקיות הפרויקט עבורכם.
+
+</div>
+<div markdown="1" class="column">
+
+[![בחירת מיקום הפרויקט בתיקיית המשתמש תחת source ואז repos]({{ '/assets/img/taba/vscode-project-location.png' | relative_url }})]({{ '/assets/img/taba/vscode-project-location.png' | relative_url }})
+
+</div>
+</div>
+
+### מאשרים את יצירת הפרויקט
+
+<div class="two-columns">
+<div markdown="1" class="column">
+
+בחלון **Create project or view options** בחרו **Create project**, כפי שמסומן בצילום. הנתיב שמופיע בשורה מציג היכן הפרויקט שלכם ייווצר.
+
+המתינו לסיום היצירה והטעינה. אם תתבקשו לפתוח את הפרויקט שנוצר, אשרו זאת.
+
+</div>
+<div markdown="1" class="column">
+
+[![בחירת Create project לאישור יצירת הפרויקט בנתיב שמוצג באשף]({{ '/assets/img/taba/vscode-create-project-confirm.png' | relative_url }})]({{ '/assets/img/taba/vscode-create-project-confirm.png' | relative_url }})
+
+</div>
+</div>
 
 {: .box-note}
 אם הפקודה **.NET: New Project** אינה מופיעה, חזרו לשלב הקודם והשלימו את התקנת C# Dev Kit. אם כבר יצרתם פרויקט, פתחו את התיקייה הקיימת דרך **File → Open Folder** במקום ליצור עותק נוסף.
@@ -94,7 +127,7 @@ published: true
 
 בהמשך נעבוד מתוך התיקייה שמכילה את קובץ הפרויקט, למשל `GuysRazor.csproj`, ואת `Pages` ו־`wwwroot`. בדוגמאות הקורס הפרויקט נקרא `RazorTaba`; אצלכם השתמשו בשם שבחרתם. `Pages` מכילה את דפי האתר ו־`wwwroot` את העיצוב, התמונות וקובצי JavaScript.
 
-## 5. שומרים גרסה ראשונה ב־Git
+## 5. מכינים את הקבצים לפרסום
 
 ב־Explorer, בתיקייה שמכילה את קובץ הפרויקט, פתחו את `.gitignore`. אם אינו קיים, צרו אותו באמצעות **New File** בשם המדויק `.gitignore`. הוסיפו את השורות הבאות ושמרו, כדי שקובצי בנייה, מסדי נתונים מקומיים וקובצי סביבה יישארו במחשב:
 
@@ -110,36 +143,24 @@ published: true
 .env.*
 ```
 
-1. פתחו **Source Control** בסרגל הצד ולחצו **Initialize Repository**. ודאו שהמאגר הוא תיקיית הפרויקט בשם שבחרתם, למשל `GuysRazor`. הפעולה מתחילה מעקב מקומי אחר הקבצים; היא אינה יוצרת עדיין מאגר ב־GitHub.
-2. תחת **Changes** לחצו על קובץ כדי לראות את התוכן שיישמר. בגרסה הראשונה יהיו קבצים רבים שנוצרו מהתבנית. ודאו ש־`.gitignore` מופיע ושקבצים מתוך `bin` ו־`obj` אינם ברשימה.
-3. בחרו **Stage All Changes** דרך תפריט **…**, או לחצו על סימן **+** ליד קבוצת **Changes**. הקבצים יעברו ל־**Staged Changes**: אלה הקבצים שבחרתם לגרסה הבאה.
-4. בתיבת ההודעה כתבו `Create first Razor Pages site` ולחצו **Commit**. כך נשמרת גרסה במחשב.
+## 6. שומרים גרסה מקומית ואז מפרסמים
 
-<details markdown="1"><summary>Git מבקש שם וכתובת דוא״ל לפני ה־Commit?</summary>
-
-בטרמינל של `GuysRazor` הריצו את שתי הפקודות הבאות אחרי החלפת טקסט הדוגמה בפרטים שלכם. אפשר להעתיק כתובת פרטיות מסוג `noreply` מתוך **GitHub → Settings → Emails**. אלה פרטי מחבר הגרסה, לא סיסמה.
-
-```shell
-git config user.name "Your Name"
-git config user.email "YOUR_GITHUB_EMAIL"
-```
-
-חזרו ל־Source Control ולחצו שוב **Commit**.
-
-</details>
-
-## 6. מעלים ל־GitHub כמאגר פרטי
-
-1. ב־Source Control לחצו **Publish to GitHub**. אם הכפתור אינו מופיע, פתחו **View → Command Palette**, חפשו `Publish to GitHub` ובחרו בפקודה.
-2. אם מתבקשים להתחבר, אשרו בדפדפן את החיבור של VS Code לחשבון GitHub שלכם וחזרו לעורך.
-3. תנו למאגר את השם `GuysRazor` ובחרו **Publish to GitHub private repository**. אם מופיעה בחירת נראות נפרדת, בחרו **Private**.
-4. המתינו לסיום, ואז לחצו **Open on GitHub** או פתחו באתר GitHub את המאגר מתוך רשימת המאגרים בחשבון שלכם.
-5. ודאו שליד שם המאגר כתוב **Private**, שקובצי הפרויקט והתיקייה `Pages` והקובץ `.gitignore` מופיעים, ושאפשר לפתוח את `Pages/Index.cshtml` ולראות את הכותרת ששיניתם.
+<!-- מסלול הפרסום הישיר הקודם נכשל בבדיקת המורה: לאחר יצירת המאגר הופיע שוב Publish Branch וניסיון פרסום נוסף החזיר Repository already exists. המסלול החלופי להלן מבוסס על תיעוד VS Code וטרם אומת בניסוי הכיתתי. -->
 
 {: .box-warning}
-בחרו **Private** לפני הפרסום. אם השם כבר קיים בחשבון שלכם, בדקו אם זה המאגר שכבר יצרתם בשיעור. אין למחוק מאגר קיים כדי להתחיל שוב. גם במאגר פרטי אין לשמור סיסמאות או מפתחות גישה בקוד.
+בצעו את הפרסום הראשון יחד עם המורה. אם מופיע **GitHub Repository already exists**, עצרו והציגו לו את ההודעה; אל תנסו לפרסם שוב באותו שם.
 
-העלאת הקוד ל־GitHub אינה מפעילה אתר באינטרנט. האתר ממשיך לרוץ במחשב שלכם באמצעות `dotnet watch`.
+1. פתחו את **Source Control** ובחרו **Initialize Repository** עבור תיקיית הפרויקט שלכם.
+2. ליד קבוצת **Changes** לחצו **+** כדי לבצע **Stage All Changes**. הקבצים יעברו אל **Staged Changes**. קובצי `bin` ו־`obj` אמורים להישאר מחוץ לרשימה בזכות `.gitignore` שהכנתם.
+3. כתבו הודעה כגון `Create first Razor Pages site` ולחצו **Commit**. בשלב הזה שומרים גרסה מקומית, לפני החיבור ל־GitHub.
+4. לאחר שהקומיט הסתיים, פתחו **View → Command Palette** ובחרו **Publish to GitHub**.
+5. אם מתבקשים להתחבר, התחברו לחשבון GitHub שלכם. בחרו **Publish to GitHub private repository**.
+6. המתינו לסיום הפרסום ופתחו את המאגר ב־GitHub. פתחו את קובץ `Pages/Index.cshtml` בתוך הפרויקט וראו שהקוד שלכם הגיע.
+7. לבדיקה נוספת, שנו פסקה בדף, שמרו, בצעו Stage וכתבו הודעת קומיט. כעת, כשהמאגר כבר מחובר, בחרו **Commit & Sync**. רעננו את המאגר ב־GitHub ובדקו שגם השינוי השני הגיע.
+
+אם מופיעה בקשה להגדיר שם וכתובת דוא״ל ב־Git, פנו למורה והשלימו אותה לפני שממשיכים.
+
+העלאת הקוד ל־GitHub אינה מפעילה אתר באינטרנט. את האתר מריצים במחשב שלכם דרך **Run → Run Without Debugging**.
 
 ## 7. משתפים את המורה ובודקים שסיימנו
 
