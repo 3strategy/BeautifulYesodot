@@ -26,7 +26,7 @@ published: true
 
 ## הרגל שעוזר לאורך השנה
 
-בתחילת העבודה: Pull. במהלך העבודה: commits קטנים ומשמעותיים. בסיום: Commit ו־Push ובדיקה ב־GitHub. לפחות 50 commits לאורך השנה, גם אם עובדים תמיד באותו מחשב נייד. אם מופיעה התנגשות פונים למורה ושומרים על העבודה.
+אחרי יצירת המאגר הפרטי במדריך ההקמה, מתחילים להשתמש בשגרה הבאה. בתחילת העבודה: Pull. במהלך העבודה: commits קטנים ומשמעותיים. בסיום: Commit ו־Push ובדיקה ב־GitHub. לפחות 50 commits לאורך השנה, גם אם עובדים תמיד באותו מחשב נייד. אם מופיעה התנגשות פונים למורה ושומרים על העבודה.
 
 ## מה נבנה?
 
@@ -43,6 +43,8 @@ flowchart LR
 | ---: | ---: |
 | [הדף הראשון שלי]({{ '/taba/01-first-page' | relative_url }}) | ליבה |
 | [סביבת הפיתוח ו־GitHub: מתחילים הרגלי עבודה]({{ '/taba/01a-development-git' | relative_url }}) | ליבה |
+| [הקמה ב־VS Code: תיקייה, Razor ו־GitHub פרטי]({{ '/taba/01a-setup-vscode/' | relative_url }}) | בוחרים מסלול הקמה אחד |
+| [הקמה ב־Visual Studio: פתרון, Razor ו־GitHub פרטי]({{ '/taba/01a-setup-visual-studio/' | relative_url }}) | בוחרים מסלול הקמה אחד |
 | [האתר הופך לשלי]({{ '/taba/02-my-theme' | relative_url }}) | ליבה |
 | [מעצבים עם CSS]({{ '/taba/03-css-classes' | relative_url }}) | ליבה |
 | [אתר שנראה טוב עם Bootstrap]({{ '/taba/04-bootstrap' | relative_url }}) | ליבה |

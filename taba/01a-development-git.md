@@ -36,42 +36,86 @@ companion_previous: 3e83e27c126c0aa3f02f2977e8923702213ecd43
 - לזהות את Pages ואת wwwroot.
 - לשמור שינוי משמעותי ב־Git ולהעלות אותו ל־GitHub.
 
-## מתחילים מסונכרנים
+## מתחילים כאן: יוצרים פרויקט ומאגר בפעם הראשונה
 
-פתחו את תיקיית הפרויקט הנכונה, בדקו שאין שינוי לא שמור והפעילו **Pull**. אם Git מציג התנגשות, פנו למורה; אל תמחקו עבודה ואל תבצעו Force Push.
+עד עכשיו יצרתם קובץ HTML שפתחתם בדפדפן. כעת ניצור פרויקט Razor Pages בסביבת הפיתוח שנבחר. ב־Visual Studio חלונות יצירת הפרויקט ייצרו עבורנו גם את התיקיות, בשם אישי שנבחר. אחר כך נשמור אותו במאגר פרטי ב־GitHub. **אין צורך בתיקיית פרויקט או במאגר מוכנים, ולא מבצעים Pull לפני ההקמה.**
 
-## 1. סביבת העבודה
+בחרו את סביבת הפיתוח שלכם ובצעו **אחד** משני המדריכים עד סופו:
 
-התקינו SDK של .NET 10. ב־Windows השתמשו ב־Visual Studio עם רכיב ASP.NET and web development; אפשר גם VS Code עם C# Dev Kit. ב־macOS השתמשו ב־VS Code עם C# Dev Kit.
+<div class="two-columns">
+<div markdown="1" class="column box-note">
 
-צרו ASP.NET Core Web App (Razor Pages), בשם `RazorTaba`, ללא Authentication. אל תבחרו Blazor או MVC. אפשר להשתמש בפקודות להלן בשתי המערכות. אחרי יצירת הפרויקט התאימו את הקבצים המוצגים.
+### VS Code — Windows או macOS
 
-## 2. עובדים בשני חלונות
+[יוצרים תיקייה ופרויקט ב־VS Code ומפרסמים מאגר פרטי]({{ '/taba/01a-setup-vscode/' | relative_url }})
 
-פתחו את תיקיית המאגר בסביבת הפיתוח. ב־Visual Studio הפעילו את פרופיל http; ב־VS Code הפעילו `dotnet watch --project RazorTaba --launch-profile http`. השאירו את הדפדפן לצד העורך. ערכו את הפסקה ב־`Pages/Index.cshtml`, שמרו ובדקו את הרענון. אם הרענון האוטומטי אינו מופעל, רענון רגיל מספיק.
+נפתח תיקייה ריקה, ניצור את קובצי האתר בטרמינל, נריץ אותו ונשמור דרך Source Control.
 
-## 3. Git ו־GitHub מההתחלה
+</div>
+<div markdown="1" class="column box-note">
 
-צרו מאגר משלכם ב־GitHub והעניקו למורה גישה. ב־Visual Studio השתמשו בחלון Git Changes; ב־VS Code ב־Source Control. במחשב נוסף מבצעים Clone פעם אחת ופותחים את אותה תיקייה. לפני כל מפגש: Pull. אחרי שינוי קטן שהבנתם: בדיקת diff, Stage ו־Commit עם תיאור ברור. בסיום בבית ובמעבדה: Push ובדיקה באתר GitHub.
+### Visual Studio — Windows
 
-Commit שומר מקומית; Push שולח ל־GitHub. Pull מביא שינויים מהמחשב האחר. שמירת קובץ אינה Commit, ו־Commit אינו גיבוי מרוחק. הדרישה חלה גם על מחשב נייד אישי. אם מופיעה התנגשות פונים למורה, בלי למחוק קבצים ובלי Force Push.
+[יוצרים פרויקט ב־Visual Studio ומפרסמים מאגר פרטי]({{ '/taba/01a-setup-visual-studio/' | relative_url }})
 
-המאגר כולל `.gitignore`: אין להעלות bin, obj, מסדי נתונים מקומיים או סודות.
+נבחר תבנית Razor Pages, נגדיר היכן יישמר הפתרון, נריץ אותו ונשתמש ב־Create Git Repository.
 
-### פקודות השלב
+</div>
+</div>
 
-הפקודות מורצות משורש המאגר, שבו נמצאת התיקייה `RazorTaba`, בטרמינל של Visual Studio או VS Code.
+{: .box-success}
+חזרו לכאן כשיש לכם אתר פועל, מאגר שמסומן **Private** ב־GitHub, Commit ראשון והזמנה למורה. אם כבר השלמתם את ההקמה, המשיכו כאן עם הפרויקט הקיים.
+
+## ממשיכים עם הפרויקט שיצרנו
+{: #after-setup}
+
+### 1. פותחים את העבודה הקיימת
+
+ב־VS Code פתחו את התיקייה `MyAnimals` באמצעות **File → Open Folder**. ב־Visual Studio פתחו את קובץ הפתרון בשם שבחרתם, למשל `GuysRazor.slnx` או `GuysRazor.sln`, מתוך תיקיית הפתרון שלכם. אל תפעילו שוב את פקודת יצירת הפרויקט.
+
+במפגשים הבאים, אחרי שכבר יש מאגר מחובר ל־GitHub: ודאו שהעבודה הקודמת שמורה ב־Commit ובצעו **Pull** כדי לקבל את הגרסה האחרונה. ב־VS Code הפעולה נמצאת ב־**Source Control → … → Pull**; ב־Visual Studio ב־**Git → Pull**. אם מופיעה התנגשות, פנו למורה בלי למחוק עבודה ובלי Force Push.
+
+### 2. עורכים את האתר שלנו
+
+השאירו את הדפדפן לצד העורך. ב־Visual Studio הפעילו את פרופיל **http**. ב־VS Code פתחו **Terminal → New Terminal** מתוך `MyAnimals` והריצו:
 
 ```shell
-dotnet new webapp -n RazorTaba -o RazorTaba -f net10.0
 dotnet watch --project RazorTaba --launch-profile http
 ```
+
+בקטע הבא נתאים את דף הבית ואת התבנית המשותפת לעברית. בדוגמאות כאן `RazorTaba` הוא שם תיקיית הפרויקט הפנימית. אם בחרתם שם אישי ב־Visual Studio, החליפו את החלק הזה בשם שלכם: למשל `GuysRazor/Pages/Index.cshtml`. הנתיב מתחיל מתיקיית הפתרון החיצונית. הקבצים כבר נוצרו בהקמה; כעת עורכים אותם.
+
+צרו בתוך `RazorTaba/wwwroot` תיקייה בשם `images` והעתיקו אליה את `fox.svg` ששמרתם בתיקיית `first-page` בשיעור הקודם. כך התמונה שבדף הבית תימצא בנתיב `RazorTaba/wwwroot/images/fox.svg`.
+
+### 3. מבינים מה נשמר והיכן
+
+| פעולה | מה היא עושה |
+| :--- | ---: |
+| Save | שומרת את הקובץ בדיסק במחשב |
+| Diff | מציג את ההבדל בין הגרסה השמורה ב־Git לשינוי שעשיתם |
+| Stage | בוחרת אילו שינויים ייכללו בגרסה הבאה |
+| Commit | שומרת גרסה בהיסטוריה המקומית של Git |
+| Push | שולחת את הגרסאות המקומיות ל־GitHub |
+| Pull | מקבלת עדכונים מהמאגר ב־GitHub |
+
+בצעו את שינויי הקוד שבהמשך, הריצו ובדקו אותם, ואז שמרו גרסה נוספת לפי ההנחיות בסוף הדף.
+
+<details markdown="1"><summary>עוברים למחשב נוסף? מבצעים Clone פעם אחת</summary>
+
+אחרי שהעליתם את העבודה מהמחשב הראשון, התחברו לאותו חשבון GitHub במחשב הנוסף. **Clone** מוריד את המאגר ואת ההיסטוריה שלו לתיקייה מקומית; אין ליצור שם פרויקט חדש.
+
+- ב־VS Code: בחרו **View → Command Palette → Git: Clone**, הדביקו את כתובת המאגר הפרטי שלכם, בחרו תיקיית אב כגון `WebProjects`, ואז פתחו את התיקייה שנוצרה.
+- ב־Visual Studio: במסך הפתיחה בחרו **Clone a repository**, הדביקו את הכתובת, בחרו מקום לשמירה ולחצו **Clone**. פתחו את קובץ הפתרון שבמאגר.
+
+התקינו גם במחשב הזה את כלי הפיתוח מהמסלול שלכם. לאחר מכן, בכל מפגש פותחים את אותו עותק ומבצעים Pull; אין צורך ב־Clone נוסף.
+
+</details>
 
 ## השינויים בקוד
 
 ### `RazorTaba/Pages/Index.cshtml`
 
-קובץ חדש. צרו את `RazorTaba/Pages/Index.cshtml` והדביקו את התוכן הבא:
+פתחו את `RazorTaba/Pages/Index.cshtml` הקיים והחליפו את תוכנו בתוכן הבא:
 
 ````cshtml
 @page
@@ -86,7 +130,7 @@ dotnet watch --project RazorTaba --launch-profile http
 
 ### `RazorTaba/Pages/Shared/_Layout.cshtml`
 
-קובץ חדש. צרו את `RazorTaba/Pages/Shared/_Layout.cshtml` והדביקו את התוכן הבא:
+פתחו את `RazorTaba/Pages/Shared/_Layout.cshtml` הקיים והחליפו את תוכנו בתוכן הבא:
 
 ````cshtml
 <!DOCTYPE html>
@@ -117,7 +161,7 @@ dotnet watch --project RazorTaba --launch-profile http
 
 ### `RazorTaba/Program.cs`
 
-קובץ חדש. צרו את `RazorTaba/Program.cs` והדביקו את התוכן הבא:
+פתחו את `RazorTaba/Program.cs` הקיים והחליפו את תוכנו בתוכן הבא:
 
 ````csharp
 var builder = WebApplication.CreateBuilder(args);
@@ -137,7 +181,7 @@ app.Run();
 
 ### `RazorTaba/Properties/launchSettings.json`
 
-קובץ חדש. צרו את `RazorTaba/Properties/launchSettings.json` והדביקו את התוכן הבא:
+פתחו את `RazorTaba/Properties/launchSettings.json` הקיים והחליפו את תוכנו בתוכן הבא:
 
 ````json
 {
@@ -251,6 +295,13 @@ app.Run();
 2. שינוי הפסקה מופיע בדפדפן.
 3. חלון diff מציג רק את השינוי שלכם.
 4. לאחר Push רואים ב־GitHub את הודעת ה־commit ואת הקובץ המעודכן.
+
+## שומרים את השינוי השני ומעלים אותו
+
+1. שמרו את הקבצים ובדקו את האתר בדפדפן.
+2. ב־VS Code פתחו **Source Control**, לחצו על כל קובץ שהשתנה ובדקו את ה־Diff. לחצו על **+** ליד הקבצים שבדקתם, כתבו הודעה כגון `Customize Hebrew home page` ולחצו **Commit**. בתפריט **…** בחרו **Push**.
+3. ב־Visual Studio פתחו **View → Git Changes**, לחצו פעמיים על כל קובץ לבדיקת ההבדלים, ובצעו **Stage** באמצעות **+**. כתבו הודעה, בחרו **Commit Staged** ואז **Push**.
+4. השתמשו בצעדים של העורך שלכם בלבד. פתחו את המאגר ב־GitHub וודאו שההודעה החדשה והקבצים המעודכנים מופיעים, ושהמאגר עדיין **Private**.
 
 ## משימה אישית ובדיקת הבנה
 
