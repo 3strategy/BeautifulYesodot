@@ -170,10 +170,35 @@ navbar-links:
 
     - עבודה בקבוצות1: "/cs4/team_work"
     
-  # תב"א:
-  #   - 1 html: "https://docs.google.com/presentation/d/1Wfgo_PbW09k4XY_U-FmvdOjBWX0NGEWCj16PafzMfKA/edit?usp=sharing"
-  #   - 3 MasterPage: "https://docs.google.com/presentation/d/1DTFoEBQdky6IW69m2I-sGcvqzs6Etzi2U7TvU3-6ZIk/edit?usp=sharing"
-  #   - 4 More JavaScript: "https://docs.google.com/presentation/d/1H2u74LjHSzAnlRnB7MO_drahi9x998TNs9O7cJZRvGo/edit?usp=sharing"
+  תב״א — מתחילים:
+    - "מפת הדרך: האתר שלי": "/taba/00-student-roadmap/"
+    - "הפרויקט שלנו: מאתר אישי ליישום עם נתונים": "/taba/00-teacher-plan/"
+    - "הדף הראשון שלי": "/taba/01-first-page/"
+    - "סביבת הפיתוח ו־GitHub: מתחילים הרגלי עבודה": "/taba/01a-development-git/"
+    - "האתר הופך לשלי": "/taba/02-my-theme/"
+    - "מעצבים עם CSS": "/taba/03-css-classes/"
+    - "אתר שנראה טוב עם Bootstrap": "/taba/04-bootstrap/"
+    - "מחברים דפים ובונים טופס": "/taba/05-pages-and-forms/"
+    - "כותבים תוכן ב־Markdown": "/taba/05a-markdown/"
+    - "מציירים באמצעות טקסט: Mermaid": "/taba/05b-mermaid/"
+
+  תב״א — נתונים:
+    - "מבינים את Razor Pages ואת התבנית המשותפת": "/taba/06-razor-layout/"
+    - "הדף הדינמי הראשון": "/taba/07-first-dynamic-page/"
+    - "מכרטיס HTML לאובייקט Animal": "/taba/08-animal-model/"
+    - "הנתונים נשמרים עם EF Core ו־SQLite": "/taba/09-ef-sqlite/"
+    - "מוסיפים חיה ובודקים קלט": "/taba/10-create-validation/"
+    - "מעדכנים ומוחקים רשומות": "/taba/11-edit-delete/"
+    - "משלימים ומציגים אתר אישי עם CRUD": "/taba/12-core-project/"
+
+  תב״א — הרחבות:
+    - "מטפל וחיות: קשר אחד־לרבים": "/taba/13-keepers-animals/"
+    - "מנהלים מטפלים: CRUD וקשר קיים": "/taba/13a-keeper-crud/"
+    - "מחפשים ומסננים נתונים": "/taba/14-filtering/"
+    - "הרשמה וכניסה עם Microsoft Identity": "/taba/15-local-identity/"
+    - "מרחיבים את פרופיל המשתמש": "/taba/16-user-profile/"
+    - "מי רשאי לערוך? בעלות והרשאות": "/taba/17-authorization/"
+    - "כניסה עם Google — הרחבת רשות": "/taba/18-google-login/"
 
   חיצוני:
     - מערכת הגשות: "https://codeclassroom.io"
@@ -227,7 +252,10 @@ navbar-menu-sets:
       - חלק ג
   taba:
     label: תב״א
-    items: []
+    items:
+      - תב״א — מתחילים
+      - תב״א — נתונים
+      - תב״א — הרחבות
 
 navbar-default-menu-set: part-a
 

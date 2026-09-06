@@ -43,6 +43,34 @@ function toggleSize() {
   }
 }
 
+const MENU_SET_COOKIE = "menu-set";
+const navbar = document.querySelector(".navbar");
+const DEFAULT_MENU_SET = navbar ? navbar.dataset.defaultMenuSet : "part-a";
+
+function applyMenuSet(menuSet) {
+  // Read configured IDs so an intentionally empty menu view remains selectable.
+  const availableMenuSets = navbar ? navbar.dataset.menuSetIds.trim().split(/\s+/) : [];
+  const selectedMenuSet = availableMenuSets.includes(menuSet) ? menuSet : DEFAULT_MENU_SET;
+
+  document.querySelectorAll("[data-menu-sets]").forEach((item) => {
+    const isVisible = item.dataset.menuSets.split(/\s+/).includes(selectedMenuSet);
+    item.hidden = !isVisible;
+  });
+
+  document.querySelectorAll('a[href^="javascript:setMenuSet("]').forEach((choice) => {
+    const isSelected = choice.getAttribute("href").includes(`'${selectedMenuSet}'`);
+    choice.classList.toggle("active", isSelected);
+    choice.setAttribute("aria-current", isSelected ? "true" : "false");
+  });
+
+  return selectedMenuSet;
+}
+
+function setMenuSet(menuSet) {
+  const selectedMenuSet = applyMenuSet(menuSet);
+  setCookie(MENU_SET_COOKIE, selectedMenuSet, 365);
+}
+
 // Open every disclosure section on the current page.
 function expandAllDetails() {
   document.querySelectorAll('details').forEach((details) => {
@@ -52,6 +80,8 @@ function expandAllDetails() {
 
 // Convert fenced ```mermaid code blocks to <div class="mermaid"> before Mermaid runs
 document.addEventListener('DOMContentLoaded', function () {
+  applyMenuSet(getCookie(MENU_SET_COOKIE) || DEFAULT_MENU_SET);
+
   try {
     const codeBlocks = document.querySelectorAll('pre > code[class*="language-mermaid"]');
 
