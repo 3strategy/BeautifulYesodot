@@ -19,7 +19,7 @@ companion_previous: 19036f631297cf0242188a7502e8ca7cb6878e3f
 נאפשר לכל משתמש לערוך ולמחוק רק את הרשומות שיצר. נבדוק את ההרשאות עם שני חשבונות, גם דרך קישורים ישירים ושליחת טפסים.
 
 <!-- lesson-back:start -->
-[חזרה: מרחיבים את פרופיל המשתמש]({{ '/taba/16-user-profile/' | relative_url }})
+[חזרה: מרחיבים את פרופיל המשתמש]({{ '/taba/16-user-profile/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -475,5 +475,5 @@ index 03bb5c8..2a8d18c 100644
 
 ## המשך
 
-- [כניסה עם Google — הרחבת רשות]({{ '/taba/18-google-login/' | relative_url }})
+- [כניסה עם Google — הרחבת רשות]({{ '/taba/18-google-login/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

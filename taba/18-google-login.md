@@ -19,7 +19,7 @@ companion_previous: 921c2b1ff5cee2ef9e8ecf800788b694aa216d4e
 נוסיף לאתר אפשרות להיכנס עם חשבון Google. נגדיר את החיבור, נוסיף כפתור כניסה ונבדוק את החזרה מ־Google לאתר שלנו.
 
 <!-- lesson-back:start -->
-[חזרה: מי רשאי לערוך? בעלות והרשאות]({{ '/taba/17-authorization/' | relative_url }})
+[חזרה: מי רשאי לערוך? בעלות והרשאות]({{ '/taba/17-authorization/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}

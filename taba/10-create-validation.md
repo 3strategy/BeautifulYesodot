@@ -19,7 +19,7 @@ companion_previous: a604aff5a09479be4863c6da3e9dd3d5e5cd0008
 נבנה טופס להוספת חיה ונשמור את הפרטים במסד. נבדוק את הקלט ונציג הודעת תיקון כשחסר שם, תיאור או נתיב תמונה תקין.
 
 <!-- lesson-back:start -->
-[חזרה: הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/09-ef-sqlite/' | relative_url }})
+[חזרה: הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/09-ef-sqlite/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -212,5 +212,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [מעדכנים ומוחקים רשומות]({{ '/taba/11-edit-delete/' | relative_url }})
+- [מעדכנים ומוחקים רשומות]({{ '/taba/11-edit-delete/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

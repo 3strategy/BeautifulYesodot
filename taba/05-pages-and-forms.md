@@ -19,7 +19,7 @@ companion_previous: 1f7107067a9abfbfe07a10bbea700175ed3a659d
 נוסיף דף לאתר ונקשר אליו מהתפריט. נבנה בו טופס עם שדות ותוויות, ונבדוק איך משתמשים בו.
 
 <!-- lesson-back:start -->
-[חזרה: שומרים גרסאות עם Git ומפרסמים ב־GitHub]({{ '/taba/04a-git-github/' | relative_url }})
+[חזרה: שומרים גרסאות עם Git ומפרסמים ב־GitHub]({{ '/taba/04a-git-github/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -107,5 +107,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [כותבים תוכן ב־Markdown]({{ '/taba/05a-markdown/' | relative_url }})
+- [כותבים תוכן ב־Markdown]({{ '/taba/05a-markdown/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

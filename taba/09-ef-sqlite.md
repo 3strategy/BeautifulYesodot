@@ -19,7 +19,7 @@ companion_previous: ce3e2e502543337eda51497f1f27bdd58b513464
 נחבר את מחלקת Animal למסד SQLite באמצעות EF Core. ניצור טבלה ונציג באתר את הרשומות שנקראות ממנה.
 
 <!-- lesson-back:start -->
-[חזרה: מכרטיס HTML לאובייקט Animal]({{ '/taba/08-animal-model/' | relative_url }})
+[חזרה: מכרטיס HTML לאובייקט Animal]({{ '/taba/08-animal-model/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -199,5 +199,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [מוסיפים חיה ובודקים קלט]({{ '/taba/10-create-validation/' | relative_url }})
+- [מוסיפים חיה ובודקים קלט]({{ '/taba/10-create-validation/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

@@ -19,7 +19,7 @@ companion_previous: 7a9346ec48cfdb1d434e910fbc6076b416cd5828
 נעצב את האתר באמצעות CSS: נשנה צבעים וריווח, נוסיף מחלקת עיצוב ונראה את התוצאה בדפדפן אחרי כל שינוי.
 
 <!-- lesson-back:start -->
-[חזרה: האתר הופך לשלי]({{ '/taba/02-my-theme/' | relative_url }})
+[חזרה: האתר הופך לשלי]({{ '/taba/02-my-theme/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -119,5 +119,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [אתר שנראה טוב עם Bootstrap]({{ '/taba/04-bootstrap/' | relative_url }})
+- [אתר שנראה טוב עם Bootstrap]({{ '/taba/04-bootstrap/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

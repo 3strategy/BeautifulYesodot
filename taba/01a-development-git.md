@@ -19,7 +19,7 @@ companion_previous: 3e83e27c126c0aa3f02f2977e8923702213ecd43
 ניצור ונריץ אתר ב־Visual Studio או ב־VS Code, נכיר את הקבצים ונשנה את התוכן. נשמור, נריץ ונראה את התוצאה בדפדפן.
 
 <!-- lesson-back:start -->
-[חזרה: הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }})
+[חזרה: הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -296,5 +296,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [האתר הופך לשלי]({{ '/taba/02-my-theme/' | relative_url }})
+- [האתר הופך לשלי]({{ '/taba/02-my-theme/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

@@ -78,5 +78,5 @@ flowchart LR
 
 ## המשך
 
-- [מתחילים: הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }})
+- [מתחילים: הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

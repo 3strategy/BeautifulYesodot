@@ -19,7 +19,7 @@ companion_previous: c80e5ea647000b07646c97f41b4ab091327319f8
 נבנה אזור פתיחה וכרטיסים עם Bootstrap. נסדר את התוכן בעמודות ונבדוק שהאתר נוח לקריאה גם בטלפון.
 
 <!-- lesson-back:start -->
-[חזרה: מעצבים עם CSS]({{ '/taba/03-css-classes/' | relative_url }})
+[חזרה: מעצבים עם CSS]({{ '/taba/03-css-classes/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -160,5 +160,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [שומרים גרסאות עם Git ומפרסמים ב־GitHub]({{ '/taba/04a-git-github/' | relative_url }})
+- [שומרים גרסאות עם Git ומפרסמים ב־GitHub]({{ '/taba/04a-git-github/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

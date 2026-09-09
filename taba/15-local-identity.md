@@ -19,7 +19,7 @@ companion_previous: 4a453d577b30a8120ccbf26b72e2d831168ba7bd
 נוסיף הרשמה, כניסה ויציאה באמצעות Microsoft Identity. ניצור חשבון ונראה איך התפריט משתנה כשאנחנו מחוברים.
 
 <!-- lesson-back:start -->
-[חזרה: מחפשים ומסננים נתונים]({{ '/taba/14-filtering/' | relative_url }})
+[חזרה: מחפשים ומסננים נתונים]({{ '/taba/14-filtering/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -357,5 +357,5 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 ## המשך
 
-- [מרחיבים את פרופיל המשתמש]({{ '/taba/16-user-profile/' | relative_url }})
+- [מרחיבים את פרופיל המשתמש]({{ '/taba/16-user-profile/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

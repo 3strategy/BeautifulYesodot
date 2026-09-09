@@ -1,0 +1,98 @@
+{
+  "/taba/12-core-project/": {
+    "prev": "/taba/11-edit-delete/",
+    "next": "/taba/13-keepers-animals/"
+  },
+  "/taba/13a-keeper-crud/": {
+    "prev": "/taba/13-keepers-animals/",
+    "next": "/taba/14-filtering/"
+  },
+  "/taba/11-edit-delete/": {
+    "prev": "/taba/10-create-validation/",
+    "next": "/taba/12-core-project/"
+  },
+  "/taba/17-authorization/": {
+    "prev": "/taba/16-user-profile/",
+    "next": "/taba/18-google-login/"
+  },
+  "/taba/08-animal-model/": {
+    "prev": "/taba/07-first-dynamic-page/",
+    "next": "/taba/09-ef-sqlite/"
+  },
+  "/taba/10-create-validation/": {
+    "prev": "/taba/09-ef-sqlite/",
+    "next": "/taba/11-edit-delete/"
+  },
+  "/taba/01-first-page/": {
+    "prev": "/taba/00-student-roadmap/",
+    "next": "/taba/01a-development-git/"
+  },
+  "/taba/00-student-roadmap/": {
+    "prev": null,
+    "next": "/taba/01-first-page/"
+  },
+  "/taba/16-user-profile/": {
+    "prev": "/taba/15-local-identity/",
+    "next": "/taba/17-authorization/"
+  },
+  "/taba/05b-mermaid/": {
+    "prev": "/taba/05a-markdown/",
+    "next": "/taba/06-razor-layout/"
+  },
+  "/taba/18-google-login/": {
+    "prev": "/taba/17-authorization/",
+    "next": null
+  },
+  "/taba/09-ef-sqlite/": {
+    "prev": "/taba/08-animal-model/",
+    "next": "/taba/10-create-validation/"
+  },
+  "/taba/06-razor-layout/": {
+    "prev": "/taba/05b-mermaid/",
+    "next": "/taba/07-first-dynamic-page/"
+  },
+  "/taba/05-pages-and-forms/": {
+    "prev": "/taba/04a-git-github/",
+    "next": "/taba/05a-markdown/"
+  },
+  "/taba/05a-markdown/": {
+    "prev": "/taba/05-pages-and-forms/",
+    "next": "/taba/05b-mermaid/"
+  },
+  "/taba/13-keepers-animals/": {
+    "prev": "/taba/12-core-project/",
+    "next": "/taba/13a-keeper-crud/"
+  },
+  "/taba/14-filtering/": {
+    "prev": "/taba/13a-keeper-crud/",
+    "next": "/taba/15-local-identity/"
+  },
+  "/taba/04a-git-github/": {
+    "prev": "/taba/04-bootstrap/",
+    "next": "/taba/05-pages-and-forms/"
+  },
+  "/taba/07-first-dynamic-page/": {
+    "prev": "/taba/06-razor-layout/",
+    "next": "/taba/08-animal-model/"
+  },
+  "/taba/03-css-classes/": {
+    "prev": "/taba/02-my-theme/",
+    "next": "/taba/04-bootstrap/"
+  },
+  "/taba/02-my-theme/": {
+    "prev": "/taba/01a-development-git/",
+    "next": "/taba/03-css-classes/"
+  },
+  "/taba/15-local-identity/": {
+    "prev": "/taba/14-filtering/",
+    "next": "/taba/16-user-profile/"
+  },
+  "/taba/04-bootstrap/": {
+    "prev": "/taba/03-css-classes/",
+    "next": "/taba/04a-git-github/"
+  },
+  "/taba/01a-development-git/": {
+    "prev": "/taba/01-first-page/",
+    "next": "/taba/02-my-theme/"
+  }
+}

@@ -19,7 +19,7 @@ companion_previous: f1fa21a30fd2d4fbb8d740efa4f32c03ffa651b4
 נוסיף מטפלים ונשייך כל חיה למטפל באמצעות רשימת בחירה. נציג את שם המטפל לצד החיה ונראה איך שתי טבלאות מתחברות.
 
 <!-- lesson-back:start -->
-[חזרה: משלימים ומציגים אתר אישי עם CRUD]({{ '/taba/12-core-project/' | relative_url }})
+[חזרה: משלימים ומציגים אתר אישי עם CRUD]({{ '/taba/12-core-project/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -355,6 +355,6 @@ teacher-notes:end -->
 
 ## המשך
 
-- [לתרגול CRUD נוסף: ניהול מטפלים]({{ '/taba/13a-keeper-crud/' | relative_url }})
+- [לתרגול CRUD נוסף: ניהול מטפלים]({{ '/taba/13a-keeper-crud/' | relative_url }}){: data-sequence-nav="next"}
 - [להמשך עם מטפל הדוגמה: חיפוש וסינון]({{ '/taba/14-filtering/' | relative_url }})
 <!-- lesson-next:end -->

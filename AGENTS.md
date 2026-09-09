@@ -91,14 +91,13 @@
   - Use `wsl bash -lc` for simple read/search filesystem operations.
   - Use `wsl.exe -d Ubuntu bash -lic` for commands that rely on shell init files, gem-installed binaries, or project dev environments.
 
-## Notification command (important)
+## Notifications
 
-- The notification script is in the user-level Codex folder, not this repo.
-- At the end of each user prompt, run it from PowerShell with:
-  - `Set-Location C:\Users\3stra\.codex; .\notify.ps1 -Title "Codex - BeautifulYesodot - " -Message "<prompt title> Finished"`
-- If the task fails, still run the same script and make the message reflect failure:
-  - `Set-Location C:\Users\3stra\.codex; .\notify.ps1 -Title "Codex - BeautifulYesodot - " -Message "<prompt title> Failed"`
-- Do not first search for a project-local `.codex` folder; BeautifulYesodot does not normally contain one.
+- Follow the current user-level notification instructions: record the local start
+  time and send the final result using `curl.exe` to `https://ntfy.sh/cdxcc`.
+- Use title `Desk: <prompt title>`, the `computer` tag, actual newlines, success
+  or failure, elapsed duration, and a final local timestamp formatted `d MMM HH:mm`.
+- Do not use the obsolete `notify.ps1` recipe formerly documented here.
 
 ## Tutorial language/style convention
 
@@ -282,3 +281,24 @@ main {
 </div>
 </div>
 ```
+
+## Swipe navigation and sibling differences
+
+- Shared implementation: `assets/js/sequence-navigation.js`, loaded once by
+  `_includes/footer-scripts.html`. Keep this script aligned with BeautifulMivney;
+  course links remain local to each site.
+- Opt in using `data-sequence-nav="next"` or `data-sequence-nav="prev"` on existing
+  links inside `main`. Swipe right means next; left means previous. Do not infer
+  sequence order from filenames, navbar entries, or browser history.
+- Taba's student roadmap through lesson 18 is enabled, including lettered steps.
+  Preserve the tags when editing the `lesson-back` / `lesson-next` regions.
+  The default route includes 12→13 and 13→13a→14. The teacher plan, setup guides,
+  and final return-to-roadmap link are not swipe steps.
+- Put `data-swipe-ignore` on custom widgets that own horizontal gestures.
+- Read `docs/sequence-navigation.md` for the route, tests, and mobile acceptance.
+- Compare sibling infrastructure by behavior, ignoring CRLF/LF noise. Yesodot has
+  configured empty-menu support (`data-menu-set-ids`) and `expandAllDetails()`;
+  retain those when porting scripts. Search-link placement and menu defaults are
+  site-specific; neither is evidence that one entire file is more advanced.
+- The shared `before-after` CSS now implements the convention documented above.
+  See `docs/sibling-infrastructure-notes.md` for remaining observed differences.

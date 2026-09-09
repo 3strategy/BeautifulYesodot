@@ -19,7 +19,7 @@ companion_previous: 4ba9f9dd7bf4b634ba111f8bbbb55756bdfb91b2
 נהפוך את האתר לשלנו: נבחר נושא שמסקרן אותנו, נכתוב פסקת פתיחה ונוסיף רשימה וקישור למידע נוסף.
 
 <!-- lesson-back:start -->
-[חזרה: סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-git/' | relative_url }})
+[חזרה: סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-git/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -92,5 +92,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [מעצבים עם CSS]({{ '/taba/03-css-classes/' | relative_url }})
+- [מעצבים עם CSS]({{ '/taba/03-css-classes/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

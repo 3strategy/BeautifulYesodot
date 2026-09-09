@@ -19,7 +19,7 @@ companion_previous: f3905d476256306740393fad05fd80ced82a27ab
 נוסיף חיפוש לפי שם וסינון לפי מטפל. נשלב תנאים בשאילתת LINQ ונציג את החיות שמתאימות לבחירה שלנו.
 
 <!-- lesson-back:start -->
-[חזרה: מנהלים מטפלים: CRUD וקשר קיים]({{ '/taba/13a-keeper-crud/' | relative_url }})
+[חזרה: מנהלים מטפלים: CRUD וקשר קיים]({{ '/taba/13a-keeper-crud/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -138,5 +138,5 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 ## המשך
 
-- [הרשמה וכניסה עם Microsoft Identity]({{ '/taba/15-local-identity/' | relative_url }})
+- [הרשמה וכניסה עם Microsoft Identity]({{ '/taba/15-local-identity/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

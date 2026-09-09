@@ -19,7 +19,7 @@ companion_previous: fc5695a907b6ab783a51ff3848f9b57fdcacaf82
 נגדיר מחלקת Animal עם שם, תיאור ותמונה. ניצור ממנה אובייקטים ונציג כרטיס באתר לכל חיה.
 
 <!-- lesson-back:start -->
-[חזרה: הדף הדינמי הראשון]({{ '/taba/07-first-dynamic-page/' | relative_url }})
+[חזרה: הדף הדינמי הראשון]({{ '/taba/07-first-dynamic-page/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 {% include taba-private-links-visibility.html %}
@@ -163,5 +163,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/09-ef-sqlite/' | relative_url }})
+- [הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/09-ef-sqlite/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

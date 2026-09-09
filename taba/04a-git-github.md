@@ -13,7 +13,7 @@ published: true
 נבחר את האתר שנמשיך לפתח, נשמור גרסה שלו במחשב וננסה שינוי שאפשר לבטל. אחר כך נעלה את הגרסאות למאגר פרטי ב־GitHub ונשתף את המורה.
 
 <!-- lesson-back:start -->
-[חזרה: אתר שנראה טוב עם Bootstrap]({{ '/taba/04-bootstrap/' | relative_url }})
+[חזרה: אתר שנראה טוב עם Bootstrap]({{ '/taba/04-bootstrap/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
 ## בוחרים את הפרויקט שנמשיך לפתח
@@ -222,5 +222,5 @@ git config --global user.email "yourname@gmail.com"
 
 ## המשך
 
-- [מחברים דפים ובונים טופס]({{ '/taba/05-pages-and-forms/' | relative_url }})
+- [מחברים דפים ובונים טופס]({{ '/taba/05-pages-and-forms/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->
