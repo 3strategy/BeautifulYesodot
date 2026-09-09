@@ -19,12 +19,13 @@ companion_previous: 1f7107067a9abfbfe07a10bbea700175ed3a659d
 נוסיף דף לאתר ונקשר אליו מהתפריט. נבנה בו טופס עם שדות ותוויות, ונבדוק איך משתמשים בו.
 
 <!-- lesson-back:start -->
-[חזרה: אתר שנראה טוב עם Bootstrap]({{ '/taba/04-bootstrap/' | relative_url }})
+[חזרה: שומרים גרסאות עם Git ומפרסמים ב־GitHub]({{ '/taba/04a-git-github/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/4519e73eaadd6ca8ac11534db6f79937b8c7561d) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/1f7107067a9abfbfe07a10bbea700175ed3a659d...4519e73eaadd6ca8ac11534db6f79937b8c7561d)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 

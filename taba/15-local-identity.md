@@ -22,9 +22,10 @@ companion_previous: 4a453d577b30a8120ccbf26b72e2d831168ba7bd
 [חזרה: מחפשים ומסננים נתונים]({{ '/taba/14-filtering/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/3ca22602bb94d32cd8cacf20820425e5ecfbfd79) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/4a453d577b30a8120ccbf26b72e2d831168ba7bd...3ca22602bb94d32cd8cacf20820425e5ecfbfd79)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 
@@ -320,6 +321,7 @@ else
          @RenderBody()
 ````
 
+{% if taba_show_private_links %}
 <details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
@@ -330,6 +332,7 @@ else
 - [RazorTaba/RazorTaba.csproj](https://github.com/3strategy/razortaba/blob/3ca22602bb94d32cd8cacf20820425e5ecfbfd79/RazorTaba/RazorTaba.csproj)
 
 </details>
+{% endif %}
 
 ## מריצים ובודקים
 

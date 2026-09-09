@@ -22,9 +22,10 @@ companion_previous: a0b42b62d249a9701b5e2fc371874ede541a006c
 [חזרה: מוסיפים חיה ובודקים קלט]({{ '/taba/10-create-validation/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/68100fd563b4748c2a344551c3079f524bc1ab5f) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/a0b42b62d249a9701b5e2fc371874ede541a006c...68100fd563b4748c2a344551c3079f524bc1ab5f)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 

@@ -22,9 +22,10 @@ companion_previous: fc5695a907b6ab783a51ff3848f9b57fdcacaf82
 [חזרה: הדף הדינמי הראשון]({{ '/taba/07-first-dynamic-page/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/b3bb71631ca3036ab2563cfe2d7ee21e7a7465a1) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/fc5695a907b6ab783a51ff3848f9b57fdcacaf82...b3bb71631ca3036ab2563cfe2d7ee21e7a7465a1)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 

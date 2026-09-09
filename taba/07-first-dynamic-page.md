@@ -22,9 +22,10 @@ companion_previous: 287c690c1d3d39fd12ae46dd725f134954b5c0b4
 [חזרה: מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/06-razor-layout/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/06e672ffeb1aa04eec860204b36dcdb1fabaca0c) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/287c690c1d3d39fd12ae46dd725f134954b5c0b4...06e672ffeb1aa04eec860204b36dcdb1fabaca0c)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 

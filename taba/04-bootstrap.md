@@ -22,9 +22,10 @@ companion_previous: c80e5ea647000b07646c97f41b4ab091327319f8
 [חזרה: מעצבים עם CSS]({{ '/taba/03-css-classes/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/98aeb85bf53ca294a7a42f6f9b75eec36f054250) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/c80e5ea647000b07646c97f41b4ab091327319f8...98aeb85bf53ca294a7a42f6f9b75eec36f054250)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 
@@ -32,9 +33,9 @@ companion_previous: c80e5ea647000b07646c97f41b4ab091327319f8
 - להרכיב card וכפתור.
 - לשלב מחלקות Bootstrap עם CSS אישי.
 
-## מתחילים מסונכרנים
+## פותחים ומריצים
 
-פתחו את תיקיית הפרויקט הנכונה, בדקו שאין שינוי לא שמור והפעילו **Pull**. אם Git מציג התנגשות, פנו למורה; אל תמחקו עבודה ואל תבצעו Force Push.
+פתחו את תיקיית הפרויקט שבה עבדתם, שמרו את הקבצים והריצו את האתר. בדקו שהשינוי מהמפגש הקודם מופיע לפני שמנסים שינוי חדש.
 
 ## בונים בשלושה אזורים
 
@@ -122,7 +123,7 @@ companion_previous: c80e5ea647000b07646c97f41b4ab091327319f8
 התאימו שלושה כרטיסים לנושא שלכם. החליפו תוכן קודם, ורק אחר כך צבעים. בדקו שהכרטיסים נשארים קריאים גם כשאורך הטקסט שונה.
 
 {: .box-success}
-בסיום שינוי משמעותי: בדקו את ה־diff, בצעו Stage, כתבו הודעת commit שמתארת מה שיניתם, ובצעו Push. ודאו ב־GitHub שהשינוי הגיע. נדרשים לפחות 50 commits משמעותיים לאורך השנה, גם למי שעובד תמיד באותו מחשב נייד.
+בסיום שינוי: שמרו את הקבצים, בדקו את האתר בדפדפן והסבירו מה שיניתם. המשיכו להתנסות בתוכן ובעיצוב באותה תיקיית פרויקט.
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
@@ -131,7 +132,9 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 בדקו את צבע הטקסט בכפתור הבהיר. הכלל `.intro a` חל גם עליו; הוסיפו כלל ממוקד יותר כדי שהטקסט בכפתור יהיה כהה וקריא.
 
+{% if taba_show_private_links %}
 [השינוי בקוד](https://github.com/3strategy/razortaba/commit/6d9c5e4efd58b3b4530ea77898c606ed97fe7eb6)
+{% endif %}
 
 ````diff
 diff --git a/RazorTaba/wwwroot/css/site.css b/RazorTaba/wwwroot/css/site.css
@@ -157,5 +160,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [מחברים דפים ובונים טופס]({{ '/taba/05-pages-and-forms/' | relative_url }})
+- [שומרים גרסאות עם Git ומפרסמים ב־GitHub]({{ '/taba/04a-git-github/' | relative_url }})
 <!-- lesson-next:end -->

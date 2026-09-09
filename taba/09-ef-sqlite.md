@@ -22,9 +22,10 @@ companion_previous: ce3e2e502543337eda51497f1f27bdd58b513464
 [חזרה: מכרטיס HTML לאובייקט Animal]({{ '/taba/08-animal-model/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/6f794b34fd8f60f5db34f48ba16971cda347fe40) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/ce3e2e502543337eda51497f1f27bdd58b513464...6f794b34fd8f60f5db34f48ba16971cda347fe40)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 
@@ -158,6 +159,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
      public string Name { get; set; } = "";
 ````
 
+{% if taba_show_private_links %}
 <details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
@@ -169,6 +171,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 - [dotnet-tools.json](https://github.com/3strategy/razortaba/blob/6f794b34fd8f60f5db34f48ba16971cda347fe40/dotnet-tools.json)
 
 </details>
+{% endif %}
 
 ## מריצים ובודקים
 

@@ -22,9 +22,10 @@ companion_previous: afab7e81ccfeaf1905b522f7ac03dc134aebf8e1
 [חזרה: מציירים באמצעות טקסט: Mermaid]({{ '/taba/05b-mermaid/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/afab7e81ccfeaf1905b522f7ac03dc134aebf8e1...8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 
@@ -271,6 +272,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 +</Project>
 ````
 
+{% if taba_show_private_links %}
 <details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
@@ -280,6 +282,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 - [RazorTaba/wwwroot/lib/mermaid/mermaid.min.js](https://github.com/3strategy/razortaba/blob/8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882/RazorTaba/wwwroot/lib/mermaid/mermaid.min.js)
 
 </details>
+{% endif %}
 
 ## מריצים ובודקים
 

@@ -22,9 +22,10 @@ companion_previous: 14c0156fb9c988e627079ddb03c7f84c965a00c0
 [חזרה: מחברים דפים ובונים טופס]({{ '/taba/05-pages-and-forms/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/4a0e33a8c464825ae3ddea1fe45431c43a098cb5) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/14c0156fb9c988e627079ddb03c7f84c965a00c0...4a0e33a8c464825ae3ddea1fe45431c43a098cb5)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 

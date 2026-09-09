@@ -22,9 +22,10 @@ companion_previous: 19036f631297cf0242188a7502e8ca7cb6878e3f
 [חזרה: מרחיבים את פרופיל המשתמש]({{ '/taba/16-user-profile/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/3cb5c6fc63600dc58a3f04cf70d0d505107ba421) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/19036f631297cf0242188a7502e8ca7cb6878e3f...3cb5c6fc63600dc58a3f04cf70d0d505107ba421)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 
@@ -410,6 +411,7 @@ dotnet ef database update --context AppDbContext --project RazorTaba
 +@using System.Security.Claims
 ````
 
+{% if taba_show_private_links %}
 <details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
@@ -419,6 +421,7 @@ dotnet ef database update --context AppDbContext --project RazorTaba
 - [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/3cb5c6fc63600dc58a3f04cf70d0d505107ba421/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
 
 </details>
+{% endif %}
 
 ## מריצים ובודקים
 
@@ -442,7 +445,9 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 מקמו את בדיקת הבעלות לפני `ModelState.IsValid`. נסו לשלוח טופס עם שם ריק לרשומה של משתמש אחר: גם בקשה כזו צריכה להידחות בגלל חוסר הרשאה.
 
+{% if taba_show_private_links %}
 [השינוי בקוד](https://github.com/3strategy/razortaba/commit/685d4aac6c177735ae0e494b84c03e6e0114f6cf)
+{% endif %}
 
 ````diff
 diff --git a/RazorTaba/Pages/Keepers/Edit.cshtml.cs b/RazorTaba/Pages/Keepers/Edit.cshtml.cs

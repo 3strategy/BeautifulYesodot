@@ -22,9 +22,10 @@ companion_previous: f1fa21a30fd2d4fbb8d740efa4f32c03ffa651b4
 [חזרה: משלימים ומציגים אתר אישי עם CRUD]({{ '/taba/12-core-project/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/7445c36e391c81ff2c6516e75690662178c9b259) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/f1fa21a30fd2d4fbb8d740efa4f32c03ffa651b4...7445c36e391c81ff2c6516e75690662178c9b259)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 
@@ -316,6 +317,7 @@ public class Keeper
                      <a asp-page="Delete" asp-route-id="@animal.Id">מחיקה</a>
 ````
 
+{% if taba_show_private_links %}
 <details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
@@ -325,6 +327,7 @@ public class Keeper
 - [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/7445c36e391c81ff2c6516e75690662178c9b259/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
 
 </details>
+{% endif %}
 
 ## מריצים ובודקים
 

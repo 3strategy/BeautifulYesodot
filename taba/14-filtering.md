@@ -22,9 +22,10 @@ companion_previous: f3905d476256306740393fad05fd80ced82a27ab
 [חזרה: מנהלים מטפלים: CRUD וקשר קיים]({{ '/taba/13a-keeper-crud/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/ea85e06dae377e4eca5cdeb7b1ec6222cfcc9668) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/f3905d476256306740393fad05fd80ced82a27ab...ea85e06dae377e4eca5cdeb7b1ec6222cfcc9668)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 

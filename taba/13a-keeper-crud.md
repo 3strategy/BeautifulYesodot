@@ -17,9 +17,10 @@ companion_previous: be7cbe0a753408d51078a3d2660cbbb102b0ac95
 [חזרה: מטפל וחיות: קשר אחד־לרבים]({{ '/taba/13-keepers-animals/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/82d6db226876efbf7228a9f4d7508296a28e0164) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/be7cbe0a753408d51078a3d2660cbbb102b0ac95...82d6db226876efbf7228a9f4d7508296a28e0164)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 

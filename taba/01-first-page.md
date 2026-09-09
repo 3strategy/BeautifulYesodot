@@ -22,9 +22,10 @@ companion_previous: f4c81264dc3b00dc56e2d424bef1183b8bc79dab
 [חזרה: מפת הדרך: האתר שלי]({{ '/taba/00-student-roadmap/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/d73b40cf58979e57680e965fcd86ad9b62590593) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/f4c81264dc3b00dc56e2d424bef1183b8bc79dab...d73b40cf58979e57680e965fcd86ad9b62590593)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 
@@ -34,7 +35,7 @@ companion_previous: f4c81264dc3b00dc56e2d424bef1183b8bc79dab
 
 ## מכינים תיקייה לקבצים
 
-פתחו את סייר הקבצים ב־Windows או את Finder ב־macOS. בתוך **Documents / מסמכים** צרו תיקייה בשם `first-page`. בתוכה נשמור את `index.html` ואת `fox.svg`. עדיין אין צורך ב־Git או בחשבון GitHub; נקים את מאגר הפרויקט בשיעור הבא.
+פתחו את סייר הקבצים ב־Windows או את Finder ב־macOS. בתוך **Documents / מסמכים** צרו תיקייה בשם `first-page`. בתוכה נשמור את `index.html` ואת `fox.svg`. עדיין אין צורך ב־Git או בחשבון GitHub; נגיע לשמירת גרסאות אחרי שיעור Bootstrap.
 
 ## 1. יוצרים קובץ אמיתי
 
@@ -42,7 +43,7 @@ companion_previous: f4c81264dc3b00dc56e2d424bef1183b8bc79dab
 
 ## 2. פותחים בדפדפן
 
-שמרו את שני הקבצים באותה תיקייה. הוסיפו לתיקייה את האיור המצורף לקוד השלב. לחצו פעמיים על `index.html`. אחרי שינוי ושמירה רעננו את הדפדפן.
+הורידו את <a href="{{ '/assets/img/taba/fox.svg' | relative_url }}" download="fox.svg">איור השועל (fox.svg)</a> ושמרו אותו בתיקייה `first-page`, לצד `index.html`. לחצו פעמיים על `index.html`. אחרי שינוי ושמירה רעננו את הדפדפן.
 
 ## השינויים בקוד
 
@@ -65,14 +66,6 @@ companion_previous: f4c81264dc3b00dc56e2d424bef1183b8bc79dab
 </html>
 ````
 
-<details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
-
-הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
-
-- [first-page/fox.svg](https://github.com/3strategy/razortaba/blob/d73b40cf58979e57680e965fcd86ad9b62590593/first-page/fox.svg)
-
-</details>
-
 ## מריצים ובודקים
 
 1. מופיעים כותרת, פסקה ואיור שועל.
@@ -84,7 +77,7 @@ companion_previous: f4c81264dc3b00dc56e2d424bef1183b8bc79dab
 כתבו פסקה אישית והסבירו מדוע שינוי ב־title משפיע על לשונית הדפדפן, ושינוי ב־h1 משפיע על גוף הדף.
 
 {: .box-success}
-שמרו את שני הקבצים בתיקיית `first-page` ובדקו שהדף נפתח והתמונה מופיעה. בשיעור הבא תיצרו פרויקט Razor Pages ותלמדו לשמור אותו במאגר פרטי ב־GitHub.
+שמרו את שני הקבצים בתיקיית `first-page` ובדקו שהדף נפתח והתמונה מופיעה. בשיעור הבא תיצרו פרויקט Razor Pages ותריצו אותו בסביבת הפיתוח.
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.
@@ -100,5 +93,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [סביבת הפיתוח ו־GitHub: מתחילים הרגלי עבודה]({{ '/taba/01a-development-git/' | relative_url }})
+- [סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-git/' | relative_url }})
 <!-- lesson-next:end -->

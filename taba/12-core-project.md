@@ -22,9 +22,10 @@ companion_previous: 6afae43d31a14175d27f5ad7fb8f8bc9fea2a101
 [חזרה: מעדכנים ומוחקים רשומות]({{ '/taba/11-edit-delete/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/061904be9599de89461542872c842a5de62f827a) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/6afae43d31a14175d27f5ad7fb8f8bc9fea2a101...061904be9599de89461542872c842a5de62f827a)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 
@@ -92,6 +93,7 @@ class_periods: 3
 - לפני שיעור Identity הפרויקט מיועד להדגמה מקומית בלבד: פעולות CRUD פתוחות.
 ````
 
+{% if taba_show_private_links %}
 <details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
@@ -100,6 +102,7 @@ class_periods: 3
 - [tests/requirements.txt](https://github.com/3strategy/razortaba/blob/061904be9599de89461542872c842a5de62f827a/tests/requirements.txt)
 
 </details>
+{% endif %}
 teacher-notes:end -->
 
 <!-- lesson-next:start -->

@@ -22,9 +22,10 @@ companion_previous: a0d1d6b6f67b875ff6a4071865f989d00f3e58bd
 [חזרה: הרשמה וכניסה עם Microsoft Identity]({{ '/taba/15-local-identity/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/bc1c1048e1ce6b28351acd3297997d99bed5a0e7) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/a0d1d6b6f67b875ff6a4071865f989d00f3e58bd...bc1c1048e1ce6b28351acd3297997d99bed5a0e7)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 
@@ -297,6 +298,7 @@ public class ProfileModel(UserManager<AppUser> users) : PageModel
      </form>
 ````
 
+{% if taba_show_private_links %}
 <details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
@@ -306,6 +308,7 @@ public class ProfileModel(UserManager<AppUser> users) : PageModel
 - [RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/bc1c1048e1ce6b28351acd3297997d99bed5a0e7/RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs)
 
 </details>
+{% endif %}
 
 ## מריצים ובודקים
 

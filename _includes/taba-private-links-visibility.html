@@ -1,0 +1,11 @@
+{%- comment -%}
+  Private companion repository links are only rendered by a local development
+  server. Production builds omit them even if their URL is overridden locally.
+{%- endcomment -%}
+{%- assign taba_show_private_links = false -%}
+{%- assign taba_host = site.url | split: '://' | last | split: '/' | first | split: ':' | first -%}
+{%- if jekyll.environment == 'development' -%}
+  {%- if taba_host == 'localhost' or taba_host == '127.0.0.1' -%}
+    {%- assign taba_show_private_links = true -%}
+  {%- endif -%}
+{%- endif -%}

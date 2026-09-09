@@ -22,9 +22,10 @@ companion_previous: a604aff5a09479be4863c6da3e9dd3d5e5cd0008
 [חזרה: הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/09-ef-sqlite/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/c23009a7f8491b6ca49d54b01e7c9bb0001af7b0) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/a604aff5a09479be4863c6da3e9dd3d5e5cd0008...c23009a7f8491b6ca49d54b01e7c9bb0001af7b0)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 
@@ -173,6 +174,7 @@ public class CreateModel(AppDbContext db) : PageModel
  {
 ````
 
+{% if taba_show_private_links %}
 <details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
@@ -182,6 +184,7 @@ public class CreateModel(AppDbContext db) : PageModel
 - [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/c23009a7f8491b6ca49d54b01e7c9bb0001af7b0/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
 
 </details>
+{% endif %}
 
 ## מריצים ובודקים
 

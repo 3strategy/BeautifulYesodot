@@ -22,9 +22,10 @@ companion_previous: 921c2b1ff5cee2ef9e8ecf800788b694aa216d4e
 [חזרה: מי רשאי לערוך? בעלות והרשאות]({{ '/taba/17-authorization/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/a815e72d42242e1186a32a93523b1f6d7b84cc63) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/921c2b1ff5cee2ef9e8ecf800788b694aa216d4e...a815e72d42242e1186a32a93523b1f6d7b84cc63)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 

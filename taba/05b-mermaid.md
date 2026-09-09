@@ -22,9 +22,10 @@ companion_previous: ff8ee0ab94c008191e0dca041e92380e7f7d08b4
 [חזרה: כותבים תוכן ב־Markdown]({{ '/taba/05a-markdown/' | relative_url }})
 <!-- lesson-back:end -->
 
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
 [קוד השלב](https://github.com/3strategy/razortaba/tree/eeefa30a164b1441f3257d619ac151fd3c20fb5f) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/ff8ee0ab94c008191e0dca041e92380e7f7d08b4...eeefa30a164b1441f3257d619ac151fd3c20fb5f)
-
-אם קישור הקוד אינו נפתח, בקשו גישה למאגר.
+{% endif %}
 
 ## מה נלמד
 

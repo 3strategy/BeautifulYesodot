@@ -1,31 +1,26 @@
 ---
 layout: page
-title: 'מתחילים ב־VS Code: פרויקט Razor ומאגר פרטי'
+title: 'מתחילים ב־VS Code: פרויקט Razor ראשון'
 subtitle: מתקינים C# Dev Kit, יוצרים פרויקט מהממשק ומריצים אתר ראשון
 lang: he
-tags: [CSharp, Web, Taba, Git, GitHub]
+tags: [CSharp, Web, Taba]
 track: setup
 published: true
 ---
 
 {: .box-note}
-נתקין את התוסף C# Dev Kit, ניצור אתר Razor Pages דרך הממשק של VS Code ונפתח אותו בדפדפן. אחר כך נשמור את הקוד במאגר פרטי ב־GitHub ונזמין את המורה. מתחילים כאן גם אם עדיין אין לכם תיקייה או מאגר.
+נתקין את התוסף C# Dev Kit, ניצור אתר Razor Pages דרך הממשק של VS Code ונפתח אותו בדפדפן. נשנה כותרת ונראה את השינוי בדפדפן. מתחילים כאן גם אם עדיין אין לכם תיקייה.
 
-[חזרה: סביבת הפיתוח ו־GitHub]({{ '/taba/01a-development-git/' | relative_url }})
+[חזרה: סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-git/' | relative_url }})
 
 זה המסלול ל־**VS Code** ב־Windows או ב־macOS. אם בחרתם Visual Studio ב־Windows, עברו ל[מסלול Visual Studio]({{ '/taba/01a-setup-visual-studio/' | relative_url }}). מבצעים מסלול אחד בלבד.
-
-[הגדרה ראשונה של שם ודוא״ל ב־Git — שתי הפקודות](#git-user-setup)
 
 ## 1. מכינים את הכלים
 
 1. התקינו [VS Code](https://code.visualstudio.com/Download).
 2. התקינו [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) עבור מערכת ההפעלה שלכם. בחרו **SDK**, שמאפשר ליצור ולהריץ פרויקטים.
-3. פנו למורה לעזרה בהתקנת **Git** מתוך VS Code.
 
-4. פתחו [GitHub](https://github.com/) בדפדפן, צרו חשבון באמצעות ה־Gmail האישי שלכם, השלימו את אימות הדוא״ל והתחברו. אם כבר יש לכם חשבון, השתמשו בו. שמרו לעצמכם את שם המשתמש. בשלב הזה אין צורך ליצור שם מאגר.
-
-**תיקייה** היא המקום שבו הקבצים נשמרים במחשב. **פרויקט Razor Pages** הוא אוסף קבצים שממנו .NET מריץ אתר. **Git** שומר גרסאות של הקבצים במחשב; **GitHub** שומר עותק של המאגר ברשת.
+**תיקייה** היא המקום שבו הקבצים נשמרים במחשב. **פרויקט Razor Pages** הוא אוסף קבצים שממנו .NET מריץ אתר.
 
 ## 2. מתקינים את התוסף C# Dev Kit
 
@@ -123,95 +118,15 @@ published: true
 {: .box-success}
 **הבדיקה הצליחה:** הדפדפן נפתח ומציג **Welcome** בכתובת `localhost`. הפרויקט נוצר ופועל על המחשב שלכם.
 
-אם מופיעה שגיאה במקום האתר, הציגו למורה את ההודעה לפני שממשיכים לשיתוף.
+אם מופיעה שגיאה במקום האתר, הציגו למורה את ההודעה לפני שממשיכים לעריכה.
 
 עצרו דרך **Run → Stop Debugging**. בחלון Explorer פתחו את `Pages/Index.cshtml` שבתוך הפרויקט ושנו את המילה `Welcome` בכותרת ל־`החיות שלי`. שמרו והפעילו שוב כדי לראות את השינוי. לאחר הבדיקה עצרו את ההרצה.
 
 בהמשך נעבוד מתוך התיקייה שמכילה את קובץ הפרויקט, למשל `GuysRazor.csproj`, ואת `Pages` ו־`wwwroot`. בדוגמאות הקורס הפרויקט נקרא `RazorTaba`; אצלכם השתמשו בשם שבחרתם. `Pages` מכילה את דפי האתר ו־`wwwroot` את העיצוב, התמונות וקובצי JavaScript.
 
-## הגדרה ראשונה: שם ודוא״ל ב־Git
-{: #git-user-setup}
-
-<div markdown="1" class="box-note">
-
-**לפני הקומיט הראשון**, הגדירו מי אתם ב־Git. התחברות ל־GitHub אינה מחליפה את ההגדרה הזאת.
-
-ב־VS Code בחרו **Terminal → New Terminal**. בחלון שנפתח בתחתית המסך הריצו את שתי הפקודות הבאות, כל אחת בנפרד ואחריה Enter. החליפו את השם ואת כתובת הדוא״ל בדוגמאות בפרטים שלכם, והשאירו את המירכאות:
-
-```shell
-git config --global user.name "Your Name"
-git config --global user.email "yourname@gmail.com"
-```
-
-בשורה הראשונה כתבו את שמכם. בשנייה כתבו את **כתובת ה־Gmail האישית שאיתה נרשמתם ל־GitHub**. בדרך כלל הפקודות מסתיימות בלי להציג הודעה — זה תקין.
-
-ההגדרה נשמרת לכל הפרויקטים תחת משתמש מערכת ההפעלה הנוכחי במחשב הזה. במחשב אישי מבצעים אותה פעם אחת; אם כמה תלמידים עובדים תחת אותו משתמש מחשב, כל תלמיד צריך להגדיר את פרטיו לפני העבודה.
-
-</div>
-
-אם Git מציג **Please tell me who you are** או מבקש להגדיר `user.name` ו־`user.email`, הריצו את שתי הפקודות וחזרו לפעולת הקומיט. אם הפקודה `git` אינה מזוהה, פנו למורה לעזרה בהתקנת Git.
-
-## 5. מכינים את הקבצים לפרסום
-
-ב־Explorer, בתיקייה שמכילה את קובץ הפרויקט, פתחו את `.gitignore`. אם אינו קיים, צרו אותו באמצעות **New File** בשם המדויק `.gitignore`. הוסיפו את השורות הבאות ושמרו, כדי שקובצי בנייה, מסדי נתונים מקומיים וקובצי סביבה יישארו במחשב:
-
-```gitignore
-**/bin/
-**/obj/
-.vs/
-*.db
-*.db-*
-*.sqlite
-*.sqlite3
-.env
-.env.*
-```
-
-## 6. שומרים גרסה מקומית ואז מפרסמים
-
-<!-- מסלול הפרסום הישיר הקודם נכשל בבדיקת המורה: לאחר יצירת המאגר הופיע שוב Publish Branch וניסיון פרסום נוסף החזיר Repository already exists. המסלול החלופי להלן מבוסס על תיעוד VS Code וטרם אומת בניסוי הכיתתי. -->
-
-{: .box-warning}
-בצעו את הפרסום הראשון יחד עם המורה. אם מופיע **GitHub Repository already exists**, עצרו והציגו לו את ההודעה; אל תנסו לפרסם שוב באותו שם.
-
-1. פתחו את **Source Control** ובחרו **Initialize Repository** עבור תיקיית הפרויקט שלכם.
-2. ליד קבוצת **Changes** לחצו **+** כדי לבצע **Stage All Changes**. הקבצים יעברו אל **Staged Changes**. קובצי `bin` ו־`obj` אמורים להישאר מחוץ לרשימה בזכות `.gitignore` שהכנתם.
-3. כתבו הודעה כגון `Create first Razor Pages site` ולחצו **Commit**. בשלב הזה שומרים גרסה מקומית, לפני החיבור ל־GitHub.
-4. לאחר שהקומיט הסתיים, פתחו **View → Command Palette** ובחרו **Publish to GitHub**.
-5. אם מתבקשים להתחבר, התחברו לחשבון GitHub שלכם. בחרו **Publish to GitHub private repository**.
-6. המתינו לסיום הפרסום ופתחו את המאגר ב־GitHub. פתחו את קובץ `Pages/Index.cshtml` בתוך הפרויקט וראו שהקוד שלכם הגיע.
-7. לבדיקה נוספת, שנו פסקה בדף, שמרו, בצעו Stage וכתבו הודעת קומיט. כעת, כשהמאגר כבר מחובר, בחרו **Commit & Sync**. רעננו את המאגר ב־GitHub ובדקו שגם השינוי השני הגיע.
-
-אם מופיעה בקשה להגדיר שם ודוא״ל, חזרו ל[שתי פקודות ההגדרה](#git-user-setup), הריצו אותן ונסו שוב לבצע Commit.
-
-העלאת הקוד ל־GitHub אינה מפעילה אתר באינטרנט. את האתר מריצים במחשב שלכם דרך **Run → Run Without Debugging**.
-
-## 7. משתפים את המורה ובודקים שסיימנו
-
-1. בדף המאגר ב־GitHub פתחו **Settings → Collaborators → Add people**.
-2. שתפו את `3strategy@gmail.com` באמצעות שליחת הזמנה. הגישה תופעל אחרי שהמורה יקבל את ההזמנה.
-3. העתיקו את כתובת המאגר משורת הכתובת ושלחו אותה במקום שהמורה ביקש. המאגר נשאר **Private**.
-
-<div markdown="1" class="box-success">
-
-לפני ההמשך ודאו שאתם יכולים להראות:
-
-- את תיקיית הפרויקט במחשב ואת קובץ ה־`.csproj` שבתוכה.
-- את האתר פועל בדפדפן עם הכותרת ששיניתם.
-- את אותו קובץ ב־GitHub, את ה־Commit הראשון ואת התווית **Private**.
-- את ההזמנה למורה, ממתינה או מאושרת, במסך Collaborators.
-
-</div>
-
-<details markdown="1"><summary>מקורות לעזרה</summary>
-
-- [יצירת Razor Pages — Microsoft](https://learn.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-10.0)
-- [צעדים ראשונים ב־Git ב־VS Code](https://code.visualstudio.com/docs/sourcecontrol/quickstart)
-- [פרסום מאגר מ־VS Code](https://code.visualstudio.com/docs/sourcecontrol/repos-remotes)
-- [הזמנת שותפים למאגר — GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository)
-
-</details>
+{: .box-success}
+סיימתם כשאתם יודעים לפתוח את תיקיית הפרויקט, לזהות את קובץ ה־`.csproj` ולהריץ אתר עם הכותרת ששיניתם.
 
 ## המשך
 
-[חוזרים לשיעור המשותף: משנים את האתר ושומרים שינוי נוסף]({{ '/taba/01a-development-git/#after-setup' | relative_url }})
+[חוזרים לשיעור המשותף: משנים את האתר ובודקים בדפדפן]({{ '/taba/01a-development-git/#after-setup' | relative_url }})

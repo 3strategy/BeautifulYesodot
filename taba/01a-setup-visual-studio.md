@@ -1,44 +1,27 @@
 ---
 layout: page
-title: 'מתחילים ב־Visual Studio: פרויקט Razor ומאגר פרטי'
-subtitle: יוצרים פתרון ופרויקט, מריצים אתר ושומרים אותו ב־GitHub
+title: 'מתחילים ב־Visual Studio: פרויקט Razor ראשון'
+subtitle: יוצרים פתרון ופרויקט, מריצים אתר ומשנים כותרת
 lang: he
-tags: [CSharp, Web, Taba, Git, GitHub]
+tags: [CSharp, Web, Taba]
 track: setup
 published: true
 ---
 
 {: .box-note}
-ניצור ב־Visual Studio אתר Razor Pages חדש, נפתח אותו בדפדפן ונשמור את הקוד במאגר פרטי ב־GitHub. נתחיל בחשבון GitHub עם Gmail אישי ובהתחברות ל־Visual Studio, ניצור פרויקט דרך חלונות התוכנה ונסיים בהזמנת המורה למאגר; אין צורך בפרויקט או במאגר קיימים.
+ניצור ב־Visual Studio אתר Razor Pages חדש, נפתח אותו בדפדפן ונשנה כותרת. נתקין את כלי הפיתוח וניצור פרויקט דרך חלונות התוכנה; אין צורך בפרויקט קיים.
 
-[חזרה: סביבת הפיתוח ו־GitHub]({{ '/taba/01a-development-git/' | relative_url }})
+[חזרה: סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-git/' | relative_url }})
 
 זה המסלול ל־**Visual Studio ב־Windows**. ב־macOS, או אם בחרתם VS Code, עברו ל[מסלול VS Code]({{ '/taba/01a-setup-vscode/' | relative_url }}). מבצעים מסלול אחד בלבד.
 
-## 1. יוצרים חשבון GitHub עם Gmail אישי
-
-1. פתחו בדפדפן את [GitHub](https://github.com/) ולחצו **Sign up**.
-2. הירשמו באמצעות **כתובת ה־Gmail האישית שלכם**, שתוכלו להמשיך להשתמש בה גם בהמשך הלימודים. בחרו שם משתמש שתזהו וזכרו באיזה חשבון השתמשתם.
-3. השלימו את ההרשמה ואת אימות כתובת הדוא״ל: פתחו את תיבת ה־Gmail האישית והשתמשו בהודעה שהגיעה מ־GitHub.
-4. חזרו ל־GitHub, התחברו ובדקו שבתפריט תמונת הפרופיל מופיע שם המשתמש שלכם. עדיין אין צורך ליצור מאגר באתר.
-
-אם כבר יש לכם חשבון GitHub, השתמשו בו ובדקו ב־**Settings → Emails** שכתובת ה־Gmail האישית שלכם מחוברת ומאומתת. אין צורך לפתוח חשבון נוסף.
-
-### מתקינים את כלי הפיתוח
+## 1. מתקינים את כלי הפיתוח
 
 1. התקינו [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/) בגרסה שתומכת ב־.NET 10. אם Visual Studio כבר מותקן, פתחו **Visual Studio Installer** ובדקו אם נדרש עדכון.
 2. בחלון ההתקנה סמנו **ASP.NET and web development** ולחצו **Install**. בהתקנה קיימת לחצו **Modify**, סמנו את הרכיב והשלימו את השינוי.
 3. ודאו שמותקן [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0). אם הוא חסר, התקינו אותו ופתחו מחדש את Visual Studio.
-### מתחברים ל־Visual Studio עם אותו חשבון GitHub
 
-1. פתחו Visual Studio. במסך ההתחברות בחרו **GitHub**. אם כבר נכנסתם לתוכנה, לחצו על **Sign in** בפינה הימנית העליונה, או פתחו **File → Account Settings** והוסיפו חשבון GitHub.
-2. בחלון הדפדפן התחברו **לאותו חשבון GitHub שיצרתם עם ה־Gmail האישי** ואשרו את החיבור ל־Visual Studio.
-3. חזרו ל־Visual Studio ובדקו במסך החשבונות שמופיע שם המשתמש שלכם ב־GitHub. אם מוצג חשבון אחר, בחרו את החשבון שלכם לפני ההמשך.
-
-{: .box-success}
-לפני שיוצרים פרויקט: חשבון GitHub שלכם מאומת באמצעות ה־Gmail האישי, ואותו חשבון מופיע ב־Visual Studio. זה גם החשבון שבו נשמור את המאגר הפרטי.
-
-**פרויקט** מכיל את הקוד של האתר. **Solution / פתרון** הוא מסגרת ש־Visual Studio משתמש בה כדי לפתוח ולנהל פרויקטים. אצלנו יהיה בו פרויקט אחד. **Git** ישמור גרסאות במחשב ו־**GitHub** ישמור עותק של המאגר ברשת.
+**פרויקט** מכיל את הקוד של האתר. **Solution / פתרון** הוא מסגרת ש־Visual Studio משתמש בה כדי לפתוח ולנהל פרויקטים. אצלנו יהיה בו פרויקט אחד.
 
 ## 2. בוחרים מקום ושמות
 
@@ -136,17 +119,17 @@ Visual Studio ייצור תיקייה חיצונית לפתרון ותיקייה
 
 ## 4. בדיקה ראשונה: לוחצים על Play ורואים אתר
 
-מיד לאחר **Create**, המתינו עד שחלון הפרויקט ייפתח והטעינה תסתיים. לפני שמשנים קוד או משתפים ב־GitHub, בדקו שהפרויקט שנוצר פועל:
+מיד לאחר **Create**, המתינו עד שחלון הפרויקט ייפתח והטעינה תסתיים. לפני שמשנים קוד, בדקו שהפרויקט שנוצר פועל:
 
 1. לחצו על **המשולש הירוק ▶ (Play)** בסרגל העליון של Visual Studio.
 2. המתינו לסיום הבנייה ולהפעלת הדפדפן. בהרצה הראשונה הדבר עשוי לקחת מעט זמן.
 3. בדקו שבדפדפן מופיע דף הפתיחה של האתר עם הכותרת **Welcome**, ובשורת הכתובת מופיע `localhost` עם מספר יציאה. זה האתר שלכם, שרץ כרגע על המחשב שלכם.
 
 {: .box-success}
-**הבדיקה הצליחה:** לחצתם על Play והדף Welcome נפתח בדפדפן. הפרויקט נוצר בהצלחה ואפשר להמשיך לעבוד עליו ולשתף אותו ב־GitHub.
+**הבדיקה הצליחה:** לחצתם על Play והדף Welcome נפתח בדפדפן. הפרויקט נוצר בהצלחה ואפשר להמשיך לעבוד עליו ולנסות שינויים.
 
 {: .box-warning}
-אם האתר לא נפתח או שמופיעה שגיאת בנייה, עצרו כאן והציגו למורה את ההודעה. ממשיכים לשיתוף רק אחרי שהאתר פועל.
+אם האתר לא נפתח או שמופיעה שגיאת בנייה, עצרו כאן והציגו למורה את ההודעה. ממשיכים לעריכה רק אחרי שהאתר פועל.
 
 <details markdown="1"><summary>בהרצה הראשונה מופיעה בקשה לאישור תעודת HTTPS?</summary>
 
@@ -177,77 +160,10 @@ source/repos/
 1. ב־Solution Explorer פתחו את הפרויקט בשם שבחרתם, ואז `Pages → Index.cshtml`.
 2. בשורת הכותרת החליפו רק את `Welcome` ב־`החיות שלי` ושמרו עם **Ctrl+S**.
 3. לחצו שוב על **המשולש הירוק Play** ובדקו שבדפדפן מופיעה הכותרת החדשה.
-4. חזרו ל־Visual Studio ועצרו באמצעות **Stop** לפני שממשיכים לשיתוף.
+4. חזרו ל־Visual Studio ועצרו באמצעות **Stop** לפני שממשיכים לעריכה.
 
 {: .box-success}
-כעת גם השינוי שלכם מופיע באתר. נשמור את הגרסה הזאת במאגר הפרטי.
-
-## 5. מכינים את הפרויקט לשיתוף
-
-בחרו **File → Save All** כדי לשמור את כל הקבצים. עכשיו נעלה את הפרויקט ל־GitHub מתוך Visual Studio.
-
-## 6. יוצרים מאגר פרטי ומעלים את הפרויקט
-
-<div class="two-columns">
-<div markdown="1" class="column">
-
-בתחתית חלון Visual Studio לחצו **Add to Source Control**, ובתפריט שנפתח בחרו **Git**, כפי שמסומן בצילום. כך פותחים את חלון יצירת המאגר עבור הפרויקט שכבר יצרתם ובדקתם.
-
-</div>
-<div markdown="1" class="column">
-
-[![בתחתית Visual Studio בוחרים Add to Source Control ואז Git]({{ '/assets/img/taba/visual-studio-add-source-control.png' | relative_url }})]({{ '/assets/img/taba/visual-studio-add-source-control.png' | relative_url }})
-
-</div>
-</div>
-
-<div class="two-columns">
-<div markdown="1" class="column">
-
-בחלון **Create a Git repository**, כשהחשבון שלכם כבר מחובר, הפרטים מתמלאים אוטומטית. השאירו אותם כפי שהם.
-
-המתינו כ־**5–10 שניות** עד שהכפתור יהיה פעיל ולחצו **Create and Push**. המאגר נוצר כפרטי כברירת מחדל; אין צורך לשנות דבר.
-
-</div>
-<div markdown="1" class="column">
-
-[![חלון Create a Git repository עם חשבון מחובר, Visibility מוגדר Private וכפתור Create and Push מסומן]({{ '/assets/img/taba/visual-studio-create-and-push.png' | relative_url }})]({{ '/assets/img/taba/visual-studio-create-and-push.png' | relative_url }})
-
-</div>
-</div>
-
-{: .box-success}
-הלחיצה יוצרת את מאגר Git ושולחת את הקוד למאגר פרטי ב־GitHub. המתינו לסיום ההעלאה, ואז בדקו שהקוד הגיע.
-
-<details markdown="1"><summary>הכפתור נשאר לא פעיל או שמופיעה שגיאה?</summary>
-
-בדקו שאתם מחוברים לחשבון GitHub שלכם ושיש חיבור לאינטרנט. אם מופיעה הודעה ששם המאגר כבר קיים, או שההעלאה נכשלת, הציגו למורה את ההודעה לפני שתמשיכו.
-
-</details>
-
-## 7. מוודאים שהקוד הגיע ומשתפים את המורה
-
-1. בדפדפן פתחו GitHub, עברו לרשימת המאגרים שלכם ופתחו את `GuysRazor`.
-2. פתחו את `GuysRazor/Pages/Index.cshtml` ובדקו שהכותרת שלכם מופיעה. בדקו גם שמופיעים `.gitignore`, קובץ הפתרון וה־Commit הראשון.
-3. פתחו **Settings → Collaborators → Add people**, שתפו את `3strategy@gmail.com` באמצעות שליחת הזמנה.
-4. שלחו את כתובת המאגר במקום שהמורה ביקש. אחרי קבלת ההזמנה תהיה למורה גישה; המאגר נשאר פרטי.
-
-העלאת הקוד ל־GitHub אינה מפעילה את האתר באינטרנט. כדי לראות את האתר, ממשיכים להריץ אותו מתוך Visual Studio במחשב שלכם.
-
-<div markdown="1" class="box-success">
-
-סיימתם כשיש לכם תיקיית `GuysRazor` עם פתרון ופרויקט `GuysRazor`, אתר שרץ עם הכותרת שלכם, מאגר GitHub שמסומן **Private** ומכיל את אותו קוד, והזמנה למורה שמופיעה במסך Collaborators כממתינה או מאושרת.
-
-</div>
-
-<details markdown="1"><summary>מקורות לעזרה</summary>
-
-- [התחברות ל־Visual Studio עם GitHub](https://learn.microsoft.com/en-us/visualstudio/ide/signing-in-to-visual-studio?view=visualstudio)
-- [יצירת Razor Pages — Microsoft](https://learn.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-10.0)
-- [יצירת מאגר ופרסום מתוך Visual Studio](https://learn.microsoft.com/en-us/visualstudio/version-control/git-create-repository?view=visualstudio)
-- [הזמנת שותפים למאגר — GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository)
-
-</details>
+כעת גם השינוי שלכם מופיע באתר. שמרו את הקבצים והמשיכו לשיעור המשותף.
 
 ## איך משתמשים בשמות שלכם בשיעורים הבאים?
 
@@ -257,4 +173,4 @@ source/repos/
 
 ## המשך
 
-[חוזרים לשיעור המשותף: משנים את האתר ושומרים שינוי נוסף]({{ '/taba/01a-development-git/#after-setup' | relative_url }})
+[חוזרים לשיעור המשותף: משנים את האתר ובודקים בדפדפן]({{ '/taba/01a-development-git/#after-setup' | relative_url }})
