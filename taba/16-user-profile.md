@@ -11,8 +11,8 @@ tags:
 sequence: 160
 track: extension
 published: true
-companion_commit: bc1c1048e1ce6b28351acd3297997d99bed5a0e7
-companion_previous: a0d1d6b6f67b875ff6a4071865f989d00f3e58bd
+companion_commit: 0d1dc5725a017234ea3767a1ce3569822792c453
+companion_previous: 10290299222b2dfc8fe9982003d53340e0bbe1a9
 ---
 
 {: .box-note}
@@ -24,7 +24,7 @@ companion_previous: a0d1d6b6f67b875ff6a4071865f989d00f3e58bd
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/bc1c1048e1ce6b28351acd3297997d99bed5a0e7) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/a0d1d6b6f67b875ff6a4071865f989d00f3e58bd...bc1c1048e1ce6b28351acd3297997d99bed5a0e7)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/0d1dc5725a017234ea3767a1ce3569822792c453) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/10290299222b2dfc8fe9982003d53340e0bbe1a9...0d1dc5725a017234ea3767a1ce3569822792c453)
 {% endif %}
 
 ## מה נלמד
@@ -303,9 +303,9 @@ public class ProfileModel(UserManager<AppUser> users) : PageModel
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
 
-- [RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.Designer.cs](https://github.com/3strategy/razortaba/blob/bc1c1048e1ce6b28351acd3297997d99bed5a0e7/RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.Designer.cs)
-- [RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.cs](https://github.com/3strategy/razortaba/blob/bc1c1048e1ce6b28351acd3297997d99bed5a0e7/RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.cs)
-- [RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/bc1c1048e1ce6b28351acd3297997d99bed5a0e7/RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs)
+- [RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.Designer.cs](https://github.com/3strategy/razortaba/blob/0d1dc5725a017234ea3767a1ce3569822792c453/RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.Designer.cs)
+- [RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.cs](https://github.com/3strategy/razortaba/blob/0d1dc5725a017234ea3767a1ce3569822792c453/RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.cs)
+- [RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/0d1dc5725a017234ea3767a1ce3569822792c453/RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs)
 
 </details>
 {% endif %}

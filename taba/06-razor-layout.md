@@ -11,8 +11,8 @@ tags:
 sequence: 60
 track: core
 published: true
-companion_commit: 8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882
-companion_previous: afab7e81ccfeaf1905b522f7ac03dc134aebf8e1
+companion_commit: 2307d2e1aa18db15dd9675c618ace510fe87528c
+companion_previous: cb12bd589208363af709028b0a00a26769ff7a7d
 ---
 
 {: .box-note}
@@ -24,7 +24,7 @@ companion_previous: afab7e81ccfeaf1905b522f7ac03dc134aebf8e1
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/afab7e81ccfeaf1905b522f7ac03dc134aebf8e1...8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/2307d2e1aa18db15dd9675c618ace510fe87528c) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/cb12bd589208363af709028b0a00a26769ff7a7d...2307d2e1aa18db15dd9675c618ace510fe87528c)
 {% endif %}
 
 ## מה נלמד
@@ -43,13 +43,32 @@ companion_previous: afab7e81ccfeaf1905b522f7ac03dc134aebf8e1
 
 ## 2. מתקינים תשתית מוכנה
 
-העתיקו מהקוד המצורף את תיקיית `wwwroot/lib/mermaid`, כולל קובץ הרישיון. התקינו את שתי חבילות NuGet והוסיפו את השירות, דף Guide וקובץ JavaScript לפי השלבים שלמטה.
+Mermaid היא ספרייה מוכנה שמציירת תרשימים בדפדפן. נוסיף אותה כקבצים מקומיים לפרויקט:
+
+1. הורידו את <a href="{{ '/assets/downloads/taba/mermaid-11.17.2.zip' | relative_url }}" download>קובצי Mermaid לשיעור — גרסה 11.17.2 (ZIP)</a>.
+2. חלצו את קובץ ה־ZIP: ב־Windows לחצו עליו בכפתור הימני ובחרו **Extract All / חלץ הכול**; ב־macOS לחצו עליו פעמיים. בתוך התיקייה שחולצה תמצאו תיקייה בשם `mermaid`.
+3. העתיקו את תיקיית `mermaid` אל `wwwroot/lib` בתוך הפרויקט שלכם. העתיקו את התיקייה שחולצה, ולא את קובץ ה־ZIP. השאירו בתוכה גם את קובץ הרישיון ואת קובץ הגרסה.
+4. פתחו את התיקייה בעורך ובדקו שהתקבל המבנה הבא:
+
+```text
+wwwroot/
+└── lib/
+    └── mermaid/
+        ├── LICENSE
+        ├── VERSION.txt
+        └── mermaid.min.js
+```
+
+{: .box-note}
+ודאו שהקובץ נמצא בדיוק ב־`wwwroot/lib/mermaid/mermaid.min.js`, בלי תיקיית `mermaid` נוספת בתוכו. אין צורך להעתיק את תוכן הקובץ לעורך או לערוך אותו. ב־`VERSION.txt` מופיעה הגרסה `11.17.2`.
+
+כעת התקינו את שתי חבילות NuGet בעזרת הפקודות שבהמשך, והוסיפו את השירות, דף `Guide` וקובץ JavaScript לפי קטעי הקוד. קובצי Mermaid כבר מוכנים לשימוש; בהמשך נחבר אותם לתבנית המשותפת.
 
 Markdig ממיר Markdown ל־HTML, הרכיב מנקה אותו, והדפדפן מצייר את Mermaid. `Html.Raw` מקבל רק את התוצאה הנקייה; אין להפעיל אותו על טקסט שהגיע ישירות מטופס. התרשימים מקבלים כיוון LTR משלהם בתוך הדף העברי. תקלה בתרשים משאירה את המקור והודעת תיקון מקומית.
 
 ## 3. ממשיכים לכתוב תוכן
 
-פתחו `/Guide`. שנו את `Content/care.md`, שמרו ורעננו. כעת המאמר והתמונה מוצגים באתר עצמו.
+לאחר שסיימתם את שינויי הקוד שבהמשך, הריצו את האתר ופתחו `/Guide`. שנו את `Content/care.md`, שמרו ורעננו. כעת המאמר והתמונה מוצגים באתר עצמו.
 
 ### פקודות השלב
 
@@ -221,11 +240,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 ````diff
 --- a/RazorTaba/wwwroot/css/site.css
 +++ b/RazorTaba/wwwroot/css/site.css
-@@ -21,4 +21,12 @@ footer { border-top: 1px solid #d8dfd3; margin-top: 3rem; color: var(--leaf); }
- .lilac { background: #ebe3ee; }
- .btn { border-radius: .75rem; }
- .btn-primary { background: var(--forest); border-color: var(--forest); }
- .btn-primary:hover { background: var(--leaf); border-color: var(--leaf); }
+@@ -26,2 +26,10 @@
+ /* הכפתור הבהיר זקוק לטקסט כהה, גם כשהוא נמצא בתוך אזור הפתיחה. */
+ .intro .btn-light { color: var(--forest); }
 +
 +.markdown-content { max-width: 58rem; margin-inline: auto; }
 +.markdown-content img { max-width: min(100%, 20rem); height: auto; border-radius: 1rem; }
@@ -238,48 +255,39 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 ### `RazorTaba/RazorTaba.csproj`
 
-בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
+פקודות NuGet כבר הוסיפו לקובץ את שתי השורות מסוג `PackageReference`. כעת נוסיף גם הגדרה שתעתיק את קובצי ה־Markdown עם האתר. כדי לקבל את התוצאה הבאה אחרי הפקודות, פתחו את קובץ ה־`.csproj` של הפרויקט שלכם ו**החליפו את כל תוכנו** בקוד המלא הבא. אין להדביק אותו בנוסף לתוכן הקיים.
 
-````diff
---- a/RazorTaba/RazorTaba.csproj
-+++ b/RazorTaba/RazorTaba.csproj
-@@ -1,9 +1,17 @@
--<Project Sdk="Microsoft.NET.Sdk.Web">
--
--  <PropertyGroup>
--    <TargetFramework>net10.0</TargetFramework>
--    <Nullable>enable</Nullable>
--    <ImplicitUsings>enable</ImplicitUsings>
--  </PropertyGroup>
--
--</Project>
-+<Project Sdk="Microsoft.NET.Sdk.Web">
-+
-+  <PropertyGroup>
-+    <TargetFramework>net10.0</TargetFramework>
-+    <Nullable>enable</Nullable>
-+    <ImplicitUsings>enable</ImplicitUsings>
-+  </PropertyGroup>
-+
-+  <ItemGroup>
-+    <PackageReference Include="HtmlSanitizer" Version="9.2.1039" />
-+    <PackageReference Include="Markdig" Version="1.3.2" />
-+  </ItemGroup>
-+
-+  <ItemGroup>
-+    <Content Include="Content/**/*.md" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
-+  </ItemGroup>
-+</Project>
+````xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlSanitizer" Version="9.2.1039" />
+    <PackageReference Include="Markdig" Version="1.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Content/**/*.md" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
 ````
+
+{: .box-success}
+בדקו שיש בקובץ שני מקטעי `ItemGroup`: הראשון מכיל את שתי החבילות, והשני את שורת `Content`. סגירת המקטע השני, `</ItemGroup>`, ומיד אחריה `</Project>` נמצאות בשתי שורות רצופות, בלי שורה ריקה ביניהן. שמרו את הקובץ והריצו את הפרויקט.
 
 {% if taba_show_private_links %}
 <details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
 
-- [RazorTaba/wwwroot/lib/mermaid/LICENSE](https://github.com/3strategy/razortaba/blob/8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882/RazorTaba/wwwroot/lib/mermaid/LICENSE)
-- [RazorTaba/wwwroot/lib/mermaid/VERSION.txt](https://github.com/3strategy/razortaba/blob/8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882/RazorTaba/wwwroot/lib/mermaid/VERSION.txt)
-- [RazorTaba/wwwroot/lib/mermaid/mermaid.min.js](https://github.com/3strategy/razortaba/blob/8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882/RazorTaba/wwwroot/lib/mermaid/mermaid.min.js)
+- [RazorTaba/wwwroot/lib/mermaid/LICENSE](https://github.com/3strategy/razortaba/blob/2307d2e1aa18db15dd9675c618ace510fe87528c/RazorTaba/wwwroot/lib/mermaid/LICENSE)
+- [RazorTaba/wwwroot/lib/mermaid/VERSION.txt](https://github.com/3strategy/razortaba/blob/2307d2e1aa18db15dd9675c618ace510fe87528c/RazorTaba/wwwroot/lib/mermaid/VERSION.txt)
+- [RazorTaba/wwwroot/lib/mermaid/mermaid.min.js](https://github.com/3strategy/razortaba/blob/2307d2e1aa18db15dd9675c618ace510fe87528c/RazorTaba/wwwroot/lib/mermaid/mermaid.min.js)
 
 </details>
 {% endif %}

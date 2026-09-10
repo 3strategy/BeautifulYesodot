@@ -550,6 +550,9 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
+  # Internal Taba audit records (also covered by the docs/ directory exclusion).
+  - docs/taba-audit-repair-log.md
+  - docs/taba-reference-checkpoints.json
 
 plugins:
   - jekyll-paginate

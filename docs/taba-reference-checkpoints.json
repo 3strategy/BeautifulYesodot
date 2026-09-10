@@ -1,0 +1,121 @@
+[
+  {
+    "lesson": "05-pages-and-forms.md",
+    "original": "4519e73eaadd6ca8ac11534db6f79937b8c7561d",
+    "original_previous": "1f7107067a9abfbfe07a10bbea700175ed3a659d",
+    "corrected": "9e759fba10f1ec17fe4b851ed53e8703d06b644b",
+    "previous": "fd6683d2c183607a7a808b053c0887256179d66e"
+  },
+  {
+    "lesson": "05a-markdown.md",
+    "original": "4a0e33a8c464825ae3ddea1fe45431c43a098cb5",
+    "original_previous": "14c0156fb9c988e627079ddb03c7f84c965a00c0",
+    "corrected": "ac696838547401ac23a50a09097079f44d97d6a6",
+    "previous": "9e759fba10f1ec17fe4b851ed53e8703d06b644b"
+  },
+  {
+    "lesson": "05b-mermaid.md",
+    "original": "eeefa30a164b1441f3257d619ac151fd3c20fb5f",
+    "original_previous": "ff8ee0ab94c008191e0dca041e92380e7f7d08b4",
+    "corrected": "cb12bd589208363af709028b0a00a26769ff7a7d",
+    "previous": "ac696838547401ac23a50a09097079f44d97d6a6"
+  },
+  {
+    "lesson": "06-razor-layout.md",
+    "original": "8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882",
+    "original_previous": "afab7e81ccfeaf1905b522f7ac03dc134aebf8e1",
+    "corrected": "2307d2e1aa18db15dd9675c618ace510fe87528c",
+    "previous": "cb12bd589208363af709028b0a00a26769ff7a7d"
+  },
+  {
+    "lesson": "07-first-dynamic-page.md",
+    "original": "06e672ffeb1aa04eec860204b36dcdb1fabaca0c",
+    "original_previous": "287c690c1d3d39fd12ae46dd725f134954b5c0b4",
+    "corrected": "98ed9acb039c2d584629f2f45eeb1b0660e931f2",
+    "previous": "2307d2e1aa18db15dd9675c618ace510fe87528c"
+  },
+  {
+    "lesson": "08-animal-model.md",
+    "original": "b3bb71631ca3036ab2563cfe2d7ee21e7a7465a1",
+    "original_previous": "fc5695a907b6ab783a51ff3848f9b57fdcacaf82",
+    "corrected": "fa36fed1fc7b6642eae874a816cf782b2577e68f",
+    "previous": "98ed9acb039c2d584629f2f45eeb1b0660e931f2"
+  },
+  {
+    "lesson": "09-ef-sqlite.md",
+    "original": "6f794b34fd8f60f5db34f48ba16971cda347fe40",
+    "original_previous": "ce3e2e502543337eda51497f1f27bdd58b513464",
+    "corrected": "b5f18f08235b92724f86fba55cff23d9749b2818",
+    "previous": "fa36fed1fc7b6642eae874a816cf782b2577e68f"
+  },
+  {
+    "lesson": "10-create-validation.md",
+    "original": "c23009a7f8491b6ca49d54b01e7c9bb0001af7b0",
+    "original_previous": "a604aff5a09479be4863c6da3e9dd3d5e5cd0008",
+    "corrected": "b100a1f3a7c7c373dc73fe38808d099969f1c161",
+    "previous": "b5f18f08235b92724f86fba55cff23d9749b2818"
+  },
+  {
+    "lesson": "11-edit-delete.md",
+    "original": "68100fd563b4748c2a344551c3079f524bc1ab5f",
+    "original_previous": "a0b42b62d249a9701b5e2fc371874ede541a006c",
+    "corrected": "7695e51dc66a673488e2b6cb81e7fdf278858188",
+    "previous": "b100a1f3a7c7c373dc73fe38808d099969f1c161"
+  },
+  {
+    "lesson": "12-core-project.md",
+    "original": "061904be9599de89461542872c842a5de62f827a",
+    "original_previous": "6afae43d31a14175d27f5ad7fb8f8bc9fea2a101",
+    "corrected": "da271f8fed2d7552474c7527cc76fbd696058959",
+    "previous": "7695e51dc66a673488e2b6cb81e7fdf278858188"
+  },
+  {
+    "lesson": "13-keepers-animals.md",
+    "original": "7445c36e391c81ff2c6516e75690662178c9b259",
+    "original_previous": "f1fa21a30fd2d4fbb8d740efa4f32c03ffa651b4",
+    "corrected": "ab967ee301b889fdeefc6fd38d1cc7bb91f75b58",
+    "previous": "da271f8fed2d7552474c7527cc76fbd696058959"
+  },
+  {
+    "lesson": "13a-keeper-crud.md",
+    "original": "82d6db226876efbf7228a9f4d7508296a28e0164",
+    "original_previous": "be7cbe0a753408d51078a3d2660cbbb102b0ac95",
+    "corrected": "ea76702ea4687c3d0837a8fb6a09beb012f273e4",
+    "previous": "ab967ee301b889fdeefc6fd38d1cc7bb91f75b58"
+  },
+  {
+    "lesson": "14-filtering.md",
+    "original": "ea85e06dae377e4eca5cdeb7b1ec6222cfcc9668",
+    "original_previous": "f3905d476256306740393fad05fd80ced82a27ab",
+    "corrected": "96c6b073ce3ffe6d0e20bbbc65c216d906695fb1",
+    "previous": "ea76702ea4687c3d0837a8fb6a09beb012f273e4"
+  },
+  {
+    "lesson": "15-local-identity.md",
+    "original": "3ca22602bb94d32cd8cacf20820425e5ecfbfd79",
+    "original_previous": "4a453d577b30a8120ccbf26b72e2d831168ba7bd",
+    "corrected": "10290299222b2dfc8fe9982003d53340e0bbe1a9",
+    "previous": "96c6b073ce3ffe6d0e20bbbc65c216d906695fb1"
+  },
+  {
+    "lesson": "16-user-profile.md",
+    "original": "bc1c1048e1ce6b28351acd3297997d99bed5a0e7",
+    "original_previous": "a0d1d6b6f67b875ff6a4071865f989d00f3e58bd",
+    "corrected": "0d1dc5725a017234ea3767a1ce3569822792c453",
+    "previous": "10290299222b2dfc8fe9982003d53340e0bbe1a9"
+  },
+  {
+    "lesson": "17-authorization.md",
+    "original": "3cb5c6fc63600dc58a3f04cf70d0d505107ba421",
+    "original_previous": "19036f631297cf0242188a7502e8ca7cb6878e3f",
+    "corrected": "13ffe0315c33035cba469d2ad6b365903fbe1733",
+    "previous": "0d1dc5725a017234ea3767a1ce3569822792c453"
+  },
+  {
+    "lesson": "18-google-login.md",
+    "original": "a815e72d42242e1186a32a93523b1f6d7b84cc63",
+    "original_previous": "921c2b1ff5cee2ef9e8ecf800788b694aa216d4e",
+    "corrected": "32f596ac7fef77d5b5c2e26cfd56275dce1962a8",
+    "previous": "13ffe0315c33035cba469d2ad6b365903fbe1733"
+  }
+]

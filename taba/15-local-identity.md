@@ -11,8 +11,8 @@ tags:
 sequence: 150
 track: extension
 published: true
-companion_commit: 3ca22602bb94d32cd8cacf20820425e5ecfbfd79
-companion_previous: 4a453d577b30a8120ccbf26b72e2d831168ba7bd
+companion_commit: 10290299222b2dfc8fe9982003d53340e0bbe1a9
+companion_previous: 96c6b073ce3ffe6d0e20bbbc65c216d906695fb1
 ---
 
 {: .box-note}
@@ -24,7 +24,7 @@ companion_previous: 4a453d577b30a8120ccbf26b72e2d831168ba7bd
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/3ca22602bb94d32cd8cacf20820425e5ecfbfd79) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/4a453d577b30a8120ccbf26b72e2d831168ba7bd...3ca22602bb94d32cd8cacf20820425e5ecfbfd79)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/10290299222b2dfc8fe9982003d53340e0bbe1a9) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/96c6b073ce3ffe6d0e20bbbc65c216d906695fb1...10290299222b2dfc8fe9982003d53340e0bbe1a9)
 {% endif %}
 
 ## מה נלמד
@@ -326,10 +326,10 @@ else
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
 
-- [RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.Designer.cs](https://github.com/3strategy/razortaba/blob/3ca22602bb94d32cd8cacf20820425e5ecfbfd79/RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.Designer.cs)
-- [RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.cs](https://github.com/3strategy/razortaba/blob/3ca22602bb94d32cd8cacf20820425e5ecfbfd79/RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.cs)
-- [RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/3ca22602bb94d32cd8cacf20820425e5ecfbfd79/RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs)
-- [RazorTaba/RazorTaba.csproj](https://github.com/3strategy/razortaba/blob/3ca22602bb94d32cd8cacf20820425e5ecfbfd79/RazorTaba/RazorTaba.csproj)
+- [RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.Designer.cs](https://github.com/3strategy/razortaba/blob/10290299222b2dfc8fe9982003d53340e0bbe1a9/RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.Designer.cs)
+- [RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.cs](https://github.com/3strategy/razortaba/blob/10290299222b2dfc8fe9982003d53340e0bbe1a9/RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.cs)
+- [RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/10290299222b2dfc8fe9982003d53340e0bbe1a9/RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs)
+- [RazorTaba/RazorTaba.csproj](https://github.com/3strategy/razortaba/blob/10290299222b2dfc8fe9982003d53340e0bbe1a9/RazorTaba/RazorTaba.csproj)
 
 </details>
 {% endif %}

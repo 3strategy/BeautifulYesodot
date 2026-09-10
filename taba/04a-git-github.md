@@ -7,6 +7,8 @@ tags: [CSharp, Web, Taba, Git, GitHub]
 sequence: 45
 track: core
 published: true
+companion_commit: fd6683d2c183607a7a808b053c0887256179d66e
+companion_previous: e0870b94577d330d3609d697d4a16c8c19c754ab
 ---
 
 {: .box-note}
@@ -15,6 +17,17 @@ published: true
 <!-- lesson-back:start -->
 [חזרה: אתר שנראה טוב עם Bootstrap]({{ '/taba/04-bootstrap/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
+
+{% include taba-private-links-visibility.html %}
+{% if taba_show_private_links %}
+[קוד השלב](https://github.com/3strategy/razortaba/tree/fd6683d2c183607a7a808b053c0887256179d66e) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/e0870b94577d330d3609d697d4a16c8c19c754ab...fd6683d2c183607a7a808b053c0887256179d66e)
+{% endif %}
+
+<!-- Reference checkpoint: application source remains at the completed Bootstrap
+state; the repository-root .gitignore is the taught file change. Personal Git
+identity, commit IDs/messages, remotes and collaboration settings are not source
+files in this checkpoint. Verify those workflow outcomes separately; a source
+diff alone does not establish successful publication or collaborator access. -->
 
 ## בוחרים את הפרויקט שנמשיך לפתח
 
@@ -77,13 +90,21 @@ git config --global user.email "yourname@gmail.com"
 **/bin/
 **/obj/
 .vs/
+artifacts/
 *.db
 *.db-*
 *.sqlite
 *.sqlite3
 .env
 .env.*
+**/appsettings.Local.json
+**/secrets.json
+node_modules/
+.DS_Store
 ```
+
+{: .box-warning}
+אל תשמרו סיסמאות או מפתחות בקוד. `.gitignore` עוזר להשאיר קבצים מקומיים מחוץ לקומיטים חדשים, אך אינו מוציא מההיסטוריה קובץ שכבר נשמר ב־Commit. אם קובץ פרטי כבר מופיע בהיסטוריה, עצרו לפני Push והראו למורה.
 
 
 ### יוצרים מאגר מקומי — בוחרים את העורך שלכם
@@ -117,6 +138,7 @@ git config --global user.email "yourname@gmail.com"
 2. פתחו **Source Control** ב־VS Code או **Git Changes** ב־Visual Studio ולחצו על הקובץ כדי לראות את ה־Diff.
 3. הסבירו איזו שורה השתנתה. בצעו Stage ו־Commit עם הודעה שמתארת את השינוי.
 4. ב־VS Code פתחו את **Source Control Graph**; ב־Visual Studio פתחו **Git → View Branch History**. מצאו את הגרסאות ששמרתם.
+5. לסיום התרגול, החזירו בעורך את המשפט לנוסח שהיה לפני הניסוי. שמרו, בצעו Stage ו־Commit עם הודעה כמו `Restore text after Git practice`. בהיסטוריה נשארות גם גרסת הניסוי וגם גרסת החזרה, ובאתר שוב מופיע התוכן שבחרתם בתחילת השיעור.
 
 ### ניסוי קטן: חוזרים לגרסה ששמרנו
 
@@ -186,6 +208,8 @@ git config --global user.email "yourname@gmail.com"
 
 שנו פסקה, שמרו ובדקו בדפדפן. בדקו Diff, בצעו Stage ו־Commit. לאחר מכן בחרו **Source Control → … → Push** ב־VS Code או **Git → Push** ב־Visual Studio. רעננו את המאגר ב־GitHub וודאו שגם השינוי החדש הגיע.
 
+בסיום בדיקת ההעלאה, החזירו בעורך את הפסקה לנוסח שבחרתם לפני הניסוי. שמרו, בצעו Stage ו־Commit, ואז Push. בדקו ב־GitHub שגם גרסת החזרה נמצאת בהיסטוריה. כך נמשיך לשיעור הבא עם אותו תוכן ועיצוב, אחרי שהתנסינו בשמירה ובהעלאה של שינויים.
+
 ## ממשיכים במחשב הזה או במחשב נוסף
 
 **Pull** מקבל את הגרסאות שהועלו ל־GitHub. **Clone** יוצר במחשב נוסף עותק של המאגר ושל ההיסטוריה שלו.
@@ -211,6 +235,9 @@ git config --global user.email "yourname@gmail.com"
 לאורך השנה נדרשים לפחות 50 commits משמעותיים. מתחילים לצבור אותם עכשיו; אין צורך ליצור בדיעבד גרסאות לניסויים הקודמים או לפצל שינוי חסר ערך כדי להגדיל מונה.
 
 ## בדיקת הבנה
+
+{: .box-note}
+לפני המעבר לשיעור הבא בדקו שתוכן האתר והעיצוב חזרו למצב שבחרתם בתחילת השיעור, שקובץ `.gitignore` שמור במאגר, ושאין שינויים ממתינים ב־Source Control או ב־Git Changes. ההיסטוריה נשארת ומציגה את הניסויים ואת החזרה מהם.
 
 הראו גרסה ששמרתם במחשב ואת אותה גרסה ב־GitHub. הסבירו מה ההבדל בין Save, Commit ו־Push, ואיזו פעולה החזירה את הכותרת אחרי הניסוי.
 

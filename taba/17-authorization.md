@@ -11,8 +11,8 @@ tags:
 sequence: 170
 track: extension
 published: true
-companion_commit: 3cb5c6fc63600dc58a3f04cf70d0d505107ba421
-companion_previous: 19036f631297cf0242188a7502e8ca7cb6878e3f
+companion_commit: 13ffe0315c33035cba469d2ad6b365903fbe1733
+companion_previous: 0d1dc5725a017234ea3767a1ce3569822792c453
 ---
 
 {: .box-note}
@@ -24,7 +24,7 @@ companion_previous: 19036f631297cf0242188a7502e8ca7cb6878e3f
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/3cb5c6fc63600dc58a3f04cf70d0d505107ba421) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/19036f631297cf0242188a7502e8ca7cb6878e3f...3cb5c6fc63600dc58a3f04cf70d0d505107ba421)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/13ffe0315c33035cba469d2ad6b365903fbe1733) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/0d1dc5725a017234ea3767a1ce3569822792c453...13ffe0315c33035cba469d2ad6b365903fbe1733)
 {% endif %}
 
 ## מה נלמד
@@ -416,9 +416,9 @@ dotnet ef database update --context AppDbContext --project RazorTaba
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
 
-- [RazorTaba/Migrations/20260905070613_RecordOwnership.Designer.cs](https://github.com/3strategy/razortaba/blob/3cb5c6fc63600dc58a3f04cf70d0d505107ba421/RazorTaba/Migrations/20260905070613_RecordOwnership.Designer.cs)
-- [RazorTaba/Migrations/20260905070613_RecordOwnership.cs](https://github.com/3strategy/razortaba/blob/3cb5c6fc63600dc58a3f04cf70d0d505107ba421/RazorTaba/Migrations/20260905070613_RecordOwnership.cs)
-- [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/3cb5c6fc63600dc58a3f04cf70d0d505107ba421/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
+- [RazorTaba/Migrations/20260905070613_RecordOwnership.Designer.cs](https://github.com/3strategy/razortaba/blob/13ffe0315c33035cba469d2ad6b365903fbe1733/RazorTaba/Migrations/20260905070613_RecordOwnership.Designer.cs)
+- [RazorTaba/Migrations/20260905070613_RecordOwnership.cs](https://github.com/3strategy/razortaba/blob/13ffe0315c33035cba469d2ad6b365903fbe1733/RazorTaba/Migrations/20260905070613_RecordOwnership.cs)
+- [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/13ffe0315c33035cba469d2ad6b365903fbe1733/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
 
 </details>
 {% endif %}

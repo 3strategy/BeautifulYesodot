@@ -11,8 +11,8 @@ tags:
 sequence: 90
 track: core
 published: true
-companion_commit: 6f794b34fd8f60f5db34f48ba16971cda347fe40
-companion_previous: ce3e2e502543337eda51497f1f27bdd58b513464
+companion_commit: b5f18f08235b92724f86fba55cff23d9749b2818
+companion_previous: fa36fed1fc7b6642eae874a816cf782b2577e68f
 ---
 
 {: .box-note}
@@ -24,7 +24,7 @@ companion_previous: ce3e2e502543337eda51497f1f27bdd58b513464
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/6f794b34fd8f60f5db34f48ba16971cda347fe40) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/ce3e2e502543337eda51497f1f27bdd58b513464...6f794b34fd8f60f5db34f48ba16971cda347fe40)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/b5f18f08235b92724f86fba55cff23d9749b2818) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/fa36fed1fc7b6642eae874a816cf782b2577e68f...b5f18f08235b92724f86fba55cff23d9749b2818)
 {% endif %}
 
 ## מה נלמד
@@ -60,6 +60,11 @@ dotnet tool install dotnet-ef --version 10.0.10
 dotnet ef migrations add InitialAnimals --project RazorTaba
 dotnet ef database update --project RazorTaba
 ```
+
+{: .box-note}
+הפקודה `migrations add InitialAnimals` יוצרת בתיקיית `Migrations` שני קבצים ששמותיהם מתחילים בתאריך ובשעה ומסתיימים ב־`_InitialAnimals.cs` וב־`_InitialAnimals.Designer.cs`. המספר בתחילת השם יהיה שונה בכל יצירה — זה תקין. השאירו את השמות ואת מזהה המיגרציה כפי שנוצרו אצלכם; אין לשנות אותם כדי להתאים לצילום או לדוגמה. בנוסף נוצר `AppDbContextModelSnapshot.cs`, שמתאר את מבנה המודל הנוכחי.
+
+לאחר `database update`, בדקו שנוצר `App.db` בתיקיית הפרויקט. שמרו ב־Git את קובצי `Migrations`; מסד הנתונים המקומי נשאר מחוץ למאגר, לפי `.gitignore`.
 
 ## השינויים בקוד
 
@@ -164,11 +169,11 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
 
-- [RazorTaba/Migrations/20260905065453_InitialAnimals.Designer.cs](https://github.com/3strategy/razortaba/blob/6f794b34fd8f60f5db34f48ba16971cda347fe40/RazorTaba/Migrations/20260905065453_InitialAnimals.Designer.cs)
-- [RazorTaba/Migrations/20260905065453_InitialAnimals.cs](https://github.com/3strategy/razortaba/blob/6f794b34fd8f60f5db34f48ba16971cda347fe40/RazorTaba/Migrations/20260905065453_InitialAnimals.cs)
-- [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/6f794b34fd8f60f5db34f48ba16971cda347fe40/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
-- [RazorTaba/RazorTaba.csproj](https://github.com/3strategy/razortaba/blob/6f794b34fd8f60f5db34f48ba16971cda347fe40/RazorTaba/RazorTaba.csproj)
-- [dotnet-tools.json](https://github.com/3strategy/razortaba/blob/6f794b34fd8f60f5db34f48ba16971cda347fe40/dotnet-tools.json)
+- [RazorTaba/Migrations/20260905065453_InitialAnimals.Designer.cs](https://github.com/3strategy/razortaba/blob/b5f18f08235b92724f86fba55cff23d9749b2818/RazorTaba/Migrations/20260905065453_InitialAnimals.Designer.cs)
+- [RazorTaba/Migrations/20260905065453_InitialAnimals.cs](https://github.com/3strategy/razortaba/blob/b5f18f08235b92724f86fba55cff23d9749b2818/RazorTaba/Migrations/20260905065453_InitialAnimals.cs)
+- [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/b5f18f08235b92724f86fba55cff23d9749b2818/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
+- [RazorTaba/RazorTaba.csproj](https://github.com/3strategy/razortaba/blob/b5f18f08235b92724f86fba55cff23d9749b2818/RazorTaba/RazorTaba.csproj)
+- [dotnet-tools.json](https://github.com/3strategy/razortaba/blob/b5f18f08235b92724f86fba55cff23d9749b2818/dotnet-tools.json)
 
 </details>
 {% endif %}

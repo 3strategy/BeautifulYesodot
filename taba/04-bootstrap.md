@@ -11,7 +11,7 @@ tags:
 sequence: 40
 track: core
 published: true
-companion_commit: 98aeb85bf53ca294a7a42f6f9b75eec36f054250
+companion_commit: e0870b94577d330d3609d697d4a16c8c19c754ab
 companion_previous: c80e5ea647000b07646c97f41b4ab091327319f8
 ---
 
@@ -24,7 +24,7 @@ companion_previous: c80e5ea647000b07646c97f41b4ab091327319f8
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/98aeb85bf53ca294a7a42f6f9b75eec36f054250) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/c80e5ea647000b07646c97f41b4ab091327319f8...98aeb85bf53ca294a7a42f6f9b75eec36f054250)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/e0870b94577d330d3609d697d4a16c8c19c754ab) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/c80e5ea647000b07646c97f41b4ab091327319f8...e0870b94577d330d3609d697d4a16c8c19c754ab)
 {% endif %}
 
 ## מה נלמד
@@ -130,26 +130,26 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 ## בדיקת ניגודיות של הכפתור
 
-בדקו את צבע הטקסט בכפתור הבהיר. הכלל `.intro a` חל גם עליו; הוסיפו כלל ממוקד יותר כדי שהטקסט בכפתור יהיה כהה וקריא.
+בדקו את צבע הטקסט בכפתור הבהיר „מכירים את החיות”. הכלל `.intro a` חל גם עליו וצובע את הטקסט בצבע ההדגשה. כדי לקבל טקסט כהה על הרקע הבהיר, פתחו את `wwwroot/css/site.css` והוסיפו בסוף הקובץ, אחרי הכלל `.btn-primary:hover`, את ההערה ואת הכלל הממוקד שמופיעים כאן. השאירו את הכללים הקיימים במקומם.
 
 {% if taba_show_private_links %}
-[השינוי בקוד](https://github.com/3strategy/razortaba/commit/6d9c5e4efd58b3b4530ea77898c606ed97fe7eb6)
+[השינוי בקוד](https://github.com/3strategy/razortaba/commit/e0870b94577d330d3609d697d4a16c8c19c754ab)
 {% endif %}
 
 ````diff
-diff --git a/RazorTaba/wwwroot/css/site.css b/RazorTaba/wwwroot/css/site.css
-index e75fa54..67b88ae 100644
 --- a/RazorTaba/wwwroot/css/site.css
 +++ b/RazorTaba/wwwroot/css/site.css
-@@ -29,4 +29,7 @@ footer { border-top: 1px solid #d8dfd3; margin-top: 3rem; color: var(--leaf); }
- .markdown-content th, .markdown-content td { padding: .6rem; border-bottom: 1px solid #d8dfd3; text-align: right; }
- pre { direction: ltr; text-align: left; background: #eef1e9; padding: 1rem; overflow: auto; }
- .mermaid-diagram { overflow-x: auto; text-align: center; margin-block: 1.5rem; }
- .mermaid-diagram svg { max-width: 100%; height: auto; }
+@@ -22,3 +22,6 @@
+ .btn { border-radius: .75rem; }
+ .btn-primary { background: var(--forest); border-color: var(--forest); }
+ .btn-primary:hover { background: var(--leaf); border-color: var(--leaf); }
 +
 +/* הכפתור הבהיר זקוק לטקסט כהה, גם כשהוא נמצא בתוך אזור הפתיחה. */
 +.intro .btn-light { color: var(--forest); }
 ````
+
+{: .box-success}
+שמרו ורעננו את הדף. ודאו שהטקסט בכפתור הבהיר כהה וקריא ושהלחיצה עליו עדיין גוללת אל הכרטיסים. הכלל החדש חל רק על כפתור עם המחלקה `btn-light` שנמצא בתוך אזור עם המחלקה `intro`.
 
 <!-- teacher-notes:start
 class_periods: 3

@@ -6,8 +6,8 @@ lang: he
 sequence: 131
 track: extension
 published: true
-companion_commit: 82d6db226876efbf7228a9f4d7508296a28e0164
-companion_previous: be7cbe0a753408d51078a3d2660cbbb102b0ac95
+companion_commit: ea76702ea4687c3d0837a8fb6a09beb012f273e4
+companion_previous: ab967ee301b889fdeefc6fd38d1cc7bb91f75b58
 ---
 
 {: .box-note}
@@ -19,7 +19,7 @@ companion_previous: be7cbe0a753408d51078a3d2660cbbb102b0ac95
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/82d6db226876efbf7228a9f4d7508296a28e0164) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/be7cbe0a753408d51078a3d2660cbbb102b0ac95...82d6db226876efbf7228a9f4d7508296a28e0164)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/ea76702ea4687c3d0837a8fb6a09beb012f273e4) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/ab967ee301b889fdeefc6fd38d1cc7bb91f75b58...ea76702ea4687c3d0837a8fb6a09beb012f273e4)
 {% endif %}
 
 ## מה נלמד

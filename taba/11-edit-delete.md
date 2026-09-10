@@ -11,8 +11,8 @@ tags:
 sequence: 110
 track: core
 published: true
-companion_commit: 68100fd563b4748c2a344551c3079f524bc1ab5f
-companion_previous: a0b42b62d249a9701b5e2fc371874ede541a006c
+companion_commit: 7695e51dc66a673488e2b6cb81e7fdf278858188
+companion_previous: b100a1f3a7c7c373dc73fe38808d099969f1c161
 ---
 
 {: .box-note}
@@ -24,7 +24,7 @@ companion_previous: a0b42b62d249a9701b5e2fc371874ede541a006c
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/68100fd563b4748c2a344551c3079f524bc1ab5f) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/a0b42b62d249a9701b5e2fc371874ede541a006c...68100fd563b4748c2a344551c3079f524bc1ab5f)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/7695e51dc66a673488e2b6cb81e7fdf278858188) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/b100a1f3a7c7c373dc73fe38808d099969f1c161...7695e51dc66a673488e2b6cb81e7fdf278858188)
 {% endif %}
 
 ## מה נלמד

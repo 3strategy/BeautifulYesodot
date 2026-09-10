@@ -11,8 +11,8 @@ tags:
 sequence: 130
 track: extension
 published: true
-companion_commit: 7445c36e391c81ff2c6516e75690662178c9b259
-companion_previous: f1fa21a30fd2d4fbb8d740efa4f32c03ffa651b4
+companion_commit: ab967ee301b889fdeefc6fd38d1cc7bb91f75b58
+companion_previous: da271f8fed2d7552474c7527cc76fbd696058959
 ---
 
 {: .box-note}
@@ -24,7 +24,7 @@ companion_previous: f1fa21a30fd2d4fbb8d740efa4f32c03ffa651b4
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/7445c36e391c81ff2c6516e75690662178c9b259) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/f1fa21a30fd2d4fbb8d740efa4f32c03ffa651b4...7445c36e391c81ff2c6516e75690662178c9b259)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/ab967ee301b889fdeefc6fd38d1cc7bb91f75b58) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/da271f8fed2d7552474c7527cc76fbd696058959...ab967ee301b889fdeefc6fd38d1cc7bb91f75b58)
 {% endif %}
 
 ## מה נלמד
@@ -322,9 +322,9 @@ public class Keeper
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
 
-- [RazorTaba/Migrations/20260905070131_AddKeepers.Designer.cs](https://github.com/3strategy/razortaba/blob/7445c36e391c81ff2c6516e75690662178c9b259/RazorTaba/Migrations/20260905070131_AddKeepers.Designer.cs)
-- [RazorTaba/Migrations/20260905070131_AddKeepers.cs](https://github.com/3strategy/razortaba/blob/7445c36e391c81ff2c6516e75690662178c9b259/RazorTaba/Migrations/20260905070131_AddKeepers.cs)
-- [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/7445c36e391c81ff2c6516e75690662178c9b259/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
+- [RazorTaba/Migrations/20260905070131_AddKeepers.Designer.cs](https://github.com/3strategy/razortaba/blob/ab967ee301b889fdeefc6fd38d1cc7bb91f75b58/RazorTaba/Migrations/20260905070131_AddKeepers.Designer.cs)
+- [RazorTaba/Migrations/20260905070131_AddKeepers.cs](https://github.com/3strategy/razortaba/blob/ab967ee301b889fdeefc6fd38d1cc7bb91f75b58/RazorTaba/Migrations/20260905070131_AddKeepers.cs)
+- [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/ab967ee301b889fdeefc6fd38d1cc7bb91f75b58/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
 
 </details>
 {% endif %}

@@ -136,6 +136,20 @@ dotnet watch --launch-profile http
 </html>
 ````
 
+### `RazorTaba/wwwroot/css/site.css`
+
+פתחו בפרויקט שלכם את `wwwroot → css → site.css`. זהו קובץ העיצוב שאליו קישרנו מתוך `_Layout.cshtml`. התבנית יצרה בו כמה כללי עיצוב; כעת **החליפו את כל תוכנו** בשתי השורות הבאות ושמרו:
+
+````css
+/* נשנה את העיצוב בשיעור CSS. */
+body { font-family: Arial, sans-serif; }
+````
+
+השורה הראשונה היא הערה שאינה משנה את הדף. השורה השנייה בוחרת גופן לטקסט שבגוף הדף. אם Arial אינו זמין במחשב, הדפדפן יבחר גופן ממשפחת `sans-serif`.
+
+{: .box-success}
+בדקו שב־`site.css` נשארו רק שתי השורות האלה. שמרו ורעננו את האתר: הכותרת, הפסקה והתמונה עדיין מופיעות, והטקסט משתמש בגופן שהגדרתם.
+
 ### `RazorTaba/Program.cs`
 
 פתחו את `RazorTaba/Program.cs` הקיים והחליפו את תוכנו בתוכן הבא:
@@ -200,7 +214,6 @@ app.Run();
 - [RazorTaba/RazorTaba.csproj](https://github.com/3strategy/razortaba/blob/979d543d83d7d7c9e4f722b5400c60c4253b78a2/RazorTaba/RazorTaba.csproj)
 - [RazorTaba/appsettings.Development.json](https://github.com/3strategy/razortaba/blob/979d543d83d7d7c9e4f722b5400c60c4253b78a2/RazorTaba/appsettings.Development.json)
 - [RazorTaba/appsettings.json](https://github.com/3strategy/razortaba/blob/979d543d83d7d7c9e4f722b5400c60c4253b78a2/RazorTaba/appsettings.json)
-- [RazorTaba/wwwroot/css/site.css](https://github.com/3strategy/razortaba/blob/979d543d83d7d7c9e4f722b5400c60c4253b78a2/RazorTaba/wwwroot/css/site.css)
 - [RazorTaba/wwwroot/favicon.ico](https://github.com/3strategy/razortaba/blob/979d543d83d7d7c9e4f722b5400c60c4253b78a2/RazorTaba/wwwroot/favicon.ico)
 - [RazorTaba/wwwroot/images/fox.svg](https://github.com/3strategy/razortaba/blob/979d543d83d7d7c9e4f722b5400c60c4253b78a2/RazorTaba/wwwroot/images/fox.svg)
 - [RazorTaba/wwwroot/js/site.js](https://github.com/3strategy/razortaba/blob/979d543d83d7d7c9e4f722b5400c60c4253b78a2/RazorTaba/wwwroot/js/site.js)
