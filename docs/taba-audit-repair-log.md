@@ -7,10 +7,14 @@ Student: `01a08a00-2d65-7b50-9256-fced4eb1d573` (Audit Taba tutorials as student
 The earlier `/home/stra/repos/taba-student-audit` path is a preserved backup after
 the lesson-09 environment repair. Do not edit either copy as coordinator.
 
-**Pending user decision:** lesson 09 generates date/time migration IDs. The
-coordinator has prepared/verified a narrowly scoped comparison normalization but
-has NOT authorized it under the original perfect-match criterion. Do not resume
-the student or repeat the question until the user answers. Monitor quietly.
+**User authorized resumption on 2026-09-10:** after the timestamp comparison
+question, the user instructed: “and now unblock the student agent and continue
+repairing on him.” Migration timestamps may be mapped for comparison only:
+match each generated filename pair and its Migration attribute by migration name
+and DbContext, preserving one-to-one correspondence and migration order. All
+other source, migration operations, model snapshots and versions must still match.
+Report the mapping; never rename student files or change database history to fit
+the reference. Continue the sequential audit and repair new substantive blockers.
 
 The user authorizes this coordinator to repair reported tutorial defects and request
 student retries after validation. Preserve the student's sequential reading and
@@ -199,3 +203,168 @@ reports directly. Pause the heartbeat when the audit completes or the user stops
 - Asking the user to approve this narrow comparison normalization rather than
   silently changing the requested perfect-match criterion. Student told to remain
   halted pending the answer; no repeated prompts or retries while pending.
+- Resolved: user subsequently instructed the coordinator to unblock the student
+  and continue repairs. Narrow timestamp-ID mapping is authorized as described
+  above. Retry/resume message sent; await independent student verification.
+
+## 2026-09-10 — lesson 09: false collapsed-line comparison report
+
+- After authorized resumption, the student reported the reference Designer was
+  one line while its own file had 47 lines. Direct raw Git-blob inspection disproved
+  this: both files have 1474 bytes and 47 LF bytes and match with approved ID/EOL
+  mapping. No tutorial or application repair was warranted.
+- Added neutral read-only evaluation tooling outside the site:
+  `C:\Temp\taba-audit-compare.py`. Run through WSL Python, passing only the current
+  lesson, `/mnt/c/Temp/taba-student-audit`, `/home/stra/repos/razortaba`, and
+  `--map-migration-ids` for the authorized comparison. It derives the current pin
+  from the supplied lesson and preserves raw bytes through subprocess output.
+- Scope: RazorTaba, RazorTaba.Core, root .gitignore and tool manifest; exclude
+  generated build output/local databases. Student must report any new taught
+  project outside this scope. Missing/extra files and all other bytes remain strict.
+- 100 reference and 100 student files match, with only the two recorded migration
+  path mappings. Eight in-memory checks confirm genuine content/formatting,
+  model-snapshot, missing-file and extra-file differences are rejected.
+- Sent the student exact invocation to repeat independently, then resume on YES.
+  No student files or database history were changed. Await its result.
+
+## 2026-09-10 — lesson 10: reference-only trailing space
+
+- Student passed 09 using the byte-preserving comparison, then reported one
+  lesson-10 difference: reference Create.cshtml starts `@page ` while the correct
+  lesson snippet and student output start `@page`. Checkpoint `c5215d7`.
+- Confirmed all ten checkpoints from 10 through 18 inherited this byte. Created
+  corrected checkpoints, removing only that ASCII space in each original snapshot.
+  All ten application builds passed. No broad whitespace normalization was added.
+- Published `codex/taba-create-page-checkpoints`, latest documentation commit
+  `be75204`; existing branches/main/history preserved. Validation worktree now
+  uses this branch. Updated current/previous references and all lesson mirrors;
+  retained superseded pins in docs/taba-reference-checkpoints.json.
+- New 10 pin `74695cb50e2a89e83e455430447e06233becc92d`. Comparator confirms all
+  104 reference/student files match, mapping the two migration pairs by authorized
+  IDs only. Jekyll and scoped whitespace checks passed.
+- Retry sent for independent lesson-10 comparison. Student application/database
+  untouched. Await new student report; no duplicate retries.
+- 12:47 heartbeat: retry turn `01a08ab1-6d8f-7ae3-ac9b-65485afc2157` was
+  completed/idle, but app readers returned no report text. Student HEAD remained
+  `c5215d7`, with uncommitted lesson-11 CRUD files. Requested its missing outcome
+  once, explicitly without replaying completed work. Await that response rather
+  than inferring a pass or editing its project.
+- Student response: 10 is **YES** against `74695cb` with the approved mapping.
+  Lesson 11 has no valid verdict yet: the student noticed it condensed displayed
+  snippets instead of reproducing them. It will redo those from the current
+  lesson before building/comparing. This is a self-reported audit execution error,
+  not an established tutorial defect; no tutorial repair or repeated retry needed.
+- 12:50: the status-response turn ended idle, so sent one explicit instruction
+  to perform lesson 11 now from checkpoint c5215d7, correcting its own
+  transcription before build/runtime/comparison checks. Confirmed active turn
+  01a08ab9-fa0f-7281-a207-16354686a650; wait cursor
+  76a32c56-6455-41b8-8f21-48eabc164947:10. Heartbeat remains ACTIVE.
+
+## 2026-09-10 — lessons 11 and 12 pass; continue 13
+
+- 12:57 heartbeat found the 11 retry completed/idle (cursor :11). App readers
+  again returned empty items; recovered the student assistant's report from its
+  local session transcript, without replaying completed steps.
+- Student reports 11 YES: build passes and all 110 scoped files match 5d8e921;
+  local checkpoint 18a2175. Reports 12 YES for unchanged application scope at
+  0c0c792. Lesson 12 teacher-only assessment/test files are outside that scope;
+  this does not establish every personal, paired, remote or runtime exercise.
+- Student had read linked lesson 13 but ended merely ready to apply it. Sent one
+  concrete continuation instruction to execute 13 and subsequent linked lessons
+  until a real NO or completion, and report blockers directly to this task.
+- No tutorial defect established or tutorial source edited in this heartbeat.
+
+## 2026-09-10 — lesson 13 passes; continue 13a
+
+- 13:03 heartbeat: turn 01a08ac0-b78f-7393-bfab-fce7f40af15b completed/idle,
+  cursor 76a32c56-6455-41b8-8f21-48eabc164947:13. Local session assistant
+  report confirms 13 YES: build and 113/113 application files match 29e43eb,
+  with six migration-file mappings under the already authorized rule.
+- No new NO or tutorial defect reported. Student stopped on its YES report;
+  sent one explicit continuation for linked lesson 13a and onward, explaining
+  a passing step alone is not a stopping point. No tutorial source edits.
+
+## 2026-09-10 — lesson 13a execution incomplete
+
+- 13:10 heartbeat: turn 01a08ac6-5216-7803-b884-595cab394105 ended after 15s,
+  cursor 76a32c56-6455-41b8-8f21-48eabc164947:15. Student explicitly reports
+  reading 13a but not beginning its eight displayed files/layout-link change.
+  No NO or tutorial defect is established.
+- Sent one bounded task to finish 13a edits, build and comparison, requiring a
+  concrete result or evidence of an actual execution limit. No source edits by
+  coordinator; student constraints remain unchanged.
+
+## 2026-09-10 — lessons 13a and 14 pass; continue 15
+
+- 13:17 heartbeat: turn 01a08acc-3797-77a2-a702-425b697e6d51 completed/idle,
+  cursor 76a32c56-6455-41b8-8f21-48eabc164947:17. Recovered assistant report
+  from local transcript because compact snapshots omit its text.
+- Student reports 13a YES (121 scoped files at b0ae120) and 14 YES (121 at
+  5558a52); both builds passed with only established migration-ID mappings.
+- Student read linked lesson 15 but did not implement/evaluate it. Sent one
+  bounded continuation to complete Identity instructions, local checks and
+  comparison, distinguishing unperformed runtime checks from source equality.
+  No tutorial defect reported or source repair needed this heartbeat.
+
+## 2026-09-10 — lesson 15 remains in progress
+
+- 13:23 heartbeat: turn 01a08ad2-a3bc-7661-8384-383daf0e30ad completed/idle,
+  cursor 76a32c56-6455-41b8-8f21-48eabc164947:19. Student reports packages,
+  auth context/configuration, middleware and some account pages implemented.
+  Registration/login pages and Identity migration remain; no valid verdict.
+- Sent one continuation to finish existing partial work and reach a concrete
+  comparison outcome. No new NO, tutorial defect, or coordinator source edit.
+- Same heartbeat: initial continuation ended idle after 13s without implementation
+  (turn 01a08ad8-19bc-7a90-8d6c-81126dfa9a25). Switched to small bounded
+  execution instructions, still using only student-visible lesson snippets.
+- Student confirms Register pair written in turn 01a08ad8-a555-7d22-976e-6e03f5062177,
+  then Login pair, Logout code-behind and login partial in
+  01a08ad9-4b32-7780-8e88-1e484c251f56. Coordinator supplied no implementation.
+- Migration/database commands, build and comparison now running in
+  01a08ada-08a5-7cf0-a03e-d2113cfb3016; cursor
+  76a32c56-6455-41b8-8f21-48eabc164947:26. Await outcome before more dispatch.
+
+## 2026-09-10 — lesson 17: authorization order and corrupt import prefix
+
+- Student advanced through Identity/profile and reported 17 NO at 1109362:
+  Keepers/Edit.cshtml.cs followed the lesson's later correction (ownership before
+  validation) while the pin retained the earlier ordering; _ViewImports.cshtml
+  pin had literal mojibake instead of the original UTF-8 BOM.
+- Reproduced exactly those two differences across 140 application files. Both
+  defects were inherited by lesson 18. Created corrected source checkpoints,
+  changing only those two files per snapshot, with intact prior history:
+  17 e5a7ef42c23879040e8c0d2398ecbc722a33ad36 (parent c764eef);
+  18 bd465fe90d280abfd3242908fe3d39b12b306c5a (parent new 17).
+- Lesson 17 now moves validation after ownership in the main contextual diff;
+  replaces the redundant later correction with an explanation/test; the import
+  diff preserves existing lines and appends only the blank line and using.
+  Updated current/previous pins and historical map for 17/18.
+- Both corrected application builds pass, zero warnings/errors. Isolated SQLite
+  handler checks pass on both: non-owner valid/invalid -> Forbid, owner invalid
+  -> Page without writes, owner valid -> redirect with update, missing record
+  -> NotFound. Temporary harness C:\Temp\taba-auth-smoke uses reference worktree,
+  never student data. Both displayed diffs reconstruct reference bytes with only
+  permitted CRLF normalization. Jekyll build and scoped whitespace checks pass.
+- Published codex/taba-authorization-checkpoints and mirror/docs commit c847fdd.
+  Documentation differences versus previous mirror head be75204 are confined to
+  docs/checkpoints.json and lesson mirrors 17/18. Main/history untouched.
+- Coordinator comparator now matches all 140 student/reference files; no
+  student source/database edited and no additional comparison normalization.
+  Send independent 17 retry; continue to 18 only on student YES.
+
+## 2026-09-10 — sequential student audit complete through lesson 18
+
+- Student's direct completion report: repaired 17 YES at e5a7ef4, clean build,
+  140/140 scoped files with no changed/missing/extra files. Existing student
+  checkpoint bb013e6 already contained the exact result; no redundant commit.
+- Lesson 18 YES at bd465fe, clean build and 141/141 scoped files with no
+  differences; student checkpoint 138c7fa. Approved migration-ID and CRLF
+  normalization only; source equality is scoped to application files.
+- Student runtime check: /Account/Login renders without secrets and hides the
+  Google button. No OAuth account/secrets were created and external callback
+  remains untested. Earlier personal, paired and remote exercises likewise
+  are not established by source matching alone.
+- Student did not read the prohibited roadmap/teacher plan. Lesson 18's only
+  next link is the prohibited roadmap, so the authorized sequential audit ends.
+- Paused repair-taba-student-audit-blockers on completion. Tutorial changes remain
+  local/uncommitted and undeployed; corrected companion checkpoints are published.

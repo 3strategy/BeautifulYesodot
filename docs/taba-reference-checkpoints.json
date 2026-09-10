@@ -52,70 +52,102 @@
     "lesson": "10-create-validation.md",
     "original": "c23009a7f8491b6ca49d54b01e7c9bb0001af7b0",
     "original_previous": "a604aff5a09479be4863c6da3e9dd3d5e5cd0008",
-    "corrected": "b100a1f3a7c7c373dc73fe38808d099969f1c161",
-    "previous": "b5f18f08235b92724f86fba55cff23d9749b2818"
+    "corrected": "74695cb50e2a89e83e455430447e06233becc92d",
+    "previous": "b5f18f08235b92724f86fba55cff23d9749b2818",
+    "superseded_checkpoints": [
+      "b100a1f3a7c7c373dc73fe38808d099969f1c161"
+    ]
   },
   {
     "lesson": "11-edit-delete.md",
     "original": "68100fd563b4748c2a344551c3079f524bc1ab5f",
     "original_previous": "a0b42b62d249a9701b5e2fc371874ede541a006c",
-    "corrected": "7695e51dc66a673488e2b6cb81e7fdf278858188",
-    "previous": "b100a1f3a7c7c373dc73fe38808d099969f1c161"
+    "corrected": "5d8e9218600a868ac051cdf0034d25b3f189ebd2",
+    "previous": "74695cb50e2a89e83e455430447e06233becc92d",
+    "superseded_checkpoints": [
+      "7695e51dc66a673488e2b6cb81e7fdf278858188"
+    ]
   },
   {
     "lesson": "12-core-project.md",
     "original": "061904be9599de89461542872c842a5de62f827a",
     "original_previous": "6afae43d31a14175d27f5ad7fb8f8bc9fea2a101",
-    "corrected": "da271f8fed2d7552474c7527cc76fbd696058959",
-    "previous": "7695e51dc66a673488e2b6cb81e7fdf278858188"
+    "corrected": "0c0c792177b8e55c202e007909d5ea5d0e856589",
+    "previous": "5d8e9218600a868ac051cdf0034d25b3f189ebd2",
+    "superseded_checkpoints": [
+      "da271f8fed2d7552474c7527cc76fbd696058959"
+    ]
   },
   {
     "lesson": "13-keepers-animals.md",
     "original": "7445c36e391c81ff2c6516e75690662178c9b259",
     "original_previous": "f1fa21a30fd2d4fbb8d740efa4f32c03ffa651b4",
-    "corrected": "ab967ee301b889fdeefc6fd38d1cc7bb91f75b58",
-    "previous": "da271f8fed2d7552474c7527cc76fbd696058959"
+    "corrected": "29e43eb541435c0b2bed9bd14841af47bc246b4f",
+    "previous": "0c0c792177b8e55c202e007909d5ea5d0e856589",
+    "superseded_checkpoints": [
+      "ab967ee301b889fdeefc6fd38d1cc7bb91f75b58"
+    ]
   },
   {
     "lesson": "13a-keeper-crud.md",
     "original": "82d6db226876efbf7228a9f4d7508296a28e0164",
     "original_previous": "be7cbe0a753408d51078a3d2660cbbb102b0ac95",
-    "corrected": "ea76702ea4687c3d0837a8fb6a09beb012f273e4",
-    "previous": "ab967ee301b889fdeefc6fd38d1cc7bb91f75b58"
+    "corrected": "b0ae1207de6baa0a51421c8458f8f4b3c87acee3",
+    "previous": "29e43eb541435c0b2bed9bd14841af47bc246b4f",
+    "superseded_checkpoints": [
+      "ea76702ea4687c3d0837a8fb6a09beb012f273e4"
+    ]
   },
   {
     "lesson": "14-filtering.md",
     "original": "ea85e06dae377e4eca5cdeb7b1ec6222cfcc9668",
     "original_previous": "f3905d476256306740393fad05fd80ced82a27ab",
-    "corrected": "96c6b073ce3ffe6d0e20bbbc65c216d906695fb1",
-    "previous": "ea76702ea4687c3d0837a8fb6a09beb012f273e4"
+    "corrected": "5558a52e9c7eda905a0d375f9b8dc6ab135d0df3",
+    "previous": "b0ae1207de6baa0a51421c8458f8f4b3c87acee3",
+    "superseded_checkpoints": [
+      "96c6b073ce3ffe6d0e20bbbc65c216d906695fb1"
+    ]
   },
   {
     "lesson": "15-local-identity.md",
     "original": "3ca22602bb94d32cd8cacf20820425e5ecfbfd79",
     "original_previous": "4a453d577b30a8120ccbf26b72e2d831168ba7bd",
-    "corrected": "10290299222b2dfc8fe9982003d53340e0bbe1a9",
-    "previous": "96c6b073ce3ffe6d0e20bbbc65c216d906695fb1"
+    "corrected": "244fcb9eb927473b464314b49eee37651b9f10a9",
+    "previous": "5558a52e9c7eda905a0d375f9b8dc6ab135d0df3",
+    "superseded_checkpoints": [
+      "10290299222b2dfc8fe9982003d53340e0bbe1a9"
+    ]
   },
   {
     "lesson": "16-user-profile.md",
     "original": "bc1c1048e1ce6b28351acd3297997d99bed5a0e7",
     "original_previous": "a0d1d6b6f67b875ff6a4071865f989d00f3e58bd",
-    "corrected": "0d1dc5725a017234ea3767a1ce3569822792c453",
-    "previous": "10290299222b2dfc8fe9982003d53340e0bbe1a9"
+    "corrected": "c764eefcddcd4ac804fae73eb1ba835df63aeb2b",
+    "previous": "244fcb9eb927473b464314b49eee37651b9f10a9",
+    "superseded_checkpoints": [
+      "0d1dc5725a017234ea3767a1ce3569822792c453"
+    ]
   },
   {
     "lesson": "17-authorization.md",
     "original": "3cb5c6fc63600dc58a3f04cf70d0d505107ba421",
     "original_previous": "19036f631297cf0242188a7502e8ca7cb6878e3f",
-    "corrected": "13ffe0315c33035cba469d2ad6b365903fbe1733",
-    "previous": "0d1dc5725a017234ea3767a1ce3569822792c453"
+    "corrected": "e5a7ef42c23879040e8c0d2398ecbc722a33ad36",
+    "previous": "c764eefcddcd4ac804fae73eb1ba835df63aeb2b",
+    "superseded_checkpoints": [
+      "13ffe0315c33035cba469d2ad6b365903fbe1733",
+      "1109362b920ba9853997df07e06897ef5915079d"
+    ]
   },
   {
     "lesson": "18-google-login.md",
     "original": "a815e72d42242e1186a32a93523b1f6d7b84cc63",
     "original_previous": "921c2b1ff5cee2ef9e8ecf800788b694aa216d4e",
-    "corrected": "32f596ac7fef77d5b5c2e26cfd56275dce1962a8",
-    "previous": "13ffe0315c33035cba469d2ad6b365903fbe1733"
+    "corrected": "bd465fe90d280abfd3242908fe3d39b12b306c5a",
+    "previous": "e5a7ef42c23879040e8c0d2398ecbc722a33ad36",
+    "superseded_checkpoints": [
+      "32f596ac7fef77d5b5c2e26cfd56275dce1962a8",
+      "0e1f2fcac3805177de8fdf2197d82273a00ad2b2"
+    ]
   }
 ]

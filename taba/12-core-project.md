@@ -11,8 +11,8 @@ tags:
 sequence: 120
 track: core
 published: true
-companion_commit: da271f8fed2d7552474c7527cc76fbd696058959
-companion_previous: 7695e51dc66a673488e2b6cb81e7fdf278858188
+companion_commit: 0c0c792177b8e55c202e007909d5ea5d0e856589
+companion_previous: 5d8e9218600a868ac051cdf0034d25b3f189ebd2
 ---
 
 {: .box-note}
@@ -24,7 +24,7 @@ companion_previous: 7695e51dc66a673488e2b6cb81e7fdf278858188
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/da271f8fed2d7552474c7527cc76fbd696058959) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/7695e51dc66a673488e2b6cb81e7fdf278858188...da271f8fed2d7552474c7527cc76fbd696058959)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/0c0c792177b8e55c202e007909d5ea5d0e856589) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/5d8e9218600a868ac051cdf0034d25b3f189ebd2...0c0c792177b8e55c202e007909d5ea5d0e856589)
 {% endif %}
 
 ## מה נלמד
@@ -98,8 +98,8 @@ class_periods: 3
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
 
-- [tests/http_smoke.py](https://github.com/3strategy/razortaba/blob/da271f8fed2d7552474c7527cc76fbd696058959/tests/http_smoke.py)
-- [tests/requirements.txt](https://github.com/3strategy/razortaba/blob/da271f8fed2d7552474c7527cc76fbd696058959/tests/requirements.txt)
+- [tests/http_smoke.py](https://github.com/3strategy/razortaba/blob/0c0c792177b8e55c202e007909d5ea5d0e856589/tests/http_smoke.py)
+- [tests/requirements.txt](https://github.com/3strategy/razortaba/blob/0c0c792177b8e55c202e007909d5ea5d0e856589/tests/requirements.txt)
 
 </details>
 {% endif %}

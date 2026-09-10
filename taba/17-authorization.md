@@ -11,8 +11,8 @@ tags:
 sequence: 170
 track: extension
 published: true
-companion_commit: 13ffe0315c33035cba469d2ad6b365903fbe1733
-companion_previous: 0d1dc5725a017234ea3767a1ce3569822792c453
+companion_commit: e5a7ef42c23879040e8c0d2398ecbc722a33ad36
+companion_previous: c764eefcddcd4ac804fae73eb1ba835df63aeb2b
 ---
 
 {: .box-note}
@@ -24,7 +24,7 @@ companion_previous: 0d1dc5725a017234ea3767a1ce3569822792c453
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/13ffe0315c33035cba469d2ad6b365903fbe1733) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/0d1dc5725a017234ea3767a1ce3569822792c453...13ffe0315c33035cba469d2ad6b365903fbe1733)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/e5a7ef42c23879040e8c0d2398ecbc722a33ad36) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/c764eefcddcd4ac804fae73eb1ba835df63aeb2b...e5a7ef42c23879040e8c0d2398ecbc722a33ad36)
 {% endif %}
 
 ## מה נלמד
@@ -293,10 +293,11 @@ dotnet ef database update --context AppDbContext --project RazorTaba
 
 @@ -22,8 +26,9 @@ public class EditModel(AppDbContext db) : PageModel
      {
-         if (!ModelState.IsValid) return Page();
+-        if (!ModelState.IsValid) return Page();
          var existing = await db.Keepers.FindAsync(id);
          if (existing is null) return NotFound();
 +        if (existing.OwnerUserId != User.FindFirstValue(ClaimTypes.NameIdentifier)) return Forbid();
++        if (!ModelState.IsValid) return Page();
          existing.Name = Keeper.Name;
          await db.SaveChangesAsync();
          return RedirectToPage("Index");
@@ -395,18 +396,14 @@ dotnet ef database update --context AppDbContext --project RazorTaba
 
 ### `RazorTaba/Pages/_ViewImports.cshtml`
 
-בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
+השאירו את שלוש השורות הקיימות ללא שינוי. בסוף הקובץ הוסיפו שורה ריקה ואחריה `@using System.Security.Claims`, כדי שנוכל לקרוא את מזהה המשתמש בדפי Razor:
 
 ````diff
 --- a/RazorTaba/Pages/_ViewImports.cshtml
 +++ b/RazorTaba/Pages/_ViewImports.cshtml
-@@ -1,3 +1,5 @@
--﻿@using RazorTaba
--@namespace RazorTaba.Pages
--@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-+ï»¿@using RazorTaba
-+@namespace RazorTaba.Pages
-+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@@ -2,2 +2,4 @@
+ @namespace RazorTaba.Pages
+ @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 +
 +@using System.Security.Claims
 ````
@@ -416,9 +413,9 @@ dotnet ef database update --context AppDbContext --project RazorTaba
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
 
-- [RazorTaba/Migrations/20260905070613_RecordOwnership.Designer.cs](https://github.com/3strategy/razortaba/blob/13ffe0315c33035cba469d2ad6b365903fbe1733/RazorTaba/Migrations/20260905070613_RecordOwnership.Designer.cs)
-- [RazorTaba/Migrations/20260905070613_RecordOwnership.cs](https://github.com/3strategy/razortaba/blob/13ffe0315c33035cba469d2ad6b365903fbe1733/RazorTaba/Migrations/20260905070613_RecordOwnership.cs)
-- [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/13ffe0315c33035cba469d2ad6b365903fbe1733/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
+- [RazorTaba/Migrations/20260905070613_RecordOwnership.Designer.cs](https://github.com/3strategy/razortaba/blob/e5a7ef42c23879040e8c0d2398ecbc722a33ad36/RazorTaba/Migrations/20260905070613_RecordOwnership.Designer.cs)
+- [RazorTaba/Migrations/20260905070613_RecordOwnership.cs](https://github.com/3strategy/razortaba/blob/e5a7ef42c23879040e8c0d2398ecbc722a33ad36/RazorTaba/Migrations/20260905070613_RecordOwnership.cs)
+- [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/e5a7ef42c23879040e8c0d2398ecbc722a33ad36/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
 
 </details>
 {% endif %}
@@ -443,32 +440,10 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 ## בודקים הרשאה לפני תקינות הטופס
 
-מקמו את בדיקת הבעלות לפני `ModelState.IsValid`. נסו לשלוח טופס עם שם ריק לרשומה של משתמש אחר: גם בקשה כזו צריכה להידחות בגלל חוסר הרשאה.
+בקובץ `Pages/Keepers/Edit.cshtml.cs`, עקבו אחר `OnPostAsync`: תחילה מחפשים את הרשומה, אחר כך בודקים שהיא שייכת למשתמש ורק אז בודקים `ModelState.IsValid`. הסדר הזה כבר מופיע בשינוי שביצעתם למעלה.
 
-{% if taba_show_private_links %}
-[השינוי בקוד](https://github.com/3strategy/razortaba/commit/685d4aac6c177735ae0e494b84c03e6e0114f6cf)
-{% endif %}
-
-````diff
-diff --git a/RazorTaba/Pages/Keepers/Edit.cshtml.cs b/RazorTaba/Pages/Keepers/Edit.cshtml.cs
-index 03bb5c8..2a8d18c 100644
---- a/RazorTaba/Pages/Keepers/Edit.cshtml.cs
-+++ b/RazorTaba/Pages/Keepers/Edit.cshtml.cs
-@@ -23,12 +23,12 @@ public class EditModel(AppDbContext db) : PageModel
-     }
-
-     public async Task<IActionResult> OnPostAsync(int id)
-     {
--        if (!ModelState.IsValid) return Page();
-         var existing = await db.Keepers.FindAsync(id);
-         if (existing is null) return NotFound();
-         if (existing.OwnerUserId != User.FindFirstValue(ClaimTypes.NameIdentifier)) return Forbid();
-+        if (!ModelState.IsValid) return Page();
-         existing.Name = Keeper.Name;
-         await db.SaveChangesAsync();
-         return RedirectToPage("Index");
-     }
-````
+{: .box-note}
+נסו לשלוח טופס עם שם ריק לרשומה של משתמש אחר: גם בקשה כזו צריכה להידחות בגלל חוסר הרשאה. אצל בעל הרשומה, אותו שם ריק צריך להחזיר את הטופס עם הודעת ולידציה, בלי לשמור שינוי.
 
 <!-- lesson-next:start -->
 ---

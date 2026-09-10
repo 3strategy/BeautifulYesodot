@@ -11,7 +11,7 @@ tags:
 sequence: 100
 track: core
 published: true
-companion_commit: b100a1f3a7c7c373dc73fe38808d099969f1c161
+companion_commit: 74695cb50e2a89e83e455430447e06233becc92d
 companion_previous: b5f18f08235b92724f86fba55cff23d9749b2818
 ---
 
@@ -24,7 +24,7 @@ companion_previous: b5f18f08235b92724f86fba55cff23d9749b2818
 
 {% include taba-private-links-visibility.html %}
 {% if taba_show_private_links %}
-[קוד השלב](https://github.com/3strategy/razortaba/tree/b100a1f3a7c7c373dc73fe38808d099969f1c161) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/b5f18f08235b92724f86fba55cff23d9749b2818...b100a1f3a7c7c373dc73fe38808d099969f1c161)
+[קוד השלב](https://github.com/3strategy/razortaba/tree/74695cb50e2a89e83e455430447e06233becc92d) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/b5f18f08235b92724f86fba55cff23d9749b2818...74695cb50e2a89e83e455430447e06233becc92d)
 {% endif %}
 
 ## מה נלמד
@@ -179,9 +179,9 @@ public class CreateModel(AppDbContext db) : PageModel
 
 הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
 
-- [RazorTaba/Migrations/20260905065718_AnimalValidation.Designer.cs](https://github.com/3strategy/razortaba/blob/b100a1f3a7c7c373dc73fe38808d099969f1c161/RazorTaba/Migrations/20260905065718_AnimalValidation.Designer.cs)
-- [RazorTaba/Migrations/20260905065718_AnimalValidation.cs](https://github.com/3strategy/razortaba/blob/b100a1f3a7c7c373dc73fe38808d099969f1c161/RazorTaba/Migrations/20260905065718_AnimalValidation.cs)
-- [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/b100a1f3a7c7c373dc73fe38808d099969f1c161/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
+- [RazorTaba/Migrations/20260905065718_AnimalValidation.Designer.cs](https://github.com/3strategy/razortaba/blob/74695cb50e2a89e83e455430447e06233becc92d/RazorTaba/Migrations/20260905065718_AnimalValidation.Designer.cs)
+- [RazorTaba/Migrations/20260905065718_AnimalValidation.cs](https://github.com/3strategy/razortaba/blob/74695cb50e2a89e83e455430447e06233becc92d/RazorTaba/Migrations/20260905065718_AnimalValidation.cs)
+- [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/74695cb50e2a89e83e455430447e06233becc92d/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
 
 </details>
 {% endif %}
