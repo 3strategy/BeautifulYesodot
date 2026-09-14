@@ -79,7 +79,7 @@ async function swipe(page, forward) {
 test('Russian menu persists across languages and leaves shared links available', async ({ page, context }) => {
   await page.goto(base + '/csru/');
   await page.locator('main a[href="javascript:setMenuSet(\'part-a-ru\');"]').click();
-  expect((await context.cookies()).find(cookie => cookie.name === 'menu-set').value).toBe('part-a-ru');
+  await expect.poll(async () => (await context.cookies()).find(cookie => cookie.name === 'menu-set')?.value).toBe('part-a-ru');
   for (const url of ['/csru/Chapter1/', '/cs/Chapter1/']) {
     await page.goto(base + url);
     const menu = page.locator('nav [data-menu-sets]');

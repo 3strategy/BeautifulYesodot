@@ -9,6 +9,13 @@ html[lang="ru"] main {
   text-align: left;
 }
 
+html[lang="ru"] .intro-header .page-heading h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
 html[lang="ru"] main {
   line-height: 1.65;
   overflow-wrap: break-word;
