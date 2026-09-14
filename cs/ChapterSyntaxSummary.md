@@ -7,6 +7,10 @@ mathjax: true
 lang: he
 ---
 
+<!-- lesson-back:start -->
+[הקודם: תרגול 2.1: Math ו-Random]({{ '/cs/Chapter2Ex2.1/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 
 
 ```csharp
@@ -48,3 +52,7 @@ static void Main() // אחד בלבד !!! כאן הקוד יתחיל לרוץ Ma
   Main2(); // הדרך לכתוב ולהפעיל כמה תכניות באותו פרוייקט
 }
 ```
+
+<!-- lesson-next:start -->
+[הבא: תנאים וביטויים לוגיים]({{ '/cs/Chapter3/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

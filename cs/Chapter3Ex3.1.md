@@ -6,6 +6,10 @@ author: גיא סידס
 mathjax: true
 lang: he
 ---
+
+<!-- lesson-back:start -->
+[הקודם: תנאים וביטויים לוגיים]({{ '/cs/Chapter3/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
 [⬅ מעבר לתרגול 3.2 - תרגילים בתנאים מורכבים ושארית חלוקה](/cs/Chapter3Ex3.2)
 
 [⬅ מעבר לתרגול מעבדה תחילה - תמר פז - שארית חלוקה](https://cse.net.technion.ac.il/files/2023/09/l3-cs-cond-cs.pdf){:target="_blank"}
@@ -123,4 +127,6 @@ static void Main()
 
 
 
-[⬅ מעבר לתרגול 3.2 - תרגילים בתנאים מורכבים](/cs/Chapter3Ex3.2)
+<!-- lesson-next:start -->
+[⬅ מעבר לתרגול 3.2 - תרגילים בתנאים מורכבים]({{ '/cs/Chapter3Ex3.2/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

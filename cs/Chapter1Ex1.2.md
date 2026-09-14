@@ -4,6 +4,10 @@ title: "תרגול 1.2 על משתנים, קלט/פלט ופעולות חשבו�
 subtitle: "הפתרונות מוסתרים – נסו לפתור בעצמכם לפני הצצה."
 lang: he
 ---
+
+<!-- lesson-back:start -->
+[הקודם: השלמות: משתנים וטבלת מעקב]({{ '/cs/Chapter1b/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
 <!-- https://chatgpt.com/c/68009c2e-f948-800e-bec6-8222041d0f33 -->
 
 
@@ -255,6 +259,7 @@ Console.WriteLine("Cup of coffee contains: " + cupCoffee);
 
 [⬅ מעבר לתרגול 1.3 - חישובים והמרות מתקדמות](/cs/Chapter1Ex1.3)
 
-[⬅ מעבר להסבר על הטיפוס char תו](/cs/Chapter1Char)
-
+<!-- lesson-next:start -->
+[⬅ מעבר להסבר על הטיפוס char תו]({{ '/cs/Chapter1Char/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->
 

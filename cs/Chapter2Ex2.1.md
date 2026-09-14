@@ -13,6 +13,10 @@ lang: he
 שאלות התכנות המופיעות כאן הן שאלות רשות.
 {: .box-note}
 
+<!-- lesson-back:start -->
+[הקודם: המחלקות Math ו-Random]({{ '/cs/Chapter2/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 ---
 
 ## 2.1.1 חישוב שטח ואלכסון של מלבן {#id2.1.1}
@@ -344,3 +348,7 @@ static void Main()
         Console.WriteLine($"i:{i} {arr[i] / 10000000.0}");
 }
 {% endhighlight %}
+
+<!-- lesson-next:start -->
+[הבא: סיכום תחביר שיעורים 1–2]({{ '/cs/ChapterSyntaxSummary/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

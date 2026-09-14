@@ -8,6 +8,10 @@ mathjax: true
 lang: he
 ---
 
+<!-- lesson-back:start -->
+[הקודם: תרגול 3.1: תנאים פשוטים]({{ '/cs/Chapter3Ex3.1/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 ### תרגיל 3.2.1 שנה מעוברת {#id3.2.1}
 
 כתבו תוכנית הקולטת שנה לועזית `year`. הדפס:
@@ -312,3 +316,8 @@ public static void Guy(double a, double b, double c)
 {% endhighlight %}
 
 </details>
+
+
+<!-- lesson-next:start -->
+[הבא: לולאות for]({{ '/cs/Chapter4/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

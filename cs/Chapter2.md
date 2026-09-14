@@ -11,6 +11,10 @@ lang: he
 {: .box-note}
 **בקצרה:** בפרק זה נכיר את השימוש במחלקות Math ו-Random של שפת C#, המאפשרות לנו לבצע חישובים מתמטיים ולהשתמש במספרים אקראיים.
 
+<!-- lesson-back:start -->
+[הקודם: הטיפוס char]({{ '/cs/Chapter1Char/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 ## שימוש במחלקה Math
 
 המחלקה `Math` מאפשרת לבצע חישובים מתמטיים מורכבים באופן פשוט.
@@ -161,3 +165,8 @@ public static void Fill()
 
 [⬅ תקציר להדפסה קצת דברים שלא למדנו](/cs/ChapterSyntaxSummaryToPrint)
 
+
+
+<!-- lesson-next:start -->
+[הבא: תרגול 2.1: Math ו-Random]({{ '/cs/Chapter2Ex2.1/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

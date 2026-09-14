@@ -12,6 +12,10 @@ lang: he
 {: .box-note}
 **הערה:** בפרק זה נלמד כיצד לקבל החלטות בתוכנית שלנו באמצעות תנאים, ביטויים לוגיים ושימוש בשארית החלוקה.
 
+<!-- lesson-back:start -->
+[הקודם: סיכום תחביר שיעורים 1–2]({{ '/cs/ChapterSyntaxSummary/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 ## ריבוי שאלות בויז'ואל סטודיו
 
 **המטרה: לארגן את החומרים גם בויז'ואל סטודיו בנוסף ל-google docs.**
@@ -405,3 +409,8 @@ else
 [סרטוני פרק 2: ביטויים לוגיים](https://www.youtube.com/playlist?list=PLw4P_RdfuzSjVGWRUCg9qWvDkkSWrANtP){:target="_blank"}
 
 [סרטוני פרק 4: משפטי תנאי](https://www.youtube.com/playlist?list=PLw4P_RdfuzSitIvnpWSgqZLJHot9__eSG){:target="_blank"}
+
+
+<!-- lesson-next:start -->
+[הבא: תרגול 3.1: תנאים פשוטים]({{ '/cs/Chapter3Ex3.1/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

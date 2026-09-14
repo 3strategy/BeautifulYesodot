@@ -11,6 +11,10 @@ lang: he
 {: .box-note}
 זה שיעור המשך על לולאות `for`. הוא כבר לא עוסק רק בתחביר הבסיסי, אלא בדפוסים שמופיעים שוב ושוב בפתרון שאלות: קפיצות של האינדקס, בדיקת ראשוניות, שימוש בדגל, `break`, מציאת מינימום/מקסימום, ערך נלווה, ושמירת ערך מהסיבוב הקודם.
 
+<!-- lesson-back:start -->
+[הקודם: הרחבת תחביר for]({{ '/cs/Chapter4b/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 {% include youtube.html id="C0XPMdELros" %}
 
 
@@ -217,3 +221,8 @@ for (int i = 0; i < count; i++)
 - תחביר מתוחכם של `for` קיים, אבל בכיתה ובבגרות עדיף קוד ברור ופשוט.
 
 להקשר הבסיסי יותר של `for`: [פרק 4 - לולאת for קצרה]({% link cs/Chapter4ForShortLesson.md %}).
+
+
+<!-- lesson-next:start -->
+[הבא: תרגול 4.2: מונה, צובר, מינימום ומקסימום]({{ '/cs/Chapter4Ex4.2/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

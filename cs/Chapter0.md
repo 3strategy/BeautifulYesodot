@@ -197,3 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }));
 });
 </script>
+
+<!-- lesson-next:start -->
+[הבא: מבוא ל-C#, הדפסה ומשתנים]({{ '/cs/Chapter1/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

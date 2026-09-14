@@ -7,6 +7,10 @@ mathjax: true
 lang: he
 ---
 
+<!-- lesson-back:start -->
+[הקודם: תרגול 1.1: אלגוריתמים]({{ '/cs/Chapter1Ex1.1/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 
 ## (דגש משיעור 1) הכרזה לעומת השמה
 
@@ -162,3 +166,8 @@ y = y + 1; // שגיאה: שימוש במשתנה ללא ערך התחלתי
 [⬅ להיכרות עם הקיצורים השימושיים והוספת קיצורים משלכם snippets נוספים](/cs/Chapter1Shortcuts)
 
 [⬅ מעבר לטיפוס תו `char`](/cs/Chapter1Char)
+
+
+<!-- lesson-next:start -->
+[הבא: תרגול 1.2: משתנים וחישובים]({{ '/cs/Chapter1Ex1.2/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

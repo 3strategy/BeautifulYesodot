@@ -11,6 +11,10 @@ lang: he
 **בקצרה**: לולאת `for` בשפת #C מאפשרת תחביר גמיש במיוחד, וניתן להשתמש באלמנטים לא שגרתיים כדי לפתור בעיות בצורה יצירתית. בפרק זה נחקור תבניות מתקדמות ונדגים שימושים בעזרת דוגמאות קצרות.
 
 
+<!-- lesson-back:start -->
+[הקודם: לולאות for]({{ '/cs/Chapter4/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 ### שמירה על ערך האינדקס לאחר הלולאה
 
 בתחביר הרגיל משתנה הלולאה מאבד את התוקף שלו לאחר הלולאה (לא רק את ערכו - הוא כלל אינו קיים!). ניתן לשנות את הכתיבה כך שמשתנה הלולאה ישמור את תוקפו וערכו גם לאחר סיום הלולאה.
@@ -182,3 +186,8 @@ for (int i = 3 - 1; i >= 0; i--) // חשוב לזכור תחביר וקיצור 
 ## סרטונים
 [סרטוני פרק 6: לולאות for](https://www.youtube.com/playlist?list=PLw4P_RdfuzShl0iRsytc83T2ZHm3kvUAD){:target="_blank"}
 
+
+
+<!-- lesson-next:start -->
+[הבא: דפוסי לולאות for]({{ '/cs/Chapter4ForPatternsLesson/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

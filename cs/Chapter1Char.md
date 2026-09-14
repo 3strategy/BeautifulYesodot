@@ -10,6 +10,10 @@ lang: he
 {: .box-note}
 משתנה מסוג `char` בשפת C# מיועד לאחסן תו בודד (אות, ספרה, סימן מיוחד וכדומה). בפועל, הוא מאחסן ערך מספרי של יחידת קוד UTF-16 בתקן Unicode. עבור תווי ASCII הבסיסיים, כמו אותיות באנגלית וספרות, הערכים זהים לערכי ASCII.
 
+<!-- lesson-back:start -->
+[הקודם: תרגול 1.2: משתנים וחישובים]({{ '/cs/Chapter1Ex1.2/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 {: .box-warning}
 **תו עוטפים בגרש בודד (`'`) במקום בגרשיים (`"`):** `char ch = 'b';`
 
@@ -162,3 +166,8 @@ string emoji = "😀";
 | 61  | 0x3D | =    | Equal Sign       | 125 | 0x7D | }    | Right Brace      |
 | 62  | 0x3E | >    | Greater Than     | 126 | 0x7E | ~    | Tilde            |
 | 63  | 0x3F | ?    | Question Mark    | 127 | 0x7F | DEL  | Delete           |
+
+
+<!-- lesson-next:start -->
+[הבא: המחלקות Math ו-Random]({{ '/cs/Chapter2/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

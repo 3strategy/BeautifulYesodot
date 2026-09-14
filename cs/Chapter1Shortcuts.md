@@ -7,6 +7,10 @@ author: גיא סידס
 lang: he
 ---
 
+<!-- lesson-back:start -->
+[הקודם: עבודה במערכת ההגשות]({{ '/cs/Chapter1Hagashot/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 ## קיצורים לפקודות נפוצות
 
 {: .table-eh}
@@ -72,3 +76,7 @@ int num1 = int.Parse(Console.ReadLine());
 | `. + Ctrl + Shift`        | זום אין. מגדיל טקסט       |
 | `, + Ctrl + Shift`        | זום אאוט. מגדיל טקסט       |
 | `גלגלת + Ctrl`        | זום אין/אוט       |
+
+<!-- lesson-next:start -->
+[הבא: תרגול 1.1: אלגוריתמים]({{ '/cs/Chapter1Ex1.1/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

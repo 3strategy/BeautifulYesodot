@@ -10,6 +10,10 @@ lang: he
 {: .box-note}
 **הערה:** בפרק זה נלמד כיצד להשתמש בלולאות מסוג for לביצוע פעולות חוזרות באופן יעיל וברור.
 
+<!-- lesson-back:start -->
+[הקודם: תרגול 3.2: תנאים מורכבים]({{ '/cs/Chapter3Ex3.2/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 ## מבנה לולאת for
 
 לולאת `for` משמשת לביצוע פעולה מספר מוגדר של פעמים.
@@ -458,3 +462,8 @@ Console.WriteLine("Number of changes: " + count);
 [סרטוני פרק 6: לולאות for](https://www.youtube.com/playlist?list=PLw4P_RdfuzShl0iRsytc83T2ZHm3kvUAD){:target="_blank"}
 
 [פלייליסט השתלמות חלק א](https://www.youtube.com/playlist?list=PLnVUJu2KuoA04DlduroHvjZfhbxagO9nP){:target="_blank"}
+
+
+<!-- lesson-next:start -->
+[הבא: הרחבת תחביר for]({{ '/cs/Chapter4b/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

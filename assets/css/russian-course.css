@@ -1,0 +1,45 @@
+/* Loaded only for the Russian course through front matter defaults. */
+html[lang="ru"] {
+  direction: ltr;
+}
+
+html[lang="ru"] body,
+html[lang="ru"] main {
+  direction: ltr;
+  text-align: left;
+}
+
+html[lang="ru"] main {
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
+
+html[lang="ru"] main ul,
+html[lang="ru"] main ol {
+  padding-inline-start: 1.75em;
+  padding-inline-end: 0;
+}
+
+html[lang="ru"] .navbar,
+html[lang="ru"] footer {
+  direction: rtl;
+}
+
+html[lang="ru"] .task-list {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+html[lang="ru"] .task-list-item-checkbox {
+  margin-inline: 0 0.5em;
+}
+
+html[lang="ru"] main .two-columns.before-after {
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  html[lang="ru"] main .two-columns.before-after {
+    flex-direction: column;
+  }
+}

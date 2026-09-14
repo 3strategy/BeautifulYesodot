@@ -6,6 +6,10 @@ mathjax: true
 lang: he
 ---
 
+<!-- lesson-back:start -->
+[הקודם: תרגול 4.5: גלגול ועוקבים]({{ '/cs/Chapter4Ex4.5/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 
 
 ```csharp

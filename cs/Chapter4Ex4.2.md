@@ -7,6 +7,10 @@ mathjax: true
 lang: he
 ---
 
+<!-- lesson-back:start -->
+[הקודם: דפוסי לולאות for]({{ '/cs/Chapter4ForPatternsLesson/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 ## תרגיל 4.2.1 {#id4.2.1}
 
 ברישום לאתר בית הספר יש להזין סיסמה אשר מורכבת מ-N תווים, לפחות מחציתם אותיות באנגלית.
@@ -205,3 +209,8 @@ Console.WriteLine(s);
 
 [⬅ חזור לתרגול 4.1 - לולאות for: שארית חלוקה](/cs/Chapter4Ex4.1)
 
+
+
+<!-- lesson-next:start -->
+[הבא: תרגול 4.5: גלגול ועוקבים]({{ '/cs/Chapter4Ex4.5/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

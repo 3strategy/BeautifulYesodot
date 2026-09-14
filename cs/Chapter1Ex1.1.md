@@ -5,6 +5,10 @@ subtitle: "אלגוריתמים ותוכניות פשוטות"
 author: גיא סידס
 lang: he
 ---
+
+<!-- lesson-back:start -->
+[הקודם: קיצורים ב-Visual Studio]({{ '/cs/Chapter1Shortcuts/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
 <!-- התרגילים ממוספרים 1.2 עד 1.5 במצגת 1 בהתאמה -->
 
 ## תרגיל 1.1.3 – חשבון טלפון חודשי {#id1.1.3}
@@ -124,3 +128,8 @@ Console.WriteLine("final price including V.A.T is: ₪" + finalPrice);
 [⬅ לקריאה על **קיצורים שימושיים** וכתיבת קיצורים snippets נוספים](/cs/Shortcuts)
 
 
+
+
+<!-- lesson-next:start -->
+[הבא: השלמות: משתנים וטבלת מעקב]({{ '/cs/Chapter1b/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

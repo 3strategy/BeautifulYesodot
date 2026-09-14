@@ -10,6 +10,10 @@ lang: he
 {: .box-note}
 **הערה:** בתרגילים הבאים נדרש לבצע פעולות על נתונים עוקבים (תווים או מספרים). כדי להשוות בין ערכים סמוכים, נשתמש בגִּלְגוּל (שמירת היסטוריה)
 
+<!-- lesson-back:start -->
+[הקודם: תרגול 4.2: מונה, צובר, מינימום ומקסימום]({{ '/cs/Chapter4Ex4.2/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 ## שאלה 4.5.1 {#id4.5.1}
 
 כתבו תוכנית הקולטת 30 תווים ובודקת כמה תווים עוקבים יש בקלט.  
@@ -137,3 +141,8 @@ s, **r, t, r, t**, a, b, b, b, a
 
 </details>
 ---
+
+
+<!-- lesson-next:start -->
+[הבא: תקציר תחביר חלק א]({{ '/cs/ChapterSyntaxSummary2/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

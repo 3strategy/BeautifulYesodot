@@ -90,6 +90,37 @@ navbar-links:
     - תקציר א: "/cs/ChapterSyntaxSummary2"
 
 
+  "RU · Начало":
+    - "Основы A — на русском": "/csru/"
+    - "0. Мой прогресс": "/csru/Chapter0/"
+    - "Работа в CodeClassroom": "/csru/Chapter1Hagashot/"
+    - "Сочетания клавиш в Visual Studio": "/csru/Chapter1Shortcuts/"
+    - "Справочник по синтаксису: главы 1–2": "/csru/ChapterSyntaxSummary/"
+    - "Справочник по синтаксису части A": "/csru/ChapterSyntaxSummary2/"
+
+  "RU · 1. Ввод и вывод":
+    - "1. Первые программы на C#": "/csru/Chapter1/"
+    - "1b. Присваивание и преобразования": "/csru/Chapter1b/"
+    - "Символьный тип char": "/csru/Chapter1Char/"
+    - "Практика 1.1 — алгоритмы с решениями": "/csru/Chapter1Ex1.1/"
+    - "Практика 1.2 — вычисления с решениями": "/csru/Chapter1Ex1.2/"
+
+  "RU · 2. Math и Random":
+    - "2. Вычисления и случайные числа": "/csru/Chapter2/"
+    - "Практика 2.1 — с решениями": "/csru/Chapter2Ex2.1/"
+
+  "RU · 3. Условия":
+    - "3. Условия if": "/csru/Chapter3/"
+    - "Практика 3.1 — простые условия": "/csru/Chapter3Ex3.1/"
+    - "Практика 3.2 — составные условия": "/csru/Chapter3Ex3.2/"
+
+  "RU · 4. Циклы for":
+    - "4. Циклы for": "/csru/Chapter4/"
+    - "4b. Дополнительные приёмы": "/csru/Chapter4b/"
+    - "Типовые задачи с циклами": "/csru/Chapter4ForPatternsLesson/"
+    - "Практика 4.2 — счётчики и трассировка": "/csru/Chapter4Ex4.2/"
+    - "Практика 4.5 — соседние значения": "/csru/Chapter4Ex4.5/"
+
   פרק 6 לולאות מקוננות:
     - לולאות מקוננות: "/cs2/Chapter6/"
     - תרגול 6.1: "/cs2/Chapter6Ex6.1/"
@@ -220,6 +251,7 @@ navbar-links:
     # - מבחן זמני: "/cs/GuysFinalFireBase/"
     - בחירת תפריט:
       - חלק א: "javascript:setMenuSet('part-a');"
+      - "יסודות א ברוסית / Основы A — на русском": "javascript:setMenuSet('part-a-ru');"
       - חלק ב: "javascript:setMenuSet('part-b');"
       - חלק ג: "javascript:setMenuSet('part-c');"
       - תב״א: "javascript:setMenuSet('taba');"
@@ -241,6 +273,14 @@ navbar-menu-sets:
       - 3 if
       - פרק 4 for
       - פרק 5 while
+  part-a-ru:
+    label: "יסודות א ברוסית / Основы A — на русском"
+    items:
+      - "RU · Начало"
+      - "RU · 1. Ввод и вывод"
+      - "RU · 2. Math и Random"
+      - "RU · 3. Условия"
+      - "RU · 4. Циклы for"
   part-b:
     label: חלק ב
     items:
@@ -537,6 +577,16 @@ defaults:
       path: "interactive"
     values:
       full-width: true
+  -
+    scope:
+      path: "csru"
+    values:
+      layout: "page"
+      lang: "ru"
+      language: "ru"
+      direction: "ltr"
+      css:
+        - "/assets/css/russian-course.css"
 
 # Exclude these files from production site
 exclude:

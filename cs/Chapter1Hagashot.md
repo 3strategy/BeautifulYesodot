@@ -7,6 +7,10 @@ mathjax: true
 lang: he
 ---
 
+<!-- lesson-back:start -->
+[הקודם: מבוא ל-C#, הדפסה ומשתנים]({{ '/cs/Chapter1/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 ## איך לעבוד נכון עם [מערכת ההגשות](https://codeclassroom.io){:target="_blank"}
 
 הדרך המומלצת לעבוד במערכת ההגשות היא:
@@ -67,3 +71,8 @@ public class Program
 - בודקים שהכול עובד.  
 - מעתיקים את ==הפעולה כולה== בחזרה למערכת ההגשות.
 
+
+
+<!-- lesson-next:start -->
+[הבא: קיצורים ב-Visual Studio]({{ '/cs/Chapter1Shortcuts/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->

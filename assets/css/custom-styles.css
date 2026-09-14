@@ -271,6 +271,15 @@ body {
 }
 
 /* ================= RTL navbar dropdowns ================ */
+/* Russian course entries remain LTR even when selected on a Hebrew page. */
+.navbar-custom [data-menu-sets~="part-a-ru"],
+.navbar-custom [data-menu-sets~="part-a-ru"] .dropdown-menu,
+.navbar-custom [data-menu-sets~="part-a-ru"] .dropdown-menu .dropdown-item {
+    direction: ltr;
+    text-align: left;
+    white-space: normal;
+}
+
 /* Align dropdown menus and items to the right for RTL */
 .navbar-custom .nav-item.dropdown .dropdown-menu {
     text-align: right;

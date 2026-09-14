@@ -11,6 +11,10 @@ lang: he
 בפרק זה נכיר את שפת C#, סביבת הפיתוח Visual Studio, נלמד על משתנים, קלט, פלט והמרות בין סוגים שונים של משתנים.
 {: .box-note}
 
+<!-- lesson-back:start -->
+[הקודם: מעקב הלמידה]({{ '/cs/Chapter0/' | relative_url }}){: data-sequence-nav="prev"}
+<!-- lesson-back:end -->
+
 
 <details markdown="1">
 <summary>מינהלות - רישום למצפן ולמערכת הגשות</summary>
@@ -391,3 +395,8 @@ int %value;     // Special character ❌
 [סרטוני פרק 1](https://youtube.com/playlist?list=PLw4P_RdfuzSirWjKrYrwudzauSKkwqC1z&si=7_UxQuHnK-BcW1k8){:target="_blank"}
 
 [פלייליסט השתלמות חלק א](https://www.youtube.com/playlist?list=PLnVUJu2KuoA04DlduroHvjZfhbxagO9nP){:target="_blank"}
+
+
+<!-- lesson-next:start -->
+[הבא: עבודה במערכת ההגשות]({{ '/cs/Chapter1Hagashot/' | relative_url }}){: data-sequence-nav="next"}
+<!-- lesson-next:end -->
