@@ -17,3 +17,12 @@ Do not replace whole shared files merely because one site has a newer timestamp.
 
 Current swipe guidance is in [sequence-navigation.md](sequence-navigation.md).
 The migration did not edit the pre-existing cs3e caption or C# source changes.
+
+## Side-by-side word diffs — 16 September 2026
+
+Ported Mivney's `code_diff` Liquid renderer, dedicated light/dark styles, and
+Ruby checks. Authoring guidance is in [code-diff.md](code-diff.md) and AGENTS.md.
+The browser tests use unpublished C# examples in Yesodot's own layout. Comparisons
+keep their panels side by side at all widths; ordinary `before-after` content
+still uses the existing responsive layout. The prose highlighter now skips
+Liquid code blocks. No navigation or shared JavaScript was replaced.
