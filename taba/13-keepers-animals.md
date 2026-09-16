@@ -3,6 +3,7 @@ layout: page
 title: 'מטפל וחיות: קשר אחד־לרבים'
 subtitle: Keeper ו־KeeperId, בחירה בטופס והצגת שם המטפל; מניעת מחיקת מטפל עם חיות; המטפל אינו חשבון כניסה
 lang: he
+full-width: true
 tags:
 - CSharp
 - HTML
@@ -282,12 +283,9 @@ public class Keeper
 
 ### `RazorTaba/Pages/Animals/Index.cshtml.cs`
 
-בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
+בתוך `OnGetAsync` הוסיפו לשאילתה את `.Include(a => a.Keeper)`. ההדגשה מראה את התוספת שטוענת גם את המטפל של כל חיה; שאר השאילתה נשארת כפי שהייתה:
 
-````diff
---- a/RazorTaba/Pages/Animals/Index.cshtml.cs
-+++ b/RazorTaba/Pages/Animals/Index.cshtml.cs
-@@ -12,7 +12,7 @@ public class IndexModel(AppDbContext db) : PageModel
+{% code_diff %}
 
      /// <summary>טוען את הרשומות לפי שם לצורך תצוגה.</summary>
      public async Task OnGetAsync()
@@ -296,7 +294,7 @@ public class Keeper
 +        Animals = await db.Animals.AsNoTracking().Include(a => a.Keeper).OrderBy(a => a.Name).ToListAsync();
      }
  }
-````
+{% endcode_diff %}
 
 ### `RazorTaba/Pages/Animals/Index.cshtml`
 

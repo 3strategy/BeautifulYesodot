@@ -3,6 +3,7 @@ layout: page
 title: כניסה עם Google — הרחבת רשות
 subtitle: חיבור ספק כניסה חיצוני לאחר חשבונות מקומיים; הגדרות Console אינן תנאי להשלמת הפרויקט
 lang: he
+full-width: true
 tags:
 - CSharp
 - HTML
@@ -130,12 +131,9 @@ dotnet run --project RazorTaba --launch-profile https
 
 ### `RazorTaba/Pages/Account/Login.cshtml.cs`
 
-בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
+הוסיפו לבנאי של `LoginModel` את הפרמטר `IConfiguration configuration`, לצד `signIn` הקיים. בתוך המחלקה הוסיפו את `GoogleEnabled`, שבודק אם שני ערכי ההגדרה מולאו:
 
-````diff
---- a/RazorTaba/Pages/Account/Login.cshtml.cs
-+++ b/RazorTaba/Pages/Account/Login.cshtml.cs
-@@ -6,10 +6,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
+{% code_diff %}
 
  namespace RazorTaba.Pages.Account;
 
@@ -151,7 +149,7 @@ dotnet run --project RazorTaba --launch-profile https
      public string Email { get; set; } = "";
      [BindProperty, Required, DataType(DataType.Password)]
      public string Password { get; set; } = "";
-````
+{% endcode_diff %}
 
 ### `RazorTaba/Pages/Account/Login.cshtml`
 

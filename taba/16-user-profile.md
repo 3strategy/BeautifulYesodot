@@ -3,6 +3,7 @@ layout: page
 title: מרחיבים את פרופיל המשתמש
 subtitle: שדות אישיים ועריכת פרופיל; הרחבה קטנה באמצעות Code First
 lang: he
+full-width: true
 tags:
 - CSharp
 - HTML
@@ -74,12 +75,9 @@ public class AppUser : IdentityUser
 
 ### `RazorTaba/Data/AuthDbContext.cs`
 
-בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
+הוסיפו בראש הקובץ `using RazorTaba.Models;` והחליפו את `IdentityUser` ב־`AppUser` בתוך `IdentityDbContext`. כך מסד החשבונות מכיר את המחלקה שהרחבנו:
 
-````diff
---- a/RazorTaba/Data/AuthDbContext.cs
-+++ b/RazorTaba/Data/AuthDbContext.cs
-@@ -1,10 +1,11 @@
+{% code_diff %}
 +using RazorTaba.Models;
  using Microsoft.AspNetCore.Identity;
  using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -92,22 +90,19 @@ public class AppUser : IdentityUser
 +public class AuthDbContext(DbContextOptions<AuthDbContext> options) : IdentityDbContext<AppUser>(options)
  {
  }
-````
+{% endcode_diff %}
 
 ### `RazorTaba/Program.cs`
 
-בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
+הוסיפו בראש הקובץ `using RazorTaba.Models;`. בקריאה ל־`AddDefaultIdentity` החליפו רק את טיפוס המשתמש מ־`IdentityUser` ל־`AppUser`; הגדרות הכניסה נשארות כפי שהיו:
 
-````diff
---- a/RazorTaba/Program.cs
-+++ b/RazorTaba/Program.cs
-@@ -1,4 +1,5 @@
+{% code_diff %}
 +using RazorTaba.Models;
  using Microsoft.EntityFrameworkCore;
  using Microsoft.AspNetCore.Identity;
  using RazorTaba.Data;
 
-@@ -11,9 +12,9 @@ string databasePath = Path.Combine(builder.Environment.ContentRootPath, "App.db"
+ ⁞
  builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite($"Data Source={databasePath}"));
 
  string accountsPath = Path.Combine(builder.Environment.ContentRootPath, "Accounts.db");
@@ -118,16 +113,13 @@ public class AppUser : IdentityUser
      // תרגול מקומי: אין דרישה לשליחת דוא"ל או לספק חיצוני.
      options.SignIn.RequireConfirmedAccount = false;
      options.User.RequireUniqueEmail = true;
-````
+{% endcode_diff %}
 
 ### `RazorTaba/Pages/Account/Register.cshtml.cs`
 
-בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
+הוסיפו בראש הקובץ `using RazorTaba.Models;` והחליפו את `IdentityUser` ב־`AppUser` בשלושת המקומות המודגשים: בשני המנהלים וביצירת המשתמש החדש. שמות המשתנים ושאר פעולת ההרשמה נשארים כפי שהיו:
 
-````diff
---- a/RazorTaba/Pages/Account/Register.cshtml.cs
-+++ b/RazorTaba/Pages/Account/Register.cshtml.cs
-@@ -1,13 +1,14 @@
+{% code_diff %}
 +using RazorTaba.Models;
  using System.ComponentModel.DataAnnotations;
  using Microsoft.AspNetCore.Identity;
@@ -143,7 +135,7 @@ public class AppUser : IdentityUser
      [BindProperty, Required, EmailAddress]
      public string Email { get; set; } = "";
      [BindProperty, Required, DataType(DataType.Password)]
-@@ -17,9 +18,9 @@ public class RegisterModel(UserManager<IdentityUser> users, SignInManager<Identi
+ ⁞
 
      public async Task<IActionResult> OnPostAsync()
      {
@@ -154,16 +146,13 @@ public class AppUser : IdentityUser
          if (!result.Succeeded)
          {
              foreach (var error in result.Errors) ModelState.AddModelError("", error.Description);
-````
+{% endcode_diff %}
 
 ### `RazorTaba/Pages/Account/Login.cshtml.cs`
 
-בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
+הוסיפו בראש הקובץ `using RazorTaba.Models;` והחליפו את `IdentityUser` ב־`AppUser` בתוך `SignInManager`. שאר תהליך הכניסה נשאר כפי שהיה:
 
-````diff
---- a/RazorTaba/Pages/Account/Login.cshtml.cs
-+++ b/RazorTaba/Pages/Account/Login.cshtml.cs
-@@ -1,13 +1,14 @@
+{% code_diff %}
 +using RazorTaba.Models;
  using System.ComponentModel.DataAnnotations;
  using Microsoft.AspNetCore.Identity;
@@ -179,16 +168,13 @@ public class AppUser : IdentityUser
      [BindProperty, Required, EmailAddress]
      public string Email { get; set; } = "";
      [BindProperty, Required, DataType(DataType.Password)]
-````
+{% endcode_diff %}
 
 ### `RazorTaba/Pages/Account/Logout.cshtml.cs`
 
-בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
+גם בקובץ היציאה הוסיפו `using RazorTaba.Models;` והחליפו את `IdentityUser` ב־`AppUser` בתוך `SignInManager`. פעולת היציאה עצמה נשארת כפי שהייתה:
 
-````diff
---- a/RazorTaba/Pages/Account/Logout.cshtml.cs
-+++ b/RazorTaba/Pages/Account/Logout.cshtml.cs
-@@ -1,12 +1,13 @@
+{% code_diff %}
 +using RazorTaba.Models;
  using Microsoft.AspNetCore.Identity;
  using Microsoft.AspNetCore.Mvc;
@@ -203,7 +189,7 @@ public class AppUser : IdentityUser
      public IActionResult OnGet() => RedirectToPage("/Index");
      public async Task<IActionResult> OnPostAsync()
      {
-````
+{% endcode_diff %}
 
 ### `RazorTaba/Pages/Account/Profile.cshtml.cs`
 
