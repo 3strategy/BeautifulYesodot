@@ -45,7 +45,7 @@ companion_previous: 29e43eb541435c0b2bed9bd14841af47bc246b4f
 קובץ חדש. צרו את `RazorTaba/Pages/Keepers/Create.cshtml` והדביקו את התוכן הבא:
 
 ````cshtml
-@page 
+@page
 @model RazorTaba.Pages.Keepers.CreateModel
 @{ ViewData["Title"] = "הוספת מטפל"; }
 <h1>הוספת מטפל</h1>

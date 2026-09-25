@@ -285,9 +285,9 @@ public class ProfileModel(UserManager<AppUser> users) : PageModel
 ````
 
 {% if taba_show_private_links %}
-<details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
+<details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
-הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
+אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
 
 - [RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.Designer.cs](https://github.com/3strategy/razortaba/blob/c764eefcddcd4ac804fae73eb1ba835df63aeb2b/RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.Designer.cs)
 - [RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.cs](https://github.com/3strategy/razortaba/blob/c764eefcddcd4ac804fae73eb1ba835df63aeb2b/RazorTaba/Migrations/Auth/20260905070601_ExtendProfile.cs)

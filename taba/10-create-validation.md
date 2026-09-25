@@ -175,9 +175,9 @@ public class CreateModel(AppDbContext db) : PageModel
 ````
 
 {% if taba_show_private_links %}
-<details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
+<details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
-הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
+אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
 
 - [RazorTaba/Migrations/20260905065718_AnimalValidation.Designer.cs](https://github.com/3strategy/razortaba/blob/74695cb50e2a89e83e455430447e06233becc92d/RazorTaba/Migrations/20260905065718_AnimalValidation.Designer.cs)
 - [RazorTaba/Migrations/20260905065718_AnimalValidation.cs](https://github.com/3strategy/razortaba/blob/74695cb50e2a89e83e455430447e06233becc92d/RazorTaba/Migrations/20260905065718_AnimalValidation.cs)

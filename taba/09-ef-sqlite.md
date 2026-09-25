@@ -165,9 +165,9 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 ````
 
 {% if taba_show_private_links %}
-<details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
+<details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
-הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
+אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
 
 - [RazorTaba/Migrations/20260905065453_InitialAnimals.Designer.cs](https://github.com/3strategy/razortaba/blob/b5f18f08235b92724f86fba55cff23d9749b2818/RazorTaba/Migrations/20260905065453_InitialAnimals.Designer.cs)
 - [RazorTaba/Migrations/20260905065453_InitialAnimals.cs](https://github.com/3strategy/razortaba/blob/b5f18f08235b92724f86fba55cff23d9749b2818/RazorTaba/Migrations/20260905065453_InitialAnimals.cs)

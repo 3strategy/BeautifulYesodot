@@ -281,9 +281,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 בדקו שיש בקובץ שני מקטעי `ItemGroup`: הראשון מכיל את שתי החבילות, והשני את שורת `Content`. סגירת המקטע השני, `</ItemGroup>`, ומיד אחריה `</Project>` נמצאות בשתי שורות רצופות, בלי שורה ריקה ביניהן. שמרו את הקובץ והריצו את הפרויקט.
 
 {% if taba_show_private_links %}
-<details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
+<details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
-הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
+אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
 
 - [RazorTaba/wwwroot/lib/mermaid/LICENSE](https://github.com/3strategy/razortaba/blob/2307d2e1aa18db15dd9675c618ace510fe87528c/RazorTaba/wwwroot/lib/mermaid/LICENSE)
 - [RazorTaba/wwwroot/lib/mermaid/VERSION.txt](https://github.com/3strategy/razortaba/blob/2307d2e1aa18db15dd9675c618ace510fe87528c/RazorTaba/wwwroot/lib/mermaid/VERSION.txt)

@@ -409,9 +409,9 @@ dotnet ef database update --context AppDbContext --project RazorTaba
 ````
 
 {% if taba_show_private_links %}
-<details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
+<details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
-הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
+אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
 
 - [RazorTaba/Migrations/20260905070613_RecordOwnership.Designer.cs](https://github.com/3strategy/razortaba/blob/e5a7ef42c23879040e8c0d2398ecbc722a33ad36/RazorTaba/Migrations/20260905070613_RecordOwnership.Designer.cs)
 - [RazorTaba/Migrations/20260905070613_RecordOwnership.cs](https://github.com/3strategy/razortaba/blob/e5a7ef42c23879040e8c0d2398ecbc722a33ad36/RazorTaba/Migrations/20260905070613_RecordOwnership.cs)

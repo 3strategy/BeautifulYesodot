@@ -322,9 +322,9 @@ else
 ````
 
 {% if taba_show_private_links %}
-<details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
+<details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
-הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
+אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
 
 - [RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.Designer.cs](https://github.com/3strategy/razortaba/blob/244fcb9eb927473b464314b49eee37651b9f10a9/RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.Designer.cs)
 - [RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.cs](https://github.com/3strategy/razortaba/blob/244fcb9eb927473b464314b49eee37651b9f10a9/RazorTaba/Migrations/Auth/20260905070549_InitialIdentity.cs)

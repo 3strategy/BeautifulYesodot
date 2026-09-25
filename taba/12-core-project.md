@@ -94,9 +94,9 @@ class_periods: 3
 ````
 
 {% if taba_show_private_links %}
-<details markdown="1"><summary>קבצי תשתית וקבצים שנוצרו אוטומטית</summary>
+<details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
-הקבצים הבאים נמצאים בקוד השלב. קבצים שנוצרים באמצעות פקודות השלב אין להעתיק ידנית.
+אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
 
 - [tests/http_smoke.py](https://github.com/3strategy/razortaba/blob/0c0c792177b8e55c202e007909d5ea5d0e856589/tests/http_smoke.py)
 - [tests/requirements.txt](https://github.com/3strategy/razortaba/blob/0c0c792177b8e55c202e007909d5ea5d0e856589/tests/requirements.txt)
