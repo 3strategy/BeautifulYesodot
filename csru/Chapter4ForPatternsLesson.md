@@ -4,6 +4,7 @@ title: "Справочник — Типовые приёмы работы с for
 subtitle: "Шаг цикла, флаг, break, минимум, максимум и предыдущее значение"
 tags: [csharp, for, циклы, справочник, флаг, минимум, максимум]
 lang: ru
+translation_of: /cs/Chapter4ForPatternsLesson
 ---
 
 {: .box-note}

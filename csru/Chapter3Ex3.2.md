@@ -5,6 +5,7 @@ subtitle: "Логические операторы, вложенные усло�
 tags: [остаток от деления, составные условия, bool, вложенные условия, тернарный оператор]
 mathjax: true
 lang: ru
+translation_of: /cs/Chapter3Ex3.2
 ---
 
 {: .box-note}

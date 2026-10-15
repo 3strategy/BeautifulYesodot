@@ -4,6 +4,7 @@ title: "Практика 2.1. Классы Math и Random"
 subtitle: "Математические функции, случайные числа и разобранные задачи"
 mathjax: true
 lang: ru
+translation_of: /cs/Chapter2Ex2.1
 ---
 
 {: .box-note}

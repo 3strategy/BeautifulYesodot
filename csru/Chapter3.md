@@ -5,6 +5,7 @@ subtitle: "Как программа принимает решения"
 tags: [if, else, bool, логические выражения, условия, остаток от деления, таблица трассировки]
 mathjax: true
 lang: ru
+translation_of: /cs/Chapter3
 ---
 
 {: .box-note}

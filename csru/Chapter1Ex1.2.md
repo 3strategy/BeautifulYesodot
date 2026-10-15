@@ -3,6 +3,7 @@ layout: page
 title: "Практика 1.2 — переменные и вычисления"
 subtitle: "Ввод, вывод, арифметика и обмен значениями"
 lang: ru
+translation_of: /cs/Chapter1Ex1.2
 ---
 
 {: .box-note}

@@ -3,6 +3,7 @@ layout: page
 title: "Практика 1.1 — простые алгоритмы"
 subtitle: "Ввод, вычисления и вывод с решениями на C#"
 lang: ru
+translation_of: /cs/Chapter1Ex1.1
 ---
 
 {: .box-note}

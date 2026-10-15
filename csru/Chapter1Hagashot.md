@@ -4,6 +4,7 @@ title: "Работа в CodeClassroom"
 subtitle: "Напишите и проверьте решение в Visual Studio, затем отправьте его"
 tags: [C#, CodeClassroom, практика]
 lang: ru
+translation_of: /cs/Chapter1Hagashot
 ---
 
 {: .box-note}

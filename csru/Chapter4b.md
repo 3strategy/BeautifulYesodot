@@ -4,6 +4,7 @@ title: "Глава 4б — Другие формы цикла for"
 subtitle: "Область видимости, несколько переменных, continue и обратный отсчёт"
 tags: [csharp, for, циклы, область видимости, continue]
 lang: ru
+translation_of: /cs/Chapter4b
 ---
 
 {: .box-note}

@@ -16,6 +16,7 @@
 
   <div class="collapse navbar-collapse" id="main-navbar">
     <ul class="navbar-nav ml-auto">
+      {% include language-preference.html %}
       {%- for link in site.navbar-links -%}
         {%- assign top_text = link[0] -%}
         {%- assign top_item = link[1] -%}

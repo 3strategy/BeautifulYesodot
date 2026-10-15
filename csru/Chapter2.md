@@ -4,6 +4,7 @@ title: "Глава 2. Классы Math и Random"
 subtitle: "Математические вычисления и случайные числа"
 tags: [Math, Random, случайные числа, математические функции, отладка, таблица трассировки]
 lang: ru
+translation_of: /cs/Chapter2
 ---
 
 {: .box-note}

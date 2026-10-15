@@ -5,6 +5,7 @@ subtitle: "Задачи на for и таблицы трассировки с р�
 tags: [csharp, for, упражнения, трассировка, счётчик, накопитель]
 mathjax: true
 lang: ru
+translation_of: /cs/Chapter4Ex4.2
 ---
 
 {: .box-note}

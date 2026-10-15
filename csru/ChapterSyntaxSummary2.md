@@ -4,6 +4,7 @@ title: "Справочник по синтаксису части A"
 subtitle: "Вычисления, условия и циклы в одном примере"
 tags: [C#, синтаксис, условия, циклы, справочник]
 lang: ru
+translation_of: /cs/ChapterSyntaxSummary2
 ---
 
 {: .box-note}

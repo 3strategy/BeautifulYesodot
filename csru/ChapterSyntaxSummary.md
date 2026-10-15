@@ -4,6 +4,7 @@ title: "Краткий справочник по синтаксису: глав�
 subtitle: "Ввод, преобразования, Math, Random и форматирование"
 tags: [C#, синтаксис, справочник]
 lang: ru
+translation_of: /cs/ChapterSyntaxSummary
 ---
 
 {: .box-note}

@@ -4,6 +4,7 @@ title: "Практика 3.1. Простые условия"
 subtitle: "Сравнение чисел, чётность и выбор действий"
 mathjax: true
 lang: ru
+translation_of: /cs/Chapter3Ex3.1
 ---
 
 {: .box-note}

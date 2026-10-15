@@ -4,6 +4,7 @@ title: "Сочетания клавиш в Visual Studio"
 subtitle: "Шаблоны команд, ввод и редактирование кода"
 tags: [Visual Studio, сочетания клавиш, snippets]
 lang: ru
+translation_of: /cs/Chapter1Shortcuts
 ---
 
 {: .box-note}
