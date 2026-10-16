@@ -24,7 +24,6 @@ author: גיא סידס
 navbar-links:
 
     # חלק א:
-  מערכת הגשות: "https://codeclassroom.io"
 
   פרק 0:
     # - חשיפת מגמה: "/cs/0YearOpeningIntro"
@@ -262,7 +261,7 @@ navbar-links:
     # - Presentation Mode: "javascript:togglePresentationMode();"
 
 # Each top-level navbar item can belong to one or more menu views. Items that
-# are not listed here (such as מערכת הגשות, חיצוני and הגדרות) remain shared.
+# are not listed here (such as חיצוני and הגדרות) remain shared.
 navbar-menu-sets:
   part-a:
     label: חלק א
