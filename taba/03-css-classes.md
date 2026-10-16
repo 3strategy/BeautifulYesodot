@@ -33,13 +33,20 @@ companion_previous: 7a9346ec48cfdb1d434e910fbc6076b416cd5828
 - להבדיל בין color, background ו־padding.
 - לראות תוצאה מיידית של שינוי CSS.
 
+{: .box-note}
+זה עדיין שלב התנסות לפני רישום הפרויקט השנתי. אפשר לעבוד בניסוי שבחרתם או ליצור ניסוי חדש בתיקייה נפרדת בעזרת [מדריכי ההקמה]({{ '/taba/01a-development-git/' | relative_url }}). אם מתחילים מחדש, השלימו בו את שינויי השיעורים הקודמים הדרושים לדוגמאות שלפניכם. שמרו את הניסויים הקודמים; עדיין אין צורך לפרסם ל־GitHub.
+
 ## פותחים ומריצים
 
 פתחו את תיקיית הפרויקט שבה עבדתם, שמרו את הקבצים והריצו את האתר. בדקו שהשינוי מהמפגש הקודם מופיע לפני שמנסים שינוי חדש.
 
 ## מעבדה קטנה בעיצוב
 
-פתחו `wwwroot/css/site.css`. הפעילו dotnet watch או Hot Reload. שנו רק את `--forest`, שמרו וצפו בתוצאה. אחר כך שנו padding והחזירו לערך נעים לעין. `class="intro"` מקשרת בין אזור HTML לכלל `.intro`. מחלקת CSS היא שם של כלל עיצוב; היא אינה מחלקה בשפת C#. משתני CSS מרכזים את פלטת הצבעים במקום אחד.
+פתחו `wwwroot/css/site.css`. השאירו את כללי התבנית והוסיפו בסוף את כללי העיצוב שמופיעים בהמשך. הפעילו dotnet watch או Hot Reload. לאחר ההוספה שנו רק את `--forest`, שמרו וצפו בתוצאה. אחר כך שנו padding והחזירו לערך נעים לעין. `class="intro"` מקשרת בין אזור HTML לכלל `.intro`. מחלקת CSS היא שם של כלל עיצוב; היא אינה מחלקה בשפת C#. משתני CSS מרכזים את פלטת הצבעים במקום אחד.
+
+## שתי דרכים להשתמש במחלקות עיצוב
+
+`class="intro"` מפנה לכלל `.intro` שנכתוב ב־`site.css`. לעומתו `class="text-center"` או `class="container"` מפנה למחלקות Bootstrap שכבר הגיעו עם התבנית. אפשר לשלב כמה שמות באותו `class`, עם רווח ביניהם. בשיעור הבא נשתמש במחלקות האלה לבניית עמודות וכרטיסים.
 
 ## השינויים בקוד
 
@@ -48,9 +55,6 @@ companion_previous: 7a9346ec48cfdb1d434e910fbc6076b416cd5828
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Pages/Index.cshtml
-+++ b/RazorTaba/Pages/Index.cshtml
-@@ -2,8 +2,9 @@
  @model IndexModel
  @{
      ViewData["Title"] = "בית";
@@ -60,7 +64,8 @@ companion_previous: 7a9346ec48cfdb1d434e910fbc6076b416cd5828
  <p>ברוכים הבאים לפינה שלי בטבע. נכיר חיות, נקרא עליהן ונלמד איך מטפלים בהן.</p>
  <h2>מה תמצאו כאן?</h2>
  <ul>
-@@ -12,4 +13,5 @@
+     <li>חיות שיש להן סיפור</li>
+     <li>מדריכי טיפול קצרים</li>
      <li>המלצות שלי להיכרות מקרוב</li>
  </ul>
  <a href="https://he.wikipedia.org/wiki/שועל">לקריאה על שועלים</a>
@@ -70,24 +75,17 @@ companion_previous: 7a9346ec48cfdb1d434e910fbc6076b416cd5828
 
 ### `RazorTaba/wwwroot/css/site.css`
 
-בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
+הוסיפו בסוף הקובץ את הכללים הבאים, אחרי הסוגר המסולסל האחרון. השאירו את כללי התבנית במקומם; סימני `+` מציינים שורות חדשות ואינם חלק מהקוד שמקלידים:
 
 ````diff
---- a/RazorTaba/wwwroot/css/site.css
-+++ b/RazorTaba/wwwroot/css/site.css
-@@ -1,2 +1,14 @@
--/* נשנה את העיצוב בשיעור CSS. */
--body { font-family: Arial, sans-serif; }
 +:root {
 +    --forest: #173f35;
 +    --leaf: #4d7058;
 +    --paper: #f7f5ed;
 +    --accent: #e6b66b;
 +}
-+body { margin: 0; font-family: Arial, sans-serif; color: var(--forest); background: var(--paper); line-height: 1.7; }
++body { font-family: Arial, sans-serif; color: var(--forest); background: var(--paper); line-height: 1.7; }
 +a { color: var(--forest); text-underline-offset: .25em; }
-+.site-header { background: #fff; border-bottom: 1px solid #d8dfd3; }
-+.brand { font-size: 1.35rem; font-weight: 800; margin-inline-end: auto; text-decoration: none; }
 +.intro { background: var(--forest); color: #fff; border-radius: 1.5rem; padding: 3rem; }
 +.intro h1 { font-size: clamp(2rem, 6vw, 4rem); font-weight: 800; }
 +.intro a { color: var(--accent); }
@@ -105,7 +103,7 @@ companion_previous: 7a9346ec48cfdb1d434e910fbc6076b416cd5828
 בחרו פלטה משלכם ושנו ריווח אחד. הסבירו איזה selector משפיע על הכותרת ואיזה על הקישורים. שמרו ובדקו את שינוי הצבעים לפני שמנסים שינוי נוסף.
 
 {: .box-success}
-בסיום שינוי: שמרו את הקבצים, בדקו את האתר בדפדפן והסבירו מה שיניתם. המשיכו להתנסות בתוכן ובעיצוב באותה תיקיית פרויקט.
+בסיום שינוי: שמרו את הקבצים, בדקו את האתר בדפדפן והסבירו מה שיניתם. אפשר להמשיך בניסוי הזה או לתרגל שוב בפרויקט נפרד; רשמו היכן שמרתם כל ניסוי.
 
 {: .box-note}
 AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. אתם אחראים לכתוב, לבדוק ולהסביר את הקוד; אין להפעיל סוכן שיכתוב את הפרויקט.

@@ -90,24 +90,21 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Program.cs
-+++ b/RazorTaba/Program.cs
-@@ -1,8 +1,15 @@
 +using Microsoft.EntityFrameworkCore;
 +using RazorTaba.Data;
 +
  var builder = WebApplication.CreateBuilder(args);
+
+ // Add services to the container.
  builder.Services.AddRazorPages();
  builder.Services.AddSingleton<RazorTaba.Services.MarkdownRenderer>();
-
++
 +// נתיב יחסי מחושב תמיד מתיקיית הפרויקט, גם כשמריצים פקודה משורש המאגר.
 +string databasePath = Path.Combine(builder.Environment.ContentRootPath, "App.db");
 +builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite($"Data Source={databasePath}"));
-+
+
  var app = builder.Build();
- if (!app.Environment.IsDevelopment())
- {
-     app.UseExceptionHandler("/Error");
+
 ````
 
 ### `RazorTaba/Pages/Animals/Index.cshtml.cs`
@@ -115,9 +112,6 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Pages/Animals/Index.cshtml.cs
-+++ b/RazorTaba/Pages/Animals/Index.cshtml.cs
-@@ -1,19 +1,18 @@
  using Microsoft.AspNetCore.Mvc.RazorPages;
 +using Microsoft.EntityFrameworkCore;
 +using RazorTaba.Data;
@@ -151,9 +145,6 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Models/Animal.cs
-+++ b/RazorTaba/Models/Animal.cs
-@@ -1,7 +1,7 @@
  namespace RazorTaba.Models;
 
 -/// <summary>חיה אחת באתר. בשלב זה האובייקטים קיימים רק בזיכרון.</summary>

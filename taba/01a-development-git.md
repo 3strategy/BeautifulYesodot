@@ -16,7 +16,7 @@ companion_previous: 3e83e27c126c0aa3f02f2977e8923702213ecd43
 ---
 
 {: .box-note}
-ניצור ונריץ אתר ב־Visual Studio או ב־VS Code, נכיר את הקבצים ונשנה את התוכן. נשמור, נריץ ונראה את התוצאה בדפדפן.
+ניצור ונריץ אתר ב־Visual Studio, ב־VS Code או ב־Rider, נכיר את הקבצים ונשנה את התוכן. נשמור, נריץ ונראה את התוצאה בדפדפן.
 
 <!-- lesson-back:start -->
 [חזרה: הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }}){: data-sequence-nav="prev"}
@@ -33,54 +33,58 @@ companion_previous: 3e83e27c126c0aa3f02f2977e8923702213ecd43
 - לזהות את Pages ואת wwwroot.
 - לערוך HTML, לשמור קבצים ולבדוק את התוצאה בדפדפן.
 
-## מתחילים כאן: יוצרים פרויקט בפעם הראשונה
+## מתנסים ביצירת פרויקט Razor Pages
 
-עד עכשיו יצרתם קובץ HTML שפתחתם בדפדפן. כעת ניצור פרויקט Razor Pages בסביבת הפיתוח שנבחר. אין צורך בפרויקט מוכן. בשיעורים הקרובים תנסו תוכן ועיצוב; אחרי Bootstrap תלמדו לשמור גרסאות ב־Git.
+עד עכשיו שיחקתם ב־HTML בקבצים רגילים, בלי פרויקט. כעת ניצור אתר מתבנית מוכנה. **זה עדיין שלב ניסוי:** בחרו שם חופשי באנגלית ללא רווחים, למשל `RazorPractice`. אפשר ליצור כמה פרויקטים, כל אחד בשם ובתיקייה משלו. אין צורך בחשבון GitHub או בשיתוף עם המורה בשלב הזה.
 
-בחרו את סביבת הפיתוח שלכם ובצעו **אחד** משני המדריכים עד סופו:
+פתחו את המדריך של סביבת הפיתוח שלכם. כל מדריך מלווה אתכם מהיצירה ועד Welcome בדפדפן, ואפשר לחזור אליו בכל פעם שרוצים לתרגל שוב.
 
-<div class="two-columns">
-<div markdown="1" class="column box-note">
+<details markdown="1"><summary>Visual Studio ב־Windows — יצירת Razor Pages דרך הממשק</summary>
 
-### VS Code — Windows או macOS
+{% include taba/setup-visual-studio.md %}
 
-[יוצרים ומריצים פרויקט ב־VS Code]({{ '/taba/01a-setup-vscode/' | relative_url }})
+</details>
 
-ניצור פרויקט באמצעות C# Dev Kit, נריץ אותו ונשנה כותרת.
+<details markdown="1"><summary>VS Code ב־macOS — יצירת Razor Pages בטרמינל</summary>
 
-</div>
-<div markdown="1" class="column box-note">
+{% include taba/setup-vscode.md %}
 
-### Visual Studio — Windows
+</details>
 
-[יוצרים ומריצים פרויקט ב־Visual Studio]({{ '/taba/01a-setup-visual-studio/' | relative_url }})
+<details markdown="1"><summary>Rider ב־Windows או ב־macOS — יצירת Razor Pages דרך הממשק</summary>
 
-נבחר תבנית Razor Pages, נגדיר היכן יישמר הפתרון ונריץ את האתר.
+{% include taba/setup-rider.md %}
 
-</div>
-</div>
+</details>
+
+### מתרגלים יצירה נוספת
+
+1. עצרו את האתר הראשון באמצעות Stop או Ctrl+C בטרמינל.
+2. חזרו למדריך שלכם וצרו פרויקט שני בשם אחר, למשל `RazorPractice2`, בתיקייה נפרדת לצד הראשונה.
+3. הריצו גם אותו ובדקו שמופיע Welcome. שנו כותרת כדי שתדעו איזה ניסוי פתוח.
+4. עצרו ופתחו שוב את הניסוי הראשון. בדקו שהקבצים שלו והשינוי שעשיתם עדיין קיימים.
 
 {: .box-success}
-חזרו לכאן כשיש לכם אתר שפועל בדפדפן עם הכותרת ששיניתם. אם כבר השלמתם את ההקמה, המשיכו עם הפרויקט הקיים.
+אתם יודעים ליצור אתר, לעצור אותו ולפתוח עבודה קיימת. בחרו כעת אחד מהניסויים להמשך תרגול תוכן ו־CSS. אפשר לנסות שוב עד שיעור Bootstrap; בשיעור Git שלאחריו נרשום את הפרויקט השנתי בשם `FirstNameLastNameRazor` ונשתף את המורה.
 
 ## ממשיכים עם הפרויקט שיצרנו
 {: #after-setup}
 
 ### 1. פותחים את העבודה הקיימת
 
-ב־VS Code פתחו את תיקיית הפרויקט בשם שבחרתם באמצעות **File → Open Folder**. ב־Visual Studio פתחו את קובץ הפתרון בשם שבחרתם, למשל `GuysRazor.slnx` או `GuysRazor.sln`, מתוך תיקיית הפתרון שלכם. אל תפעילו שוב את פקודת יצירת הפרויקט.
+ב־VS Code פתחו את תיקיית הפרויקט בשם שבחרתם באמצעות **File → Open Folder**. ב־Visual Studio פתחו את קובץ הפתרון בשם שבחרתם, למשל `GuysRazor.slnx` או `GuysRazor.sln`, מתוך תיקיית הפתרון שלכם. לפתיחה מחדש של עבודה קיימת אין צורך ליצור פרויקט. ב־Rider פתחו את קובץ הפתרון באמצעות **Open**.
 
-במפגשים הבאים פתחו את אותה תיקייה, שמרו את הקבצים והריצו את האתר כדי לראות מאיזה מצב ממשיכים.
+כל עוד ממשיכים ניסוי קיים, פתחו את התיקייה שלו, שמרו והריצו. ליצירת ניסוי חדש חזרו למדריך ובחרו שם ותיקייה חדשים.
 
 ### 2. עורכים את האתר שלנו
 
-השאירו את הדפדפן לצד העורך. ב־Visual Studio הפעילו את פרופיל **http**. ב־VS Code פתחו טרמינל בתיקייה שמכילה את קובץ ה־`.csproj` והריצו:
+השאירו את הדפדפן לצד העורך. ב־Visual Studio או ב־Rider הפעילו את פרופיל **http**. ב־VS Code פתחו טרמינל בתיקייה שמכילה את קובץ ה־`.csproj` והריצו:
 
 ```shell
 dotnet watch --launch-profile http
 ```
 
-בקטע הבא נתאים את דף הבית ואת התבנית המשותפת לעברית. בדוגמאות כאן `RazorTaba` הוא שם תיקיית הפרויקט הפנימית. אם בחרתם שם אישי ב־Visual Studio, החליפו את החלק הזה בשם שלכם: למשל `GuysRazor/Pages/Index.cshtml`. הנתיב מתחיל מתיקיית הפתרון החיצונית. הקבצים כבר נוצרו בהקמה; כעת עורכים אותם.
+בקטע הבא נתאים את דף הבית ואת התבנית המשותפת לעברית. בדוגמאות כאן `RazorTaba` הוא שם תיקיית הפרויקט הפנימית. אם בחרתם שם אישי ב־Visual Studio, החליפו את החלק הזה בשם שלכם: למשל `GuysRazor/Pages/Index.cshtml`. במסלול עם תיקיית פתרון חיצונית הנתיב מתחיל ממנה; ב־VS Code, כשפתחתם ישירות את תיקיית ה־`.csproj`, התחילו מ־`Pages/Index.cshtml` בלי להוסיף תיקייה נוספת. הקבצים כבר נוצרו בהקמה; כעת עורכים אותם.
 
 צרו בתוך `RazorTaba/wwwroot` תיקייה בשם `images` והעתיקו אליה את `fox.svg` ששמרתם בתיקיית `first-page` בשיעור הקודם. כך התמונה שבדף הבית תימצא בנתיב `RazorTaba/wwwroot/images/fox.svg`.
 
@@ -92,110 +96,49 @@ dotnet watch --launch-profile http
 
 ### `RazorTaba/Pages/Index.cshtml`
 
-פתחו את `RazorTaba/Pages/Index.cshtml` הקיים והחליפו את תוכנו בתוכן הבא:
+מתחילים מהדף שיצרה התבנית. אם שיניתם קודם את Welcome, תראו במקומו את הכותרת שלכם. משנים את תוכן הדף; התפריט והמסגרת נשארים בתבנית המשותפת.
 
-````cshtml
-@page
-@model IndexModel
-@{
-    ViewData["Title"] = "בית";
-}
-<h1>החיות שלי</h1>
-<p>זה האתר הראשון שלי. כאן אכיר לכם חיות שמסקרנות אותי.</p>
-<img src="~/images/fox.svg" alt="איור של שועל" width="180" />
+````diff
+ @page
+ @model IndexModel
+ @{
+-    ViewData["Title"] = "Home page";
++    ViewData["Title"] = "בית";
+ }
+-
+-<div class="text-center">
+-    <h1 class="display-4">Welcome</h1>
+-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+-</div>
++<h1>החיות שלי</h1>
++<p>זה האתר הראשון שלי. כאן אכיר לכם חיות שמסקרנות אותי.</p>
++<img src="~/images/fox.svg" alt="איור של שועל" width="180" />
 ````
 
 ### `RazorTaba/Pages/Shared/_Layout.cshtml`
 
-פתחו את `RazorTaba/Pages/Shared/_Layout.cshtml` הקיים והחליפו את תוכנו בתוכן הבא:
+קובץ זה כבר קיים בתבנית ומחבר את כל הדפים ל־Bootstrap ול־`site.css`. אין להחליף אותו. בצעו רק את שני השינויים הבאים כדי להתאים את כיוון הדף ואת Bootstrap לעברית:
 
-````cshtml
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewData["Title"] — החיות שלי</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-</head>
-<body>
-    <header class="site-header">
-        <nav class="container py-3 d-flex gap-3 align-items-center flex-wrap" aria-label="ניווט ראשי">
-            <a class="brand" asp-page="/Index">🐾 החיות שלי</a>
-            <a asp-page="/Index">בית</a>
-        </nav>
-    </header>
-    <main class="container py-4">
-        @RenderBody()
-    </main>
-    <footer class="container py-4">אתר של סקרנות, למידה ואכפתיות לבעלי חיים.</footer>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
-</html>
-````
+{% code_diff %}
+ <!DOCTYPE html>
+-<html lang="en">
++<html lang="he" dir="rtl">
+ ⁞
+-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
++    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+{% endcode_diff %}
 
-### `RazorTaba/wwwroot/css/site.css`
+השאירו את שאר השורות, כולל הקישור לקובץ ששמו מסתיים ב־`.styles.css`, תפריט Home ו־Privacy, כפתור פתיחת התפריט בנייד והסקריפטים שבתחתית הקובץ. נסו לצמצם את רוחב החלון ולפתוח את התפריט בכפתור שלו.
 
-פתחו בפרויקט שלכם את `wwwroot → css → site.css`. זהו קובץ העיצוב שאליו קישרנו מתוך `_Layout.cshtml`. התבנית יצרה בו כמה כללי עיצוב; כעת **החליפו את כל תוכנו** בשתי השורות הבאות ושמרו:
+### מכירים את קובצי העיצוב שנוצרו
 
-````css
-/* נשנה את העיצוב בשיעור CSS. */
-body { font-family: Arial, sans-serif; }
-````
+- `wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css` מכיל מחלקות עיצוב מוכנות. משתמשים בשמות המחלקות בתוך HTML; אין לערוך את קובץ הספרייה.
+- `wwwroot/css/site.css` הוא קובץ העיצוב האישי של האתר בתבנית הזאת. כאן נוסיף כללי CSS משלנו בשיעור CSS, **אחרי הכללים שכבר נוצרו**.
+- `Pages/Shared/_Layout.cshtml.css` מכיל עיצוב של התבנית המשותפת. הקישור ל־`שםהפרויקט.styles.css` טוען את העיצוב הזה לאחר הבנייה; אין ליצור קובץ כזה ידנית.
 
-השורה הראשונה היא הערה שאינה משנה את הדף. השורה השנייה בוחרת גופן לטקסט שבגוף הדף. אם Arial אינו זמין במחשב, הדפדפן יבחר גופן ממשפחת `sans-serif`.
-
-{: .box-success}
-בדקו שב־`site.css` נשארו רק שתי השורות האלה. שמרו ורעננו את האתר: הכותרת, הפסקה והתמונה עדיין מופיעות, והטקסט משתמש בגופן שהגדרתם.
-
-### `RazorTaba/Program.cs`
-
-פתחו את `RazorTaba/Program.cs` הקיים והחליפו את תוכנו בתוכן הבא:
-
-````csharp
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddRazorPages();
-
-var app = builder.Build();
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error");
-    app.UseHsts();
-}
-app.UseStaticFiles();
-app.UseRouting();
-app.MapRazorPages();
-app.Run();
-````
-
-### `RazorTaba/Properties/launchSettings.json`
-
-פתחו את `RazorTaba/Properties/launchSettings.json` הקיים והחליפו את תוכנו בתוכן הבא:
-
-````json
-{
-  "profiles": {
-    "http": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "applicationUrl": "http://localhost:5186",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "https": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "applicationUrl": "https://localhost:7186;http://localhost:5186",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    }
-  }
-}
-````
+{: .box-note}
+השאירו את `Program.cs`, את `Properties/launchSettings.json` ואת כללי CSS המקוריים כפי שנוצרו. כבר יש לנו אתר עובד. כתובת ההרצה היא הכתובת שהעורך או הטרמינל מציגים אצלכם; אין צורך לקבוע מספר יציאה משותף לכל הניסויים.
 
 {% if taba_show_private_links %}
 <details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
@@ -283,7 +226,7 @@ app.Run();
 
 ## מריצים ובודקים
 
-1. האתר נפתח ב־http://localhost:5186.
+1. האתר נפתח בכתובת `localhost` שההרצה שלכם מציגה.
 2. הכותרת והפסקה מופיעות בעברית והתמונה נטענת.
 3. שמרו שינוי נוסף, הריצו וודאו שהוא מופיע.
 4. עצרו את ההרצה, פתחו שוב את אותו פרויקט והריצו אותו.
@@ -300,6 +243,8 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 <!-- teacher-notes:start
 class_periods: 1
+
+Template baseline revised 2026-10-16: stock .NET 10 webapp (SDK 10.0.400), top-level statements, original startup/static assets and Bootstrap navbar retained. Early route 01a–04 was applied to a fresh template, built with zero warnings/errors and inspected in a browser. Changed layout/Program excerpts through 15 were checked for contextual applicability only; macOS runs remain pending; Rider 2026.2.2 Windows GUI creation and first run were verified on 2026-10-16. Historical companion pins describe the previous custom layout; they are not qualified source checkpoints for this revised route.
 
 להכין התקנות לפני המפגש. אין יעד לימודי של PR, branches או merge.
 teacher-notes:end -->

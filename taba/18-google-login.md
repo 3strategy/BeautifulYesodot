@@ -42,7 +42,7 @@ companion_previous: e5a7ef42c23879040e8c0d2398ecbc722a33ad36
 
 עקבו אחר [הוראות Microsoft להגדרת Google](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/google-logins?view=aspnetcore-10.0). צרו פרויקט ב־Google Cloud, הגדירו מסך הסכמה ולקוח OAuth מסוג Web application. במצב בדיקה הוסיפו את חשבונות התרגול כמשתמשי בדיקה בהתאם להגדרות החשבון.
 
-כתובת ההפניה המקומית לפרויקט הזה היא בדיוק `https://localhost:7186/signin-google`. הפעילו את פרופיל https; הפורט והפרוטוקול חייבים להתאים להגדרה אצל Google. את Client ID ואת Client secret שומרים ב־User Secrets המקומי, לעולם לא ב־Git או בצילום מסך להגשה.
+כתובת ההפניה המקומית לפרויקט הזה היא בדיוק `https://localhost:7186/signin-google`. לפני ההרצה פתחו `Properties/launchSettings.json`, מצאו את פרופיל `https` ושנו רק את `applicationUrl` שלו ל־`https://localhost:7186;http://localhost:5186`. הפעילו את פרופיל https; הפורט והפרוטוקול חייבים להתאים להגדרה אצל Google. את Client ID ואת Client secret שומרים ב־User Secrets המקומי, לעולם לא ב־Git או בצילום מסך להגשה.
 
 ## 2. מחברים את הכפתור
 
@@ -71,9 +71,6 @@ dotnet run --project RazorTaba --launch-profile https
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Program.cs
-+++ b/RazorTaba/Program.cs
-@@ -25,8 +25,20 @@ builder.Services.ConfigureApplicationCookie(options =>
      options.LoginPath = "/Account/Login";
      options.AccessDeniedPath = "/Account/Denied";
  });
@@ -101,9 +98,6 @@ dotnet run --project RazorTaba --launch-profile https
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/RazorTaba.csproj
-+++ b/RazorTaba/RazorTaba.csproj
-@@ -3,18 +3,20 @@
    <PropertyGroup>
      <TargetFramework>net10.0</TargetFramework>
      <Nullable>enable</Nullable>
@@ -156,9 +150,6 @@ dotnet run --project RazorTaba --launch-profile https
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Pages/Account/Login.cshtml
-+++ b/RazorTaba/Pages/Account/Login.cshtml
-@@ -9,4 +9,11 @@
      <label asp-for="Password">סיסמה</label><input asp-for="Password" class="form-control mb-3" autocomplete="current-password" dir="ltr" />
      <button class="btn btn-primary">כניסה</button>
  </form>

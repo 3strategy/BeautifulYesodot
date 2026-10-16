@@ -84,20 +84,16 @@ public class AuthDbContext(DbContextOptions<AuthDbContext> options) : IdentityDb
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Program.cs
-+++ b/RazorTaba/Program.cs
-@@ -1,5 +1,6 @@
  using Microsoft.EntityFrameworkCore;
 +using Microsoft.AspNetCore.Identity;
  using RazorTaba.Data;
 
  var builder = WebApplication.CreateBuilder(args);
- builder.Services.AddRazorPages();
-@@ -8,14 +9,31 @@ builder.Services.AddSingleton<RazorTaba.Services.MarkdownRenderer>();
+ ⁞
  // נתיב יחסי מחושב תמיד מתיקיית הפרויקט, גם כשמריצים פקודה משורש המאגר.
  string databasePath = Path.Combine(builder.Environment.ContentRootPath, "App.db");
  builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite($"Data Source={databasePath}"));
-
++
 +string accountsPath = Path.Combine(builder.Environment.ContentRootPath, "Accounts.db");
 +builder.Services.AddDbContext<AuthDbContext>(options => options.UseSqlite($"Data Source={accountsPath}"));
 +builder.Services.AddDefaultIdentity<IdentityUser>(options =>
@@ -112,19 +108,17 @@ public class AuthDbContext(DbContextOptions<AuthDbContext> options) : IdentityDb
 +    options.LoginPath = "/Account/Login";
 +    options.AccessDeniedPath = "/Account/Denied";
 +});
-+
+
  var app = builder.Build();
- if (!app.Environment.IsDevelopment())
- {
-     app.UseExceptionHandler("/Error");
-     app.UseHsts();
- }
- app.UseStaticFiles();
+
+ ⁞
+
  app.UseRouting();
+
 +app.UseAuthentication();
-+app.UseAuthorization();
- app.MapRazorPages();
- app.Run();
+ app.UseAuthorization();
+
+ app.MapStaticAssets();
 ````
 
 ### `RazorTaba/Pages/Account/Register.cshtml.cs`
@@ -307,18 +301,15 @@ else
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Pages/Shared/_Layout.cshtml
-+++ b/RazorTaba/Pages/Shared/_Layout.cshtml
-@@ -16,8 +16,9 @@
-             <a asp-page="/Guide">מדריך</a>
-             <a asp-page="/Discover">מגלים</a>
-             <a asp-page="/Animals/Index">החיות</a>
-             <a asp-page="/Keepers/Index">מטפלים</a>
-+            <partial name="_LoginPartial" />
+                             <a class="nav-link text-dark" asp-area="" asp-page="/Keepers/Index">מטפלים</a>
+                         </li>
+                     </ul>
++                    <div class="d-flex gap-2 align-items-center">
++                        <partial name="_LoginPartial" />
++                    </div>
+                 </div>
+             </div>
          </nav>
-     </header>
-     <main class="container py-4">
-         @RenderBody()
 ````
 
 {% if taba_show_private_links %}

@@ -86,26 +86,24 @@ dotnet add RazorTaba package HtmlSanitizer --version 9.2.1039
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Pages/Shared/_Layout.cshtml
-+++ b/RazorTaba/Pages/Shared/_Layout.cshtml
-@@ -12,14 +12,17 @@
-         <nav class="container py-3 d-flex gap-3 align-items-center flex-wrap" aria-label="ניווט ראשי">
-             <a class="brand" asp-page="/Index">🐾 החיות שלי</a>
-             <a asp-page="/Index">בית</a>
-             <a asp-page="/Contact">קשר</a>
-+            <a asp-page="/Guide">מדריך</a>
-         </nav>
-     </header>
-     <main class="container py-4">
-         @RenderBody()
-     </main>
-     <footer class="container py-4">אתר של סקרנות, למידה ואכפתיות לבעלי חיים.</footer>
+                         <li class="nav-item">
+                             <a class="nav-link text-dark" asp-area="" asp-page="/Contact">קשר</a>
+                         </li>
++                        <li class="nav-item">
++                            <a class="nav-link text-dark" asp-area="" asp-page="/Guide">מדריך</a>
++                        </li>
+                     </ul>
+                 </div>
+             </div>
+ ⁞
+
+     <script src="~/lib/jquery/dist/jquery.min.js"></script>
      <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 +    <script src="~/lib/mermaid/mermaid.min.js"></script>
 +    <script src="~/js/markdown.js" defer></script>
+     <script src="~/js/site.js" asp-append-version="true"></script>
+
      @await RenderSectionAsync("Scripts", required: false)
- </body>
- </html>
 ````
 
 ### `RazorTaba/Pages/Guide.cshtml`
@@ -189,16 +187,13 @@ public class MarkdownRenderer
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Program.cs
-+++ b/RazorTaba/Program.cs
-@@ -1,6 +1,7 @@
- var builder = WebApplication.CreateBuilder(args);
+
+ // Add services to the container.
  builder.Services.AddRazorPages();
 +builder.Services.AddSingleton<RazorTaba.Services.MarkdownRenderer>();
 
  var app = builder.Build();
- if (!app.Environment.IsDevelopment())
- {
+
 ````
 
 ### `RazorTaba/wwwroot/js/markdown.js`
@@ -238,9 +233,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/wwwroot/css/site.css
-+++ b/RazorTaba/wwwroot/css/site.css
-@@ -26,2 +26,10 @@
  /* הכפתור הבהיר זקוק לטקסט כהה, גם כשהוא נמצא בתוך אזור הפתיחה. */
  .intro .btn-light { color: var(--forest); }
 +

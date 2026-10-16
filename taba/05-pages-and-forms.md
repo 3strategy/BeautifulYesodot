@@ -33,6 +33,9 @@ companion_previous: fd6683d2c183607a7a808b053c0887256179d66e
 - לקשר label לשדה באמצעות for ו־id.
 - להבדיל בין טופס מעוצב לבין שמירת נתונים.
 
+{: .box-note}
+מהשיעור הזה בונים בהדרגה את הפרויקט השנתי שרשמתם בשיעור Git. פתחו את המאגר האישי בשם `FirstNameLastNameRazor` עם הפרטים שלכם, וודאו שהמורה אישר גישה אליו. הוסיפו את הדף החדש לאתר הזה; אין ליצור פרויקט חדש עבור כל שיעור. אם הרישום או השיתוף עדיין לא הושלמו, חזרו ל[נקודת הרישום]({{ '/taba/04a-git-github/' | relative_url }}) והשלימו אותה עם המורה.
+
 ## מתחילים מסונכרנים
 
 פתחו את תיקיית הפרויקט הנכונה, בדקו שאין שינוי לא שמור והפעילו **Pull**. אם Git מציג התנגשות, פנו למורה; אל תמחקו עבודה ואל תבצעו Force Push.
@@ -68,18 +71,15 @@ companion_previous: fd6683d2c183607a7a808b053c0887256179d66e
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Pages/Shared/_Layout.cshtml
-+++ b/RazorTaba/Pages/Shared/_Layout.cshtml
-@@ -11,8 +11,9 @@
-     <header class="site-header">
-         <nav class="container py-3 d-flex gap-3 align-items-center flex-wrap" aria-label="ניווט ראשי">
-             <a class="brand" asp-page="/Index">🐾 החיות שלי</a>
-             <a asp-page="/Index">בית</a>
-+            <a asp-page="/Contact">קשר</a>
-         </nav>
-     </header>
-     <main class="container py-4">
-         @RenderBody()
+                         <li class="nav-item">
+                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                         </li>
++                        <li class="nav-item">
++                            <a class="nav-link text-dark" asp-area="" asp-page="/Contact">קשר</a>
++                        </li>
+                     </ul>
+                 </div>
+             </div>
 ````
 
 ## מריצים ובודקים

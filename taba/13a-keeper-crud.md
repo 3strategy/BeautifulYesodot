@@ -252,18 +252,15 @@ public class IndexModel(AppDbContext db) : PageModel
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Pages/Shared/_Layout.cshtml
-+++ b/RazorTaba/Pages/Shared/_Layout.cshtml
-@@ -15,8 +15,9 @@
-             <a asp-page="/Contact">קשר</a>
-             <a asp-page="/Guide">מדריך</a>
-             <a asp-page="/Discover">מגלים</a>
-             <a asp-page="/Animals/Index">החיות</a>
-+            <a asp-page="/Keepers/Index">מטפלים</a>
-         </nav>
-     </header>
-     <main class="container py-4">
-         @RenderBody()
+                         <li class="nav-item">
+                             <a class="nav-link text-dark" asp-area="" asp-page="/Animals/Index">החיות</a>
+                         </li>
++                        <li class="nav-item">
++                            <a class="nav-link text-dark" asp-area="" asp-page="/Keepers/Index">מטפלים</a>
++                        </li>
+                     </ul>
+                 </div>
+             </div>
 ````
 
 ## מריצים ובודקים

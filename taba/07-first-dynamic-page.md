@@ -98,18 +98,15 @@ public class DiscoverModel : PageModel
 בקובץ הקיים בצעו את השינוי הבא. סימני `+` ו־`-` מציינים שינוי ואינם חלק מהקוד:
 
 ````diff
---- a/RazorTaba/Pages/Shared/_Layout.cshtml
-+++ b/RazorTaba/Pages/Shared/_Layout.cshtml
-@@ -13,8 +13,9 @@
-             <a class="brand" asp-page="/Index">🐾 החיות שלי</a>
-             <a asp-page="/Index">בית</a>
-             <a asp-page="/Contact">קשר</a>
-             <a asp-page="/Guide">מדריך</a>
-+            <a asp-page="/Discover">מגלים</a>
-         </nav>
-     </header>
-     <main class="container py-4">
-         @RenderBody()
+                         <li class="nav-item">
+                             <a class="nav-link text-dark" asp-area="" asp-page="/Guide">מדריך</a>
+                         </li>
++                        <li class="nav-item">
++                            <a class="nav-link text-dark" asp-area="" asp-page="/Discover">מגלים</a>
++                        </li>
+                     </ul>
+                 </div>
+             </div>
 ````
 
 ## מריצים ובודקים
