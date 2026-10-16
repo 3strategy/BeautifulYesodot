@@ -68,7 +68,9 @@ published: true
 <div class="two-columns">
 <div markdown="1" class="column">
 
-בחלון **Configure your new project** בחרו שם באנגלית, ללא רווחים, שכולל את שמכם. למשל `GuysRazor` בצילום, או `NoasRazor`. השתמשו בשם שלכם לאורך כל העבודה.
+בצילום מופיע השם `GuysRazor`; אצלכם השתמשו בתבנית האישית שלהלן.
+
+בחלון **Configure your new project** בחרו שם בתבנית `FirstNameLastNameRazor`: השם הפרטי ושם המשפחה שלכם באנגלית, ללא רווחים, ואחריהם `Razor`. למשל `GuyLeviRazor` או `NoaCohenRazor`. השתמשו בשם שלכם לאורך כל העבודה.
 
 - **Project name**: הקלידו את השם שבחרתם.
 - **Location**: השאירו את מיקום ברירת המחדל שמציע Visual Studio, בדרך כלל `source\repos` בתוך תיקיית המשתמש שלכם. אין להעתיק את שם המשתמש `3stra` מהצילום.
@@ -80,15 +82,15 @@ published: true
 </div>
 <div markdown="1" class="column">
 
-[![חלון Configure your new project עם השם GuysRazor ומיקום ברירת המחדל source repos]({{ '/assets/img/taba/visual-studio-project-name.png' | relative_url }})]({{ '/assets/img/taba/visual-studio-project-name.png' | relative_url }})
+[![חלון Configure your new project עם שם לדוגמה ומיקום ברירת המחדל source repos]({{ '/assets/img/taba/visual-studio-project-name.png' | relative_url }})]({{ '/assets/img/taba/visual-studio-project-name.png' | relative_url }})
 
 </div>
 </div>
 
-Visual Studio ייצור תיקייה חיצונית לפתרון ותיקייה פנימית לפרויקט, שתיהן בשם שבחרתם. בדוגמה שלנו שתיהן נקראות `GuysRazor`.
+Visual Studio ייצור תיקייה חיצונית לפתרון ותיקייה פנימית לפרויקט, שתיהן בשם שבחרתם. בדוגמה שלנו שתיהן נקראות `GuyLeviRazor`.
 
 {: .box-note}
-אם כבר יצרתם את הפרויקט, פתחו אותו דרך **Open a project or solution** ובחרו את `GuysRazor.sln` או `GuysRazor.slnx` שבתיקייה הקיימת. אין ליצור פרויקט נוסף. את `first-page` מהשיעור הקודם נשאיר כפי שהיא בינתיים.
+אם כבר יצרתם את הפרויקט, פתחו אותו דרך **Open a project or solution** ובחרו את `GuyLeviRazor.sln` או `GuyLeviRazor.slnx` שבתיקייה הקיימת. אין ליצור פרויקט נוסף. את `first-page` מהשיעור הקודם נשאיר כפי שהיא בינתיים.
 
 ## 3. יוצרים את פרויקט Razor Pages
 
@@ -141,21 +143,21 @@ Visual Studio עשוי לבקש לאשר תעודת פיתוח מקומית עב
 
 חזרו ל־Visual Studio ולחצו על **הריבוע האדום Stop** בסרגל העליון כדי לעצור את ההרצה.
 
-פתחו **View → Solution Explorer**. הרחיבו את הפרויקט `GuysRazor` ואת התיקייה `Pages`. בסייר הקבצים תוכלו לראות את המבנה הבא:
+פתחו **View → Solution Explorer**. הרחיבו את הפרויקט `GuyLeviRazor` ואת התיקייה `Pages`. בסייר הקבצים תוכלו לראות את המבנה הבא:
 
 ```text
 source/repos/
-└── GuysRazor/
-    ├── GuysRazor.slnx (או GuysRazor.sln)
-    └── GuysRazor/
-        ├── GuysRazor.csproj
+└── GuyLeviRazor/
+    ├── GuyLeviRazor.slnx (או GuyLeviRazor.sln)
+    └── GuyLeviRazor/
+        ├── GuyLeviRazor.csproj
         ├── Program.cs
         ├── Pages/
         │   └── Index.cshtml
         └── wwwroot/
 ```
 
-`Pages` מכילה דפי אתר ו־`wwwroot` מכילה עיצוב, תמונות ו־JavaScript. בהמשך, הנתיב `GuysRazor/Pages/Index.cshtml` מתחיל מתיקיית `GuysRazor`; ב־Solution Explorer פותחים את הפרויקט ואז את `Pages`.
+`Pages` מכילה דפי אתר ו־`wwwroot` מכילה עיצוב, תמונות ו־JavaScript. בהמשך, הנתיב `GuyLeviRazor/Pages/Index.cshtml` מתחיל מתיקיית `GuyLeviRazor`; ב־Solution Explorer פותחים את הפרויקט ואז את `Pages`.
 
 1. ב־Solution Explorer פתחו את הפרויקט בשם שבחרתם, ואז `Pages → Index.cshtml`.
 2. בשורת הכותרת החליפו רק את `Welcome` ב־`החיות שלי` ושמרו עם **Ctrl+S**.
@@ -167,7 +169,7 @@ source/repos/
 
 ## איך משתמשים בשמות שלכם בשיעורים הבאים?
 
-בדוגמאות בקורס הפרויקט נקרא `RazorTaba`. אצלכם השתמשו בשם שבחרתם: למשל, `RazorTaba/Pages/Index.cshtml` הוא `GuysRazor/Pages/Index.cshtml` בתוך תיקיית הפתרון. אין לשנות את שם הפרויקט כדי להתאים לדוגמה. ב־Solution Explorer פתחו את הפרויקט שלכם ואז את `Pages`.
+בדוגמאות בקורס הפרויקט נקרא `RazorTaba`. אצלכם השתמשו בשם שבחרתם: למשל, `RazorTaba/Pages/Index.cshtml` הוא `GuyLeviRazor/Pages/Index.cshtml` בתוך תיקיית הפתרון. אין לשנות את שם הפרויקט כדי להתאים לדוגמה. ב־Solution Explorer פתחו את הפרויקט שלכם ואז את `Pages`.
 
 הבחירה **Do not use top-level statements** יוצרת את `Program.cs` עם מחלקה `Program` ופעולה `Main`. אם בשיעור המשותף מחליפים את כל תוכן `Program.cs` בקוד קצר ללא המחלקה, זו החלפה מלאה של הקובץ; אין להדביק אותו בנוסף למחלקה שנוצרה.
 
