@@ -203,7 +203,7 @@ navbar-links:
     - "מפת הדרך: האתר שלי": "/taba/00-student-roadmap/"
     - "הפרויקט שלנו: מאתר אישי ליישום עם נתונים": "/taba/00-teacher-plan/"
     - "הדף הראשון שלי": "/taba/01-first-page/"
-    - "סביבת הפיתוח: מריצים ומשנים אתר": "/taba/01a-development-git/"
+    - "סביבת הפיתוח: מריצים ומשנים אתר": "/taba/01a-development-environment/"
     - "האתר הופך לשלי": "/taba/02-my-theme/"
     - "מעצבים עם CSS": "/taba/03-css-classes/"
     - "אתר שנראה טוב עם Bootstrap": "/taba/04-bootstrap/"

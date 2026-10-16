@@ -5,7 +5,7 @@ It is loaded once by the footer and activates only on explicitly tagged pages.
 
 ## Enabled routes
 
-Taba: student roadmap → 01 → 01a-development-git → 02 → 03 → 04 →
+Taba: student roadmap → 01 → 01a-development-environment → 02 → 03 → 04 →
 04a → 05 → 05a → 05b → 06 → 07 → 08 → 09 → 10 → 11 → 12 → 13 →
 13a → 14 → 15 → 16 → 17 → 18. There are 24 enabled pages.
 

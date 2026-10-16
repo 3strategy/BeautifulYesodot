@@ -25,7 +25,7 @@
   },
   "/taba/01-first-page/": {
     "prev": "/taba/00-student-roadmap/",
-    "next": "/taba/01a-development-git/"
+    "next": "/taba/01a-development-environment/"
   },
   "/taba/00-student-roadmap/": {
     "prev": null,
@@ -80,7 +80,7 @@
     "next": "/taba/04-bootstrap/"
   },
   "/taba/02-my-theme/": {
-    "prev": "/taba/01a-development-git/",
+    "prev": "/taba/01a-development-environment/",
     "next": "/taba/03-css-classes/"
   },
   "/taba/15-local-identity/": {
@@ -91,7 +91,7 @@
     "prev": "/taba/03-css-classes/",
     "next": "/taba/04a-git-github/"
   },
-  "/taba/01a-development-git/": {
+  "/taba/01a-development-environment/": {
     "prev": "/taba/01-first-page/",
     "next": "/taba/02-my-theme/"
   }

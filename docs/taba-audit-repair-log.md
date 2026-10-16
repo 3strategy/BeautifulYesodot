@@ -1,5 +1,8 @@
 # Taba student audit repair log
 
+Lesson 01a now lives at `taba/01a-development-environment.md` (renamed
+2026-10-16). Historical entries below retain its former filename.
+
 Coordinator: `01a08a05-c798-7db3-867c-ee6afbc0811d` (Improve Taba tutorials).
 Student: `01a08a00-2d65-7b50-9256-fced4eb1d573` (Audit Taba tutorials as student).
 

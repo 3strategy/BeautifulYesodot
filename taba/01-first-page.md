@@ -93,5 +93,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-git/' | relative_url }}){: data-sequence-nav="next"}
+- [סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-environment/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

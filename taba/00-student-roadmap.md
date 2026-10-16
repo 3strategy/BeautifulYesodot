@@ -53,7 +53,7 @@ flowchart LR
 | יחידה | מסלול |
 | ---: | ---: |
 | [הדף הראשון שלי]({{ '/taba/01-first-page' | relative_url }}) | ליבה |
-| [סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-git' | relative_url }}) | ליבה |
+| [סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-environment' | relative_url }}) | ליבה |
 | [הקמה ב־VS Code: טרמינל ופרויקט Razor]({{ '/taba/01a-setup-vscode/' | relative_url }}) | בוחרים מסלול הקמה אחד |
 | [הקמה ב־Visual Studio: פתרון ופרויקט Razor]({{ '/taba/01a-setup-visual-studio/' | relative_url }}) | בוחרים מסלול הקמה אחד |
 | [הקמה ב־Rider: פתרון ופרויקט Razor]({{ '/taba/01a-setup-rider/' | relative_url }}) | בוחרים מסלול הקמה אחד |

@@ -11,10 +11,10 @@ published: true
 {: .box-note}
 ניצור אתר Razor Pages דרך הממשק של Visual Studio ב־Windows ונריץ אותו. אפשר לחזור למדריך וליצור ניסוי נוסף בשם חדש.
 
-[חזרה: סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-git/' | relative_url }})
+[חזרה: סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-environment/' | relative_url }})
 
 {% include taba/setup-visual-studio.md %}
 
 ## המשך
 
-[חוזרים לשיעור המשותף]({{ '/taba/01a-development-git/#after-setup' | relative_url }})
+[חוזרים לשיעור המשותף]({{ '/taba/01a-development-environment/#after-setup' | relative_url }})
