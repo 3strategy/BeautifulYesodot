@@ -1,6 +1,6 @@
 ---
 layout: page
-title: כותבים תוכן ב־Markdown
+title: "09 — כותבים תוכן ב־Markdown"
 subtitle: כותרות, רשימות, קישורים, תמונות, טבלאות וגדרות קוד; מאמר אישי בקובץ md ותצוגה מקדימה
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 51
+sequence: 10
 track: core
 published: true
 companion_commit: ac696838547401ac23a50a09097079f44d97d6a6
@@ -19,13 +19,12 @@ companion_previous: 9e759fba10f1ec17fe4b851ed53e8703d06b644b
 נכתוב מאמר ב־Markdown עם כותרות, רשימות, תמונה וטבלה. נפתח תצוגה מקדימה ונראה איך סימני הטקסט הופכים למסמך מסודר.
 
 <!-- lesson-back:start -->
-[חזרה: מחברים דפים ובונים טופס]({{ '/taba/05-pages-and-forms/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 08 — מחברים דפים ובונים טופס]({{ '/taba/08-pages-and-forms/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/ac696838547401ac23a50a09097079f44d97d6a6) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/9e759fba10f1ec17fe4b851ed53e8703d06b644b...ac696838547401ac23a50a09097079f44d97d6a6)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -39,7 +38,7 @@ companion_previous: 9e759fba10f1ec17fe4b851ed53e8703d06b644b
 
 ## כותבים ומציגים תצוגה מקדימה
 
-צרו `Content/care.md`. ב־VS Code הפעילו Open Preview to the Side; אם עובדים ב־Visual Studio אפשר לפתוח את קובץ ה־Markdown ב־VS Code לצורך תצוגה מקדימה. קישור שמתחיל ב־/ הוא ביחס לאתר ולכן ייבדק כשהתוכן יוצג באתר בפרק 6. כרגע הקובץ אינו דף אינטרנט פעיל.
+צרו `Content/care.md`. ב־VS Code הפעילו Open Preview to the Side; אם עובדים ב־Visual Studio אפשר לפתוח את קובץ ה־Markdown ב־VS Code לצורך תצוגה מקדימה. קישור שמתחיל ב־/ הוא ביחס לאתר ולכן ייבדק כשהתוכן יוצג באתר בפרק 11. כרגע הקובץ אינו דף אינטרנט פעיל.
 
 כותרת ראשית מתחילה ב־# ורשימה ממוספרת מתחילה ב־1. רווח ושורה ריקה מפרידים בין בלוקים. אין צורך לכתוב div סביב כל פסקה.
 
@@ -95,5 +94,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [מציירים באמצעות טקסט: Mermaid]({{ '/taba/05b-mermaid/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 10 — מציירים באמצעות טקסט: Mermaid]({{ '/taba/10-mermaid/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

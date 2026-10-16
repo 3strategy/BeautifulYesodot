@@ -1,6 +1,6 @@
 ---
 layout: page
-title: משלימים ומציגים אתר אישי עם CRUD
+title: "18 — משלימים ומציגים אתר אישי עם CRUD"
 subtitle: הגשת CRUD עם ולידציה ושמירה, תוכן Markdown ותרשים מוסבר; שינוי עצמאי ובדיקת הבנה; סקירת לפחות 50 commits והתקדמות לאורך השנה
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 120
+sequence: 19
 track: core
 published: true
 companion_commit: 0c0c792177b8e55c202e007909d5ea5d0e856589
@@ -19,13 +19,12 @@ companion_previous: 5d8e9218600a868ac051cdf0034d25b3f189ebd2
 נבדוק את האתר שלנו לקראת ההגשה: ניצור, נציג, נערוך ונמחק רשומות, נבדוק שהמידע נשמר ונתקן תקלות שנמצא.
 
 <!-- lesson-back:start -->
-[חזרה: מעדכנים ומוחקים רשומות]({{ '/taba/11-edit-delete/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 17 — מעדכנים ומוחקים רשומות]({{ '/taba/17-edit-delete/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/0c0c792177b8e55c202e007909d5ea5d0e856589) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/5d8e9218600a868ac051cdf0034d25b3f189ebd2...0c0c792177b8e55c202e007909d5ea5d0e856589)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -93,7 +92,6 @@ class_periods: 3
 - לפני שיעור Identity הפרויקט מיועד להדגמה מקומית בלבד: פעולות CRUD פתוחות.
 ````
 
-{% if taba_show_private_links %}
 <details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
 אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
@@ -102,7 +100,6 @@ class_periods: 3
 - [tests/requirements.txt](https://github.com/3strategy/razortaba/blob/0c0c792177b8e55c202e007909d5ea5d0e856589/tests/requirements.txt)
 
 </details>
-{% endif %}
 teacher-notes:end -->
 
 <!-- lesson-next:start -->
@@ -110,6 +107,6 @@ teacher-notes:end -->
 
 ## המשך
 
-- [להרחבה: מטפל וחיות]({{ '/taba/13-keepers-animals/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 19 — מטפל וחיות: קשר אחד־לרבים]({{ '/taba/19-keepers-animals/' | relative_url }}){: data-sequence-nav="next"}
 - [מסיימים במסלול הליבה — חזרה למפת הדרך]({{ '/taba/00-student-roadmap/' | relative_url }})
 <!-- lesson-next:end -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'מטפל וחיות: קשר אחד־לרבים'
+title: "19 — מטפל וחיות: קשר אחד־לרבים"
 subtitle: Keeper ו־KeeperId, בחירה בטופס והצגת שם המטפל; מניעת מחיקת מטפל עם חיות; המטפל אינו חשבון כניסה
 lang: he
 full-width: true
@@ -9,7 +9,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 130
+sequence: 20
 track: extension
 published: true
 companion_commit: 29e43eb541435c0b2bed9bd14841af47bc246b4f
@@ -20,13 +20,12 @@ companion_previous: 0c0c792177b8e55c202e007909d5ea5d0e856589
 נוסיף מטפלים ונשייך כל חיה למטפל באמצעות רשימת בחירה. נציג את שם המטפל לצד החיה ונראה איך שתי טבלאות מתחברות.
 
 <!-- lesson-back:start -->
-[חזרה: משלימים ומציגים אתר אישי עם CRUD]({{ '/taba/12-core-project/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 18 — משלימים ומציגים אתר אישי עם CRUD]({{ '/taba/18-core-project/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/29e43eb541435c0b2bed9bd14841af47bc246b4f) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/0c0c792177b8e55c202e007909d5ea5d0e856589...29e43eb541435c0b2bed9bd14841af47bc246b4f)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -315,7 +314,7 @@ public class Keeper
                      <a asp-page="Delete" asp-route-id="@animal.Id">מחיקה</a>
 ````
 
-{% if taba_show_private_links %}
+<!--
 <details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
 אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
@@ -325,7 +324,7 @@ public class Keeper
 - [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/29e43eb541435c0b2bed9bd14841af47bc246b4f/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
 
 </details>
-{% endif %}
+-->
 
 ## מריצים ובודקים
 
@@ -353,6 +352,6 @@ teacher-notes:end -->
 
 ## המשך
 
-- [לתרגול CRUD נוסף: ניהול מטפלים]({{ '/taba/13a-keeper-crud/' | relative_url }}){: data-sequence-nav="next"}
-- [להמשך עם מטפל הדוגמה: חיפוש וסינון]({{ '/taba/14-filtering/' | relative_url }})
+- [המשך: 20 — מנהלים מטפלים: CRUD וקשר קיים]({{ '/taba/20-keeper-crud/' | relative_url }}){: data-sequence-nav="next"}
+- [22 — להמשך עם מטפל הדוגמה: חיפוש וסינון]({{ '/taba/22-filtering/' | relative_url }})
 <!-- lesson-next:end -->

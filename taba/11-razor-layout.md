@@ -1,6 +1,6 @@
 ---
 layout: page
-title: מבינים את Razor Pages ואת התבנית המשותפת
+title: "11 — מבינים את Razor Pages ואת התבנית המשותפת"
 subtitle: מסבירים את מבנה הפרויקט שבו כבר עובדים; Layout ותצוגת Markdown ו־Mermaid באמצעות רכיב מוכן; ללא EF או Identity
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 60
+sequence: 12
 track: core
 published: true
 companion_commit: 2307d2e1aa18db15dd9675c618ace510fe87528c
@@ -19,13 +19,12 @@ companion_previous: cb12bd589208363af709028b0a00a26769ff7a7d
 נכיר את התבנית המשותפת של האתר ונציג בתוכה את מאמר ה־Markdown ואת תרשים ה־Mermaid שלנו. שינוי בקובץ התוכן יופיע בדף המדריך.
 
 <!-- lesson-back:start -->
-[חזרה: מציירים באמצעות טקסט: Mermaid]({{ '/taba/05b-mermaid/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 10 — מציירים באמצעות טקסט: Mermaid]({{ '/taba/10-mermaid/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/2307d2e1aa18db15dd9675c618ace510fe87528c) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/cb12bd589208363af709028b0a00a26769ff7a7d...2307d2e1aa18db15dd9675c618ace510fe87528c)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -272,7 +271,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 {: .box-success}
 בדקו שיש בקובץ שני מקטעי `ItemGroup`: הראשון מכיל את שתי החבילות, והשני את שורת `Content`. סגירת המקטע השני, `</ItemGroup>`, ומיד אחריה `</Project>` נמצאות בשתי שורות רצופות, בלי שורה ריקה ביניהן. שמרו את הקובץ והריצו את הפרויקט.
 
-{% if taba_show_private_links %}
+<!--
 <details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
 אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
@@ -282,7 +281,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 - [RazorTaba/wwwroot/lib/mermaid/mermaid.min.js](https://github.com/3strategy/razortaba/blob/2307d2e1aa18db15dd9675c618ace510fe87528c/RazorTaba/wwwroot/lib/mermaid/mermaid.min.js)
 
 </details>
-{% endif %}
+-->
 
 ## מריצים ובודקים
 
@@ -312,5 +311,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [הדף הדינמי הראשון]({{ '/taba/07-first-dynamic-page/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 12 — הדף הדינמי הראשון]({{ '/taba/12-first-dynamic-page/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

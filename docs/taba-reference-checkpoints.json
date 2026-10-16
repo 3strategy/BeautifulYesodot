@@ -1,55 +1,55 @@
 [
   {
-    "lesson": "05-pages-and-forms.md",
+    "lesson": "08-pages-and-forms.md",
     "original": "4519e73eaadd6ca8ac11534db6f79937b8c7561d",
     "original_previous": "1f7107067a9abfbfe07a10bbea700175ed3a659d",
     "corrected": "9e759fba10f1ec17fe4b851ed53e8703d06b644b",
     "previous": "fd6683d2c183607a7a808b053c0887256179d66e"
   },
   {
-    "lesson": "05a-markdown.md",
+    "lesson": "09-markdown.md",
     "original": "4a0e33a8c464825ae3ddea1fe45431c43a098cb5",
     "original_previous": "14c0156fb9c988e627079ddb03c7f84c965a00c0",
     "corrected": "ac696838547401ac23a50a09097079f44d97d6a6",
     "previous": "9e759fba10f1ec17fe4b851ed53e8703d06b644b"
   },
   {
-    "lesson": "05b-mermaid.md",
+    "lesson": "10-mermaid.md",
     "original": "eeefa30a164b1441f3257d619ac151fd3c20fb5f",
     "original_previous": "ff8ee0ab94c008191e0dca041e92380e7f7d08b4",
     "corrected": "cb12bd589208363af709028b0a00a26769ff7a7d",
     "previous": "ac696838547401ac23a50a09097079f44d97d6a6"
   },
   {
-    "lesson": "06-razor-layout.md",
+    "lesson": "11-razor-layout.md",
     "original": "8e87c04f22eb9ca9c58fe82b5cb5ac28c3da5882",
     "original_previous": "afab7e81ccfeaf1905b522f7ac03dc134aebf8e1",
     "corrected": "2307d2e1aa18db15dd9675c618ace510fe87528c",
     "previous": "cb12bd589208363af709028b0a00a26769ff7a7d"
   },
   {
-    "lesson": "07-first-dynamic-page.md",
+    "lesson": "12-first-dynamic-page.md",
     "original": "06e672ffeb1aa04eec860204b36dcdb1fabaca0c",
     "original_previous": "287c690c1d3d39fd12ae46dd725f134954b5c0b4",
     "corrected": "98ed9acb039c2d584629f2f45eeb1b0660e931f2",
     "previous": "2307d2e1aa18db15dd9675c618ace510fe87528c"
   },
   {
-    "lesson": "08-animal-model.md",
+    "lesson": "13-animal-model.md",
     "original": "b3bb71631ca3036ab2563cfe2d7ee21e7a7465a1",
     "original_previous": "fc5695a907b6ab783a51ff3848f9b57fdcacaf82",
     "corrected": "fa36fed1fc7b6642eae874a816cf782b2577e68f",
     "previous": "98ed9acb039c2d584629f2f45eeb1b0660e931f2"
   },
   {
-    "lesson": "09-ef-sqlite.md",
+    "lesson": "15-ef-sqlite.md",
     "original": "6f794b34fd8f60f5db34f48ba16971cda347fe40",
     "original_previous": "ce3e2e502543337eda51497f1f27bdd58b513464",
     "corrected": "b5f18f08235b92724f86fba55cff23d9749b2818",
     "previous": "fa36fed1fc7b6642eae874a816cf782b2577e68f"
   },
   {
-    "lesson": "10-create-validation.md",
+    "lesson": "16-create-validation.md",
     "original": "c23009a7f8491b6ca49d54b01e7c9bb0001af7b0",
     "original_previous": "a604aff5a09479be4863c6da3e9dd3d5e5cd0008",
     "corrected": "74695cb50e2a89e83e455430447e06233becc92d",
@@ -59,7 +59,7 @@
     ]
   },
   {
-    "lesson": "11-edit-delete.md",
+    "lesson": "17-edit-delete.md",
     "original": "68100fd563b4748c2a344551c3079f524bc1ab5f",
     "original_previous": "a0b42b62d249a9701b5e2fc371874ede541a006c",
     "corrected": "5d8e9218600a868ac051cdf0034d25b3f189ebd2",
@@ -69,7 +69,7 @@
     ]
   },
   {
-    "lesson": "12-core-project.md",
+    "lesson": "18-core-project.md",
     "original": "061904be9599de89461542872c842a5de62f827a",
     "original_previous": "6afae43d31a14175d27f5ad7fb8f8bc9fea2a101",
     "corrected": "0c0c792177b8e55c202e007909d5ea5d0e856589",
@@ -79,7 +79,7 @@
     ]
   },
   {
-    "lesson": "13-keepers-animals.md",
+    "lesson": "19-keepers-animals.md",
     "original": "7445c36e391c81ff2c6516e75690662178c9b259",
     "original_previous": "f1fa21a30fd2d4fbb8d740efa4f32c03ffa651b4",
     "corrected": "29e43eb541435c0b2bed9bd14841af47bc246b4f",
@@ -89,7 +89,7 @@
     ]
   },
   {
-    "lesson": "13a-keeper-crud.md",
+    "lesson": "20-keeper-crud.md",
     "original": "82d6db226876efbf7228a9f4d7508296a28e0164",
     "original_previous": "be7cbe0a753408d51078a3d2660cbbb102b0ac95",
     "corrected": "b0ae1207de6baa0a51421c8458f8f4b3c87acee3",
@@ -99,7 +99,7 @@
     ]
   },
   {
-    "lesson": "14-filtering.md",
+    "lesson": "22-filtering.md",
     "original": "ea85e06dae377e4eca5cdeb7b1ec6222cfcc9668",
     "original_previous": "f3905d476256306740393fad05fd80ced82a27ab",
     "corrected": "5558a52e9c7eda905a0d375f9b8dc6ab135d0df3",
@@ -109,7 +109,7 @@
     ]
   },
   {
-    "lesson": "15-local-identity.md",
+    "lesson": "23-local-identity.md",
     "original": "3ca22602bb94d32cd8cacf20820425e5ecfbfd79",
     "original_previous": "4a453d577b30a8120ccbf26b72e2d831168ba7bd",
     "corrected": "244fcb9eb927473b464314b49eee37651b9f10a9",
@@ -119,7 +119,7 @@
     ]
   },
   {
-    "lesson": "16-user-profile.md",
+    "lesson": "24-user-profile.md",
     "original": "bc1c1048e1ce6b28351acd3297997d99bed5a0e7",
     "original_previous": "a0d1d6b6f67b875ff6a4071865f989d00f3e58bd",
     "corrected": "c764eefcddcd4ac804fae73eb1ba835df63aeb2b",
@@ -129,7 +129,7 @@
     ]
   },
   {
-    "lesson": "17-authorization.md",
+    "lesson": "25-authorization.md",
     "original": "3cb5c6fc63600dc58a3f04cf70d0d505107ba421",
     "original_previous": "19036f631297cf0242188a7502e8ca7cb6878e3f",
     "corrected": "e5a7ef42c23879040e8c0d2398ecbc722a33ad36",
@@ -140,7 +140,7 @@
     ]
   },
   {
-    "lesson": "18-google-login.md",
+    "lesson": "26-google-login.md",
     "original": "a815e72d42242e1186a32a93523b1f6d7b84cc63",
     "original_previous": "921c2b1ff5cee2ef9e8ecf800788b694aa216d4e",
     "corrected": "bd465fe90d280abfd3242908fe3d39b12b306c5a",

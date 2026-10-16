@@ -1,6 +1,6 @@
 ---
 layout: page
-title: הרשמה וכניסה עם Microsoft Identity
+title: "23 — הרשמה וכניסה עם Microsoft Identity"
 subtitle: חשבונות מקומיים לאחר CRUD; ללא תלות בחשבון Google או בהגדרות OAuth
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 150
+sequence: 24
 track: extension
 published: true
 companion_commit: 244fcb9eb927473b464314b49eee37651b9f10a9
@@ -19,13 +19,12 @@ companion_previous: 5558a52e9c7eda905a0d375f9b8dc6ab135d0df3
 נוסיף הרשמה, כניסה ויציאה באמצעות Microsoft Identity. ניצור חשבון ונראה איך התפריט משתנה כשאנחנו מחוברים.
 
 <!-- lesson-back:start -->
-[חזרה: מחפשים ומסננים נתונים]({{ '/taba/14-filtering/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 22 — מחפשים ומסננים נתונים]({{ '/taba/22-filtering/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/244fcb9eb927473b464314b49eee37651b9f10a9) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/5558a52e9c7eda905a0d375f9b8dc6ab135d0df3...244fcb9eb927473b464314b49eee37651b9f10a9)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -312,7 +311,7 @@ else
          </nav>
 ````
 
-{% if taba_show_private_links %}
+<!--
 <details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
 אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
@@ -323,7 +322,7 @@ else
 - [RazorTaba/RazorTaba.csproj](https://github.com/3strategy/razortaba/blob/244fcb9eb927473b464314b49eee37651b9f10a9/RazorTaba/RazorTaba.csproj)
 
 </details>
-{% endif %}
+-->
 
 ## מריצים ובודקים
 
@@ -348,5 +347,5 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 ## המשך
 
-- [מרחיבים את פרופיל המשתמש]({{ '/taba/16-user-profile/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 24 — מרחיבים את פרופיל המשתמש]({{ '/taba/24-user-profile/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

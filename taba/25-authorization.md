@@ -1,6 +1,6 @@
 ---
 layout: page
-title: מי רשאי לערוך? בעלות והרשאות
+title: "25 — מי רשאי לערוך? בעלות והרשאות"
 subtitle: שיוך רשומה למשתמש ובדיקת הרשאה בצד השרת; הבעלות נפרדת מהמטפל העסקי
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 170
+sequence: 26
 track: extension
 published: true
 companion_commit: e5a7ef42c23879040e8c0d2398ecbc722a33ad36
@@ -19,13 +19,12 @@ companion_previous: c764eefcddcd4ac804fae73eb1ba835df63aeb2b
 נאפשר לכל משתמש לערוך ולמחוק רק את הרשומות שיצר. נבדוק את ההרשאות עם שני חשבונות, גם דרך קישורים ישירים ושליחת טפסים.
 
 <!-- lesson-back:start -->
-[חזרה: מרחיבים את פרופיל המשתמש]({{ '/taba/16-user-profile/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 24 — מרחיבים את פרופיל המשתמש]({{ '/taba/24-user-profile/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/e5a7ef42c23879040e8c0d2398ecbc722a33ad36) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/c764eefcddcd4ac804fae73eb1ba835df63aeb2b...e5a7ef42c23879040e8c0d2398ecbc722a33ad36)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -408,7 +407,7 @@ dotnet ef database update --context AppDbContext --project RazorTaba
 +@using System.Security.Claims
 ````
 
-{% if taba_show_private_links %}
+<!--
 <details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
 אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
@@ -418,7 +417,7 @@ dotnet ef database update --context AppDbContext --project RazorTaba
 - [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/e5a7ef42c23879040e8c0d2398ecbc722a33ad36/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
 
 </details>
-{% endif %}
+-->
 
 ## מריצים ובודקים
 
@@ -450,5 +449,5 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 ## המשך
 
-- [כניסה עם Google — הרחבת רשות]({{ '/taba/18-google-login/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 26 — כניסה עם Google — הרחבת רשות]({{ '/taba/26-google-login/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

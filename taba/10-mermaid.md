@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'מציירים באמצעות טקסט: Mermaid'
+title: "10 — מציירים באמצעות טקסט: Mermaid"
 subtitle: תרשים זרימה בתוך Markdown; צמתים, קשרים ותוויות בעברית; קריאה, תיקון והסבר של מקור התרשים
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 52
+sequence: 11
 track: core
 published: true
 companion_commit: cb12bd589208363af709028b0a00a26769ff7a7d
@@ -19,13 +19,12 @@ companion_previous: ac696838547401ac23a50a09097079f44d97d6a6
 ניצור תרשים זרימה באמצעות Mermaid. נכתוב צמתים וחצים, נוסיף תוויות בעברית ונשנה את התרשים דרך קובץ הטקסט שלו.
 
 <!-- lesson-back:start -->
-[חזרה: כותבים תוכן ב־Markdown]({{ '/taba/05a-markdown/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 09 — כותבים תוכן ב־Markdown]({{ '/taba/09-markdown/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/cb12bd589208363af709028b0a00a26769ff7a7d) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/ac696838547401ac23a50a09097079f44d97d6a6...cb12bd589208363af709028b0a00a26769ff7a7d)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -91,5 +90,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/06-razor-layout/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 11 — מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/11-razor-layout/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

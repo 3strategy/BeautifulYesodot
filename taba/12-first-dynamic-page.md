@@ -1,6 +1,6 @@
 ---
 layout: page
-title: הדף הדינמי הראשון
+title: "12 — הדף הדינמי הראשון"
 subtitle: מציגים נתונים עם תנאים ולולאות ב־Razor
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 70
+sequence: 13
 track: core
 published: true
 companion_commit: 98ed9acb039c2d584629f2f45eeb1b0660e931f2
@@ -19,13 +19,12 @@ companion_previous: 2307d2e1aa18db15dd9675c618ace510fe87528c
 נציג בדף טקסט ורשימת שמות שמגיעים מ־C#. נשתמש בתנאי כדי לטפל ברשימה ריקה ובלולאה כדי ליצור שורה לכל שם.
 
 <!-- lesson-back:start -->
-[חזרה: מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/06-razor-layout/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 11 — מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/11-razor-layout/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/98ed9acb039c2d584629f2f45eeb1b0660e931f2) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/2307d2e1aa18db15dd9675c618ace510fe87528c...98ed9acb039c2d584629f2f45eeb1b0660e931f2)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -136,5 +135,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [מכרטיס HTML לאובייקט Animal]({{ '/taba/08-animal-model/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 13 — מכרטיס HTML לאובייקט Animal]({{ '/taba/13-animal-model/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

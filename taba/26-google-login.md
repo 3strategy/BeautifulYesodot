@@ -1,6 +1,6 @@
 ---
 layout: page
-title: כניסה עם Google — הרחבת רשות
+title: "26 — כניסה עם Google — הרחבת רשות"
 subtitle: חיבור ספק כניסה חיצוני לאחר חשבונות מקומיים; הגדרות Console אינן תנאי להשלמת הפרויקט
 lang: he
 full-width: true
@@ -9,7 +9,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 180
+sequence: 27
 track: extension
 published: true
 companion_commit: bd465fe90d280abfd3242908fe3d39b12b306c5a
@@ -20,13 +20,12 @@ companion_previous: e5a7ef42c23879040e8c0d2398ecbc722a33ad36
 נוסיף לאתר אפשרות להיכנס עם חשבון Google. נגדיר את החיבור, נוסיף כפתור כניסה ונבדוק את החזרה מ־Google לאתר שלנו.
 
 <!-- lesson-back:start -->
-[חזרה: מי רשאי לערוך? בעלות והרשאות]({{ '/taba/17-authorization/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 25 — מי רשאי לערוך? בעלות והרשאות]({{ '/taba/25-authorization/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/bd465fe90d280abfd3242908fe3d39b12b306c5a) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/e5a7ef42c23879040e8c0d2398ecbc722a33ad36...bd465fe90d280abfd3242908fe3d39b12b306c5a)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -198,7 +197,9 @@ teacher-notes:end -->
 <!-- lesson-next:start -->
 ---
 
-## סיום הרצף
+## המשך
 
-- [סיימנו את הרצף — חזרה למפת הדרך]({{ '/taba/00-student-roadmap/' | relative_url }})
+- [חזרה למפת הדרך]({{ '/taba/00-student-roadmap/' | relative_url }})
+
+- [המשך: 27 — מקום לשיעור נוסף]({{ '/taba/27-reserved/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

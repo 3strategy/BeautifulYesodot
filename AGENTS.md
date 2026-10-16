@@ -337,10 +337,11 @@ main {
 - Opt in using `data-sequence-nav="next"` or `data-sequence-nav="prev"` on existing
   links inside `main`. Swipe right means next; left means previous. Do not infer
   sequence order from filenames, navbar entries, or browser history.
-- Taba's student roadmap through lesson 18 is enabled, including lettered steps.
+- Taba's student roadmap through lessons 01–27 is enabled. Lessons 07, 14, 21
+  and 27 are reserved slots for future content; keep their numbers and navigation.
   Preserve the tags when editing the `lesson-back` / `lesson-next` regions.
-  The default route includes 12→13 and 13→13a→14. The teacher plan, setup guides,
-  and final return-to-roadmap link are not swipe steps.
+  The teacher plan, alternative setup guides under lesson 02, and final
+  return-to-roadmap link are not swipe steps.
 - Put `data-swipe-ignore` on custom widgets that own horizontal gestures.
 - Read `docs/sequence-navigation.md` for the route, tests, and mobile acceptance.
 - Compare sibling infrastructure by behavior, ignoring CRLF/LF noise. Yesodot has

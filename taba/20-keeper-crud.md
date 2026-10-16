@@ -1,9 +1,9 @@
 ---
 layout: page
-title: 'מנהלים מטפלים: CRUD וקשר קיים'
+title: "20 — מנהלים מטפלים: CRUD וקשר קיים"
 subtitle: תרגול חוזר של טפסים ומניעת מחיקת רשומה שיש אליה הפניות
 lang: he
-sequence: 131
+sequence: 21
 track: extension
 published: true
 companion_commit: b0ae1207de6baa0a51421c8458f8f4b3c87acee3
@@ -14,13 +14,12 @@ companion_previous: 29e43eb541435c0b2bed9bd14841af47bc246b4f
 נוסיף דפים ליצירה, עריכה ומחיקה של מטפלים. נבדוק שמטפל המשויך לחיות נשאר במערכת עד שנעביר אותן למטפל אחר.
 
 <!-- lesson-back:start -->
-[חזרה: מטפל וחיות: קשר אחד־לרבים]({{ '/taba/13-keepers-animals/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 19 — מטפל וחיות: קשר אחד־לרבים]({{ '/taba/19-keepers-animals/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/b0ae1207de6baa0a51421c8458f8f4b3c87acee3) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/29e43eb541435c0b2bed9bd14841af47bc246b4f...b0ae1207de6baa0a51421c8458f8f4b3c87acee3)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -289,5 +288,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [מחפשים ומסננים נתונים]({{ '/taba/14-filtering/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 21 — מקום לשיעור נוסף]({{ '/taba/21-reserved/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

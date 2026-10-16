@@ -60,7 +60,7 @@ async function swipe(page, from, to, { cancel = false, multi = false } = {}) {
 
 test('all Taba links render correctly, resolve locally and form a reciprocal route', async ({page, request}) => {
   test.setTimeout(90000);
-  expect(lessons).toHaveLength(24);
+  expect(lessons).toHaveLength(28);
   for (const [index, url] of lessons.entries()) {
     await page.goto(base + url);
     for (const [direction, destination] of Object.entries(sequence[url])) {

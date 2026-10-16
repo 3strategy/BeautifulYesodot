@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 'שומרים גרסאות עם Git ומפרסמים ב־GitHub'
+title: "06 — שומרים גרסאות עם Git ומפרסמים ב־GitHub"
 subtitle: מסיימים את שלב הניסויים, רושמים פרויקט שנתי ומשתפים את ההתקדמות עם המורה
 lang: he
 tags: [CSharp, Web, Taba, Git, GitHub]
-sequence: 45
+sequence: 7
 track: core
 published: true
 companion_commit: fd6683d2c183607a7a808b053c0887256179d66e
@@ -15,13 +15,12 @@ companion_previous: e0870b94577d330d3609d697d4a16c8c19c754ab
 נעבור מהניסויים לפרויקט השנתי: נבחר אתר עובד, נשמור את גרסאותיו במאגר פרטי בשם שלנו ונאשר שלמורה יש גישה. מכאן נמשיך לפתח את אותו אתר לאורך השנה.
 
 <!-- lesson-back:start -->
-[חזרה: אתר שנראה טוב עם Bootstrap]({{ '/taba/04-bootstrap/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 05 — אתר שנראה טוב עם Bootstrap]({{ '/taba/05-bootstrap/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/fd6683d2c183607a7a808b053c0887256179d66e) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/e0870b94577d330d3609d697d4a16c8c19c754ab...fd6683d2c183607a7a808b053c0887256179d66e)
-{% endif %}
+-->
 
 <!-- Reference checkpoint: application source remains at the completed Bootstrap
 state; the repository-root .gitignore is the taught file change. Personal Git
@@ -45,7 +44,7 @@ diff alone does not establish successful publication or collaborator access. -->
 
 פתחו את האתר שעיצבתם והריצו אותו. בחרו את הפרויקט שאת התוכן והעיצוב שלו תרצו להמשיך לפתח.
 
-אם ניסוי קודם כבר אינו פועל ואתם רוצים להתחיל מחדש, צרו פרויקט Razor Pages בתיקייה חדשה בעזרת [מסלול VS Code]({{ '/taba/01a-setup-vscode/' | relative_url }}) או [מסלול Visual Studio]({{ '/taba/01a-setup-visual-studio/' | relative_url }}), או בעזרת [מסלול Rider]({{ '/taba/01a-setup-rider/' | relative_url }}). העבירו אליו בהדרגה את הטקסטים, התמונות והעיצוב שתרצו לשמור ובדקו כל שינוי. אפשר להשאיר את תיקיות הניסוי הקודמות במחשב.
+אם ניסוי קודם כבר אינו פועל ואתם רוצים להתחיל מחדש, צרו פרויקט Razor Pages בתיקייה חדשה בעזרת [מסלול VS Code]({{ '/taba/02-setup-vscode/' | relative_url }}) או [מסלול Visual Studio]({{ '/taba/02-setup-visual-studio/' | relative_url }}), או בעזרת [מסלול Rider]({{ '/taba/02-setup-rider/' | relative_url }}). העבירו אליו בהדרגה את הטקסטים, התמונות והעיצוב שתרצו לשמור ובדקו כל שינוי. אפשר להשאיר את תיקיות הניסוי הקודמות במחשב.
 
 {: .box-success}
 מתחילים לשמור גרסאות כשיש אתר שנפתח, עם התוכן והעיצוב שבחרתם. ממשיכים מכאן באותו פרויקט; אין צורך לשחזר את כל הניסויים בהיסטוריה.
@@ -277,5 +276,5 @@ node_modules/
 
 ## המשך
 
-- [מחברים דפים ובונים טופס]({{ '/taba/05-pages-and-forms/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 07 — מקום לשיעור נוסף]({{ '/taba/07-reserved/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

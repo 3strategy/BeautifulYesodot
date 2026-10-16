@@ -1,6 +1,6 @@
 ---
 layout: page
-title: מרחיבים את פרופיל המשתמש
+title: "24 — מרחיבים את פרופיל המשתמש"
 subtitle: שדות אישיים ועריכת פרופיל; הרחבה קטנה באמצעות Code First
 lang: he
 full-width: true
@@ -9,7 +9,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 160
+sequence: 25
 track: extension
 published: true
 companion_commit: c764eefcddcd4ac804fae73eb1ba835df63aeb2b
@@ -20,13 +20,12 @@ companion_previous: 244fcb9eb927473b464314b49eee37651b9f10a9
 נוסיף לחשבון שלנו שם לתצוגה, עיר ותחביב. נבנה טופס לעריכת הפרופיל ונבדוק שהפרטים נשמרים גם אחרי יציאה וכניסה מחדש.
 
 <!-- lesson-back:start -->
-[חזרה: הרשמה וכניסה עם Microsoft Identity]({{ '/taba/15-local-identity/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 23 — הרשמה וכניסה עם Microsoft Identity]({{ '/taba/23-local-identity/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/c764eefcddcd4ac804fae73eb1ba835df63aeb2b) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/244fcb9eb927473b464314b49eee37651b9f10a9...c764eefcddcd4ac804fae73eb1ba835df63aeb2b)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -284,7 +283,7 @@ public class ProfileModel(UserManager<AppUser> users) : PageModel
      </form>
 ````
 
-{% if taba_show_private_links %}
+<!--
 <details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
 אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
@@ -294,7 +293,7 @@ public class ProfileModel(UserManager<AppUser> users) : PageModel
 - [RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/c764eefcddcd4ac804fae73eb1ba835df63aeb2b/RazorTaba/Migrations/Auth/AuthDbContextModelSnapshot.cs)
 
 </details>
-{% endif %}
+-->
 
 ## מריצים ובודקים
 
@@ -318,5 +317,5 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 ## המשך
 
-- [מי רשאי לערוך? בעלות והרשאות]({{ '/taba/17-authorization/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 25 — מי רשאי לערוך? בעלות והרשאות]({{ '/taba/25-authorization/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

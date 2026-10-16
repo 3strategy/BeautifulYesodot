@@ -1,6 +1,6 @@
 ---
 layout: page
-title: האתר הופך לשלי
+title: "03 — האתר הופך לשלי"
 subtitle: התאמת תוכן HTML בפרויקט Razor שכבר רץ ב־Visual Studio או VS Code; נושא אישי, קישורים ורשימות; שמירה ובדיקת התוצאה בדפדפן
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 20
+sequence: 4
 track: core
 published: true
 companion_commit: b8453928ac20ff101a70969531ee60e81498c7ec
@@ -19,13 +19,12 @@ companion_previous: 4ba9f9dd7bf4b634ba111f8bbbb55756bdfb91b2
 נהפוך את האתר לשלנו: נבחר נושא שמסקרן אותנו, נכתוב פסקת פתיחה ונוסיף רשימה וקישור למידע נוסף.
 
 <!-- lesson-back:start -->
-[חזרה: סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-environment/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 02 — סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/02-development-environment/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/b8453928ac20ff101a70969531ee60e81498c7ec) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/4ba9f9dd7bf4b634ba111f8bbbb55756bdfb91b2...b8453928ac20ff101a70969531ee60e81498c7ec)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -34,7 +33,7 @@ companion_previous: 4ba9f9dd7bf4b634ba111f8bbbb55756bdfb91b2
 - להבחין בין תוכן אישי לבין המבנה המשותף של האתר.
 
 {: .box-note}
-זה עדיין שלב התנסות לפני רישום הפרויקט השנתי. אפשר לעבוד בניסוי שבחרתם או ליצור ניסוי חדש בתיקייה נפרדת בעזרת [מדריכי ההקמה]({{ '/taba/01a-development-environment/' | relative_url }}). אם מתחילים מחדש, השלימו בו את שינויי השיעורים הקודמים הדרושים לדוגמאות שלפניכם. שמרו את הניסויים הקודמים; עדיין אין צורך לפרסם ל־GitHub.
+זה עדיין שלב התנסות לפני רישום הפרויקט השנתי. אפשר לעבוד בניסוי שבחרתם או ליצור ניסוי חדש בתיקייה נפרדת בעזרת [02 — מדריכי ההקמה]({{ '/taba/02-development-environment/' | relative_url }}). אם מתחילים מחדש, השלימו בו את שינויי השיעורים הקודמים הדרושים לדוגמאות שלפניכם. שמרו את הניסויים הקודמים; עדיין אין צורך לפרסם ל־GitHub.
 
 ## פותחים ומריצים
 
@@ -92,5 +91,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [מעצבים עם CSS]({{ '/taba/03-css-classes/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 04 — מעצבים עם CSS]({{ '/taba/04-css-classes/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

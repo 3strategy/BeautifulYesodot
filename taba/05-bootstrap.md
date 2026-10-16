@@ -1,6 +1,6 @@
 ---
 layout: page
-title: אתר שנראה טוב עם Bootstrap
+title: "05 — אתר שנראה טוב עם Bootstrap"
 subtitle: כרטיסים, רשת והתאמה לנייד; בסיס עובד גם למי שטרם השלים עיצוב אישי
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 40
+sequence: 6
 track: core
 published: true
 companion_commit: e0870b94577d330d3609d697d4a16c8c19c754ab
@@ -19,13 +19,12 @@ companion_previous: c80e5ea647000b07646c97f41b4ab091327319f8
 נבנה אזור פתיחה וכרטיסים עם Bootstrap. נסדר את התוכן בעמודות ונבדוק שהאתר נוח לקריאה גם בטלפון.
 
 <!-- lesson-back:start -->
-[חזרה: מעצבים עם CSS]({{ '/taba/03-css-classes/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 04 — מעצבים עם CSS]({{ '/taba/04-css-classes/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/e0870b94577d330d3609d697d4a16c8c19c754ab) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/c80e5ea647000b07646c97f41b4ab091327319f8...e0870b94577d330d3609d697d4a16c8c19c754ab)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -34,7 +33,7 @@ companion_previous: c80e5ea647000b07646c97f41b4ab091327319f8
 - לשלב מחלקות Bootstrap עם CSS אישי.
 
 {: .box-note}
-זה עדיין שלב התנסות לפני רישום הפרויקט השנתי. אפשר לעבוד בניסוי שבחרתם או ליצור ניסוי חדש בתיקייה נפרדת בעזרת [מדריכי ההקמה]({{ '/taba/01a-development-environment/' | relative_url }}). אם מתחילים מחדש, השלימו בו את שינויי השיעורים הקודמים הדרושים לדוגמאות שלפניכם. שמרו את הניסויים הקודמים; עדיין אין צורך לפרסם ל־GitHub.
+זה עדיין שלב התנסות לפני רישום הפרויקט השנתי. אפשר לעבוד בניסוי שבחרתם או ליצור ניסוי חדש בתיקייה נפרדת בעזרת [02 — מדריכי ההקמה]({{ '/taba/02-development-environment/' | relative_url }}). אם מתחילים מחדש, השלימו בו את שינויי השיעורים הקודמים הדרושים לדוגמאות שלפניכם. שמרו את הניסויים הקודמים; עדיין אין צורך לפרסם ל־GitHub.
 
 ## פותחים ומריצים
 
@@ -129,9 +128,9 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 בדקו את צבע הטקסט בכפתור הבהיר „מכירים את החיות”. הכלל `.intro a` חל גם עליו וצובע את הטקסט בצבע ההדגשה. כדי לקבל טקסט כהה על הרקע הבהיר, פתחו את `wwwroot/css/site.css` והוסיפו בסוף הקובץ, אחרי הכלל `.btn-primary:hover`, את ההערה ואת הכלל הממוקד שמופיעים כאן. השאירו את הכללים הקיימים במקומם.
 
-{% if taba_show_private_links %}
+<!--
 [השינוי בקוד](https://github.com/3strategy/razortaba/commit/e0870b94577d330d3609d697d4a16c8c19c754ab)
-{% endif %}
+-->
 
 ````diff
  .btn { border-radius: .75rem; }
@@ -157,5 +156,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [שומרים גרסאות עם Git ומפרסמים ב־GitHub]({{ '/taba/04a-git-github/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 06 — שומרים גרסאות עם Git ומפרסמים ב־GitHub]({{ '/taba/06-git-github/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

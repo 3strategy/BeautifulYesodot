@@ -1,6 +1,6 @@
 ---
 layout: page
-title: מוסיפים חיה ובודקים קלט
+title: "16 — מוסיפים חיה ובודקים קלט"
 subtitle: טופס יצירה, שמירה וולידציה; עריכת תיאור Markdown ושימוש חוזר ברכיב התצוגה
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 100
+sequence: 17
 track: core
 published: true
 companion_commit: 74695cb50e2a89e83e455430447e06233becc92d
@@ -19,13 +19,12 @@ companion_previous: b5f18f08235b92724f86fba55cff23d9749b2818
 נבנה טופס להוספת חיה ונשמור את הפרטים במסד. נבדוק את הקלט ונציג הודעת תיקון כשחסר שם, תיאור או נתיב תמונה תקין.
 
 <!-- lesson-back:start -->
-[חזרה: הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/09-ef-sqlite/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 15 — הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/15-ef-sqlite/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/74695cb50e2a89e83e455430447e06233becc92d) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/b5f18f08235b92724f86fba55cff23d9749b2818...74695cb50e2a89e83e455430447e06233becc92d)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -174,7 +173,7 @@ public class CreateModel(AppDbContext db) : PageModel
  {
 ````
 
-{% if taba_show_private_links %}
+<!--
 <details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
 אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
@@ -184,7 +183,7 @@ public class CreateModel(AppDbContext db) : PageModel
 - [RazorTaba/Migrations/AppDbContextModelSnapshot.cs](https://github.com/3strategy/razortaba/blob/74695cb50e2a89e83e455430447e06233becc92d/RazorTaba/Migrations/AppDbContextModelSnapshot.cs)
 
 </details>
-{% endif %}
+-->
 
 ## מריצים ובודקים
 
@@ -212,5 +211,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [מעדכנים ומוחקים רשומות]({{ '/taba/11-edit-delete/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 17 — מעדכנים ומוחקים רשומות]({{ '/taba/17-edit-delete/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

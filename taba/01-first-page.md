@@ -1,6 +1,6 @@
 ---
 layout: page
-title: הדף הראשון שלי
+title: "01 — הדף הראשון שלי"
 subtitle: כותרות, פסקה ותמונה בקובץ HTML שפותחים בדפדפן
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 10
+sequence: 2
 track: core
 published: true
 companion_commit: d73b40cf58979e57680e965fcd86ad9b62590593
@@ -22,10 +22,9 @@ companion_previous: f4c81264dc3b00dc56e2d424bef1183b8bc79dab
 [חזרה: מפת הדרך: האתר שלי]({{ '/taba/00-student-roadmap/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/d73b40cf58979e57680e965fcd86ad9b62590593) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/f4c81264dc3b00dc56e2d424bef1183b8bc79dab...d73b40cf58979e57680e965fcd86ad9b62590593)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -93,5 +92,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/01a-development-environment/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 02 — סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/02-development-environment/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

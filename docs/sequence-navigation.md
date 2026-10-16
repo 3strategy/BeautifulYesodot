@@ -5,14 +5,16 @@ It is loaded once by the footer and activates only on explicitly tagged pages.
 
 ## Enabled routes
 
-Taba: student roadmap → 01 → 01a-development-environment → 02 → 03 → 04 →
-04a → 05 → 05a → 05b → 06 → 07 → 08 → 09 → 10 → 11 → 12 → 13 →
-13a → 14 → 15 → 16 → 17 → 18. There are 24 enabled pages.
+Taba: student roadmap → 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09 →
+10 → 11 → 12 → 13 → 14 → 15 → 16 → 17 → 18 → 19 → 20 → 21 → 22 →
+23 → 24 → 25 → 26 → 27. There are 28 enabled pages.
 
-The route includes the extension after 12 and keeper CRUD at 13a. Alternative
-links remain ordinary links. The teacher plan and separate IDE setup guides
-are not swipe steps. The student roadmap has no previous swipe, and lesson 18
-has no next swipe; the manual return-to-roadmap link stays usable.
+Lessons 07, 14, 21 and 27 are intentionally empty reserved slots after groups
+of six, six, six and five substantive lessons. They include ordinary and swipe
+navigation so future content can replace the note without changing the route.
+The teacher plan and alternative IDE setup guides under lesson 02 are not swipe
+steps. The student roadmap has no previous swipe, and lesson 27 has no next
+swipe; its manual return-to-roadmap link stays usable.
 
 Yesodot Alef now has matching explicit routes for the Hebrew originals in `cs/`
 and their Russian translations in `csru/`. Both follow this order:
@@ -89,7 +91,7 @@ node node_modules/@playwright/test/cli.js test tests/cs-course-navigation.spec.j
 ```
 
 Both suites serve `_site` themselves and use Chromium's native touch injection in a
-390×844 mobile viewport. The Taba coverage checks all 24 pages' rendered link destinations and reciprocal neighbors,
+390×844 mobile viewport. The Taba coverage checks all 28 pages' rendered link destinations and reciprocal neighbors,
 navigation, browser history return, ordinary link clicks, boundaries, untagged
 pages, scrolling, controls, text selection, cancelled gestures, and zoom. It
 requires Playwright's Chromium browser. The CS suite checks all 41 Hebrew/Russian

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: מחברים דפים ובונים טופס
+title: "08 — מחברים דפים ובונים טופס"
 subtitle: ניווט ושדות HTML בתוך פרויקט Razor הרץ; תוויות וטופס שעדיין אינו שומר נתונים; בלי להקדים לוגיקת C#
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 50
+sequence: 9
 track: core
 published: true
 companion_commit: 9e759fba10f1ec17fe4b851ed53e8703d06b644b
@@ -19,13 +19,12 @@ companion_previous: fd6683d2c183607a7a808b053c0887256179d66e
 נוסיף דף לאתר ונקשר אליו מהתפריט. נבנה בו טופס עם שדות ותוויות, ונבדוק איך משתמשים בו.
 
 <!-- lesson-back:start -->
-[חזרה: שומרים גרסאות עם Git ומפרסמים ב־GitHub]({{ '/taba/04a-git-github/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 07 — מקום לשיעור נוסף]({{ '/taba/07-reserved/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/9e759fba10f1ec17fe4b851ed53e8703d06b644b) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/fd6683d2c183607a7a808b053c0887256179d66e...9e759fba10f1ec17fe4b851ed53e8703d06b644b)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -34,7 +33,7 @@ companion_previous: fd6683d2c183607a7a808b053c0887256179d66e
 - להבדיל בין טופס מעוצב לבין שמירת נתונים.
 
 {: .box-note}
-מהשיעור הזה בונים בהדרגה את הפרויקט השנתי שרשמתם בשיעור Git. פתחו את המאגר האישי בשם `FirstNameLastNameRazor` עם הפרטים שלכם, וודאו שהמורה אישר גישה אליו. הוסיפו את הדף החדש לאתר הזה; אין ליצור פרויקט חדש עבור כל שיעור. אם הרישום או השיתוף עדיין לא הושלמו, חזרו ל[נקודת הרישום]({{ '/taba/04a-git-github/' | relative_url }}) והשלימו אותה עם המורה.
+מהשיעור הזה בונים בהדרגה את הפרויקט השנתי שרשמתם בשיעור Git. פתחו את המאגר האישי בשם `FirstNameLastNameRazor` עם הפרטים שלכם, וודאו שהמורה אישר גישה אליו. הוסיפו את הדף החדש לאתר הזה; אין ליצור פרויקט חדש עבור כל שיעור. אם הרישום או השיתוף עדיין לא הושלמו, חזרו ל[06 — נקודת הרישום]({{ '/taba/06-git-github/' | relative_url }}) והשלימו אותה עם המורה.
 
 ## מתחילים מסונכרנים
 
@@ -107,5 +106,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [כותבים תוכן ב־Markdown]({{ '/taba/05a-markdown/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 09 — כותבים תוכן ב־Markdown]({{ '/taba/09-markdown/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

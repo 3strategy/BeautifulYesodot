@@ -1,6 +1,8 @@
+<!-- Historical lesson numbers below refer to the pre-renumbering sequence; linked filenames use the current sequence. -->
+
 # Taba student audit repair log
 
-Lesson 01a now lives at `taba/01a-development-environment.md` (renamed
+Lesson 01a now lives at `taba/02-development-environment.md` (renamed
 2026-10-16). Historical entries below retain its former filename.
 
 Coordinator: `01a08a05-c798-7db3-867c-ee6afbc0811d` (Improve Taba tutorials).
@@ -44,7 +46,7 @@ Do not change either task's model settings or disclose future steps to the stude
 - Student result: **YES**. It independently applied the revised lesson, built
   successfully, and compared all 80 reference files with `--ignore-cr-at-eol`:
   zero substantive differences, with remaining raw differences only CRLF/LF.
-  It has proceeded to the explicit next link, `taba/02-my-theme.md`.
+  It has proceeded to the explicit next link, `taba/03-my-theme.md`.
 - Student working copy: `/home/stra/repos/taba-student-audit`.
 - Comparison caution: initial report included CRLF/LF differences. Student was
   asked to distinguish those using ignore-CR-at-EOL comparison, retain exact
@@ -102,7 +104,7 @@ reports directly. Pause the heartbeat when the audit completes or the user stops
 - Jekyll build and scoped whitespace validation passed. Student reported **YES
   for the declared source checkpoint**: 80 application files plus .gitignore,
   zero substantive differences after EOL normalization. It completed a local
-  practice commit and restoration commit, then proceeded to 05-pages-and-forms.
+  practice commit and restoration commit, then proceeded to 08-pages-and-forms.
 - External GitHub creation/publication, invitations, and remote workflow outcomes
   remain explicitly **unverified**; the source YES does not establish those.
 - Mirrored all three repaired lessons (01a, 04, 04a) under companion docs/lessons

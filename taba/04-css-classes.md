@@ -1,6 +1,6 @@
 ---
 layout: page
-title: מעצבים עם CSS
+title: "04 — מעצבים עם CSS"
 subtitle: צבעים, ריווח ומחלקות עיצוב; שינוי CSS בסביבת הפיתוח וצפייה מיידית בדפדפן באמצעות רענון אוטומטי או Hot Reload
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 30
+sequence: 5
 track: core
 published: true
 companion_commit: cf47e9a44b213154d234e3797e69eb05fbc4c2a3
@@ -19,13 +19,12 @@ companion_previous: 7a9346ec48cfdb1d434e910fbc6076b416cd5828
 נעצב את האתר באמצעות CSS: נשנה צבעים וריווח, נוסיף מחלקת עיצוב ונראה את התוצאה בדפדפן אחרי כל שינוי.
 
 <!-- lesson-back:start -->
-[חזרה: האתר הופך לשלי]({{ '/taba/02-my-theme/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 03 — האתר הופך לשלי]({{ '/taba/03-my-theme/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/cf47e9a44b213154d234e3797e69eb05fbc4c2a3) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/7a9346ec48cfdb1d434e910fbc6076b416cd5828...cf47e9a44b213154d234e3797e69eb05fbc4c2a3)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -34,7 +33,7 @@ companion_previous: 7a9346ec48cfdb1d434e910fbc6076b416cd5828
 - לראות תוצאה מיידית של שינוי CSS.
 
 {: .box-note}
-זה עדיין שלב התנסות לפני רישום הפרויקט השנתי. אפשר לעבוד בניסוי שבחרתם או ליצור ניסוי חדש בתיקייה נפרדת בעזרת [מדריכי ההקמה]({{ '/taba/01a-development-environment/' | relative_url }}). אם מתחילים מחדש, השלימו בו את שינויי השיעורים הקודמים הדרושים לדוגמאות שלפניכם. שמרו את הניסויים הקודמים; עדיין אין צורך לפרסם ל־GitHub.
+זה עדיין שלב התנסות לפני רישום הפרויקט השנתי. אפשר לעבוד בניסוי שבחרתם או ליצור ניסוי חדש בתיקייה נפרדת בעזרת [02 — מדריכי ההקמה]({{ '/taba/02-development-environment/' | relative_url }}). אם מתחילים מחדש, השלימו בו את שינויי השיעורים הקודמים הדרושים לדוגמאות שלפניכם. שמרו את הניסויים הקודמים; עדיין אין צורך לפרסם ל־GitHub.
 
 ## פותחים ומריצים
 
@@ -117,5 +116,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [אתר שנראה טוב עם Bootstrap]({{ '/taba/04-bootstrap/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 05 — אתר שנראה טוב עם Bootstrap]({{ '/taba/05-bootstrap/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

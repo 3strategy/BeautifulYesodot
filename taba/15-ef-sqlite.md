@@ -1,6 +1,6 @@
 ---
 layout: page
-title: הנתונים נשמרים עם EF Core ו־SQLite
+title: "15 — הנתונים נשמרים עם EF Core ו־SQLite"
 subtitle: מחלקה, DbSet, מיגרציה וטבלה; רשימת חיות הנשמרת לאחר הפעלה מחדש
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 90
+sequence: 16
 track: core
 published: true
 companion_commit: b5f18f08235b92724f86fba55cff23d9749b2818
@@ -19,13 +19,12 @@ companion_previous: fa36fed1fc7b6642eae874a816cf782b2577e68f
 נחבר את מחלקת Animal למסד SQLite באמצעות EF Core. ניצור טבלה ונציג באתר את הרשומות שנקראות ממנה.
 
 <!-- lesson-back:start -->
-[חזרה: מכרטיס HTML לאובייקט Animal]({{ '/taba/08-animal-model/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 14 — מקום לשיעור נוסף]({{ '/taba/14-reserved/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/b5f18f08235b92724f86fba55cff23d9749b2818) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/fa36fed1fc7b6642eae874a816cf782b2577e68f...b5f18f08235b92724f86fba55cff23d9749b2818)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -155,7 +154,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
      public string Name { get; set; } = "";
 ````
 
-{% if taba_show_private_links %}
+<!--
 <details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
 אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
@@ -167,7 +166,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 - [dotnet-tools.json](https://github.com/3strategy/razortaba/blob/b5f18f08235b92724f86fba55cff23d9749b2818/dotnet-tools.json)
 
 </details>
-{% endif %}
+-->
 
 ## מריצים ובודקים
 
@@ -195,5 +194,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [מוסיפים חיה ובודקים קלט]({{ '/taba/10-create-validation/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 16 — מוסיפים חיה ובודקים קלט]({{ '/taba/16-create-validation/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

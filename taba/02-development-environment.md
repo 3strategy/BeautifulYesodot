@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'סביבת הפיתוח: מריצים ומשנים אתר'
+title: "02 — סביבת הפיתוח: מריצים ומשנים אתר"
 subtitle: יוצרים פרויקט Razor Pages, מכירים את הקבצים, עורכים HTML ובודקים בדפדפן
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 11
+sequence: 3
 track: core
 published: true
 companion_commit: 979d543d83d7d7c9e4f722b5400c60c4253b78a2
@@ -19,13 +19,12 @@ companion_previous: 3e83e27c126c0aa3f02f2977e8923702213ecd43
 ניצור ונריץ אתר ב־Visual Studio, ב־VS Code או ב־Rider, נכיר את הקבצים ונשנה את התוכן. נשמור, נריץ ונראה את התוצאה בדפדפן.
 
 <!-- lesson-back:start -->
-[חזרה: הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 01 — הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/979d543d83d7d7c9e4f722b5400c60c4253b78a2) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/3e83e27c126c0aa3f02f2977e8923702213ecd43...979d543d83d7d7c9e4f722b5400c60c4253b78a2)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -140,7 +139,7 @@ dotnet watch --launch-profile http
 {: .box-note}
 השאירו את `Program.cs`, את `Properties/launchSettings.json` ואת כללי CSS המקוריים כפי שנוצרו. כבר יש לנו אתר עובד. כתובת ההרצה היא הכתובת שהעורך או הטרמינל מציגים אצלכם; אין צורך לקבוע מספר יציאה משותף לכל הניסויים.
 
-{% if taba_show_private_links %}
+<!--
 <details open markdown="1"><summary>קבצים חדשים שנוספו או נוצרו בשלב</summary>
 
 אלה הקבצים החדשים שנוספו או נוצרו בשלב הזה. קובצי מיגרציה או תשתית שנוצרים בפקודה אין להעתיק ידנית.
@@ -222,7 +221,7 @@ dotnet watch --launch-profile http
 - [RazorTaba/wwwroot/lib/jquery/dist/jquery.slim.min.map](https://github.com/3strategy/razortaba/blob/979d543d83d7d7c9e4f722b5400c60c4253b78a2/RazorTaba/wwwroot/lib/jquery/dist/jquery.slim.min.map)
 
 </details>
-{% endif %}
+-->
 
 ## מריצים ובודקים
 
@@ -254,5 +253,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [האתר הופך לשלי]({{ '/taba/02-my-theme/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 03 — האתר הופך לשלי]({{ '/taba/03-my-theme/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

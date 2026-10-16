@@ -1,6 +1,6 @@
 ---
 layout: page
-title: מחפשים ומסננים נתונים
+title: "22 — מחפשים ומסננים נתונים"
 subtitle: שאילתות LINQ פשוטות לפי שם ומטפל; רשימת תוצאות ומצב ללא תוצאות
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 140
+sequence: 23
 track: extension
 published: true
 companion_commit: 5558a52e9c7eda905a0d375f9b8dc6ab135d0df3
@@ -19,13 +19,12 @@ companion_previous: b0ae1207de6baa0a51421c8458f8f4b3c87acee3
 נוסיף חיפוש לפי שם וסינון לפי מטפל. נשלב תנאים בשאילתת LINQ ונציג את החיות שמתאימות לבחירה שלנו.
 
 <!-- lesson-back:start -->
-[חזרה: מנהלים מטפלים: CRUD וקשר קיים]({{ '/taba/13a-keeper-crud/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 21 — מקום לשיעור נוסף]({{ '/taba/21-reserved/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/5558a52e9c7eda905a0d375f9b8dc6ab135d0df3) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/b0ae1207de6baa0a51421c8458f8f4b3c87acee3...5558a52e9c7eda905a0d375f9b8dc6ab135d0df3)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -138,5 +137,5 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 ## המשך
 
-- [הרשמה וכניסה עם Microsoft Identity]({{ '/taba/15-local-identity/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 23 — הרשמה וכניסה עם Microsoft Identity]({{ '/taba/23-local-identity/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

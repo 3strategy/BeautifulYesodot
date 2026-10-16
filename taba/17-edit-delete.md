@@ -1,6 +1,6 @@
 ---
 layout: page
-title: מעדכנים ומוחקים רשומות
+title: "17 — מעדכנים ומוחקים רשומות"
 subtitle: איתור לפי מזהה, עריכה ואישור מחיקה; טיפול ברשומה שאינה קיימת
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 110
+sequence: 18
 track: core
 published: true
 companion_commit: 5d8e9218600a868ac051cdf0034d25b3f189ebd2
@@ -19,13 +19,12 @@ companion_previous: 74695cb50e2a89e83e455430447e06233becc92d
 נוסיף לכל חיה דף פרטים, טופס עריכה ואישור מחיקה. נציג את תיאור החיה כמאמר עם Markdown ותרשים Mermaid.
 
 <!-- lesson-back:start -->
-[חזרה: מוסיפים חיה ובודקים קלט]({{ '/taba/10-create-validation/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 16 — מוסיפים חיה ובודקים קלט]({{ '/taba/16-create-validation/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/5d8e9218600a868ac051cdf0034d25b3f189ebd2) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/74695cb50e2a89e83e455430447e06233becc92d...5d8e9218600a868ac051cdf0034d25b3f189ebd2)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -263,5 +262,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [משלימים ומציגים אתר אישי עם CRUD]({{ '/taba/12-core-project/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 18 — משלימים ומציגים אתר אישי עם CRUD]({{ '/taba/18-core-project/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: מכרטיס HTML לאובייקט Animal
+title: "13 — מכרטיס HTML לאובייקט Animal"
 subtitle: מגדירים תכונות של חיה ומציגים אובייקטים בכרטיסים
 lang: he
 tags:
@@ -8,7 +8,7 @@ tags:
 - HTML
 - Web
 - Taba
-sequence: 80
+sequence: 14
 track: core
 published: true
 companion_commit: fa36fed1fc7b6642eae874a816cf782b2577e68f
@@ -19,13 +19,12 @@ companion_previous: 98ed9acb039c2d584629f2f45eeb1b0660e931f2
 נגדיר מחלקת Animal עם שם, תיאור ותמונה. ניצור ממנה אובייקטים ונציג כרטיס באתר לכל חיה.
 
 <!-- lesson-back:start -->
-[חזרה: הדף הדינמי הראשון]({{ '/taba/07-first-dynamic-page/' | relative_url }}){: data-sequence-nav="prev"}
+[חזרה: 12 — הדף הדינמי הראשון]({{ '/taba/12-first-dynamic-page/' | relative_url }}){: data-sequence-nav="prev"}
 <!-- lesson-back:end -->
 
-{% include taba-private-links-visibility.html %}
-{% if taba_show_private_links %}
+<!--
 [קוד השלב](https://github.com/3strategy/razortaba/tree/fa36fed1fc7b6642eae874a816cf782b2577e68f) · [השינוי מהשלב הקודם](https://github.com/3strategy/razortaba/compare/98ed9acb039c2d584629f2f45eeb1b0660e931f2...fa36fed1fc7b6642eae874a816cf782b2577e68f)
-{% endif %}
+-->
 
 ## מה נלמד
 
@@ -160,5 +159,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/09-ef-sqlite/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 14 — מקום לשיעור נוסף]({{ '/taba/14-reserved/' | relative_url }}){: data-sequence-nav="next"}
 <!-- lesson-next:end -->
