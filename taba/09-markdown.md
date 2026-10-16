@@ -19,7 +19,9 @@ companion_previous: 9e759fba10f1ec17fe4b851ed53e8703d06b644b
 נכתוב מאמר ב־Markdown עם כותרות, רשימות, תמונה וטבלה. נפתח תצוגה מקדימה ונראה איך סימני הטקסט הופכים למסמך מסודר.
 
 <!-- lesson-back:start -->
-[חזרה: 08 — מחברים דפים ובונים טופס]({{ '/taba/08-pages-and-forms/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 08 — מחברים דפים ובונים טופס]({{ '/taba/08-pages-and-forms/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 10 — מציירים באמצעות טקסט: Mermaid]({{ '/taba/10-mermaid/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -94,5 +96,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [המשך: 10 — מציירים באמצעות טקסט: Mermaid]({{ '/taba/10-mermaid/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 10 — מציירים באמצעות טקסט: Mermaid]({{ '/taba/10-mermaid/' | relative_url }})
 <!-- lesson-next:end -->

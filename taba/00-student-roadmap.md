@@ -17,6 +17,10 @@ published: true
 כאן תמצאו את הדרך לבניית האתר שלכם: מדף HTML ראשון, דרך עיצוב ומאמרים, ועד טפסים ששומרים נתונים. פתחו את השיעור שבו אתם נמצאים והמשיכו לבנות.
 
 <!-- lesson-back:start -->
+[הפרק הבא: 01 — הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא.
+
 [חזרה: הפרויקט שלנו: מאתר אישי ליישום עם נתונים]({{ '/taba/00-teacher-plan/' | relative_url }})
 <!-- lesson-back:end -->
 
@@ -94,5 +98,5 @@ flowchart LR
 
 ## המשך
 
-- [המשך: 01 — הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 01 — הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }})
 <!-- lesson-next:end -->

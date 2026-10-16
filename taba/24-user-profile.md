@@ -20,7 +20,9 @@ companion_previous: 244fcb9eb927473b464314b49eee37651b9f10a9
 נוסיף לחשבון שלנו שם לתצוגה, עיר ותחביב. נבנה טופס לעריכת הפרופיל ונבדוק שהפרטים נשמרים גם אחרי יציאה וכניסה מחדש.
 
 <!-- lesson-back:start -->
-[חזרה: 23 — הרשמה וכניסה עם Microsoft Identity]({{ '/taba/23-local-identity/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 23 — הרשמה וכניסה עם Microsoft Identity]({{ '/taba/23-local-identity/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 25 — מי רשאי לערוך? בעלות והרשאות]({{ '/taba/25-authorization/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -317,5 +319,5 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 ## המשך
 
-- [המשך: 25 — מי רשאי לערוך? בעלות והרשאות]({{ '/taba/25-authorization/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 25 — מי רשאי לערוך? בעלות והרשאות]({{ '/taba/25-authorization/' | relative_url }})
 <!-- lesson-next:end -->

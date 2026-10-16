@@ -15,7 +15,9 @@ companion_previous: e0870b94577d330d3609d697d4a16c8c19c754ab
 נעבור מהניסויים לפרויקט השנתי: נבחר אתר עובד, נשמור את גרסאותיו במאגר פרטי בשם שלנו ונאשר שלמורה יש גישה. מכאן נמשיך לפתח את אותו אתר לאורך השנה.
 
 <!-- lesson-back:start -->
-[חזרה: 05 — אתר שנראה טוב עם Bootstrap]({{ '/taba/05-bootstrap/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 05 — אתר שנראה טוב עם Bootstrap]({{ '/taba/05-bootstrap/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 07 — מקום לשיעור נוסף]({{ '/taba/07-reserved/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -276,5 +278,5 @@ node_modules/
 
 ## המשך
 
-- [המשך: 07 — מקום לשיעור נוסף]({{ '/taba/07-reserved/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 07 — מקום לשיעור נוסף]({{ '/taba/07-reserved/' | relative_url }})
 <!-- lesson-next:end -->

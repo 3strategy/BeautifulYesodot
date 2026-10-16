@@ -14,9 +14,11 @@ published: true
 <!-- Reserved for a future lesson. Keep this number when adding its content. -->
 
 <!-- lesson-back:start -->
-[חזרה: 06 — שומרים גרסאות עם Git ומפרסמים ב־GitHub]({{ '/taba/06-git-github/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 06 — שומרים גרסאות עם Git ומפרסמים ב־GitHub]({{ '/taba/06-git-github/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 08 — מחברים דפים ובונים טופס]({{ '/taba/08-pages-and-forms/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!-- lesson-next:start -->
-[המשך: 08 — מחברים דפים ובונים טופס]({{ '/taba/08-pages-and-forms/' | relative_url }}){: data-sequence-nav="next"}
+[המשך: 08 — מחברים דפים ובונים טופס]({{ '/taba/08-pages-and-forms/' | relative_url }})
 <!-- lesson-next:end -->

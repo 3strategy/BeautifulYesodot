@@ -19,7 +19,9 @@ companion_previous: 2307d2e1aa18db15dd9675c618ace510fe87528c
 נציג בדף טקסט ורשימת שמות שמגיעים מ־C#. נשתמש בתנאי כדי לטפל ברשימה ריקה ובלולאה כדי ליצור שורה לכל שם.
 
 <!-- lesson-back:start -->
-[חזרה: 11 — מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/11-razor-layout/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 11 — מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/11-razor-layout/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 13 — מכרטיס HTML לאובייקט Animal]({{ '/taba/13-animal-model/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -135,5 +137,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [המשך: 13 — מכרטיס HTML לאובייקט Animal]({{ '/taba/13-animal-model/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 13 — מכרטיס HTML לאובייקט Animal]({{ '/taba/13-animal-model/' | relative_url }})
 <!-- lesson-next:end -->

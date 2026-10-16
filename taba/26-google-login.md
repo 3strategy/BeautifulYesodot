@@ -20,7 +20,9 @@ companion_previous: e5a7ef42c23879040e8c0d2398ecbc722a33ad36
 נוסיף לאתר אפשרות להיכנס עם חשבון Google. נגדיר את החיבור, נוסיף כפתור כניסה ונבדוק את החזרה מ־Google לאתר שלנו.
 
 <!-- lesson-back:start -->
-[חזרה: 25 — מי רשאי לערוך? בעלות והרשאות]({{ '/taba/25-authorization/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 25 — מי רשאי לערוך? בעלות והרשאות]({{ '/taba/25-authorization/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 27 — מקום לשיעור נוסף]({{ '/taba/27-reserved/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -201,5 +203,5 @@ teacher-notes:end -->
 
 - [חזרה למפת הדרך]({{ '/taba/00-student-roadmap/' | relative_url }})
 
-- [המשך: 27 — מקום לשיעור נוסף]({{ '/taba/27-reserved/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 27 — מקום לשיעור נוסף]({{ '/taba/27-reserved/' | relative_url }})
 <!-- lesson-next:end -->

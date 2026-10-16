@@ -19,7 +19,9 @@ companion_previous: b0ae1207de6baa0a51421c8458f8f4b3c87acee3
 נוסיף חיפוש לפי שם וסינון לפי מטפל. נשלב תנאים בשאילתת LINQ ונציג את החיות שמתאימות לבחירה שלנו.
 
 <!-- lesson-back:start -->
-[חזרה: 21 — מקום לשיעור נוסף]({{ '/taba/21-reserved/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 21 — מקום לשיעור נוסף]({{ '/taba/21-reserved/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 23 — הרשמה וכניסה עם Microsoft Identity]({{ '/taba/23-local-identity/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -137,5 +139,5 @@ AI יכול לעזור להבין הודעת שגיאה ולנפות תקלה. �
 
 ## המשך
 
-- [המשך: 23 — הרשמה וכניסה עם Microsoft Identity]({{ '/taba/23-local-identity/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 23 — הרשמה וכניסה עם Microsoft Identity]({{ '/taba/23-local-identity/' | relative_url }})
 <!-- lesson-next:end -->

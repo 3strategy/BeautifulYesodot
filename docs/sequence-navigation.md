@@ -16,6 +16,13 @@ The teacher plan and alternative IDE setup guides under lesson 02 are not swipe
 steps. The student roadmap has no previous swipe, and lesson 27 has no next
 swipe; its manual return-to-roadmap link stays usable.
 
+Following CollectCircles in BeautifulMivney, every Taba route page places its
+available previous and next tagged links together near the beginning, immediately
+after the opening synopsis, in the `lesson-back` region. A short Hebrew hint
+explains the available swipe directions. The bottom `lesson-next` region keeps
+ordinary continuation links; only the top pair is tagged, avoiding duplicate
+swipe destinations. The shared script and footer already match Mivney.
+
 Yesodot Alef now has matching explicit routes for the Hebrew originals in `cs/`
 and their Russian translations in `csru/`. Both follow this order:
 
@@ -37,9 +44,9 @@ filenames are preserved: Chapter2 covers Math and Random, and Chapter3 covers
 conditions.
 
 The route includes selected exercises and reference pages. Other links in the
-lessons remain ordinary alternatives and do not change the swipe order. Each
-page has its previous link near the beginning in a `lesson-back` region
-and its next link at the end in a `lesson-next` region, except for unavailable
+lessons remain ordinary alternatives and do not change the swipe order. The CS
+pages have their previous link near the beginning in a `lesson-back` region
+and their next link at the end in a `lesson-next` region, except for unavailable
 directions at the boundaries. On pages with an opening synopsis, the previous
 link follows that synopsis. Keep these tagged navigation regions outside hidden
 details, code blocks and interactive widgets.

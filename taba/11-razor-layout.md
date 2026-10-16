@@ -19,7 +19,9 @@ companion_previous: cb12bd589208363af709028b0a00a26769ff7a7d
 נכיר את התבנית המשותפת של האתר ונציג בתוכה את מאמר ה־Markdown ואת תרשים ה־Mermaid שלנו. שינוי בקובץ התוכן יופיע בדף המדריך.
 
 <!-- lesson-back:start -->
-[חזרה: 10 — מציירים באמצעות טקסט: Mermaid]({{ '/taba/10-mermaid/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 10 — מציירים באמצעות טקסט: Mermaid]({{ '/taba/10-mermaid/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 12 — הדף הדינמי הראשון]({{ '/taba/12-first-dynamic-page/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -311,5 +313,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [המשך: 12 — הדף הדינמי הראשון]({{ '/taba/12-first-dynamic-page/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 12 — הדף הדינמי הראשון]({{ '/taba/12-first-dynamic-page/' | relative_url }})
 <!-- lesson-next:end -->

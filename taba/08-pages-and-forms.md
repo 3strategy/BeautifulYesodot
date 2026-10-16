@@ -19,7 +19,9 @@ companion_previous: fd6683d2c183607a7a808b053c0887256179d66e
 נוסיף דף לאתר ונקשר אליו מהתפריט. נבנה בו טופס עם שדות ותוויות, ונבדוק איך משתמשים בו.
 
 <!-- lesson-back:start -->
-[חזרה: 07 — מקום לשיעור נוסף]({{ '/taba/07-reserved/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 07 — מקום לשיעור נוסף]({{ '/taba/07-reserved/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 09 — כותבים תוכן ב־Markdown]({{ '/taba/09-markdown/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -106,5 +108,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [המשך: 09 — כותבים תוכן ב־Markdown]({{ '/taba/09-markdown/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 09 — כותבים תוכן ב־Markdown]({{ '/taba/09-markdown/' | relative_url }})
 <!-- lesson-next:end -->

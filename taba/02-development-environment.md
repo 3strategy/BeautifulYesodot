@@ -19,7 +19,9 @@ companion_previous: 3e83e27c126c0aa3f02f2977e8923702213ecd43
 ניצור ונריץ אתר ב־Visual Studio, ב־VS Code או ב־Rider, נכיר את הקבצים ונשנה את התוכן. נשמור, נריץ ונראה את התוצאה בדפדפן.
 
 <!-- lesson-back:start -->
-[חזרה: 01 — הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 01 — הדף הראשון שלי]({{ '/taba/01-first-page/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 03 — האתר הופך לשלי]({{ '/taba/03-my-theme/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -253,5 +255,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [המשך: 03 — האתר הופך לשלי]({{ '/taba/03-my-theme/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 03 — האתר הופך לשלי]({{ '/taba/03-my-theme/' | relative_url }})
 <!-- lesson-next:end -->

@@ -19,7 +19,9 @@ companion_previous: 74695cb50e2a89e83e455430447e06233becc92d
 נוסיף לכל חיה דף פרטים, טופס עריכה ואישור מחיקה. נציג את תיאור החיה כמאמר עם Markdown ותרשים Mermaid.
 
 <!-- lesson-back:start -->
-[חזרה: 16 — מוסיפים חיה ובודקים קלט]({{ '/taba/16-create-validation/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 16 — מוסיפים חיה ובודקים קלט]({{ '/taba/16-create-validation/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 18 — משלימים ומציגים אתר אישי עם CRUD]({{ '/taba/18-core-project/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -262,5 +264,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [המשך: 18 — משלימים ומציגים אתר אישי עם CRUD]({{ '/taba/18-core-project/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 18 — משלימים ומציגים אתר אישי עם CRUD]({{ '/taba/18-core-project/' | relative_url }})
 <!-- lesson-next:end -->

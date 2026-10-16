@@ -19,7 +19,9 @@ companion_previous: 5d8e9218600a868ac051cdf0034d25b3f189ebd2
 נבדוק את האתר שלנו לקראת ההגשה: ניצור, נציג, נערוך ונמחק רשומות, נבדוק שהמידע נשמר ונתקן תקלות שנמצא.
 
 <!-- lesson-back:start -->
-[חזרה: 17 — מעדכנים ומוחקים רשומות]({{ '/taba/17-edit-delete/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 17 — מעדכנים ומוחקים רשומות]({{ '/taba/17-edit-delete/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 19 — מטפל וחיות: קשר אחד־לרבים]({{ '/taba/19-keepers-animals/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -107,6 +109,6 @@ teacher-notes:end -->
 
 ## המשך
 
-- [המשך: 19 — מטפל וחיות: קשר אחד־לרבים]({{ '/taba/19-keepers-animals/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 19 — מטפל וחיות: קשר אחד־לרבים]({{ '/taba/19-keepers-animals/' | relative_url }})
 - [מסיימים במסלול הליבה — חזרה למפת הדרך]({{ '/taba/00-student-roadmap/' | relative_url }})
 <!-- lesson-next:end -->

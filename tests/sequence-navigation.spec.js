@@ -67,6 +67,13 @@ test('all Taba links render correctly, resolve locally and form a reciprocal rou
       const links = page.locator('main a[data-sequence-nav="'+direction+'"]');
       await expect(links).toHaveCount(destination ? 1 : 0);
       if (destination) {
+        // Both directions belong near the beginning, as in CollectCircles.
+        const topNavigation = await links.evaluate(link => {
+          const main = link.closest('main');
+          const firstSection = main.querySelector('h2');
+          return !firstSection || Boolean(link.compareDocumentPosition(firstSection) & Node.DOCUMENT_POSITION_FOLLOWING);
+        });
+        expect(topNavigation).toBe(true);
         await expect(links).toHaveAttribute('href', destination);
         expect((await request.get(base+destination)).status()).toBe(200);
         expect(sequence[destination][direction === 'next' ? 'prev' : 'next']).toBe(url);

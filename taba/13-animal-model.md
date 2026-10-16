@@ -19,7 +19,9 @@ companion_previous: 98ed9acb039c2d584629f2f45eeb1b0660e931f2
 נגדיר מחלקת Animal עם שם, תיאור ותמונה. ניצור ממנה אובייקטים ונציג כרטיס באתר לכל חיה.
 
 <!-- lesson-back:start -->
-[חזרה: 12 — הדף הדינמי הראשון]({{ '/taba/12-first-dynamic-page/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 12 — הדף הדינמי הראשון]({{ '/taba/12-first-dynamic-page/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 14 — מקום לשיעור נוסף]({{ '/taba/14-reserved/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -159,5 +161,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [המשך: 14 — מקום לשיעור נוסף]({{ '/taba/14-reserved/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 14 — מקום לשיעור נוסף]({{ '/taba/14-reserved/' | relative_url }})
 <!-- lesson-next:end -->

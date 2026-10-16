@@ -14,9 +14,11 @@ published: true
 <!-- Reserved for a future lesson. Keep this number when adding its content. -->
 
 <!-- lesson-back:start -->
-[חזרה: 13 — מכרטיס HTML לאובייקט Animal]({{ '/taba/13-animal-model/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 13 — מכרטיס HTML לאובייקט Animal]({{ '/taba/13-animal-model/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 15 — הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/15-ef-sqlite/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!-- lesson-next:start -->
-[המשך: 15 — הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/15-ef-sqlite/' | relative_url }}){: data-sequence-nav="next"}
+[המשך: 15 — הנתונים נשמרים עם EF Core ו־SQLite]({{ '/taba/15-ef-sqlite/' | relative_url }})
 <!-- lesson-next:end -->

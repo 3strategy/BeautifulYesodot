@@ -19,7 +19,9 @@ companion_previous: ac696838547401ac23a50a09097079f44d97d6a6
 ניצור תרשים זרימה באמצעות Mermaid. נכתוב צמתים וחצים, נוסיף תוויות בעברית ונשנה את התרשים דרך קובץ הטקסט שלו.
 
 <!-- lesson-back:start -->
-[חזרה: 09 — כותבים תוכן ב־Markdown]({{ '/taba/09-markdown/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 09 — כותבים תוכן ב־Markdown]({{ '/taba/09-markdown/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 11 — מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/11-razor-layout/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -90,5 +92,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [המשך: 11 — מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/11-razor-layout/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 11 — מבינים את Razor Pages ואת התבנית המשותפת]({{ '/taba/11-razor-layout/' | relative_url }})
 <!-- lesson-next:end -->

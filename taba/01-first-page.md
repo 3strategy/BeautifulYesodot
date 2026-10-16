@@ -19,7 +19,9 @@ companion_previous: f4c81264dc3b00dc56e2d424bef1183b8bc79dab
 ניצור את דף האינטרנט הראשון שלנו עם כותרת, פסקה ותמונה. נשמור קובץ HTML, נפתח אותו בדפדפן ונראה איך שינוי בקוד משנה את הדף.
 
 <!-- lesson-back:start -->
-[חזרה: מפת הדרך: האתר שלי]({{ '/taba/00-student-roadmap/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: מפת הדרך: האתר שלי]({{ '/taba/00-student-roadmap/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 02 — סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/02-development-environment/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -92,5 +94,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [המשך: 02 — סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/02-development-environment/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 02 — סביבת הפיתוח: מריצים ומשנים אתר]({{ '/taba/02-development-environment/' | relative_url }})
 <!-- lesson-next:end -->

@@ -14,7 +14,9 @@ companion_previous: 29e43eb541435c0b2bed9bd14841af47bc246b4f
 נוסיף דפים ליצירה, עריכה ומחיקה של מטפלים. נבדוק שמטפל המשויך לחיות נשאר במערכת עד שנעביר אותן למטפל אחר.
 
 <!-- lesson-back:start -->
-[חזרה: 19 — מטפל וחיות: קשר אחד־לרבים]({{ '/taba/19-keepers-animals/' | relative_url }}){: data-sequence-nav="prev"}
+[הפרק הקודם: 19 — מטפל וחיות: קשר אחד־לרבים]({{ '/taba/19-keepers-animals/' | relative_url }}){: data-sequence-nav="prev"} · [הפרק הבא: 21 — מקום לשיעור נוסף]({{ '/taba/21-reserved/' | relative_url }}){: data-sequence-nav="next"}
+
+במסך מגע אפשר להחליק ימינה לפרק הבא ושמאלה לפרק הקודם.
 <!-- lesson-back:end -->
 
 <!--
@@ -288,5 +290,5 @@ teacher-notes:end -->
 
 ## המשך
 
-- [המשך: 21 — מקום לשיעור נוסף]({{ '/taba/21-reserved/' | relative_url }}){: data-sequence-nav="next"}
+- [המשך: 21 — מקום לשיעור נוסף]({{ '/taba/21-reserved/' | relative_url }})
 <!-- lesson-next:end -->
