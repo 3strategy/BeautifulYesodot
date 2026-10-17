@@ -3,6 +3,7 @@ layout: page
 title: "Основы программирования A — на русском"
 subtitle: "Первые программы на C#: от ввода и вывода до циклов"
 lang: ru
+menu_set: part-a-ru
 ---
 
 {: .box-note}

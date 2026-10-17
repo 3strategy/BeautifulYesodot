@@ -6,6 +6,7 @@ author: גיא סידס
 tags: [מערך, מערכים, חד ממדי, Ternary operator, foreach]
 mathjax: true
 lang: he
+menu_set: part-b
 ---
 
 <!-- https://www.perplexity.ai/search/this-page-goes-to-github-pages-z3w2NJR4SHqGVk14l89Rmw -->

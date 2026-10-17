@@ -5,6 +5,7 @@ subtitle: "ביצוע חוזר בתוך ביצוע חוזר"
 tags: קינון, כוכביות, patterns
 author: גיא סידס
 lang: he
+menu_set: part-b
 ---
 
 {: .box-note}

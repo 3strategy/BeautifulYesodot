@@ -5,6 +5,7 @@ subtitle: "מדריך מקיף על מבנה, הכרזה ושימוש במטרי
 tags: [מערך דו-ממדי, מערכים]
 mathjax: true
 lang: he
+menu_set: part-c
 ---
 
 {: .box-note}

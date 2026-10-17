@@ -44,12 +44,17 @@ function toggleSize() {
 }
 
 const MENU_SET_COOKIE = "menu-set";
+const MENU_SET_PARAM = "menu";
 const navbar = document.querySelector(".navbar");
 const DEFAULT_MENU_SET = navbar ? navbar.dataset.defaultMenuSet : "part-a";
 
-function applyMenuSet(menuSet) {
+function getAvailableMenuSets() {
   // Read configured IDs so an intentionally empty menu view remains selectable.
-  const availableMenuSets = navbar ? navbar.dataset.menuSetIds.trim().split(/\s+/) : [];
+  return navbar ? navbar.dataset.menuSetIds.trim().split(/\s+/) : [];
+}
+
+function applyMenuSet(menuSet) {
+  const availableMenuSets = getAvailableMenuSets();
   const selectedMenuSet = availableMenuSets.includes(menuSet) ? menuSet : DEFAULT_MENU_SET;
 
   document.querySelectorAll("[data-menu-sets]").forEach((item) => {
@@ -69,7 +74,29 @@ function applyMenuSet(menuSet) {
 function setMenuSet(menuSet) {
   const selectedMenuSet = applyMenuSet(menuSet);
   setCookie(MENU_SET_COOKIE, selectedMenuSet, 365);
+
+  // Keep the address shareable without reloading or adding a history entry.
+  const url = new URL(window.location.href);
+  url.searchParams.set(MENU_SET_PARAM, selectedMenuSet);
+  if (url.href !== window.location.href) {
+    try {
+      window.history.replaceState(window.history.state, "", url.href);
+    } catch (_) { /* Menu selection still works in restricted embeds. */ }
+  }
 }
+
+function restoreMenuSet() {
+  if (!navbar) return;
+  const requestedMenuSet = new URL(window.location.href).searchParams.get(MENU_SET_PARAM);
+  const availableMenuSets = getAvailableMenuSets();
+  // A tagged page selects its own menu on every arrival, regardless of entry URL.
+  const menuSet = [navbar.dataset.pageMenuSet, requestedMenuSet, getCookie(MENU_SET_COOKIE)]
+    .find(candidate => availableMenuSets.includes(candidate)) || DEFAULT_MENU_SET;
+  setMenuSet(menuSet);
+}
+
+// Back/forward navigation can restore a URL carrying a different menu.
+window.addEventListener('popstate', restoreMenuSet);
 
 // Open every disclosure section on the current page.
 function expandAllDetails() {
@@ -80,7 +107,7 @@ function expandAllDetails() {
 
 // Convert fenced ```mermaid code blocks to <div class="mermaid"> before Mermaid runs
 document.addEventListener('DOMContentLoaded', function () {
-  applyMenuSet(getCookie(MENU_SET_COOKIE) || DEFAULT_MENU_SET);
+  restoreMenuSet();
 
   try {
     const codeBlocks = document.querySelectorAll('pre > code[class*="language-mermaid"]');

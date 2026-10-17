@@ -4,6 +4,7 @@ title: "פרק 11.1 – למה לחשוב במונחים של עצמים?"
 subtitle: "מעבר מחשיבה פרוצדורלית לחשיבה מונחית־עצמים"
 tags: [OOP, עצמים, תכנות, abstraction, Object, State, Behavior, Identity, Abstraction,Blueprint, Encapsulation]
 lang: he
+menu_set: part-c
 ---
 
 ## למה לחשוב במונחים של עצמים? {#id-why-procedural}

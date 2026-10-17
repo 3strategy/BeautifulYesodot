@@ -3,6 +3,7 @@ layout: page
 title: 'מפת הדרך: האתר שלי'
 subtitle: 'השיעורים לבניית האתר: HTML, עיצוב, Markdown, נתונים וחשבונות'
 lang: he
+menu_set: taba
 tags:
 - CSharp
 - HTML

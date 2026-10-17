@@ -4,6 +4,7 @@ title: "רשימת תתי נושאים למעקב למידה"
 author: גיא סידס
 date: 2025-04-05
 lang: he
+menu_set: part-a
 ---
 <!-- https://chatgpt.com/c/67f0f869-af10-800e-8479-c8fd3873432c -->
 <style>
