@@ -60,12 +60,51 @@ Without JavaScript, direct lesson URLs and translation links remain usable.
 Preferences are stored separately for each site's origin, not synchronized
 between BeautifulYesodot and BeautifulMivney.
 
+## Taba: deliberately limited translation scope
+
+The English and Russian editions live under `taba/en/` and `taba/ru/`, using
+the Hebrew source filenames. They cover numbered lessons 01–12 (including the
+reserved lesson 07) and the three alternative setup pages for lesson 02.
+Their translated setup instructions are in `_includes/taba/en/` and
+`_includes/taba/ru/`. The roadmap, teacher plan and lessons 13–27 remain Hebrew.
+Links within the translated section stay in the same language; links at its
+boundaries identify the Hebrew destination. The existing language selector also
+opens these editions from the ordinary course menu.
+
+Copyable code, commands and diff examples retain the Hebrew source exactly,
+including visible example strings and the example site's RTL settings. This
+keeps a single project progression when students continue beyond lesson 12.
+The translated explanations introduce this choice and explain the example
+content; they do not ask students to localize the project. Hidden source and
+teacher notes retain their original content and historical checkpoint caveats.
+
+Comparative review and follow-up recommendations are recorded separately in
+`docs/taba-translation-control-en.md`, `docs/taba-translation-control-ru.md`
+and `docs/taba-translation-control-he.md`. These documents are excluded from
+the published site along with the rest of `docs/`.
+
 ## Verification
 
 ```powershell
 node --test tests/language-preference.test.js
 wsl.exe -d Ubuntu bash -lic "cd /home/stra/repos/BeautifulYesodot && bundle exec jekyll build"
+node --test tests/taba-translations.test.js
 ```
+
+The Taba checks require a current normal build. They verify the bounded set of
+15 pages per language, metadata, unchanged copyable examples (including setup
+includes), generated version maps, local assets, lesson links and swipe route.
+Browser coverage is available with the repository's Playwright dependency:
+
+```sh
+node node_modules/@playwright/test/cli.js test tests/taba-translations.spec.js --workers=4
+```
+
+It checks actual preference redirects, direct Hebrew inspection, LTR reading,
+localized comparison labels and aligned panels on desktop/mobile, translated
+setup sections, and continuation into the untranslated Hebrew lesson 13.
+These checks validate the teaching pages and navigation; they do not certify
+fresh IDE installation, external account operations or student-project builds.
 
 After adding an edition, inspect its generated version map, translation links,
 reading direction, and fallback in a browser. The current Russian course CSS
