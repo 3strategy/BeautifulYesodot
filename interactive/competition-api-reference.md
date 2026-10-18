@@ -5,6 +5,7 @@ date: 2025-01-01
 categories: [python, competition, reference]
 tags: [dev, spaceship, flyer, item, api, cheatsheet]
 subtitle: "Compact function reference for the Israeli programming competition platform. For coders who already know Python."
+lang: en
 ---
 
 <style>
