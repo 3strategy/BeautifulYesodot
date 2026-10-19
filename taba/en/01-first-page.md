@@ -77,6 +77,9 @@ An opening tag can contain **attributes** in the form `name="value"`. For an ima
 
 A tag can contain other tags. This is **nesting**: each `li` is inside `ul`. Close the inner tag before the outer one. Indentation helps you see the structure.
 
+{: .box-note}
+**Try it on W3Schools:** open [HTML Basic Examples](https://www.w3schools.com/html/html_basic.asp). Beside the heading and paragraph example, click **Try it Yourself**, change the heading text, add a `p` paragraph and click **Run** to see the result. Then return here and continue to CSS.
+
 ## CSS: decide how the content looks
 
 CSS is a language for styling the page. A CSS rule selects elements and sets their style properties:
@@ -91,6 +94,9 @@ p {
 `p` is a **selector**: this rule applies to every paragraph on the page. Inside the curly braces, write declarations as `property: value;`: a property name, a colon, a value and a semicolon. Here, `color` sets the text colour and `font-size` sets its size. `rem` is relative to the page's root font size; `1.2rem` is 1.2 times that size.
 
 In our first page, CSS rules go inside a `style` tag in `head`. Later we will also use a separate file with the `.css` extension.
+
+{: .box-note}
+**Experiment with styling on W3Schools:** open [CSS Syntax — selector, property and value](https://www.w3schools.com/css/css_syntax.asp) and click **Try it Yourself**. In the `p` rule, change the `color` value from `red` to `blue` and click **Run**. Explain why all paragraphs change colour, then return here to create your own file.
 
 ## Prepare a folder for the files
 
