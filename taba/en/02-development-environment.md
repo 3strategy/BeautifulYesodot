@@ -47,7 +47,9 @@ The instructions are in English; the shared example website keeps its Hebrew tex
 
 ## Try creating a Razor Pages project
 
-So far, you have experimented with HTML in ordinary files, without a project. Now we will create a website from a ready-made template. **This is still an experiment:** choose any English name without spaces, such as `RazorPractice`. You can create several projects, each with its own name and folder. You do not need a GitHub account or to share anything with your teacher at this stage.
+So far, you have practised HTML tags and CSS rules in an ordinary file, without a project. Now we will create a website from a ready-made template. **This is still an experiment:** choose any English name without spaces, such as `RazorPractice`. You can create several projects, each with its own name and folder. You do not need a GitHub account or to share anything with your teacher at this stage.
+
+Keep the `first-page` folder as a separate exercise. The new project's home page will start again with a heading, a paragraph and an image; later you will add your own content and styling. We will copy the image later in this lesson and write CSS in a separate file instead of inside `style`.
 
 Open the guide for your development environment. Each guide takes you from creating the project to seeing Welcome in the browser, and you can return to it whenever you want to practise again.
 
