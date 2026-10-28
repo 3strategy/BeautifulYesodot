@@ -154,7 +154,9 @@ This avoids false positives from generic `public static int` helper functions in
 
 ## Validation Checklist Before Commit
 
-- `cs2/Chapter9Ex9.3.md` updated and renders two tables (arrays + classes).
+- `cs2/Chapter9Ex9.3.md` updated and renders the general arrays + classes tables.
+- The manually curated תשפ״ז objects focus tables and two-dimensional array table are preserved verbatim between `BEGIN TASHPAZ OBJECTS FOCUS` / `END TASHPAZ OBJECTS FOCUS`. They are reviewed at subsection level and are not regenerated from keyword classification. See [the 2017–2026 source review](Chapter9Ex9.3-TashpazReview.md).
+- The navigation block between `BEGIN TABLE NAVIGATION` / `END TABLE NAVIGATION` is preserved, and its six links resolve to all six tables. Preserve the resolved human decisions (include `MyString` 2021/381/3 in full; exclude 2024/381/2) and the factual note about duplicated sample values directly in the 2017/222/10 matrix-table row, without action advice or a separate human verification table.
 - New rows use `full.pdf#page=` links (not `q*.pdf` links).
 - DS/OOP questions are not duplicated from `BeautifulMivney`.
 - Graphs/models/assembly/OOP track questions are excluded.

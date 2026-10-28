@@ -539,6 +539,7 @@ def manual_fixes(rows: list[Row]) -> None:
         ("2025.6.371", 6),
         ("2024.6.371", 6),
         ("2023.6.371", 6),
+        ("2023.6.371", 3),  # Discounts: scalar parameters, not a class question.
     ]:
         for r in rows:
             if (r.folder, r.q_number) == key:
@@ -553,11 +554,10 @@ def manual_fixes(rows: list[Row]) -> None:
         ("2024.6.371", 1): ("\u05de\u05e2\u05e8\u05db\u05d9\u05dd", "\u05de\u05e2\u05e7\u05d1 \u05e2\u05dc \u05e4\u05e2\u05d5\u05dc\u05d4 \u05e2\u05dc \u05de\u05e2\u05e8\u05da"),
         ("2024.6.371", 2): ("\u05de\u05e2\u05e8\u05db\u05d9\u05dd", "\u05de\u05e2\u05e8\u05da \u05e1\u05d9\u05e1\u05de\u05d0\u05d5\u05ea"),
         ("2024.6.371", 3): ("\u05de\u05e2\u05e8\u05db\u05d9\u05dd", "\u05de\u05e2\u05e8\u05da \u05de\u05e2\u05d5\u05e8\u05d1\u05dc (\u05d0\u05ea\u05d7\u05d5\u05dc/\u05e2\u05e8\u05d1\u05d5\u05dc)"),
-        ("2024.6.371", 4): ("\u05de\u05d7\u05dc\u05e7\u05d5\u05ea", "TourPackage - \u05d7\u05d1\u05d9\u05dc\u05ea \u05e1\u05dc\u05d5\u05dc\u05e8 \u05dc\u05d8\u05e1\u05d9\u05dd"),
+        ("2024.6.371", 4): ("\u05de\u05d7\u05dc\u05e7\u05d5\u05ea + \u05de\u05e2\u05e8\u05da", "TourPackage - \u05d7\u05d1\u05d9\u05dc\u05ea \u05e1\u05dc\u05d5\u05dc\u05e8 \u05dc\u05d8\u05e1\u05d9\u05dd"),
         ("2024.6.371", 5): ("\u05de\u05d7\u05dc\u05e7\u05d5\u05ea + \u05de\u05e2\u05e8\u05da", "Lesson - \u05de\u05e2\u05e8\u05da \u05e9\u05d9\u05e2\u05d5\u05e8\u05d9\u05dd \u05d1\u05d9\u05d5\u05dd \u05dc\u05d9\u05de\u05d5\u05d3\u05d9\u05dd"),
         ("2023.6.371", 1): ("\u05de\u05e2\u05e8\u05db\u05d9\u05dd", "\u05de\u05e2\u05e7\u05d1 \u05e2\u05dc \u05e4\u05e2\u05d5\u05dc\u05d4 \u05e2\u05dc \u05de\u05e2\u05e8\u05da"),
         ("2023.6.371", 2): ("\u05de\u05e2\u05e8\u05db\u05d9\u05dd", "\u05de\u05e9\u05d7\u05e7 \u05e7\u05dc\u05d9\u05e2\u05d4 \u05dc\u05de\u05d8\u05e8\u05d4"),
-        ("2023.6.371", 3): ("\u05de\u05d7\u05dc\u05e7\u05d5\u05ea + \u05de\u05e2\u05e8\u05da", "\u05de\u05d5\u05e2\u05e6\u05ea \u05d4\u05e2\u05d9\u05e8"),
         ("2023.6.371", 4): ("\u05de\u05e2\u05e8\u05db\u05d9\u05dd", "\u05de\u05e2\u05e8\u05db\u05d9 \u05e4\u05d5\u05d0\u05d4 / \u05de\u05d5\u05d1\u05d9\u05dc\u05d4"),
         ("2023.6.371", 5): ("\u05de\u05d7\u05dc\u05e7\u05d5\u05ea + \u05de\u05e2\u05e8\u05da", "\u05de\u05d0\u05d2\u05e8 \u05de\u05d7\u05e9\u05d1\u05d9\u05dd - Computer"),
     }
@@ -565,6 +565,7 @@ def manual_fixes(rows: list[Row]) -> None:
     # 381 manual map (q1-q3 and 2024 q7) + additional recent fixes
     custom.update(
         {
+            ("2021.6.381", 3): ("מחלקות", "MyString - מחרוזת מיוחדת באמצעות ממשק נתון"),
             ("2024.6.381", 1): ("\u05de\u05e2\u05e8\u05db\u05d9\u05dd", "BiggestSum - \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05d2\u05d3\u05d5\u05dc \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05d0\u05e4\u05e1\u05d9\u05dd"),
             ("2024.6.381", 2): ("\u05de\u05d7\u05dc\u05e7\u05d5\u05ea + \u05de\u05e2\u05e8\u05da", "Member / Committee - \u05e9\u05d9\u05d1\u05d5\u05e5 \u05d7\"\u05db\u05d9\u05dd \u05d1\u05d5\u05d5\u05e2\u05d3\u05d5\u05ea"),
             ("2024.6.381", 3): ("\u05de\u05e2\u05e8\u05db\u05d9\u05dd", "\u05de\u05e2\u05e8\u05da \u05de\u05db\u05d5\u05e0\u05d5\u05ea \u05dc\u05d9\u05d9\u05e6\u05d5\u05e8 \u05d1\u05e8\u05d2\u05d9\u05dd"),
@@ -608,6 +609,7 @@ def manual_fixes(rows: list[Row]) -> None:
     )
 
     forced_table = {
+        ("2021.6.381", 3): "classes",  # Part A interface question; user confirmed inclusion.
         ("2024.6.381", 1): "arrays",
         ("2024.6.381", 2): "classes",
         ("2024.6.381", 3): "arrays",
@@ -656,7 +658,6 @@ def manual_fixes(rows: list[Row]) -> None:
         ("2024.6.371", 5): "classes",
         ("2023.6.371", 1): "arrays",
         ("2023.6.371", 2): "arrays",
-        ("2023.6.371", 3): "classes",
         ("2023.6.371", 4): "classes",
         ("2023.6.371", 5): "classes",
     }
@@ -700,8 +701,8 @@ def build_markdown(rows: list[Row]) -> str:
 
     static_count = sum(1 for r in classes if r.notes == "static")
 
-    def table_block(title: str, rows_: list[Row]) -> str:
-        out = [f"## {title}", "", "{: .table-he}", ""]
+    def table_block(title: str, rows_: list[Row], anchor: str) -> str:
+        out = [f"## {title}", f"{{: #{anchor} }}", "", "{: .table-he}", ""]
         out.append("| שנה | שאלון מס' | מס' שאלה | נושא | נושא השאלה |")
         out.append("|-----|----------|----------|------|------------|")
         for r in rows_:
@@ -731,8 +732,8 @@ def build_markdown(rows: list[Row]) -> str:
         [
             "\n".join(note_lines),
             "",
-            table_block("שאלות מערכים (CS101)", arrays),
-            table_block("שאלות מחלקות (CS101, לא תמ\"ע)", classes),
+            table_block("שאלות מערכים (CS101)", arrays, "arrays-all"),
+            table_block("שאלות מחלקות (CS101, לא תמ\"ע, לא ממוקד!)", classes, "objects-all"),
         ]
     ).strip() + "\n"
 
@@ -803,6 +804,35 @@ def replace_chapter_content(generated_block: str) -> None:
     m_links = re.search(r"\n## קישורים\n", text)
     if not m_start or not m_links:
         raise RuntimeError("Could not locate replace boundaries in Chapter9Ex9.3.md")
+    nav_start = "<!-- BEGIN TABLE NAVIGATION -->"
+    nav_end = "<!-- END TABLE NAVIGATION -->"
+    if nav_start in text or nav_end in text:
+        if text.count(nav_start) != 1 or text.count(nav_end) != 1:
+            raise RuntimeError("Table navigation markers are missing or duplicated")
+        start = text.index(nav_start)
+        end = text.index(nav_end) + len(nav_end)
+        if end < start:
+            raise RuntimeError("Table navigation markers are out of order")
+        intro, separator, remainder = generated_block.partition("\n\n")
+        if not separator:
+            raise RuntimeError("Could not locate introductory note for table navigation")
+        generated_block = intro + "\n\n" + text[start:end] + "\n\n" + remainder
+    # Annual focus tables are manually reviewed at subsection level. Preserve
+    # them verbatim: generic keyword classification cannot reconstruct them.
+    focus_start = "<!-- BEGIN TASHPAZ OBJECTS FOCUS -->"
+    focus_end = "<!-- END TASHPAZ OBJECTS FOCUS -->"
+    if focus_start in text or focus_end in text:
+        if text.count(focus_start) != 1 or text.count(focus_end) != 1:
+            raise RuntimeError("Annual objects focus markers are missing or duplicated")
+        start = text.index(focus_start)
+        end = text.index(focus_end) + len(focus_end)
+        if end < start:
+            raise RuntimeError("Annual objects focus markers are out of order")
+        focus = text[start:end]
+        arrays_heading = "## שאלות מערכים (CS101)"
+        if arrays_heading not in generated_block:
+            raise RuntimeError("Could not locate arrays heading for annual focus")
+        generated_block = generated_block.replace(arrays_heading, focus + "\n\n" + arrays_heading, 1)
     new_text = text[: m_start.start() + 1] + generated_block + "\n" + text[m_links.start() + 1 :]
     path.write_text(new_text, encoding="utf-8")
 
