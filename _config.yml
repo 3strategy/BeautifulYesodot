@@ -578,6 +578,11 @@ defaults:
       layout: "page"
   -
     scope:
+      path: "taba"
+    values:
+      menu_set: "taba"
+  -
+    scope:
       path: "interactive"
     values:
       full-width: true
