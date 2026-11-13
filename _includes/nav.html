@@ -19,6 +19,14 @@
   <div class="collapse navbar-collapse" id="main-navbar">
     <ul class="navbar-nav ml-auto">
       {% include language-preference.html %}
+      {% if site.post_search %}
+        <li class="nav-item">
+          <a class="nav-link" id="nav-search-link" href="#" title="Search">
+            <span id="nav-search-icon" class="fa fa-search"></span>
+            <span id="nav-search-text">Search</span>
+          </a>
+        </li>
+      {%- endif -%}
       {%- for link in site.navbar-links -%}
         {%- assign top_text = link[0] -%}
         {%- assign top_item = link[1] -%}
@@ -67,14 +75,6 @@
           </li>
         {%- endif -%}
       {%- endfor -%}
-      {% if site.post_search %}
-        <li class="nav-item">
-          <a class="nav-link" id="nav-search-link" href="#" title="Search">
-            <span id="nav-search-icon" class="fa fa-search"></span>
-            <span id="nav-search-text">Search</span>
-          </a>
-        </li>
-      {%- endif -%}
     </ul>
   </div>
 
