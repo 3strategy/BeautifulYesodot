@@ -36,9 +36,13 @@ for (const [course, urls] of Object.entries(routes)) {
       for (const [direction, expected] of [['prev', urls[index - 1]], ['next', urls[index + 1]]]) {
         const links = page.locator(`main a[data-sequence-nav="${direction}"]`);
         await expect(links).toHaveCount(expected ? 1 : 0);
+        const arrow = page.locator(`[data-navbar-sequence="${direction}"]`);
         if (expected) {
+          await expect(arrow).toHaveAttribute('href', base + expected);
           await expect(links).toHaveAttribute('href', expected);
           expect((await request.get(base + expected)).status()).toBe(200);
+        } else {
+          await expect(arrow).not.toHaveAttribute('href');
         }
       }
       await expect(page.locator('script[src$="/assets/js/sequence-navigation.js"]')).toHaveCount(1);
@@ -76,23 +80,22 @@ async function swipe(page, forward) {
   await session.detach();
 }
 
-test('Russian menu persists across languages and leaves shared links available', async ({ page, context }) => {
-  await page.goto(base + '/csru/');
-  await page.locator('main a[href="javascript:setMenuSet(\'part-a-ru\');"]').click();
-  await expect.poll(async () => (await context.cookies()).find(cookie => cookie.name === 'menu-set')?.value).toBe('part-a-ru');
-  for (const url of ['/csru/Chapter1/', '/cs/Chapter1/']) {
+test('Russian and Hebrew lessons show their own menus and keep shared links available', async ({ page }) => {
+  for (const [url, course, chapterCount] of [
+    ['/csru/Chapter1/', 'part-a-ru', 5],
+    ['/', 'part-a-ru', 5],
+    ['/cs/Chapter1/', 'part-a', 6],
+  ]) {
     await page.goto(base + url);
-    const menu = page.locator('nav [data-menu-sets]');
-    const shown = await menu.evaluateAll(items => items.filter(item => !item.hidden).map(item => item.dataset.menuSets));
-    expect(shown).toEqual(Array(5).fill('part-a-ru'));
+    await expect(page.locator('#course-menu [aria-current="true"]')).toHaveAttribute('data-course-menu', course);
+    const menu = page.locator('nav [data-menu-sets]:not([hidden])');
+    await expect(menu).toHaveCount(chapterCount);
+    expect(await menu.evaluateAll((items, id) => items.every(item => item.dataset.menuSets.split(' ').includes(id)), course)).toBe(true);
     const shared = page.locator('nav > .navbar-collapse > ul > li:not([data-menu-sets])');
     expect(await shared.count()).toBeGreaterThanOrEqual(3);
     expect(await shared.evaluateAll(items => items.every(item => !item.hidden))).toBe(true);
-    await expect(page.locator('nav [data-menu-sets="part-a-ru"]').first()).toHaveCSS('direction', 'ltr');
+    if (course === 'part-a-ru') await expect(menu.first()).toHaveCSS('direction', 'ltr');
   }
-  await page.evaluate(() => setMenuSet('part-a'));
-  expect(await page.locator('nav [data-menu-sets]').evaluateAll(items =>
-    items.filter(item => !item.hidden).every(item => item.dataset.menuSets.split(' ').includes('part-a')))).toBe(true);
 });
 
 test('Russian progress remains checked after reload and uses its own storage', async ({ page }) => {

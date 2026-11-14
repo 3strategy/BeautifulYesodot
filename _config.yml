@@ -259,12 +259,6 @@ navbar-links:
 
   הגדרות:
     # - מבחן זמני: "/cs/GuysFinalFireBase/"
-    - בחירת תפריט:
-      - חלק א: "javascript:setMenuSet('part-a');"
-      - "יסודות א ברוסית / Основы A — на русском": "javascript:setMenuSet('part-a-ru');"
-      - חלק ב: "javascript:setMenuSet('part-b');"
-      - חלק ג: "javascript:setMenuSet('part-c');"
-      - תב״א: "javascript:setMenuSet('taba');"
     - החלפת רקע: "javascript:toggleTheme();"
     - החלפת גודל: "javascript:toggleSize();"
     - פתיחת כל הפרטים: "javascript:expandAllDetails();"
@@ -276,6 +270,7 @@ navbar-links:
 navbar-menu-sets:
   part-a:
     label: חלק א
+    url: /cs/
     items:
       - פרק 0
       - פרק 1 קלט ופלט
@@ -284,7 +279,8 @@ navbar-menu-sets:
       - פרק 4 for
       - פרק 5 while
   part-a-ru:
-    label: "יסודות א ברוסית / Основы A — на русском"
+    label: חלק א ברוסית
+    url: /csru/
     items:
       - "RU · Начало"
       - "RU · 1. Ввод и вывод"
@@ -293,6 +289,7 @@ navbar-menu-sets:
       - "RU · 4. Циклы for"
   part-b:
     label: חלק ב
+    url: /cs2/
     items:
       - פרק 6 לולאות מקוננות
       - פרק 7 פעולות
@@ -300,12 +297,14 @@ navbar-menu-sets:
       - פרק 9 מערכים
   part-c:
     label: חלק ג
+    url: /cs3e/
     items:
       - חלק ג — כללי
       - פרק 10 מערך דו ממדי
       - פרק 11 עצמים
   taba:
     label: תב״א
+    url: /taba/00-student-roadmap/
     items:
       - תב״א — מתחילים
       - תב״א — נתונים
@@ -595,14 +594,95 @@ defaults:
       full-width: true
   -
     scope:
-      path: "csru"
+      path: "csru/"
     values:
+      menu_set: part-a-ru
       layout: "page"
       lang: "ru"
       language: "ru"
       direction: "ltr"
       css:
         - "/assets/css/russian-course.css"
+  -
+    scope:
+      path: "cs/"
+    values:
+      menu_set: part-a
+  -
+    scope:
+      path: "interactive/Chapter3"
+    values:
+      menu_set: part-a
+  -
+    scope:
+      path: "interactive/Chapter5"
+    values:
+      menu_set: part-a
+  -
+    scope:
+      path: "cs2/"
+    values:
+      menu_set: part-b
+  -
+    scope:
+      path: "interactive/Chapter8"
+    values:
+      menu_set: part-b
+  -
+    scope:
+      path: "interactive/Chapter9"
+    values:
+      menu_set: part-b
+  -
+    scope:
+      path: "cs3/"
+    values:
+      menu_set: part-c
+  -
+    scope:
+      path: "cs3e/"
+    values:
+      menu_set: part-c
+  -
+    scope:
+      path: "cs4/team_work"
+    values:
+      menu_set: part-c
+  -
+    scope:
+      path: "interactive/Chapter10"
+    values:
+      menu_set: part-c
+  -
+    scope:
+      path: "interactive/02questionnaire"
+    values:
+      menu_set: part-c
+  -
+    scope:
+      path: "interactive/objectsQuestionnaire"
+    values:
+      menu_set: part-c
+  -
+    scope:
+      path: "interactive/inheritenceQuestionnaire"
+    values:
+      menu_set: part-c
+  -
+    scope:
+      path: "interactive/nestedObjectsQuestionnaire"
+    values:
+      menu_set: part-c
+  -
+    scope:
+      path: "cs/0YearOpening"
+    values:
+      menu_set: ""
+  -
+    scope:
+      path: "cs2/ChapterCampus.md"
+    values:
+      menu_set: ""
 
 # Exclude these files from production site
 exclude:

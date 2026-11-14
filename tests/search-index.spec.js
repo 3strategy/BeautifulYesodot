@@ -18,6 +18,18 @@ test.describe('search corpus menu links', () => {
     expect(urls).not.toContain('/teacher-only/cs3e/tests/Test1.7.26/');
   });
 
+  test('course chapters and exercises include their menu IDs', () => {
+    const urls = loadSearchCorpus().map(item => item.url);
+    expect(urls).toEqual(expect.arrayContaining([
+      '/cs/Chapter3/?menu=part-a',
+      '/csru/Chapter3/?menu=part-a-ru',
+      '/cs2/Chapter8/?menu=part-b',
+      '/cs3e/Objects_02_BuildingClasses/?menu=part-c',
+      '/interactive/objectsQuestionnaire/?menu=part-c',
+    ]));
+    expect(urls).toContain('/cs2/ChapterCampus/');
+  });
+
   test('indexes non-markdown menu links by menu title', () => {
     const corpus = loadSearchCorpus();
     const byTitle = new Map(corpus.map((item) => [item.title, item]));

@@ -35,12 +35,13 @@
   `navbar-links` labels that should be visible in that view.
 - Keep shared top-level links (for example submission systems, external links,
   and settings) out of every set so they remain visible in all views.
-- Add a `בחירת תפריט` submenu under `הגדרות` with
-  `javascript:setMenuSet('<set-id>');` links, and set a valid
-  `navbar-default-menu-set`.
-- The selected menu is stored in the `menu-set` cookie. The common
-  `_includes/nav.html` and `assets/js/custom-script.js` implement the behavior;
-  do not duplicate it in page-local JavaScript.
+- Set each menu's `label` and landing-page `url` in `navbar-menu-sets`, and
+  set a valid `navbar-default-menu-set`. The selector next to the logo uses
+  these links.
+- Use `menu_set` in front matter or directory defaults to select a course when
+  a page opens. Shared pages use the `menu-set` cookie or the incoming menu URL.
+  The shared navbar includes and `assets/js/custom-script.js` implement the
+  behavior.
 - A course may have an empty `items: []` view temporarily. It still provides a
   selectable course context and keeps only the shared navigation visible until
   course-specific top-level links are ready.

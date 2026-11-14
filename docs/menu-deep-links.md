@@ -10,9 +10,10 @@ If the URL already has a query string, append `&menu=<menu-id>` before its fragm
 On untagged pages, a valid URL choice overrides the visitor's saved `menu-set` cookie and becomes
 that site's remembered choice. Normal internal navigation keeps the menu via
 the cookie. Each page puts its selected menu in the address bar, so copying the
-address also shares the menu. Choosing another menu updates the address without
-reloading or adding history entries. Other query parameters, fragments, and
-history state are preserved. Back/forward restores the menu specified by the URL.
+address also shares the menu. The selector next to the logo opens the chosen
+course's landing page. When the current page synchronizes its URL, it preserves
+other query parameters, fragments, and history state. Back/forward restores the
+menu specified by the URL on untagged pages.
 
 Missing, empty, and unknown menu values use the saved preference, then the site's
 default if that preference is invalid. IDs are case-sensitive. Menu links do not
@@ -25,8 +26,8 @@ Menu IDs come from each site's `_config.yml`:
 - BeautifulMivney: `data-structures`, `oop`, `android`, `modelim`, `agentic`.
 - BeautifulYesodot: `part-a`, `part-a-ru`, `part-b`, `part-c`, `taba`.
 
-Keep the menu URL behavior in `assets/js/custom-script.js` and its browser suite
-aligned between the two repositories. Preserve their existing validation sources:
+Keep the menu URL behavior in `assets/js/custom-script.js` aligned between
+the two repositories. Preserve their existing validation sources:
 Mivney discovers populated menus, while Yesodot reads `data-menu-set-ids` to allow
 intentionally empty named menus. Yesodot's `expandAllDetails()` stays independent.
 
@@ -50,12 +51,12 @@ pages and posts. `menu_set` is the only supported page tag for this feature.
 A valid page tag takes precedence over the incoming `?menu=` parameter, then
 the saved cookie, then the site's default. It selects and remembers that menu
 on every arrival, whether through search, a navbar link, a bookmark, or a direct
-URL. No `_config.yml` link changes are necessary. Other query parameters and
-fragments are preserved. Unknown page tags are ignored and normal URL/cookie
-selection continues. Pages without a tag retain their existing behavior.
+URL. Other query parameters and fragments are preserved. Unknown page tags
+fall back to URL and cookie selection.
 
-Visitors can still select another menu manually while reading the page. Reloading
-or returning to the tagged page selects its tagged menu again.
+Both sites set `menu_set` by course directory in `_config.yml`. Shared pages
+such as פתיחת שנה and מצגות קמפוס keep the visitor's selection. An explicit
+`menu_set` in page front matter overrides the directory default.
 
 The site's search results also include the tagged menu in their links. For
 example, `android/topics-index.md` (tagged with `menu_set: android`)

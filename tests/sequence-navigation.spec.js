@@ -18,7 +18,7 @@ test.beforeAll(async () => {
     if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
     if (!fs.existsSync(file)) { res.writeHead(404).end(); return; }
     res.setHeader('Content-Type', file.endsWith('.js') ? 'application/javascript' :
-      file.endsWith('.css') ? 'text/css' : 'text/html');
+      file.endsWith('.css') ? 'text/css' : 'text/html; charset=utf-8');
     fs.createReadStream(file).pipe(res);
   });
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
@@ -66,7 +66,9 @@ test('all Taba links render correctly, resolve locally and form a reciprocal rou
     for (const [direction, destination] of Object.entries(sequence[url])) {
       const links = page.locator('main a[data-sequence-nav="'+direction+'"]');
       await expect(links).toHaveCount(destination ? 1 : 0);
+      const arrow = page.locator(`[data-navbar-sequence="${direction}"]`);
       if (destination) {
+        await expect(arrow).toHaveAttribute('href', base + destination);
         // Both directions belong near the beginning, as in CollectCircles.
         const topNavigation = await links.evaluate(link => {
           const main = link.closest('main');
@@ -77,11 +79,44 @@ test('all Taba links render correctly, resolve locally and form a reciprocal rou
         await expect(links).toHaveAttribute('href', destination);
         expect((await request.get(base+destination)).status()).toBe(200);
         expect(sequence[destination][direction === 'next' ? 'prev' : 'next']).toBe(url);
+      } else {
+        await expect(arrow).not.toHaveAttribute('href');
       }
     }
     await expect(page.locator('script[src$="/assets/js/sequence-navigation.js"]')).toHaveCount(1);
   }
 });
+
+for (const [folder, nextLabel, previousLabel] of [
+  ['cs', 'לשיעור הבא', 'לשיעור הקודם'],
+  ['csru', 'Следующий урок', 'Предыдущий урок'],
+]) {
+  test(`${folder}: navbar chevrons follow the lesson links after scrolling`, async ({ page }) => {
+    const lesson = `${base}/${folder}/Chapter1/`;
+    const title = page.locator('.navbar-page-title');
+    const next = title.getByRole('link', { name: nextLabel });
+    const previous = title.getByRole('link', { name: previousLabel });
+    const scrollPastHeading = () => page.evaluate(() => {
+      const headingBottom = document.querySelector('.intro-header h1').getBoundingClientRect().bottom;
+      window.scrollBy({ top: headingBottom + 30, behavior: 'instant' });
+    });
+
+    await page.goto(lesson);
+    await expect(title).toBeHidden();
+    await scrollPastHeading();
+    await expect(next).toBeVisible();
+    await expect(previous).toBeVisible();
+    expect((await next.boundingBox()).x).toBeGreaterThan((await previous.boundingBox()).x);
+    await next.click();
+    await expect(page).toHaveURL(url => url.pathname === `/${folder}/Chapter1Hagashot/`);
+
+    await scrollPastHeading();
+    await previous.focus();
+    await expect(previous).toBeFocused();
+    await previous.press('Enter');
+    await expect(page).toHaveURL(url => url.pathname === `/${folder}/Chapter1/`);
+  });
+}
 
 test('before-after layout puts before on the left and stacks it first on mobile', async ({page}) => {
   await open(page);
@@ -186,6 +221,7 @@ test('boundaries and untagged pages do not navigate', async ({ page }) => {
   await page.goto(`${base}/taba/00-teacher-plan/`);
   const url = page.url();
   await expect(page.locator('[data-sequence-nav]')).toHaveCount(0);
+  await expect(page.locator('[data-navbar-sequence][href]')).toHaveCount(0);
   await swipe(page, [100, 330], [285, 330]);
   expect(page.url()).toBe(url);
 });

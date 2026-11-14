@@ -1,4 +1,4 @@
-# Touch navigation for lesson sequences
+# Lesson sequence navigation
 
 The shared script is byte-identical to BeautifulMivney at the time of this port.
 It is loaded once by the footer and activates only on explicitly tagged pages.
@@ -66,6 +66,11 @@ navigation may repeat those tags, but must agree. Omit the unavailable link at a
 sequence boundary; there is no wraparound or inferred destination. Ordinary links
 remain usable without JavaScript and with a keyboard or screen reader.
 
+The navbar uses those links for the chevrons beside the title. When the page
+heading scrolls out of view, the right chevron opens the next lesson and the left
+chevron opens the previous one. Each chevron appears when its destination is
+available. Translations use the tagged links in the displayed lesson.
+
 Moving a finger **right goes next**, **left goes previous**, independent of the
 document direction. The Hebrew and Russian Yesodot Alef routes deliberately use
 the same gestures, including the Russian course's left-to-right layout. Do not
@@ -102,7 +107,7 @@ Both suites serve `_site` themselves and use Chromium's native touch injection i
 navigation, browser history return, ordinary link clicks, boundaries, untagged
 pages, scrolling, controls, text selection, cancelled gestures, and zoom. It
 requires Playwright's Chromium browser. The CS suite checks all 41 Hebrew/Russian
-route pages, real swipes in both languages, Russian menu persistence, LTR layout,
+route pages, real swipes in both languages, course selection by language, LTR layout,
 and saved progress checkboxes. External resources are blocked so the
 gesture checks do not depend on third-party CDNs.
 

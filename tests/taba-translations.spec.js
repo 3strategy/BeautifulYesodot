@@ -59,10 +59,12 @@ for (const language of ['en', 'ru']) {
     expect(await page.evaluate(() => localStorage.getItem('lesson-language-preference'))).toBe(language);
     // A canonical menu destination must pick the saved edition again.
     await page.goto(`${base}/taba/04-css-classes/`);
-    await page.waitForURL(`${base}/taba/${language}/04-css-classes/`);
+    await page.waitForURL(url => url.pathname === `/taba/${language}/04-css-classes/`);
+    expect(new URL(page.url()).searchParams.get('menu')).toBe('taba');
     // Explicit source inspection remains available without changing preference.
     await page.locator('.lesson-language-versions a[lang="he"]').click();
-    await page.waitForURL(`${base}/taba/04-css-classes/?lang=he`);
+    await page.waitForURL(url =>
+      url.pathname === '/taba/04-css-classes/' && url.searchParams.get('lang') === 'he');
     await expect(page.locator('html')).toHaveAttribute('lang', 'he');
   });
 
