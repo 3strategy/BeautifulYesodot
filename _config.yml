@@ -163,7 +163,10 @@ navbar-links:
     - תקציר תחביר: "/cs2/ChapterSyntaxSummary"
 
   חלק ג — כללי:
-    - מערכת הגשות: "https://codeclassroom.io"
+    - CodeClassroom: &codeclassroom_link
+        url: "https://codeclassroom.io"
+        icon: "/assets/img/codeclassroom.svg"
+        wordmark: true
     - סיכום הפרקים הקודמים: "/cs3e/ChapterGimelOpening/"
     - עבודה בקבוצות1: "/cs4/team_work"
 
@@ -234,9 +237,13 @@ navbar-links:
     - "27 — מקום לשיעור נוסף": "/taba/27-reserved/"
 
   חיצוני:
-    - מערכת הגשות: "https://codeclassroom.io"
-    - אתר מבני נתונים: "https://מבני.שלי.com"
-    - אתר מתמטיקה: "https://מתמטיקה.com"
+    - CodeClassroom: *codeclassroom_link
+    - אתר מבני נתונים:
+        url: "https://מבני.שלי.com"
+        icon: "/assets/img/mivney-favicon.png"
+    - אתר מתמטיקה:
+        url: "https://מתמטיקה.com"
+        icon: "/assets/img/math-favicon.png"
     - שאלות ותשובות: "https://pop.education.gov.il/tchumey_daat/computer-science-software-engineering-cyber/high-school/pedagogy-of/faq/"
     - מכתב 503 (מסמך קישורים): https://docs.google.com/document/d/1pzqtdzM2CrUpjx7KYljAHM5lbd1IGOhGfL5ju7XnJVY/edit?usp=sharing
     - קמפוס יסודות: "https://courses.campus.gov.il/courses/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/course/"
