@@ -106,7 +106,7 @@ for (const [folder, nextLabel, previousLabel] of [
     await scrollPastHeading();
     await expect(next).toBeVisible();
     await expect(previous).toBeVisible();
-    expect((await next.boundingBox()).x).toBeGreaterThan((await previous.boundingBox()).x);
+    expect((await next.boundingBox()).x).toBeLessThan((await previous.boundingBox()).x);
     await next.click();
     await expect(page).toHaveURL(url => url.pathname === `/${folder}/Chapter1Hagashot/`);
 

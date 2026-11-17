@@ -67,7 +67,7 @@ sequence boundary; there is no wraparound or inferred destination. Ordinary link
 remain usable without JavaScript and with a keyboard or screen reader.
 
 The navbar uses those links for the chevrons beside the title. When the page
-heading scrolls out of view, the right chevron opens the next lesson and the left
+heading scrolls out of view, the left chevron opens the next lesson and the right
 chevron opens the previous one. Each chevron appears when its destination is
 available. Translations use the tagged links in the displayed lesson.
 
